@@ -60,7 +60,7 @@ if [[ -d "$AUTH_CALLBACK" ]]; then
 fi
 
 cd "$WEB"
-STATIC_EXPORT=1 pnpm build
+NEXT_PUBLIC_STATIC_EXPORT=1 NEXT_PUBLIC_USE_LARAVEL_AUTH=1 STATIC_EXPORT=1 pnpm build
 
 if [[ ! -f "$WEB/out/index.html" ]]; then
   echo "error: $WEB/out/index.html not found after build" >&2
@@ -72,9 +72,26 @@ if [[ -f "$WEB/public/.htaccess" ]]; then
   echo "Installed .htaccess for Apache clean URLs"
 fi
 
-if [[ -f "$WEB/public/logo.png" ]] && [[ ! -f "$WEB/out/logo.png" ]]; then
-  cp "$WEB/public/logo.png" "$WEB/out/logo.png"
-  echo "Copied logo.png to out/"
+PHP_AUTH="$ROOT/php-auth"
+if [[ -d "$PHP_AUTH/auth" && "${COPY_PHP_AUTH:-0}" == "1" ]]; then
+  if [[ ! -d "$PHP_AUTH/auth-lib/vendor" ]]; then
+    echo "Installing PHP auth dependencies..."
+    "$ROOT/scripts/install-php-auth.sh"
+  fi
+  echo "Installing PHP auth into static export..."
+  rm -rf "$WEB/out/auth" "$WEB/out/auth-lib"
+  cp -R "$PHP_AUTH/auth" "$WEB/out/auth"
+  cp -R "$PHP_AUTH/auth-lib" "$WEB/out/auth-lib"
+  if [[ ! -d "$WEB/out/auth-lib/vendor" ]]; then
+    echo "warning: php-auth vendor missing — run: (cd php-auth && php composer.phar install)" >&2
+  fi
 fi
+
+for logo_asset in logo.svg logo-light.svg logo-icon.svg icon.svg; do
+  if [[ -f "$WEB/public/$logo_asset" ]] && [[ ! -f "$WEB/out/$logo_asset" ]]; then
+    cp "$WEB/public/$logo_asset" "$WEB/out/$logo_asset"
+    echo "Copied $logo_asset to out/"
+  fi
+done
 
 echo "Static export ready: $WEB/out/"

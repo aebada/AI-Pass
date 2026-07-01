@@ -5,6 +5,11 @@ import { SessionProvider } from 'next-auth/react';
 import type { PlanTier } from '@ai-pass/ui';
 import { isLegacyDemoProfile } from '@/lib/session-user';
 import { AuthSessionBridge } from '../auth/AuthSessionBridge';
+import { LaravelAuthBridge } from '../auth/LaravelAuthBridge';
+import { PhpAuthBridge } from '../auth/PhpAuthBridge';
+
+const usePhpAuth = process.env.NEXT_PUBLIC_USE_PHP_AUTH === '1';
+const useLaravelAuth = process.env.NEXT_PUBLIC_USE_LARAVEL_AUTH === '1';
 
 export type ThemeMode = 'dark' | 'light' | 'system';
 
@@ -201,7 +206,13 @@ export function AppProviders({ children }: { children: ReactNode }) {
   return (
     <SessionProvider>
       <AppContext.Provider value={value}>
-        <AuthSessionBridge />
+        {useLaravelAuth ? (
+          <LaravelAuthBridge />
+        ) : usePhpAuth ? (
+          <PhpAuthBridge />
+        ) : (
+          <AuthSessionBridge />
+        )}
         {children}
       </AppContext.Provider>
     </SessionProvider>

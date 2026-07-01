@@ -1,0 +1,19 @@
+{
+  "name": "ai-pass/php-auth",
+  "description": "Session-based Google OAuth and email/password auth for Hostinger PHP hosting",
+  "type": "project",
+  "require": {
+    "php": ">=8.1",
+    "google/apiclient": "^2.15",
+    "vlucas/phpdotenv": "^5.6"
+  },
+  "autoload": {
+    "psr-4": {
+      "AiPass\\Auth\\": "auth-lib/src/"
+    }
+  },
+  "config": {
+    "sort-packages": true,
+    "vendor-dir": "auth-lib/vendor"
+  }
+}

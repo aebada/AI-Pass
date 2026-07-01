@@ -3,8 +3,13 @@
 import { signIn } from 'next-auth/react';
 import { useSearchParams } from 'next/navigation';
 import { Suspense, useState } from 'react';
+import { authApiUrl, authCallbackQuery, useLaravelAuth } from '@/lib/auth-api';
 import { PremiumNav } from '../components/premium/PremiumNav';
 import styles from './login.module.css';
+
+const usePhpAuth = process.env.NEXT_PUBLIC_USE_PHP_AUTH === '1';
+const useLaravelAuth = process.env.NEXT_PUBLIC_USE_LARAVEL_AUTH === '1';
+const useServerAuth = usePhpAuth || useLaravelAuth;
 
 function LoginContent() {
   const searchParams = useSearchParams();
@@ -13,8 +18,66 @@ function LoginContent() {
   const [loading, setLoading] = useState(false);
 
   async function handleGoogleSignIn() {
+    if (useLaravelAuth) {
+      window.location.href = authApiUrl(`/auth/google${authCallbackQuery(callbackUrl)}`);
+      return;
+    }
+    if (usePhpAuth) {
+      const params = callbackUrl !== '/workspace' ? `?callback=${encodeURIComponent(callbackUrl)}` : '';
+      window.location.href = `/auth/google.php${params}`;
+      return;
+    }
     setLoading(true);
     await signIn('google', { callbackUrl });
+  }
+
+  const emailLoginHref = useLaravelAuth
+    ? authApiUrl(`/auth/login${authCallbackQuery(callbackUrl)}`)
+    : `/auth/login.php${
+        callbackUrl !== '/workspace' ? `?callback=${encodeURIComponent(callbackUrl)}` : ''
+      }`;
+
+  const registerHref = useLaravelAuth
+    ? authApiUrl(`/auth/register${authCallbackQuery(callbackUrl)}`)
+    : '/auth/register.php';
+
+  if (useLaravelAuth || usePhpAuth) {
+    return (
+      <div className={styles.page}>
+        <PremiumNav variant="landing" />
+        <main className={styles.main}>
+          <div className={styles.card}>
+            <div className={styles.badge}>Secure sign-in</div>
+            <h1 className={styles.title}>Welcome to AI-Pass</h1>
+            <p className={styles.subtitle}>
+              Sign in with Google or email to get 500 free credits and access the AI Playground.
+            </p>
+            {error && (
+              <div className={styles.error} role="alert">
+                Sign-in failed. Please try again.
+              </div>
+            )}
+            <button
+              type="button"
+              className={styles.googleBtn}
+              onClick={handleGoogleSignIn}
+              disabled={loading}
+            >
+              <GoogleIcon />
+              {loading ? 'Redirecting…' : 'Continue with Google'}
+            </button>
+            <p className={styles.hint}>
+              <a href={emailLoginHref}>Email sign-in</a>
+              {' · '}
+              <a href={registerHref}>Create account</a>
+            </p>
+            <p className={styles.legal}>
+              By continuing, you agree to AI-Pass terms and privacy policy.
+            </p>
+          </div>
+        </main>
+      </div>
+    );
   }
 
   return (

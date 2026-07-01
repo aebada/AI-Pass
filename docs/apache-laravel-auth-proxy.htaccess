@@ -1,0 +1,18 @@
+# Laravel auth — proxy /auth/* to Laravel public/index.php
+# Merge into public_html/.htaccess BEFORE the SPA fallback rule.
+# Replace LARAVEL_PUBLIC_PATH with your server path (see docs/LARAVEL-AUTH.md).
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Laravel auth (clean URLs, no .php)
+  RewriteCond %{REQUEST_URI} ^/auth/(google|login|register|logout|me|forgot-password|reset-password|verify-email|email)(/|$) [NC]
+  RewriteRule ^ %{ENV:LARAVEL_PUBLIC_PATH}/index.php [L]
+
+  # Optional: legacy php-auth redirects (Laravel also registers these routes)
+  RewriteRule ^auth/google\.php$ /auth/google [R=301,L]
+  RewriteRule ^auth/google-callback\.php$ /auth/google/callback [R=301,L]
+  RewriteRule ^auth/login\.php$ /auth/login [R=301,L]
+  RewriteRule ^auth/register\.php$ /auth/register [R=301,L]
+  RewriteRule ^auth/me\.php$ /auth/me [R=301,L]
+</IfModule>

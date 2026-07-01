@@ -16,7 +16,15 @@ apps/web/.next
 apps/desktop/out
 apps/desktop/release
 
-.env.deploy
+services/auth-api/.env
+services/auth-api/vendor/
+services/auth-api/node_modules/
+services/auth-api/storage/logs/*.log
+services/auth-api/bootstrap/cache/*.php
+
+php-auth/auth-lib/.env
+php-auth/auth-lib/vendor/
+php-auth/composer.phar
 
 .pnpm-store
 .build-node.lock
