@@ -1,0 +1,106 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.25rem;
+}
+
+.section {
+  width: 100%;
+}
+
+.sectionTitle {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+}
+
+.sectionDesc {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin: 0 0 1.25rem;
+  line-height: 1.5;
+}
+
+.profileRow {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-muted), #a371f7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.125rem;
+  color: #fff;
+}
+
+.profileName {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.profileEmail {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.field {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.field span {
+  display: block;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  margin-bottom: 0.375rem;
+  color: var(--text-muted);
+}
+
+.input {
+  width: 100%;
+  padding: 0.625rem 0.875rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 0.875rem;
+  font-family: inherit;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.themeRow {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.themeBtn {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 0.8125rem;
+  text-transform: capitalize;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.themeBtnActive {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(88, 166, 255, 0.08);
+}

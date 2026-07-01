@@ -1,0 +1,143 @@
+.card {
+  background: var(--dash-card);
+  border: 1px solid var(--dash-border);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+}
+
+.header {
+  margin-bottom: 16px;
+}
+
+.titleRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.title {
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0;
+  color: var(--dash-text);
+}
+
+.badge {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 10px;
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.subtitle {
+  font-size: 12px;
+  color: var(--dash-muted);
+  margin: 4px 0 0;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.empty {
+  font-size: 13px;
+  color: var(--dash-muted);
+  text-align: center;
+  padding: 24px 0;
+}
+
+.item {
+  border: 1px solid var(--dash-border);
+  border-radius: 10px;
+  padding: 14px;
+  background: var(--dash-bg);
+}
+
+.itemBody {
+  margin-bottom: 12px;
+}
+
+.itemTitle {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--dash-text);
+  margin: 0 0 4px;
+}
+
+.amount {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--dash-text);
+  display: block;
+  margin-bottom: 6px;
+}
+
+.meta {
+  font-size: 10px;
+  color: var(--dash-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.agent {
+  font-weight: 600;
+}
+
+.sep {
+  margin: 0 4px;
+}
+
+.actions {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.approve,
+.reject,
+.review {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.approve {
+  background: #16a34a;
+  color: #fff;
+}
+
+.reject {
+  background: #dc2626;
+  color: #fff;
+}
+
+.review {
+  background: #1e293b;
+  color: #fff;
+}
+
+.approve:hover {
+  background: #15803d;
+}
+
+.reject:hover {
+  background: #b91c1c;
+}
+
+.review:hover {
+  background: #0f172a;
+}

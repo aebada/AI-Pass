@@ -1,0 +1,343 @@
+.page {
+  --section-pad: clamp(1.5rem, 4vw, 4rem);
+  min-height: 100vh;
+  background-color: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+.hero {
+  position: relative;
+  padding: clamp(3rem, 7vw, 5rem) var(--section-pad) clamp(2.5rem, 6vw, 4rem);
+  text-align: center;
+}
+
+.heroGlow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.heroGlow::before {
+  content: '';
+  position: absolute;
+  top: -30%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(800px, 110vw);
+  height: 420px;
+  background: radial-gradient(ellipse, rgba(88, 166, 255, 0.12) 0%, transparent 70%);
+}
+
+.heroInner {
+  position: relative;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.heroLogo {
+  width: min(320px, 90vw);
+  height: auto;
+  margin: 0 auto 1.25rem;
+  object-fit: contain;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.85rem;
+  margin-bottom: 1.25rem;
+  border-radius: 100px;
+  background: rgba(88, 166, 255, 0.1);
+  border: 1px solid rgba(88, 166, 255, 0.25);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--accent);
+}
+
+.heroTitle {
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  margin-bottom: 1rem;
+}
+
+.heroSub {
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  color: var(--text-muted);
+  line-height: 1.65;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.section {
+  padding: clamp(2.5rem, 5vw, 4rem) var(--section-pad);
+}
+
+.sectionAlt {
+  background: linear-gradient(180deg, transparent 0%, rgba(22, 27, 34, 0.45) 50%, transparent 100%);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.sectionHeader {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 2.5rem;
+}
+
+.sectionLabel {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+}
+
+.sectionTitle {
+  font-size: clamp(1.375rem, 2.5vw, 1.875rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.75rem;
+}
+
+.sectionDesc {
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.pillarGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.pillarCard {
+  padding: 1.75rem 1.5rem;
+  border-radius: 14px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  transition: border-color 0.25s, transform 0.25s;
+}
+
+.pillarCard:hover {
+  border-color: rgba(88, 166, 255, 0.35);
+  transform: translateY(-2px);
+}
+
+.pillarIcon {
+  font-size: 1.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.pillarTitle {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.pillarText {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+.contentBlock {
+  max-width: 720px;
+  margin: 0 auto;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+.contentBlock p {
+  margin: 0 0 1rem;
+}
+
+.contentBlock strong {
+  color: var(--text);
+}
+
+.notList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  max-width: 800px;
+  margin: 2rem auto 0;
+}
+
+.notCard {
+  padding: 1.25rem;
+  border-radius: 12px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  text-align: center;
+}
+
+.notLabel {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--error);
+  margin-bottom: 0.5rem;
+}
+
+.notText {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.25rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.teamCard {
+  padding: 1.5rem;
+  border-radius: 12px;
+  background: var(--bg-elevated);
+  border: 1px dashed var(--border);
+  text-align: center;
+}
+
+.teamAvatar {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 0.75rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-muted), #a371f7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.teamName {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.teamRole {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+}
+
+.contactBox {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 16px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  text-align: center;
+}
+
+.contactText {
+  font-size: 0.9375rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+
+.contactEmail {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.contactEmail:hover {
+  text-decoration: underline;
+}
+
+.ctaBand {
+  text-align: center;
+  padding: clamp(2.5rem, 5vw, 4rem) var(--section-pad);
+  background: linear-gradient(135deg, rgba(31, 111, 235, 0.08) 0%, rgba(163, 113, 247, 0.06) 100%);
+  border-top: 1px solid var(--border);
+}
+
+.ctaTitle {
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.ctaText {
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btnPrimary,
+.btnSecondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.625rem 1.25rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.15s, box-shadow 0.2s;
+}
+
+.btnPrimary {
+  background: linear-gradient(135deg, var(--accent-muted) 0%, var(--accent) 100%);
+  color: #fff;
+  box-shadow: 0 0 16px rgba(88, 166, 255, 0.2);
+}
+
+.btnPrimary:hover {
+  transform: translateY(-1px);
+}
+
+.btnSecondary {
+  background: var(--bg-elevated);
+  color: var(--text);
+  border: 1px solid var(--border);
+  margin-left: 0.75rem;
+}
+
+.btnSecondary:hover {
+  border-color: var(--accent);
+}
+
+.ctaActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.ctaActions .btnSecondary {
+  margin-left: 0;
+}
+
+.footer {
+  border-top: 1px solid var(--border);
+  padding: 2rem var(--section-pad);
+  text-align: center;
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+}

@@ -1,0 +1,129 @@
+.livesyncNav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.livesyncNav a {
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  text-decoration: none;
+  border: 1px solid var(--ws-border, #30363d);
+  color: var(--ws-text-muted, #8b949e);
+}
+
+.livesyncNav a.active {
+  background: var(--ws-accent, #238636);
+  color: #fff;
+  border-color: transparent;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.stat {
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid var(--ws-border, #30363d);
+  background: var(--ws-surface, #161b22);
+}
+
+.stat h3 {
+  margin: 0 0 8px;
+  font-size: 12px;
+  color: var(--ws-text-muted, #8b949e);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.stat .value {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.stream {
+  max-height: 360px;
+  overflow: auto;
+  border: 1px solid var(--ws-border, #30363d);
+  border-radius: 12px;
+  background: var(--ws-surface, #161b22);
+}
+
+.streamItem {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--ws-border, #21262d);
+  font-size: 13px;
+}
+
+.streamItem:last-child {
+  border-bottom: none;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.table th,
+.table td {
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--ws-border, #21262d);
+}
+
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+.badgeOk { background: #23863633; color: #3fb950; }
+.badgeWarn { background: #9e6a0333; color: #d29922; }
+.badgeErr { background: #da363333; color: #f85149; }
+
+.raw {
+  font-size: 12px;
+  padding: 16px;
+  border-radius: 12px;
+  background: var(--ws-surface, #161b22);
+  border: 1px solid var(--ws-border, #30363d);
+  overflow: auto;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.actions button {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--ws-border, #30363d);
+  background: var(--ws-surface, #21262d);
+  color: inherit;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.actions button.primary,
+.primaryButton {
+  background: #238636;
+  border-color: #238636;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid #238636;
+  cursor: pointer;
+  font-size: 13px;
+}

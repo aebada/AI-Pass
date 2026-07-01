@@ -1,0 +1,228 @@
+.filters {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.filterBtn {
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 13px;
+  text-transform: capitalize;
+  transition: all 0.2s;
+}
+
+.filterActive {
+  border-color: var(--accent);
+  background: rgba(88, 166, 255, 0.12);
+  color: var(--accent);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.25rem;
+}
+
+.templateCard {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 0 !important;
+}
+
+.previewThumb {
+  position: relative;
+  height: 140px;
+  background: linear-gradient(160deg, rgba(31, 111, 235, 0.15), var(--bg));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.previewIcon {
+  font-size: 2.5rem;
+  z-index: 1;
+}
+
+.previewLines {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  opacity: 0.4;
+}
+
+.previewLines div {
+  height: 6px;
+  border-radius: 3px;
+  background: var(--border);
+}
+
+.previewLines div:nth-child(1) { width: 80px; }
+.previewLines div:nth-child(2) { width: 60px; }
+.previewLines div:nth-child(3) { width: 70px; }
+
+.previewOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.previewThumb:hover .previewOverlay {
+  opacity: 1;
+}
+
+.cardBody {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.cardTitle {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.cardDesc {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  margin: 0 0 8px;
+  line-height: 1.5;
+  flex: 1;
+}
+
+.cardMeta {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.platforms {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 12px;
+}
+
+.cardActions {
+  display: flex;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.modal {
+  max-width: 560px;
+  width: 100%;
+}
+
+.modalHeader {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.modalHeader h2 {
+  margin: 0 0 4px;
+  font-size: 1.25rem;
+}
+
+.modalHeader p {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.modalIcon {
+  font-size: 2rem;
+}
+
+.modalClose {
+  margin-left: auto;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 1.25rem;
+}
+
+.modalPreview {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.mockNav {
+  height: 32px;
+  background: var(--bg-hover);
+  border-bottom: 1px solid var(--border);
+}
+
+.mockContent {
+  padding: 12px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  min-height: 120px;
+}
+
+.mockScreen {
+  padding: 10px;
+  background: var(--bg-elevated);
+  border-radius: 6px;
+  font-size: 0.75rem;
+  border: 1px solid var(--border);
+}
+
+.modalModules {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.modalAgents {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 16px;
+}

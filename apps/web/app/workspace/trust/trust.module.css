@@ -1,0 +1,141 @@
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.kpiGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 12px;
+}
+
+.kpi {
+  padding: 16px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.kpiValue {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.kpiLabel {
+  font-size: 12px;
+  color: var(--workspace-text-muted, #94a3b8);
+  margin-top: 4px;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sectionTitle {
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  font-size: 13px;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.wizard {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.steps {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.step {
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.stepActive {
+  background: rgba(99, 102, 241, 0.2);
+  border-color: #6366f1;
+}
+
+.formGrid {
+  display: grid;
+  gap: 12px;
+}
+
+.field label {
+  display: block;
+  font-size: 12px;
+  margin-bottom: 4px;
+  color: var(--workspace-text-muted, #94a3b8);
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(0, 0, 0, 0.2);
+  color: inherit;
+  font-size: 13px;
+}
+
+.navRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.verifyPage {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 48px 24px;
+}
+
+.verifyHeader {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.verifyBadge {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  background: linear-gradient(135deg, #ffd700, #c0c0c0);
+  color: #1a1a2e;
+}
+
+.statusActive { color: #22c55e; }
+.statusExpired { color: #f59e0b; }
+.statusRevoked { color: #ef4444; }

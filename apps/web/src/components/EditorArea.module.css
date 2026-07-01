@@ -1,0 +1,82 @@
+.area {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.tabs {
+  display: flex;
+  height: var(--tab-height);
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border);
+  overflow-x: auto;
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 12px;
+  border-right: 1px solid var(--border);
+  cursor: pointer;
+  font-size: 12px;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  min-width: 120px;
+  max-width: 200px;
+}
+
+.tab:hover {
+  background: var(--bg-hover);
+}
+
+.activeTab {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  border-bottom: 2px solid var(--accent);
+}
+
+.tabName {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dirty {
+  color: var(--accent);
+  margin-right: 4px;
+}
+
+.closeBtn {
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  font-size: 14px;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.closeBtn:hover {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+.editor {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: var(--text-muted);
+  font-size: 14px;
+}

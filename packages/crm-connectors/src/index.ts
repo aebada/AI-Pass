@@ -1,0 +1,10 @@
+export * from './types.js';
+export { BaseCrmAdapter } from './adapters/base.js';
+export { SalesforceAdapter } from './adapters/salesforce.js';
+export { HubSpotAdapter } from './adapters/hubspot.js';
+export { DynamicsAdapter } from './adapters/dynamics.js';
+export { ZendeskAdapter } from './adapters/zendesk.js';
+export { FreshdeskAdapter } from './adapters/freshdesk.js';
+export { ServiceNowAdapter } from './adapters/servicenow.js';
+export { CustomRestAdapter } from './adapters/custom-rest.js';
+export { CrmAdapterRegistry, defaultCrmRegistry } from './registry.js';

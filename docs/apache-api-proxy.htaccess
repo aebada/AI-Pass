@@ -1,0 +1,9 @@
+# Append to public_html/.htaccess AFTER static rewrite rules (or merge carefully).
+# Requires Hostinger to enable mod_proxy for your account (support ticket if [P] fails).
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  # Proxy Next.js API + OAuth callback alias to local Node (PORT=3000)
+  RewriteCond %{REQUEST_URI} ^/api/ [OR]
+  RewriteCond %{REQUEST_URI} ^/auth/google/callback
+  RewriteRule ^(.*)$ http://127.0.0.1:3000/$1 [P,L]
+</IfModule>

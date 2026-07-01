@@ -1,0 +1,40 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.stat {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.stat h3 {
+  margin: 0 0 8px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.value {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.stat span {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.raw {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px;
+  font-size: 11px;
+  overflow: auto;
+  max-height: 400px;
+}

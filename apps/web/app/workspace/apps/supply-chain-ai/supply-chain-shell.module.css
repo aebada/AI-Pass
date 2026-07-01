@@ -1,0 +1,251 @@
+.shell {
+  display: flex;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.sidebar {
+  width: 240px;
+  flex-shrink: 0;
+  border-right: 1px solid var(--border);
+  background: var(--bg-elevated);
+  display: flex;
+  flex-direction: column;
+  padding: 20px 12px;
+}
+
+.brand {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 0 8px 20px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 16px;
+}
+
+.brandIcon {
+  font-size: 28px;
+}
+
+.brandTitle {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.brandSub {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
+
+.navItem,
+.navActive {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  text-decoration: none;
+  color: var(--text-muted);
+  transition: background 0.15s;
+}
+
+.navItem:hover {
+  background: var(--bg-hover);
+  color: var(--text);
+}
+
+.navActive {
+  background: rgba(88, 166, 255, 0.12);
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.backLink {
+  margin-top: auto;
+  padding: 12px;
+  font-size: 12px;
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.backLink:hover {
+  color: var(--accent);
+}
+
+.main {
+  flex: 1;
+  min-width: 0;
+  padding: 24px 32px;
+  overflow: auto;
+}
+
+.header {
+  margin-bottom: 24px;
+}
+
+.header h1 {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.grid {
+  display: grid;
+  gap: 16px;
+}
+
+.grid4 {
+  composes: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+}
+
+.grid2 {
+  composes: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+}
+
+.kpiValue {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 8px 0 4px;
+}
+
+.kpiLabel {
+  font-size: 12px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.table th,
+.table td {
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.table th {
+  color: var(--text-muted);
+  font-weight: 500;
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.badgePass { composes: badge; background: rgba(63, 185, 80, 0.15); color: var(--success); }
+.badgeFail { composes: badge; background: rgba(248, 81, 73, 0.15); color: var(--error); }
+.badgeInfo { composes: badge; background: rgba(210, 153, 34, 0.15); color: var(--warning); }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg-hover);
+  color: var(--text);
+  font-size: 13px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btnPrimary {
+  composes: btn;
+  background: var(--accent-muted);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.btn:hover {
+  filter: brightness(1.08);
+}
+
+.formGroup {
+  margin-bottom: 16px;
+}
+
+.formGroup label {
+  display: block;
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.formGroup input,
+.formGroup select,
+.formGroup textarea {
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 13px;
+}
+
+.dropzone {
+  border: 2px dashed var(--border);
+  border-radius: 12px;
+  padding: 40px;
+  text-align: center;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+
+.dropzone:hover {
+  border-color: var(--accent);
+}
+
+.chartStub {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  border-radius: 8px;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+
+.muted {
+  color: var(--text-muted);
+  font-size: 13px;
+}

@@ -1,0 +1,36 @@
+{
+  "name": "@ai-pass/api-server",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.js",
+  "bin": { "ai-pass-api": "./dist/index.js" },
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx watch src/index.ts",
+    "start": "node dist/main.js",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@ai-pass/invoice-ai": "workspace:*",
+    "@ai-pass/platform-api": "workspace:*",
+    "@ai-pass/platform-core": "workspace:*",
+    "@ai-pass/shared": "workspace:*",
+    "express": "^4.21.2",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3"
+  }
+}

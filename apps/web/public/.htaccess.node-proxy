@@ -1,0 +1,41 @@
+# Apache reverse-proxy for hybrid deploy (static site + Node auth on port 3000)
+# Copy to public_html/.htaccess ONLY if:
+#   - mod_proxy and mod_proxy_http are enabled on Hostinger
+#   - Next.js runs via hPanel Node.js on PORT=3000
+#   - Static pages remain on Apache; /api/* and /auth/* proxy to Node
+#
+# If mod_proxy is unavailable, use full Node.js Web App for the entire domain instead
+# (see docs/DEPLOY-AUTH.md — recommended path).
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Proxy NextAuth + API routes to Node (adjust port if hPanel assigns another)
+  RewriteCond %{REQUEST_URI} ^/api/ [OR]
+  RewriteCond %{REQUEST_URI} ^/auth/
+  RewriteRule ^(.*)$ http://127.0.0.1:3000/$1 [P,L]
+</IfModule>
+
+<IfModule mod_proxy.c>
+  ProxyPreserveHost On
+  ProxyPass /api http://127.0.0.1:3000/api
+  ProxyPassReverse /api http://127.0.0.1:3000/api
+  ProxyPass /auth http://127.0.0.1:3000/auth
+  ProxyPassReverse /auth http://127.0.0.1:3000/auth
+</IfModule>
+
+# --- Static export rules (keep if hybrid) ---
+<IfModule mod_rewrite.c>
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} -f
+  RewriteRule ^ - [L]
+  RewriteRule ^platform/?$ /platform.html [L]
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME}.html -f
+  RewriteRule ^(.+?)/?$ $1.html [L]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteCond %{REQUEST_FILENAME}.html -f
+  RewriteRule ^(.+?)/?$ $1.html [L]
+  RewriteRule ^ /index.html [L]
+</IfModule>

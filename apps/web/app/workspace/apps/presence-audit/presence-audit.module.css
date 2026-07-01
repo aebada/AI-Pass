@@ -1,0 +1,130 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-height: 0;
+}
+
+.subNav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--ai-border, rgba(255, 255, 255, 0.08));
+}
+
+.subNavLink {
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  color: var(--ai-text-muted, #8b949e);
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+}
+
+.subNavLink:hover {
+  background: var(--ai-surface-hover, rgba(255, 255, 255, 0.06));
+  color: var(--ai-text, #e6edf3);
+}
+
+.subNavLinkActive {
+  background: var(--ai-accent-muted, rgba(56, 139, 253, 0.15));
+  color: var(--ai-accent, #58a6ff);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  background: var(--ai-surface, #161b22);
+  border: 1px solid var(--ai-border, rgba(255, 255, 255, 0.08));
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.cardTitle {
+  font-size: 13px;
+  color: var(--ai-text-muted, #8b949e);
+  margin: 0 0 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.statValue {
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--ai-text, #e6edf3);
+  margin: 0;
+}
+
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.badgeCritical {
+  background: rgba(248, 81, 73, 0.15);
+  color: #f85149;
+}
+
+.badgeMedium {
+  background: rgba(210, 153, 34, 0.15);
+  color: #d29922;
+}
+
+.badgeLow {
+  background: rgba(63, 185, 80, 0.15);
+  color: #3fb950;
+}
+
+.badgeOpenai { background: rgba(16, 163, 127, 0.15); color: #10a37f; }
+.badgeAnthropic { background: rgba(204, 120, 92, 0.15); color: #cc785c; }
+.badgeGoogle { background: rgba(66, 133, 244, 0.15); color: #4285f4; }
+.badgePerplexity { background: rgba(32, 178, 170, 0.15); color: #20b2aa; }
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.listItem {
+  padding: 12px 16px;
+  background: var(--ai-surface, #161b22);
+  border: 1px solid var(--ai-border, rgba(255, 255, 255, 0.08));
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+.progressBar {
+  height: 6px;
+  background: var(--ai-border, rgba(255, 255, 255, 0.08));
+  border-radius: 3px;
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+.progressFill {
+  height: 100%;
+  background: var(--ai-accent, #58a6ff);
+  border-radius: 3px;
+}
+
+.twoCol {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 768px) {
+  .twoCol {
+    grid-template-columns: 1fr;
+  }
+}

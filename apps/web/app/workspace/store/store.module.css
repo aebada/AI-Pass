@@ -1,0 +1,86 @@
+@import '../marketplace/marketplace.module.css';
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sectionLink {
+  font-size: 13px;
+  color: var(--accent, #6366f1);
+  text-decoration: none;
+}
+
+.cardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.cardActions {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.detailGrid {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 24px;
+}
+
+@media (max-width: 768px) {
+  .detailGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.detailMain,
+.detailSidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.dealCard {
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  background: rgba(99, 102, 241, 0.08);
+}
+
+.review {
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.reviewTitle {
+  font-weight: 600;
+  margin: 0 0 4px;
+}
+
+.reviewComment {
+  margin: 0;
+  font-size: 13px;
+  color: var(--text-muted, #888);
+}
+
+.navLinks {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.navLink {
+  font-size: 13px;
+  color: var(--accent, #6366f1);
+  text-decoration: none;
+}

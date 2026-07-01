@@ -1,0 +1,149 @@
+.card {
+  background: var(--dash-card);
+  border: 1px solid var(--dash-border);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.title {
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0;
+  color: var(--dash-text);
+}
+
+.subtitle {
+  font-size: 12px;
+  color: var(--dash-muted);
+  margin: 4px 0 0;
+}
+
+.manage {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--dash-accent);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.manage:hover {
+  text-decoration: underline;
+}
+
+.scroll {
+  max-height: 280px;
+  overflow-y: auto;
+  border: 1px solid var(--dash-border);
+  border-radius: 8px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.table th {
+  position: sticky;
+  top: 0;
+  background: var(--dash-bg);
+  text-align: left;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--dash-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--dash-border);
+  z-index: 1;
+}
+
+.table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--dash-border);
+  color: var(--dash-text);
+  vertical-align: middle;
+}
+
+.table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.time {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  white-space: nowrap;
+  color: var(--dash-muted);
+}
+
+.entity {
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.detail {
+  color: var(--dash-muted);
+  max-width: 360px;
+}
+
+.colResult {
+  text-align: right;
+  width: 48px;
+}
+
+.badge {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 3px 7px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.badge_executed {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.badge_approved {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.badge_rejected {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.badge_blocked {
+  background: #ffedd5;
+  color: #c2410c;
+}
+
+.badge_retried {
+  background: #ede9fe;
+  color: #6d28d9;
+}
+
+.ok {
+  font-size: 10px;
+  font-weight: 800;
+  color: #16a34a;
+}
+
+.err {
+  font-size: 10px;
+  font-weight: 800;
+  color: #dc2626;
+}

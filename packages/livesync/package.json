@@ -1,0 +1,42 @@
+{
+  "name": "@ai-pass/livesync",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./adapters/web": {
+      "types": "./dist/adapters/web.d.ts",
+      "import": "./dist/adapters/web.js"
+    },
+    "./adapters/desktop": {
+      "types": "./dist/adapters/desktop.d.ts",
+      "import": "./dist/adapters/desktop.js"
+    },
+    "./adapters/mobile": {
+      "types": "./dist/adapters/mobile.d.ts",
+      "import": "./dist/adapters/mobile.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@ai-pass/shared": "workspace:*",
+    "@ai-pass/governance": "workspace:*",
+    "@ai-pass/knowledge-pipeline": "workspace:*",
+    "@ai-pass/runtime-core": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.32",
+    "typescript": "^5.8.3"
+  }
+}

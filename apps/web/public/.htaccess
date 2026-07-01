@@ -1,0 +1,39 @@
+# Hostinger / Apache — Next.js static export routing
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+# --- Node.js API proxy (Google / NextAuth) ---
+# Merge docs/apache-api-proxy.htaccess into public_html/.htaccess BEFORE the SPA fallback.
+# Requires mod_proxy on Hostinger. See docs/DEPLOY-AUTH.md.
+
+  RewriteBase /
+
+  # Existing files (incl. _next assets)
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} -f
+  RewriteRule ^ - [L]
+
+  # platform.html vs platform/ directory — serve the page, not the folder
+  RewriteRule ^platform/?$ /platform.html [L]
+
+  # Clean URLs: /studio -> studio.html, /platform/governance -> platform/governance.html
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME}.html -f
+  RewriteRule ^(.+?)/?$ $1.html [L]
+
+  # Nested .html when path is a directory (e.g. platform/governance)
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteCond %{REQUEST_FILENAME}.html -f
+  RewriteRule ^(.+?)/?$ $1.html [L]
+
+  # Fallback SPA shell
+  RewriteRule ^ /index.html [L]
+</IfModule>
+
+# Cache static assets
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+</IfModule>

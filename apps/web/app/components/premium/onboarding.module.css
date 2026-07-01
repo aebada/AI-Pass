@@ -1,0 +1,119 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(8px);
+  animation: fadeIn 0.25s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal {
+  position: relative;
+  width: min(480px, 100%);
+  padding: 2.5rem 2rem;
+  border-radius: 20px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  overflow: hidden;
+}
+
+.glow {
+  position: absolute;
+  top: -60%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 400px;
+  height: 300px;
+  background: radial-gradient(ellipse, rgba(88, 166, 255, 0.2) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.progress {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--border);
+  transition: background 0.3s, transform 0.3s;
+}
+
+.dotActive {
+  background: var(--accent);
+  transform: scale(1.2);
+}
+
+.icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.02em;
+}
+
+.body {
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  font-size: 0.9375rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.btnPrimary,
+.btnSecondary,
+.btnGhost {
+  padding: 0.625rem 1.25rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+  transition: transform 0.15s;
+}
+
+.btnPrimary {
+  background: linear-gradient(135deg, var(--accent-muted), var(--accent));
+  color: #fff;
+}
+
+.btnPrimary:hover {
+  transform: translateY(-1px);
+}
+
+.btnSecondary {
+  background: var(--bg-hover);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.btnGhost {
+  background: transparent;
+  color: var(--text-muted);
+}

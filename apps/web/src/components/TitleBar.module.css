@@ -1,0 +1,98 @@
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--titlebar-height);
+  padding: 0 12px;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border);
+  -webkit-app-region: drag;
+  user-select: none;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.logo {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--text-primary);
+}
+
+.nav {
+  display: flex;
+  gap: 4px;
+}
+
+.nav button,
+.actions button {
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  color: var(--text-secondary);
+  -webkit-app-region: no-drag;
+}
+
+.nav button:hover,
+.actions button:hover {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+.actions {
+  display: flex;
+  gap: 4px;
+}
+
+.actions .active {
+  background: var(--accent);
+  color: white;
+}
+
+.actions .active:hover {
+  background: var(--accent-hover);
+}
+
+.navLink {
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  -webkit-app-region: no-drag;
+}
+
+.navLink:hover {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  justify-content: center;
+}
+
+.subtitle {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.modeBadge {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: var(--accent);
+  color: white;
+}
+
+.logo {
+  text-decoration: none;
+}

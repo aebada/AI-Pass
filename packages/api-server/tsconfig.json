@@ -1,0 +1,14 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "composite": true
+  },
+  "include": ["src"],
+  "references": [
+    { "path": "../shared" },
+    { "path": "../platform-core" },
+    { "path": "../invoice-ai" }
+  ]
+}

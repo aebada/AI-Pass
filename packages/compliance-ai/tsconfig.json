@@ -1,0 +1,21 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "composite": true
+  },
+  "include": ["src"],
+  "references": [
+    { "path": "../shared" },
+    { "path": "../governance" },
+    { "path": "../trust" },
+    { "path": "../wallet" },
+    { "path": "../membership" },
+    { "path": "../livesync" },
+    { "path": "../knowledge-pipeline" },
+    { "path": "../provider-hub" },
+    { "path": "../agent-studio" },
+    { "path": "../marketplace" }
+  ]
+}

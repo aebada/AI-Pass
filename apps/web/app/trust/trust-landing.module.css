@@ -1,0 +1,213 @@
+.page {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.hero {
+  position: relative;
+  padding: clamp(3rem, 8vw, 5rem) clamp(1.5rem, 4vw, 4rem) clamp(2rem, 5vw, 3rem);
+  text-align: center;
+  overflow: hidden;
+}
+
+.heroGlow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(212, 175, 55, 0.15) 0%, transparent 60%);
+}
+
+.heroInner {
+  position: relative;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #d4af37;
+  margin-bottom: 1rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 100px;
+  background: rgba(212, 175, 55, 0.1);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  margin: 0 0 1rem;
+}
+
+.subtitle {
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin: 0 0 2rem;
+}
+
+.ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.btnPrimary,
+.btnSecondary {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.15s, box-shadow 0.2s;
+}
+
+.btnPrimary {
+  background: linear-gradient(135deg, #b8962e 0%, #d4af37 100%);
+  color: #0d1117;
+  box-shadow: 0 0 24px rgba(212, 175, 55, 0.3);
+}
+
+.btnPrimary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 28px rgba(212, 175, 55, 0.45);
+}
+
+.btnSecondary {
+  background: var(--bg-elevated);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.btnSecondary:hover {
+  border-color: #d4af37;
+}
+
+.section {
+  padding: clamp(2.5rem, 5vw, 4rem) clamp(1.5rem, 4vw, 4rem);
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.sectionTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 1.5rem;
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  padding: 1.5rem;
+  border-radius: 12px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+}
+
+.cardIcon {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.cardTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+}
+
+.cardText {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.cardLink {
+  display: inline-block;
+  margin-top: 0.75rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #d4af37;
+  text-decoration: none;
+}
+
+.cardLink:hover {
+  text-decoration: underline;
+}
+
+.tiers {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.tier {
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  border: 1px solid var(--border);
+}
+
+.tierBronze { color: #cd7f32; border-color: rgba(205, 127, 50, 0.4); }
+.tierSilver { color: #c0c0c0; border-color: rgba(192, 192, 192, 0.4); }
+.tierGold { color: #d4af37; border-color: rgba(212, 175, 55, 0.5); background: rgba(212, 175, 55, 0.08); }
+.tierPlatinum { color: #e5e4e2; border-color: rgba(229, 228, 226, 0.4); }
+
+.ctaBand {
+  margin: 0 clamp(1.5rem, 4vw, 4rem) clamp(3rem, 6vw, 5rem);
+  padding: clamp(2rem, 4vw, 3rem);
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.12) 0%, rgba(88, 166, 255, 0.08) 100%);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  text-align: center;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ctaTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 0.75rem;
+}
+
+.ctaText {
+  color: var(--text-muted);
+  margin: 0 0 1.5rem;
+  line-height: 1.6;
+}
+
+.footer {
+  border-top: 1px solid var(--border);
+  padding: 2rem clamp(1.5rem, 4vw, 4rem);
+  text-align: center;
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+}
+
+.footer a {
+  color: #d4af37;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
