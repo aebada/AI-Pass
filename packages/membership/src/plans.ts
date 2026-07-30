@@ -6,7 +6,15 @@ import type {
 } from '@ai-pass/shared';
 
 /** Model IDs available on the free tier */
-export const FREE_TIER_MODEL_IDS = ['gpt-4o-mini', 'gemini-flash', 'deepseek-free'] as const;
+export const FREE_TIER_MODEL_IDS = [
+  'gpt-4o-mini',
+  'gemini-flash',
+  'deepseek-free',
+  'deepseek-r1-free',
+  'llama-3.3-70b',
+  'openrouter-free',
+  'gpt-oss-20b-free',
+] as const;
 
 /** Providers / models that require Power tier or above */
 export const POWER_ONLY_PROVIDER_IDS = ['grok', 'cerebras', 'sambanova'] as const;
@@ -105,7 +113,7 @@ export const MEMBERSHIP_PLANS: MembershipPlan[] = [
     highlights: [
       '20 requests/day',
       '500 monthly credits',
-      'GPT-4o Mini, Gemini Flash, DeepSeek Free',
+      'GPT-4o Mini, Gemini Flash, Llama 3.3, OpenRouter Free',
       'Browse Marketplace',
     ],
   },
