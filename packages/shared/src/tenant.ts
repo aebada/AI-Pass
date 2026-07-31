@@ -21,10 +21,25 @@ export const DEFAULT_RBAC: TenantRbacPolicy = {
   defaultRole: 'viewer',
   roles: {
     owner: ['*'],
-    admin: ['workspace:*', 'agents:*', 'settings:*', 'wallet:*'],
-    builder: ['workspace:read', 'workspace:write', 'agents:run', 'playground:use'],
-    viewer: ['workspace:read', 'playground:use'],
-    auditor: ['workspace:read', 'trust:audit', 'compliance:approve'],
+    admin: [
+      'workspace:*',
+      'agents:*',
+      'settings:*',
+      'wallet:*',
+      'skills:create',
+      'skills:manage_availability',
+      'skills:view_all',
+    ],
+    builder: [
+      'workspace:read',
+      'workspace:write',
+      'agents:run',
+      'playground:use',
+      'skills:create',
+      'skills:edit',
+    ],
+    viewer: ['workspace:read', 'playground:use', 'skills:use'],
+    auditor: ['workspace:read', 'trust:audit', 'compliance:approve', 'skills:view_all'],
   },
 };
 
