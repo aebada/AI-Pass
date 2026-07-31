@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'unsafe-inline'; script-src 'unsafe-inline'" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About AI-Pass IDE</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #0d1117;
+        --text: #e6edf3;
+        --muted: #8b949e;
+        --accent: #58a6ff;
+        --border: #30363d;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: "SF Pro Text", "Segoe UI", system-ui, sans-serif;
+        background: radial-gradient(120% 80% at 20% 0%, #1a2332 0%, var(--bg) 55%);
+        color: var(--text);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+      }
+      .card {
+        width: 100%;
+        max-width: 340px;
+        text-align: center;
+      }
+      .mark {
+        width: 56px;
+        height: 56px;
+        margin: 0 auto 14px;
+        border-radius: 14px;
+        background: linear-gradient(145deg, #1c2129, #12151a);
+        border: 1px solid var(--border);
+        display: grid;
+        place-items: center;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        color: #7eb0dc;
+      }
+      h1 {
+        margin: 0 0 6px;
+        font-size: 1.25rem;
+        font-weight: 650;
+      }
+      p {
+        margin: 0 0 10px;
+        color: var(--muted);
+        font-size: 0.875rem;
+        line-height: 1.5;
+      }
+      .meta {
+        margin-top: 16px;
+        padding-top: 14px;
+        border-top: 1px solid var(--border);
+        font-size: 0.8rem;
+        color: var(--muted);
+        text-align: left;
+        display: grid;
+        gap: 6px;
+      }
+      .meta strong { color: var(--text); font-weight: 600; }
+      button {
+        margin-top: 16px;
+        border: 1px solid var(--border);
+        background: #161b22;
+        color: var(--text);
+        border-radius: 8px;
+        padding: 8px 14px;
+        font-size: 0.8125rem;
+        font-weight: 600;
+        cursor: pointer;
+      }
+      button:hover { border-color: var(--accent); }
+      a { color: var(--accent); text-decoration: none; }
+      a:hover { text-decoration: underline; }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <div class="mark" aria-hidden="true">AI</div>
+      <h1>AI-Pass IDE</h1>
+      <p>Desktop shell for the live AI-Pass workspace. Product UI updates come from aipass.space; this app updates separately.</p>
+      <div class="meta">
+        <div>App version: <strong id="appVersion">…</strong></div>
+        <div>Web: <strong id="webUrl">…</strong></div>
+        <div>Platform: <strong id="platform">…</strong></div>
+      </div>
+      <button type="button" id="checkUpdates">Check for Updates</button>
+      <p style="margin-top:14px"><a id="siteLink" href="#">aipass.space</a></p>
+    </div>
+    <script>
+      (async () => {
+        const api = window.aiPassIde;
+        if (!api) return;
+        document.getElementById('appVersion').textContent = await api.getAppVersion();
+        const web = await api.getWebBaseUrl();
+        document.getElementById('webUrl').textContent = web;
+        document.getElementById('platform').textContent = await api.getPlatform();
+        document.getElementById('checkUpdates').addEventListener('click', () => api.checkForUpdates());
+        document.getElementById('siteLink').addEventListener('click', (e) => {
+          e.preventDefault();
+          api.openExternal(web);
+        });
+      })();
+    </script>
+  </body>
+</html>
