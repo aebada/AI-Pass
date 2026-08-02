@@ -1,4 +1,13 @@
 import type { Application, Campaign, MarketplaceCategory } from '@ai-pass/marketplace-core';
+import type {
+  DiscoveryCapability,
+  DiscoveryCompliance,
+  DiscoveryDeployment,
+  DiscoveryIntegration,
+  DiscoveryModelFamily,
+  DiscoveryPricing,
+  DiscoveryTaxonomyId,
+} from './taxonomy.js';
 
 export type BestAiSlug =
   | 'finance'
@@ -12,6 +21,124 @@ export type BestAiSlug =
   | 'free'
   | 'enterprise';
 
+export type TrustCertificationTier = 'platinum' | 'gold' | 'silver' | 'bronze' | 'unrated';
+
+export type InstallMethod = 'api_key' | 'oauth' | 'docker' | 'github' | 'marketplace' | 'sdk';
+
+export type RoutingPreference =
+  | 'fixed_provider'
+  | 'automatic'
+  | 'lowest_cost'
+  | 'lowest_latency'
+  | 'highest_quality'
+  | 'local_only'
+  | 'compliance_based';
+
+export type ToolActionId =
+  | 'install'
+  | 'connect'
+  | 'add_to_workflow'
+  | 'add_as_agent_skill'
+  | 'compare'
+  | 'benchmark'
+  | 'save_to_collection'
+  | 'request_approval'
+  | 'open_playground'
+  | 'configure_routing';
+
+export interface ToolGeneralInfo {
+  logoUrl?: string;
+  website?: string;
+  developer: string;
+  country?: string;
+  launchDate?: string;
+}
+
+export interface ToolRatingsBreakdown {
+  accuracy: number;
+  easeOfUse: number;
+  speed: number;
+  reliability: number;
+  documentation: number;
+  support: number;
+}
+
+export interface ToolRatings {
+  user: number;
+  enterprise: number;
+  expert: number;
+  breakdown: ToolRatingsBreakdown;
+  reviewCount: number;
+}
+
+export interface AiTrustScoreBreakdown {
+  security: number;
+  privacy: number;
+  compliance: number;
+  reliability: number;
+  communityRating: number;
+  benchmarkResults: number;
+  maintenanceFrequency: number;
+}
+
+export interface AiTrustScore {
+  score: number;
+  tier: TrustCertificationTier;
+  label: string;
+  breakdown: AiTrustScoreBreakdown;
+}
+
+export interface BenchmarkMetric {
+  key:
+    | 'reasoning'
+    | 'coding'
+    | 'mathematics'
+    | 'translation'
+    | 'rag'
+    | 'vision'
+    | 'long_context'
+    | 'cost_efficiency'
+    | 'latency'
+    | 'tool_calling';
+  label: string;
+  score: number;
+  unit?: string;
+  higherIsBetter: boolean;
+}
+
+export interface BenchmarkSnapshot {
+  toolId: string;
+  measuredAt: string;
+  metrics: BenchmarkMetric[];
+  overall: number;
+}
+
+export interface ToolProfileExtras {
+  capabilities: DiscoveryCapability[];
+  supportedModels: DiscoveryModelFamily[];
+  deployment: DiscoveryDeployment[];
+  pricing: DiscoveryPricing[];
+  integrations: DiscoveryIntegration[];
+  compliance: DiscoveryCompliance[];
+  taxonomy: DiscoveryTaxonomyId[];
+  subcategories: string[];
+  contextWindow?: number;
+  languages: string[];
+  apiAvailable: boolean;
+  localDeployable: boolean;
+  openSource: boolean;
+  latencyMs?: number;
+  installMethods: InstallMethod[];
+  general: ToolGeneralInfo;
+  ratings?: ToolRatings;
+  trust?: AiTrustScore;
+  latestBenchmark?: BenchmarkSnapshot;
+}
+
+/**
+ * Catalog tool — marketplace Application mapped + optional external AI products.
+ * Retains marketplace fields for Store/Trust/Wallet integration.
+ */
 export interface Tool {
   id: string;
   slug: string;
@@ -44,6 +171,10 @@ export interface Tool {
   workspaceRoute?: string;
   storeRoute: string;
   presenceAuditRoute?: string;
+  /** Extended ecosystem profile (Discovery Hub v2). */
+  profile: ToolProfileExtras;
+  /** Source: marketplace app vs external catalog entry. */
+  source: 'marketplace' | 'external';
 }
 
 export interface Category {
@@ -68,7 +199,19 @@ export interface Collection {
   slug: string;
   name: string;
   description: string;
-  audience: 'startups' | 'enterprise' | 'developers' | 'students' | 'government' | 'healthcare' | 'finance' | 'procurement' | 'hr' | 'general';
+  audience:
+    | 'startups'
+    | 'enterprise'
+    | 'developers'
+    | 'students'
+    | 'government'
+    | 'healthcare'
+    | 'finance'
+    | 'procurement'
+    | 'hr'
+    | 'general'
+    | 'research'
+    | 'marketing';
   toolIds: string[];
   featured: boolean;
   editable: boolean;
@@ -77,6 +220,7 @@ export interface Collection {
 export interface Comparison {
   toolAId: string;
   toolBId: string;
+  toolIds?: string[];
   slug: string;
   title: string;
   summary: string;
@@ -88,7 +232,8 @@ export interface ComparisonDimension {
   label: string;
   valueA: string | number | boolean;
   valueB: string | number | boolean;
-  winner?: 'a' | 'b' | 'tie';
+  values?: Array<string | number | boolean>;
+  winner?: 'a' | 'b' | 'tie' | number;
 }
 
 export interface Recommendation {
@@ -106,7 +251,15 @@ export interface DiscoveryDeal {
   appIds: string[];
   validUntil: string;
   code?: string;
-  dealType: 'lifetime' | 'discount' | 'bundle' | 'enterprise' | 'limited_time' | 'campaign';
+  dealType:
+    | 'lifetime'
+    | 'discount'
+    | 'bundle'
+    | 'enterprise'
+    | 'limited_time'
+    | 'campaign'
+    | 'student'
+    | 'startup_credits';
   originalPrice?: number;
   dealPrice?: number;
   savingsPercent: number;
@@ -155,8 +308,8 @@ export interface ResearchArticle {
 }
 
 export interface AnalyticsEvent {
-  type: 'view' | 'search' | 'install' | 'click' | 'conversion';
-  resourceType: 'tool' | 'category' | 'collection' | 'deal' | 'comparison' | 'page';
+  type: 'view' | 'search' | 'install' | 'click' | 'conversion' | 'connect' | 'workflow_add' | 'skill_add' | 'approval';
+  resourceType: 'tool' | 'category' | 'collection' | 'deal' | 'comparison' | 'page' | 'benchmark';
   resourceId: string;
   timestamp: string;
   metadata?: Record<string, unknown>;
@@ -171,9 +324,20 @@ export interface AnalyticsSummary {
   trendingScore: number;
 }
 
+export interface DiscoveryAnalyticsDashboard {
+  trending: Tool[];
+  mostInstalled: Tool[];
+  mostUsed: Tool[];
+  fastestGrowing: Tool[];
+  highestTrust: Tool[];
+  newReleases: Tool[];
+  enterpriseAdoption: Tool[];
+}
+
 export interface DiscoverySearchFilters {
   keyword?: string;
   category?: MarketplaceCategory;
+  taxonomy?: DiscoveryTaxonomyId;
   tag?: string;
   industry?: string;
   developerId?: string;
@@ -188,6 +352,48 @@ export interface DiscoverySearchFilters {
   language?: string;
   provider?: string;
   useCase?: string;
+  model?: DiscoveryModelFamily;
+  pricing?: DiscoveryPricing;
+  apiAvailable?: boolean;
+  localDeployment?: boolean;
+  compliance?: DiscoveryCompliance;
+  capability?: DiscoveryCapability;
+  deployment?: DiscoveryDeployment;
+  minContextWindow?: number;
+  minTrustScore?: number;
+}
+
+export interface ToolAction {
+  id: ToolActionId;
+  label: string;
+  href: string;
+  primary?: boolean;
+  requiresAuth?: boolean;
+  requiresEnterprise?: boolean;
+}
+
+export interface EnterpriseCatalogPolicy {
+  orgId: string;
+  approvedToolIds: string[];
+  blockedToolIds: string[];
+  requireApproval: boolean;
+  allowedTaxonomies?: DiscoveryTaxonomyId[];
+  minTrustScore?: number;
+  requiredCompliance?: DiscoveryCompliance[];
+}
+
+export interface EnterpriseCatalogReport {
+  orgId: string;
+  approvedCount: number;
+  blockedCount: number;
+  pendingCount: number;
+  inventory: Array<{
+    toolId: string;
+    name: string;
+    status: 'approved' | 'blocked' | 'pending';
+    trustScore: number;
+    usageEvents: number;
+  }>;
 }
 
 export interface DiscoveryHomeSections {
@@ -204,6 +410,8 @@ export interface DiscoveryHomeSections {
   news: NewsArticle[];
   research: ResearchArticle[];
   recommendedForYou?: Tool[];
+  highestTrust?: Tool[];
+  taxonomyHighlights?: Array<{ taxonomyId: DiscoveryTaxonomyId; tools: Tool[] }>;
 }
 
 export interface BestAiPageContent {
@@ -224,3 +432,13 @@ export interface SeoMetadata {
   canonicalPath: string;
   ogType: 'website' | 'article';
 }
+
+export type {
+  DiscoveryCapability,
+  DiscoveryCompliance,
+  DiscoveryDeployment,
+  DiscoveryIntegration,
+  DiscoveryModelFamily,
+  DiscoveryPricing,
+  DiscoveryTaxonomyId,
+};

@@ -575,9 +575,6 @@ importers:
       '@ai-pass/shared':
         specifier: workspace:*
         version: link:../shared
-      '@ai-pass/store':
-        specifier: workspace:*
-        version: link:../store
       '@ai-pass/trust-engine':
         specifier: workspace:*
         version: link:../trust-engine

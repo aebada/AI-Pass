@@ -1,10 +1,15 @@
-import type { AnalyticsEvent, AnalyticsSummary } from './types.js';
+import type { AnalyticsEvent, AnalyticsSummary, DiscoveryAnalyticsDashboard, Tool } from './types.js';
 
 export class AnalyticsService {
   private events: AnalyticsEvent[] = [];
 
   track(event: Omit<AnalyticsEvent, 'timestamp'>): void {
     this.events.push({ ...event, timestamp: new Date().toISOString() });
+  }
+
+  /** Alias used by enterprise catalog reports. */
+  summary(resourceId?: string): AnalyticsSummary {
+    return this.getSummary(resourceId);
   }
 
   getSummary(resourceId?: string): AnalyticsSummary {
@@ -42,5 +47,27 @@ export class AnalyticsService {
       .sort((a, b) => b[1] - a[1])
       .slice(0, limit)
       .map(([id]) => id);
+  }
+
+  dashboard(tools: Tool[]): DiscoveryAnalyticsDashboard {
+    const byInstalls = [...tools].sort((a, b) => b.installCount - a.installCount);
+    const byTrust = [...tools].sort((a, b) => b.trustScore - a.trustScore);
+    const byGrowth = [...tools]
+      .filter((t) => t.trending)
+      .sort((a, b) => b.installCount - a.installCount);
+    const byNew = [...tools].sort((a, b) =>
+      (b.profile.general.launchDate ?? '').localeCompare(a.profile.general.launchDate ?? ''),
+    );
+    const enterprise = tools.filter((t) => t.enterpriseReady).sort((a, b) => b.installCount - a.installCount);
+
+    return {
+      trending: byGrowth.slice(0, 8),
+      mostInstalled: byInstalls.slice(0, 8),
+      mostUsed: byInstalls.slice(0, 8),
+      fastestGrowing: byGrowth.slice(0, 8),
+      highestTrust: byTrust.slice(0, 8),
+      newReleases: byNew.slice(0, 8),
+      enterpriseAdoption: enterprise.slice(0, 8),
+    };
   }
 }

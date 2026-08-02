@@ -10,7 +10,8 @@ import { createId } from '@ai-pass/shared';
 const DEFAULT_FREE_CREDITS = 500;
 
 function readFreeCreditsFromEnv(): number {
-  const parsed = Number.parseInt(process.env.FREE_MONTHLY_CREDITS ?? '500', 10);
+  const env = (globalThis as { process?: { env?: Record<string, string | undefined> } }).process?.env;
+  const parsed = Number.parseInt(env?.FREE_MONTHLY_CREDITS ?? '500', 10);
   return Number.isFinite(parsed) && parsed > 0 ? parsed : DEFAULT_FREE_CREDITS;
 }
 
@@ -65,7 +66,7 @@ export class WalletService {
     this.balances.set(balance.userId, balance);
   }
 
-  getBalance(userId: string, monthlyBudgetUsd = 3150): WalletBalance {
+  getBalance(userId: string, _monthlyBudgetUsd = 3150): WalletBalance {
     const existing = this.balances.get(userId);
     if (existing) {
       this.maybeResetMonthlyPeriod(existing);

@@ -5,11 +5,18 @@
     "rootDir": "./src",
     "composite": true
   },
-  "include": ["src"],
+  "include": [
+    "src"
+  ],
   "references": [
-    { "path": "../shared" },
-    { "path": "../marketplace-core" },
-    { "path": "../store" },
-    { "path": "../trust-engine" }
+    {
+      "path": "../shared"
+    },
+    {
+      "path": "../marketplace-core"
+    },
+    {
+      "path": "../trust-engine"
+    }
   ]
 }
