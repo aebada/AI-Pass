@@ -1,5 +1,7 @@
 # AI Pass — System Architecture
 
+See also: [Technical Overview](./TECHNICAL-OVERVIEW.md) · [Developer Guide](./DEVELOPER-GUIDE.md) · [Docs index](./README.md)
+
 > Enterprise AI Operating System. The **runtime** is the technical foundation all modules build upon.
 
 See: [Runtime Architecture](./RUNTIME-ARCHITECTURE.md) · [Platform](./PLATFORM.md) · [AI OS](./AI-OS.md)
