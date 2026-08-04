@@ -1,8 +1,8 @@
-# AI Pass Platform — Architecture & Backlog
+# AI Pass Platform
 
-> **Enterprise AI Operating System** — one unified workspace, 25+ modular capabilities.
+> **Enterprise AI Operating System** — one unified workspace with modular capabilities.
 
-See also: **[AI Operating System (Master)](./AI-OS.md)** · [Architecture](./ARCHITECTURE.md) · [Runtime Architecture](./RUNTIME-ARCHITECTURE.md) · [API](./API.md) · [Universal Membership](./UNIVERSAL-MEMBERSHIP.md) · [Backlog](./BACKLOG.md)
+See also: **[AI Operating System](./AI-OS.md)** · [Architecture](./ARCHITECTURE.md) · [Runtime Architecture](./RUNTIME-ARCHITECTURE.md) · [API](./API.md) · [Universal Membership](./UNIVERSAL-MEMBERSHIP.md) · [Product Roadmap](./PRODUCT-ROADMAP.md)
 
 ---
 
