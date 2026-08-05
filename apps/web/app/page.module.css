@@ -17,7 +17,7 @@
   align-items: center;
   gap: 1.5rem;
   padding: 1rem var(--section-pad);
-  background: rgba(13, 17, 23, 0.85);
+  background: color-mix(in srgb, var(--bg) 85%, transparent);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
 }
@@ -238,6 +238,7 @@
 }
 
 .heroTitleAccent {
+  color: var(--accent);
   background: linear-gradient(135deg, var(--accent) 0%, #a371f7 50%, var(--accent) 100%);
   background-size: 200% auto;
   -webkit-background-clip: text;

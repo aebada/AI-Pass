@@ -26,6 +26,10 @@
   RewriteCond %{REQUEST_FILENAME}.html -f
   RewriteRule ^(.+?)/?$ $1.html [L]
 
+  # Never SPA-fallback hashed Next assets — missing files must 404 (not index.html),
+  # otherwise CDNs cache HTML as CSS/JS and break the whole site theme.
+  RewriteRule ^_next/ - [L,R=404]
+
   # Fallback SPA shell
   RewriteRule ^ /index.html [L]
 </IfModule>
