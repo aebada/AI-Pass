@@ -34,10 +34,23 @@
   RewriteRule ^ /index.html [L]
 </IfModule>
 
+# HTML must not be cached by CDN — otherwise stale shells keep pointing at poisoned CSS hashes
+<IfModule mod_headers.c>
+  <FilesMatch "\.(html|htm)$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+  </FilesMatch>
+  # During recovery: shorter CSS cache so a bad edge entry expires faster
+  <FilesMatch "\.(css)$">
+    Header set Cache-Control "public, max-age=3600, must-revalidate"
+  </FilesMatch>
+</IfModule>
+
 # Cache static assets
 <IfModule mod_expires.c>
   ExpiresActive On
-  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType text/css "access plus 1 hour"
   ExpiresByType application/javascript "access plus 1 year"
   ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType text/html "access plus 0 seconds"
 </IfModule>

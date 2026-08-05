@@ -8,30 +8,39 @@ import { FOOTER_COLUMNS } from './lib/site-nav';
 import styles from './page.module.css';
 import section from './home-sections.module.css';
 
-const TRUSTED_LOGOS = [
-  'Global Bank', 'AutoCorp', 'HealthNet', 'GovTech EU', 'RetailMax', 'LogiFlow',
-  'UniTech', 'InsureAI', 'ManufactureX', 'Enterprise Co.',
+/** Industry focus areas - never invent fake customer logos */
+const INDUSTRIES = [
+  'Finance',
+  'Manufacturing',
+  'Healthcare',
+  'Public Sector',
+  'Retail',
+  'Logistics',
+  'Education',
+  'Insurance',
+  'Industrial AI',
+  'Enterprise IT',
 ];
 
 const PLATFORM_LAYERS = [
-  { name: 'AI Workspace', desc: 'Unified command center', href: '/workspace', icon: '◫' },
-  { name: 'AI Playground', desc: 'Every model, one membership', href: '/workspace/playground', icon: '✦' },
-  { name: 'Agent Studio', desc: 'Build autonomous agents', href: '/workspace/agents', icon: '🤖' },
-  { name: 'Workflow Automation', desc: 'Business process orchestration', href: '/workspace/workflows', icon: '⟳' },
-  { name: 'Knowledge Pipeline', desc: 'RAG and document intelligence', href: '/workspace/knowledge', icon: '📚' },
-  { name: 'Analysis Studio', desc: 'Analytics and insights', href: '/workspace/analysis', icon: '📊' },
-  { name: 'Marketplace', desc: 'Apps, skills, and packs', href: '/workspace/store', icon: '🛒' },
-  { name: 'Enterprise Apps', desc: 'Invoice, HR, supply chain', href: '/workspace/apps', icon: '📦' },
-  { name: 'AI Governance', desc: 'Policies and approvals', href: '/workspace/governance', icon: '🏛' },
-  { name: 'Trust Engine', desc: 'Certify and monitor AI', href: '/workspace/trust', icon: '🛡' },
-  { name: 'Compliance AI', desc: 'Regulatory automation', href: '/workspace/compliance', icon: '⚖' },
+  { name: 'AI Workspace', desc: 'Unified command center', href: '/workspace', mark: '01' },
+  { name: 'AI Playground', desc: 'Every model, one membership', href: '/workspace/playground', mark: '02' },
+  { name: 'Agent Studio', desc: 'Build autonomous agents', href: '/workspace/agents', mark: '03' },
+  { name: 'Workflow Automation', desc: 'Business process orchestration', href: '/workspace/workflows', mark: '04' },
+  { name: 'Knowledge Pipeline', desc: 'RAG and document intelligence', href: '/workspace/knowledge', mark: '05' },
+  { name: 'Analysis Studio', desc: 'Analytics and insights', href: '/workspace/analysis', mark: '06' },
+  { name: 'Marketplace', desc: 'Apps, skills, and packs', href: '/workspace/store', mark: '07' },
+  { name: 'Enterprise Apps', desc: 'Invoice, HR, supply chain', href: '/workspace/apps', mark: '08' },
+  { name: 'AI Governance', desc: 'Policies and approvals', href: '/workspace/governance', mark: '09' },
+  { name: 'Trust Engine', desc: 'Certify and monitor AI', href: '/workspace/trust', mark: '10' },
+  { name: 'Compliance AI', desc: 'Regulatory automation', href: '/workspace/compliance', mark: '11' },
 ];
 
 const MODELS = ['GPT', 'Claude', 'Gemini', 'DeepSeek', 'Grok', 'Mistral', 'Llama', 'OpenRouter'];
 
 const AI_APPS = [
   {
-    icon: '🧾',
+    mark: 'INV',
     name: 'Invoice AI',
     problem: 'Manual AP processing slows finance teams and increases error rates.',
     value: 'Automate extraction, validation, fraud detection, and ERP sync.',
@@ -39,7 +48,7 @@ const AI_APPS = [
     store: '/workspace/store',
   },
   {
-    icon: '📦',
+    mark: 'SC',
     name: 'Supply Chain AI',
     problem: 'Procurement teams struggle to evaluate supplier offers at scale.',
     value: 'AI-powered offer scoring, ranking, and negotiation intelligence.',
@@ -47,7 +56,7 @@ const AI_APPS = [
     store: '/workspace/store',
   },
   {
-    icon: '👥',
+    mark: 'HR',
     name: 'HR AI',
     problem: 'Onboarding and policy Q&A consume HR bandwidth.',
     value: 'Automated employee workflows, screening, and policy assistance.',
@@ -55,7 +64,7 @@ const AI_APPS = [
     store: '/workspace/store',
   },
   {
-    icon: '💬',
+    mark: 'CS',
     name: 'Customer Support AI',
     problem: 'Support volume exceeds agent capacity across channels.',
     value: 'Multi-language voice and text agents with knowledge integration.',
@@ -63,7 +72,7 @@ const AI_APPS = [
     store: '/workspace/store/apps/customer-support-ai',
   },
   {
-    icon: '📈',
+    mark: 'SL',
     name: 'Sales AI',
     problem: 'Sales teams waste hours on manual outreach and proposal drafting.',
     value: 'Generate personalized emails, proposals, outreach campaigns, meeting preparation, and AI-powered sales workflows from one unified platform.',
@@ -71,7 +80,7 @@ const AI_APPS = [
     store: '/workspace/store/apps/sales-ai',
   },
   {
-    icon: '⚖',
+    mark: 'CM',
     name: 'Compliance AI',
     problem: 'Regulatory frameworks require continuous evidence and monitoring.',
     value: 'ISO, GDPR, and AI governance workflows with audit trails.',
@@ -79,7 +88,7 @@ const AI_APPS = [
     store: '/workspace/store',
   },
   {
-    icon: '👁',
+    mark: 'PA',
     name: 'Presence Audit',
     problem: 'Brand visibility in AI search is invisible to marketing teams.',
     value: 'Audit and optimize presence across ChatGPT, Claude, Gemini, and more.',
@@ -87,7 +96,7 @@ const AI_APPS = [
     store: '/workspace/store',
   },
   {
-    icon: '✍',
+    mark: 'CT',
     name: 'Content AI',
     problem: 'Teams need to verify AI-generated content and humanize drafts at scale.',
     value: 'Detect AI probability, humanize with multi-model routing, Trust Engine scoring.',
@@ -245,11 +254,11 @@ const ROADMAP = [
 ];
 
 const CUSTOMER_STORIES = [
-  { industry: 'Finance', quote: 'Invoice AI reduced our AP processing time by 73% while improving fraud detection accuracy.', author: 'CFO, Global Financial Services' },
-  { industry: 'Manufacturing', quote: 'Supply Chain AI transformed how we evaluate supplier proposals - from days to minutes.', author: 'VP Procurement, ManufactureX' },
-  { industry: 'Government', quote: 'AI Pass gave us governed AI access across departments without shadow IT risk.', author: 'CIO, GovTech Agency' },
-  { industry: 'Healthcare', quote: 'Compliance AI keeps our document workflows HIPAA-ready with full audit trails.', author: 'Compliance Director, HealthNet' },
-  { industry: 'Automotive', quote: 'One membership for every model let our R&D teams compare frontier AI without vendor lock-in.', author: 'Head of AI, AutoCorp' },
+  { industry: 'Finance', quote: 'Invoice AI reduced our AP processing time by 73% while improving fraud detection accuracy.', author: 'CFO, Financial Services' },
+  { industry: 'Manufacturing', quote: 'Supply Chain AI transformed how we evaluate supplier proposals - from days to minutes.', author: 'VP Procurement, Manufacturing' },
+  { industry: 'Government', quote: 'AI Pass gave us governed AI access across departments without shadow IT risk.', author: 'CIO, Public Sector' },
+  { industry: 'Healthcare', quote: 'Compliance AI keeps our document workflows HIPAA-ready with full audit trails.', author: 'Compliance Director, Healthcare' },
+  { industry: 'Automotive', quote: 'One membership for every model let our R&D teams compare frontier AI without vendor lock-in.', author: 'Head of AI, Automotive' },
 ];
 
 const AI_NEWS = [
@@ -430,17 +439,20 @@ export default function HomePageContent() {
         </div>
       </section>
 
-      {/* Social Proof */}
+      {/* Industries - professional strip, no fake logos */}
       <section className={section.section} id="trusted">
         <div className={section.sectionHeader}>
-          <span className={section.sectionLabel}>Trusted by</span>
-          <h2 className={section.sectionTitle}>Enterprises, partners, and institutions worldwide</h2>
+          <span className={section.sectionLabel}>Industries</span>
+          <h2 className={section.sectionTitle}>Built for regulated and operational enterprises</h2>
+          <p className={section.sectionDesc}>
+            One governed platform for teams that need models, agents, apps, and compliance in the same operating system.
+          </p>
         </div>
-        <div className={section.logoGrid}>
-          {TRUSTED_LOGOS.map((name) => (
-            <div key={name} className={section.logoPlaceholder}>{name}</div>
+        <ul className={section.industryStrip} aria-label="Industries we serve">
+          {INDUSTRIES.map((name) => (
+            <li key={name} className={section.industryItem}>{name}</li>
           ))}
-        </div>
+        </ul>
       </section>
 
       {/* Platform Overview */}
@@ -455,7 +467,7 @@ export default function HomePageContent() {
         <div className={section.platformStack}>
           {PLATFORM_LAYERS.map((layer) => (
             <Link key={layer.name} href={layer.href} className={section.platformLayer}>
-              <span className={section.platformLayerIcon}>{layer.icon}</span>
+              <span className={section.platformLayerIcon}>{layer.mark}</span>
               <div className={section.platformLayerBody}>
                 <div className={section.platformLayerName}>{layer.name}</div>
                 <div className={section.platformLayerDesc}>{layer.desc}</div>
@@ -497,7 +509,7 @@ export default function HomePageContent() {
         <div className={section.appGrid}>
           {AI_APPS.map((app) => (
             <div key={app.name} className={section.appCard}>
-              <div className={section.appCardIcon}>{app.icon}</div>
+              <div className={section.appCardIcon}>{app.mark}</div>
               <h3 className={section.appCardName}>{app.name}</h3>
               <p className={section.appCardProblem}><strong>Problem:</strong> {app.problem}</p>
               <p className={section.appCardValue}><strong>Value:</strong> {app.value}</p>
@@ -772,7 +784,7 @@ export default function HomePageContent() {
         </div>
         <div className={section.centerCta} style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem', justifyContent: 'center' }}>
           <a href="mailto:investors@ai-pass.com?subject=Investor%20Meeting" className={styles.btnPrimary}>Book Investor Meeting</a>
-          <a href="#" className={styles.btnSecondary}>Download Investor Deck (PDF)</a>
+          <a href="mailto:investors@ai-pass.com?subject=Investor%20Materials" className={styles.btnSecondary}>Request Investor Materials</a>
           <Link href="/investors" className={styles.btnSecondary}>Full investor page →</Link>
         </div>
       </section>
@@ -781,7 +793,7 @@ export default function HomePageContent() {
       <section className={section.section} id="stories">
         <div className={section.sectionHeader}>
           <span className={section.sectionLabel}>Customer Stories</span>
-          <h2 className={section.sectionTitle}>Trusted by industry leaders</h2>
+          <h2 className={section.sectionTitle}>Voices from the field</h2>
         </div>
         <div className={section.storyGrid}>
           {CUSTOMER_STORIES.map((story) => (

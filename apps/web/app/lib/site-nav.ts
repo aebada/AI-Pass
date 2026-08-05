@@ -44,8 +44,6 @@ export const SITE_NAV: SiteNavItem[] = [
       { label: 'Content AI', href: '/workspace/apps/content-ai', description: 'AI Detector & Humanizer' },
       { label: 'Compliance AI', href: '/workspace/apps/compliance-ai', description: 'Regulatory workflow automation' },
       { label: 'Analysis Studio', href: '/workspace/analysis', description: 'Enterprise analytics and reports' },
-      { label: 'Agentra', href: '#', description: 'Multi-agent orchestration - coming soon' },
-      { label: 'Findora', href: '#', description: 'Enterprise search - coming soon' },
       { label: 'Browse All Apps', href: '/workspace/apps', description: 'Full application catalog' },
     ],
   },
@@ -60,8 +58,8 @@ export const SITE_NAV: SiteNavItem[] = [
       { label: 'Automation Packs', href: '/workspace/marketplace', description: 'Pre-built workflow templates' },
       { label: 'Industry Solutions', href: '/discover/categories', description: 'Vertical AI collections' },
       { label: 'Enterprise Marketplace', href: '/workspace/marketplace', description: 'Governed app distribution' },
-      { label: 'Publish an App', href: '#', description: 'List your AI application' },
-      { label: 'Developer Portal', href: '#', description: 'SDK, API, and revenue tools' },
+      { label: 'Publish an App', href: '/workspace/store/submit', description: 'List your AI application' },
+      { label: 'Developer Portal', href: '/workspace/store/developer', description: 'SDK, API, and revenue tools' },
       { label: 'Deals', href: '/discover/deals', description: 'Limited-time offers and bundles' },
     ],
   },
@@ -108,11 +106,11 @@ export const SITE_NAV: SiteNavItem[] = [
       { label: 'Documentation', href: DOCS_URL, description: 'Guides and platform reference', external: true },
       { label: 'API Reference', href: '/api/docs', description: 'OpenAPI specification' },
       { label: 'Research', href: '/discover/research', description: 'AI Pass research papers' },
-      { label: 'Blog', href: '#', description: 'Product updates and insights' },
+      { label: 'Blog', href: '/discover/news', description: 'Product updates and insights' },
       { label: 'AI News', href: '/discover/news', description: 'Latest AI industry news' },
-      { label: 'Case Studies', href: '#', description: 'Enterprise success stories' },
+      { label: 'Case Studies', href: '/#stories', description: 'Enterprise success stories' },
       { label: 'Customer Stories', href: '/#stories', description: 'Voices from our customers' },
-      { label: 'Whitepapers', href: '#', description: 'Enterprise AI strategy guides' },
+      { label: 'Whitepapers', href: '/investors', description: 'Enterprise AI strategy guides' },
       { label: 'Trust Layer', href: '/trust', description: 'Validate and certify AI systems' },
       { label: 'Trust Center', href: '/workspace/trust', description: 'Security and certification' },
     ],
@@ -123,10 +121,10 @@ export const SITE_NAV: SiteNavItem[] = [
     items: [
       { label: 'About', href: '/about', description: 'Our mission and platform' },
       { label: 'Vision', href: '/about#vision', description: 'The future of enterprise AI' },
-      { label: 'Leadership', href: '#', description: 'Executive team' },
-      { label: 'Careers', href: '#', description: 'Join AI Pass' },
+      { label: 'Leadership', href: '/about', description: 'Executive team' },
+      { label: 'Careers', href: '/about#contact', description: 'Join AI Pass' },
       { label: 'Investors', href: '/investors', description: 'Investment opportunity' },
-      { label: 'Partners', href: '#', description: 'Technology and channel partners' },
+      { label: 'Partners', href: '/about#contact', description: 'Technology and channel partners' },
       { label: 'Contact', href: '/about#contact', description: 'Enterprise inquiries' },
     ],
   },
@@ -140,6 +138,11 @@ export const SITE_NAV: SiteNavItem[] = [
     ],
   },
 ];
+
+/** Slimmer top nav for marketing pages (Anthropic-style density) */
+export const LANDING_NAV: SiteNavItem[] = SITE_NAV.filter((item) =>
+  ['Platform', 'Solutions', 'Trust', 'Company', 'Pricing'].includes(item.label),
+);
 
 export type FooterColumn = {
   title: string;
@@ -199,8 +202,8 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
   {
     title: 'Developers',
     links: [
-      { label: 'Developer Portal', href: '#' },
-      { label: 'Publish an App', href: '#' },
+      { label: 'Developer Portal', href: '/workspace/store/developer' },
+      { label: 'Publish an App', href: '/workspace/store/submit' },
       { label: 'API Reference', href: '/api/docs' },
       { label: 'SDK', href: DOCS_URL, external: true },
       { label: 'Marketplace Revenue', href: '/workspace/marketplace' },
@@ -212,7 +215,7 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
       { label: 'Documentation', href: DOCS_URL, external: true },
       { label: 'Research', href: '/discover/research' },
       { label: 'AI News', href: '/discover/news' },
-      { label: 'Case Studies', href: '#' },
+      { label: 'Case Studies', href: '/#stories' },
       { label: 'Trust Layer', href: '/trust' },
       { label: 'Trust Center', href: '/workspace/trust' },
       { label: 'Help Center', href: '/help' },
@@ -224,8 +227,8 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
       { label: 'About', href: '/about' },
       { label: 'Vision', href: '/about#vision' },
       { label: 'Investors', href: '/investors' },
-      { label: 'Careers', href: '#' },
-      { label: 'Partners', href: '#' },
+      { label: 'Careers', href: '/about#contact' },
+      { label: 'Partners', href: '/about#contact' },
       { label: 'Contact', href: '/about#contact' },
     ],
   },
