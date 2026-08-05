@@ -15,7 +15,7 @@ export default function PresencePage() {
     <WorkspaceLayoutClient title="Presence Audit" subtitle="AI Visibility Intelligence Platform">
       <ModuleScaffold
         title="Presence Audit"
-        description="Measure and improve how ChatGPT, Claude, Gemini, and Perplexity recommend your brand — not SEO, AI-native visibility."
+        description="Measure and improve how ChatGPT, Claude, Gemini, and Perplexity recommend your brand - not SEO, AI-native visibility."
         moduleId="presence"
         icon="👁"
         status="done"

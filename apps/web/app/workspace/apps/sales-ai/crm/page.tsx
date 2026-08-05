@@ -16,7 +16,7 @@ export default function CrmConnectionsPage() {
         {providers.map((p) => (
           <div key={p} className={styles.card}>
             <h3 className={styles.cardTitle}>{p.charAt(0).toUpperCase() + p.slice(1)}</h3>
-            <p style={{ fontSize: 13, color: 'var(--text-muted)' }}>Stub adapter — connect via CRM settings</p>
+            <p style={{ fontSize: 13, color: 'var(--text-muted)' }}>Stub adapter - connect via CRM settings</p>
             <span className={`${styles.badge} ${p === 'hubspot' ? styles.badgeActive : styles.badgeDraft}`}>
               {p === 'hubspot' ? 'Connected' : 'Available'}
             </span>
@@ -33,7 +33,7 @@ export default function CrmConnectionsPage() {
               <tr key={l.id}>
                 <td>{l.company}</td>
                 <td>{l.score}</td>
-                <td>{l.crmExternalId ?? '—'}</td>
+                <td>{l.crmExternalId ?? '-'}</td>
                 <td>
                   <button
                     className={styles.actionBtn}

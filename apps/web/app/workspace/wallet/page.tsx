@@ -53,7 +53,7 @@ export default function WalletPage() {
   return (
     <WorkspaceLayoutClient
       title="AI Wallet"
-      subtitle="One wallet for every model — credits, spend, and execution history"
+      subtitle="One wallet for every model - credits, spend, and execution history"
     >
       <div className={styles.grid}>
         <WalletCredits

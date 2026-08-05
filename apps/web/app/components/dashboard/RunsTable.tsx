@@ -45,7 +45,7 @@ export function RunsTable({ runs, subtitle }: Props) {
       <div className={styles.header}>
         <div>
           <h2 className={styles.title}>Active &amp; recent runs</h2>
-          <p className={styles.subtitle}>{subtitle ?? (runs.length === 0 ? 'No runs yet — try the Playground' : 'Your recent agent runs')}</p>
+          <p className={styles.subtitle}>{subtitle ?? (runs.length === 0 ? 'No runs yet - try the Playground' : 'Your recent agent runs')}</p>
         </div>
         <div className={styles.tabs}>
           {TABS.map((t) => (

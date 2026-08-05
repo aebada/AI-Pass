@@ -27,7 +27,7 @@ export default function AuditResultsPage() {
               <div key={r.id} className={styles.listItem}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 6 }}>
                   <span style={{ fontWeight: 600 }}>
-                    {r.companyMentioned ? `Mentioned #${r.rankingPosition ?? '—'}` : 'Not mentioned'}
+                    {r.companyMentioned ? `Mentioned #${r.rankingPosition ?? '-'}` : 'Not mentioned'}
                   </span>
                   <span style={{ fontSize: 11, color: 'var(--ai-text-muted)' }}>{r.creditsUsed ?? 0} credits</span>
                 </div>

@@ -13,7 +13,7 @@ export default function TrustDashboardPage() {
   return (
     <WorkspaceLayoutClient
       title="Trust Center"
-      subtitle="Validate, certify, and monitor AI systems — TÜV + ISO + SOC for AI"
+      subtitle="Validate, certify, and monitor AI systems - TÜV + ISO + SOC for AI"
     >
       <div className={styles.dashboard}>
         <div className={styles.actions}>
@@ -60,7 +60,7 @@ export default function TrustDashboardPage() {
                 </div>
                 <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
                   {cert && <Badge variant="success">{cert.level}</Badge>}
-                  <span>{cert?.scorecard.overall ?? '—'}</span>
+                  <span>{cert?.scorecard.overall ?? '-'}</span>
                   <Link href={`/workspace/trust/systems/${sys.id}`}><Button variant="secondary" size="sm">Details</Button></Link>
                 </div>
               </div>
@@ -86,7 +86,7 @@ export default function TrustDashboardPage() {
           <h2 className={styles.sectionTitle}>Recent monitoring alerts</h2>
           {dashboard.recentAlerts.map((e) => (
             <div key={e.id} className={styles.row}>
-              <span>{e.type.replace('_', ' ')} — {e.systemId}</span>
+              <span>{e.type.replace('_', ' ')} - {e.systemId}</span>
               <Badge variant={e.severity === 'critical' ? 'danger' : 'warning'}>{e.severity}</Badge>
             </div>
           ))}

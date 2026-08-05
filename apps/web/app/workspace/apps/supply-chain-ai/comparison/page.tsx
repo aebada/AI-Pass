@@ -91,8 +91,8 @@ export default function ComparisonPage() {
                     <td style={{ color: r.score < 50 ? 'var(--error)' : r.score < 70 ? 'var(--warning)' : 'var(--success)' }}>
                       {r.score < 50 ? 'High' : r.score < 70 ? 'Medium' : 'Low'}
                     </td>
-                    <td>{r.ruleResults.find((rr) => rr.category === 'certs')?.outcome ?? '—'}</td>
-                    <td>{r.ruleResults.find((rr) => rr.category === 'policy')?.outcome ?? '—'}</td>
+                    <td>{r.ruleResults.find((rr) => rr.category === 'certs')?.outcome ?? '-'}</td>
+                    <td>{r.ruleResults.find((rr) => rr.category === 'policy')?.outcome ?? '-'}</td>
                   </tr>
                 ))}
               </tbody>

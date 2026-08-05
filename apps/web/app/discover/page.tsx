@@ -5,8 +5,8 @@ import Link from 'next/link';
 import styles from './discover.module.css';
 
 export const metadata: Metadata = {
-  title: 'AI Pass Discovery — Find, Compare & Install AI Tools',
-  description: 'The front door to AI Pass — discover trending AI tools, compare alternatives, and install in one click.',
+  title: 'AI Pass Discovery - Find, Compare & Install AI Tools',
+  description: 'The front door to AI Pass - discover trending AI tools, compare alternatives, and install in one click.',
 };
 
 export default function DiscoverHomePage() {

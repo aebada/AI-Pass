@@ -58,14 +58,14 @@ export default function SystemDetailClient() {
           <h3 style={{ fontSize: 14, fontWeight: 600, marginBottom: 12 }}>Associated risks ({risks.length})</h3>
           {risks.map((r) => (
             <Card key={r.id} padding="sm" style={{ marginBottom: 6, fontSize: 13 }}>
-              <strong>{r.title}</strong> — <RiskBadge level={r.impact} /> · {r.status}
+              <strong>{r.title}</strong> - <RiskBadge level={r.impact} /> · {r.status}
             </Card>
           ))}
 
           <h3 style={{ fontSize: 14, fontWeight: 600, margin: '24px 0 12px' }}>Monitoring events</h3>
           {events.length === 0 ? <p style={{ fontSize: 13, color: workspaceTokens.colors.textMuted }}>No events recorded.</p> : events.map((e) => (
             <Card key={e.id} padding="sm" style={{ marginBottom: 6, fontSize: 12 }}>
-              {e.title} — <RiskBadge level={e.severity} />
+              {e.title} - <RiskBadge level={e.severity} />
             </Card>
           ))}
         </GovernanceShell>

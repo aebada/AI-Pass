@@ -32,7 +32,7 @@ export default function WorkflowsPage() {
             marginBottom: 24,
           }}
         >
-          <p style={{ fontSize: 14, margin: 0 }}>Visual workflow canvas — drag steps, connect triggers</p>
+          <p style={{ fontSize: 14, margin: 0 }}>Visual workflow canvas - drag steps, connect triggers</p>
           <p style={{ fontSize: 12, margin: '8px 0 0' }}>Scaffold ready for Builder Studio integration</p>
         </div>
         {workflows.map((w) => (

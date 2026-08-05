@@ -16,7 +16,7 @@ export default function DiscoverLayout({ children }: { children: React.ReactNode
             </Link>
           </h1>
           <p className={styles.heroSub}>
-            The front door to AI Pass — intelligent discovery, SEO rankings, deals, and one-click install.
+            The front door to AI Pass - intelligent discovery, SEO rankings, deals, and one-click install.
           </p>
         </header>
         <DiscoverSubNav />
