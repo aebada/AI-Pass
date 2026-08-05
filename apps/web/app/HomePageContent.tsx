@@ -8,11 +8,6 @@ import { FOOTER_COLUMNS } from './lib/site-nav';
 import styles from './page.module.css';
 import section from './home-sections.module.css';
 
-const TRUSTED_LOGOS = [
-  'Global Bank', 'AutoCorp', 'HealthNet', 'GovTech EU', 'RetailMax', 'LogiFlow',
-  'UniTech', 'InsureAI', 'ManufactureX', 'Enterprise Co.',
-];
-
 const PLATFORM_LAYERS = [
   { name: 'AI Workspace', desc: 'Unified command center', href: '/workspace', icon: '◫' },
   { name: 'AI Playground', desc: 'Every model, one membership', href: '/workspace/playground', icon: '✦' },
@@ -153,6 +148,7 @@ const ARCH_LAYERS = [
   'Trust & Compliance',
 ];
 
+/** Real model providers — used for integrations strip (never invent fake customer logos) */
 const PROVIDERS = ['OpenAI', 'Anthropic', 'Google', 'DeepSeek', 'xAI', 'Mistral', 'Meta', 'OpenRouter'];
 
 const ENTERPRISE_BADGES = [
@@ -430,16 +426,23 @@ export default function HomePageContent() {
         </div>
       </section>
 
-      {/* Social Proof */}
-      <section className={section.section} id="trusted">
-        <div className={section.sectionHeader}>
-          <span className={section.sectionLabel}>Trusted by</span>
-          <h2 className={section.sectionTitle}>Enterprises, partners, and institutions worldwide</h2>
-        </div>
-        <div className={section.logoGrid}>
-          {TRUSTED_LOGOS.map((name) => (
-            <div key={name} className={section.logoPlaceholder}>{name}</div>
-          ))}
+      {/* Integrations — honest provider strip, no fake customer logos */}
+      <section className={`${section.section} ${section.trustedSection}`} id="trusted" aria-labelledby="trusted-heading">
+        <div className={section.container}>
+          <div className={section.trustedHeader}>
+            <span className={section.sectionLabel}>Integrations</span>
+            <h2 id="trusted-heading" className={section.sectionTitle}>
+              Built on the technologies enterprises trust
+            </h2>
+            <p className={section.sectionDesc}>
+              Route work across leading model providers from one membership, wallet, and governance layer.
+            </p>
+          </div>
+          <ul className={section.providerStrip} aria-label="Integrated AI providers">
+            {PROVIDERS.map((name) => (
+              <li key={name} className={section.providerWordmark}>{name}</li>
+            ))}
+          </ul>
         </div>
       </section>
 
@@ -781,7 +784,7 @@ export default function HomePageContent() {
       <section className={section.section} id="stories">
         <div className={section.sectionHeader}>
           <span className={section.sectionLabel}>Customer Stories</span>
-          <h2 className={section.sectionTitle}>Trusted by industry leaders</h2>
+          <h2 className={section.sectionTitle}>Outcomes across industries</h2>
         </div>
         <div className={section.storyGrid}>
           {CUSTOMER_STORIES.map((story) => (

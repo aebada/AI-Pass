@@ -64,37 +64,68 @@
   margin: 0 auto 2.25rem;
 }
 
-/* ── Trusted by ── */
-.logoGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 1.25rem;
-  max-width: 960px;
-  margin: 0 auto;
+/* ── Integrations / provider strip (no fake logos) ── */
+.trustedSection {
+  border-block: 1px solid var(--border);
+  padding-block: clamp(2.5rem, 5vw, 3.5rem);
 }
 
-.logoPlaceholder {
+.trustedHeader {
+  text-align: center;
+  margin-bottom: 1.75rem;
+}
+
+.trustedHeader .sectionDesc {
+  margin-bottom: 0;
+}
+
+.providerStrip {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem 0.5rem;
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+.providerWordmark {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 56px;
-  padding: 0 1.25rem;
-  border-radius: 10px;
-  background: var(--bg-elevated);
-  border: 1px solid var(--border);
-  font-size: 0.8125rem;
+  min-height: 2.75rem;
+  padding: 0.55rem 1.15rem;
+  font-size: 0.9375rem;
   font-weight: 600;
+  letter-spacing: -0.01em;
   color: var(--text-muted);
-  filter: grayscale(1);
-  opacity: 0.65;
-  transition: opacity 0.25s, filter 0.25s;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  transition: color 0.2s ease;
 }
 
-.logoPlaceholder:hover {
-  opacity: 0.9;
-  filter: grayscale(0.5);
+.providerWordmark:hover {
+  color: var(--text);
+}
+
+@media (min-width: 720px) {
+  .providerStrip {
+    gap: 0;
+  }
+
+  .providerWordmark {
+    padding: 0.65rem 1.35rem;
+  }
+
+  .providerWordmark:not(:last-child) {
+    border-right: 1px solid var(--border);
+  }
+}
+
+/* legacy aliases — kept empty so older builds do not break */
+.logoGrid,
+.logoPlaceholder {
+  display: none;
 }
 
 /* ── Platform stack ── */
