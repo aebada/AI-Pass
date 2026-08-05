@@ -65,7 +65,7 @@ export class WalletService {
     this.balances.set(balance.userId, balance);
   }
 
-  getBalance(userId: string, monthlyBudgetUsd = 3150): WalletBalance {
+  getBalance(userId: string, _monthlyBudgetUsd = 3150): WalletBalance {
     const existing = this.balances.get(userId);
     if (existing) {
       this.maybeResetMonthlyPeriod(existing);

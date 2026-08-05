@@ -27,7 +27,12 @@ export default async function ToolDetailPage({ params }: { params: Promise<{ slu
   }
 
   const reviews = hub.marketplace.reviews.listForResource(tool.id);
-  const similar = hub.recommendations.resolveTools(hub.recommendations.similar(tool.id, 3));
+  let similar: ReturnType<typeof hub.recommendations.resolveTools> = [];
+  try {
+    similar = hub.recommendations.resolveTools(hub.recommendations.similar(tool.id, 3));
+  } catch {
+    similar = [];
+  }
 
   hub.analytics.track({ type: 'view', resourceType: 'tool', resourceId: tool.id });
 

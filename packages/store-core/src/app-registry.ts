@@ -20,6 +20,17 @@ export class AppRegistry {
     return this.delegate.list();
   }
 
+  /** Apps highlighted for the store home / platform module snapshot. */
+  featured() {
+    return this.list()
+      .filter((a) => a.certified || a.enterpriseReady || a.featured)
+      .slice(0, 10);
+  }
+
+  trending() {
+    return [...this.list()].sort((a, b) => b.installCount - a.installCount).slice(0, 10);
+  }
+
   update(...args: Parameters<MarketplaceAppRegistry['update']>) {
     return this.delegate.update(...args);
   }
