@@ -10,6 +10,16 @@
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border);
+  transition: padding 0.2s ease;
+}
+
+.navCompact {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.navCompact .logoImg {
+  height: 32px;
 }
 
 [data-theme='light'] .nav {
@@ -38,7 +48,7 @@
   width: 28px;
   height: 28px;
   border-radius: 7px;
-  background: linear-gradient(135deg, var(--accent) 0%, #a371f7 100%);
+  background: var(--color-accent);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -404,35 +414,48 @@
 }
 
 .btnPrimary,
-.btnGhost {
+.btnGhost,
+.btnText {
   display: inline-flex;
   align-items: center;
+  gap: 0.5rem;
   padding: 0.5rem 1rem;
   border-radius: 8px;
   font-size: 0.875rem;
   font-weight: 600;
   text-decoration: none;
   white-space: nowrap;
-  transition: transform 0.15s, box-shadow 0.2s;
+  transition: transform 0.15s, background 0.2s, color 0.15s, border-color 0.15s;
 }
 
 .btnPrimary {
-  background: linear-gradient(135deg, var(--accent-muted) 0%, var(--accent) 100%);
+  background: var(--color-accent);
   color: #fff;
-  box-shadow: 0 0 16px rgba(88, 166, 255, 0.2);
+  border: 1px solid transparent;
 }
 
 .btnPrimary:hover {
-  transform: translateY(-1px);
+  background: var(--accent-muted);
 }
 
 .btnGhost {
   background: transparent;
   color: var(--text-muted);
-  border: 1px solid transparent;
+  border: 1px solid var(--border);
 }
 
 .btnGhost:hover {
+  color: var(--text);
+}
+
+.btnText {
+  background: transparent;
+  color: var(--text-muted);
+  border: 1px solid transparent;
+  padding: 0.5rem 0.75rem;
+}
+
+.btnText:hover {
   color: var(--text);
 }
 

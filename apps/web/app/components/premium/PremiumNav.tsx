@@ -6,6 +6,7 @@ import { signOut as nextAuthSignOut } from 'next-auth/react';
 import { useEffect, useRef, useState } from 'react';
 import { Badge } from '@ai-pass/ui';
 import { BrandLogoLink } from '../BrandLogoLink';
+import { IconBell, IconMoon, IconSun } from '../icons/Icons';
 import { SITE_NAV, type SiteNavItem } from '../../lib/site-nav';
 import { useApp } from './AppProviders';
 import styles from './premium-nav.module.css';
@@ -74,6 +75,7 @@ export function PremiumNav({ variant = 'business' }: { variant?: 'landing' | 'bu
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
+  const [scrolled, setScrolled] = useState(false);
   const notifRef = useRef<HTMLDivElement>(null);
   const userRef = useRef<HTMLDivElement>(null);
   const navRef = useRef<HTMLElement>(null);
@@ -86,6 +88,13 @@ export function PremiumNav({ variant = 'business' }: { variant?: 'landing' | 'bu
     }
     document.addEventListener('mousedown', handleClick);
     return () => document.removeEventListener('mousedown', handleClick);
+  }, []);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 80);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
   useEffect(() => {
@@ -130,8 +139,13 @@ export function PremiumNav({ variant = 'business' }: { variant?: 'landing' | 'bu
   };
 
   return (
-    <nav className={styles.nav} ref={navRef}>
-      <BrandLogoLink className={styles.logo} logoClassName={styles.logoImg} height={40} onClick={closeMobile} />
+    <nav className={`${styles.nav} ${scrolled ? styles.navCompact : ''}`} ref={navRef}>
+      <BrandLogoLink
+        className={styles.logo}
+        logoClassName={styles.logoImg}
+        height={scrolled ? 32 : 40}
+        onClick={closeMobile}
+      />
 
       <div className={styles.navLinks}>
         {SITE_NAV.map((item) =>
@@ -202,7 +216,7 @@ export function PremiumNav({ variant = 'business' }: { variant?: 'landing' | 'bu
           title={`Switch to ${resolvedTheme === 'dark' ? 'light' : 'dark'} mode`}
           aria-label="Toggle theme"
         >
-          {resolvedTheme === 'dark' ? '☀️' : '🌙'}
+          {resolvedTheme === 'dark' ? <IconSun size={18} /> : <IconMoon size={18} />}
         </button>
 
         {variant === 'business' && (
@@ -214,7 +228,7 @@ export function PremiumNav({ variant = 'business' }: { variant?: 'landing' | 'bu
                 onClick={() => setNotifOpen((o) => !o)}
                 aria-label="Notifications"
               >
-                🔔
+                <IconBell size={18} />
                 {unreadCount > 0 && <span className={styles.badgeCount}>{unreadCount}</span>}
               </button>
               {notifOpen && (
@@ -278,7 +292,7 @@ export function PremiumNav({ variant = 'business' }: { variant?: 'landing' | 'bu
             </>
           ) : (
             <>
-              <Link href="/login" className={`${styles.btnGhost} ${styles.desktopOnly}`}>
+              <Link href="/login" className={`${styles.btnText} ${styles.desktopOnly}`}>
                 Sign In
               </Link>
               <Link href="/login" className={`${styles.btnPrimary} ${styles.desktopOnly}`}>
@@ -410,13 +424,21 @@ export function PremiumNav({ variant = 'business' }: { variant?: 'landing' | 'bu
               className={styles.mobileThemeBtn}
               onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
             >
-              {resolvedTheme === 'dark' ? '☀️ Light mode' : '🌙 Dark mode'}
+              {resolvedTheme === 'dark' ? (
+                <>
+                  <IconSun size={16} /> Light mode
+                </>
+              ) : (
+                <>
+                  <IconMoon size={16} /> Dark mode
+                </>
+              )}
             </button>
             <Link href={user ? '/workspace' : '/login'} className={styles.btnPrimary} onClick={closeMobile}>
               {user ? 'Go to Workspace' : 'Start Free'}
             </Link>
             {!user && (
-              <Link href="/login" className={styles.btnGhost} onClick={closeMobile}>
+              <Link href="/login" className={styles.btnText} onClick={closeMobile}>
                 Sign In
               </Link>
             )}

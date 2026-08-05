@@ -1,20 +1,31 @@
-/* recover-build: force new CSS content hash after CDN poison */
+/* AI-Pass design tokens — redesign 2026-08 */
 :root,
 [data-theme='dark'] {
   --bg: #0d1117;
-  --recover-cache-bust: 2026-08-05-r6-restore-lastweek;
   --bg-elevated: #161b22;
   --bg-hover: #21262d;
+  --bg-soft: #11161d;
   --border: #30363d;
   --text: #e6edf3;
   --text-muted: #8b949e;
-  --accent: #58a6ff;
-  --accent-muted: #1f6feb;
+  --color-accent: #3b82f6;
+  --accent: var(--color-accent);
+  --accent-muted: #2563eb;
   --success: #3fb950;
   --warning: #d29922;
   --error: #f85149;
-  --font-sans: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-mono: ui-monospace, 'Cascadia Code', 'SF Mono', Menlo, monospace;
+  --font-display: 'Syne', 'IBM Plex Sans', sans-serif;
+  --font-sans: 'IBM Plex Sans', 'Segoe UI', sans-serif;
+  --font-mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  --space: 8px;
+  --text-xs: 0.875rem; /* 14 */
+  --text-sm: 1rem; /* 16 */
+  --text-md: 1.25rem; /* 20 */
+  --text-lg: 1.75rem; /* 28 */
+  --text-xl: 2.5rem; /* 40 */
+  --text-2xl: 3.5rem; /* 56 */
+  --text-3xl: 4.5rem; /* 72 */
+  --section-y: clamp(96px, 10vw, 128px);
   --ai-bg: var(--bg);
   --ai-bg-elevated: var(--bg-elevated);
   --ai-bg-hover: var(--bg-hover);
@@ -22,18 +33,21 @@
   --ai-text: var(--text);
   --ai-text-muted: var(--text-muted);
   --ai-accent: var(--accent);
+  --recover-cache-bust: 2026-08-05-redesign-r1;
   color-scheme: dark;
 }
 
 [data-theme='light'] {
-  --bg: #f6f8fa;
+  --bg: #f7f8fa;
   --bg-elevated: #ffffff;
-  --bg-hover: #eaeef2;
+  --bg-hover: #eef1f5;
+  --bg-soft: #eef2f7;
   --border: #d0d7de;
   --text: #1f2328;
   --text-muted: #656d76;
-  --accent: #0969da;
-  --accent-muted: #0550ae;
+  --color-accent: #2563eb;
+  --accent: var(--color-accent);
+  --accent-muted: #1d4ed8;
   --success: #1a7f37;
   --warning: #9a6700;
   --error: #cf222e;
@@ -65,12 +79,24 @@ body {
   color: #e6edf3;
   color: var(--text);
   font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 body {
   display: block;
+}
+
+h1,
+h2,
+h3,
+.display {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
 }
 
 a {

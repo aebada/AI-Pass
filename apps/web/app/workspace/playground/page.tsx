@@ -94,20 +94,42 @@ async function streamChatApi(
   return full;
 }
 
+const EXAMPLE_PROMPTS = [
+  { label: 'Draft a compliance memo', text: 'Draft a one-page compliance memo summarizing GDPR processor obligations for a SaaS vendor.', href: '/workspace/apps/compliance-ai' },
+  { label: 'Extract invoice line items', text: 'Extract vendor name, totals, tax, and line items from this invoice description: Widget Co, Inv-2044, 3x SKU-A at $120, tax 19%.', href: '/workspace/apps/invoice-ai' },
+  { label: 'Summarize a contract', text: 'Summarize the three risks in this vendor contract and suggest mitigation language.', href: '/workspace/apps' },
+  { label: 'Supplier offer scoring', text: 'Score these three supplier offers on price, lead time, and risk, then recommend one.', href: '/workspace/apps/supply-chain-ai' },
+  { label: 'Support reply draft', text: 'Write a calm customer support reply for a delayed shipment with a clear next step.', href: '/workspace/apps/customer-support-ai' },
+  { label: 'Sales outreach', text: 'Write a short outreach email for a finance leader evaluating multi-model AI workspaces.', href: '/workspace/apps/sales-ai' },
+];
+
+const DEMO_COMPARE_PROMPT = EXAMPLE_PROMPTS[2].text;
+
+const DEMO_COMPARE_RESULTS: Record<string, string> = {
+  'gpt-4o-mini':
+    'Risks: unlimited liability, vague IP assignment, and missing breach notice windows. Suggest capping liability, clarifying work-product ownership, and a 72-hour notice clause.',
+  'gemini-flash':
+    'Watch for audit rights asymmetry, subcontracting without consent, and silent renewal. Add reciprocal audit language, approval gates, and opt-out before auto-renewal.',
+};
+
+const MODEL_LOGO_ROW = ['GPT', 'Claude', 'Gemini', 'DeepSeek', 'Grok', 'Mistral', 'Llama'];
+
 function PlaygroundContent() {
   const { data: session, status } = useSession();
   const searchParams = useSearchParams();
-  const [tab, setTab] = useState<Tab>('chat');
+  const [tab, setTab] = useState<Tab>('compare');
   const [selectedModel, setSelectedModel] = useState('gpt-4o-mini');
   const [compareModels, setCompareModels] = useState<string[]>(['gpt-4o-mini', 'gemini-flash']);
-  const [input, setInput] = useState('');
+  const [input, setInput] = useState(DEMO_COMPARE_PROMPT);
   const [response, setResponse] = useState('');
-  const [compareResults, setCompareResults] = useState<Record<string, string>>({});
+  const [compareResults, setCompareResults] = useState<Record<string, string>>(DEMO_COMPARE_RESULTS);
   const [loading, setLoading] = useState(false);
   const [search, setSearch] = useState('');
   const [platform, setPlatform] = useState<PlatformState | null>(null);
   const [toast, setToast] = useState<string | null>(null);
   const [runtimeOutput, setRuntimeOutput] = useState('');
+  const [prefs, setPrefs] = useState<Record<string, 'up' | 'down' | null>>({});
+  const [limitHit, setLimitHit] = useState(false);
 
   const isAuthenticated = status === 'authenticated' && !!session?.user;
 
@@ -178,11 +200,14 @@ function PlaygroundContent() {
     if (!input.trim() || !isAuthenticated) return;
     setLoading(true);
     setResponse('');
+    setLimitHit(false);
     try {
       await streamChatApi(input, selectedModel, setResponse);
       await refreshPlatform();
     } catch (err) {
-      setResponse(err instanceof Error ? err.message : 'Request failed');
+      const message = err instanceof Error ? err.message : 'Request failed';
+      if (/limit|quota|429/i.test(message)) setLimitHit(true);
+      setResponse(message);
     } finally {
       setLoading(false);
     }
@@ -288,7 +313,7 @@ function PlaygroundContent() {
   return (
     <WorkspaceLayoutClient
       title="AI Playground"
-      subtitle="One membership - chat any model, compare responses, run benchmarks"
+      subtitle="Compare models in one membership"
     >
       {toast && (
         <div className={styles.toast} role="status">
@@ -304,14 +329,22 @@ function PlaygroundContent() {
           {platform?.creditsRemaining ?? '-'} / {platform?.creditsTotal ?? 500} credits
         </span>
         <span className={styles.tierBadge}>{platform?.tier ?? 'free'} plan</span>
-        {platform?.dailyRequestLimit != null && (
+        {limitHit && platform?.dailyRequestLimit != null && (
           <span className={styles.requestsBadge}>
-            {platform.requestsToday} / {platform.dailyRequestLimit} requests today
+            Daily limit reached ({platform.requestsToday}/{platform.dailyRequestLimit})
           </span>
         )}
         <Link href="/workspace/membership" className={styles.upgradeLink}>
           Upgrade
         </Link>
+      </div>
+
+      <div className={styles.modelLogoRow} aria-label="Available model families">
+        {MODEL_LOGO_ROW.map((name) => (
+          <span key={name} className={styles.modelLogoChip}>
+            {name}
+          </span>
+        ))}
       </div>
 
       <div className={styles.tabs}>
@@ -323,6 +356,23 @@ function PlaygroundContent() {
             onClick={() => setTab(t)}
           >
             {t === 'chat' ? 'Chat' : t === 'compare' ? 'Compare' : t === 'benchmark' ? 'Benchmark' : 'Plan & Execute'}
+          </button>
+        ))}
+      </div>
+
+      <div className={styles.exampleRow}>
+        {EXAMPLE_PROMPTS.map((example) => (
+          <button
+            key={example.label}
+            type="button"
+            className={styles.exampleChip}
+            onClick={() => {
+              setInput(example.text);
+              setTab('compare');
+            }}
+            title={`Opens related workflow: ${example.href}`}
+          >
+            {example.label}
           </button>
         ))}
       </div>
@@ -423,6 +473,27 @@ function PlaygroundContent() {
                 <div key={id} className={styles.compareCard}>
                   <h4>{MODEL_CATALOG.find((m) => m.id === id)?.displayName ?? id}</h4>
                   <p>{text}</p>
+                  {tab === 'compare' && (
+                    <div className={styles.prefRow}>
+                      <span>Which was better?</span>
+                      <button
+                        type="button"
+                        className={`${styles.prefBtn} ${prefs[id] === 'up' ? styles.prefBtnActive : ''}`}
+                        aria-label={`Mark ${id} better`}
+                        onClick={() => setPrefs((p) => ({ ...p, [id]: p[id] === 'up' ? null : 'up' }))}
+                      >
+                        Better
+                      </button>
+                      <button
+                        type="button"
+                        className={`${styles.prefBtn} ${prefs[id] === 'down' ? styles.prefBtnActive : ''}`}
+                        aria-label={`Mark ${id} worse`}
+                        onClick={() => setPrefs((p) => ({ ...p, [id]: p[id] === 'down' ? null : 'down' }))}
+                      >
+                        Worse
+                      </button>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
