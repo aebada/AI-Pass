@@ -1,6 +1,6 @@
 # AI Pass Platform API
 
-> REST API scaffold for the Enterprise AI Operating System.
+> REST API surface for the Enterprise AI Operating System.
 
 Base URL: `/api/v1`  
 OpenAPI spec: `/api/docs`  
@@ -120,9 +120,11 @@ Handlers: `packages/platform-api/src/handlers.ts`
 
 ## Next.js Routes (apps/web)
 
-Implemented stubs:
+Core platform routes currently include:
 - `GET /api/v1/health`
 - `GET /api/v1/modules`
 - `GET /api/v1/search`
 - `GET /api/v1/workspace/summary`
 - `GET /api/docs`
+
+Additional module APIs are documented alongside their packages (Store, Marketplace, Discovery, Knowledge, Trust).

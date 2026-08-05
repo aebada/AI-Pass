@@ -1,261 +1,119 @@
-# AI Pass
+# AI-Pass
 
-**AI Pass is a business solution platform — not just an AI IDE.**
+**The enterprise AI operating system.**
 
-AI Pass helps **business users** describe requirements in natural language and generate web apps, mobile apps, workflows, and AI agents — with governance, trust, and marketplace distribution built in. Developers get a full AI workspace with Monaco editor, agents, and terminal in the same platform.
+AI-Pass unifies models, agents, workflows, knowledge, marketplace apps, and governance in one platform — so organizations can move from fragmented AI experiments to controlled production use.
 
-## Platform capabilities
+**Live product:** [aipass.space](https://aipass.space)  
+**Headquarters:** Munich, Germany
 
-| Capability | AI Pass |
-|------------|---------|
-| Primary user | Business users + developers |
-| Entry point | Requirements wizard + visual studio + AI workspace |
-| App generation | One-click web + mobile scaffolds |
-| Workflows & agents | Visual canvas with agent assignment |
-| Governance | Approval workflows, audit trail, RBAC |
-| Marketplace | Vertical solutions (Invoice, Support, Supply Chain) |
-| Deploy | Built-in deployment with trust certification |
+---
 
-## Platform Architecture
+## Why AI-Pass
 
-```mermaid
-graph TB
-  subgraph clients [Clients]
-    Web[apps/web]
-    Desktop[apps/desktop]
-    Mobile[apps/mobile]
-  end
+Enterprises today juggle chatbots, point apps, and shadow AI with weak shared controls. AI-Pass provides the missing platform layer:
 
-  subgraph builder [Business Builder Layer]
-    Requirements[packages/requirements]
-    Builder[packages/builder]
-    Templates[packages/templates]
-    Runtime[packages/solution-runtime]
-    Deployment[packages/deployment]
-  end
+| Challenge | AI-Pass approach |
+|-----------|------------------|
+| Vendor lock-in | Multi-provider hub (OpenAI, Anthropic, Google, Mistral, open models, and private LLMs) |
+| Tool sprawl | One workspace for playground, agents, workflows, and apps |
+| Uncontrolled spend | Membership tiers + unified AI Wallet |
+| Compliance risk | Trust Engine, governance, auditability |
+| Slow rollout | Marketplace apps and vertical solutions (finance, supply chain, support, and more) |
 
-  subgraph core [Core Platform Layers]
-    View[packages/view]
-    AgentStudio[packages/agent-studio]
-    LiveSync[packages/livesync]
-    Knowledge[packages/knowledge-pipeline]
-    Trust[packages/trust]
-    Governance[packages/governance]
-  end
+---
 
-  subgraph marketplace [Marketplace Ecosystem]
-    Store[packages/store]
-    Marketplace[packages/marketplace]
-  end
+## Platform at a glance
 
-  subgraph verticals [Vertical Apps]
-    InvoiceAI[verticals/invoice-ai]
-    SupplyChain[verticals/supply-chain]
-    CustomerSupport[verticals/customer-support]
-    PresenceAudit[packages/presence-audit]
-  end
-
-  Web --> Requirements
-  Web --> Builder
-  Requirements --> Builder
-  Builder --> Templates
-  Builder --> Deployment
-  Deployment --> Runtime
-  Deployment --> Governance
-
-  Web --> View
-  Builder --> AgentStudio
-  Builder --> Store
-
-  AgentStudio --> Marketplace
-  AgentStudio --> LiveSync
-  LiveSync --> Knowledge
-  LiveSync --> Governance
-
-  Trust --> Governance
-  Store --> InvoiceAI
-  Store --> SupplyChain
-  Store --> CustomerSupport
+```text
+Clients          Web · Desktop · Mobile
+Workspace        Playground · Agents · Workflows · Knowledge · Analysis
+Intelligence     Provider Hub · Runtime · LiveSync · Agent Studio
+Distribution     AI Store · Marketplace · Discovery Hub
+Trust            Governance · Trust Engine · Compliance AI
+Verticals        Invoice · Supply Chain · Customer Support · Sales · …
 ```
 
-## Dual Mode
+Core product surfaces:
 
-| Mode | Route | User |
-|------|-------|------|
-| **Business Builder** | `/`, `/studio`, `/requirements` | Non-technical users |
-| **AI Pass Platform** | `/ide` | All teams (full AI development workspace) |
-| **Platform Admin** | `/platform` | IT / governance teams |
+- **AI Workspace** — command center for models, agents, and apps  
+- **Provider Hub** — route and compare models under one membership  
+- **Agent Studio** — design, skill, and run autonomous agents  
+- **Workflows / LiveSync** — orchestrate multi-step business processes  
+- **Knowledge Pipeline** — RAG and document intelligence  
+- **AI Store & Marketplace** — install and publish certified apps/skills  
+- **Discovery Hub** — find, compare, and connect AI tools into the platform  
+- **Trust & Governance** — certification, policy, and inventory controls  
 
-## Project Structure
+---
 
-```
+## Repository layout
+
+```text
 ai-pass/
 ├── apps/
-│   ├── web/
-│   │   └── app/
-│   │       ├── page.tsx           # Business landing
-│   │       ├── ide/               # AI Pass Platform workspace (Monaco, route /ide)
-│   │       ├── studio/            # Solution Builder Studio
-│   │       ├── requirements/      # Requirements wizard
-│   │       ├── solutions/         # My Solutions dashboard
-│   │       └── marketplace/       # Solution marketplace
-│   ├── desktop/
-│   └── mobile/
-├── packages/
-│   ├── requirements/              # NL → structured spec
-│   ├── builder/                   # Requirements → solution compiler
-│   ├── templates/                 # Web, mobile, workflow templates
-│   ├── solution-runtime/          # Generated app runtime
-│   ├── deployment/                # One-click deploy + governance
-│   ├── view/                      # Unified navigation
-│   ├── agent-studio/              # Agent wizard & execution
-│   ├── store/                     # AI Pass Store
-│   ├── marketplace/               # Skills marketplace
-│   ├── governance/                # Policies & approvals
-│   ├── trust/                     # Certification engine
-│   ├── livesync/                  # Real-time orchestration
-│   ├── knowledge-pipeline/        # RAG & knowledge sync
-│   └── verticals/                 # Invoice, Support, Supply Chain
+│   ├── web/                 # Next.js product (marketing + workspace)
+│   ├── desktop/             # Desktop shell
+│   └── mobile/              # Mobile client
+├── packages/                # Domain packages (platform, marketplace, verticals)
+├── services/auth-api/       # Laravel auth + AI proxy
+├── php-auth/                # Shared PHP auth library
+├── docs/                    # Architecture and module documentation
+└── scripts/                 # Build and deploy helpers
 ```
 
-## Prerequisites
+See [docs/README.md](./docs/README.md) for the full documentation index.
 
-- Node.js 20+
-- pnpm 9+
+---
 
-## Setup & Build
+## Quick start
+
+**Requirements:** Node.js 20+, pnpm 9+
 
 ```bash
 pnpm install
 pnpm build
-pnpm typecheck
-```
-
-## Development
-
-```bash
 pnpm dev:web
 ```
 
-| URL | Purpose |
-|-----|---------|
-| http://localhost:3000 | Business landing |
-| http://localhost:3000/requirements | Requirements wizard |
-| http://localhost:3000/studio | Solution Builder Studio |
-| http://localhost:3000/solutions | My Solutions |
-| http://localhost:3000/marketplace | Solution marketplace |
-| http://localhost:3000/ide | AI Pass Platform (full AI development workspace) |
-| http://localhost:3000/platform | Platform admin dashboard |
+Then open [http://localhost:3000](http://localhost:3000).
 
-## Platform IDE capabilities
+| Path | Purpose |
+|------|---------|
+| `/` | Product landing |
+| `/workspace` | Enterprise workspace |
+| `/workspace/playground` | Multi-model playground |
+| `/discover` | AI Discovery Hub |
+| `/investors` | Investor overview |
 
-AI Pass `/ide` delivers a full AI development workspace integrated with business platform routes.
+Detailed setup: [Developer Guide](./docs/DEVELOPER-GUIDE.md).  
+Production deploy notes: [Deployment](./docs/DEPLOYMENT.md).
 
-| Feature | AI Pass Platform | Status |
-|---------|------------------|--------|
-| Monaco multi-tab editor | ✅ | Working |
-| Syntax highlighting & themes | ✅ | Working (dark/light) |
-| File explorer | ✅ | Working (sample project; desktop open-folder stub) |
-| Search in files | ✅ | Working via command palette |
-| Git status indicators | ✅ | Demo indicators |
-| Integrated terminal | ✅ | xterm.js (web); native stub (desktop) |
-| Command palette (⌘K / ⌘⇧P) | ✅ | Working |
-| Status bar | ✅ | Working |
-| Chat panel + streaming | ✅ | Working with API key |
-| Agent mode (tool loop) | ✅ | Working via `@ai-pass/agent` |
-| Composer (multi-file) | ✅ | Working via agent package |
-| Inline completion | ✅ | Stub + real API when key set |
-| @ mentions | ✅ | Working (@file, @codebase, @docs, @folder) |
-| Rules (project conventions) | ✅ | localStorage + Settings editor |
-| Skills | 🔶 | Schema ready; UI stub |
-| MCP servers | 🔶 | Package exists; IDE wiring stub |
-| Business Studio integration | ✅ | Sidebar + title bar links |
+---
 
-**Stubbed / next:** real filesystem on web (File System Access API), native terminal in Electron, MCP panel, skills browser, codebase indexing UI.
+## Documentation
 
-### Using the IDE
+| Document | Audience |
+|----------|----------|
+| [Technical Overview](./docs/TECHNICAL-OVERVIEW.md) | Engineers & architects |
+| [Architecture](./docs/ARCHITECTURE.md) | System design |
+| [Platform](./docs/PLATFORM.md) | Module map |
+| [API](./docs/API.md) | Integrators |
+| [Product roadmap](./docs/PRODUCT-ROADMAP.md) | Product & investors |
+| [Security](./SECURITY.md) | Security contacts & practice |
+| [Contributing](./CONTRIBUTING.md) | Contributors |
 
-```bash
-pnpm dev:web
-# Open http://localhost:3000/ide
-```
+---
 
-1. **Explorer** — click files in the sidebar to open tabs in Monaco.
-2. **Chat / Agent / Composer** — use the right panel mode tabs. Add an API key in Settings → Models.
-3. **Command palette** — `⌘K` or `⌘⇧P` to search files, run commands, or navigate to Studio/Marketplace.
-4. **@ mentions** — type `@` in chat for `@file`, `@codebase`, `@docs`, or specific files.
-5. **Rules** — Settings → Rules tab, or stored in `localStorage` under `ai-pass-rules`.
-6. **Business features** — Sidebar → Business tab, or title bar links to Studio, Marketplace, Requirements.
+## For investors
 
-Desktop: `pnpm dev:desktop` loads `http://localhost:3000/ide` with Electron IPC for `openFolder`, `readFile`, `writeFile`.
+- Product thesis and market framing: [aipass.space/investors](https://aipass.space/investors)  
+- Contact: [investors@ai-pass.com](mailto:investors@ai-pass.com)  
+- This repository is the engineering source of truth for the platform described on the website.
 
-## Business User Journey (5 Steps)
-
-1. **Describe** — Open `/requirements`, enter business need in plain language
-2. **Review** — AI Pass parses actors, workflows, data entities, screens, integrations
-3. **Design** — Open `/studio` to assign agents, preview web + mobile layouts
-4. **Deploy** — One-click deploy with governance approval (high-risk solutions)
-5. **Manage** — View deployed solutions in `/solutions`, customize from marketplace
-
-## Module Map
-
-| Document | Package / Route | Status |
-|----------|-----------------|--------|
-| Business Builder Layer | `packages/requirements`, `packages/builder` | Implemented |
-| Requirements Wizard | `/requirements` | Working |
-| Solution Studio | `/studio` | Working |
-| One-Click Deploy | `packages/deployment` | Scaffold (governance wired) |
-| My Solutions | `/solutions` | Working (localStorage) |
-| Solution Marketplace | `/marketplace` | Working |
-| AI.docx (Platform OS) | `packages/view` | Implemented |
-| Agent Studio | `packages/agent-studio` | Implemented |
-| Store / Marketplace | `packages/store`, `packages/marketplace` | Implemented |
-| Governance / Trust | `packages/governance`, `packages/trust` | Implemented |
-| Verticals | `packages/verticals` | Implemented |
-
-## Production deploy (aipass.space)
-
-**Live site:** [https://aipass.space](https://aipass.space)
-
-| Route | Page |
-|-------|------|
-| `/` | Business landing |
-| `/requirements` | Requirements wizard |
-| `/studio` | Solution Builder Studio |
-| `/solutions` | My Solutions |
-| `/marketplace` | Solution marketplace |
-| `/ide` | AI Pass Platform |
-| `/platform` | Platform admin dashboard |
-| `/downloads` | Download page |
-| `/settings` | Settings & profile |
-
-Static export is uploaded to Hostinger shared hosting via FTP. The FTP account docroot (`/`) serves `aipass.space` (not the `u234903558.aipass.space` preview subdomain).
-
-```bash
-export FTP_HOST=92.113.19.130
-export FTP_USER='u234903558.aipass'
-export FTP_PASS='your-ftp-password'   # never commit; use env or a local-only secret store
-export FTP_REMOTE_DIR=/
-
-./scripts/build-web-static.sh
-./scripts/deploy-ftp.sh
-```
-
-`.htaccess` from `apps/web/public/` is always copied into `apps/web/out/` after build (Next.js does not copy dotfiles). The deploy script uses `lftp mirror -a` so `.htaccess` is uploaded. Without it, only `/` and `/*.html` URLs work on Apache.
-
-**Static hosting limits:** API routes under `app/api/` are excluded from the static export. AI chat, LiveSync, and server-side features run in demo/local mode (localStorage, client-side stubs). For full backend features, run `pnpm dev:web` or deploy to a Node host.
-
-### DNS (if the domain does not load)
-
-Point the apex domain at Hostinger:
-
-| Type | Name | Value |
-|------|------|-------|
-| A | `@` | `92.113.19.130` (or current Hostinger IP from hPanel) |
-| A / CNAME | `www` | Hostinger-provided target (often `www.aipass.space.cdn.hstgr.net`) |
-
-Use Hostinger nameservers if the registrar still shows parking NS (`dns-parking.com`). DNS changes can take up to 24–48 hours.
+---
 
 ## License
 
-Private — AI Pass project.
+Proprietary. Copyright © AI-Pass. All rights reserved.  
+See [LICENSE](./LICENSE).

@@ -9,8 +9,8 @@ import styles from './page.module.css';
 import section from './home-sections.module.css';
 
 const TRUSTED_LOGOS = [
-  'Global Bank', 'AutoCorp', 'HealthNet', 'GovTech EU', 'RetailMax', 'LogiFlow',
-  'UniTech', 'InsureAI', 'ManufactureX', 'Enterprise Co.',
+  'Finance', 'Manufacturing', 'Healthcare', 'Public Sector', 'Retail', 'Logistics',
+  'Education', 'Insurance', 'Industrial AI', 'Enterprise IT',
 ];
 
 const PLATFORM_LAYERS = [
@@ -433,8 +433,8 @@ export default function HomePageContent() {
       {/* Social Proof */}
       <section className={section.section} id="trusted">
         <div className={section.sectionHeader}>
-          <span className={section.sectionLabel}>Trusted by</span>
-          <h2 className={section.sectionTitle}>Enterprises, partners, and institutions worldwide</h2>
+          <span className={section.sectionLabel}>Industries</span>
+          <h2 className={section.sectionTitle}>Built for regulated and operational enterprises</h2>
         </div>
         <div className={section.logoGrid}>
           {TRUSTED_LOGOS.map((name) => (
@@ -772,7 +772,7 @@ export default function HomePageContent() {
         </div>
         <div className={section.centerCta} style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem', justifyContent: 'center' }}>
           <a href="mailto:investors@ai-pass.com?subject=Investor%20Meeting" className={styles.btnPrimary}>Book Investor Meeting</a>
-          <a href="#" className={styles.btnSecondary}>Download Investor Deck (PDF)</a>
+          <a href="mailto:investors@ai-pass.com?subject=Investor%20Materials" className={styles.btnSecondary}>Request Investor Materials</a>
           <Link href="/investors" className={styles.btnSecondary}>Full investor page →</Link>
         </div>
       </section>

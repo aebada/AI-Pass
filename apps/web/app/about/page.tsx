@@ -5,31 +5,31 @@ import styles from './about.module.css';
 
 const PILLARS = [
   {
-    icon: '🏢',
+    icon: '01',
     title: 'One Workspace',
     text: 'Agents, workflows, knowledge, apps, and governance in a single command center — no fragmented dashboards.',
   },
   {
-    icon: '🎫',
+    icon: '02',
     title: 'One Membership',
     text: 'Universal AI subscription with frontier models, credits, and tiered access across every module.',
   },
   {
-    icon: '💳',
+    icon: '03',
     title: 'One Wallet',
     text: 'Unified billing, usage tracking, and credits for models, apps, and marketplace purchases.',
   },
   {
-    icon: '🛒',
+    icon: '04',
     title: 'One Marketplace',
     text: 'Discover, install, and govern AI apps and templates from a trusted enterprise catalog.',
   },
 ];
 
-const TEAM_PLACEHOLDER = [
-  { initials: 'AP', name: 'Leadership Team', role: 'Executive & Product' },
-  { initials: 'AI', name: 'Engineering', role: 'Platform & AI Systems' },
-  { initials: 'GO', name: 'Governance', role: 'Trust, Compliance & Security' },
+const FOCUS_AREAS = [
+  { initials: 'PL', name: 'Platform', role: 'Workspace, agents, and orchestration' },
+  { initials: 'AI', name: 'Intelligence', role: 'Models, routing, and runtime' },
+  { initials: 'GV', name: 'Governance', role: 'Trust, compliance, and security' },
 ];
 
 export default function AboutPage() {
@@ -102,14 +102,15 @@ export default function AboutPage() {
 
       <section className={styles.section}>
         <div className={styles.sectionHeader}>
-          <span className={styles.sectionLabel}>Team</span>
-          <h2 className={styles.sectionTitle}>Built by enterprise AI practitioners</h2>
+          <span className={styles.sectionLabel}>Focus</span>
+          <h2 className={styles.sectionTitle}>Built by practitioners shipping production AI</h2>
           <p className={styles.sectionDesc}>
-            AI Pass is developed by teams focused on production-grade AI, governance, and operational excellence.
+            AI-Pass is developed by teams focused on production-grade AI systems, governance, and operational excellence.
+            For introductions, contact hello@ai-pass.com.
           </p>
         </div>
         <div className={styles.teamGrid}>
-          {TEAM_PLACEHOLDER.map((member) => (
+          {FOCUS_AREAS.map((member) => (
             <div key={member.name} className={styles.teamCard}>
               <div className={styles.teamAvatar}>{member.initials}</div>
               <div className={styles.teamName}>{member.name}</div>
@@ -126,12 +127,14 @@ export default function AboutPage() {
         </div>
         <div className={styles.contactBox}>
           <p className={styles.contactText}>
-            For enterprise inquiries, partnerships, or platform questions, reach out to our team.
-            Full contact forms and regional offices coming soon.
+            For enterprise inquiries, partnerships, or platform questions:
           </p>
           <a href="mailto:hello@ai-pass.com" className={styles.contactEmail}>
             hello@ai-pass.com
           </a>
+          <p className={styles.contactText} style={{ marginTop: '1rem' }}>
+            Investors: <a href="mailto:investors@ai-pass.com">investors@ai-pass.com</a>
+          </p>
         </div>
       </section>
 

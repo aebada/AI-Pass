@@ -7,58 +7,58 @@ import section from '../home-sections.module.css';
 const INVESTOR_SECTIONS = [
   {
     title: 'Vision',
-    text: 'AI-Pass is building the operating system for enterprise AI — a unified platform where models, agents, workflows, applications, governance, and marketplaces converge under one membership. We believe every enterprise deserves an AI infrastructure layer as robust as their cloud infrastructure — not a collection of disconnected chatbots.',
+    text: 'AI-Pass is building the operating system for enterprise AI — a unified platform where models, agents, workflows, applications, governance, and marketplaces converge under one membership. Every enterprise deserves an AI infrastructure layer as robust as their cloud stack — not a collection of disconnected chatbots.',
   },
   {
     title: 'Market Opportunity',
-    text: 'The enterprise AI software market exceeds $150B and is growing at 35% CAGR. Fortune 500 companies are deploying AI across finance, HR, supply chain, customer support, and compliance — yet 78% report fragmented tooling and governance gaps. AI-Pass addresses the platform layer that connects all of these use cases.',
+    text: 'Enterprise AI spend is expanding quickly as organizations move from pilots into production across finance, operations, support, and compliance. Buyers increasingly need a platform layer that connects models, apps, and controls — not another single-purpose tool.',
   },
   {
     title: 'Why Now',
-    text: 'Three forces converge: (1) model proliferation creates vendor complexity, (2) EU AI Act and ISO 42001 mandate governance infrastructure, and (3) board-level AI mandates require enterprise-grade deployment. Organizations that fail to unify AI operations face shadow AI, compliance risk, and wasted spend.',
+    text: 'Three forces converge: model proliferation creates vendor complexity, regulatory frameworks raise the bar for governance, and board-level AI mandates require operational deployment. Fragmented tooling leaves room for shadow AI, compliance risk, and wasted spend.',
   },
   {
     title: 'Platform Strategy',
-    text: 'Land with AI Workspace and Playground — the daily entry point. Expand through certified marketplace apps and vertical solutions. Monetize via membership tiers, AI Wallet usage credits, marketplace revenue share, and enterprise contracts with SLA and private cloud.',
+    text: 'Land with AI Workspace and Playground — the daily entry point. Expand through certified marketplace apps and vertical solutions. Monetize via membership tiers, AI Wallet usage credits, marketplace revenue share, and enterprise contracts.',
   },
   {
     title: 'Competitive Advantages',
-    text: 'AI-Pass is the only platform unifying provider hub, agent runtime, workflow automation, knowledge pipeline, enterprise apps, trust engine, and marketplace in one OS. Competitors offer chat (OpenAI), agents (point solutions), or governance (GRC tools) — not the full stack.',
+    text: 'AI-Pass combines provider hub, agent runtime, workflow automation, knowledge pipeline, enterprise apps, trust engine, and marketplace in one product surface. Most competitors specialize in chat, agents, or GRC alone — not the full operating stack.',
   },
   {
     title: 'Business Model',
-    text: 'Recurring SaaS membership (Free / Professional $49 / Power $149 / Enterprise custom) plus usage-based AI Wallet credits. Marketplace revenue share on app and skill sales. Enterprise contracts with dedicated support, private routing, and compliance packages.',
+    text: 'Recurring SaaS membership (Free / Professional / Power / Enterprise) plus usage-based AI Wallet credits. Marketplace revenue share on apps and skills. Enterprise contracts with dedicated support and compliance packages.',
   },
   {
     title: 'Enterprise Focus',
-    text: 'SSO/SAML, RBAC, audit trails, private cloud deployment, BYOK hybrid routing, and framework-ready compliance (ISO 27001, SOC 2, GDPR, NIS2, ISO 42001). Trust Engine certifies every marketplace app before distribution.',
+    text: 'Designed for SSO-ready deployments, RBAC, audit trails, private routing options, and framework-aligned compliance programs. Trust Engine supports certification of marketplace apps before distribution.',
   },
   {
     title: 'Marketplace Economy',
-    text: 'Developers publish apps, skills, and automation packs to a certified marketplace. Revenue share model incentivizes ecosystem growth. Enterprise tenants govern which apps are approved for their organization.',
+    text: 'Developers publish apps, skills, and automation packs to a certified marketplace. Revenue share incentivizes ecosystem growth. Enterprise tenants can govern which apps are approved for their organization.',
   },
   {
-    title: 'Traction & Metrics',
-    text: '14 platform modules live, 26+ models in Provider Hub, 12+ certified marketplace apps, enterprise pilots in finance, manufacturing, and government sectors. Discovery Hub drives organic acquisition through SEO-optimized tool rankings.',
+    title: 'Product Progress',
+    text: 'Core platform modules are live in the product: workspace, provider hub, membership and wallet, store/marketplace, Discovery Hub, Trust Engine, and vertical solution surfaces. Active work continues on agent depth, connectors, and enterprise hardening.',
   },
   {
     title: 'Team',
-    text: 'Built by enterprise AI practitioners with deep experience in production AI systems, governance, compliance, and operational excellence. Leadership team spans platform engineering, enterprise sales, and regulatory affairs.',
+    text: 'Built by practitioners with experience shipping production AI systems, governance, and operational platforms. For introductions and diligence materials, contact investors@ai-pass.com.',
   },
 ];
 
 const ROADMAP = [
-  { quarter: 'Q3 2026', items: ['Agent Studio GA', 'Expanded provider catalog (30+ models)', 'ISO 42001 certification path', 'Series A close'] },
-  { quarter: 'Q4 2026', items: ['Enterprise private cloud', 'Advanced governance dashboards', '50+ marketplace apps', 'EMEA expansion'] },
-  { quarter: 'Q1 2027', items: ['Industry solution packs (10 verticals)', 'Partner ecosystem launch', 'Global data residency', '100 enterprise customers'] },
-  { quarter: 'Q2 2027', items: ['Autonomous workflow marketplace', 'AI agent economy', 'APAC launch', 'IPO readiness assessment'] },
+  { quarter: 'Near term', items: ['Agent Studio depth for enterprise pilots', 'Expanded provider catalog', 'Trust & governance reporting', 'Design-partner deployments'] },
+  { quarter: 'Next', items: ['Private / hybrid routing options', 'Advanced governance dashboards', 'Broader marketplace catalog', 'EMEA go-to-market expansion'] },
+  { quarter: 'Following', items: ['Industry solution packs', 'Partner ecosystem', 'Data residency options', 'Scaled enterprise customer base'] },
+  { quarter: 'Later', items: ['Autonomous workflow marketplace', 'Deeper agent economy surfaces', 'Additional regions', 'Long-term platform maturity'] },
 ];
 
 const METRICS = [
-  { value: '$150B+', label: 'Enterprise AI TAM' },
-  { value: '35%', label: 'Market CAGR' },
-  { value: '14', label: 'Platform modules' },
-  { value: '26+', label: 'AI models supported' },
+  { value: 'Growing', label: 'Enterprise AI market' },
+  { value: '14+', label: 'Platform modules' },
+  { value: '26+', label: 'Models in Provider Hub' },
+  { value: 'Live', label: 'Product at aipass.space' },
 ];
 
 export default function InvestorsPage() {
@@ -79,8 +79,8 @@ export default function InvestorsPage() {
             <a href="mailto:investors@ai-pass.com?subject=Investor%20Meeting" className={`${styles.btnPrimary} ${styles.btnLarge}`}>
               Book Investor Meeting
             </a>
-            <a href="#" className={`${styles.btnSecondary} ${styles.btnLarge}`}>
-              Download Investor Deck (PDF)
+            <a href="mailto:investors@ai-pass.com?subject=Investor%20Deck%20Request" className={`${styles.btnSecondary} ${styles.btnLarge}`}>
+              Request Investor Materials
             </a>
           </div>
         </div>
