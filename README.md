@@ -4,6 +4,18 @@
 
 AI Pass helps **business users** describe requirements in natural language and generate web apps, mobile apps, workflows, and AI agents — with governance, trust, and marketplace distribution built in. Developers get a full AI workspace with Monaco editor, agents, and terminal in the same platform.
 
+## Technical documentation
+
+| Doc | Description |
+|-----|-------------|
+| **[docs/README.md](./docs/README.md)** | Documentation index |
+| [Technical Overview](./docs/TECHNICAL-OVERVIEW.md) | Stack, monorepo, runtime rules, auth topology |
+| [Developer Guide](./docs/DEVELOPER-GUIDE.md) | Local setup, conventions, adding modules/models |
+| [Deployment](./docs/DEPLOYMENT.md) | Hostinger static + Laravel publish |
+| [Architecture](./docs/ARCHITECTURE.md) | Layered system design |
+| [Auto models](./docs/AUTO-MODELS.md) | Agent Auto (Standard) default |
+
+
 ## Platform capabilities
 
 | Capability | AI Pass |
