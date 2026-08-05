@@ -4,11 +4,14 @@
 #   FTP_HOST, FTP_USER, FTP_PASS, FTP_REMOTE_DIR (default: /)
 #
 # Example:
-#   export FTP_HOST=92.113.19.130
+#   export FTP_HOST=92.113.19.130   # Hostinger FTP IP (may differ from public CDN A records)
 #   export FTP_USER='u234903558.aipass'
 #   export FTP_PASS='your-ftp-password'
 #   export FTP_REMOTE_DIR=/
 #   ./scripts/build-web-static.sh && ./scripts/deploy-ftp.sh
+#
+# If PASV data channels time out from cloud agents, prefer a local machine upload,
+# or zip apps/web/out and extract via Hostinger hPanel File Manager.
 
 set -euo pipefail
 

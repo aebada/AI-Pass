@@ -251,7 +251,7 @@ Point the apex domain at Hostinger:
 
 | Type | Name | Value |
 |------|------|-------|
-| A | `@` | `92.113.19.130` (or current Hostinger IP from hPanel) |
+| A | `@` | Hostinger CDN / parking A records from hPanel (FTP host may still be `92.113.19.130`) |
 | A / CNAME | `www` | Hostinger-provided target (often `www.aipass.space.cdn.hstgr.net`) |
 
 Use Hostinger nameservers if the registrar still shows parking NS (`dns-parking.com`). DNS changes can take up to 24–48 hours.
