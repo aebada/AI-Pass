@@ -6,7 +6,7 @@ import { signOut as nextAuthSignOut } from 'next-auth/react';
 import { useEffect, useRef, useState } from 'react';
 import { Badge } from '@ai-pass/ui';
 import { BrandLogoLink } from '../BrandLogoLink';
-import { SITE_NAV, LANDING_NAV, type SiteNavItem } from '../../lib/site-nav';
+import { SITE_NAV, type SiteNavItem } from '../../lib/site-nav';
 import { useApp } from './AppProviders';
 import styles from './premium-nav.module.css';
 
@@ -129,14 +129,12 @@ export function PremiumNav({ variant = 'business' }: { variant?: 'landing' | 'bu
     return <span className={styles.avatar}>{user?.avatarInitials ?? '?'}</span>;
   };
 
-  const navItems = variant === 'landing' ? LANDING_NAV : SITE_NAV;
-
   return (
     <nav className={styles.nav} ref={navRef}>
       <BrandLogoLink className={styles.logo} logoClassName={styles.logoImg} height={40} onClick={closeMobile} />
 
       <div className={styles.navLinks}>
-        {navItems.map((item) =>
+        {SITE_NAV.map((item) =>
           item.type === 'link' ? (
             item.external ? (
               <a
@@ -354,7 +352,7 @@ export function PremiumNav({ variant = 'business' }: { variant?: 'landing' | 'bu
       {mobileOpen && (
         <div className={styles.mobilePanel}>
           <div className={styles.mobileScroll}>
-            {navItems.map((item) =>
+            {SITE_NAV.map((item) =>
               item.type === 'link' ? (
                 item.external ? (
                   <a

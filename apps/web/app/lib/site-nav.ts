@@ -106,11 +106,11 @@ export const SITE_NAV: SiteNavItem[] = [
       { label: 'Documentation', href: DOCS_URL, description: 'Guides and platform reference', external: true },
       { label: 'API Reference', href: '/api/docs', description: 'OpenAPI specification' },
       { label: 'Research', href: '/discover/research', description: 'AI Pass research papers' },
-      { label: 'Blog', href: '/discover/news', description: 'Product updates and insights' },
+      { label: 'Blog', href: '#', description: 'Product updates and insights' },
       { label: 'AI News', href: '/discover/news', description: 'Latest AI industry news' },
-      { label: 'Case Studies', href: '/#stories', description: 'Enterprise success stories' },
+      { label: 'Case Studies', href: '#', description: 'Enterprise success stories' },
       { label: 'Customer Stories', href: '/#stories', description: 'Voices from our customers' },
-      { label: 'Whitepapers', href: '/investors', description: 'Enterprise AI strategy guides' },
+      { label: 'Whitepapers', href: '#', description: 'Enterprise AI strategy guides' },
       { label: 'Trust Layer', href: '/trust', description: 'Validate and certify AI systems' },
       { label: 'Trust Center', href: '/workspace/trust', description: 'Security and certification' },
     ],
@@ -121,10 +121,10 @@ export const SITE_NAV: SiteNavItem[] = [
     items: [
       { label: 'About', href: '/about', description: 'Our mission and platform' },
       { label: 'Vision', href: '/about#vision', description: 'The future of enterprise AI' },
-      { label: 'Leadership', href: '/about', description: 'Executive team' },
-      { label: 'Careers', href: '/about#contact', description: 'Join AI Pass' },
+      { label: 'Leadership', href: '#', description: 'Executive team' },
+      { label: 'Careers', href: '#', description: 'Join AI Pass' },
       { label: 'Investors', href: '/investors', description: 'Investment opportunity' },
-      { label: 'Partners', href: '/about#contact', description: 'Technology and channel partners' },
+      { label: 'Partners', href: '#', description: 'Technology and channel partners' },
       { label: 'Contact', href: '/about#contact', description: 'Enterprise inquiries' },
     ],
   },
@@ -138,11 +138,6 @@ export const SITE_NAV: SiteNavItem[] = [
     ],
   },
 ];
-
-/** Slimmer top nav for marketing pages (Anthropic-style density) */
-export const LANDING_NAV: SiteNavItem[] = SITE_NAV.filter((item) =>
-  ['Platform', 'Solutions', 'Trust', 'Company', 'Pricing'].includes(item.label),
-);
 
 export type FooterColumn = {
   title: string;
@@ -215,7 +210,7 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
       { label: 'Documentation', href: DOCS_URL, external: true },
       { label: 'Research', href: '/discover/research' },
       { label: 'AI News', href: '/discover/news' },
-      { label: 'Case Studies', href: '/#stories' },
+      { label: 'Case Studies', href: '#' },
       { label: 'Trust Layer', href: '/trust' },
       { label: 'Trust Center', href: '/workspace/trust' },
       { label: 'Help Center', href: '/help' },
@@ -227,8 +222,8 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
       { label: 'About', href: '/about' },
       { label: 'Vision', href: '/about#vision' },
       { label: 'Investors', href: '/investors' },
-      { label: 'Careers', href: '/about#contact' },
-      { label: 'Partners', href: '/about#contact' },
+      { label: 'Careers', href: '#' },
+      { label: 'Partners', href: '#' },
       { label: 'Contact', href: '/about#contact' },
     ],
   },

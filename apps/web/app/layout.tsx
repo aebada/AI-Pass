@@ -42,7 +42,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: '#141413',
+  themeColor: '#0d1117',
   width: 'device-width',
   initialScale: 1,
 };
@@ -50,7 +50,7 @@ export const viewport: Viewport = {
 const themeBootScript = `(function(){try{var t=localStorage.getItem('ai-pass:theme')||'dark';var r=t==='light'?'light':t==='system'?(window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark'):'dark';document.documentElement.dataset.theme=r;document.documentElement.style.colorScheme=r;}catch(e){document.documentElement.dataset.theme='dark';}})();`;
 
 /** Critical theme tokens inlined so the site stays readable even if CDN serves a bad CSS response. */
-const criticalThemeCss = `:root,[data-theme='dark']{--bg:#141413;--bg-elevated:#1c1b19;--bg-hover:#262521;--border:#3d3d3a;--text:#faf9f5;--text-muted:#b0aea5;--accent:#d97757;--accent-muted:#c96442;--font-sans:'DM Sans',system-ui,sans-serif;--font-display:'Newsreader',Georgia,serif;--ai-bg:var(--bg);--ai-text:var(--text);--ai-accent:var(--accent);color-scheme:dark}[data-theme='light']{--bg:#faf9f5;--bg-elevated:#f0eee6;--bg-hover:#e8e6dc;--border:#d1cfc4;--text:#141413;--text-muted:#5e5d59;--accent:#c96442;--accent-muted:#a84f33;--font-sans:'DM Sans',system-ui,sans-serif;--font-display:'Newsreader',Georgia,serif;--ai-bg:var(--bg);--ai-text:var(--text);--ai-accent:var(--accent);color-scheme:light}html,body{min-height:100%;background-color:#141413;background-color:var(--bg);color:#faf9f5;color:var(--text);font-family:var(--font-sans)}h1,h2,h3{font-family:var(--font-display);font-weight:500}`;
+const criticalThemeCss = `:root,[data-theme='dark']{--bg:#0d1117;--bg-elevated:#161b22;--bg-hover:#21262d;--border:#30363d;--text:#e6edf3;--text-muted:#8b949e;--accent:#58a6ff;--accent-muted:#1f6feb;--success:#3fb950;--warning:#d29922;--error:#f85149;--font-sans:'Segoe UI',system-ui,-apple-system,BlinkMacSystemFont,sans-serif;--font-mono:ui-monospace,'Cascadia Code','SF Mono',Menlo,monospace;--ai-bg:var(--bg);--ai-bg-elevated:var(--bg-elevated);--ai-bg-hover:var(--bg-hover);--ai-border:var(--border);--ai-text:var(--text);--ai-text-muted:var(--text-muted);--ai-accent:var(--accent);color-scheme:dark}[data-theme='light']{--bg:#f6f8fa;--bg-elevated:#ffffff;--bg-hover:#eaeef2;--border:#d0d7de;--text:#1f2328;--text-muted:#656d76;--accent:#0969da;--accent-muted:#0550ae;--success:#1a7f37;--warning:#9a6700;--error:#cf222e;--ai-bg:var(--bg);--ai-bg-elevated:var(--bg-elevated);--ai-bg-hover:var(--bg-hover);--ai-border:var(--border);--ai-text:var(--text);--ai-text-muted:var(--text-muted);--ai-accent:var(--accent);color-scheme:light}html,body{min-height:100%;background-color:#0d1117;background-color:var(--bg);color:#e6edf3;color:var(--text);font-family:var(--font-sans)}`;
 
 export default function RootLayout({
   children,
@@ -60,12 +60,6 @@ export default function RootLayout({
   return (
     <html lang="en" data-theme="dark" suppressHydrationWarning>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600;6..72,700&display=swap"
-          rel="stylesheet"
-        />
         <style dangerouslySetInnerHTML={{ __html: criticalThemeCss }} />
         <script dangerouslySetInnerHTML={{ __html: themeBootScript }} />
       </head>

@@ -101,24 +101,21 @@
 }
 
 .btnPrimary {
-  background: var(--accent);
-  color: #faf9f5;
+  background: linear-gradient(135deg, var(--accent-muted) 0%, var(--accent) 100%);
+  color: #fff;
   border: 1px solid transparent;
-  box-shadow: none;
-  border-radius: 999px;
+  box-shadow: 0 0 20px rgba(88, 166, 255, 0.25);
 }
 
 .btnPrimary:hover {
   transform: translateY(-1px);
-  background: var(--accent-muted);
-  box-shadow: 0 8px 28px var(--surface-glow);
+  box-shadow: 0 4px 24px rgba(88, 166, 255, 0.35);
 }
 
 .btnSecondary {
-  background: transparent;
+  background: var(--bg-elevated);
   color: var(--text);
   border: 1px solid var(--border);
-  border-radius: 999px;
 }
 
 .btnSecondary:hover {
@@ -164,7 +161,7 @@
   transform: translateX(-50%);
   width: min(900px, 120vw);
   height: 500px;
-  background: radial-gradient(ellipse, var(--surface-glow) 0%, transparent 70%);
+  background: radial-gradient(ellipse, rgba(88, 166, 255, 0.15) 0%, transparent 70%);
   animation: pulseGlow 8s ease-in-out infinite;
 }
 
@@ -175,7 +172,7 @@
   right: -10%;
   width: 400px;
   height: 400px;
-  background: radial-gradient(circle, rgba(250, 249, 245, 0.04) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(163, 113, 247, 0.08) 0%, transparent 70%);
   animation: pulseGlow 10s ease-in-out infinite reverse;
 }
 
@@ -212,8 +209,8 @@
   padding: 0.35rem 0.85rem;
   margin-bottom: 1.5rem;
   border-radius: 100px;
-  background: color-mix(in srgb, var(--accent) 12%, transparent);
-  border: 1px solid color-mix(in srgb, var(--accent) 28%, transparent);
+  background: rgba(88, 166, 255, 0.1);
+  border: 1px solid rgba(88, 166, 255, 0.25);
   font-size: 0.8125rem;
   font-weight: 500;
   color: var(--accent);
@@ -233,20 +230,21 @@
 }
 
 .heroTitle {
-  font-family: var(--font-display);
-  font-size: clamp(2.5rem, 6vw, 4.25rem);
-  font-weight: 500;
-  line-height: 1.08;
+  font-size: clamp(2.25rem, 5.5vw, 3.75rem);
+  font-weight: 800;
+  line-height: 1.1;
   letter-spacing: -0.03em;
   margin-bottom: 1.25rem;
 }
 
 .heroTitleAccent {
   color: var(--accent);
-  background: none;
-  -webkit-background-clip: initial;
-  background-clip: initial;
-  -webkit-text-fill-color: initial;
+  background: linear-gradient(135deg, var(--accent) 0%, #a371f7 50%, var(--accent) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 6s linear infinite;
 }
 
 @keyframes shimmer {

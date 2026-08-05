@@ -1,20 +1,19 @@
-/* Anthropic-inspired professional tokens for AI-Pass */
+/* recover-build: force new CSS content hash after CDN poison */
 :root,
 [data-theme='dark'] {
-  --bg: #141413;
-  --recover-cache-bust: 2026-08-05-r5-anthropic;
-  --bg-elevated: #1c1b19;
-  --bg-hover: #262521;
-  --border: #3d3d3a;
-  --text: #faf9f5;
-  --text-muted: #b0aea5;
-  --accent: #d97757;
-  --accent-muted: #c96442;
-  --success: #3d8b6e;
-  --warning: #c9a227;
-  --error: #c45c4a;
-  --font-sans: 'DM Sans', 'Segoe UI', system-ui, sans-serif;
-  --font-display: 'Newsreader', 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
+  --bg: #0d1117;
+  --recover-cache-bust: 2026-08-05-r6-restore-lastweek;
+  --bg-elevated: #161b22;
+  --bg-hover: #21262d;
+  --border: #30363d;
+  --text: #e6edf3;
+  --text-muted: #8b949e;
+  --accent: #58a6ff;
+  --accent-muted: #1f6feb;
+  --success: #3fb950;
+  --warning: #d29922;
+  --error: #f85149;
+  --font-sans: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: ui-monospace, 'Cascadia Code', 'SF Mono', Menlo, monospace;
   --ai-bg: var(--bg);
   --ai-bg-elevated: var(--bg-elevated);
@@ -23,22 +22,21 @@
   --ai-text: var(--text);
   --ai-text-muted: var(--text-muted);
   --ai-accent: var(--accent);
-  --surface-glow: rgba(217, 119, 87, 0.12);
   color-scheme: dark;
 }
 
 [data-theme='light'] {
-  --bg: #faf9f5;
-  --bg-elevated: #f0eee6;
-  --bg-hover: #e8e6dc;
-  --border: #d1cfc4;
-  --text: #141413;
-  --text-muted: #5e5d59;
-  --accent: #c96442;
-  --accent-muted: #a84f33;
-  --success: #2f6f56;
+  --bg: #f6f8fa;
+  --bg-elevated: #ffffff;
+  --bg-hover: #eaeef2;
+  --border: #d0d7de;
+  --text: #1f2328;
+  --text-muted: #656d76;
+  --accent: #0969da;
+  --accent-muted: #0550ae;
+  --success: #1a7f37;
   --warning: #9a6700;
-  --error: #a33b2b;
+  --error: #cf222e;
   --ai-bg: var(--bg);
   --ai-bg-elevated: var(--bg-elevated);
   --ai-bg-hover: var(--bg-hover);
@@ -46,7 +44,6 @@
   --ai-text: var(--text);
   --ai-text-muted: var(--text-muted);
   --ai-accent: var(--accent);
-  --surface-glow: rgba(201, 100, 66, 0.1);
   color-scheme: light;
 }
 
@@ -63,9 +60,9 @@ html {
 html,
 body {
   min-height: 100%;
-  background-color: #141413;
+  background-color: #0d1117;
   background-color: var(--bg);
-  color: #faf9f5;
+  color: #e6edf3;
   color: var(--text);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
@@ -79,15 +76,6 @@ body {
 a {
   color: inherit;
   text-decoration: none;
-}
-
-h1,
-h2,
-h3,
-.display {
-  font-family: var(--font-display);
-  font-weight: 500;
-  letter-spacing: -0.02em;
 }
 
 @media (prefers-reduced-motion: reduce) {

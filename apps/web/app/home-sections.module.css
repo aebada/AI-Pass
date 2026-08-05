@@ -5,7 +5,7 @@
 }
 
 .sectionAlt {
-  background: linear-gradient(180deg, transparent 0%, color-mix(in srgb, var(--bg-elevated) 70%, transparent) 50%, transparent 100%);
+  background: linear-gradient(180deg, transparent 0%, rgba(22, 27, 34, 0.55) 50%, transparent 100%);
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
 }
@@ -21,15 +21,14 @@
   font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.12em;
   color: var(--accent);
   margin-bottom: 0.75rem;
 }
 
 .sectionTitle {
-  font-family: var(--font-display);
-  font-size: clamp(1.85rem, 3.8vw, 2.75rem);
-  font-weight: 500;
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-weight: 700;
   letter-spacing: -0.03em;
   line-height: 1.15;
   margin-bottom: 0.875rem;
@@ -65,52 +64,37 @@
   margin: 0 auto 2.25rem;
 }
 
-/* ── Industries strip (Anthropic-style, no fake logos) ── */
-.industryStrip {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.75rem 1.5rem;
-  max-width: 920px;
+/* ── Trusted by ── */
+.logoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1.25rem;
+  max-width: 960px;
   margin: 0 auto;
-  list-style: none;
-  padding: 0;
 }
 
-.industryItem {
-  font-family: var(--font-display);
-  font-size: clamp(1rem, 1.6vw, 1.2rem);
-  font-weight: 500;
-  color: var(--text-muted);
-  letter-spacing: -0.01em;
-  position: relative;
-  padding: 0.25rem 0.15rem;
-}
-
-.industryItem:not(:last-child)::after {
-  content: '';
-  display: none;
-}
-
-@media (min-width: 720px) {
-  .industryStrip {
-    gap: 0;
-    column-gap: 0;
-  }
-
-  .industryItem {
-    padding: 0.35rem 1.1rem;
-  }
-
-  .industryItem:not(:last-child) {
-    border-right: 1px solid var(--border);
-  }
-}
-
-/* legacy class kept empty so older references don't break */
-.logoGrid,
 .logoPlaceholder {
-  display: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 56px;
+  padding: 0 1.25rem;
+  border-radius: 10px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  filter: grayscale(1);
+  opacity: 0.65;
+  transition: opacity 0.25s, filter 0.25s;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.logoPlaceholder:hover {
+  opacity: 0.9;
+  filter: grayscale(0.5);
 }
 
 /* ── Platform stack ── */
@@ -137,25 +121,21 @@
 
 .platformLayer:hover {
   transform: translateX(6px);
-  border-color: color-mix(in srgb, var(--accent) 45%, var(--border));
+  border-color: rgba(88, 166, 255, 0.45);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
 .platformLayerIcon {
   width: 40px;
   height: 40px;
-  border-radius: 999px;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  color: var(--accent);
-  background: color-mix(in srgb, var(--accent) 12%, transparent);
-  border: 1px solid color-mix(in srgb, var(--accent) 28%, transparent);
+  font-size: 1.125rem;
+  background: rgba(88, 166, 255, 0.1);
+  border: 1px solid rgba(88, 166, 255, 0.2);
   flex-shrink: 0;
-  font-family: var(--font-sans);
 }
 
 .platformLayerBody {
@@ -207,7 +187,7 @@
 .chipActive {
   border-color: var(--accent);
   color: var(--accent);
-  background: color-mix(in srgb, var(--accent) 10%, transparent);
+  background: rgba(88, 166, 255, 0.08);
 }
 
 /* ── App cards ── */
@@ -228,32 +208,19 @@
 }
 
 .appCard:hover {
-  border-color: color-mix(in srgb, var(--accent) 40%, var(--border));
+  border-color: rgba(88, 166, 255, 0.4);
   transform: translateY(-3px);
   box-shadow: 0 16px 48px rgba(0, 0, 0, 0.25);
 }
 
 .appCardIcon {
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 999px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.6875rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  color: var(--accent);
-  background: color-mix(in srgb, var(--accent) 12%, transparent);
-  border: 1px solid color-mix(in srgb, var(--accent) 28%, transparent);
+  font-size: 2rem;
   margin-bottom: 1rem;
-  font-family: var(--font-sans);
 }
 
 .appCardName {
-  font-family: var(--font-display);
-  font-size: 1.25rem;
-  font-weight: 500;
+  font-size: 1.125rem;
+  font-weight: 700;
   margin-bottom: 0.5rem;
   letter-spacing: -0.02em;
 }
@@ -536,23 +503,13 @@
   background: var(--bg);
   border: 1px solid var(--border);
   font-size: 0.875rem;
-  /* Visible by default — never leave content stuck at opacity 0 if animation is blocked */
-  opacity: 1;
-  transform: none;
-  animation: stepIn 0.4s ease-out both;
+  opacity: 0;
+  transform: translateY(8px);
+  animation: stepIn 0.4s ease-out forwards;
 }
 
 @keyframes stepIn {
-  from { opacity: 0; transform: translateY(8px); }
   to { opacity: 1; transform: translateY(0); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .demoStep {
-    animation: none !important;
-    opacity: 1 !important;
-    transform: none !important;
-  }
 }
 
 .demoStepIcon {
