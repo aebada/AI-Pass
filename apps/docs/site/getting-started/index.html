@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Getting started — AI-Pass Docs</title>
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/"><span class="brand-mark">AI</span> AI-Pass Docs</a>
+    <nav class="site-nav"><a href="https://aipass.space" rel="noopener">Platform</a></nav>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <h2>Guides</h2>
+      <ul>
+        <li><a href="/">Overview</a></li>
+        <li><a href="/getting-started/" aria-current="page">Getting started</a></li>
+        <li><a href="/auth/">Authentication</a></li>
+        <li><a href="/deployment/">Deployment</a></li>
+        <li><a href="/digital-twin/">Digital Twin</a></li>
+        <li><a href="/api/">API overview</a></li>
+      </ul>
+    </aside>
+
+    <main class="content">
+      <h1>Getting started</h1>
+      <p class="lead">Run AI-Pass locally and explore the workspace.</p>
+
+      <h2>Prerequisites</h2>
+      <ul>
+        <li>Node.js 20+</li>
+        <li><a href="https://pnpm.io">pnpm</a> 9+ (monorepo package manager)</li>
+        <li>Git</li>
+      </ul>
+
+      <h2>Clone and install</h2>
+<pre><code>git clone https://github.com/ai-pass/ai-pass.git
+cd ai-pass
+pnpm install</code></pre>
+
+      <h2>Start the web workspace</h2>
+<pre><code>pnpm dev:web</code></pre>
+      <p>
+        Open <a href="http://localhost:3000">localhost:3000</a>. The workspace lives at
+        <code>/workspace</code> — agents, Digital Twin, Invoice AI, marketplace, and more.
+      </p>
+
+      <h2>Environment</h2>
+      <p>Copy the example env for local auth and AI providers:</p>
+<pre><code>cp apps/web/.env.example apps/web/.env.local</code></pre>
+      <p>
+        See <a href="/auth/">Authentication</a> for Google OAuth setup and
+        <code>docs/MULTI-AI-SETUP.md</code> in the repo for provider keys.
+      </p>
+
+      <h2>Monorepo layout</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Path</th><th>Purpose</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>apps/web</code></td><td>Next.js platform UI</td></tr>
+            <tr><td><code>apps/desktop</code></td><td>Electron AI workspace</td></tr>
+            <tr><td><code>packages/*</code></td><td>Shared platform modules</td></tr>
+            <tr><td><code>verticals/*</code></td><td>Invoice AI, Supply Chain, etc.</td></tr>
+            <tr><td><code>docs/</code></td><td>Markdown architecture &amp; API reference</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Next steps</h2>
+      <ul>
+        <li><a href="/auth/">Configure authentication</a></li>
+        <li><a href="/deployment/">Deploy to Hostinger</a></li>
+        <li><a href="/digital-twin/">Digital Twin setup</a></li>
+      </ul>
+    </main>
+  </div>
+
+  <footer class="site-footer"><a href="https://aipass.space">AI-Pass Platform</a> · Documentation</footer>
+</body>
+</html>

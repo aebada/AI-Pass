@@ -1,0 +1,105 @@
+@import '../marketplace/marketplace.module.css';
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.sectionLink {
+  font-size: 0.8125rem;
+  color: var(--accent, #58a6ff);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.sectionLink:hover {
+  text-decoration: underline;
+}
+
+.cardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.cardActions {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.detailGrid {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 24px;
+}
+
+@media (max-width: 768px) {
+  .detailGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.detailMain,
+.detailSidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.dealCard {
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid rgba(88, 166, 255, 0.35);
+  background: rgba(88, 166, 255, 0.08);
+}
+
+.review {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border, #30363d);
+}
+
+.reviewTitle {
+  font-weight: 600;
+  margin: 0 0 4px;
+  color: var(--text, #e6edf3);
+}
+
+.reviewComment {
+  margin: 0;
+  font-size: 13px;
+  color: var(--text-muted, #8b949e);
+}
+
+/* Store hero quick-nav — pill row, not blue link clutter */
+.navLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem 0.5rem;
+  padding-top: 0.75rem;
+  margin-top: 0.25rem;
+  border-top: 1px solid var(--border, #30363d);
+}
+
+.navLink {
+  padding: 0.375rem 0.625rem;
+  border-radius: 6px;
+  font-size: 0.8125rem;
+  text-decoration: none;
+  color: var(--text-muted, #8b949e);
+  transition: color 0.15s, background 0.15s;
+}
+
+.navLink:hover {
+  color: var(--text, #e6edf3);
+  background: var(--bg-hover, #21262d);
+}

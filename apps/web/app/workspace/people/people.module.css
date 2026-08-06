@@ -1,0 +1,105 @@
+.banner {
+  padding: 14px 16px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  border: 1px solid color-mix(in srgb, var(--ws-accent, #5b8def) 35%, transparent);
+  background: color-mix(in srgb, var(--ws-accent, #5b8def) 10%, transparent);
+  color: var(--ws-text, #e8eaed);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.inviteCard {
+  margin-bottom: 24px;
+}
+
+.sectionTitle {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 0 12px;
+  color: var(--ws-text, #e8eaed);
+}
+
+.inviteRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.input,
+.select {
+  background: var(--ws-elevated, #1a1d24);
+  border: 1px solid var(--ws-border, #2a2f3a);
+  color: var(--ws-text, #e8eaed);
+  border-radius: 10px;
+  padding: 8px 12px;
+  font-size: 13px;
+  min-width: 140px;
+}
+
+.table {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+
+.tableHead,
+.tableRow {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 0.6fr;
+  gap: 12px;
+  align-items: center;
+  padding: 10px 12px;
+  border-radius: 10px;
+}
+
+.tableHead {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--ws-text-muted, #9aa3b2);
+}
+
+.tableRow {
+  border: 1px solid var(--ws-border, #2a2f3a);
+  background: var(--ws-elevated, #1a1d24);
+}
+
+.muted {
+  font-size: 12px;
+  color: var(--ws-text-muted, #9aa3b2);
+  margin: 4px 0 0;
+  line-height: 1.45;
+}
+
+.status {
+  font-size: 12px;
+  text-transform: capitalize;
+  color: var(--ws-text-muted, #9aa3b2);
+}
+
+.roleGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.footerNote {
+  font-size: 13px;
+  color: var(--ws-text-muted, #9aa3b2);
+}
+
+.error {
+  color: #f87171;
+  font-size: 12px;
+  margin: 8px 0 0;
+}
+
+@media (max-width: 768px) {
+  .tableHead,
+  .tableRow {
+    grid-template-columns: 1fr;
+  }
+}

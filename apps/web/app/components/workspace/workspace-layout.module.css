@@ -1,0 +1,46 @@
+.focusToggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg-elevated);
+  color: var(--text-secondary);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.focusToggle:hover {
+  background: var(--bg-hover);
+  color: var(--text);
+}
+
+.appHomeBar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 10px 24px 0;
+  font-size: 12px;
+}
+
+.homeLink {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.15s;
+}
+
+.homeLink:hover {
+  color: var(--accent);
+}
+
+.homeSep {
+  color: var(--text-muted);
+  opacity: 0.6;
+  user-select: none;
+}

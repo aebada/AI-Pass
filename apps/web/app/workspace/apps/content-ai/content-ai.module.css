@@ -1,0 +1,229 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-height: 0;
+}
+
+.subNav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--ai-border, rgba(255, 255, 255, 0.08));
+}
+
+.subNavLink {
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  color: var(--ai-text-muted, #8b949e);
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+}
+
+.subNavLink:hover {
+  background: var(--ai-surface-hover, rgba(255, 255, 255, 0.06));
+  color: var(--ai-text, #e6edf3);
+}
+
+.subNavLinkActive {
+  background: var(--ai-accent-muted, rgba(56, 139, 253, 0.15));
+  color: var(--ai-accent, #58a6ff);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.twoCol {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  background: var(--ai-surface, #161b22);
+  border: 1px solid var(--ai-border, rgba(255, 255, 255, 0.08));
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.cardTitle {
+  font-size: 13px;
+  color: var(--ai-text-muted, #8b949e);
+  margin: 0 0 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.statValue {
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--ai-text, #e6edf3);
+  margin: 0;
+}
+
+.textarea {
+  width: 100%;
+  min-height: 160px;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid var(--ai-border, rgba(255, 255, 255, 0.08));
+  background: var(--ai-bg, #0d1117);
+  color: var(--ai-text, #e6edf3);
+  font-size: 14px;
+  line-height: 1.5;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.select {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--ai-border, rgba(255, 255, 255, 0.08));
+  background: var(--ai-bg, #0d1117);
+  color: var(--ai-text, #e6edf3);
+  font-size: 13px;
+}
+
+.button {
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  background: var(--ai-accent, #58a6ff);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.meter {
+  height: 12px;
+  border-radius: 6px;
+  background: var(--ai-border, rgba(255, 255, 255, 0.08));
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+.meterFill {
+  height: 100%;
+  border-radius: 6px;
+  transition: width 0.3s;
+}
+
+.meterAi {
+  background: linear-gradient(90deg, #f85149, #d29922);
+}
+
+.meterHuman {
+  background: linear-gradient(90deg, #3fb950, #58a6ff);
+}
+
+.highlightAi {
+  background: rgba(248, 81, 73, 0.15);
+  border-left: 3px solid #f85149;
+  padding: 8px 12px;
+  margin: 8px 0;
+  border-radius: 0 8px 8px 0;
+}
+
+.highlightHuman {
+  background: rgba(63, 185, 80, 0.12);
+  border-left: 3px solid #3fb950;
+  padding: 8px 12px;
+  margin: 8px 0;
+  border-radius: 0 8px 8px 0;
+}
+
+.highlightMixed {
+  background: rgba(210, 153, 34, 0.12);
+  border-left: 3px solid #d29922;
+  padding: 8px 12px;
+  margin: 8px 0;
+  border-radius: 0 8px 8px 0;
+}
+
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.badgeAi {
+  background: rgba(248, 81, 73, 0.15);
+  color: #f85149;
+}
+
+.badgeHuman {
+  background: rgba(63, 185, 80, 0.15);
+  color: #3fb950;
+}
+
+.badgeMixed {
+  background: rgba(210, 153, 34, 0.15);
+  color: #d29922;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.table th,
+.table td {
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--ai-border, rgba(255, 255, 255, 0.08));
+}
+
+.compareCol {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 768px) {
+  .compareCol {
+    grid-template-columns: 1fr;
+  }
+
+  .app {
+    gap: 16px;
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .card {
+    padding: 14px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .subNavLink {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 420px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Authentication — AI-Pass Docs</title>
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/"><span class="brand-mark">AI</span> AI-Pass Docs</a>
+    <nav class="site-nav"><a href="https://aipass.space/login" rel="noopener">Sign in</a></nav>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <h2>Guides</h2>
+      <ul>
+        <li><a href="/">Overview</a></li>
+        <li><a href="/getting-started/">Getting started</a></li>
+        <li><a href="/auth/" aria-current="page">Authentication</a></li>
+        <li><a href="/deployment/">Deployment</a></li>
+        <li><a href="/digital-twin/">Digital Twin</a></li>
+        <li><a href="/api/">API overview</a></li>
+      </ul>
+    </aside>
+
+    <main class="content">
+      <h1>Authentication</h1>
+      <p class="lead">Google Sign-In and session management for production and local development.</p>
+
+      <h2>Two deployment paths</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Environment</th><th>Stack</th><th>Notes</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Production</strong> (aipass.space)</td>
+              <td>PHP sessions (<code>php-auth/</code>)</td>
+              <td>No Node.js on Hostinger shared hosting</td>
+            </tr>
+            <tr>
+              <td><strong>Local dev</strong> (<code>pnpm dev:web</code>)</td>
+              <td>Auth.js / NextAuth v5</td>
+              <td>Full Next.js API routes</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Production (PHP auth)</h2>
+      <p>
+        The live site at <a href="https://aipass.space">aipass.space</a> uses PHP sessions deployed to
+        <code>public_html/auth/</code> and <code>public_html/auth-lib/</code>.
+      </p>
+      <ul>
+        <li>Google redirect URI: <code>https://aipass.space/auth/google-callback.php</code></li>
+        <li>Secrets file: <code>public_html/auth-lib/.env</code></li>
+        <li>Deploy: <code>./scripts/deploy-hostinger-php-auth.sh</code></li>
+      </ul>
+
+      <h2>Local development (NextAuth)</h2>
+<pre><code>cp apps/web/.env.example apps/web/.env.local
+openssl rand -base64 32   # AUTH_SECRET</code></pre>
+      <p>Set <code>GOOGLE_CLIENT_ID</code>, <code>GOOGLE_CLIENT_SECRET</code>, and <code>AUTH_SECRET</code> in <code>.env.local</code>.</p>
+
+      <h2>Laravel auth API (optional)</h2>
+      <p>
+        An alternative Laravel stack lives in <code>services/auth-api/</code> for VPS or Hostinger Node deployments.
+        See repo <code>docs/LARAVEL-AUTH.md</code> and <code>docs/DEPLOY-AUTH.md</code>.
+      </p>
+
+      <h2>Login URLs</h2>
+      <ul>
+        <li>Production: <a href="https://aipass.space/login">aipass.space/login</a></li>
+        <li>After sign-in: <code>/workspace</code></li>
+      </ul>
+    </main>
+  </div>
+
+  <footer class="site-footer"><a href="https://aipass.space">AI-Pass Platform</a> · Documentation</footer>
+</body>
+</html>

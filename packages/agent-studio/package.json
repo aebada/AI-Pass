@@ -1,0 +1,27 @@
+{
+  "name": "@ai-pass/agent-studio",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": { ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" } },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@ai-pass/agent-core": "workspace:*",
+    "@ai-pass/automation-engine": "workspace:*",
+    "@ai-pass/governance": "workspace:*",
+    "@ai-pass/marketplace": "workspace:*",
+    "@ai-pass/marketplace-core": "workspace:*",
+    "@ai-pass/knowledge-pipeline": "workspace:*",
+    "@ai-pass/membership": "workspace:*",
+    "@ai-pass/runtime-core": "workspace:*",
+    "@ai-pass/shared": "workspace:*"
+  },
+  "devDependencies": { "typescript": "^5.8.3" }
+}

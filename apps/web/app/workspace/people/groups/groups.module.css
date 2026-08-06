@@ -1,0 +1,87 @@
+.layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.listPane,
+.detailPane {
+  min-width: 0;
+}
+
+.groupItem {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  width: 100%;
+  text-align: left;
+  padding: 10px 12px;
+  margin-bottom: 6px;
+  border-radius: 10px;
+  border: 1px solid var(--ws-border, #2a2f3a);
+  background: var(--ws-elevated, #1a1d24);
+  color: var(--ws-text, #e8eaed);
+  cursor: pointer;
+}
+
+.groupItemActive {
+  border-color: color-mix(in srgb, var(--ws-accent, #5b8def) 55%, transparent);
+  background: color-mix(in srgb, var(--ws-accent, #5b8def) 12%, transparent);
+}
+
+.detailHeader {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.detailTitle {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.capGrid,
+.memberList {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.capItem {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--ws-border, #2a2f3a);
+  background: var(--ws-elevated, #1a1d24);
+  cursor: pointer;
+}
+
+.capItem strong {
+  display: block;
+  font-size: 13px;
+}
+
+.capItem span span {
+  display: block;
+}
+
+.adminOnly {
+  display: inline-block !important;
+  margin-top: 4px;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #fbbf24;
+}
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}

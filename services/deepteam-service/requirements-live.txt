@@ -1,0 +1,2 @@
+# Live DeepTeam — install after base requirements when DEEPTEAM_STUB_MODE=0
+deepteam>=0.2.0

@@ -1,0 +1,97 @@
+# Hostinger / Apache — Next.js static export routing
+DirectoryIndex index.html
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+# --- Laravel auth proxy (/auth/*) ---
+# See docs/apache-laravel-auth-proxy.htaccess
+  RewriteRule ^auth/signin/?$ /login [R=302,L]
+
+  RewriteCond %{DOCUMENT_ROOT}/laravel-auth/public/index.php -f
+  RewriteCond %{REQUEST_URI} ^/auth/(google|login|register|logout|me|setup|forgot-password|reset-password|verify-email|email|desktop-complete|desktop)(/|$) [NC]
+  RewriteRule ^auth/?(.*)$ /laravel-auth/public/index.php/auth/$1 [L,QSA]
+
+  RewriteCond %{DOCUMENT_ROOT}/../laravel-auth/public/index.php -f
+  RewriteCond %{REQUEST_URI} ^/auth/(google|login|register|logout|me|setup|forgot-password|reset-password|verify-email|email|desktop-complete|desktop)(/|$) [NC]
+  RewriteRule ^ %{DOCUMENT_ROOT}/../laravel-auth/public/index.php [L]
+
+  RewriteCond %{DOCUMENT_ROOT}/laravel-auth/public/index.php !-f
+  RewriteCond %{DOCUMENT_ROOT}/../laravel-auth/public/index.php !-f
+  RewriteRule ^auth/(login|register|signin)/?$ /login [R=302,L,QSA]
+
+# --- Laravel API proxy (AI chat + Digital Twin) ---
+# See docs/apache-laravel-api-proxy.htaccess
+  RewriteCond %{DOCUMENT_ROOT}/laravel-auth/public/index.php -f
+  RewriteCond %{REQUEST_URI} ^/api/v1/(ai/|twin/|integrations) [NC]
+  RewriteRule ^api/v1/(.*)$ /laravel-auth/public/index.php [L,QSA]
+
+  RewriteCond %{DOCUMENT_ROOT}/../laravel-auth/public/index.php -f
+  RewriteCond %{REQUEST_URI} ^/api/v1/(ai/|twin/|integrations) [NC]
+  RewriteRule ^ %{DOCUMENT_ROOT}/../laravel-auth/public/index.php [L]
+
+# --- Node.js API proxy (Google / NextAuth) ---
+# Merge docs/apache-api-proxy.htaccess into public_html/.htaccess BEFORE the SPA fallback.
+# Requires mod_proxy on Hostinger. See docs/DEPLOY-AUTH.md.
+
+  RewriteBase /
+
+  # Missing hashed assets must 404 — never SPA-fallback to index.html (breaks CSS/JS MIME)
+  RewriteCond %{REQUEST_URI} ^/_next/static/.+\.(css|js|woff2?|map)$ [NC]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^ - [R=404,L]
+
+  # IDE release binaries / update feeds — never SPA-rewrite
+  RewriteRule ^downloads/releases/.+\.(dmg|exe|AppImage|zip|yml|blockmap|json|md)$ - [L]
+  RewriteRule ^downloads/latest(-mac|-linux|-win)?\.yml$ - [L]
+
+  # Existing files (incl. _next assets)
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} -f
+  RewriteRule ^ - [L]
+
+  # Top-level routes — prefer .html over directory (avoids /workspace vs workspace/ ambiguity)
+  RewriteRule ^platform/?$ /platform.html [L]
+  RewriteRule ^workspace/?$ /workspace.html [L]
+  RewriteRule ^store/?$ /store.html [L]
+  RewriteRule ^studio/?$ /studio.html [L]
+  RewriteRule ^login/?$ /login.html [L]
+  # /downloads → HTML page; /downloads/releases/* are real files (matched above / -f)
+  RewriteRule ^downloads/?$ /downloads.html [L]
+
+  # Directory with index.html but no sibling .html (e.g. nested routes)
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteCond %{REQUEST_FILENAME}/index.html -f
+  RewriteRule ^(.+?)/?$ $1/index.html [L]
+
+  # Clean URLs: /studio -> studio.html, /platform/governance -> platform/governance.html
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME}.html -f
+  RewriteRule ^(.+?)/?$ $1.html [L]
+
+  # Nested .html when path is a directory (e.g. platform/governance)
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteCond %{REQUEST_FILENAME}.html -f
+  RewriteRule ^(.+?)/?$ $1.html [L]
+
+  # Fallback SPA shell
+  RewriteRule ^ /index.html [L]
+</IfModule>
+
+# Branded 404 (Next static export: out/404.html) when rewrite target is missing
+ErrorDocument 404 /404.html
+
+# IDE installer MIME types (avoid text/html from SPA fallback)
+<IfModule mod_mime.c>
+  AddType application/octet-stream .dmg .exe .AppImage .blockmap
+  AddType application/zip .zip
+  AddType text/yaml .yml
+</IfModule>
+
+# Cache static assets
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+</IfModule>

@@ -1,0 +1,27 @@
+{
+  "name": "@ai-pass/verticals",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" },
+    "./customer-support": { "types": "./dist/customer-support.d.ts", "import": "./dist/customer-support.js" },
+    "./invoice-ai": { "types": "./dist/invoice-ai.d.ts", "import": "./dist/invoice-ai.js" },
+    "./supply-chain": { "types": "./dist/supply-chain.d.ts", "import": "./dist/supply-chain.js" }
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@ai-pass/customer-support-ai": "workspace:*",
+    "@ai-pass/invoice-ai": "workspace:*",
+    "@ai-pass/supply-chain-ai": "workspace:*",
+    "@ai-pass/shared": "workspace:*"
+  },
+  "devDependencies": { "typescript": "^5.8.3" }
+}

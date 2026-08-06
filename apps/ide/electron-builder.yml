@@ -1,0 +1,70 @@
+appId: space.aipass.ide
+productName: AI-Pass IDE
+copyright: Copyright © 2026 AI Pass
+
+directories:
+  output: release
+  buildResources: resources
+
+# URL-safe names for /downloads/releases/ (no spaces, no @scope)
+artifactName: AI-Pass-IDE-${version}-${arch}.${ext}
+
+files:
+  - dist/**/*
+  - package.json
+  - src/**/*
+
+extraResources:
+  - from: src
+    to: renderer
+    filter:
+      - "**/*"
+
+mac:
+  category: public.app-category.developer-tools
+  target:
+    - target: dmg
+      arch:
+        - x64
+        - arm64
+    - target: zip
+      arch:
+        - x64
+        - arm64
+  icon: resources/icon.png
+  darkModeSupport: true
+  hardenedRuntime: true
+  gatekeeperAssess: false
+
+win:
+  target:
+    - nsis
+    - portable
+  icon: resources/icon.png
+
+linux:
+  target:
+    - AppImage
+    - deb
+  category: Development
+  icon: resources/icon.png
+  executableName: ai-pass-ide
+  maintainer: AI Pass <support@aipass.space>
+  synopsis: AI-Pass desktop IDE connected to aipass.space
+  description: AI-Pass IDE — Electron shell for the live aipass.space workspace
+
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  shortcutName: AI-Pass IDE
+  artifactName: AI-Pass-IDE-Setup-${version}.${ext}
+
+publish:
+  provider: generic
+  url: https://aipass.space/downloads/releases/
+  channel: latest
+
+protocols:
+  - name: AI-Pass IDE
+    schemes:
+      - aipass

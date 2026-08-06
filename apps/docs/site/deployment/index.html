@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Deployment — AI-Pass Docs</title>
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/"><span class="brand-mark">AI</span> AI-Pass Docs</a>
+    <nav class="site-nav"><a href="https://aipass.space" rel="noopener">Platform</a></nav>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <h2>Guides</h2>
+      <ul>
+        <li><a href="/">Overview</a></li>
+        <li><a href="/getting-started/">Getting started</a></li>
+        <li><a href="/auth/">Authentication</a></li>
+        <li><a href="/deployment/" aria-current="page">Deployment</a></li>
+        <li><a href="/digital-twin/">Digital Twin</a></li>
+        <li><a href="/api/">API overview</a></li>
+      </ul>
+    </aside>
+
+    <main class="content">
+      <h1>Deployment</h1>
+      <p class="lead">Hostinger static hosting for the platform and documentation subdomain.</p>
+
+      <h2>Platform (aipass.space)</h2>
+      <p>Build a static Next.js export and upload via FTP:</p>
+<pre><code>./scripts/build-web-static.sh
+./scripts/deploy-ftp.sh</code></pre>
+      <p>FTP credentials via <code>scripts/.deploy-env.local</code> (never commit passwords):</p>
+<pre><code>FTP_HOST=92.113.19.130
+FTP_USER=u234903558.aipass
+FTP_PASS=***
+FTP_REMOTE_DIR=/</code></pre>
+
+      <h2>PHP authentication</h2>
+<pre><code>./scripts/build-web-static.sh   # COPY_PHP_AUTH=1 optional
+./scripts/deploy-hostinger-php-auth.sh</code></pre>
+      <p>Configure <code>public_html/auth-lib/.env</code> on the server. See <a href="/auth/">Authentication</a>.</p>
+
+      <h2>Documentation (docs.ai-pass.com)</h2>
+      <p>Build and deploy the static docs site:</p>
+<pre><code>./scripts/build-docs-static.sh
+./scripts/deploy-docs-ftp.sh</code></pre>
+
+      <h3>Hostinger hPanel — docs subdomain</h3>
+      <ol>
+        <li><strong>Domains</strong> → add or connect <code>ai-pass.com</code> to your Hostinger account (nameservers must point to Hostinger).</li>
+        <li><strong>Subdomains</strong> → create <code>docs</code> for <code>ai-pass.com</code> → document root becomes <code>domains/docs.ai-pass.com/public_html</code>.</li>
+        <li>Set <code>DOCS_FTP_REMOTE_DIR=/domains/docs.ai-pass.com/public_html</code> in <code>scripts/.deploy-env.local</code>.</li>
+        <li>Run <code>./scripts/deploy-docs-ftp.sh</code>.</li>
+        <li>Enable free SSL for <code>docs.ai-pass.com</code> in hPanel → SSL.</li>
+      </ol>
+
+      <h3>Interim option (no ai-pass.com DNS yet)</h3>
+      <p>
+        Until <code>ai-pass.com</code> resolves, use a subdomain on the live domain:
+        create <code>docs.aipass.space</code> in hPanel, set
+        <code>DOCS_FTP_REMOTE_DIR=/domains/docs.aipass.space/public_html</code>, deploy, then update
+        <code>DOCS_URL</code> in <code>apps/web/app/lib/site-nav.ts</code> if needed.
+      </p>
+
+      <h2>Node.js deploy (VPS / hPanel Node)</h2>
+      <p>For full API routes without static export:</p>
+<pre><code>./scripts/build-node-prod.sh
+./scripts/deploy-hostinger-node.sh</code></pre>
+      <p>See <code>docs/DEPLOY-AUTH.md</code> in the repository.</p>
+    </main>
+  </div>
+
+  <footer class="site-footer"><a href="https://aipass.space">AI-Pass Platform</a> · Documentation</footer>
+</body>
+</html>

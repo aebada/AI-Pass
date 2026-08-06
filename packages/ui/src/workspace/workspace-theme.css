@@ -1,0 +1,272 @@
+/* Premium dark workspace — Linear / Vercel / Kimi-dark quality, scoped to WorkspaceShell */
+[data-workspace='true'],
+html[data-theme='light'] [data-workspace='true'],
+[data-theme='light'] [data-workspace='true'] {
+  color-scheme: dark;
+
+  --bg: #0c0e12;
+  --bg-elevated: #141820;
+  --bg-hover: #1a1f2a;
+  --border: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.14);
+  --text: #e8eaed;
+  --text-muted: #9aa3af;
+  --accent: #58a6ff;
+  --accent-muted: #388bfd;
+  --success: #3fb950;
+  --warning: #d29922;
+  --error: #f85149;
+  --radius: 12px;
+  --radius-sm: 8px;
+  --radius-lg: 16px;
+
+  --ws-bg: var(--bg);
+  --ws-surface: var(--bg-elevated);
+  --ws-border: var(--border);
+  --ws-text: var(--text);
+  --ws-text-muted: var(--text-muted);
+  --ws-accent: var(--accent);
+
+  --ai-bg: var(--bg);
+  --ai-bg-elevated: var(--bg-elevated);
+  --ai-bg-hover: var(--bg-hover);
+  --ai-border: var(--border);
+  --ai-text: var(--text);
+  --ai-text-muted: var(--text-muted);
+  --ai-accent: var(--accent);
+  --ai-accent-hover: var(--accent-muted);
+  --ai-success: var(--success);
+  --ai-danger: var(--error);
+  --ai-radius: var(--radius);
+
+  background-color: var(--bg);
+  color: var(--text);
+  font-feature-settings: 'ss01' on, 'cv11' on;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Isolate workspace from global light theme on html/body */
+[data-workspace='true'],
+[data-workspace='true'] main {
+  scrollbar-color: rgba(255, 255, 255, 0.18) var(--bg);
+  scrollbar-gutter: stable;
+}
+
+[data-workspace='true'] ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+[data-workspace='true'] ::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+[data-workspace='true'] ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 4px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+[data-workspace='true'] ::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.22);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+/* Sidebar + top bar — pin dark surfaces even when html is light */
+[data-workspace='true'] aside {
+  background-color: var(--bg-elevated);
+  color: var(--text);
+}
+
+[data-workspace='true'] header {
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+[data-workspace='true'] main {
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+/* Workspace brand logo — always use dark-background wordmark (logo.svg) */
+[data-workspace='true'] .ws-brand-logo {
+  filter: none;
+  opacity: 0.95;
+}
+
+/* ── Shared page chrome ──────────────────────────────────────────────────── */
+[data-workspace='true'] .ws-page-header {
+  margin-bottom: 28px;
+}
+
+[data-workspace='true'] .ws-page-title {
+  font-size: 1.375rem;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.25;
+  margin: 0;
+  color: var(--text);
+}
+
+[data-workspace='true'] .ws-page-subtitle {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+  margin: 8px 0 0;
+  max-width: 42rem;
+}
+
+[data-workspace='true'] .ws-panel {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.125rem 1.25rem;
+}
+
+[data-workspace='true'] .ws-section-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin: 0 0 10px;
+}
+
+/* Sidebar nav polish */
+[data-workspace='true'] .ws-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 10px;
+  margin-bottom: 1px;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  line-height: 1.3;
+  color: var(--text-muted);
+  background: transparent;
+  font-weight: 450;
+  text-decoration: none;
+  transition: background 0.12s ease, color 0.12s ease;
+  position: relative;
+}
+
+[data-workspace='true'] .ws-nav-link:hover {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+[data-workspace='true'] .ws-nav-link[data-active='true'] {
+  color: var(--text);
+  background: rgba(88, 166, 255, 0.1);
+  font-weight: 500;
+}
+
+[data-workspace='true'] .ws-nav-link[data-active='true']::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  border-radius: 1px;
+  background: var(--accent);
+}
+
+[data-workspace='true'] .ws-nav-section-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(154, 163, 175, 0.75);
+  padding: 14px 10px 6px;
+  margin: 0;
+}
+
+[data-workspace='true'] .ws-nav-section:first-child .ws-nav-section-label {
+  padding-top: 4px;
+}
+
+/* ── Mobile workspace shell (≤768px) ─────────────────────────────────────── */
+@media (max-width: 768px) {
+  [data-workspace='true'].ws-shell {
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
+  /* Off-canvas sidebar before/after hydration — frees main content width */
+  [data-workspace='true'] .ws-sidebar {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    z-index: 200 !important;
+    width: 248px !important;
+    min-width: 248px !important;
+    height: 100vh !important;
+    transform: translateX(-100%) !important;
+    transition: transform 0.2s ease !important;
+    box-shadow: none;
+  }
+
+  [data-workspace='true'][data-ws-nav='open'] .ws-sidebar,
+  [data-workspace='true'] .ws-sidebar[data-ws-sidebar='open'] {
+    transform: translateX(0) !important;
+    box-shadow: 8px 0 32px rgba(0, 0, 0, 0.45);
+  }
+
+  [data-workspace='true'] .ws-main-column {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100%;
+  }
+
+  [data-workspace='true'] .ws-main {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100%;
+    padding: 16px !important;
+    box-sizing: border-box;
+    scrollbar-gutter: auto !important;
+  }
+
+  [data-workspace='true'] .ws-topbar {
+    padding: 8px 12px 8px 8px !important;
+  }
+
+  [data-workspace='true'] .ws-menu-btn {
+    display: inline-flex !important;
+  }
+
+  [data-workspace='true'] .ws-topbar-search {
+    display: none !important;
+  }
+
+  [data-workspace='true'] .ws-topbar-user-meta {
+    display: none !important;
+  }
+
+  [data-workspace='true'] .ws-topbar-user {
+    padding: 4px !important;
+  }
+
+  [data-workspace='true'] .ws-topbar-subtitle {
+    display: none !important;
+  }
+
+  /* Prevent nested app shells from forcing horizontal overflow */
+  [data-workspace='true'] .ws-main > * {
+    min-width: 0;
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 769px) {
+  [data-workspace='true'] .ws-menu-btn {
+    display: none !important;
+  }
+
+  [data-workspace='true'] .ws-nav-backdrop {
+    display: none !important;
+  }
+}

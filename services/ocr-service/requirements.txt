@@ -1,0 +1,10 @@
+# Unlimited-OCR inference API wrapper for AI-Pass
+# Does NOT bundle model weights — inference runs via vLLM/SGLang or stub mode.
+
+fastapi==0.115.12
+uvicorn[standard]==0.34.2
+python-multipart==0.0.20
+httpx==0.28.1
+pymupdf==1.27.2.2
+Pillow==12.1.1
+python-dotenv==1.1.0

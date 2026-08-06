@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root,
+[data-theme='dark'] {
+  --bg: #0a0a0f;
+  --bg-elevated: #111827;
+  --bg-hover: #1a2235;
+  --border: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.14);
+  --text: #f3f4f6;
+  --text-muted: #9ca3af;
+  --accent: #2563eb;
+  --accent-muted: #1d4ed8;
+  --accent-glow: rgba(37, 99, 235, 0.35);
+  --success: #22c55e;
+  --warning: #eab308;
+  --error: #ef4444;
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: ui-monospace, 'SF Mono', 'Cascadia Code', Menlo, monospace;
+
+  /* Typography scale — req 3.5. Strict steps only: 14/16/20/28/40/56/72px.
+     clamp() interpolates between two steps; it never introduces a new one. */
+  --text-display: clamp(2.5rem, 5vw, 4.5rem); /* 40 -> 72 */
+  --text-h1: clamp(2.5rem, 4vw, 3.5rem); /* 40 -> 56 */
+  --text-h2: clamp(1.75rem, 3vw, 2.5rem); /* 28 -> 40 */
+  --text-h3: 1.25rem; /* 20 */
+  --text-lead: 1.25rem; /* 20 */
+  --text-body: 1rem; /* 16 */
+  --text-body-sm: 0.875rem; /* 14 */
+  --text-caption: 0.875rem; /* 14 */
+  --leading-tight: 1.15;
+  --leading-snug: 1.35;
+  --leading-normal: 1.6;
+  --leading-relaxed: 1.7;
+
+  /* Spacing scale — req 3.6. 8px base; every step is a multiple of 8. */
+  --space-1: 0.5rem; /* 8 */
+  --space-2: 1rem; /* 16 */
+  --space-3: 1.5rem; /* 24 */
+  --space-4: 2rem; /* 32 */
+  --space-5: 3rem; /* 48 */
+  --space-6: 5rem; /* 80 */
+  --space-7: 6rem; /* 96 */
+  --section-pad-y: 6rem; /* 96 — req 3.6 desktop minimum */
+  --section-pad-x: clamp(1.25rem, 4vw, 2rem);
+  --container-max: 1200px;
+
+  --ai-bg: var(--bg);
+  --ai-bg-elevated: var(--bg-elevated);
+  --ai-bg-hover: var(--bg-hover);
+  --ai-border: var(--border);
+  --ai-text: var(--text);
+  --ai-text-muted: var(--text-muted);
+  --ai-accent: var(--accent);
+  color-scheme: dark;
+}
+
+[data-theme='light'] {
+  --bg: #f9fafb;
+  --bg-elevated: #ffffff;
+  --bg-hover: #f3f4f6;
+  --border: rgba(0, 0, 0, 0.08);
+  --border-strong: rgba(0, 0, 0, 0.14);
+  --text: #111827;
+  --text-muted: #6b7280;
+  --accent: #2563eb;
+  --accent-muted: #1d4ed8;
+  --accent-glow: rgba(37, 99, 235, 0.2);
+  --success: #16a34a;
+  --warning: #ca8a04;
+  --error: #dc2626;
+  --ai-bg: var(--bg);
+  --ai-bg-elevated: var(--bg-elevated);
+  --ai-bg-hover: var(--bg-hover);
+  --ai-border: var(--border);
+  --ai-text: var(--text);
+  --ai-text-muted: var(--text-muted);
+  --ai-accent: var(--accent);
+  color-scheme: light;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  min-height: 100%;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  line-height: var(--leading-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Accessible focus ring */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+button:focus:not(:focus-visible),
+a:focus:not(:focus-visible) {
+  outline: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media (max-width: 768px) {
+  :root,
+  [data-theme='dark'] {
+    --section-pad-y: 3.5rem;
+    --text-display: clamp(2rem, 8vw, 2.75rem);
+  }
+}

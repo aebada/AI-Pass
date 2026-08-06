@@ -1,0 +1,56 @@
+/* Map UI package tokens to app globals — never override :root (globals.css owns base theme) */
+[data-theme='light'],
+html.light {
+  --ai-bg: var(--bg);
+  --ai-bg-elevated: var(--bg-elevated);
+  --ai-bg-hover: var(--bg-hover);
+  --ai-border: var(--border);
+  --ai-text: var(--text);
+  --ai-text-muted: var(--text-muted);
+  --ai-accent: var(--accent);
+  --ai-accent-hover: var(--accent-muted);
+  --ai-success: var(--success);
+  --ai-danger: var(--error);
+}
+
+[data-theme='dark'],
+html.dark {
+  --ai-bg: var(--bg);
+  --ai-bg-elevated: var(--bg-elevated);
+  --ai-bg-hover: var(--bg-hover);
+  --ai-border: var(--border);
+  --ai-text: var(--text);
+  --ai-text-muted: var(--text-muted);
+  --ai-accent: var(--accent);
+  --ai-accent-hover: var(--accent-muted);
+  --ai-success: var(--success);
+  --ai-danger: var(--error);
+}
+
+:root {
+  --ai-radius: 12px;
+  --ai-font: var(--font-sans, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+  --ai-font-mono: var(--font-mono, 'SF Mono', 'Fira Code', Consolas, monospace);
+}
+
+/* Workspace sidebar nav icons — thin line icons */
+.ws-nav-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  opacity: 0.65;
+  color: currentColor;
+}
+
+.ws-nav-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.ws-nav-icon--active {
+  opacity: 1;
+  color: var(--accent, #58a6ff);
+}

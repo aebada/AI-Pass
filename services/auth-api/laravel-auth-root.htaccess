@@ -1,0 +1,4 @@
+# Deny web access to Laravel app root (only public/ is reached via main site proxy)
+<IfModule mod_authz_core.c>
+  Require all denied
+</IfModule>

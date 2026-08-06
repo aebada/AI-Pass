@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Digital Twin — AI-Pass Docs</title>
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/"><span class="brand-mark">AI</span> AI-Pass Docs</a>
+    <nav class="site-nav"><a href="https://aipass.space/workspace/twin" rel="noopener">Open Twin</a></nav>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <h2>Guides</h2>
+      <ul>
+        <li><a href="/">Overview</a></li>
+        <li><a href="/getting-started/">Getting started</a></li>
+        <li><a href="/auth/">Authentication</a></li>
+        <li><a href="/deployment/">Deployment</a></li>
+        <li><a href="/digital-twin/" aria-current="page">Digital Twin</a></li>
+        <li><a href="/api/">API overview</a></li>
+      </ul>
+    </aside>
+
+    <main class="content">
+      <h1>Digital Twin</h1>
+      <p class="lead">
+        Personalized AI assistant per user — text and voice, calendar awareness, consent-governed memory, and day planning.
+      </p>
+
+      <h2>Workspace UI</h2>
+      <ul>
+        <li><strong>Full chat:</strong> <a href="https://aipass.space/workspace/twin">/workspace/twin</a></li>
+        <li><strong>Floating widget:</strong> available on other workspace pages</li>
+        <li><strong>Voice:</strong> Web Speech API (client-side STT/TTS on static production)</li>
+      </ul>
+
+      <h2>Architecture</h2>
+<pre><code>Browser (static Next.js)
+  ├── /workspace/twin
+  ├── DigitalTwinWidget.tsx
+  └── Web Speech API
+
+API
+  POST /api/v1/twin/chat
+  GET/POST /api/v1/twin/memory
+  GET    /api/v1/twin/calendar/events
+
+packages/digital-twin
+  ├── DigitalTwinService
+  ├── TwinMemoryStore
+  ├── TwinPersonality
+  └── CalendarConnector</code></pre>
+
+      <h2>Package: @ai-pass/digital-twin</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Module</th><th>Purpose</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>DigitalTwinService</code></td><td>Chat, plan-my-day, calendar, memory CRUD</td></tr>
+            <tr><td><code>TwinMemoryStore</code></td><td>Categories: private, business, medical, connections</td></tr>
+            <tr><td><code>TwinPersonality</code></td><td>System prompt from profile + memory + schedule</td></tr>
+            <tr><td><code>CalendarConnector</code></td><td>Google stub + mock demo schedule</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Production vs development</h2>
+      <p>
+        Production is static Next.js on Hostinger. Chat UI runs in the browser; API calls hit Laravel endpoints in
+        <code>services/auth-api/routes/api.php</code> (stubs) or the Node dev server for full
+        <code>@ai-pass/provider-hub</code> AI responses.
+      </p>
+
+      <h2>Membership tiers</h2>
+      <p>
+        Digital Twin features are gated by universal membership tier (memory limits, voice, calendar sync).
+        See <code>docs/DIGITAL-TWIN.md</code> and <code>docs/UNIVERSAL-MEMBERSHIP.md</code> in the repository.
+      </p>
+    </main>
+  </div>
+
+  <footer class="site-footer"><a href="https://aipass.space">AI-Pass Platform</a> · Documentation</footer>
+</body>
+</html>

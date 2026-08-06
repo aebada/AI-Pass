@@ -1,0 +1,44 @@
+{
+  "name": "ai-pass",
+  "version": "0.1.0",
+  "private": true,
+  "description": "AI-powered code editor platform",
+  "scripts": {
+    "dev": "turbo run dev",
+    "dev:web": "turbo run dev --filter=@ai-pass/web",
+    "dev:desktop": "turbo run dev --filter=@ai-pass/desktop",
+    "dev:mobile": "turbo run dev --filter=@ai-pass/mobile",
+    "build": "turbo run build",
+    "build:web": "turbo run build --filter=@ai-pass/web",
+    "build:docs": "./scripts/build-docs-static.sh",
+    "deploy:docs": "./scripts/deploy-docs-ftp.sh",
+    "build:desktop": "pnpm --filter @ai-pass/desktop package",
+    "build:ide": "pnpm --filter @ai-pass/ide dist",
+    "dev:ide": "pnpm --filter @ai-pass/ide start",
+    "dist:ide:mac": "pnpm --filter @ai-pass/ide dist:mac",
+    "dist:ide:win": "pnpm --filter @ai-pass/ide dist:win",
+    "dist:ide:linux": "pnpm --filter @ai-pass/ide dist:linux",
+    "dist:mac": "pnpm --filter @ai-pass/desktop dist:mac",
+    "dist:win": "pnpm --filter @ai-pass/desktop dist:win",
+    "dist:linux": "pnpm --filter @ai-pass/desktop dist:linux",
+    "build:mobile": "cd apps/mobile && eas build --platform all",
+    "dev:livesync": "pnpm --filter @ai-pass/web dev",
+    "typecheck": "turbo run typecheck",
+    "lint": "turbo run lint",
+    "clean": "turbo run clean && rm -rf node_modules"
+  },
+  "devDependencies": {
+    "turbo": "^2.5.4",
+    "typescript": "^5.8.3"
+  },
+  "packageManager": "pnpm@9.15.0",
+  "engines": {
+    "node": ">=20"
+  },
+  "pnpm": {
+    "overrides": {
+      "@types/react": "^19.1.8",
+      "@types/react-dom": "^19.1.6"
+    }
+  }
+}

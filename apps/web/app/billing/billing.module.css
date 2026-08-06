@@ -1,0 +1,83 @@
+.currentPlan {
+  margin-bottom: 2rem;
+  max-width: 480px;
+}
+
+.currentHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.planName {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: capitalize;
+  margin: 4px 0 0;
+}
+
+.renewal {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  margin: 12px 0 0;
+}
+
+.plans {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+}
+
+.planCurrent {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.name {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 8px 0 4px;
+}
+
+.price {
+  margin-bottom: 1rem;
+}
+
+.amount {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.period {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-left: 4px;
+}
+
+.features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.25rem;
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+.contactBtn {
+  display: inline-flex;
+  padding: 8px 14px;
+  border-radius: 6px;
+  background: var(--accent-muted);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+}

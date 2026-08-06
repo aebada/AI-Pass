@@ -1,0 +1,17 @@
+version: 1.0.2
+files:
+  - url: AI-Pass-IDE-1.0.2-x64.zip
+    sha512: PDzqsH7bUww535Azh5k02nhSdYlRlbRccYUBtQprva+h7C+2cktAyupz5u0FsZYj3JGDrryoj5GAfiieIpKa/Q==
+    size: 110221442
+  - url: AI-Pass-IDE-1.0.2-arm64.zip
+    sha512: 9Zs6BMI/ey0LfEHr2ofzKZnmA+WUpjjgDm9KU9HVsuD7GuY2SrrCRMvAJk6gbTupULJyUfg3KumvzAdbVCaEhA==
+    size: 105784323
+  - url: AI-Pass-IDE-1.0.2-x64.dmg
+    sha512: sG4Yqu2Lir5xm0K+1htGb5Svipn1t7Q5P4WXwXiVrTdJUjmhzPx0xVkngMaAk5joMQRoVtqRKFedTsyKu+u/Zw==
+    size: 110396502
+  - url: AI-Pass-IDE-1.0.2-arm64.dmg
+    sha512: UX12ohd7CMFHGvzkb2g2T03OVsxnnvjGtYSXRzV3jKELzU/0bNzt9TeXYlfXrfhaSXgI6SSLu6tRCUJ56XYfTg==
+    size: 105997388
+path: AI-Pass-IDE-1.0.2-x64.zip
+sha512: PDzqsH7bUww535Azh5k02nhSdYlRlbRccYUBtQprva+h7C+2cktAyupz5u0FsZYj3JGDrryoj5GAfiieIpKa/Q==
+releaseDate: '2026-07-18T19:12:45.993Z'

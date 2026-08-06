@@ -1,0 +1,40 @@
+# Local dev: OCR API wrapper + optional vLLM Unlimited-OCR inference sidecar.
+# Model weights are pulled at runtime by vLLM — never committed to git.
+
+services:
+  ocr-api:
+    build: .
+    ports:
+      - "8100:8100"
+    environment:
+      OCR_STUB_MODE: "${OCR_STUB_MODE:-1}"
+      OCR_INFERENCE_URL: "${OCR_INFERENCE_URL:-http://ocr-inference:8000/v1}"
+      OCR_INFERENCE_MODEL: Unlimited-OCR
+      OCR_SERVICE_API_KEY: "${OCR_SERVICE_API_KEY:-}"
+    depends_on:
+      - ocr-inference
+    profiles:
+      - full
+
+  ocr-inference:
+    image: vllm/vllm-openai:unlimited-ocr
+    ports:
+      - "8000:8000"
+    environment:
+      VLLM_MODEL: baidu/Unlimited-OCR
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    profiles:
+      - full
+
+  ocr-api-stub:
+    build: .
+    ports:
+      - "8100:8100"
+    environment:
+      OCR_STUB_MODE: "1"

@@ -1,0 +1,163 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-height: 0;
+}
+
+.subNav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+.subNavLink {
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+}
+
+.subNavLink:hover {
+  background: var(--bg-hover);
+  color: var(--text);
+}
+
+.subNavLinkActive {
+  background: var(--bg-hover);
+  color: var(--accent);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.cardTitle {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin: 0 0 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.statValue {
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0;
+}
+
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.badgeCritical {
+  background: rgba(248, 81, 73, 0.15);
+  color: #f85149;
+}
+
+.badgeMedium {
+  background: rgba(210, 153, 34, 0.15);
+  color: #d29922;
+}
+
+.badgeLow {
+  background: rgba(63, 185, 80, 0.15);
+  color: #3fb950;
+}
+
+.badgeOpenai { background: rgba(16, 163, 127, 0.15); color: #10a37f; }
+.badgeAnthropic { background: rgba(204, 120, 92, 0.15); color: #cc785c; }
+.badgeGoogle { background: rgba(66, 133, 244, 0.15); color: #4285f4; }
+.badgePerplexity { background: rgba(20, 178, 170, 0.15); color: #20b2aa; }
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.listItem {
+  padding: 12px 16px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 13px;
+  color: var(--text);
+}
+
+.progressBar {
+  height: 6px;
+  background: var(--border);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+.progressFill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 3px;
+}
+
+.twoCol {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 768px) {
+  .twoCol {
+    grid-template-columns: 1fr;
+  }
+
+  .app {
+    gap: 16px;
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .card {
+    padding: 14px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .statValue {
+    font-size: 22px;
+  }
+
+  .subNavLink {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 420px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

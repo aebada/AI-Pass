@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 176 40" fill="none" role="img" aria-label="AI-Pass">
+  <defs>
+    <linearGradient id="aipass-tile" x1="2" y1="1" x2="38" y2="39" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#58a6ff"/>
+      <stop offset="1" stop-color="#1f52d0"/>
+    </linearGradient>
+  </defs>
+  <rect width="40" height="40" rx="11" fill="url(#aipass-tile)"/>
+  <g transform="scale(0.3125)">
+    <path d="m40 38 30 26-30 26" stroke="#fff" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M92 34v60" stroke="#fff" stroke-width="11" stroke-linecap="round" opacity="0.65"/>
+  </g>
+  <text x="52" y="27.5" textLength="112" lengthAdjust="spacingAndGlyphs"
+        font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+        font-size="21" font-weight="700" letter-spacing="-0.6">
+    <tspan fill="#f3f4f6">AI</tspan><tspan fill="#58a6ff">-Pass</tspan>
+  </text>
+</svg>

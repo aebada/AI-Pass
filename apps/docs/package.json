@@ -1,0 +1,10 @@
+{
+  "name": "@ai-pass/docs",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Static documentation site for docs.ai-pass.com",
+  "scripts": {
+    "build": "../../scripts/build-docs-static.sh",
+    "deploy": "../../scripts/deploy-docs-ftp.sh"
+  }
+}

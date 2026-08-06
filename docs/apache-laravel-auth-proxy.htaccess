@@ -1,0 +1,42 @@
+# Laravel auth — proxy /auth/* to Laravel public/index.php
+# Merge into public_html/.htaccess BEFORE the SPA fallback rule.
+# See docs/LARAVEL-AUTH.md
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Legacy sign-in URL → static Next login page
+  RewriteRule ^auth/signin/?$ /login [R=302,L]
+
+  # In-docroot Laravel (public_html/laravel-auth/) — preferred on Hostinger
+  RewriteCond %{DOCUMENT_ROOT}/laravel-auth/public/index.php -f
+  RewriteCond %{REQUEST_URI} ^/auth/(google|login|register|logout|me|setup|forgot-password|reset-password|verify-email|email|desktop-complete|desktop)(/|$) [NC]
+  RewriteRule ^auth/?(.*)$ /laravel-auth/public/index.php/auth/$1 [L,QSA]
+
+  # Sibling Laravel (../laravel-auth/) — REQUEST_URI preserved for routing
+  RewriteCond %{DOCUMENT_ROOT}/../laravel-auth/public/index.php -f
+  RewriteCond %{REQUEST_URI} ^/auth/(google|login|register|logout|me|setup|forgot-password|reset-password|verify-email|email|desktop-complete|desktop)(/|$) [NC]
+  RewriteRule ^ %{DOCUMENT_ROOT}/../laravel-auth/public/index.php [L]
+
+  # Laravel not deployed — keep email sign-in on static Next /login
+  RewriteCond %{DOCUMENT_ROOT}/laravel-auth/public/index.php !-f
+  RewriteCond %{DOCUMENT_ROOT}/../laravel-auth/public/index.php !-f
+  RewriteRule ^auth/(login|register|signin)/?$ /login [R=302,L,QSA]
+
+  # Legacy php-auth redirects (only when Laravel is deployed)
+  RewriteCond %{DOCUMENT_ROOT}/laravel-auth/public/index.php -f [OR]
+  RewriteCond %{DOCUMENT_ROOT}/../laravel-auth/public/index.php -f
+  RewriteRule ^auth/google\.php$ /auth/google [R=301,L]
+  RewriteCond %{DOCUMENT_ROOT}/laravel-auth/public/index.php -f [OR]
+  RewriteCond %{DOCUMENT_ROOT}/../laravel-auth/public/index.php -f
+  RewriteRule ^auth/google-callback\.php$ /auth/google/callback [R=301,L]
+  RewriteCond %{DOCUMENT_ROOT}/laravel-auth/public/index.php -f [OR]
+  RewriteCond %{DOCUMENT_ROOT}/../laravel-auth/public/index.php -f
+  RewriteRule ^auth/login\.php$ /auth/login [R=301,L]
+  RewriteCond %{DOCUMENT_ROOT}/laravel-auth/public/index.php -f [OR]
+  RewriteCond %{DOCUMENT_ROOT}/../laravel-auth/public/index.php -f
+  RewriteRule ^auth/register\.php$ /auth/register [R=301,L]
+  RewriteCond %{DOCUMENT_ROOT}/laravel-auth/public/index.php -f [OR]
+  RewriteCond %{DOCUMENT_ROOT}/../laravel-auth/public/index.php -f
+  RewriteRule ^auth/me\.php$ /auth/me [R=301,L]
+</IfModule>

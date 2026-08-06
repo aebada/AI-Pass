@@ -1,0 +1,31 @@
+{
+  "name": "@ai-pass/desktop",
+  "version": "0.1.0",
+  "private": true,
+  "main": "dist/main.js",
+  "scripts": {
+    "dev": "tsc && concurrently -k \"pnpm --filter @ai-pass/web dev\" \"wait-on http://localhost:3000 && electron .\"",
+    "build": "tsc && pnpm build:web:static",
+    "build:web:static": "cd ../web && STATIC_EXPORT=1 pnpm build",
+    "package": "pnpm build && electron-builder",
+    "dist:mac": "pnpm build && electron-builder --mac",
+    "dist:win": "pnpm build && electron-builder --win",
+    "dist:linux": "pnpm build && electron-builder --linux",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist release"
+  },
+  "dependencies": {
+    "@ai-pass/livesync": "workspace:*",
+    "@ai-pass/shared": "workspace:*"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "electron": "^35.2.0",
+    "electron-builder": "^26.0.12",
+    "typescript": "^5.8.3",
+    "wait-on": "^8.0.3"
+  },
+  "build": {
+    "extends": "electron-builder.yml"
+  }
+}

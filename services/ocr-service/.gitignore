@@ -1,0 +1,13 @@
+# OCR service runtime
+.venv/
+__pycache__/
+*.pyc
+.env
+outputs/
+models/
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.onnx
+*.ckpt

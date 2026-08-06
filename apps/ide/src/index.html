@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self';"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AI-Pass IDE</title>
+    <link rel="stylesheet" href="shell.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <header class="tabbar" id="tabbar">
+        <button type="button" class="tab active" data-tab="work" title="Work (⌘1)">
+          <span class="tab-icon" aria-hidden="true">◈</span>
+          Work
+        </button>
+        <button type="button" class="tab" data-tab="chat" title="Chat (⌘2)">
+          <span class="tab-icon" aria-hidden="true">💬</span>
+          Chat
+        </button>
+        <button type="button" class="tab" data-tab="orchestrations" title="Orchestrations (⌘3)">
+          <span class="tab-icon" aria-hidden="true">⟳</span>
+          Orchestrations
+        </button>
+        <span class="tabbar-brand">AI-Pass IDE</span>
+      </header>
+
+      <div class="main">
+        <aside class="sidebar" id="sidebar" aria-label="Projects">
+          <div class="sidebar-header">
+            <h2>Projects</h2>
+            <div class="sidebar-actions">
+              <button type="button" class="icon-btn" id="btnNewFolder" title="New folder">+</button>
+              <button type="button" class="icon-btn" id="btnNewProject" title="New project">⊕</button>
+            </div>
+          </div>
+          <div class="project-tree" id="projectTree"></div>
+        </aside>
+
+        <div class="content">
+          <section class="panel active" data-tab="work" aria-label="Work">
+            <webview id="webview-work" partition="persist:aipass" allowpopups></webview>
+          </section>
+          <section class="panel" data-tab="chat" aria-label="Chat">
+            <webview id="webview-chat" partition="persist:aipass" allowpopups></webview>
+          </section>
+          <section class="panel" data-tab="orchestrations" aria-label="Orchestrations">
+            <webview id="webview-orchestrations" partition="persist:aipass" allowpopups></webview>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <div class="dialog-backdrop" id="dialogBackdrop" role="dialog" aria-modal="true">
+      <div class="dialog">
+        <h3 id="dialogTitle">New Project</h3>
+        <p id="dialogHint">Projects help you organize files and workflows.</p>
+        <input type="text" id="dialogInput" placeholder="Name" autocomplete="off" maxlength="80" />
+        <div class="dialog-actions">
+          <button type="button" class="btn" id="dialogCancel">Cancel</button>
+          <button type="button" class="btn primary" id="dialogConfirm">Create</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="shell.js"></script>
+  </body>
+</html>

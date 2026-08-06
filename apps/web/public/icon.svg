@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" role="img" aria-label="AI-Pass">
+  <defs>
+    <linearGradient id="aipass-tile" x1="8" y1="4" x2="120" y2="124" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#58a6ff"/>
+      <stop offset="1" stop-color="#1f52d0"/>
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="30" fill="url(#aipass-tile)"/>
+  <path d="m40 38 30 26-30 26" stroke="#fff" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M92 34v60" stroke="#fff" stroke-width="11" stroke-linecap="round" opacity="0.65"/>
+</svg>

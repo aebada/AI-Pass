@@ -1,0 +1,30 @@
+.strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.compact {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+}
+
+.score {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--workspace-text-muted, #94a3b8);
+}
+
+.verifyLink {
+  font-size: 11px;
+  color: var(--workspace-accent, #6366f1);
+  text-decoration: none;
+}
+
+.verifyLink:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>API overview — AI-Pass Docs</title>
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/"><span class="brand-mark">AI</span> AI-Pass Docs</a>
+    <nav class="site-nav"><a href="https://aipass.space/api/docs" rel="noopener">OpenAPI</a></nav>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <h2>Guides</h2>
+      <ul>
+        <li><a href="/">Overview</a></li>
+        <li><a href="/getting-started/">Getting started</a></li>
+        <li><a href="/auth/">Authentication</a></li>
+        <li><a href="/deployment/">Deployment</a></li>
+        <li><a href="/digital-twin/">Digital Twin</a></li>
+        <li><a href="/api/" aria-current="page">API overview</a></li>
+      </ul>
+    </aside>
+
+    <main class="content">
+      <h1>API overview</h1>
+      <p class="lead">REST API scaffold for the AI-Pass enterprise platform.</p>
+
+      <ul>
+        <li><strong>Base URL:</strong> <code>/api/v1</code></li>
+        <li><strong>OpenAPI:</strong> <a href="https://aipass.space/api/docs">/api/docs</a> (Node dev / VPS deploy)</li>
+        <li><strong>Package:</strong> <code>@ai-pass/platform-api</code></li>
+      </ul>
+
+      <h2>Response envelope</h2>
+<pre><code>{
+  "data": { ... },
+  "meta": {
+    "requestId": "req_abc123",
+    "timestamp": "2026-06-29T12:00:00.000Z",
+    "version": "v1"
+  }
+}</code></pre>
+
+      <h2>Core endpoints</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Method</th><th>Path</th><th>Description</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>GET</td><td><code>/api/v1/health</code></td><td>Health check</td></tr>
+            <tr><td>GET</td><td><code>/api/v1/modules</code></td><td>List registered modules</td></tr>
+            <tr><td>GET</td><td><code>/api/v1/search?q=</code></td><td>Global semantic search</td></tr>
+            <tr><td>POST</td><td><code>/api/v1/auth/login</code></td><td>Authenticate user</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Digital Twin</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Method</th><th>Path</th><th>Description</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>POST</td><td><code>/api/v1/twin/chat</code></td><td>Chat with personal twin</td></tr>
+            <tr><td>GET/POST</td><td><code>/api/v1/twin/memory</code></td><td>Read/write consent-governed memory</td></tr>
+            <tr><td>GET</td><td><code>/api/v1/twin/calendar/events</code></td><td>Calendar events for planning</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Invoice AI</h2>
+      <p>Vertical app endpoints under <code>/api/v1/invoice-ai/*</code> — upload, validate, approvals, fraud, chat.</p>
+      <p>Full reference: <code>docs/INVOICE-AI-API.md</code> in the repository.</p>
+
+      <h2>Static production note</h2>
+      <p>
+        The Hostinger static export serves the marketing and workspace UI. Most <code>/api/v1</code> routes require
+        the Node standalone build or Laravel backend. Use <code>./scripts/build-node-prod.sh</code> for full API hosting.
+      </p>
+    </main>
+  </div>
+
+  <footer class="site-footer"><a href="https://aipass.space">AI-Pass Platform</a> · Documentation</footer>
+</body>
+</html>

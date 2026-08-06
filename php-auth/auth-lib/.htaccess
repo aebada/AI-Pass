@@ -1,0 +1,2 @@
+# Deny web access to PHP library, vendor, and secrets.
+Require all denied

@@ -1,0 +1,51 @@
+.intro {
+  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--ws-text, #e8eaed);
+}
+
+.linkGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.linkCard {
+  text-decoration: none;
+}
+
+.sectionTitle {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 0 12px;
+}
+
+.matrix {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.capList {
+  margin: 10px 0 0;
+  padding-left: 18px;
+  font-size: 12px;
+  color: var(--ws-text-muted, #9aa3b2);
+  line-height: 1.5;
+}
+
+.muted {
+  font-size: 12px;
+  color: var(--ws-text-muted, #9aa3b2);
+  margin: 6px 0 0;
+  line-height: 1.45;
+}
+
+.adminOnlyRow {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+}

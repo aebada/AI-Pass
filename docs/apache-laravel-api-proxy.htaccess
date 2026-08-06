@@ -1,0 +1,17 @@
+# Laravel API proxy — /api/v1/ai/* and /api/v1/twin/* → laravel-auth/public/index.php
+# Merge into public_html/.htaccess BEFORE the SPA fallback rule.
+# See docs/LARAVEL-AUTH.md and docs/MULTI-AI-SETUP.md
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # In-docroot Laravel (public_html/laravel-auth/)
+  RewriteCond %{DOCUMENT_ROOT}/laravel-auth/public/index.php -f
+  RewriteCond %{REQUEST_URI} ^/api/v1/(ai/|twin/|integrations) [NC]
+  RewriteRule ^api/v1/(.*)$ /laravel-auth/public/index.php [L,QSA]
+
+  # Sibling Laravel (../laravel-auth/)
+  RewriteCond %{DOCUMENT_ROOT}/../laravel-auth/public/index.php -f
+  RewriteCond %{REQUEST_URI} ^/api/v1/(ai/|twin/|integrations) [NC]
+  RewriteRule ^ %{DOCUMENT_ROOT}/../laravel-auth/public/index.php [L]
+</IfModule>

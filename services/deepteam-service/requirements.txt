@@ -1,0 +1,11 @@
+# DeepTeam security microservice for AI-Pass
+# Live red teaming requires deepteam (pulls deepeval). Stub mode needs only FastAPI.
+
+fastapi==0.115.12
+uvicorn[standard]==0.34.2
+httpx==0.28.1
+python-dotenv==1.1.0
+pydantic==2.11.3
+
+# Optional — install for live red teaming / guardrails (requires OPENAI_API_KEY or other judge LLM)
+# deepteam>=0.2.0

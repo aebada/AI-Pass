@@ -1,0 +1,37 @@
+{
+  "name": "@ai-pass/invoice-ai",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" },
+    "./api": { "types": "./dist/api/index.d.ts", "import": "./dist/api/index.js" },
+    "./reporting": { "types": "./dist/reporting/index.d.ts", "import": "./dist/reporting/index.js" }
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "typecheck": "tsc --noEmit",
+    "test": "node --import tsx --test src/**/*.test.ts",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@ai-pass/agent-studio": "workspace:*",
+    "@ai-pass/ocr": "workspace:*",
+    "@ai-pass/provider-hub": "workspace:*",
+    "@ai-pass/erp-connectors": "workspace:*",
+    "@ai-pass/knowledge-pipeline": "workspace:*",
+    "@ai-pass/livesync": "workspace:*",
+    "@ai-pass/marketplace": "workspace:*",
+    "@ai-pass/membership": "workspace:*",
+    "@ai-pass/shared": "workspace:*",
+    "@ai-pass/wallet": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.0",
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3"
+  }
+}
