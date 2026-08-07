@@ -8,13 +8,17 @@
 
   RewriteBase /
 
-  # Existing files (incl. _next assets)
+  # Prefer clean *.html routes over stale directory indexes (e.g. workspace/index.html).
+  DirectoryIndex disabled
+
+  # Existing files (incl. _next assets) — but not directories
   RewriteRule ^index\.html$ - [L]
   RewriteCond %{REQUEST_FILENAME} -f
+  RewriteCond %{REQUEST_FILENAME} !-d
   RewriteRule ^ - [L]
 
-  # platform.html vs platform/ directory — serve the page, not the folder
-  RewriteRule ^platform/?$ /platform.html [L]
+  # Top-level pages that also exist as directories must force the .html shell
+  RewriteRule ^(platform|workspace|discover|demo|pricing|login|about|contact|privacy|investors|developers|solutions|government|defence)/?$ /$1.html [L]
 
   # Clean URLs: /studio -> studio.html, /platform/governance -> platform/governance.html
   RewriteCond %{REQUEST_FILENAME} !-d

@@ -112,6 +112,24 @@ if [[ -f "$WEB/public/.htaccess" ]]; then
   echo "Installed .htaccess for Apache clean URLs"
 fi
 
+# Hostinger DirectoryIndex often prefers path/index.html over path.html.
+# Mirror every *.html shell into path/index.html so /workspace/ cannot serve a stale index.
+python3 - <<PY
+from pathlib import Path
+out = Path("$WEB/out")
+count = 0
+for html in out.rglob("*.html"):
+    rel = html.relative_to(out)
+    if rel.name == "index.html":
+        continue
+    target_dir = out / rel.with_suffix("")
+    target_dir.mkdir(parents=True, exist_ok=True)
+    target = target_dir / "index.html"
+    target.write_bytes(html.read_bytes())
+    count += 1
+print(f"Mirrored {count} html shells to */index.html for DirectoryIndex")
+PY
+
 PHP_AUTH="$ROOT/php-auth"
 if [[ -d "$PHP_AUTH/auth" && "${COPY_PHP_AUTH:-0}" == "1" ]]; then
   if [[ ! -d "$PHP_AUTH/auth-lib/vendor" ]]; then
