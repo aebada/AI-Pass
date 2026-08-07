@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import { useApp } from './AppProviders';
 import styles from './onboarding.module.css';
@@ -28,11 +29,18 @@ const STEPS = [
   },
 ];
 
+const HIDE_ON_PREFIXES = ['/workspace', '/discover', '/demo'];
+
 export function OnboardingModal() {
   const { showOnboarding, completeOnboarding } = useApp();
+  const pathname = usePathname() ?? '';
   const [step, setStep] = useState(0);
 
-  if (!showOnboarding) return null;
+  const hideOnProductSurface = HIDE_ON_PREFIXES.some(
+    (prefix) => pathname === prefix || pathname.startsWith(`${prefix}/`),
+  );
+
+  if (!showOnboarding || hideOnProductSurface) return null;
 
   const current = STEPS[step];
   const isLast = step === STEPS.length - 1;
@@ -60,8 +68,8 @@ export function OnboardingModal() {
           </button>
           {isLast ? (
             <>
-              <Link href="/dashboard" className={styles.btnPrimary} onClick={completeOnboarding}>
-                Go to Dashboard →
+              <Link href="/workspace" className={styles.btnPrimary} onClick={completeOnboarding}>
+                Go to Workspace →
               </Link>
               <Link href="/requirements" className={styles.btnSecondary} onClick={completeOnboarding}>
                 Start building
