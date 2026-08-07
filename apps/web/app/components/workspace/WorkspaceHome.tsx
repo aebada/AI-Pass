@@ -126,7 +126,7 @@ export function WorkspaceHome() {
               <ul style={{ listStyle: 'none', margin: 0, padding: 0 }}>
                 {dash.recentTasks.map((t) => (
                   <li key={t.id} style={{ padding: '8px 0', borderBottom: `1px solid ${workspaceTokens.colors.border}` }}>
-                    <Link href={t.route ?? '#'} style={{ color: workspaceTokens.colors.text, textDecoration: 'none' }}>
+                    <Link href={t.route ?? '/workspace'} style={{ color: workspaceTokens.colors.text, textDecoration: 'none' }}>
                       <strong>{t.title}</strong>
                       <span style={{ color: workspaceTokens.colors.textMuted, marginLeft: 8, fontSize: 12 }}>
                         {t.module} · {t.status} · {t.updatedAt}
@@ -188,7 +188,7 @@ export function WorkspaceHome() {
             <h3 style={{ fontSize: 14, fontWeight: 600, margin: '0 0 12px' }}>Notifications</h3>
             {dash.notifications.map((n) => (
               <div key={n.id} style={{ padding: '8px 0', borderBottom: `1px solid ${workspaceTokens.colors.border}`, opacity: n.read ? 0.7 : 1 }}>
-                <Link href={n.route ?? '#'} style={{ color: workspaceTokens.colors.text, textDecoration: 'none', fontSize: 13 }}>
+                <Link href={n.route ?? '/workspace'} style={{ color: workspaceTokens.colors.text, textDecoration: 'none', fontSize: 13 }}>
                   <strong>{n.title}</strong>
                   <p style={{ margin: '2px 0 0', color: workspaceTokens.colors.textMuted, fontSize: 12 }}>{n.body} · {n.time}</p>
                 </Link>

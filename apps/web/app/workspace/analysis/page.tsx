@@ -18,8 +18,8 @@ export default function AnalysisPage() {
         status="stub"
         features={['Usage reports', 'Cost analytics', 'Agent performance', 'Custom dashboards']}
         actions={[
-          { label: 'Export report', href: '#', primary: true },
-          { label: 'Presence Audit', href: '/workspace/presence' },
+          { label: 'View reports', href: '/workspace/trust/reports', primary: true },
+          { label: 'Presence Audit', href: '/workspace/apps/presence-audit' },
         ]}
       >
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: 12 }}>
