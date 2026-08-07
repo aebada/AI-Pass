@@ -12,9 +12,9 @@ const siteUrl = 'https://aipass.space';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: 'AI-Pass — AI infrastructure that cuts cost',
+  title: 'AI-Pass — Enterprise AI Infrastructure Platform',
   description:
-    'Industry-agnostic AI infrastructure for productivity and cost reduction. Supports Defence and Government on-premises deployments with AI compliance built into the stack.',
+    'Build, orchestrate, govern and deploy enterprise AI securely across cloud and on-premises. Secure AI infrastructure for Government, Defence, and regulated enterprise operations.',
   manifest: '/manifest.json',
   icons: {
     icon: [
@@ -29,17 +29,17 @@ export const metadata: Metadata = {
   openGraph: {
     url: siteUrl,
     siteName: 'AI-Pass',
-    title: 'AI-Pass — AI infrastructure that cuts cost',
+    title: 'AI-Pass — Enterprise AI Infrastructure Platform',
     description:
-      'Industry-agnostic AI infrastructure for productivity and cost reduction. Supports Defence and Government on-premises deployments with AI compliance built into the stack.',
+      'Enterprise AI infrastructure for secure, governed and autonomous business operations — cloud, private cloud, hybrid, and air-gapped.',
     type: 'website',
     images: [{ url: '/logo.png', alt: 'AI-Pass' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI-Pass — AI infrastructure that cuts cost',
+    title: 'AI-Pass — Enterprise AI Infrastructure Platform',
     description:
-      'Industry-agnostic AI infrastructure for productivity and cost reduction — including Defence and Government on-premises with built-in AI compliance.',
+      'Secure, governed enterprise AI infrastructure across cloud and on-premises. Built for Government, Defence, and regulated industries.',
   },
   appleWebApp: {
     capable: true,
@@ -48,15 +48,14 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: '#0d1117',
+  themeColor: '#0b0d10',
   width: 'device-width',
   initialScale: 1,
 };
 
 const themeBootScript = `(function(){try{var t=localStorage.getItem('ai-pass:theme')||'dark';var r=t==='light'?'light':t==='system'?(window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark'):'dark';document.documentElement.dataset.theme=r;document.documentElement.style.colorScheme=r;}catch(e){document.documentElement.dataset.theme='dark';}})();`;
 
-/** Critical theme tokens inlined so the site stays readable even if CDN serves a bad CSS response. */
-const criticalThemeCss = `:root,[data-theme='dark']{--bg:#0d1117;--bg-elevated:#161b22;--bg-hover:#21262d;--bg-soft:#11161d;--border:#30363d;--text:#e6edf3;--text-muted:#8b949e;--color-accent:#3b82f6;--accent:var(--color-accent);--accent-muted:#2563eb;--font-display:'Syne','IBM Plex Sans',sans-serif;--font-sans:'IBM Plex Sans','Segoe UI',sans-serif;--font-mono:ui-monospace,'SF Mono',Menlo,Consolas,monospace;--ai-bg:var(--bg);--ai-bg-elevated:var(--bg-elevated);--ai-bg-hover:var(--bg-hover);--ai-border:var(--border);--ai-text:var(--text);--ai-text-muted:var(--text-muted);--ai-accent:var(--accent);color-scheme:dark}[data-theme='light']{--bg:#f7f8fa;--bg-elevated:#ffffff;--bg-hover:#eef1f5;--bg-soft:#eef2f7;--border:#d0d7de;--text:#1f2328;--text-muted:#656d76;--color-accent:#2563eb;--accent:var(--color-accent);--accent-muted:#1d4ed8;--ai-bg:var(--bg);--ai-bg-elevated:var(--bg-elevated);--ai-bg-hover:var(--bg-hover);--ai-border:var(--border);--ai-text:var(--text);--ai-text-muted:var(--text-muted);--ai-accent:var(--accent);color-scheme:light}html,body{min-height:100%;background-color:#0d1117;background-color:var(--bg);color:#e6edf3;color:var(--text);font-family:var(--font-sans)}h1,h2,h3{font-family:var(--font-display)}`;
+const criticalThemeCss = `:root,[data-theme='dark']{--bg:#0b0d10;--bg-elevated:#12151a;--bg-hover:#1a1f27;--bg-soft:#0f1217;--border:#2a3038;--text:#f2f4f7;--text-muted:#9aa3ad;--color-accent:#3b82f6;--accent:var(--color-accent);--accent-muted:#2563eb;--font-display:'Syne','IBM Plex Sans',sans-serif;--font-sans:'IBM Plex Sans','Segoe UI',sans-serif;--font-mono:ui-monospace,'SF Mono',Menlo,Consolas,monospace;--ai-bg:var(--bg);--ai-bg-elevated:var(--bg-elevated);--ai-bg-hover:var(--bg-hover);--ai-border:var(--border);--ai-text:var(--text);--ai-text-muted:var(--text-muted);--ai-accent:var(--accent);color-scheme:dark}[data-theme='light']{--bg:#f7f8fa;--bg-elevated:#ffffff;--bg-hover:#eef1f5;--bg-soft:#eef1f4;--border:#d8dee6;--text:#101418;--text-muted:#5c6670;--color-accent:#2563eb;--accent:var(--color-accent);--accent-muted:#1d4ed8;--ai-bg:var(--bg);--ai-bg-elevated:var(--bg-elevated);--ai-bg-hover:var(--bg-hover);--ai-border:var(--border);--ai-text:var(--text);--ai-text-muted:var(--text-muted);--ai-accent:var(--accent);color-scheme:light}html,body{min-height:100%;background-color:#0b0d10;background-color:var(--bg);color:#f2f4f7;color:var(--text);font-family:var(--font-sans)}h1,h2,h3{font-family:var(--font-display)}`;
 
 export default function RootLayout({
   children,

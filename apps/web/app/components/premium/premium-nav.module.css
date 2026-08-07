@@ -133,8 +133,8 @@
 }
 
 .megaMenuWide {
-  min-width: 420px;
-  max-width: 520px;
+  min-width: 560px;
+  max-width: 720px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 0.125rem;

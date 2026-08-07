@@ -1,152 +1,55 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
 import { PremiumNav } from './components/premium/PremiumNav';
 import { BrandLogoLink } from './components/BrandLogoLink';
-import {
-  IconAgents,
-  IconArrowRight,
-  IconCheck,
-  IconClose,
-  IconGauge,
-  IconGovernance,
-  IconLandmark,
-  IconModels,
-  IconServer,
-  IconShieldLock,
-  IconTrendDown,
-  IconWorkspace,
-  IconWorkflows,
-} from './components/icons/Icons';
-import { API_DOCS_HREF, DOCS_URL, FOOTER_COLUMNS } from './lib/site-nav';
+import { IconArrowRight, IconCheck } from './components/icons/Icons';
+import { DEMO_MAILTO, DOCS_URL, FOOTER_COLUMNS } from './lib/site-nav';
 import styles from './page.module.css';
 import section from './home-sections.module.css';
 
-const HERO_STATS = [
-  { value: 'On-prem', label: 'ready' },
-  { value: 'Built-in', label: 'AI compliance' },
-  { value: 'Any', label: 'industry' },
+const SECTORS = [
+  { name: 'Government', href: '/government' },
+  { name: 'Defence', href: '/defence' },
+  { name: 'Manufacturing', href: '/industries/manufacturing' },
+  { name: 'Banking', href: '/industries/financial-services' },
+  { name: 'Healthcare', href: '/industries/healthcare' },
 ];
 
-const COMPARISON_ROWS = [
+const CAPABILITIES = [
   {
-    label: 'Productivity',
-    before: 'Teams bounce between chats, portals, and shadow tools',
-    after: 'One infrastructure layer that raises throughput',
+    title: 'Orchestrate',
+    copy: 'Route models, agents, and workflows through one execution layer across cloud and on-premises.',
   },
   {
-    label: 'Cost',
-    before: 'Duplicate vendor seats and unmanaged model spend',
-    after: 'Shared routing, wallet, and usage visibility',
+    title: 'Govern',
+    copy: 'Permissions, approvals, inventory, and audit sit in the infrastructure — not bolted on later.',
   },
   {
-    label: 'Compliance',
-    before: 'Policies bolted on after tools are already live',
-    after: 'AI compliance enforced inside the platform',
+    title: 'Secure',
+    copy: 'Private cloud, hybrid, and air-gapped patterns for Government, Defence, and regulated operators.',
   },
   {
-    label: 'Deployment',
-    before: 'Public-cloud-only stacks that block sovereign work',
-    after: 'Cloud or on-premises inside your boundary',
-  },
-];
-
-const DEMO_PROMPT =
-  'Draft a productivity brief: where multi-model routing cuts cycle time and operating cost without adding another AI silo.';
-
-const DEMO_RESPONSES = [
-  {
-    model: 'GPT',
-    text: 'Consolidate vendor seats into one membership, route each job to the cheapest capable model, and keep approvals in one audit trail so rework drops.',
-  },
-  {
-    model: 'Claude',
-    text: 'Treat AI-Pass as an internal productivity department: standard prompts, shared agents, and cost caps replace ad-hoc tooling across teams.',
-  },
-  {
-    model: 'Gemini',
-    text: 'Move high-volume tasks to efficient models, reserve frontier models for hard cases, and report spend and throughput from one wallet.',
+    title: 'Comply',
+    copy: 'ISO 42001, ISO 27001, GDPR, NIS2, and SOC 2 controls integrated into the platform path.',
   },
 ];
 
-const PLATFORM_STEPS = [
-  {
-    id: 'workspace',
-    label: 'Workspace',
-    copy: 'The operating surface for every team — an infrastructure layer that boosts productivity without inventing a new tool stack.',
-    icon: IconWorkspace,
-  },
-  {
-    id: 'models',
-    label: 'Models',
-    copy: 'Route each job to the right model so quality stays high while token and seat costs fall.',
-    icon: IconModels,
-  },
-  {
-    id: 'agents',
-    label: 'Agents',
-    copy: 'Automate repeatable work so people spend time on decisions, not copy-paste across portals.',
-    icon: IconAgents,
-  },
-  {
-    id: 'workflows',
-    label: 'Workflows',
-    copy: 'Connect AI steps to business processes with the same identity, spend, and approval controls.',
-    icon: IconWorkflows,
-  },
-  {
-    id: 'compliance',
-    label: 'Compliance',
-    copy: 'AI compliance is not an add-on — policies, evidence, and audit trails run inside the infrastructure.',
-    icon: IconGovernance,
-  },
+const DEPLOYMENT = [
+  { name: 'Cloud', copy: 'Enterprise AI Cloud with shared wallet and multi-provider routing.' },
+  { name: 'Private Cloud', copy: 'Isolated tenancy for regulated workloads and data residency.' },
+  { name: 'Hybrid', copy: 'Blend public models with private endpoints under one control plane.' },
+  { name: 'Air-Gapped / On-Prem', copy: 'Deploy inside Defence and Government infrastructure boundaries.' },
 ];
 
-const OUTCOME_PILLARS = [
-  {
-    name: 'Productivity lift',
-    copy: 'Give every department a shared AI surface so work moves faster without training people on a dozen tools.',
-    icon: IconGauge,
-  },
-  {
-    name: 'Cost reduction',
-    copy: 'Cut duplicate subscriptions and unmanaged model spend with one membership, wallet, and routing policy.',
-    icon: IconTrendDown,
-  },
-  {
-    name: 'Industry-agnostic',
-    copy: 'The same platform serves commercial, industrial, and public missions — outcomes first, not a vertical lock-in.',
-    icon: IconWorkspace,
-  },
-];
-
-const MISSION_PILLARS = [
-  {
-    name: 'Defence & Government',
-    copy: 'Purpose-built for sovereign and public-sector missions that need governed AI access, clear accountability, and mission-safe operations.',
-    icon: IconLandmark,
-  },
-  {
-    name: 'On-premises structures',
-    copy: 'Deploy AI-Pass inside your own infrastructure boundary — air-gapped or private network options for Defence and Government environments.',
-    icon: IconServer,
-  },
-  {
-    name: 'Integrated AI compliance',
-    copy: 'Compliance controls ship in the platform layer: policy gates, audit evidence, and certification workflows on every request path.',
-    icon: IconShieldLock,
-  },
-];
-
-const COMPLIANCE = ['ISO 27001', 'SOC 2 Type II', 'GDPR', 'NIS2', 'ISO 42001'];
+const COMPLIANCE = ['ISO 42001', 'ISO 27001', 'GDPR', 'NIS2', 'SOC 2'];
 
 const PRICING = [
   {
     name: 'Free',
     price: '$0',
-    who: 'Individuals testing multi-model productivity',
-    features: ['Limited daily requests', 'Core playground access', 'Community support', 'Public apps catalog'],
+    who: 'Evaluate the infrastructure layer',
+    features: ['Limited daily requests', 'Core workspace access', 'Discovery browsing', 'Community support'],
     cta: 'Start Free',
     href: '/login',
     popular: false,
@@ -154,8 +57,8 @@ const PRICING = [
   {
     name: 'Professional',
     price: '$49',
-    who: 'Teams cutting tool sprawl and model spend',
-    features: ['Higher request limits', 'Priority model access', 'AI Wallet credits', 'Email support'],
+    who: 'Teams running governed AI daily',
+    features: ['Multi-model routing', 'Agent Studio basics', 'AI Wallet credits', 'Email support'],
     cta: 'Choose Professional',
     href: '/workspace/membership',
     popular: true,
@@ -163,8 +66,8 @@ const PRICING = [
   {
     name: 'Power',
     price: '$149',
-    who: 'Operators running agents and automation at scale',
-    features: ['Team workspaces', 'Agent Studio', 'Workflow automation', 'Priority support'],
+    who: 'Operators scaling agents and automation',
+    features: ['Workflow Engine', 'LiveSync', 'Priority models', 'Team workspaces'],
     cta: 'Choose Power',
     href: '/workspace/membership',
     popular: false,
@@ -172,263 +75,99 @@ const PRICING = [
   {
     name: 'Enterprise',
     price: 'Custom',
-    who: 'Defence, Government, and on-prem deployments',
-    features: ['On-premises / private cloud', 'SSO / SAML', 'Integrated AI compliance packs', 'Dedicated success'],
-    cta: 'Talk to Sales',
-    href: 'mailto:hello@ai-pass.com?subject=Defence%20Government%20On-Prem%20Demo',
+    who: 'Government, Defence, and on-prem deployments',
+    features: ['Air-gapped / private cloud', 'SSO · SCIM · SAML', 'Trust & Compliance packs', 'Dedicated success'],
+    cta: 'Contact Sales',
+    href: DEMO_MAILTO,
     popular: false,
   },
 ];
 
 export default function HomePageContent() {
-  const [platformStep, setPlatformStep] = useState(PLATFORM_STEPS[0].id);
-  const activeStep = PLATFORM_STEPS.find((s) => s.id === platformStep) ?? PLATFORM_STEPS[0];
-  const ActiveIcon = activeStep.icon;
-
   return (
     <div className={styles.page}>
       <PremiumNav variant="landing" />
 
-      {/* 1 — Hero */}
       <section className={styles.hero} aria-labelledby="hero-heading">
         <div className={styles.heroGlow} aria-hidden />
-        <div className={styles.heroGrid}>
-          <div className={styles.heroCopy}>
-            <p className={styles.brandMark}>AI-Pass</p>
-            <h1 id="hero-heading" className={styles.heroTitle}>
-              AI infrastructure that cuts cost
-            </h1>
-            <p className={styles.heroSub}>
-              The productivity layer for any organization — with Defence and Government on-premises support and AI compliance built into the stack.
-            </p>
-            <div className={styles.heroCtas}>
-              <Link href="/login" className={`${styles.btnPrimary} ${styles.btnLarge}`}>
-                Start Free
-              </Link>
-              <a
-                href="mailto:hello@ai-pass.com?subject=Enterprise%20Demo"
-                className={`${styles.btnSecondary} ${styles.btnLarge}`}
-              >
-                Book Demo
-              </a>
-            </div>
-          </div>
-          <div className={styles.heroVisual} aria-hidden>
-            <div className={styles.productFrame}>
-              <div className={styles.productChrome}>
-                <span>Infrastructure layer</span>
-                <span className={styles.productChromeMeta}>Productivity · Cost · Compliance</span>
-              </div>
-              <div className={styles.routeRail}>
-                {['GPT', 'Claude', 'Gemini', 'DeepSeek', 'Mistral'].map((m, i) => (
-                  <span key={m} className={styles.routeNode} style={{ animationDelay: `${i * 0.35}s` }}>
-                    {m}
-                  </span>
-                ))}
-              </div>
-              <div className={styles.productPrompt}>Route work. Cut spend. Keep policy on. →</div>
-              <div className={styles.productResponses}>
-                <div className={styles.productPane}>
-                  <strong>Cloud</strong>
-                  <p>Shared membership and wallet for commercial teams.</p>
-                </div>
-                <div className={styles.productPane}>
-                  <strong>On-prem</strong>
-                  <p>Defence & Government deployments inside your boundary.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <div className={styles.statStrip} aria-label="Platform posture">
-        {HERO_STATS.map((stat) => (
-          <div key={stat.label} className={styles.statItem}>
-            <span className={styles.statValue}>{stat.value}</span>
-            <span className={styles.statLabel}>{stat.label}</span>
-          </div>
-        ))}
-      </div>
-
-      {/* 2 — Problem / solution */}
-      <section className={`${section.section} ${section.sectionAlt}`} aria-labelledby="framing-heading">
-        <div className={section.containerNarrow}>
-          <p className={section.sectionLabel}>The shift</p>
-          <h2 id="framing-heading" className={section.sectionTitle}>
-            From tool sprawl to an infrastructure department
-          </h2>
-          <p className={section.sectionDesc}>
-            AI-Pass acts like an internal productivity and cost-control function: one governed surface for models, agents, and apps across every sector.
+        <div className={styles.heroCenter}>
+          <p className={styles.brandMark}>AI-Pass</p>
+          <p className={styles.positioningEyebrow}>Enterprise AI Infrastructure Platform</p>
+          <h1 id="hero-heading" className={styles.heroTitleWide}>
+            Enterprise AI Infrastructure for Secure, Governed and Autonomous Business Operations
+          </h1>
+          <p className={styles.heroSubWide}>
+            Build, orchestrate, govern and deploy enterprise AI securely across cloud and on-premises environments.
           </p>
-          <div className={section.compareTable} role="table" aria-label="Before and after AI-Pass">
-            <div className={section.compareHead} role="row">
-              <span role="columnheader">Capability</span>
-              <span role="columnheader">Before</span>
-              <span role="columnheader">With AI-Pass</span>
-            </div>
-            {COMPARISON_ROWS.map((row) => (
-              <div key={row.label} className={section.compareRow} role="row">
-                <span className={section.compareLabel} role="cell">
-                  {row.label}
-                </span>
-                <span className={section.compareBefore} role="cell">
-                  <IconClose size={16} /> {row.before}
-                </span>
-                <span className={section.compareAfter} role="cell">
-                  <IconCheck size={16} /> {row.after}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 3 — Product in action */}
-      <section className={section.section} id="demo" aria-labelledby="demo-heading">
-        <div className={section.containerNarrow}>
-          <p className={section.sectionLabel}>See it work</p>
-          <h2 id="demo-heading" className={section.sectionTitle}>
-            Compare models on the same prompt
-          </h2>
-          <p className={section.sectionDesc}>
-            A live-style comparison loads with an example already answered — so you see multi-model routing before you type.
-          </p>
-        </div>
-        <div className={section.demoWidget}>
-          <div className={section.demoPrompt}>
-            <span className={section.demoPromptLabel}>Example prompt</span>
-            <p>{DEMO_PROMPT}</p>
-          </div>
-          <div className={section.demoGrid}>
-            {DEMO_RESPONSES.map((item) => (
-              <article key={item.model} className={section.demoCard}>
-                <header>{item.model}</header>
-                <p>{item.text}</p>
-              </article>
-            ))}
-          </div>
-          <div className={section.demoFooter}>
-            <Link href="/workspace/playground" className={styles.linkAccent}>
-              Get unlimited access <IconArrowRight size={16} />
+          <div className={styles.heroCtas}>
+            <a href={DEMO_MAILTO} className={`${styles.btnPrimary} ${styles.btnLarge}`}>
+              Book Enterprise Demo
+            </a>
+            <Link href="/login" className={`${styles.btnSecondary} ${styles.btnLarge}`}>
+              Start Free
             </Link>
           </div>
         </div>
       </section>
 
-      {/* 4 — Platform walkthrough */}
-      <section className={`${section.section} ${section.sectionAlt}`} id="platform" aria-labelledby="platform-heading">
-        <div className={section.containerNarrow}>
-          <p className={section.sectionLabel}>Platform</p>
-          <h2 id="platform-heading" className={section.sectionTitle}>
-            Five layers of productive AI infrastructure
-          </h2>
-        </div>
-        <div className={section.platformWalk}>
-          <div className={section.platformTabs} role="tablist" aria-label="Platform steps">
-            {PLATFORM_STEPS.map((step) => {
-              const Icon = step.icon;
-              const selected = step.id === platformStep;
-              return (
-                <button
-                  key={step.id}
-                  type="button"
-                  role="tab"
-                  aria-selected={selected}
-                  className={`${section.platformTab} ${selected ? section.platformTabActive : ''}`}
-                  onClick={() => setPlatformStep(step.id)}
-                >
-                  <Icon size={18} />
-                  {step.label}
-                </button>
-              );
-            })}
-          </div>
-          <div className={section.platformPanel} role="tabpanel">
-            <div className={section.platformPanelIcon}>
-              <ActiveIcon size={28} />
-            </div>
-            <p>{activeStep.copy}</p>
-          </div>
-        </div>
-        <div className={section.centerCta}>
-          <Link href="/workspace/store" className={styles.linkAccent}>
-            Browse AI Store <IconArrowRight size={16} />
+      <div className={styles.sectorStrip} aria-label="Sectors we support">
+        {SECTORS.map((sector) => (
+          <Link key={sector.name} href={sector.href} className={styles.sectorMark}>
+            {sector.name}
           </Link>
+        ))}
+      </div>
+
+      <section className={`${section.section} ${section.sectionAlt}`} aria-labelledby="infra-heading">
+        <div className={section.containerNarrow}>
+          <p className={section.sectionLabel}>Infrastructure</p>
+          <h2 id="infra-heading" className={section.sectionTitle}>
+            The AI execution layer for the enterprise
+          </h2>
+          <p className={section.sectionDesc}>
+            AI-Pass is secure AI infrastructure — an orchestration platform that raises productivity while keeping
+            Government, Defence, and regulated operations under continuous control.
+          </p>
+        </div>
+        <div className={section.capabilityGrid}>
+          {CAPABILITIES.map((item) => (
+            <article key={item.title} className={section.capabilityCard}>
+              <h3>{item.title}</h3>
+              <p>{item.copy}</p>
+            </article>
+          ))}
         </div>
       </section>
 
-      {/* 5 — Industry-agnostic outcomes */}
-      <section className={section.section} id="outcomes" aria-labelledby="outcomes-heading">
+      <section className={section.section} id="deployment" aria-labelledby="deploy-heading">
         <div className={section.containerNarrow}>
-          <p className={section.sectionLabel}>Outcomes</p>
-          <h2 id="outcomes-heading" className={section.sectionTitle}>
-            Productivity and savings for every organization
+          <p className={section.sectionLabel}>Deployment</p>
+          <h2 id="deploy-heading" className={section.sectionTitle}>
+            Cloud, private cloud, hybrid, and air-gapped
           </h2>
           <p className={section.sectionDesc}>
-            AI-Pass is industry-agnostic by design. The same infrastructure boosts output and reduces cost whether you run commercial operations or public missions.
+            One control plane across environments — including on-premises structures for Defence and Government.
           </p>
         </div>
         <div className={section.industryGrid}>
-          {OUTCOME_PILLARS.map((item) => {
-            const Icon = item.icon;
-            return (
-              <div key={item.name} className={section.industryCard}>
-                <span className={section.industryIcon}>
-                  <Icon size={20} />
-                </span>
-                <h3>{item.name}</h3>
-                <p>{item.copy}</p>
-              </div>
-            );
-          })}
+          {DEPLOYMENT.map((item) => (
+            <div key={item.name} className={section.industryCard}>
+              <h3>{item.name}</h3>
+              <p>{item.copy}</p>
+            </div>
+          ))}
         </div>
       </section>
 
-      {/* 6 — Defence, Government, on-prem */}
-      <section className={`${section.section} ${section.sectionAlt}`} id="defence-gov" aria-labelledby="defence-heading">
+      <section className={`${section.section} ${section.sectionAlt}`} id="trust" aria-labelledby="trust-heading">
         <div className={section.containerNarrow}>
-          <p className={section.sectionLabel}>Defence & Government</p>
-          <h2 id="defence-heading" className={section.sectionTitle}>
-            Built for Defence, Government, and on-premises
-          </h2>
-          <p className={section.sectionDesc}>
-            Sovereign and public-sector teams get the same productivity platform — deployed on-premises or in private infrastructure, with compliance controls already in the path.
-          </p>
-        </div>
-        <div className={section.industryGrid}>
-          {MISSION_PILLARS.map((item) => {
-            const Icon = item.icon;
-            return (
-              <div key={item.name} className={section.industryCard}>
-                <span className={section.industryIcon}>
-                  <Icon size={20} />
-                </span>
-                <h3>{item.name}</h3>
-                <p>{item.copy}</p>
-              </div>
-            );
-          })}
-        </div>
-        <div className={section.centerCta}>
-          <a
-            href="mailto:hello@ai-pass.com?subject=Defence%20Government%20On-Prem%20Briefing"
-            className={styles.linkAccent}
-          >
-            Request a Defence & Government briefing <IconArrowRight size={16} />
-          </a>
-        </div>
-      </section>
-
-      {/* 7 — AI compliance in infrastructure */}
-      <section className={section.section} id="trust" aria-labelledby="trust-heading">
-        <div className={section.containerNarrow}>
-          <p className={section.sectionLabel}>AI compliance</p>
+          <p className={section.sectionLabel}>Enterprise ready</p>
           <h2 id="trust-heading" className={section.sectionTitle}>
-            AI compliance integrated into the infrastructure
+            Compliance and trust built into the stack
           </h2>
           <p className={section.sectionDesc}>
-            Policy gates, evidence capture, and certification are not a side product. They run as part of the same stack that routes models and executes work.
+            Policies, evidence, certification, and audit trails run inside the infrastructure path — not as a separate
+            afterthought.
           </p>
           <div className={section.badgeRow} aria-label="Compliance frameworks">
             {COMPLIANCE.map((name) => (
@@ -437,23 +176,19 @@ export default function HomePageContent() {
               </span>
             ))}
           </div>
-          <p className={section.proofLine}>
-            Every enterprise and on-prem path can enforce approvals, retain exportable audit trails, and verify systems through Trust Center without bolting on a separate compliance tool.
-          </p>
           <div className={section.centerCta}>
-            <Link href="/workspace/trust" className={styles.linkAccent}>
-              Open Trust Center <IconArrowRight size={16} />
+            <Link href="/compliance" className={styles.linkAccent}>
+              Explore compliance <IconArrowRight size={16} />
             </Link>
           </div>
         </div>
       </section>
 
-      {/* 8 — Pricing */}
-      <section className={`${section.section} ${section.sectionAlt}`} id="pricing" aria-labelledby="pricing-heading">
+      <section className={section.section} id="pricing" aria-labelledby="pricing-heading">
         <div className={section.containerNarrow}>
           <p className={section.sectionLabel}>Pricing</p>
           <h2 id="pricing-heading" className={section.sectionTitle}>
-            Membership that scales with how you work
+            Plans for evaluation through sovereign deployment
           </h2>
         </div>
         <div className={section.pricingGrid}>
@@ -490,32 +225,24 @@ export default function HomePageContent() {
         </div>
       </section>
 
-      {/* 9 — Final CTA */}
       <section className={styles.finalCta} aria-labelledby="final-cta-heading">
         <h2 id="final-cta-heading" className={styles.finalCtaTitle}>
-          AI infrastructure that cuts cost
+          Deploy enterprise AI infrastructure with confidence
         </h2>
         <p className={styles.finalCtaSub}>
-          Start free for teams, or book a demo for Defence, Government, and on-premises deployments.
+          Book a demo for Government, Defence, and enterprise rollout — or start free today.
         </p>
         <div className={styles.heroCtas}>
-          <Link href="/login" className={`${styles.btnPrimary} ${styles.btnLarge}`}>
+          <a href={DEMO_MAILTO} className={`${styles.btnPrimary} ${styles.btnLarge}`}>
+            Book Enterprise Demo
+          </a>
+          <Link href="/login" className={`${styles.btnSecondary} ${styles.btnLarge}`}>
             Start Free
           </Link>
-          <a
-            href="mailto:hello@ai-pass.com?subject=Defence%20Government%20On-Prem%20Demo"
-            className={`${styles.btnSecondary} ${styles.btnLarge}`}
-          >
-            Book Demo
-          </a>
         </div>
         <p className={styles.finalCtaNote}>
-          Developers: see{' '}
-          <a href={DOCS_URL} target="_blank" rel="noopener noreferrer">
-            docs.ai-pass.com
-          </a>{' '}
-          and the{' '}
-          <Link href={API_DOCS_HREF}>API reference</Link>.
+          Developers: <a href={DOCS_URL} target="_blank" rel="noopener noreferrer">docs</a> ·{' '}
+          <Link href="/developers">developer platform</Link> · <Link href="/architecture">architecture</Link>
         </p>
       </section>
 
@@ -523,7 +250,8 @@ export default function HomePageContent() {
         <div className={styles.footerTop}>
           <BrandLogoLink className={styles.logo} logoClassName={styles.logoImg} />
           <p className={styles.footerTag}>
-            Industry-agnostic AI infrastructure for productivity, cost control, and compliance — including Defence and Government on-premises.
+            Enterprise AI Infrastructure Platform — secure, governed, and ready for cloud, hybrid, and air-gapped
+            operations.
           </p>
         </div>
         <div className={styles.footerGrid}>

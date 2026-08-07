@@ -7,7 +7,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Badge } from '@ai-pass/ui';
 import { BrandLogoLink } from '../BrandLogoLink';
 import { IconBell, IconMoon, IconSun } from '../icons/Icons';
-import { SITE_NAV, type SiteNavItem } from '../../lib/site-nav';
+import { DEMO_MAILTO, SITE_NAV, type SiteNavItem } from '../../lib/site-nav';
 import { useApp } from './AppProviders';
 import styles from './premium-nav.module.css';
 
@@ -295,9 +295,12 @@ export function PremiumNav({ variant = 'business' }: { variant?: 'landing' | 'bu
               <Link href="/login" className={`${styles.btnText} ${styles.desktopOnly}`}>
                 Sign In
               </Link>
-              <Link href="/login" className={`${styles.btnPrimary} ${styles.desktopOnly}`}>
+              <Link href="/login" className={`${styles.btnGhost} ${styles.desktopOnly}`}>
                 Start Free
               </Link>
+              <a href={DEMO_MAILTO} className={`${styles.btnPrimary} ${styles.desktopOnly}`}>
+                Book Demo
+              </a>
             </>
           )
         ) : user ? (
@@ -434,7 +437,10 @@ export function PremiumNav({ variant = 'business' }: { variant?: 'landing' | 'bu
                 </>
               )}
             </button>
-            <Link href={user ? '/workspace' : '/login'} className={styles.btnPrimary} onClick={closeMobile}>
+            <a href={DEMO_MAILTO} className={styles.btnPrimary} onClick={closeMobile}>
+              Book Demo
+            </a>
+            <Link href={user ? '/workspace' : '/login'} className={styles.btnGhost} onClick={closeMobile}>
               {user ? 'Go to Workspace' : 'Start Free'}
             </Link>
             {!user && (

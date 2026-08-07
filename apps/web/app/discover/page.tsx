@@ -5,8 +5,9 @@ import Link from 'next/link';
 import styles from './discover.module.css';
 
 export const metadata: Metadata = {
-  title: 'AI Pass Discovery - Find, Compare & Install AI Tools',
-  description: 'The front door to AI Pass - discover trending AI tools, compare alternatives, and install in one click.',
+  title: 'AI Discovery Hub — 50,000+ Enterprise AI Tools | AI-Pass',
+  description:
+    'Futurepedia-class AI directory: compare logos, pricing, providers, APIs, models, benchmarks, compliance, trust score, latency, and integrations — then install or connect.',
 };
 
 export default function DiscoverHomePage() {
@@ -16,6 +17,14 @@ export default function DiscoverHomePage() {
 
   return (
     <>
+      <header className={styles.hubHero}>
+        <p className={styles.hubEyebrow}>AI Discovery Hub</p>
+        <h1 className={styles.hubTitle}>Find, compare, and connect 50,000+ AI tools</h1>
+        <p className={styles.hubSub}>
+          Enterprise-grade directory with pricing, providers, APIs, models, benchmarks, compliance, trust score,
+          latency, and integrations — inspired by the best of Futurepedia, TopAI.tools, and Aixploria.
+        </p>
+      </header>
       <form action="/discover/search" method="get" className={styles.searchBar}>
         <input name="q" className={styles.searchInput} placeholder="Search AI tools, categories, use cases…" />
         <button type="submit" className={styles.btnPrimary}>Search</button>

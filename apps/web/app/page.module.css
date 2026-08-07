@@ -117,6 +117,15 @@
   animation: fadeUp 0.55s ease-out both;
 }
 
+.heroCenter {
+  position: relative;
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto;
+  text-align: center;
+  animation: fadeUp 0.55s ease-out both;
+}
+
 .brandMark {
   font-family: var(--font-display);
   font-size: clamp(1.75rem, 3vw, 2.25rem);
@@ -124,6 +133,16 @@
   letter-spacing: -0.03em;
   margin-bottom: 16px;
   color: var(--text);
+}
+
+.positioningEyebrow {
+  display: inline-block;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 20px;
 }
 
 .heroTitle {
@@ -136,6 +155,16 @@
   max-width: 12ch;
 }
 
+.heroTitleWide {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4.2vw, 3.35rem);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+  margin: 0 auto 24px;
+  max-width: 18ch;
+}
+
 .heroSub {
   font-size: var(--text-md);
   line-height: 1.55;
@@ -144,10 +173,43 @@
   margin-bottom: 32px;
 }
 
+.heroSubWide {
+  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+  line-height: 1.6;
+  color: var(--text-muted);
+  max-width: 42rem;
+  margin: 0 auto 36px;
+}
+
 .heroCtas {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
+  justify-content: center;
+}
+
+.sectorStrip {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 28px;
+  padding: 28px var(--section-pad);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-soft);
+}
+
+.sectorMark {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--text-muted);
+  transition: color 0.15s;
+}
+
+.sectorMark:hover {
+  color: var(--text);
 }
 
 .heroVisual {
@@ -372,11 +434,13 @@
     gap: 40px;
   }
 
-  .heroTitle {
+  .heroTitle,
+  .heroTitleWide {
     max-width: none;
   }
 
-  .heroCopy {
+  .heroCopy,
+  .heroCenter {
     text-align: center;
   }
 

@@ -269,6 +269,45 @@
   padding-top: 8px;
 }
 
+.capabilityGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.capabilityCard {
+  padding: 28px 24px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius, 14px);
+  background: var(--bg-elevated);
+  text-align: left;
+}
+
+.capabilityCard h3 {
+  font-size: var(--text-md);
+  margin-bottom: 10px;
+}
+
+.capabilityCard p {
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+@media (max-width: 900px) {
+  .capabilityGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .capabilityGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Industries */
 .industryGrid {
   display: grid;
