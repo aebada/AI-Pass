@@ -18,10 +18,10 @@ export const metadata: Metadata = {
   manifest: '/manifest.json',
   icons: {
     icon: [
-      { url: '/logo.png', type: 'image/png' },
+      { url: '/logo-icon.svg', type: 'image/svg+xml' },
       { url: '/icon.svg', type: 'image/svg+xml' },
     ],
-    apple: '/apple-touch-icon.png',
+    apple: '/logo-icon.svg',
   },
   alternates: {
     canonical: siteUrl,
@@ -33,13 +33,14 @@ export const metadata: Metadata = {
     description:
       'Enterprise AI infrastructure for secure, governed and autonomous business operations — cloud, private cloud, hybrid, and air-gapped.',
     type: 'website',
-    images: [{ url: '/logo.png', alt: 'AI-Pass' }],
+    images: [{ url: '/brand-banner.png', alt: 'AI-Pass' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'AI-Pass — Enterprise AI Infrastructure Platform',
     description:
       'Secure, governed enterprise AI infrastructure across cloud and on-premises. Built for Government, Defence, and regulated industries.',
+    images: ['/brand-banner.png'],
   },
   appleWebApp: {
     capable: true,

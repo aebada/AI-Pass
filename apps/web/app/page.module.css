@@ -19,9 +19,9 @@
 }
 
 .logoImg {
-  height: 40px;
+  height: 36px;
   width: auto;
-  max-width: 240px;
+  max-width: 176px;
   object-fit: contain;
 }
 
