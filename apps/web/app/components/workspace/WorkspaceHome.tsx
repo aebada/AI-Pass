@@ -3,12 +3,14 @@
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import type { WorkspaceDashboardData } from '@ai-pass/platform-core';
+import { getDemoDashboard } from '@ai-pass/platform-core';
 import { Card, workspaceTokens } from '@ai-pass/ui';
 import { useApp } from '../premium/AppProviders';
 import { WalletCredits } from '../dashboard/WalletCredits';
 import { PendingApprovals } from '../dashboard/PendingApprovals';
 import { KpiCards } from '../dashboard/KpiCards';
 import { KPI_METRICS } from '../dashboard/dashboardData';
+import { WorkspaceAppsCatalog } from './WorkspaceAppsCatalog';
 import styles from '../../dashboard/page.module.css';
 
 function EmptySection({ title, message }: { title: string; message: string }) {
@@ -21,6 +23,22 @@ function EmptySection({ title, message }: { title: string; message: string }) {
   );
 }
 
+async function loadDashboard(): Promise<WorkspaceDashboardData> {
+  try {
+    const res = await fetch('/api/v1/workspace/summary', {
+      headers: { Accept: 'application/json' },
+    });
+    if (!res.ok) return getDemoDashboard();
+    const contentType = res.headers.get('content-type') ?? '';
+    if (!contentType.includes('application/json')) return getDemoDashboard();
+    const payload = await res.json();
+    const dashboard = payload?.data?.dashboard as WorkspaceDashboardData | undefined;
+    return dashboard ?? getDemoDashboard();
+  } catch {
+    return getDemoDashboard();
+  }
+}
+
 export function WorkspaceHome() {
   const { user } = useApp();
   const [dash, setDash] = useState<WorkspaceDashboardData | null>(null);
@@ -29,15 +47,9 @@ export function WorkspaceHome() {
   useEffect(() => {
     let cancelled = false;
 
-    fetch('/api/v1/workspace/summary')
-      .then((res) => (res.ok ? res.json() : null))
-      .then((payload) => {
-        if (cancelled) return;
-        const dashboard = payload?.data?.dashboard as WorkspaceDashboardData | undefined;
-        setDash(dashboard ?? null);
-      })
-      .catch(() => {
-        if (!cancelled) setDash(null);
+    loadDashboard()
+      .then((dashboard) => {
+        if (!cancelled) setDash(dashboard);
       })
       .finally(() => {
         if (!cancelled) setLoading(false);
@@ -67,6 +79,7 @@ export function WorkspaceHome() {
             <p className={styles.subtitle}>Sign in to load your workspace overview.</p>
           </div>
         </header>
+        <WorkspaceAppsCatalog />
       </div>
     );
   }
@@ -75,13 +88,15 @@ export function WorkspaceHome() {
     <div className={styles.container}>
       <header className={styles.header}>
         <div>
-          <h1 className={styles.title}>Executive dashboard</h1>
+          <h1 className={styles.title}>Workspace</h1>
           <p className={styles.subtitle}>
-            Welcome, {firstName} — usage, cost, savings, agents, workflows, trust, compliance, marketplace,
-            approvals, and analytics.
+            Welcome, {firstName} — browse AI applications with trust scores, then manage usage, cost,
+            agents, and governance.
           </p>
         </div>
       </header>
+
+      <WorkspaceAppsCatalog />
 
       <section style={{ marginBottom: 24 }}>
         <KpiCards metrics={KPI_METRICS} />
@@ -250,21 +265,16 @@ export function WorkspaceHome() {
           </Card>
 
           <Card padding="md" style={{ marginTop: 16 }}>
-            <h3 style={{ fontSize: 14, fontWeight: 600, margin: '0 0 8px' }}>Marketplace</h3>
+            <h3 style={{ fontSize: 14, fontWeight: 600, margin: '0 0 8px' }}>Governance</h3>
             <p style={{ fontSize: 12, color: workspaceTokens.colors.textMuted, margin: '0 0 12px' }}>
-              Enterprise AI App Store — apps, agents, packs, workflows, knowledge, skills, plugins
+              Trust Center and policy controls for every installed AI application.
             </p>
-            <Link href="/workspace/store" style={{ color: workspaceTokens.colors.accent, fontSize: 13, textDecoration: 'none' }}>
-              Open App Store →
+            <Link href="/workspace/trust" style={{ color: workspaceTokens.colors.accent, fontSize: 13, textDecoration: 'none', display: 'block' }}>
+              Trust Center →
             </Link>
-            <div style={{ marginTop: 8 }}>
-              <Link href="/workspace/trust" style={{ color: workspaceTokens.colors.accent, fontSize: 13, textDecoration: 'none', display: 'block' }}>
-                Trust Center →
-              </Link>
-              <Link href="/workspace/governance" style={{ color: workspaceTokens.colors.accent, fontSize: 13, textDecoration: 'none', display: 'block', marginTop: 6 }}>
-                Governance Center →
-              </Link>
-            </div>
+            <Link href="/workspace/governance" style={{ color: workspaceTokens.colors.accent, fontSize: 13, textDecoration: 'none', display: 'block', marginTop: 6 }}>
+              Governance Center →
+            </Link>
           </Card>
         </aside>
       </div>

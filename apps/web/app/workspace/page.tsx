@@ -5,7 +5,7 @@ import { WorkspaceLayoutClient } from '../components/workspace/WorkspaceLayoutCl
 
 export default function WorkspacePage() {
   return (
-    <WorkspaceLayoutClient title="Workspace" subtitle="AI Operating System - overview and quick actions">
+    <WorkspaceLayoutClient title="Workspace" subtitle="AI applications, trust scores, and operating overview">
       <WorkspaceHome />
     </WorkspaceLayoutClient>
   );
