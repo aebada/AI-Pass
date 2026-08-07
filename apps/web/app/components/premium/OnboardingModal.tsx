@@ -29,18 +29,20 @@ const STEPS = [
   },
 ];
 
-const HIDE_ON_PREFIXES = ['/workspace', '/discover', '/demo'];
+/** Marketing + product surfaces should never be covered by the studio welcome modal. */
+const HIDE_ON_PREFIXES = ['/', '/workspace', '/discover', '/demo', '/pricing', '/platform', '/solutions'];
 
 export function OnboardingModal() {
   const { showOnboarding, completeOnboarding } = useApp();
   const pathname = usePathname() ?? '';
   const [step, setStep] = useState(0);
 
-  const hideOnProductSurface = HIDE_ON_PREFIXES.some(
-    (prefix) => pathname === prefix || pathname.startsWith(`${prefix}/`),
-  );
+  const hideOnMarketingOrProduct = HIDE_ON_PREFIXES.some((prefix) => {
+    if (prefix === '/') return pathname === '/';
+    return pathname === prefix || pathname.startsWith(`${prefix}/`);
+  });
 
-  if (!showOnboarding || hideOnProductSurface) return null;
+  if (!showOnboarding || hideOnMarketingOrProduct) return null;
 
   const current = STEPS[step];
   const isLast = step === STEPS.length - 1;
