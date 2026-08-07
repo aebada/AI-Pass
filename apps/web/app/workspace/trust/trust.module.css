@@ -57,6 +57,50 @@
   gap: 8px;
 }
 
+.ladderCard {
+  margin-bottom: 0;
+}
+
+.ladder {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.ladderStep {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border, rgba(255, 255, 255, 0.1));
+  background: var(--bg, rgba(0, 0, 0, 0.2));
+  min-height: 96px;
+}
+
+.ladderStep strong {
+  font-size: 13px;
+  text-transform: capitalize;
+}
+
+.ladderStep span {
+  font-size: 11px;
+  color: var(--workspace-text-muted, #94a3b8);
+  line-height: 1.4;
+}
+
+.level_bronze { border-color: #cd7f32; }
+.level_silver { border-color: #c0c0c0; }
+.level_gold { border-color: #d4af37; }
+.level_platinum { border-color: #e5e4e2; }
+
+@media (max-width: 900px) {
+  .ladder {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 .wizard {
   display: flex;
   flex-direction: column;

@@ -14,9 +14,10 @@ export default function EnterpriseStorePage() {
 
   return (
     <div className={styles.marketplace} style={{ padding: 24 }}>
-      <h1 className={styles.heroTitle}>Enterprise Store Admin</h1>
+      <h1 className={styles.heroTitle}>Enterprise AI App Store Admin</h1>
       <p className={styles.heroSub}>
-        Private catalogs, approve installs, lock versions, disable public apps.
+        Private catalogs for Government, Defence, and air-gapped estates — approve installs, lock versions,
+        disable public apps, and ship only compliance-cleared agents, packs, workflows, and plugins.
       </p>
       <Link href={STORE_ROUTES.home} className={styles.navLink}>← Store Home</Link>
 

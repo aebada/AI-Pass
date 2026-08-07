@@ -4,8 +4,15 @@ export default function Page() {
   return (
     <MarketingPage
       eyebrow="Privacy"
-      title="Privacy controls for enterprise AI"
-      description="Data residency, private routing, and governed processing across cloud and on-premises structures."
+      title="Privacy for enterprise AI workloads"
+      description="Data minimization, residency controls, and private routing for regulated processing — including air-gapped options."
+      sections={[
+        {
+          title: 'Privacy controls',
+          body: 'Prefer local models, constrain providers by policy, and keep personal data out of unmanaged endpoints.',
+          items: ['Residency-aware routing', 'BYOK and secrets isolation', 'Audit trails for data-touching agents', 'GDPR-aligned processing patterns'],
+        },
+      ]}
     />
   );
 }

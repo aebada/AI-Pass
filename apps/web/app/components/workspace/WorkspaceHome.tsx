@@ -7,6 +7,8 @@ import { Card, workspaceTokens } from '@ai-pass/ui';
 import { useApp } from '../premium/AppProviders';
 import { WalletCredits } from '../dashboard/WalletCredits';
 import { PendingApprovals } from '../dashboard/PendingApprovals';
+import { KpiCards } from '../dashboard/KpiCards';
+import { KPI_METRICS } from '../dashboard/dashboardData';
 import styles from '../../dashboard/page.module.css';
 
 function EmptySection({ title, message }: { title: string; message: string }) {
@@ -73,12 +75,17 @@ export function WorkspaceHome() {
     <div className={styles.container}>
       <header className={styles.header}>
         <div>
-          <h1 className={styles.title}>Welcome, {firstName}</h1>
+          <h1 className={styles.title}>Executive dashboard</h1>
           <p className={styles.subtitle}>
-            Unified workspace - tasks, agents, workflows, credits, and governance at a glance.
+            Welcome, {firstName} — usage, cost, savings, agents, workflows, trust, compliance, marketplace,
+            approvals, and analytics.
           </p>
         </div>
       </header>
+
+      <section style={{ marginBottom: 24 }}>
+        <KpiCards metrics={KPI_METRICS} />
+      </section>
 
       <section style={{ marginBottom: 24 }}>
         <h2 style={{ fontSize: 14, fontWeight: 600, color: workspaceTokens.colors.textMuted, marginBottom: 12 }}>
@@ -244,8 +251,20 @@ export function WorkspaceHome() {
 
           <Card padding="md" style={{ marginTop: 16 }}>
             <h3 style={{ fontSize: 14, fontWeight: 600, margin: '0 0 8px' }}>Marketplace</h3>
-            <p style={{ fontSize: 12, color: workspaceTokens.colors.textMuted, margin: '0 0 12px' }}>Install Invoice AI, Supply Chain AI, and more</p>
-            <Link href="/workspace/marketplace" style={{ color: workspaceTokens.colors.accent, fontSize: 13, textDecoration: 'none' }}>Browse Marketplace →</Link>
+            <p style={{ fontSize: 12, color: workspaceTokens.colors.textMuted, margin: '0 0 12px' }}>
+              Enterprise AI App Store — apps, agents, packs, workflows, knowledge, skills, plugins
+            </p>
+            <Link href="/workspace/store" style={{ color: workspaceTokens.colors.accent, fontSize: 13, textDecoration: 'none' }}>
+              Open App Store →
+            </Link>
+            <div style={{ marginTop: 8 }}>
+              <Link href="/workspace/trust" style={{ color: workspaceTokens.colors.accent, fontSize: 13, textDecoration: 'none', display: 'block' }}>
+                Trust Center →
+              </Link>
+              <Link href="/workspace/governance" style={{ color: workspaceTokens.colors.accent, fontSize: 13, textDecoration: 'none', display: 'block', marginTop: 6 }}>
+                Governance Center →
+              </Link>
+            </div>
           </Card>
         </aside>
       </div>

@@ -88,7 +88,7 @@ export default function HomePageContent() {
     <div className={styles.page}>
       <PremiumNav variant="landing" />
 
-      <section className={styles.hero} aria-labelledby="hero-heading">
+      <section className={`${styles.hero} hero-presence`} aria-labelledby="hero-heading">
         <div className={styles.heroGlow} aria-hidden />
         <div className={styles.heroCenter}>
           <p className={styles.brandMark}>AI-Pass</p>
