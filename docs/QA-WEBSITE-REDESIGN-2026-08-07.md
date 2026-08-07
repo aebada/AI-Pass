@@ -1,3 +1,10 @@
+## Related documents
+
+- Latest Enterprise Infrastructure QA (Phase A + live gap): [`docs/QA-ENTERPRISE-INFRA-REDESIGN-2026-08-07.md`](./QA-ENTERPRISE-INFRA-REDESIGN-2026-08-07.md)
+- Implementation backlog: [`docs/CURSOR_TASKS-ENTERPRISE-INFRA-REDESIGN.md`](./CURSOR_TASKS-ENTERPRISE-INFRA-REDESIGN.md)
+
+---
+
 # QA Testing Report — AI-Pass Marketing Website
 
 **Document type:** QA results  
@@ -7,6 +14,8 @@
 **Commits covered:**
 - `fa8ee49` — redesign: 9-section homepage + collapsed nav  
 - `c03ea86` — positioning: productivity/cost infrastructure, Defence/Gov, on-prem, compliance  
+
+**Note:** Superseded for Phase A enterprise-infra scope by `QA-ENTERPRISE-INFRA-REDESIGN-2026-08-07.md` (commit `0cd87bb`). Keep this file for historical positioning QA.
 
 **Test date:** 2026-08-07  
 **Environments:**

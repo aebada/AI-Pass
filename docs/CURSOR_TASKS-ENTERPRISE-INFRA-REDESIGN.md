@@ -4,7 +4,8 @@
 **Alternates allowed in copy:** Enterprise AI Operating System · AI Execution Layer · AI Infrastructure Platform · Enterprise AI Cloud · AI Orchestration Platform · Secure AI Infrastructure · AI Productivity Platform  
 
 **Branch:** `cursor/website-redesign-5d67`  
-**Status legend:** `[ ]` pending · `[~]` in progress · `[x]` done this pass · `[P]` partial
+**Status legend:** `[ ]` pending · `[~]` in progress · `[x]` done this pass · `[P]` partial  
+**QA results:** [`docs/QA-ENTERPRISE-INFRA-REDESIGN-2026-08-07.md`](./QA-ENTERPRISE-INFRA-REDESIGN-2026-08-07.md) · prior [`docs/QA-WEBSITE-REDESIGN-2026-08-07.md`](./QA-WEBSITE-REDESIGN-2026-08-07.md)
 
 ---
 
