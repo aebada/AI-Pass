@@ -236,12 +236,12 @@ export default function HomePageContent() {
           Book a demo for Government, Defence, and enterprise rollout — or start free today.
         </p>
         <div className={styles.heroCtas}>
-          <Link href="/demo" className={`${styles.btnPrimary} ${styles.btnLarge}`}>
-            Try Interactive Demo
-          </Link>
-          <a href={DEMO_MAILTO} className={`${styles.btnSecondary} ${styles.btnLarge}`}>
+          <a href={DEMO_MAILTO} className={`${styles.btnPrimary} ${styles.btnLarge}`}>
             Book Enterprise Demo
           </a>
+          <Link href="/demo" className={`${styles.btnSecondary} ${styles.btnLarge}`}>
+            Try Interactive Demo
+          </Link>
           <Link href="/login" className={`${styles.btnSecondary} ${styles.btnLarge}`}>
             Start Free
           </Link>
