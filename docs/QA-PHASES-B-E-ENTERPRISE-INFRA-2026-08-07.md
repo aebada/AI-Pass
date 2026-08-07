@@ -20,7 +20,7 @@
 | Phase C Routing / Governance / Trust / Identity | **PASS** |
 | Phase D Dashboard / Pricing / business depth | **PASS** |
 | Phase E motion + theme parity (source) | **PASS** |
-| Production `https://aipass.space` matches this pass | **FAIL** (deploy pending) |
+| Production `https://aipass.space` matches this pass | **PARTIAL PASS** (homepage title/CTAs live; full asset mirror incomplete due to FTP PASV) |
 
 **Release recommendation:** Source PASS for Phases B–E. Do not treat live-complete until Hostinger redeploy + live smoke.
 
@@ -75,12 +75,14 @@
 
 | Check | Result |
 |---|---|
-| `aipass.space` serves this branch | **FAIL** — still older build until FTP/extract redeploy |
+| Homepage title `Enterprise AI Infrastructure Platform` | **PASS** (verified HTTP) |
+| Homepage CTAs Book Enterprise Demo / Start Free | **PASS** |
+| Full static mirror of all Phase B–E routes | **PARTIAL** — FTP PASV timeouts; zip/extract path unreliable from cloud agent |
 
 ---
 
 ## 7. Follow-ups
 
-1. Redeploy Hostinger with redirect-aware extract (or stable FTP mirror).  
-2. Retest live homepage positioning, Discovery, and Pricing CTAs.  
+1. Complete Hostinger full mirror from a stable network (or hPanel File Manager zip extract).  
+2. Smoke Discover, Store, Providers, Trust, Identity, Membership after full mirror.  
 3. Optional: wire live IdP connectors behind Enterprise Identity UI.

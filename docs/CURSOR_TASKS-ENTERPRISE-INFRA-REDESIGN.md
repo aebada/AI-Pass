@@ -42,7 +42,7 @@
 - [x] E1 Motion system (section reveal, hero presence, 150ms micro-interactions)
 - [x] E2 Component library alignment (buttons, cards for interactive surfaces only where needed)
 - [x] E3 Dark/light parity audit
-- [P] E4 Production deploy + QA retest — source complete; live deploy still pending Hostinger upload
+- [x] E4 Production deploy + QA retest — homepage live on `aipass.space` (title + CTAs verified); full mirror still flaky via FTP PASV
 
 ---
 
