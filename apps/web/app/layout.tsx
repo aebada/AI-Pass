@@ -12,9 +12,9 @@ const siteUrl = 'https://aipass.space';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: 'AI-Pass — One workspace for every AI model',
+  title: 'AI-Pass — AI infrastructure that cuts cost',
   description:
-    'AI-Pass gives enterprise teams one membership to run models, agents, and business apps with shared governance and billing.',
+    'Industry-agnostic AI infrastructure for productivity and cost reduction. Supports Defence and Government on-premises deployments with AI compliance built into the stack.',
   manifest: '/manifest.json',
   icons: {
     icon: [
@@ -29,17 +29,17 @@ export const metadata: Metadata = {
   openGraph: {
     url: siteUrl,
     siteName: 'AI-Pass',
-    title: 'AI-Pass — One workspace for every AI model',
+    title: 'AI-Pass — AI infrastructure that cuts cost',
     description:
-      'AI-Pass gives enterprise teams one membership to run models, agents, and business apps with shared governance and billing.',
+      'Industry-agnostic AI infrastructure for productivity and cost reduction. Supports Defence and Government on-premises deployments with AI compliance built into the stack.',
     type: 'website',
     images: [{ url: '/logo.png', alt: 'AI-Pass' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI-Pass — One workspace for every AI model',
+    title: 'AI-Pass — AI infrastructure that cuts cost',
     description:
-      'AI-Pass gives enterprise teams one membership to run models, agents, and business apps with shared governance and billing.',
+      'Industry-agnostic AI infrastructure for productivity and cost reduction — including Defence and Government on-premises with built-in AI compliance.',
   },
   appleWebApp: {
     capable: true,

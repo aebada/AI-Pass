@@ -285,6 +285,18 @@
   margin-bottom: 28px;
 }
 
+.finalCtaNote {
+  margin-top: 28px;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.finalCtaNote a {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .footer {
   padding: 64px var(--section-pad) 32px;
   border-top: 1px solid var(--border);

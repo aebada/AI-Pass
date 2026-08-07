@@ -272,7 +272,7 @@
 /* Industries */
 .industryGrid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 16px;
   max-width: 1100px;
   margin: 0 auto;
@@ -287,6 +287,7 @@
   text-decoration: none;
   color: inherit;
   transition: border-color 0.15s, transform 0.15s;
+  text-align: left;
 }
 
 .industryCard:hover {

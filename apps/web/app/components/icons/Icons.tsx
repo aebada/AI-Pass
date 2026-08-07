@@ -171,3 +171,43 @@ export function IconLandmark(props: IconProps) {
     </svg>
   );
 }
+
+export function IconServer(props: IconProps) {
+  return (
+    <svg {...baseProps(props)}>
+      <rect x="3" y="4" width="18" height="6" rx="1.5" />
+      <rect x="3" y="14" width="18" height="6" rx="1.5" />
+      <circle cx="7" cy="7" r="1" fill="currentColor" stroke="none" />
+      <circle cx="7" cy="17" r="1" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+
+export function IconShieldLock(props: IconProps) {
+  return (
+    <svg {...baseProps(props)}>
+      <path d="M12 3 4 7v5c0 5 3.5 8.5 8 9 4.5-.5 8-4 8-9V7l-8-4z" />
+      <rect x="9.5" y="11" width="5" height="4" rx="1" />
+      <path d="M11 11V9.5a1 1 0 0 1 2 0V11" />
+    </svg>
+  );
+}
+
+export function IconTrendDown(props: IconProps) {
+  return (
+    <svg {...baseProps(props)}>
+      <path d="M3 7h6l4 8 3-5h5" />
+      <path d="M16 7h5v5" />
+    </svg>
+  );
+}
+
+export function IconGauge(props: IconProps) {
+  return (
+    <svg {...baseProps(props)}>
+      <path d="M5 16a7 7 0 1 1 14 0" />
+      <path d="M12 16l3.5-5.5" />
+      <circle cx="12" cy="16" r="1.5" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
