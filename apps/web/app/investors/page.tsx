@@ -79,7 +79,7 @@ export default function InvestorsPage() {
             <a href="mailto:investors@ai-pass.com?subject=Investor%20Meeting" className={`${styles.btnPrimary} ${styles.btnLarge}`}>
               Book Investor Meeting
             </a>
-            <a href="#" className={`${styles.btnSecondary} ${styles.btnLarge}`}>
+            <a href="/contact" className={`${styles.btnSecondary} ${styles.btnLarge}`}>
               Download Investor Deck (PDF)
             </a>
           </div>
