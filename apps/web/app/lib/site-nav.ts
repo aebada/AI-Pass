@@ -23,6 +23,7 @@ export const SITE_NAV: SiteNavItem[] = [
     wide: true,
     items: [
       { label: 'Dashboard', href: '/dashboard', description: 'Executive view of usage, cost, and control' },
+      { label: 'Interactive Demo', href: '/demo', description: 'Click through routing, governance, trust, and savings' },
       { label: 'Workspace', href: '/workspace', description: 'Unified command center for enterprise AI' },
       { label: 'Agent Studio', href: '/workspace/agents', description: 'Build and operate autonomous agents' },
       { label: 'Workflow Engine', href: '/workspace/workflows', description: 'Orchestrate business processes' },
@@ -111,6 +112,11 @@ export const SITE_NAV: SiteNavItem[] = [
   },
   {
     type: 'link',
+    label: 'Demo',
+    href: '/demo',
+  },
+  {
+    type: 'link',
     label: 'Pricing',
     href: '/#pricing',
   },
@@ -138,6 +144,7 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
     title: 'Platform',
     links: [
       { label: 'Workspace', href: '/workspace' },
+      { label: 'Interactive Demo', href: '/demo' },
       { label: 'Trust Engine', href: '/workspace/trust' },
       { label: 'AI Governance', href: '/workspace/governance' },
       { label: 'Routing', href: '/workspace/providers' },
