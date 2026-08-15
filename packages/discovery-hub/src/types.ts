@@ -12,6 +12,12 @@ export type BestAiSlug =
   | 'free'
   | 'enterprise';
 
+export interface ToolBenchmark {
+  name: string;
+  score: number;
+  unit?: string;
+}
+
 export interface Tool {
   id: string;
   slug: string;
@@ -21,9 +27,16 @@ export interface Tool {
   tags: string[];
   developerId: string;
   developerName?: string;
+  /** Display logo path or data URI; UI falls back to initials when missing. */
+  logoUrl?: string;
+  /** Primary model / cloud provider (e.g. OpenAI, Anthropic, local). */
+  provider: string;
   pricingModel: Application['pricingModel'];
   priceMonthly?: number;
   pricePerUse?: number;
+  pricingLabel: string;
+  apiAvailable: boolean;
+  apiDocsUrl?: string;
   certified: boolean;
   enterpriseReady: boolean;
   openSource: boolean;
@@ -34,6 +47,11 @@ export interface Tool {
   reviewCount: number;
   trustScore: number;
   trustBadges: string[];
+  /** Typical end-to-end latency estimate in ms. */
+  latencyMs: number;
+  complianceFrameworks: string[];
+  benchmarks: ToolBenchmark[];
+  integrations: string[];
   creditsRequired: number;
   estimatedCostPerRun?: number;
   supportedPlatforms: string[];
@@ -43,7 +61,9 @@ export interface Tool {
   membershipTierRequired: string;
   workspaceRoute?: string;
   storeRoute: string;
+  connectRoute: string;
   presenceAuditRoute?: string;
+  appType?: string;
 }
 
 export interface Category {

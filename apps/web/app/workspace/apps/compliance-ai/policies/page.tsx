@@ -23,7 +23,7 @@ export default function PoliciesPage() {
             {policies.map((p) => (
               <tr key={p.id}>
                 <td>{p.title}</td>
-                <td>{p.templateType?.replace(/_/g, ' ') ?? '—'}</td>
+                <td>{p.templateType?.replace(/_/g, ' ') ?? '-'}</td>
                 <td>{p.status}</td>
                 <td>{p.acceptanceRate}%</td>
                 <td>{p.ownerName}</td>

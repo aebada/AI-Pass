@@ -43,7 +43,7 @@ export default function StoreBillingPage() {
             <p className={styles.cardMeta}>No store transactions yet.</p>
           ) : (
             txs.map((t) => (
-              <p key={t.id} className={styles.cardMeta}>{t.description} — {t.credits} credits</p>
+              <p key={t.id} className={styles.cardMeta}>{t.description} - {t.credits} credits</p>
             ))
           )}
         </Card>

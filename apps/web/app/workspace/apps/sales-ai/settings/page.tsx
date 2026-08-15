@@ -23,12 +23,12 @@ export default function SalesSettingsPage() {
         <section className={styles.card}>
           <h3 className={styles.cardTitle}>Integrations</h3>
           <ul style={{ fontSize: 13, lineHeight: 2 }}>
-            <li>Provider Hub — AI generation routing</li>
-            <li>AI Wallet — credit tracking</li>
-            <li>Trust Engine — outbound validation</li>
-            <li>Knowledge Pipeline — RAG context</li>
-            <li>Agent Studio — 6 sales agents</li>
-            <li>LiveSync — lead, campaign, deal events</li>
+            <li>Provider Hub - AI generation routing</li>
+            <li>AI Wallet - credit tracking</li>
+            <li>Trust Engine - outbound validation</li>
+            <li>Knowledge Pipeline - RAG context</li>
+            <li>Agent Studio - 6 sales agents</li>
+            <li>LiveSync - lead, campaign, deal events</li>
           </ul>
         </section>
       </div>

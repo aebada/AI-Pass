@@ -36,13 +36,13 @@ export default function TicketManagementPage() {
                   </span>
                 </td>
                 <td>{t.status}</td>
-                <td>{t.category ?? '—'}</td>
+                <td>{t.category ?? '-'}</td>
                 <td>{t.assigneeName ?? 'Unassigned'}</td>
                 <td>
-                  {t.slaDueAt ? new Date(t.slaDueAt).toLocaleString() : '—'}
+                  {t.slaDueAt ? new Date(t.slaDueAt).toLocaleString() : '-'}
                   {t.slaBreached && ' ⚠'}
                 </td>
-                <td>{t.crmExternalId ?? '—'}</td>
+                <td>{t.crmExternalId ?? '-'}</td>
               </tr>
             ))}
           </tbody>

@@ -1,4 +1,4 @@
-/** Demo dashboard data — static export compatible, no server APIs */
+/** Demo dashboard data - static export compatible, no server APIs */
 
 export type RunStatus = 'running' | 'done' | 'queued' | 'failed';
 export type AuditStatus = 'executed' | 'approved' | 'rejected' | 'blocked' | 'retried';
@@ -67,26 +67,80 @@ export interface ChartPoint {
 
 export const KPI_METRICS: KpiMetric[] = [
   {
-    id: 'active-runs',
-    label: 'Active Runs',
-    value: '0',
-    delta: '↑ 12.4% vs last week',
+    id: 'usage',
+    label: 'Monthly usage',
+    value: '1.24M',
+    delta: '↑ 18% tokens routed',
     deltaPositive: true,
-    icon: '▶',
+    icon: '↗',
     iconBg: '#3b82f6',
   },
   {
-    id: 'success-rate',
-    label: 'Success Rate',
-    value: '98.6%',
-    delta: '↑ 0.8% governance passed',
+    id: 'cost',
+    label: 'AI spend',
+    value: '$18.4k',
+    delta: '62% of budget',
     deltaPositive: true,
-    icon: '✓',
+    icon: '$',
+    iconBg: '#2563eb',
+  },
+  {
+    id: 'savings',
+    label: 'Routing savings',
+    value: '$6.2k',
+    delta: '↑ dynamic model routing',
+    deltaPositive: true,
+    icon: '%',
+    iconBg: '#0f9f6e',
+  },
+  {
+    id: 'agents',
+    label: 'Active agents',
+    value: '42',
+    delta: '↑ 5 this week',
+    deltaPositive: true,
+    icon: 'A',
     iconBg: '#22c55e',
   },
   {
+    id: 'workflows',
+    label: 'Workflows',
+    value: '128',
+    delta: '14 running now',
+    deltaPositive: true,
+    icon: 'W',
+    iconBg: '#06b6d4',
+  },
+  {
+    id: 'trust',
+    label: 'Trust score',
+    value: '91',
+    delta: 'Gold average',
+    deltaPositive: true,
+    icon: 'T',
+    iconBg: '#d4af37',
+  },
+  {
+    id: 'compliance',
+    label: 'Compliance',
+    value: '97%',
+    delta: 'ISO 42001 · SOC 2',
+    deltaPositive: true,
+    icon: 'C',
+    iconBg: '#0f9f6e',
+  },
+  {
+    id: 'marketplace',
+    label: 'Store installs',
+    value: '86',
+    delta: '↑ 12 enterprise apps',
+    deltaPositive: true,
+    icon: 'M',
+    iconBg: '#3b82f6',
+  },
+  {
     id: 'approvals',
-    label: 'Approvals Queued',
+    label: 'Approvals queued',
     value: '7',
     delta: '↓ 2 awaiting review',
     deltaPositive: false,
@@ -94,20 +148,20 @@ export const KPI_METRICS: KpiMetric[] = [
     iconBg: '#d97706',
   },
   {
-    id: 'credits',
-    label: 'Credits Used',
-    value: '$2,140',
-    delta: '68% of monthly budget',
+    id: 'analytics',
+    label: 'Success rate',
+    value: '98.6%',
+    delta: '↑ governance passed',
     deltaPositive: true,
-    icon: '$',
-    iconBg: '#8b5cf6',
+    icon: '✓',
+    iconBg: '#22c55e',
   },
 ];
 
 export const SEED_APPROVALS: PendingApproval[] = [
   {
     id: 'apr-1',
-    title: 'Vendor payment — Acme Logistics',
+    title: 'Vendor payment - Acme Logistics',
     amount: '$12,400',
     agent: 'Finance Agent',
     policy: 'Policy: > $10K threshold',
@@ -115,14 +169,14 @@ export const SEED_APPROVALS: PendingApproval[] = [
   },
   {
     id: 'apr-2',
-    title: 'Employee offboarding — John Doe',
+    title: 'Employee offboarding - John Doe',
     agent: 'HR Agent',
     policy: 'G-ACT 043 queued · Policy: ✓',
     timeAgo: '2h ago',
   },
   {
     id: 'apr-3',
-    title: 'Contract renewal — NDA',
+    title: 'Contract renewal - NDA',
     amount: '$4,200',
     agent: 'Contract Agent',
     policy: 'Policy: legal review required',
@@ -132,10 +186,10 @@ export const SEED_APPROVALS: PendingApproval[] = [
 
 export const SEED_RUNS: AgentRun[] = [
   { id: 'run-1', task: 'Reconcile Q2 vendor payments', agent: 'Finance Agent', status: 'running', timeAgo: '2m ago' },
-  { id: 'run-2', task: 'New hire onboarding — M. Park', agent: 'HR Agent', status: 'done', timeAgo: '8m ago' },
+  { id: 'run-2', task: 'New hire onboarding - M. Park', agent: 'HR Agent', status: 'done', timeAgo: '8m ago' },
   { id: 'run-3', task: 'Support ticket triage (batch #4)', agent: 'Support Agent', status: 'done', timeAgo: '25m ago' },
-  { id: 'run-4', task: 'Contract routing — Q2 MSA', agent: 'Contract Agent', status: 'queued', timeAgo: '1h ago' },
-  { id: 'run-5', task: 'Inventory sync — Northward', agent: 'Supply Agent', status: 'failed', timeAgo: '2h ago' },
+  { id: 'run-4', task: 'Contract routing - Q2 MSA', agent: 'Contract Agent', status: 'queued', timeAgo: '1h ago' },
+  { id: 'run-5', task: 'Inventory sync - Northward', agent: 'Supply Agent', status: 'failed', timeAgo: '2h ago' },
   { id: 'run-6', task: 'Knowledge base re-index', agent: 'Knowledge Agent', status: 'done', timeAgo: '3h ago' },
 ];
 
@@ -157,13 +211,13 @@ export const LLM_SPEND: LlmSpend[] = [
 ];
 
 export const AUDIT_LOG: AuditEntry[] = [
-  { id: 'aud-1', timestamp: '14:18:32', entity: 'Finance Agent', status: 'executed', detail: 'ERP sync completed for vendor Acme Logistics — 3 records updated', ok: true },
-  { id: 'aud-2', timestamp: '14:12:08', entity: 'Jordan Lee', status: 'approved', detail: 'Approved vendor payment $12,400 — policy threshold met', ok: true },
-  { id: 'aud-3', timestamp: '13:55:41', entity: 'Governance Engine', status: 'blocked', detail: 'PII detected in support ticket export — masking required', ok: false },
+  { id: 'aud-1', timestamp: '14:18:32', entity: 'Finance Agent', status: 'executed', detail: 'ERP sync completed for vendor Acme Logistics - 3 records updated', ok: true },
+  { id: 'aud-2', timestamp: '14:12:08', entity: 'Jordan Lee', status: 'approved', detail: 'Approved vendor payment $12,400 - policy threshold met', ok: true },
+  { id: 'aud-3', timestamp: '13:55:41', entity: 'Governance Engine', status: 'blocked', detail: 'PII detected in support ticket export - masking required', ok: false },
   { id: 'aud-4', timestamp: '13:40:17', entity: 'HR Agent', status: 'executed', detail: 'Offboarding checklist generated for John Doe', ok: true },
-  { id: 'aud-5', timestamp: '13:22:03', entity: 'Contract Agent', status: 'retried', detail: 'NDA routing failed — retrying with fallback approver', ok: true },
-  { id: 'aud-6', timestamp: '12:58:49', entity: 'Jordan Lee', status: 'rejected', detail: 'Rejected bulk data export — insufficient justification', ok: false },
-  { id: 'aud-7', timestamp: '12:31:12', entity: 'Supply Agent', status: 'executed', detail: 'Inventory sync Northward — 142 SKUs reconciled', ok: true },
+  { id: 'aud-5', timestamp: '13:22:03', entity: 'Contract Agent', status: 'retried', detail: 'NDA routing failed - retrying with fallback approver', ok: true },
+  { id: 'aud-6', timestamp: '12:58:49', entity: 'Jordan Lee', status: 'rejected', detail: 'Rejected bulk data export - insufficient justification', ok: false },
+  { id: 'aud-7', timestamp: '12:31:12', entity: 'Supply Agent', status: 'executed', detail: 'Inventory sync Northward - 142 SKUs reconciled', ok: true },
   { id: 'aud-8', timestamp: '11:47:55', entity: 'Knowledge Agent', status: 'executed', detail: 'Indexed 28 new documents from SharePoint connector', ok: true },
 ];
 

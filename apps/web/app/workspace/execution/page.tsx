@@ -40,7 +40,7 @@ export default function ExecutionPage() {
   return (
     <WorkspaceLayoutClient
       title="Execution Console"
-      subtitle="Plan → route → execute → evaluate — all via runtime-core"
+      subtitle="Plan → route → execute → evaluate - all via runtime-core"
     >
       <section className={styles.panel}>
         <textarea

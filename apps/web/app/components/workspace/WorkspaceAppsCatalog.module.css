@@ -1,0 +1,243 @@
+.catalog {
+  margin-bottom: 28px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.title {
+  margin: 0 0 6px;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.subtitle {
+  margin: 0;
+  max-width: 560px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-muted, #9aa3ad);
+}
+
+.stats {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.stat {
+  min-width: 76px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border, #2a3038);
+  background: var(--bg-elevated, #12151a);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.stat strong {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text, #f2f4f7);
+}
+
+.stat span {
+  font-size: 11px;
+  color: var(--text-muted, #9aa3ad);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.search {
+  flex: 1;
+  min-width: 220px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border, #2a3038);
+  background: var(--bg-elevated, #12151a);
+  color: inherit;
+  font-size: 13px;
+}
+
+.select {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border, #2a3038);
+  background: var(--bg-elevated, #12151a);
+  color: inherit;
+  font-size: 13px;
+}
+
+.storeLink {
+  font-size: 13px;
+  color: var(--accent, #3b82f6);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.filters {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.filter,
+.filterActive {
+  appearance: none;
+  border: 1px solid var(--border, #2a3038);
+  background: transparent;
+  color: var(--text-muted, #9aa3ad);
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.filterActive {
+  background: color-mix(in srgb, var(--accent, #3b82f6) 18%, transparent);
+  border-color: color-mix(in srgb, var(--accent, #3b82f6) 50%, transparent);
+  color: var(--text, #f2f4f7);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 14px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 100%;
+}
+
+.cardTop {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.cardTitle {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 650;
+  line-height: 1.3;
+}
+
+.cardCategory {
+  margin: 4px 0 0;
+  font-size: 11px;
+  text-transform: capitalize;
+  color: var(--text-muted, #9aa3ad);
+}
+
+.scoreBadge {
+  min-width: 58px;
+  padding: 8px 8px 6px;
+  border-radius: 10px;
+  text-align: center;
+  border: 1px solid transparent;
+}
+
+.scoreValue {
+  display: block;
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.scoreLabel {
+  display: block;
+  margin-top: 3px;
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+.scoreElite {
+  background: rgba(16, 185, 129, 0.16);
+  border-color: rgba(16, 185, 129, 0.4);
+  color: #34d399;
+}
+
+.scoreHigh {
+  background: rgba(59, 130, 246, 0.16);
+  border-color: rgba(59, 130, 246, 0.4);
+  color: #60a5fa;
+}
+
+.scoreMid {
+  background: rgba(245, 158, 11, 0.14);
+  border-color: rgba(245, 158, 11, 0.35);
+  color: #fbbf24;
+}
+
+.scoreLow {
+  background: rgba(148, 163, 184, 0.12);
+  border-color: rgba(148, 163, 184, 0.3);
+  color: #cbd5e1;
+}
+
+.cardDesc {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--text-muted, #9aa3ad);
+  flex: 1;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.metaRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 12px;
+  color: var(--text, #f2f4f7);
+}
+
+.cardActions {
+  display: flex;
+  gap: 8px;
+  margin-top: 2px;
+}
+
+.empty {
+  margin: 8px 0 0;
+  font-size: 13px;
+  color: var(--text-muted, #9aa3ad);
+}
+
+@media (max-width: 720px) {
+  .stats {
+    width: 100%;
+  }
+
+  .stat {
+    flex: 1;
+    min-width: calc(50% - 10px);
+  }
+}

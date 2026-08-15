@@ -11,7 +11,7 @@ export default function MonitoringPage() {
   const active = engine.monitoring.getActiveCount();
 
   return (
-    <WorkspaceLayoutClient title="Monitoring Dashboard" subtitle="Continuous trust monitoring — drift, hallucination, policy violations">
+    <WorkspaceLayoutClient title="Monitoring Dashboard" subtitle="Continuous trust monitoring - drift, hallucination, policy violations">
       <div className={styles.kpiGrid}>
         <Card padding="md" className={styles.kpi}>
           <div className={styles.kpiValue}>{active}</div>

@@ -1,19 +1,15 @@
 import AppDetailClient from './AppDetailClient';
+import { SEED_APPS } from '@ai-pass/marketplace-core';
 
 export function generateStaticParams() {
-  return [
-    { id: 'invoice-ai' },
-    { id: 'supply-chain-ai' },
-    { id: 'customer-support-ai' },
-    { id: 'hr-ai' },
-    { id: 'compliance-guard' },
-    { id: 'agent-toolkit-oss' },
-    { id: 'legal-contract-ai' },
-    { id: 'marketing-insights-ai' },
-    { id: 'sales-ai' },
-    { id: 'sales-copilot' },
-    { id: 'knowledge-pipeline-pack' },
-  ];
+  const fromSeed = SEED_APPS.map((app) => ({ id: app.slug }));
+  const extras = [{ id: 'sales-copilot' }];
+  const seen = new Set<string>();
+  return [...fromSeed, ...extras].filter((entry) => {
+    if (seen.has(entry.id)) return false;
+    seen.add(entry.id);
+    return true;
+  });
 }
 
 export default function StoreAppDetailPage() {

@@ -85,6 +85,16 @@ export interface RoutingCriteria {
   preferSpeed?: boolean;
   preferQuality?: boolean;
   preferCost?: boolean;
+  /** Prefer lower-latency / on-prem capable providers (e.g. Ollama). */
+  preferPrivacy?: boolean;
+  /** Prefer enterprise-tier models with stronger compliance posture. */
+  preferCompliance?: boolean;
+  /** Prefer reasoning-optimized models. */
+  preferReasoning?: boolean;
+  /** Prefer larger context windows. */
+  preferContext?: boolean;
+  /** Prefer local / air-gapped capable backends. */
+  preferLocal?: boolean;
   maxLatencyMs?: number;
   preferredModelId?: string;
   orgId?: string;

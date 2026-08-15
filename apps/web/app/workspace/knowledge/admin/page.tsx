@@ -40,7 +40,7 @@ export default function KnowledgeAdminPage() {
         <h3 style={{ fontSize: 14, fontWeight: 600, margin: '24px 0 12px' }}>Published endpoints</h3>
         {endpoints.map((e) => (
           <Card key={e.path} padding="sm" style={{ marginBottom: 6, fontSize: 13 }}>
-            <strong>{e.name}</strong> — <code>{e.path}</code> ({e.type}) {e.enabled ? '✓' : '✗'}
+            <strong>{e.name}</strong> - <code>{e.path}</code> ({e.type}) {e.enabled ? '✓' : '✗'}
           </Card>
         ))}
       </KnowledgeShell>
