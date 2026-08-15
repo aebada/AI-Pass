@@ -64,14 +64,14 @@ const AppContext = createContext<AppContextValue | null>(null);
 
 function resolveTheme(mode: ThemeMode): 'dark' | 'light' {
   if (mode === 'system' && typeof window !== 'undefined') {
-    return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
   }
-  return mode === 'light' ? 'light' : 'dark';
+  return mode === 'dark' ? 'dark' : 'light';
 }
 
 export function AppProviders({ children }: { children: ReactNode }) {
-  const [theme, setThemeState] = useState<ThemeMode>('dark');
-  const [resolvedTheme, setResolvedTheme] = useState<'dark' | 'light'>('dark');
+  const [theme, setThemeState] = useState<ThemeMode>('light');
+  const [resolvedTheme, setResolvedTheme] = useState<'dark' | 'light'>('light');
   const [user, setUser] = useState<UserProfile | null>(null);
   const [notifications, setNotifications] = useState<NotificationItem[]>(SEED_NOTIFICATIONS);
   const [showOnboarding, setShowOnboarding] = useState(false);
@@ -117,7 +117,7 @@ export function AppProviders({ children }: { children: ReactNode }) {
   }, [theme]);
 
   useEffect(() => {
-    const mq = window.matchMedia('(prefers-color-scheme: light)');
+    const mq = window.matchMedia('(prefers-color-scheme: dark)');
     const handler = () => {
       if (theme === 'system') setResolvedTheme(resolveTheme('system'));
     };

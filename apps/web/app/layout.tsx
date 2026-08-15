@@ -49,14 +49,14 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: '#0b0d10',
+  themeColor: '#f6f3eb',
   width: 'device-width',
   initialScale: 1,
 };
 
-const themeBootScript = `(function(){try{var t=localStorage.getItem('ai-pass:theme')||'dark';var r=t==='light'?'light':t==='system'?(window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark'):'dark';document.documentElement.dataset.theme=r;document.documentElement.style.colorScheme=r;}catch(e){document.documentElement.dataset.theme='dark';}})();`;
+const themeBootScript = `(function(){try{var t=localStorage.getItem('ai-pass:theme')||'light';var r=t==='dark'?'dark':t==='system'?(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'):'light';document.documentElement.dataset.theme=r;document.documentElement.style.colorScheme=r;}catch(e){document.documentElement.dataset.theme='light';}})();`;
 
-const criticalThemeCss = `:root,[data-theme='dark']{--bg:#0b0d10;--bg-elevated:#12151a;--bg-hover:#1a1f27;--bg-soft:#0f1217;--border:#2a3038;--text:#f2f4f7;--text-muted:#9aa3ad;--color-accent:#3b82f6;--accent:var(--color-accent);--accent-muted:#2563eb;--font-display:'Syne','IBM Plex Sans',sans-serif;--font-sans:'IBM Plex Sans','Segoe UI',sans-serif;--font-mono:ui-monospace,'SF Mono',Menlo,Consolas,monospace;--ai-bg:var(--bg);--ai-bg-elevated:var(--bg-elevated);--ai-bg-hover:var(--bg-hover);--ai-border:var(--border);--ai-text:var(--text);--ai-text-muted:var(--text-muted);--ai-accent:var(--accent);color-scheme:dark}[data-theme='light']{--bg:#f7f8fa;--bg-elevated:#ffffff;--bg-hover:#eef1f5;--bg-soft:#eef1f4;--border:#d8dee6;--text:#101418;--text-muted:#5c6670;--color-accent:#2563eb;--accent:var(--color-accent);--accent-muted:#1d4ed8;--ai-bg:var(--bg);--ai-bg-elevated:var(--bg-elevated);--ai-bg-hover:var(--bg-hover);--ai-border:var(--border);--ai-text:var(--text);--ai-text-muted:var(--text-muted);--ai-accent:var(--accent);color-scheme:light}html,body{min-height:100%;background-color:#0b0d10;background-color:var(--bg);color:#f2f4f7;color:var(--text);font-family:var(--font-sans)}h1,h2,h3{font-family:var(--font-display)}`;
+const criticalThemeCss = `:root,[data-theme='light']{--bg:#f6f3eb;--bg-elevated:#ffffff;--bg-hover:#efece4;--bg-soft:#ebe8e0;--border:#d6d2c8;--text:#1f1f1f;--text-muted:#727272;--color-accent:#343ced;--accent:var(--color-accent);--accent-muted:#131bd4;--accent-deep:#1e2287;--highlight:#d8fd49;--font-display:'Space Grotesk','DM Sans',sans-serif;--font-sans:'DM Sans','Segoe UI',sans-serif;--font-mono:ui-monospace,'SF Mono',Menlo,Consolas,monospace;--ai-bg:var(--bg);--ai-bg-elevated:var(--bg-elevated);--ai-bg-hover:var(--bg-hover);--ai-border:var(--border);--ai-text:var(--text);--ai-text-muted:var(--text-muted);--ai-accent:var(--accent);color-scheme:light}[data-theme='dark']{--bg:#0a0227;--bg-elevated:#12103a;--bg-hover:#1a1750;--bg-soft:#0e0a32;--border:#2a2760;--text:#f7f7f5;--text-muted:#a8a6b8;--color-accent:#535bff;--accent:var(--color-accent);--accent-muted:#343ced;--highlight:#d8fd49;--ai-bg:var(--bg);--ai-bg-elevated:var(--bg-elevated);--ai-bg-hover:var(--bg-hover);--ai-border:var(--border);--ai-text:var(--text);--ai-text-muted:var(--text-muted);--ai-accent:var(--accent);color-scheme:dark}html,body{min-height:100%;background-color:#f6f3eb;background-color:var(--bg);color:#1f1f1f;color:var(--text);font-family:var(--font-sans)}h1,h2,h3{font-family:var(--font-display)}`;
 
 export default function RootLayout({
   children,
@@ -64,12 +64,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }): React.JSX.Element {
   return (
-    <html lang="en" data-theme="dark" suppressHydrationWarning>
+    <html lang="en" data-theme="light" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
-          href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Syne:wght@500;600;700;800&display=swap"
+          href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Space+Grotesk:wght@500;600;700&display=swap"
           rel="stylesheet"
         />
         <style dangerouslySetInnerHTML={{ __html: criticalThemeCss }} />

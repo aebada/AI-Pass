@@ -1,17 +1,17 @@
 /** Enterprise design tokens - light/dark via CSS variables */
 export const tokens = {
   colors: {
-    bg: 'var(--bg, #0d1117)',
-    bgElevated: 'var(--bg-elevated, #161b22)',
-    bgHover: 'var(--bg-hover, #21262d)',
-    border: 'var(--border, #30363d)',
-    text: 'var(--text, #e6edf3)',
-    textMuted: 'var(--text-muted, #8b949e)',
-    accent: 'var(--accent, #58a6ff)',
-    accentMuted: 'var(--accent-muted, #1f6feb)',
-    success: 'var(--success, #3fb950)',
-    warning: 'var(--warning, #d29922)',
-    error: 'var(--error, #f85149)',
+    bg: 'var(--bg, #f6f3eb)',
+    bgElevated: 'var(--bg-elevated, #ffffff)',
+    bgHover: 'var(--bg-hover, #efece4)',
+    border: 'var(--border, #d6d2c8)',
+    text: 'var(--text, #1f1f1f)',
+    textMuted: 'var(--text-muted, #727272)',
+    accent: 'var(--accent, #343ced)',
+    accentMuted: 'var(--accent-muted, #131bd4)',
+    success: 'var(--success, #0f9f6e)',
+    warning: 'var(--warning, #9a6700)',
+    error: 'var(--error, #cf222e)',
   },
   spacing: {
     xs: 4,

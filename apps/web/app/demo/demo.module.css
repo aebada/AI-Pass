@@ -5,8 +5,8 @@
   margin: 0 auto;
   text-align: left;
   background:
-    radial-gradient(ellipse 70% 55% at 12% 0%, rgba(59, 130, 246, 0.18), transparent 60%),
-    radial-gradient(ellipse 50% 40% at 90% 20%, rgba(62, 207, 142, 0.08), transparent 55%);
+    radial-gradient(ellipse 70% 55% at 12% 0%, rgba(52, 60, 237, 0.14), transparent 60%),
+    radial-gradient(ellipse 50% 40% at 90% 20%, rgba(216, 253, 73, 0.16), transparent 55%);
 }
 
 .eyebrow {
@@ -92,12 +92,13 @@
 .btnSecondary {
   background: transparent;
   color: var(--text);
-  border-color: var(--border);
+  border-color: var(--text);
 }
 
 .btnSecondary:hover {
   border-color: var(--accent);
-  background: var(--bg-hover);
+  color: var(--accent);
+  background: color-mix(in srgb, var(--color-accent) 6%, transparent);
 }
 
 .btnDanger {
@@ -581,6 +582,6 @@
 
 [data-theme='light'] .hero {
   background:
-    radial-gradient(ellipse 70% 55% at 12% 0%, rgba(37, 99, 235, 0.12), transparent 60%),
-    radial-gradient(ellipse 50% 40% at 90% 20%, rgba(15, 159, 110, 0.08), transparent 55%);
+    radial-gradient(ellipse 70% 55% at 12% 0%, rgba(52, 60, 237, 0.12), transparent 60%),
+    radial-gradient(ellipse 50% 40% at 90% 20%, rgba(216, 253, 73, 0.14), transparent 55%);
 }

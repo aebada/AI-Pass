@@ -1,9 +1,9 @@
 .page {
   --section-pad: clamp(1.5rem, 4vw, 4rem);
   min-height: 100vh;
-  background-color: #0d1117;
+  background-color: #f6f3eb;
   background-color: var(--bg);
-  color: #e6edf3;
+  color: #1f1f1f;
   color: var(--text);
   overflow-x: hidden;
 }
@@ -45,6 +45,7 @@
   background: var(--color-accent);
   color: #fff;
   border: 1px solid transparent;
+  box-shadow: 0 1px 0 rgba(31, 31, 31, 0.06);
 }
 
 .btnPrimary:hover {
@@ -54,12 +55,13 @@
 .btnSecondary {
   background: transparent;
   color: var(--text);
-  border: 1px solid var(--border);
+  border: 1px solid var(--text);
 }
 
 .btnSecondary:hover {
   border-color: var(--color-accent);
   color: var(--color-accent);
+  background: color-mix(in srgb, var(--color-accent) 6%, transparent);
 }
 
 .btnLarge {
@@ -97,8 +99,8 @@
   inset: 0;
   pointer-events: none;
   background:
-    radial-gradient(ellipse 60% 50% at 20% 20%, color-mix(in srgb, var(--color-accent) 18%, transparent), transparent 70%),
-    radial-gradient(ellipse 50% 40% at 85% 60%, color-mix(in srgb, var(--color-accent) 8%, transparent), transparent 70%);
+    radial-gradient(ellipse 58% 46% at 18% 18%, color-mix(in srgb, var(--color-accent) 14%, transparent), transparent 68%),
+    radial-gradient(ellipse 42% 36% at 88% 72%, color-mix(in srgb, var(--highlight) 18%, transparent), transparent 70%);
 }
 
 .heroGrid {
@@ -222,7 +224,7 @@
   background: color-mix(in srgb, var(--bg-elevated) 92%, transparent);
   backdrop-filter: blur(8px);
   overflow: hidden;
-  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.35);
+  box-shadow: var(--shadow-soft, 0 18px 48px rgba(31, 31, 31, 0.08));
 }
 
 .productChrome {

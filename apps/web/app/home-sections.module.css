@@ -425,8 +425,8 @@
   left: 24px;
   padding: 4px 10px;
   border-radius: 999px;
-  background: var(--color-accent);
-  color: #fff;
+  background: var(--highlight, #d8fd49);
+  color: var(--highlight-ink, #1f1f1f);
   font-size: 0.75rem;
   font-weight: 600;
 }
