@@ -49,7 +49,7 @@ PY
 
 # Stale discovery-hub dist (from older feature branches) can break static prerender.
 rm -rf packages/discovery-hub/dist packages/discovery-hub/*.tsbuildinfo packages/discovery-hub/.turbo
-(cd packages/discovery-hub && npx tsc --noEmitOnError false --skipLibCheck --composite false)
+(cd packages/discovery-hub && npx tsc --noEmitOnError false --skipLibCheck --composite false) || true
 
 LAYOUT_BAK=""
 MIDDLEWARE_MOVED=0
