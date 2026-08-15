@@ -440,12 +440,13 @@
 
 .btnGhost {
   background: transparent;
-  color: var(--text-muted);
-  border: 1px solid var(--border);
+  color: var(--text);
+  border: 1px solid var(--text);
 }
 
 .btnGhost:hover {
-  color: var(--text);
+  color: var(--color-accent);
+  border-color: var(--color-accent);
 }
 
 .btnText {
