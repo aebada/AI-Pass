@@ -1,4 +1,4 @@
-import { createId, type AISystem, type Approval, type DriftEvent, type GovernanceEvaluation, type GovernancePolicy, type PolicyRule } from '@ai-pass/shared';
+import { createId, type AISystem } from '@ai-pass/shared';
 
 /** @deprecated Use InventoryService */
 export class AISystemInventory {
@@ -7,11 +7,9 @@ export class AISystemInventory {
   register(system: Omit<AISystem, 'id' | 'createdAt' | 'updatedAt' | 'lifecycleStage' | 'monitoringStatus'> & Partial<Pick<AISystem, 'lifecycleStage' | 'monitoringStatus'>>): AISystem {
     const now = new Date().toISOString();
     const entry: AISystem = {
+      ...system,
       monitoringStatus: 'active',
       lifecycleStage: 'registration',
-      department: '',
-      version: '1.0.0',
-      ...system,
       id: `ais_${createId()}`,
       createdAt: now,
       updatedAt: now,

@@ -8,14 +8,22 @@ import type {
 export interface EnforcementContext {
   systemId: string;
   action: string;
-  context: Record<string, unknown>;
+  context: {
+    requires_citation?: boolean;
+    risk_level?: 'low' | 'medium' | 'high' | 'critical';
+    contains_pii?: boolean;
+    pii_masked?: boolean;
+    requires_explanation?: boolean;
+    explanation?: string;
+    workflow_id?: string;
+    [key: string]: unknown;
+  };
   systemType?: AISystemType;
   modelId?: string;
   prompt?: string;
   confidence?: number;
   citations?: string[];
 }
-
 export class PolicyEnforcementEngine {
   constructor(private getPolicies: () => GovernancePolicy[]) {}
 

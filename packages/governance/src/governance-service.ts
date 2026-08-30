@@ -245,7 +245,7 @@ export class GovernanceService {
   }
 
   /** Marketplace: check if install requires approval */
-  checkMarketplaceInstall(appId: string, userId: string): { allowed: boolean; requiresApproval: boolean; reason?: string } {
+  checkMarketplaceInstall(appId: string, _userId: string): { allowed: boolean; requiresApproval: boolean; reason?: string } {
     const evaluation = this.evaluateAndEnforce({
       systemId: appId,
       action: 'marketplace.install',

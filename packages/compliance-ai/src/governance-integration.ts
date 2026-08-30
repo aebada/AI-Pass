@@ -1,8 +1,8 @@
-import { createGovernancePlatform } from '@ai-pass/governance';
+import { createGovernancePlatform, GovernanceHook } from '@ai-pass/governance';
 import type { AISystem } from './types.js';
 
 const governance = createGovernancePlatform();
-
+const governanceHook = new GovernanceHook();
 /** Delegates AI inventory and policy evaluation to packages/governance — no duplication */
 export class GovernanceIntegration {
   listAISystems() {
@@ -42,8 +42,7 @@ export class GovernanceIntegration {
     action: string;
     context: Record<string, unknown>;
   }) {
-    return governance.hook.evaluatePolicies(params);
-  }
+return governanceHook.evaluatePolicies(params);  }
 
   syncComplianceSystem(system: AISystem): void {
     const gov = governance.inventory.get(system.governanceSystemId);
@@ -56,7 +55,7 @@ export class GovernanceIntegration {
   }
 
   listPendingApprovals() {
-    return governance.workflow.listPending();
+    return governance.approvals.listPending();
   }
 }
 

@@ -1,5 +1,5 @@
 import { createId } from '@ai-pass/shared';
-import type { DriftEvent, MonitoringEvent, MonitoringEventType, RiskLevel } from '@ai-pass/shared';
+import type { DriftEvent, MonitoringEvent, MonitoringEventType } from '@ai-pass/shared';
 
 export class MonitoringService {
   private events: MonitoringEvent[] = [];

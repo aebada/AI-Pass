@@ -25,7 +25,7 @@ export class WorkflowEngine {
     return [...this.stages];
   }
 
-  advance(system: AISystem, completedStage: GovernanceLifecycleStage): GovernanceLifecycleStage | undefined {
+  advance(_system: AISystem, completedStage: GovernanceLifecycleStage): GovernanceLifecycleStage | undefined {
     const idx = this.stages.indexOf(completedStage);
     if (idx < 0 || idx >= this.stages.length - 1) return undefined;
     return this.stages[idx + 1];

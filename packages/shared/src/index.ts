@@ -280,8 +280,7 @@ export type {
   GovernanceDashboard,
   GovernanceReportRequest,
 } from './governance.js';
-export type { MonitoringEvent as GovernanceMonitoringEvent, PolicyStatus as GovernancePolicyStatus } from './governance.js';
-
+export type { MonitoringEvent, PolicyStatus } from './governance.js';
 export type {
   KnowledgeSourceType,
   SyncStatus,

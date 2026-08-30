@@ -41,3 +41,16 @@ export {
   handleCompliancePolicies,
   handleOrganization,
 } from './handlers.js';
+
+export {
+  handleTrustValidate,
+  handleTrustValidateAsync,
+  handleTrustCertify,
+  handleTrustSystems,
+  handleTrustReports,
+  handleTrustVerification,
+  handleTrustMonitoring,
+  handleTrustDashboard,
+  handleTrustTestSuite,
+  getTrustSummaryForResource,
+} from '@ai-pass/trust-engine';
