@@ -1,9 +1,14 @@
 node_modules
+node_modules_bad_*
+node_modules_trash_*
 dist
 .turbo
 *.log
 .DS_Store
 .env
+.env.*
+!.env.example
+!.env.*.example
 .env.local
 *.local
 coverage
@@ -12,15 +17,28 @@ out
 release
 .expo
 next-env.d.ts
+*.tsbuildinfo
 apps/web/.next
 apps/desktop/out
 apps/desktop/release
 
 services/auth-api/.env
+services/auth-api/.env.production
+services/auth-api/.env.deploy-upload
 services/auth-api/vendor/
 services/auth-api/node_modules/
 services/auth-api/storage/logs/*.log
 services/auth-api/bootstrap/cache/*.php
+
+services/ocr-service/.venv/
+services/ocr-service/models/
+services/ocr-service/outputs/
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.onnx
+*.ckpt
 
 php-auth/auth-lib/.env
 php-auth/auth-lib/vendor/
@@ -28,3 +46,17 @@ php-auth/composer.phar
 
 .pnpm-store
 .build-node.lock
+.ai-pass-build.lock
+
+# Deploy credentials — never commit
+scripts/.deploy-env.local
+**/.deploy-env.local
+
+# Desktop installers — ~110MB each, above GitHub's 100MB per-file limit.
+# Served from the deploy target, not from git.
+apps/web/public/downloads/releases/
+apps/web/out/
+apps/web/tmp/
+
+# Scratch clone of the investor-pack repo — not part of this project
+.tmp-investor-pack/
