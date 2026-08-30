@@ -35,7 +35,11 @@ export class SearchService {
 
     if (filters.provider) {
       const provider = filters.provider.toLowerCase();
-      tools = tools.filter((t) => t.modelsUsed.some((m) => m.toLowerCase().includes(provider)));
+      tools = tools.filter(
+        (t) =>
+          t.provider.toLowerCase().includes(provider) ||
+          t.modelsUsed.some((m) => m.toLowerCase().includes(provider)),
+      );
     }
 
     if (filters.language) {

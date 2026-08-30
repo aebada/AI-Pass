@@ -47,7 +47,7 @@ export default function BillingPage() {
               Active
             </Badge>
           </div>
-          <p className={styles.renewal}>Next billing date: — (scaffold)</p>
+          <p className={styles.renewal}>Next billing date: - (scaffold)</p>
         </Card>
       </div>
 
@@ -87,7 +87,7 @@ export default function BillingPage() {
       <Card variant="outline" padding="md" style={{ marginTop: 24 }}>
         <h3 style={{ margin: '0 0 8px', fontSize: 14 }}>Payment method</h3>
         <p style={{ margin: 0, fontSize: 13, color: 'var(--text-muted)' }}>
-          Billing integration scaffold — connect Stripe or Paddle for production.
+          Billing integration scaffold - connect Stripe or Paddle for production.
         </p>
       </Card>
     </BusinessShell>

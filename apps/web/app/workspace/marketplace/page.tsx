@@ -16,7 +16,7 @@ export default function MarketplaceHomePage() {
       <header className={styles.hero}>
         <h1 className={styles.heroTitle}>AI-Pass Marketplace</h1>
         <p className={styles.heroSub}>
-          Apps, agent packs, skill packs, and industry solutions — integrated with AI Wallet,
+          Apps, agent packs, skill packs, and industry solutions - integrated with AI Wallet,
           Membership gates, and Trust Engine badges.
         </p>
         <form action="/workspace/marketplace/search" method="get" className={styles.searchBar}>

@@ -7,11 +7,11 @@ import section from '../home-sections.module.css';
 const INVESTOR_SECTIONS = [
   {
     title: 'Vision',
-    text: 'AI-Pass is building the operating system for enterprise AI — a unified platform where models, agents, workflows, applications, governance, and marketplaces converge under one membership. We believe every enterprise deserves an AI infrastructure layer as robust as their cloud infrastructure — not a collection of disconnected chatbots.',
+    text: 'AI-Pass is building the operating system for enterprise AI - a unified platform where models, agents, workflows, applications, governance, and marketplaces converge under one membership. We believe every enterprise deserves an AI infrastructure layer as robust as their cloud infrastructure - not a collection of disconnected chatbots.',
   },
   {
     title: 'Market Opportunity',
-    text: 'The enterprise AI software market exceeds $150B and is growing at 35% CAGR. Fortune 500 companies are deploying AI across finance, HR, supply chain, customer support, and compliance — yet 78% report fragmented tooling and governance gaps. AI-Pass addresses the platform layer that connects all of these use cases.',
+    text: 'The enterprise AI software market exceeds $150B and is growing at 35% CAGR. Fortune 500 companies are deploying AI across finance, HR, supply chain, customer support, and compliance - yet 78% report fragmented tooling and governance gaps. AI-Pass addresses the platform layer that connects all of these use cases.',
   },
   {
     title: 'Why Now',
@@ -19,11 +19,11 @@ const INVESTOR_SECTIONS = [
   },
   {
     title: 'Platform Strategy',
-    text: 'Land with AI Workspace and Playground — the daily entry point. Expand through certified marketplace apps and vertical solutions. Monetize via membership tiers, AI Wallet usage credits, marketplace revenue share, and enterprise contracts with SLA and private cloud.',
+    text: 'Land with AI Workspace and Playground - the daily entry point. Expand through certified marketplace apps and vertical solutions. Monetize via membership tiers, AI Wallet usage credits, marketplace revenue share, and enterprise contracts with SLA and private cloud.',
   },
   {
     title: 'Competitive Advantages',
-    text: 'AI-Pass is the only platform unifying provider hub, agent runtime, workflow automation, knowledge pipeline, enterprise apps, trust engine, and marketplace in one OS. Competitors offer chat (OpenAI), agents (point solutions), or governance (GRC tools) — not the full stack.',
+    text: 'AI-Pass is the only platform unifying provider hub, agent runtime, workflow automation, knowledge pipeline, enterprise apps, trust engine, and marketplace in one OS. Competitors offer chat (OpenAI), agents (point solutions), or governance (GRC tools) - not the full stack.',
   },
   {
     title: 'Business Model',
@@ -79,7 +79,7 @@ export default function InvestorsPage() {
             <a href="mailto:investors@ai-pass.com?subject=Investor%20Meeting" className={`${styles.btnPrimary} ${styles.btnLarge}`}>
               Book Investor Meeting
             </a>
-            <a href="#" className={`${styles.btnSecondary} ${styles.btnLarge}`}>
+            <a href="/contact" className={`${styles.btnSecondary} ${styles.btnLarge}`}>
               Download Investor Deck (PDF)
             </a>
           </div>

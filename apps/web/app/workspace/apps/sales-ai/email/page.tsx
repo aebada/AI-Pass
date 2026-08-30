@@ -65,7 +65,7 @@ export default function EmailAssistantPage() {
           <thead><tr><th>Subject</th><th>Type</th><th>Trust</th></tr></thead>
           <tbody>
             {existing.map((e) => (
-              <tr key={e.id}><td>{e.subject}</td><td>{e.type}</td><td>{e.trustScore ?? '—'}</td></tr>
+              <tr key={e.id}><td>{e.subject}</td><td>{e.type}</td><td>{e.trustScore ?? '-'}</td></tr>
             ))}
           </tbody>
         </table>

@@ -230,7 +230,11 @@ export const MODEL_CATALOG: ModelCatalogEntry[] = [
 
   model('deepseek-v3', 'openrouter', 'OpenRouter', 'deepseek/deepseek-chat', 'DeepSeek V3', 'Strong coding and math', 'balanced', 'great', 'premium', 64000, 0.27, 1.1, ['Code', 'Math', 'Cost-efficient'], ['coding']),
   model('deepseek-r1', 'openrouter', 'OpenRouter', 'deepseek/deepseek-r1', 'DeepSeek R1', 'Chain-of-thought reasoning', 'quality', 'frontier', 'premium', 64000, 0.55, 2.19, ['Reasoning', 'Proofs'], ['reasoning']),
-  model('deepseek-free', 'openrouter', 'OpenRouter', 'deepseek/deepseek-chat:free', 'DeepSeek Free', 'Free tier DeepSeek via OpenRouter', 'fast', 'good', 'free', 64000, 0, 0, ['Free chat', 'Experiments'], ['free']),
+  // OpenRouter retired deepseek/deepseek-chat:free — use paid chat slug (platform-sponsored free tier)
+  model('deepseek-free', 'openrouter', 'OpenRouter', 'deepseek/deepseek-chat', 'DeepSeek Free', 'DeepSeek via OpenRouter (free-tier access)', 'fast', 'good', 'free', 64000, 0, 0, ['Free chat', 'Experiments'], ['free']),
+  model('deepseek-r1-free', 'openrouter', 'OpenRouter', 'openrouter/free', 'DeepSeek R1 Free', 'OpenRouter free auto-router', 'fast', 'good', 'free', 64000, 0, 0, ['Free chat'], ['free']),
+  model('openrouter-free', 'openrouter', 'OpenRouter', 'openrouter/free', 'OpenRouter Free', 'OpenRouter free model router', 'fast', 'good', 'free', 64000, 0, 0, ['Free chat'], ['free']),
+  model('gpt-oss-20b-free', 'openrouter', 'OpenRouter', 'openai/gpt-oss-20b:free', 'GPT-OSS 20B Free', 'OpenAI open-weight model on OpenRouter free tier', 'fast', 'good', 'free', 128000, 0, 0, ['Free chat'], ['free']),
 
   model('claude-sonnet-or', 'openrouter', 'OpenRouter', 'anthropic/claude-sonnet-4', 'Claude Sonnet (OpenRouter)', 'Claude Sonnet via OpenRouter', 'balanced', 'frontier', 'premium', 200000, 3, 15, ['Coding', 'Analysis'], ['openrouter']),
   model('qwen-or', 'openrouter', 'OpenRouter', 'qwen/qwen-2.5-72b-instruct', 'Qwen 2.5 72B (OpenRouter)', 'Alibaba Qwen via OpenRouter', 'balanced', 'great', 'standard', 131072, 0.35, 0.4, ['Chinese/English', 'Coding'], ['openrouter']),
@@ -240,7 +244,8 @@ export const MODEL_CATALOG: ModelCatalogEntry[] = [
   model('codestral', 'mistral', 'Mistral', 'codestral-latest', 'Codestral', 'Code-specialized', 'fast', 'great', 'premium', 256000, 0.3, 0.9, ['IDE completion', 'Refactoring'], ['coding']),
 
   model('llama-4-70b', 'llama', 'Llama', 'meta-llama/llama-4-70b', 'Llama 4 70B', 'Open frontier model', 'balanced', 'great', 'standard', 128000, 0.4, 0.4, ['Self-host', 'Fine-tuning'], ['open']),
-  model('llama-3.3-70b', 'llama', 'Llama', 'meta-llama/llama-3.3-70b', 'Llama 3.3 70B', 'Proven open model', 'balanced', 'good', 'free', 128000, 0.2, 0.2, ['General chat', 'RAG'], ['open']),
+  // OpenRouter retired meta-llama/llama-3.3-70b-instruct:free — use paid instruct slug
+  model('llama-3.3-70b', 'openrouter', 'OpenRouter', 'meta-llama/llama-3.3-70b-instruct', 'Llama 3.3 70B', 'Llama 3.3 70B via OpenRouter', 'balanced', 'good', 'free', 128000, 0.2, 0.2, ['General chat', 'RAG'], ['open']),
 
   model('qwen-max', 'qwen', 'Qwen', 'qwen-max', 'Qwen Max', 'Alibaba flagship', 'balanced', 'great', 'premium', 131072, 1.6, 6.4, ['Chinese/English', 'Enterprise'], ['multilingual']),
   model('qwen-2.5-72b', 'qwen', 'Qwen', 'qwen-2.5-72b-instruct', 'Qwen 2.5 72B', 'Strong open model', 'balanced', 'great', 'standard', 131072, 0.35, 0.4, ['Coding', 'Math'], ['open']),

@@ -3,20 +3,40 @@
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import type { WorkspaceDashboardData } from '@ai-pass/platform-core';
+import { getDemoDashboard } from '@ai-pass/platform-core';
 import { Card, workspaceTokens } from '@ai-pass/ui';
 import { useApp } from '../premium/AppProviders';
 import { WalletCredits } from '../dashboard/WalletCredits';
 import { PendingApprovals } from '../dashboard/PendingApprovals';
+import { KpiCards } from '../dashboard/KpiCards';
+import { KPI_METRICS } from '../dashboard/dashboardData';
+import { WorkspaceAppsCatalog } from './WorkspaceAppsCatalog';
 import styles from '../../dashboard/page.module.css';
 
 function EmptySection({ title, message }: { title: string; message: string }) {
   return (
     <p style={{ margin: 0, fontSize: 13, color: workspaceTokens.colors.textMuted }}>
       <strong style={{ color: workspaceTokens.colors.text }}>{title}</strong>
-      {' — '}
+      {' - '}
       {message}
     </p>
   );
+}
+
+async function loadDashboard(): Promise<WorkspaceDashboardData> {
+  try {
+    const res = await fetch('/api/v1/workspace/summary', {
+      headers: { Accept: 'application/json' },
+    });
+    if (!res.ok) return getDemoDashboard();
+    const contentType = res.headers.get('content-type') ?? '';
+    if (!contentType.includes('application/json')) return getDemoDashboard();
+    const payload = await res.json();
+    const dashboard = payload?.data?.dashboard as WorkspaceDashboardData | undefined;
+    return dashboard ?? getDemoDashboard();
+  } catch {
+    return getDemoDashboard();
+  }
 }
 
 export function WorkspaceHome() {
@@ -27,15 +47,9 @@ export function WorkspaceHome() {
   useEffect(() => {
     let cancelled = false;
 
-    fetch('/api/v1/workspace/summary')
-      .then((res) => (res.ok ? res.json() : null))
-      .then((payload) => {
-        if (cancelled) return;
-        const dashboard = payload?.data?.dashboard as WorkspaceDashboardData | undefined;
-        setDash(dashboard ?? null);
-      })
-      .catch(() => {
-        if (!cancelled) setDash(null);
+    loadDashboard()
+      .then((dashboard) => {
+        if (!cancelled) setDash(dashboard);
       })
       .finally(() => {
         if (!cancelled) setLoading(false);
@@ -65,6 +79,7 @@ export function WorkspaceHome() {
             <p className={styles.subtitle}>Sign in to load your workspace overview.</p>
           </div>
         </header>
+        <WorkspaceAppsCatalog />
       </div>
     );
   }
@@ -73,12 +88,19 @@ export function WorkspaceHome() {
     <div className={styles.container}>
       <header className={styles.header}>
         <div>
-          <h1 className={styles.title}>Welcome, {firstName}</h1>
+          <h1 className={styles.title}>Workspace</h1>
           <p className={styles.subtitle}>
-            Unified workspace — tasks, agents, workflows, credits, and governance at a glance.
+            Welcome, {firstName} — browse AI applications with trust scores, then manage usage, cost,
+            agents, and governance.
           </p>
         </div>
       </header>
+
+      <WorkspaceAppsCatalog />
+
+      <section style={{ marginBottom: 24 }}>
+        <KpiCards metrics={KPI_METRICS} />
+      </section>
 
       <section style={{ marginBottom: 24 }}>
         <h2 style={{ fontSize: 14, fontWeight: 600, color: workspaceTokens.colors.textMuted, marginBottom: 12 }}>
@@ -119,7 +141,7 @@ export function WorkspaceHome() {
               <ul style={{ listStyle: 'none', margin: 0, padding: 0 }}>
                 {dash.recentTasks.map((t) => (
                   <li key={t.id} style={{ padding: '8px 0', borderBottom: `1px solid ${workspaceTokens.colors.border}` }}>
-                    <Link href={t.route ?? '#'} style={{ color: workspaceTokens.colors.text, textDecoration: 'none' }}>
+                    <Link href={t.route ?? '/workspace'} style={{ color: workspaceTokens.colors.text, textDecoration: 'none' }}>
                       <strong>{t.title}</strong>
                       <span style={{ color: workspaceTokens.colors.textMuted, marginLeft: 8, fontSize: 12 }}>
                         {t.module} · {t.status} · {t.updatedAt}
@@ -181,7 +203,7 @@ export function WorkspaceHome() {
             <h3 style={{ fontSize: 14, fontWeight: 600, margin: '0 0 12px' }}>Notifications</h3>
             {dash.notifications.map((n) => (
               <div key={n.id} style={{ padding: '8px 0', borderBottom: `1px solid ${workspaceTokens.colors.border}`, opacity: n.read ? 0.7 : 1 }}>
-                <Link href={n.route ?? '#'} style={{ color: workspaceTokens.colors.text, textDecoration: 'none', fontSize: 13 }}>
+                <Link href={n.route ?? '/workspace'} style={{ color: workspaceTokens.colors.text, textDecoration: 'none', fontSize: 13 }}>
                   <strong>{n.title}</strong>
                   <p style={{ margin: '2px 0 0', color: workspaceTokens.colors.textMuted, fontSize: 12 }}>{n.body} · {n.time}</p>
                 </Link>
@@ -243,9 +265,16 @@ export function WorkspaceHome() {
           </Card>
 
           <Card padding="md" style={{ marginTop: 16 }}>
-            <h3 style={{ fontSize: 14, fontWeight: 600, margin: '0 0 8px' }}>Marketplace</h3>
-            <p style={{ fontSize: 12, color: workspaceTokens.colors.textMuted, margin: '0 0 12px' }}>Install Invoice AI, Supply Chain AI, and more</p>
-            <Link href="/workspace/marketplace" style={{ color: workspaceTokens.colors.accent, fontSize: 13, textDecoration: 'none' }}>Browse Marketplace →</Link>
+            <h3 style={{ fontSize: 14, fontWeight: 600, margin: '0 0 8px' }}>Governance</h3>
+            <p style={{ fontSize: 12, color: workspaceTokens.colors.textMuted, margin: '0 0 12px' }}>
+              Trust Center and policy controls for every installed AI application.
+            </p>
+            <Link href="/workspace/trust" style={{ color: workspaceTokens.colors.accent, fontSize: 13, textDecoration: 'none', display: 'block' }}>
+              Trust Center →
+            </Link>
+            <Link href="/workspace/governance" style={{ color: workspaceTokens.colors.accent, fontSize: 13, textDecoration: 'none', display: 'block', marginTop: 6 }}>
+              Governance Center →
+            </Link>
           </Card>
         </aside>
       </div>

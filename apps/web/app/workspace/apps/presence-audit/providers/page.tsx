@@ -31,7 +31,7 @@ export default function ProviderComparisonPage() {
             <ProviderBadge provider={s.provider} />
             <p className={styles.statValue} style={{ fontSize: 22, marginTop: 12 }}>{s.rate}%</p>
             <p style={{ fontSize: 12, color: 'var(--ai-text-muted)' }}>
-              {s.mentions}/{s.total} mentions · avg rank {s.avgRank?.toFixed(1) ?? '—'}
+              {s.mentions}/{s.total} mentions · avg rank {s.avgRank?.toFixed(1) ?? '-'}
             </p>
           </div>
         ))}
@@ -40,12 +40,12 @@ export default function ProviderComparisonPage() {
       <section className={styles.card}>
         <h2 className={styles.cardTitle}>Provider insights</h2>
         <p style={{ fontSize: 13, color: 'var(--ai-text-muted)' }}>
-          All queries routed via AI Provider Hub — no direct API calls. Wallet tracks credits per provider request.
+          All queries routed via AI Provider Hub - no direct API calls. Wallet tracks credits per provider request.
         </p>
         <div className={styles.list} style={{ marginTop: 12 }}>
           {stats.map((s) => (
             <div key={s.provider} className={styles.listItem}>
-              <strong>{s.label}</strong>: {s.rate >= 50 ? 'Strong presence' : s.rate > 0 ? 'Partial presence' : 'Missing — optimization priority'}
+              <strong>{s.label}</strong>: {s.rate >= 50 ? 'Strong presence' : s.rate > 0 ? 'Partial presence' : 'Missing - optimization priority'}
             </div>
           ))}
         </div>

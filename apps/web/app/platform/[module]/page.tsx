@@ -75,7 +75,14 @@ export default async function ModulePage({
   const { module: moduleId } = await params;
   const mod = PLATFORM_MODULES.find((m) => m.id === moduleId);
   const loader = MODULE_LOADERS[moduleId as PlatformModuleId];
-  const snapshot = loader ? loader() : { error: 'Unknown module' };
+  let snapshot: Record<string, unknown> = { error: 'Unknown module' };
+  if (loader) {
+    try {
+      snapshot = loader();
+    } catch (err) {
+      snapshot = { error: err instanceof Error ? err.message : 'Module snapshot unavailable' };
+    }
+  }
 
   if (!mod) {
     return (

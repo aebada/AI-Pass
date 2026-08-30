@@ -16,7 +16,7 @@ export default function SalesDashboardPage() {
   return (
     <SalesAppShell
       title="Sales AI"
-      subtitle="Close More Deals with AI — personalized outreach, proposals, and pipeline intelligence"
+      subtitle="Close More Deals with AI - personalized outreach, proposals, and pipeline intelligence"
     >
       <div className={styles.actions}>
         <Link href="/workspace/apps/sales-ai/email" className={styles.actionBtn}>Generate Email</Link>
@@ -61,7 +61,7 @@ export default function SalesDashboardPage() {
       </div>
 
       <section className={styles.card}>
-        <h3 className={styles.cardTitle}>Pipeline — Leads</h3>
+        <h3 className={styles.cardTitle}>Pipeline - Leads</h3>
         <table className={styles.table}>
           <thead>
             <tr>
@@ -75,7 +75,7 @@ export default function SalesDashboardPage() {
             {leads.map((l) => (
               <tr key={l.id}>
                 <td>{l.company}</td>
-                <td>{l.industry ?? '—'}</td>
+                <td>{l.industry ?? '-'}</td>
                 <td>{l.score}</td>
                 <td>
                   <span className={`${styles.badge} ${

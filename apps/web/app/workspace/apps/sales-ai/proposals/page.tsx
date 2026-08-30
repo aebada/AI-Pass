@@ -64,8 +64,8 @@ export default function ProposalsPage() {
             {proposals.map((p) => (
               <tr key={p.id}>
                 <td>{p.title}</td>
-                <td>{p.currency} {p.totalValue?.toLocaleString() ?? '—'}</td>
-                <td>{p.trustScore ?? '—'}</td>
+                <td>{p.currency} {p.totalValue?.toLocaleString() ?? '-'}</td>
+                <td>{p.trustScore ?? '-'}</td>
               </tr>
             ))}
           </tbody>

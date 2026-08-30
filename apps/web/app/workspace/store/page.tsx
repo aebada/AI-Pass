@@ -28,18 +28,22 @@ export default function StoreHomePage() {
   }
 
   return (
-    <WorkspaceLayoutClient title="AI Pass Store" subtitle="Discover, install, and run AI apps">
+    <WorkspaceLayoutClient
+      title="Enterprise AI App Store"
+      subtitle="Apps, agents, packs, workflows, knowledge, skills, plugins, and developer apps"
+    >
       <div className={styles.marketplace}>
         <div className={styles.hero}>
-          <h1 className={styles.heroTitle}>AI Pass Store</h1>
+          <h1 className={styles.heroTitle}>Enterprise AI App Store</h1>
           <p className={styles.heroSub}>
-            Central distribution for hosted apps, agent packs, skill packs, and enterprise solutions.
-            Every execution routes through AI Wallet and membership gates.
+            Governed distribution for hosted apps, agents, automation packs, workflows, knowledge packs,
+            skills, plugins, and developer apps — with Wallet metering, membership gates, and private catalogs
+            for Government, Defence, and air-gapped deployments.
           </p>
           <form className={styles.searchBar} onSubmit={handleSearch}>
             <input
               className={styles.searchInput}
-              placeholder="Search apps — keyword or semantic…"
+              placeholder="Search apps - keyword or semantic…"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
             />
@@ -54,6 +58,22 @@ export default function StoreHomePage() {
             <Link href={STORE_ROUTES.enterprise} className={styles.navLink}>Enterprise Store</Link>
             <Link href={STORE_ROUTES.billing} className={styles.navLink}>Wallet & Billing</Link>
           </nav>
+          <div className={styles.categoryGrid} style={{ marginTop: 16 }}>
+            {[
+              { label: 'Apps', href: `${STORE_ROUTES.search}?type=hosted_saas` },
+              { label: 'Agents', href: `${STORE_ROUTES.search}?type=agent_pack` },
+              { label: 'Automation packs', href: `${STORE_ROUTES.search}?type=automation_pack` },
+              { label: 'Workflows', href: '/workspace/workflows' },
+              { label: 'Knowledge', href: '/workspace/knowledge' },
+              { label: 'Skills', href: `${STORE_ROUTES.search}?type=skill_pack` },
+              { label: 'Plugins', href: `${STORE_ROUTES.search}?type=external_app` },
+              { label: 'Developer apps', href: STORE_ROUTES.developer },
+            ].map((item) => (
+              <Link key={item.label} href={item.href} className={styles.categoryChip}>
+                {item.label}
+              </Link>
+            ))}
+          </div>
         </div>
 
         <StoreSectionRow title="Featured" href={`${STORE_ROUTES.search}?featured=true`}>

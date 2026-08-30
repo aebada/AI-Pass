@@ -43,7 +43,7 @@ export default function UploadPage() {
           setResult(err.error ?? 'Upload failed');
         }
       } catch {
-        setResult('Upload failed — static export mode uses demo data only');
+        setResult('Upload failed - static export mode uses demo data only');
       } finally {
         setUploading(false);
       }
@@ -66,7 +66,7 @@ export default function UploadPage() {
       <section className={styles.card}>
         <h2 className={styles.cardTitle}>Upload invoice</h2>
         <p style={{ fontSize: 13, color: 'var(--ai-text-muted)', marginBottom: 24 }}>
-          Drag and drop PDF, image, or email attachment. OCR extraction runs via platform agents — credits tracked in AI Wallet.
+          Drag and drop PDF, image, or email attachment. OCR extraction runs via platform agents - credits tracked in AI Wallet.
         </p>
 
         <div
@@ -95,7 +95,7 @@ export default function UploadPage() {
             <>
               <p style={{ fontSize: 16, margin: '0 0 8px' }}>Drop invoice here</p>
               <p style={{ fontSize: 13, color: 'var(--ai-text-muted)', margin: 0 }}>
-                or click to browse — PDF, PNG, JPG
+                or click to browse - PDF, PNG, JPG
               </p>
             </>
           )}
