@@ -45,7 +45,7 @@ Install dependencies:
 
 ```bash
 cd services/auth-api
-composer install   # or: php ../../php-auth/composer.phar install
+composer install   # or: php ../php-auth-legacy/composer.phar install
 ```
 
 ## Environment variables
@@ -218,7 +218,7 @@ curl -sS https://aipass.space/auth/me
 
 ## Legacy php-auth
 
-`php-auth/` remains in the repository until Laravel auth is validated in production. To fall back during static builds:
+`services/php-auth-legacy/` remains in the repository until Laravel auth is validated in production. To fall back during static builds:
 
 ```bash
 COPY_PHP_AUTH=1 NEXT_PUBLIC_USE_PHP_AUTH=1 ./scripts/build-web-static.sh

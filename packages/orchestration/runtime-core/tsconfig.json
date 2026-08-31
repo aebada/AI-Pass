@@ -1,0 +1,16 @@
+{
+  "extends": "../../../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "composite": true
+  },
+  "include": ["src"],
+  "references": [
+    { "path": "../../platform/shared" },
+    { "path": "../../reasoning/provider-hub" },
+    { "path": "../../platform/wallet" },
+    { "path": "../../platform/membership" },
+    { "path": "../../marketplace/marketplace-core" }
+  ]
+}

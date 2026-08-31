@@ -1,0 +1,19 @@
+{
+  "extends": "../../../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "composite": true
+  },
+  "include": ["src"],
+  "references": [
+    { "path": "../../platform/shared" },
+    { "path": "../../marketplace/marketplace" },
+    { "path": "../../marketplace/marketplace-core" },
+    { "path": "../runtime-core" },
+    { "path": "../automation-engine" },
+    { "path": "../../platform/membership" },
+    { "path": "../../governance/governance" },
+    { "path": "../../knowledge/knowledge-pipeline" }
+  ]
+}

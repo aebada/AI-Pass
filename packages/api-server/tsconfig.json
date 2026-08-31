@@ -7,8 +7,8 @@
   },
   "include": ["src"],
   "references": [
-    { "path": "../shared" },
-    { "path": "../platform-core" },
-    { "path": "../invoice-ai" }
+    { "path": "../platform/shared" },
+    { "path": "../platform/platform-core" },
+    { "path": "../verticals/invoice-ai" }
   ]
 }

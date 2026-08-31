@@ -1,0 +1,21 @@
+{
+  "extends": "../../../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "composite": true,
+    "paths": {
+      "@ai-pass/marketplace-core": ["../marketplace-core/src/index.ts"],
+      "@ai-pass/marketplace-runtime": ["../../execution/marketplace-runtime/src/index.ts"],
+      "@ai-pass/platform-core": ["../../platform/platform-core/src/index.ts"],
+      "@ai-pass/shared": ["../../platform/shared/src/index.ts"]
+    }
+  },
+  "include": ["src"],
+  "references": [
+    { "path": "../../platform/shared" },
+    { "path": "../../platform/platform-core" },
+    { "path": "../marketplace-core" },
+    { "path": "../../execution/marketplace-runtime" }
+  ]
+}

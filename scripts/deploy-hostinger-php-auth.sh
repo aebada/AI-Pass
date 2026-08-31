@@ -18,7 +18,7 @@
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-PHP_AUTH="$ROOT/php-auth"
+PHP_AUTH="$ROOT/services/php-auth-legacy"
 AUTH_SRC="$PHP_AUTH/auth"
 LIB_SRC="$PHP_AUTH/auth-lib"
 
@@ -30,7 +30,7 @@ FTP_REMOTE_DIR="${FTP_REMOTE_DIR:-/}"
 export PATH="/opt/homebrew/bin:/usr/local/bin:${PATH:-}"
 
 if [[ ! -d "$LIB_SRC/vendor" ]]; then
-  echo "vendor/ missing — run: cd php-auth && composer install"
+  echo "vendor/ missing — run: cd services/php-auth-legacy && composer install"
   if command -v composer >/dev/null 2>&1; then
     (cd "$PHP_AUTH" && composer install --no-dev --optimize-autoloader)
   else
@@ -52,4 +52,4 @@ lftp -u "$FTP_USER","$FTP_PASS" "ftp://${FTP_HOST}" -e "\
   quit"
 
 echo "PHP auth deploy complete."
-echo "Next: create ${FTP_REMOTE_DIR}auth-lib/.env on the server (see php-auth/auth-lib/.env.example)"
+echo "Next: create ${FTP_REMOTE_DIR}auth-lib/.env on the server (see services/php-auth-legacy/auth-lib/.env.example)"

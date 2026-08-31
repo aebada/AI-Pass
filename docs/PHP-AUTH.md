@@ -1,6 +1,6 @@
 # PHP authentication (Google OAuth + email/password)
 
-Session-based auth for **Hostinger shared PHP hosting** — no Node.js or NextAuth required. The static Next.js site (`apps/web/out/`) and PHP auth (`php-auth/`) run side-by-side on Apache.
+Session-based auth for **Hostinger shared PHP hosting** — no Node.js or NextAuth required. The static Next.js site (`apps/web/out/`) and PHP auth (`services/php-auth-legacy/`) run side-by-side on Apache.
 
 ## Architecture
 
@@ -15,9 +15,9 @@ Browser
 
 | Piece | Location |
 |-------|----------|
-| PHP library | `php-auth/auth-lib/` |
-| Public routes | `php-auth/auth/` |
-| SQL migration | `php-auth/sql/001_users.sql` |
+| PHP library | `services/php-auth-legacy/auth-lib/` |
+| Public routes | `services/php-auth-legacy/auth/` |
+| SQL migration | `services/php-auth-legacy/sql/001_users.sql` |
 | Composer deps | `google/apiclient`, `vlucas/phpdotenv` |
 | Static site bridge | `apps/web/app/components/auth/PhpAuthBridge.tsx` |
 | Login page (static) | `apps/web/app/login/page.tsx` → links to `/auth/google.php` when `NEXT_PUBLIC_USE_PHP_AUTH=1` |
@@ -27,7 +27,7 @@ Browser
 ### 1. Install PHP dependencies
 
 ```bash
-cd php-auth
+cd services/php-auth-legacy
 composer install
 ```
 
@@ -41,7 +41,7 @@ cp auth-lib/.env.example auth-lib/.env
 For local PHP built-in server (optional):
 
 ```bash
-cd php-auth
+cd services/php-auth-legacy
 php -S localhost:8080 -t ..
 # Open http://localhost:8080/auth/login.php
 ```
@@ -58,7 +58,7 @@ mysql -u root -p your_db < sql/001_users.sql
 
 ```bash
 ./scripts/build-web-static.sh   # sets NEXT_PUBLIC_USE_PHP_AUTH=1
-# Serve apps/web/out/ + php-auth via Apache or two terminals
+# Serve apps/web/out/ + services/php-auth-legacy via Apache or two terminals
 ```
 
 ## Hostinger production setup
@@ -142,7 +142,7 @@ You do **not** need `/api/auth/callback/google` for PHP auth.
 In hPanel → **Databases → phpMyAdmin**, select your database and run:
 
 ```sql
--- contents of php-auth/sql/001_users.sql
+-- contents of services/php-auth-legacy/sql/001_users.sql
 ```
 
 Or import the file via phpMyAdmin **Import**.
@@ -152,7 +152,7 @@ Or import the file via phpMyAdmin **Import**.
 **Recommended:** deploy `vendor/` from your machine (included in FTP deploy).
 
 ```bash
-cd php-auth && composer install --no-dev --optimize-autoloader
+cd services/php-auth-legacy && composer install --no-dev --optimize-autoloader
 ./scripts/deploy-hostinger-php-auth.sh
 ```
 
@@ -160,7 +160,7 @@ cd php-auth && composer install --no-dev --optimize-autoloader
 
 ```bash
 cd ~/domains/aipass.space/public_html/auth-lib/..
-cd php-auth  # if you uploaded full php-auth tree
+cd services/php-auth-legacy  # if you uploaded full php-auth-legacy tree
 composer install --no-dev --optimize-autoloader
 ```
 

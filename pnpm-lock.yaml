@@ -23,10 +23,10 @@ importers:
     dependencies:
       '@ai-pass/livesync':
         specifier: workspace:*
-        version: link:../../packages/livesync
+        version: link:../../packages/orchestration/livesync
       '@ai-pass/shared':
         specifier: workspace:*
-        version: link:../../packages/shared
+        version: link:../../packages/platform/shared
     devDependencies:
       concurrently:
         specifier: ^9.1.2
@@ -48,16 +48,16 @@ importers:
     dependencies:
       '@ai-pass/editor':
         specifier: workspace:*
-        version: link:../../packages/editor
+        version: link:../../packages/ui-shared/editor
       '@ai-pass/livesync':
         specifier: workspace:*
-        version: link:../../packages/livesync
+        version: link:../../packages/orchestration/livesync
       '@ai-pass/shared':
         specifier: workspace:*
-        version: link:../../packages/shared
+        version: link:../../packages/platform/shared
       '@ai-pass/ui':
         specifier: workspace:*
-        version: link:../../packages/ui
+        version: link:../../packages/ui-shared/ui
       expo:
         specifier: ~53.0.12
         version: 53.0.27(@babel/core@7.29.7)(@expo/metro-runtime@5.0.5(react-native@0.79.3(@babel/core@7.29.7)(@types/react@19.2.17)(react@19.0.0)))(react-native@0.79.3(@babel/core@7.29.7)(@types/react@19.2.17)(react@19.0.0))(react@19.0.0)
@@ -103,142 +103,142 @@ importers:
     dependencies:
       '@ai-pass/agent':
         specifier: workspace:*
-        version: link:../../packages/agent
+        version: link:../../packages/orchestration/agent
       '@ai-pass/agent-studio':
         specifier: workspace:*
-        version: link:../../packages/agent-studio
+        version: link:../../packages/orchestration/agent-studio
       '@ai-pass/ai-core':
         specifier: workspace:*
-        version: link:../../packages/ai-core
+        version: link:../../packages/reasoning/ai-core
       '@ai-pass/auth-core':
         specifier: workspace:*
-        version: link:../../packages/auth-core
+        version: link:../../packages/platform/auth-core
       '@ai-pass/automation-engine':
         specifier: workspace:*
-        version: link:../../packages/automation-engine
+        version: link:../../packages/orchestration/automation-engine
       '@ai-pass/builder':
         specifier: workspace:*
-        version: link:../../packages/builder
+        version: link:../../packages/business-builder/builder
       '@ai-pass/compliance-ai':
         specifier: workspace:*
-        version: link:../../packages/compliance-ai
+        version: link:../../packages/verticals/compliance-ai
       '@ai-pass/content-ai':
         specifier: workspace:*
-        version: link:../../packages/content-ai
+        version: link:../../packages/verticals/content-ai
       '@ai-pass/crm-connectors':
         specifier: workspace:*
-        version: link:../../packages/crm-connectors
+        version: link:../../packages/execution/crm-connectors
       '@ai-pass/customer-support-ai':
         specifier: workspace:*
-        version: link:../../packages/customer-support-ai
+        version: link:../../packages/verticals/customer-support-ai
       '@ai-pass/deployment':
         specifier: workspace:*
-        version: link:../../packages/deployment
+        version: link:../../packages/business-builder/deployment
       '@ai-pass/discovery-hub':
         specifier: workspace:*
-        version: link:../../packages/discovery-hub
+        version: link:../../packages/knowledge/discovery-hub
       '@ai-pass/editor':
         specifier: workspace:*
-        version: link:../../packages/editor
+        version: link:../../packages/ui-shared/editor
       '@ai-pass/erp-connectors':
         specifier: workspace:*
-        version: link:../../packages/erp-connectors
+        version: link:../../packages/execution/erp-connectors
       '@ai-pass/governance':
         specifier: workspace:*
-        version: link:../../packages/governance
+        version: link:../../packages/governance/governance
       '@ai-pass/indexer':
         specifier: workspace:*
-        version: link:../../packages/indexer
+        version: link:../../packages/knowledge/indexer
       '@ai-pass/invoice-ai':
         specifier: workspace:*
-        version: link:../../packages/invoice-ai
+        version: link:../../packages/verticals/invoice-ai
       '@ai-pass/knowledge-pipeline':
         specifier: workspace:*
-        version: link:../../packages/knowledge-pipeline
+        version: link:../../packages/knowledge/knowledge-pipeline
       '@ai-pass/livesync':
         specifier: workspace:*
-        version: link:../../packages/livesync
+        version: link:../../packages/orchestration/livesync
       '@ai-pass/marketplace':
         specifier: workspace:*
-        version: link:../../packages/marketplace
+        version: link:../../packages/marketplace/marketplace
       '@ai-pass/marketplace-api':
         specifier: workspace:*
-        version: link:../../packages/marketplace-api
+        version: link:../../packages/marketplace/marketplace-api
       '@ai-pass/marketplace-core':
         specifier: workspace:*
-        version: link:../../packages/marketplace-core
+        version: link:../../packages/marketplace/marketplace-core
       '@ai-pass/marketplace-runtime':
         specifier: workspace:*
-        version: link:../../packages/marketplace-runtime
+        version: link:../../packages/execution/marketplace-runtime
       '@ai-pass/mcp':
         specifier: workspace:*
-        version: link:../../packages/mcp
+        version: link:../../packages/execution/mcp
       '@ai-pass/membership':
         specifier: workspace:*
-        version: link:../../packages/membership
+        version: link:../../packages/platform/membership
       '@ai-pass/platform-api':
         specifier: workspace:*
-        version: link:../../packages/platform-api
+        version: link:../../packages/platform/platform-api
       '@ai-pass/platform-core':
         specifier: workspace:*
-        version: link:../../packages/platform-core
+        version: link:../../packages/platform/platform-core
       '@ai-pass/presence-audit':
         specifier: workspace:*
-        version: link:../../packages/presence-audit
+        version: link:../../packages/verticals/presence-audit
       '@ai-pass/provider-hub':
         specifier: workspace:*
-        version: link:../../packages/provider-hub
+        version: link:../../packages/reasoning/provider-hub
       '@ai-pass/requirements':
         specifier: workspace:*
-        version: link:../../packages/requirements
+        version: link:../../packages/business-builder/requirements
       '@ai-pass/routes':
         specifier: workspace:*
-        version: link:../../packages/routes
+        version: link:../../packages/platform/routes
       '@ai-pass/runtime-core':
         specifier: workspace:*
-        version: link:../../packages/runtime-core
+        version: link:../../packages/orchestration/runtime-core
       '@ai-pass/sales-ai':
         specifier: workspace:*
-        version: link:../../packages/sales-ai
+        version: link:../../packages/verticals/sales-ai
       '@ai-pass/shared':
         specifier: workspace:*
-        version: link:../../packages/shared
+        version: link:../../packages/platform/shared
       '@ai-pass/solution-runtime':
         specifier: workspace:*
-        version: link:../../packages/solution-runtime
+        version: link:../../packages/business-builder/solution-runtime
       '@ai-pass/store':
         specifier: workspace:*
-        version: link:../../packages/store
+        version: link:../../packages/marketplace/store
       '@ai-pass/store-api':
         specifier: workspace:*
-        version: link:../../packages/store-api
+        version: link:../../packages/marketplace/store-api
       '@ai-pass/store-core':
         specifier: workspace:*
-        version: link:../../packages/store-core
+        version: link:../../packages/marketplace/store-core
       '@ai-pass/supply-chain-ai':
         specifier: workspace:*
-        version: link:../../packages/supply-chain-ai
+        version: link:../../packages/verticals/supply-chain-ai
       '@ai-pass/templates':
         specifier: workspace:*
-        version: link:../../packages/templates
+        version: link:../../packages/business-builder/templates
       '@ai-pass/trust':
         specifier: workspace:*
-        version: link:../../packages/trust
+        version: link:../../packages/governance/trust
       '@ai-pass/trust-engine':
         specifier: workspace:*
-        version: link:../../packages/trust-engine
+        version: link:../../packages/governance/trust-engine
       '@ai-pass/ui':
         specifier: workspace:*
-        version: link:../../packages/ui
+        version: link:../../packages/ui-shared/ui
       '@ai-pass/verticals':
         specifier: workspace:*
-        version: link:../../packages/verticals
+        version: link:../../packages/verticals/verticals
       '@ai-pass/view':
         specifier: workspace:*
-        version: link:../../packages/view
+        version: link:../../packages/ui-shared/view
       '@ai-pass/wallet':
         specifier: workspace:*
-        version: link:../../packages/wallet
+        version: link:../../packages/platform/wallet
       '@monaco-editor/react':
         specifier: ^4.7.0
         version: 4.7.0(monaco-editor@0.52.2)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
@@ -277,84 +277,20 @@ importers:
         specifier: ^5.8.3
         version: 5.9.3
 
-  packages/action-engine:
-    dependencies:
-      '@ai-pass/shared':
-        specifier: workspace:*
-        version: link:../shared
-    devDependencies:
-      typescript:
-        specifier: ^5.8.3
-        version: 5.9.3
-
-  packages/agent:
-    dependencies:
-      '@ai-pass/provider-hub':
-        specifier: workspace:*
-        version: link:../provider-hub
-      '@ai-pass/shared':
-        specifier: workspace:*
-        version: link:../shared
-    devDependencies:
-      typescript:
-        specifier: ^5.8.3
-        version: 5.9.3
-
-  packages/agent-studio:
-    dependencies:
-      '@ai-pass/automation-engine':
-        specifier: workspace:*
-        version: link:../automation-engine
-      '@ai-pass/governance':
-        specifier: workspace:*
-        version: link:../governance
-      '@ai-pass/knowledge-pipeline':
-        specifier: workspace:*
-        version: link:../knowledge-pipeline
-      '@ai-pass/marketplace':
-        specifier: workspace:*
-        version: link:../marketplace
-      '@ai-pass/marketplace-core':
-        specifier: workspace:*
-        version: link:../marketplace-core
-      '@ai-pass/membership':
-        specifier: workspace:*
-        version: link:../membership
-      '@ai-pass/runtime-core':
-        specifier: workspace:*
-        version: link:../runtime-core
-      '@ai-pass/shared':
-        specifier: workspace:*
-        version: link:../shared
-    devDependencies:
-      typescript:
-        specifier: ^5.8.3
-        version: 5.9.3
-
-  packages/ai-core:
-    dependencies:
-      '@ai-pass/shared':
-        specifier: workspace:*
-        version: link:../shared
-    devDependencies:
-      typescript:
-        specifier: ^5.8.3
-        version: 5.9.3
-
   packages/api-server:
     dependencies:
       '@ai-pass/invoice-ai':
         specifier: workspace:*
-        version: link:../invoice-ai
+        version: link:../verticals/invoice-ai
       '@ai-pass/platform-api':
         specifier: workspace:*
-        version: link:../platform-api
+        version: link:../platform/platform-api
       '@ai-pass/platform-core':
         specifier: workspace:*
-        version: link:../platform-core
+        version: link:../platform/platform-core
       '@ai-pass/shared':
         specifier: workspace:*
-        version: link:../shared
+        version: link:../platform/shared
       cors:
         specifier: ^2.8.5
         version: 2.8.6
@@ -375,40 +311,14 @@ importers:
         specifier: ^5.8.3
         version: 5.9.3
 
-  packages/auth-core:
-    dependencies:
-      '@ai-pass/shared':
-        specifier: workspace:*
-        version: link:../shared
-    devDependencies:
-      typescript:
-        specifier: ^5.8.3
-        version: 5.9.3
-
-  packages/automation-engine:
-    dependencies:
-      '@ai-pass/livesync':
-        specifier: workspace:*
-        version: link:../livesync
-      '@ai-pass/runtime-core':
-        specifier: workspace:*
-        version: link:../runtime-core
-      '@ai-pass/shared':
-        specifier: workspace:*
-        version: link:../shared
-    devDependencies:
-      typescript:
-        specifier: ^5.8.3
-        version: 5.9.3
-
-  packages/builder:
+  packages/business-builder/builder:
     dependencies:
       '@ai-pass/requirements':
         specifier: workspace:*
         version: link:../requirements
       '@ai-pass/shared':
         specifier: workspace:*
-        version: link:../shared
+        version: link:../../platform/shared
       '@ai-pass/templates':
         specifier: workspace:*
         version: link:../templates
@@ -417,132 +327,17 @@ importers:
         specifier: ^5.8.3
         version: 5.9.3
 
-  packages/compliance-ai:
-    dependencies:
-      '@ai-pass/agent-studio':
-        specifier: workspace:*
-        version: link:../agent-studio
-      '@ai-pass/governance':
-        specifier: workspace:*
-        version: link:../governance
-      '@ai-pass/knowledge-pipeline':
-        specifier: workspace:*
-        version: link:../knowledge-pipeline
-      '@ai-pass/livesync':
-        specifier: workspace:*
-        version: link:../livesync
-      '@ai-pass/marketplace':
-        specifier: workspace:*
-        version: link:../marketplace
-      '@ai-pass/membership':
-        specifier: workspace:*
-        version: link:../membership
-      '@ai-pass/provider-hub':
-        specifier: workspace:*
-        version: link:../provider-hub
-      '@ai-pass/shared':
-        specifier: workspace:*
-        version: link:../shared
-      '@ai-pass/trust':
-        specifier: workspace:*
-        version: link:../trust
-      '@ai-pass/wallet':
-        specifier: workspace:*
-        version: link:../wallet
-    devDependencies:
-      typescript:
-        specifier: ^5.8.3
-        version: 5.9.3
-
-  packages/content-ai:
-    dependencies:
-      '@ai-pass/agent-studio':
-        specifier: workspace:*
-        version: link:../agent-studio
-      '@ai-pass/livesync':
-        specifier: workspace:*
-        version: link:../livesync
-      '@ai-pass/marketplace':
-        specifier: workspace:*
-        version: link:../marketplace
-      '@ai-pass/marketplace-core':
-        specifier: workspace:*
-        version: link:../marketplace-core
-      '@ai-pass/membership':
-        specifier: workspace:*
-        version: link:../membership
-      '@ai-pass/provider-hub':
-        specifier: workspace:*
-        version: link:../provider-hub
-      '@ai-pass/shared':
-        specifier: workspace:*
-        version: link:../shared
-      '@ai-pass/wallet':
-        specifier: workspace:*
-        version: link:../wallet
-    devDependencies:
-      typescript:
-        specifier: ^5.8.3
-        version: 5.9.3
-
-  packages/crm-connectors:
-    dependencies:
-      '@ai-pass/shared':
-        specifier: workspace:*
-        version: link:../shared
-    devDependencies:
-      typescript:
-        specifier: ^5.8.3
-        version: 5.9.3
-
-  packages/customer-support-ai:
-    dependencies:
-      '@ai-pass/agent-studio':
-        specifier: workspace:*
-        version: link:../agent-studio
-      '@ai-pass/crm-connectors':
-        specifier: workspace:*
-        version: link:../crm-connectors
-      '@ai-pass/knowledge-pipeline':
-        specifier: workspace:*
-        version: link:../knowledge-pipeline
-      '@ai-pass/livesync':
-        specifier: workspace:*
-        version: link:../livesync
-      '@ai-pass/marketplace':
-        specifier: workspace:*
-        version: link:../marketplace
-      '@ai-pass/marketplace-core':
-        specifier: workspace:*
-        version: link:../marketplace-core
-      '@ai-pass/membership':
-        specifier: workspace:*
-        version: link:../membership
-      '@ai-pass/provider-hub':
-        specifier: workspace:*
-        version: link:../provider-hub
-      '@ai-pass/shared':
-        specifier: workspace:*
-        version: link:../shared
-      '@ai-pass/wallet':
-        specifier: workspace:*
-        version: link:../wallet
-    devDependencies:
-      typescript:
-        specifier: ^5.8.3
-        version: 5.9.3
-
-  packages/deployment:
+  packages/business-builder/deployment:
     dependencies:
       '@ai-pass/builder':
         specifier: workspace:*
         version: link:../builder
       '@ai-pass/governance':
         specifier: workspace:*
-        version: link:../governance
+        version: link:../../governance/governance
       '@ai-pass/shared':
         specifier: workspace:*
-        version: link:../shared
+        version: link:../../platform/shared
       '@ai-pass/solution-runtime':
         specifier: workspace:*
         version: link:../solution-runtime
@@ -554,30 +349,132 @@ importers:
         specifier: ^5.8.3
         version: 5.9.3
 
-  packages/device-runtime:
+  packages/business-builder/requirements:
     dependencies:
-      '@ai-pass/runtime-core':
-        specifier: workspace:*
-        version: link:../runtime-core
       '@ai-pass/shared':
         specifier: workspace:*
-        version: link:../shared
+        version: link:../../platform/shared
     devDependencies:
       typescript:
         specifier: ^5.8.3
         version: 5.9.3
 
-  packages/discovery-hub:
+  packages/business-builder/solution-runtime:
     dependencies:
-      '@ai-pass/marketplace-core':
+      '@ai-pass/builder':
         specifier: workspace:*
-        version: link:../marketplace-core
+        version: link:../builder
       '@ai-pass/shared':
         specifier: workspace:*
-        version: link:../shared
-      '@ai-pass/store':
+        version: link:../../platform/shared
+    devDependencies:
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/business-builder/templates:
+    dependencies:
+      '@ai-pass/shared':
         specifier: workspace:*
-        version: link:../store
+        version: link:../../platform/shared
+    devDependencies:
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/execution/action-engine:
+    dependencies:
+      '@ai-pass/shared':
+        specifier: workspace:*
+        version: link:../../platform/shared
+    devDependencies:
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/execution/crm-connectors:
+    dependencies:
+      '@ai-pass/shared':
+        specifier: workspace:*
+        version: link:../../platform/shared
+    devDependencies:
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/execution/device-runtime:
+    dependencies:
+      '@ai-pass/runtime-core':
+        specifier: workspace:*
+        version: link:../../orchestration/runtime-core
+      '@ai-pass/shared':
+        specifier: workspace:*
+        version: link:../../platform/shared
+    devDependencies:
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/execution/erp-connectors:
+    dependencies:
+      '@ai-pass/shared':
+        specifier: workspace:*
+        version: link:../../platform/shared
+    devDependencies:
+      '@types/node':
+        specifier: ^22.15.32
+        version: 22.19.21
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/execution/marketplace-runtime:
+    dependencies:
+      '@ai-pass/livesync':
+        specifier: workspace:*
+        version: link:../../orchestration/livesync
+      '@ai-pass/marketplace-core':
+        specifier: workspace:*
+        version: link:../../marketplace/marketplace-core
+      '@ai-pass/runtime-core':
+        specifier: workspace:*
+        version: link:../../orchestration/runtime-core
+      '@ai-pass/shared':
+        specifier: workspace:*
+        version: link:../../platform/shared
+      '@ai-pass/wallet':
+        specifier: workspace:*
+        version: link:../../platform/wallet
+    devDependencies:
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/execution/mcp:
+    dependencies:
+      '@ai-pass/shared':
+        specifier: workspace:*
+        version: link:../../platform/shared
+    devDependencies:
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/governance/governance:
+    dependencies:
+      '@ai-pass/shared':
+        specifier: workspace:*
+        version: link:../../platform/shared
+    devDependencies:
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/governance/trust:
+    dependencies:
+      '@ai-pass/shared':
+        specifier: workspace:*
+        version: link:../../platform/shared
       '@ai-pass/trust-engine':
         specifier: workspace:*
         version: link:../trust-engine
@@ -586,11 +483,390 @@ importers:
         specifier: ^5.8.3
         version: 5.9.3
 
-  packages/editor:
+  packages/governance/trust-engine:
+    dependencies:
+      '@ai-pass/membership':
+        specifier: workspace:*
+        version: link:../../platform/membership
+      '@ai-pass/platform-core':
+        specifier: workspace:*
+        version: link:../../platform/platform-core
+      '@ai-pass/shared':
+        specifier: workspace:*
+        version: link:../../platform/shared
+      '@ai-pass/wallet':
+        specifier: workspace:*
+        version: link:../../platform/wallet
+    devDependencies:
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/knowledge/discovery-hub:
+    dependencies:
+      '@ai-pass/marketplace-core':
+        specifier: workspace:*
+        version: link:../../marketplace/marketplace-core
+      '@ai-pass/shared':
+        specifier: workspace:*
+        version: link:../../platform/shared
+      '@ai-pass/store':
+        specifier: workspace:*
+        version: link:../../marketplace/store
+      '@ai-pass/trust-engine':
+        specifier: workspace:*
+        version: link:../../governance/trust-engine
+    devDependencies:
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/knowledge/indexer:
+    dependencies:
+      '@ai-pass/shared':
+        specifier: workspace:*
+        version: link:../../platform/shared
+    devDependencies:
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/knowledge/knowledge-pipeline:
+    dependencies:
+      '@ai-pass/membership':
+        specifier: workspace:*
+        version: link:../../platform/membership
+      '@ai-pass/provider-hub':
+        specifier: workspace:*
+        version: link:../../reasoning/provider-hub
+      '@ai-pass/shared':
+        specifier: workspace:*
+        version: link:../../platform/shared
+      '@ai-pass/wallet':
+        specifier: workspace:*
+        version: link:../../platform/wallet
+    devDependencies:
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/marketplace/marketplace:
+    dependencies:
+      '@ai-pass/marketplace-core':
+        specifier: workspace:*
+        version: link:../marketplace-core
+      '@ai-pass/marketplace-runtime':
+        specifier: workspace:*
+        version: link:../../execution/marketplace-runtime
+      '@ai-pass/shared':
+        specifier: workspace:*
+        version: link:../../platform/shared
+    devDependencies:
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/marketplace/marketplace-api:
+    dependencies:
+      '@ai-pass/marketplace-runtime':
+        specifier: workspace:*
+        version: link:../../execution/marketplace-runtime
+      '@ai-pass/platform-core':
+        specifier: workspace:*
+        version: link:../../platform/platform-core
+      '@ai-pass/shared':
+        specifier: workspace:*
+        version: link:../../platform/shared
+    devDependencies:
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/marketplace/marketplace-core:
+    dependencies:
+      '@ai-pass/membership':
+        specifier: workspace:*
+        version: link:../../platform/membership
+      '@ai-pass/shared':
+        specifier: workspace:*
+        version: link:../../platform/shared
+      '@ai-pass/wallet':
+        specifier: workspace:*
+        version: link:../../platform/wallet
+    devDependencies:
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/marketplace/store:
+    dependencies:
+      '@ai-pass/marketplace-core':
+        specifier: workspace:*
+        version: link:../marketplace-core
+      '@ai-pass/shared':
+        specifier: workspace:*
+        version: link:../../platform/shared
+      '@ai-pass/store-core':
+        specifier: workspace:*
+        version: link:../store-core
+    devDependencies:
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/marketplace/store-api:
+    dependencies:
+      '@ai-pass/marketplace-core':
+        specifier: workspace:*
+        version: link:../marketplace-core
+      '@ai-pass/platform-core':
+        specifier: workspace:*
+        version: link:../../platform/platform-core
+      '@ai-pass/store-core':
+        specifier: workspace:*
+        version: link:../store-core
+    devDependencies:
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/marketplace/store-core:
+    dependencies:
+      '@ai-pass/marketplace-core':
+        specifier: workspace:*
+        version: link:../marketplace-core
+      '@ai-pass/marketplace-runtime':
+        specifier: workspace:*
+        version: link:../../execution/marketplace-runtime
+      '@ai-pass/membership':
+        specifier: workspace:*
+        version: link:../../platform/membership
+      '@ai-pass/routes':
+        specifier: workspace:*
+        version: link:../../platform/routes
+      '@ai-pass/shared':
+        specifier: workspace:*
+        version: link:../../platform/shared
+      '@ai-pass/wallet':
+        specifier: workspace:*
+        version: link:../../platform/wallet
+    devDependencies:
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/orchestration/agent:
+    dependencies:
+      '@ai-pass/provider-hub':
+        specifier: workspace:*
+        version: link:../../reasoning/provider-hub
+      '@ai-pass/shared':
+        specifier: workspace:*
+        version: link:../../platform/shared
+    devDependencies:
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/orchestration/agent-studio:
+    dependencies:
+      '@ai-pass/automation-engine':
+        specifier: workspace:*
+        version: link:../automation-engine
+      '@ai-pass/governance':
+        specifier: workspace:*
+        version: link:../../governance/governance
+      '@ai-pass/knowledge-pipeline':
+        specifier: workspace:*
+        version: link:../../knowledge/knowledge-pipeline
+      '@ai-pass/marketplace':
+        specifier: workspace:*
+        version: link:../../marketplace/marketplace
+      '@ai-pass/marketplace-core':
+        specifier: workspace:*
+        version: link:../../marketplace/marketplace-core
+      '@ai-pass/membership':
+        specifier: workspace:*
+        version: link:../../platform/membership
+      '@ai-pass/runtime-core':
+        specifier: workspace:*
+        version: link:../runtime-core
+      '@ai-pass/shared':
+        specifier: workspace:*
+        version: link:../../platform/shared
+    devDependencies:
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/orchestration/automation-engine:
+    dependencies:
+      '@ai-pass/livesync':
+        specifier: workspace:*
+        version: link:../livesync
+      '@ai-pass/runtime-core':
+        specifier: workspace:*
+        version: link:../runtime-core
+      '@ai-pass/shared':
+        specifier: workspace:*
+        version: link:../../platform/shared
+    devDependencies:
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/orchestration/livesync:
+    dependencies:
+      '@ai-pass/governance':
+        specifier: workspace:*
+        version: link:../../governance/governance
+      '@ai-pass/knowledge-pipeline':
+        specifier: workspace:*
+        version: link:../../knowledge/knowledge-pipeline
+      '@ai-pass/runtime-core':
+        specifier: workspace:*
+        version: link:../runtime-core
+      '@ai-pass/shared':
+        specifier: workspace:*
+        version: link:../../platform/shared
+    devDependencies:
+      '@types/node':
+        specifier: ^22.15.32
+        version: 22.19.21
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/orchestration/runtime-core:
+    dependencies:
+      '@ai-pass/marketplace-core':
+        specifier: workspace:*
+        version: link:../../marketplace/marketplace-core
+      '@ai-pass/membership':
+        specifier: workspace:*
+        version: link:../../platform/membership
+      '@ai-pass/provider-hub':
+        specifier: workspace:*
+        version: link:../../reasoning/provider-hub
+      '@ai-pass/shared':
+        specifier: workspace:*
+        version: link:../../platform/shared
+      '@ai-pass/wallet':
+        specifier: workspace:*
+        version: link:../../platform/wallet
+    devDependencies:
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/platform/auth-core:
     dependencies:
       '@ai-pass/shared':
         specifier: workspace:*
         version: link:../shared
+    devDependencies:
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/platform/membership:
+    dependencies:
+      '@ai-pass/shared':
+        specifier: workspace:*
+        version: link:../shared
+    devDependencies:
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/platform/platform-api:
+    dependencies:
+      '@ai-pass/governance':
+        specifier: workspace:*
+        version: link:../../governance/governance
+      '@ai-pass/platform-core':
+        specifier: workspace:*
+        version: link:../platform-core
+      '@ai-pass/trust-engine':
+        specifier: workspace:*
+        version: link:../../governance/trust-engine
+    devDependencies:
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/platform/platform-core:
+    dependencies:
+      '@ai-pass/shared':
+        specifier: workspace:*
+        version: link:../shared
+    devDependencies:
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/platform/routes:
+    devDependencies:
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/platform/shared:
+    devDependencies:
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/platform/wallet:
+    dependencies:
+      '@ai-pass/shared':
+        specifier: workspace:*
+        version: link:../shared
+    devDependencies:
+      '@types/node':
+        specifier: ^22.19.21
+        version: 22.19.21
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/reasoning/ai-core:
+    dependencies:
+      '@ai-pass/shared':
+        specifier: workspace:*
+        version: link:../../platform/shared
+    devDependencies:
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/reasoning/provider-hub:
+    dependencies:
+      '@ai-pass/ai-core':
+        specifier: workspace:*
+        version: link:../ai-core
+      '@ai-pass/membership':
+        specifier: workspace:*
+        version: link:../../platform/membership
+      '@ai-pass/shared':
+        specifier: workspace:*
+        version: link:../../platform/shared
+      '@ai-pass/wallet':
+        specifier: workspace:*
+        version: link:../../platform/wallet
+    devDependencies:
+      '@types/node':
+        specifier: ^26.4.0
+        version: 26.4.0
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/ui-shared/editor:
+    dependencies:
+      '@ai-pass/shared':
+        specifier: workspace:*
+        version: link:../../platform/shared
       '@monaco-editor/react':
         specifier: ^4.7.0
         version: 4.7.0(monaco-editor@0.52.2)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
@@ -617,512 +893,14 @@ importers:
         specifier: ^5.8.3
         version: 5.9.3
 
-  packages/erp-connectors:
-    dependencies:
-      '@ai-pass/shared':
-        specifier: workspace:*
-        version: link:../shared
-    devDependencies:
-      '@types/node':
-        specifier: ^22.15.32
-        version: 22.19.21
-      typescript:
-        specifier: ^5.8.3
-        version: 5.9.3
-
-  packages/governance:
-    dependencies:
-      '@ai-pass/shared':
-        specifier: workspace:*
-        version: link:../shared
-    devDependencies:
-      typescript:
-        specifier: ^5.8.3
-        version: 5.9.3
-
-  packages/indexer:
-    dependencies:
-      '@ai-pass/shared':
-        specifier: workspace:*
-        version: link:../shared
-    devDependencies:
-      typescript:
-        specifier: ^5.8.3
-        version: 5.9.3
-
-  packages/invoice-ai:
-    dependencies:
-      '@ai-pass/agent-studio':
-        specifier: workspace:*
-        version: link:../agent-studio
-      '@ai-pass/erp-connectors':
-        specifier: workspace:*
-        version: link:../erp-connectors
-      '@ai-pass/knowledge-pipeline':
-        specifier: workspace:*
-        version: link:../knowledge-pipeline
-      '@ai-pass/livesync':
-        specifier: workspace:*
-        version: link:../livesync
-      '@ai-pass/marketplace':
-        specifier: workspace:*
-        version: link:../marketplace
-      '@ai-pass/membership':
-        specifier: workspace:*
-        version: link:../membership
-      '@ai-pass/shared':
-        specifier: workspace:*
-        version: link:../shared
-      '@ai-pass/wallet':
-        specifier: workspace:*
-        version: link:../wallet
-    devDependencies:
-      typescript:
-        specifier: ^5.8.3
-        version: 5.9.3
-
-  packages/knowledge-pipeline:
-    dependencies:
-      '@ai-pass/membership':
-        specifier: workspace:*
-        version: link:../membership
-      '@ai-pass/provider-hub':
-        specifier: workspace:*
-        version: link:../provider-hub
-      '@ai-pass/shared':
-        specifier: workspace:*
-        version: link:../shared
-      '@ai-pass/wallet':
-        specifier: workspace:*
-        version: link:../wallet
-    devDependencies:
-      typescript:
-        specifier: ^5.8.3
-        version: 5.9.3
-
-  packages/livesync:
-    dependencies:
-      '@ai-pass/governance':
-        specifier: workspace:*
-        version: link:../governance
-      '@ai-pass/knowledge-pipeline':
-        specifier: workspace:*
-        version: link:../knowledge-pipeline
-      '@ai-pass/runtime-core':
-        specifier: workspace:*
-        version: link:../runtime-core
-      '@ai-pass/shared':
-        specifier: workspace:*
-        version: link:../shared
-    devDependencies:
-      '@types/node':
-        specifier: ^22.15.32
-        version: 22.19.21
-      typescript:
-        specifier: ^5.8.3
-        version: 5.9.3
-
-  packages/marketplace:
-    dependencies:
-      '@ai-pass/marketplace-core':
-        specifier: workspace:*
-        version: link:../marketplace-core
-      '@ai-pass/marketplace-runtime':
-        specifier: workspace:*
-        version: link:../marketplace-runtime
-      '@ai-pass/shared':
-        specifier: workspace:*
-        version: link:../shared
-    devDependencies:
-      typescript:
-        specifier: ^5.8.3
-        version: 5.9.3
-
-  packages/marketplace-api:
-    dependencies:
-      '@ai-pass/marketplace-runtime':
-        specifier: workspace:*
-        version: link:../marketplace-runtime
-      '@ai-pass/platform-core':
-        specifier: workspace:*
-        version: link:../platform-core
-      '@ai-pass/shared':
-        specifier: workspace:*
-        version: link:../shared
-    devDependencies:
-      typescript:
-        specifier: ^5.8.3
-        version: 5.9.3
-
-  packages/marketplace-core:
-    dependencies:
-      '@ai-pass/membership':
-        specifier: workspace:*
-        version: link:../membership
-      '@ai-pass/shared':
-        specifier: workspace:*
-        version: link:../shared
-      '@ai-pass/wallet':
-        specifier: workspace:*
-        version: link:../wallet
-    devDependencies:
-      typescript:
-        specifier: ^5.8.3
-        version: 5.9.3
-
-  packages/marketplace-runtime:
-    dependencies:
-      '@ai-pass/livesync':
-        specifier: workspace:*
-        version: link:../livesync
-      '@ai-pass/marketplace-core':
-        specifier: workspace:*
-        version: link:../marketplace-core
-      '@ai-pass/runtime-core':
-        specifier: workspace:*
-        version: link:../runtime-core
-      '@ai-pass/shared':
-        specifier: workspace:*
-        version: link:../shared
-      '@ai-pass/wallet':
-        specifier: workspace:*
-        version: link:../wallet
-    devDependencies:
-      typescript:
-        specifier: ^5.8.3
-        version: 5.9.3
-
-  packages/mcp:
-    dependencies:
-      '@ai-pass/shared':
-        specifier: workspace:*
-        version: link:../shared
-    devDependencies:
-      typescript:
-        specifier: ^5.8.3
-        version: 5.9.3
-
-  packages/membership:
-    dependencies:
-      '@ai-pass/shared':
-        specifier: workspace:*
-        version: link:../shared
-    devDependencies:
-      typescript:
-        specifier: ^5.8.3
-        version: 5.9.3
-
-  packages/platform-api:
-    dependencies:
-      '@ai-pass/governance':
-        specifier: workspace:*
-        version: link:../governance
-      '@ai-pass/platform-core':
-        specifier: workspace:*
-        version: link:../platform-core
-      '@ai-pass/trust-engine':
-        specifier: workspace:*
-        version: link:../trust-engine
-    devDependencies:
-      typescript:
-        specifier: ^5.8.3
-        version: 5.9.3
-
-  packages/platform-core:
-    dependencies:
-      '@ai-pass/shared':
-        specifier: workspace:*
-        version: link:../shared
-    devDependencies:
-      typescript:
-        specifier: ^5.8.3
-        version: 5.9.3
-
-  packages/presence-audit:
-    dependencies:
-      '@ai-pass/knowledge-pipeline':
-        specifier: workspace:*
-        version: link:../knowledge-pipeline
-      '@ai-pass/livesync':
-        specifier: workspace:*
-        version: link:../livesync
-      '@ai-pass/marketplace':
-        specifier: workspace:*
-        version: link:../marketplace
-      '@ai-pass/membership':
-        specifier: workspace:*
-        version: link:../membership
-      '@ai-pass/provider-hub':
-        specifier: workspace:*
-        version: link:../provider-hub
-      '@ai-pass/shared':
-        specifier: workspace:*
-        version: link:../shared
-      '@ai-pass/wallet':
-        specifier: workspace:*
-        version: link:../wallet
-    devDependencies:
-      typescript:
-        specifier: ^5.8.3
-        version: 5.9.3
-
-  packages/provider-hub:
-    dependencies:
-      '@ai-pass/ai-core':
-        specifier: workspace:*
-        version: link:../ai-core
-      '@ai-pass/membership':
-        specifier: workspace:*
-        version: link:../membership
-      '@ai-pass/shared':
-        specifier: workspace:*
-        version: link:../shared
-      '@ai-pass/wallet':
-        specifier: workspace:*
-        version: link:../wallet
-    devDependencies:
-      '@types/node':
-        specifier: ^26.4.0
-        version: 26.4.0
-      typescript:
-        specifier: ^5.8.3
-        version: 5.9.3
-
-  packages/requirements:
-    dependencies:
-      '@ai-pass/shared':
-        specifier: workspace:*
-        version: link:../shared
-    devDependencies:
-      typescript:
-        specifier: ^5.8.3
-        version: 5.9.3
-
-  packages/routes:
-    devDependencies:
-      typescript:
-        specifier: ^5.8.3
-        version: 5.9.3
-
-  packages/runtime-core:
-    dependencies:
-      '@ai-pass/marketplace-core':
-        specifier: workspace:*
-        version: link:../marketplace-core
-      '@ai-pass/membership':
-        specifier: workspace:*
-        version: link:../membership
-      '@ai-pass/provider-hub':
-        specifier: workspace:*
-        version: link:../provider-hub
-      '@ai-pass/shared':
-        specifier: workspace:*
-        version: link:../shared
-      '@ai-pass/wallet':
-        specifier: workspace:*
-        version: link:../wallet
-    devDependencies:
-      typescript:
-        specifier: ^5.8.3
-        version: 5.9.3
-
-  packages/sales-ai:
-    dependencies:
-      '@ai-pass/agent-studio':
-        specifier: workspace:*
-        version: link:../agent-studio
-      '@ai-pass/crm-connectors':
-        specifier: workspace:*
-        version: link:../crm-connectors
-      '@ai-pass/knowledge-pipeline':
-        specifier: workspace:*
-        version: link:../knowledge-pipeline
-      '@ai-pass/livesync':
-        specifier: workspace:*
-        version: link:../livesync
-      '@ai-pass/marketplace':
-        specifier: workspace:*
-        version: link:../marketplace
-      '@ai-pass/marketplace-core':
-        specifier: workspace:*
-        version: link:../marketplace-core
-      '@ai-pass/membership':
-        specifier: workspace:*
-        version: link:../membership
-      '@ai-pass/provider-hub':
-        specifier: workspace:*
-        version: link:../provider-hub
-      '@ai-pass/shared':
-        specifier: workspace:*
-        version: link:../shared
-      '@ai-pass/wallet':
-        specifier: workspace:*
-        version: link:../wallet
-    devDependencies:
-      typescript:
-        specifier: ^5.8.3
-        version: 5.9.3
-
-  packages/shared:
-    devDependencies:
-      typescript:
-        specifier: ^5.8.3
-        version: 5.9.3
-
-  packages/solution-runtime:
-    dependencies:
-      '@ai-pass/builder':
-        specifier: workspace:*
-        version: link:../builder
-      '@ai-pass/shared':
-        specifier: workspace:*
-        version: link:../shared
-    devDependencies:
-      typescript:
-        specifier: ^5.8.3
-        version: 5.9.3
-
-  packages/store:
-    dependencies:
-      '@ai-pass/marketplace-core':
-        specifier: workspace:*
-        version: link:../marketplace-core
-      '@ai-pass/shared':
-        specifier: workspace:*
-        version: link:../shared
-      '@ai-pass/store-core':
-        specifier: workspace:*
-        version: link:../store-core
-    devDependencies:
-      typescript:
-        specifier: ^5.8.3
-        version: 5.9.3
-
-  packages/store-api:
-    dependencies:
-      '@ai-pass/marketplace-core':
-        specifier: workspace:*
-        version: link:../marketplace-core
-      '@ai-pass/platform-core':
-        specifier: workspace:*
-        version: link:../platform-core
-      '@ai-pass/store-core':
-        specifier: workspace:*
-        version: link:../store-core
-    devDependencies:
-      typescript:
-        specifier: ^5.8.3
-        version: 5.9.3
-
-  packages/store-core:
-    dependencies:
-      '@ai-pass/marketplace-core':
-        specifier: workspace:*
-        version: link:../marketplace-core
-      '@ai-pass/marketplace-runtime':
-        specifier: workspace:*
-        version: link:../marketplace-runtime
-      '@ai-pass/membership':
-        specifier: workspace:*
-        version: link:../membership
-      '@ai-pass/routes':
-        specifier: workspace:*
-        version: link:../routes
-      '@ai-pass/shared':
-        specifier: workspace:*
-        version: link:../shared
-      '@ai-pass/wallet':
-        specifier: workspace:*
-        version: link:../wallet
-    devDependencies:
-      typescript:
-        specifier: ^5.8.3
-        version: 5.9.3
-
-  packages/supply-chain-ai:
-    dependencies:
-      '@ai-pass/agent-studio':
-        specifier: workspace:*
-        version: link:../agent-studio
-      '@ai-pass/erp-connectors':
-        specifier: workspace:*
-        version: link:../erp-connectors
-      '@ai-pass/knowledge-pipeline':
-        specifier: workspace:*
-        version: link:../knowledge-pipeline
-      '@ai-pass/livesync':
-        specifier: workspace:*
-        version: link:../livesync
-      '@ai-pass/marketplace':
-        specifier: workspace:*
-        version: link:../marketplace
-      '@ai-pass/membership':
-        specifier: workspace:*
-        version: link:../membership
-      '@ai-pass/shared':
-        specifier: workspace:*
-        version: link:../shared
-      '@ai-pass/trust':
-        specifier: workspace:*
-        version: link:../trust
-      '@ai-pass/wallet':
-        specifier: workspace:*
-        version: link:../wallet
-    devDependencies:
-      typescript:
-        specifier: ^5.8.3
-        version: 5.9.3
-
-  packages/templates:
-    dependencies:
-      '@ai-pass/shared':
-        specifier: workspace:*
-        version: link:../shared
-    devDependencies:
-      typescript:
-        specifier: ^5.8.3
-        version: 5.9.3
-
-  packages/trust:
-    dependencies:
-      '@ai-pass/shared':
-        specifier: workspace:*
-        version: link:../shared
-      '@ai-pass/trust-engine':
-        specifier: workspace:*
-        version: link:../trust-engine
-    devDependencies:
-      typescript:
-        specifier: ^5.8.3
-        version: 5.9.3
-
-  packages/trust-engine:
-    dependencies:
-      '@ai-pass/membership':
-        specifier: workspace:*
-        version: link:../membership
-      '@ai-pass/platform-core':
-        specifier: workspace:*
-        version: link:../platform-core
-      '@ai-pass/shared':
-        specifier: workspace:*
-        version: link:../shared
-      '@ai-pass/wallet':
-        specifier: workspace:*
-        version: link:../wallet
-    devDependencies:
-      typescript:
-        specifier: ^5.8.3
-        version: 5.9.3
-
-  packages/ui:
+  packages/ui-shared/ui:
     dependencies:
       '@ai-pass/platform-core':
         specifier: workspace:*
-        version: link:../platform-core
+        version: link:../../platform/platform-core
       '@ai-pass/shared':
         specifier: workspace:*
-        version: link:../shared
+        version: link:../../platform/shared
       react-native:
         specifier: '*'
         version: 0.79.3(@babel/core@7.29.7)(@types/react@19.2.17)(react@19.2.7)
@@ -1143,7 +921,252 @@ importers:
         specifier: ^5.8.3
         version: 5.9.3
 
-  packages/verticals:
+  packages/ui-shared/view:
+    dependencies:
+      '@ai-pass/shared':
+        specifier: workspace:*
+        version: link:../../platform/shared
+    devDependencies:
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/verticals/compliance-ai:
+    dependencies:
+      '@ai-pass/agent-studio':
+        specifier: workspace:*
+        version: link:../../orchestration/agent-studio
+      '@ai-pass/governance':
+        specifier: workspace:*
+        version: link:../../governance/governance
+      '@ai-pass/knowledge-pipeline':
+        specifier: workspace:*
+        version: link:../../knowledge/knowledge-pipeline
+      '@ai-pass/livesync':
+        specifier: workspace:*
+        version: link:../../orchestration/livesync
+      '@ai-pass/marketplace':
+        specifier: workspace:*
+        version: link:../../marketplace/marketplace
+      '@ai-pass/membership':
+        specifier: workspace:*
+        version: link:../../platform/membership
+      '@ai-pass/provider-hub':
+        specifier: workspace:*
+        version: link:../../reasoning/provider-hub
+      '@ai-pass/shared':
+        specifier: workspace:*
+        version: link:../../platform/shared
+      '@ai-pass/trust':
+        specifier: workspace:*
+        version: link:../../governance/trust
+      '@ai-pass/wallet':
+        specifier: workspace:*
+        version: link:../../platform/wallet
+    devDependencies:
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/verticals/content-ai:
+    dependencies:
+      '@ai-pass/agent-studio':
+        specifier: workspace:*
+        version: link:../../orchestration/agent-studio
+      '@ai-pass/livesync':
+        specifier: workspace:*
+        version: link:../../orchestration/livesync
+      '@ai-pass/marketplace':
+        specifier: workspace:*
+        version: link:../../marketplace/marketplace
+      '@ai-pass/marketplace-core':
+        specifier: workspace:*
+        version: link:../../marketplace/marketplace-core
+      '@ai-pass/membership':
+        specifier: workspace:*
+        version: link:../../platform/membership
+      '@ai-pass/provider-hub':
+        specifier: workspace:*
+        version: link:../../reasoning/provider-hub
+      '@ai-pass/shared':
+        specifier: workspace:*
+        version: link:../../platform/shared
+      '@ai-pass/wallet':
+        specifier: workspace:*
+        version: link:../../platform/wallet
+    devDependencies:
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/verticals/customer-support-ai:
+    dependencies:
+      '@ai-pass/agent-studio':
+        specifier: workspace:*
+        version: link:../../orchestration/agent-studio
+      '@ai-pass/crm-connectors':
+        specifier: workspace:*
+        version: link:../../execution/crm-connectors
+      '@ai-pass/knowledge-pipeline':
+        specifier: workspace:*
+        version: link:../../knowledge/knowledge-pipeline
+      '@ai-pass/livesync':
+        specifier: workspace:*
+        version: link:../../orchestration/livesync
+      '@ai-pass/marketplace':
+        specifier: workspace:*
+        version: link:../../marketplace/marketplace
+      '@ai-pass/marketplace-core':
+        specifier: workspace:*
+        version: link:../../marketplace/marketplace-core
+      '@ai-pass/membership':
+        specifier: workspace:*
+        version: link:../../platform/membership
+      '@ai-pass/provider-hub':
+        specifier: workspace:*
+        version: link:../../reasoning/provider-hub
+      '@ai-pass/shared':
+        specifier: workspace:*
+        version: link:../../platform/shared
+      '@ai-pass/wallet':
+        specifier: workspace:*
+        version: link:../../platform/wallet
+    devDependencies:
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/verticals/invoice-ai:
+    dependencies:
+      '@ai-pass/agent-studio':
+        specifier: workspace:*
+        version: link:../../orchestration/agent-studio
+      '@ai-pass/erp-connectors':
+        specifier: workspace:*
+        version: link:../../execution/erp-connectors
+      '@ai-pass/knowledge-pipeline':
+        specifier: workspace:*
+        version: link:../../knowledge/knowledge-pipeline
+      '@ai-pass/livesync':
+        specifier: workspace:*
+        version: link:../../orchestration/livesync
+      '@ai-pass/marketplace':
+        specifier: workspace:*
+        version: link:../../marketplace/marketplace
+      '@ai-pass/membership':
+        specifier: workspace:*
+        version: link:../../platform/membership
+      '@ai-pass/shared':
+        specifier: workspace:*
+        version: link:../../platform/shared
+      '@ai-pass/wallet':
+        specifier: workspace:*
+        version: link:../../platform/wallet
+    devDependencies:
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/verticals/presence-audit:
+    dependencies:
+      '@ai-pass/knowledge-pipeline':
+        specifier: workspace:*
+        version: link:../../knowledge/knowledge-pipeline
+      '@ai-pass/livesync':
+        specifier: workspace:*
+        version: link:../../orchestration/livesync
+      '@ai-pass/marketplace':
+        specifier: workspace:*
+        version: link:../../marketplace/marketplace
+      '@ai-pass/membership':
+        specifier: workspace:*
+        version: link:../../platform/membership
+      '@ai-pass/provider-hub':
+        specifier: workspace:*
+        version: link:../../reasoning/provider-hub
+      '@ai-pass/shared':
+        specifier: workspace:*
+        version: link:../../platform/shared
+      '@ai-pass/wallet':
+        specifier: workspace:*
+        version: link:../../platform/wallet
+    devDependencies:
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/verticals/sales-ai:
+    dependencies:
+      '@ai-pass/agent-studio':
+        specifier: workspace:*
+        version: link:../../orchestration/agent-studio
+      '@ai-pass/crm-connectors':
+        specifier: workspace:*
+        version: link:../../execution/crm-connectors
+      '@ai-pass/knowledge-pipeline':
+        specifier: workspace:*
+        version: link:../../knowledge/knowledge-pipeline
+      '@ai-pass/livesync':
+        specifier: workspace:*
+        version: link:../../orchestration/livesync
+      '@ai-pass/marketplace':
+        specifier: workspace:*
+        version: link:../../marketplace/marketplace
+      '@ai-pass/marketplace-core':
+        specifier: workspace:*
+        version: link:../../marketplace/marketplace-core
+      '@ai-pass/membership':
+        specifier: workspace:*
+        version: link:../../platform/membership
+      '@ai-pass/provider-hub':
+        specifier: workspace:*
+        version: link:../../reasoning/provider-hub
+      '@ai-pass/shared':
+        specifier: workspace:*
+        version: link:../../platform/shared
+      '@ai-pass/wallet':
+        specifier: workspace:*
+        version: link:../../platform/wallet
+    devDependencies:
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/verticals/supply-chain-ai:
+    dependencies:
+      '@ai-pass/agent-studio':
+        specifier: workspace:*
+        version: link:../../orchestration/agent-studio
+      '@ai-pass/erp-connectors':
+        specifier: workspace:*
+        version: link:../../execution/erp-connectors
+      '@ai-pass/knowledge-pipeline':
+        specifier: workspace:*
+        version: link:../../knowledge/knowledge-pipeline
+      '@ai-pass/livesync':
+        specifier: workspace:*
+        version: link:../../orchestration/livesync
+      '@ai-pass/marketplace':
+        specifier: workspace:*
+        version: link:../../marketplace/marketplace
+      '@ai-pass/membership':
+        specifier: workspace:*
+        version: link:../../platform/membership
+      '@ai-pass/shared':
+        specifier: workspace:*
+        version: link:../../platform/shared
+      '@ai-pass/trust':
+        specifier: workspace:*
+        version: link:../../governance/trust
+      '@ai-pass/wallet':
+        specifier: workspace:*
+        version: link:../../platform/wallet
+    devDependencies:
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/verticals/verticals:
     dependencies:
       '@ai-pass/customer-support-ai':
         specifier: workspace:*
@@ -1153,34 +1176,11 @@ importers:
         version: link:../invoice-ai
       '@ai-pass/shared':
         specifier: workspace:*
-        version: link:../shared
+        version: link:../../platform/shared
       '@ai-pass/supply-chain-ai':
         specifier: workspace:*
         version: link:../supply-chain-ai
     devDependencies:
-      typescript:
-        specifier: ^5.8.3
-        version: 5.9.3
-
-  packages/view:
-    dependencies:
-      '@ai-pass/shared':
-        specifier: workspace:*
-        version: link:../shared
-    devDependencies:
-      typescript:
-        specifier: ^5.8.3
-        version: 5.9.3
-
-  packages/wallet:
-    dependencies:
-      '@ai-pass/shared':
-        specifier: workspace:*
-        version: link:../shared
-    devDependencies:
-      '@types/node':
-        specifier: ^22.19.21
-        version: 22.19.21
       typescript:
         specifier: ^5.8.3
         version: 5.9.3

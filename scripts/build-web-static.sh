@@ -72,7 +72,7 @@ if [[ -f "$WEB/public/.htaccess" ]]; then
   echo "Installed .htaccess for Apache clean URLs"
 fi
 
-PHP_AUTH="$ROOT/php-auth"
+PHP_AUTH="$ROOT/services/php-auth-legacy"
 if [[ -d "$PHP_AUTH/auth" && "${COPY_PHP_AUTH:-0}" == "1" ]]; then
   if [[ ! -d "$PHP_AUTH/auth-lib/vendor" ]]; then
     echo "Installing PHP auth dependencies..."
@@ -83,7 +83,7 @@ if [[ -d "$PHP_AUTH/auth" && "${COPY_PHP_AUTH:-0}" == "1" ]]; then
   cp -R "$PHP_AUTH/auth" "$WEB/out/auth"
   cp -R "$PHP_AUTH/auth-lib" "$WEB/out/auth-lib"
   if [[ ! -d "$WEB/out/auth-lib/vendor" ]]; then
-    echo "warning: php-auth vendor missing — run: (cd php-auth && php composer.phar install)" >&2
+    echo "warning: php-auth vendor missing — run: (cd services/php-auth-legacy && php composer.phar install)" >&2
   fi
 fi
 

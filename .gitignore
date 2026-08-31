@@ -2,6 +2,7 @@ node_modules
 dist
 .turbo
 *.log
+*.tsbuildinfo
 .DS_Store
 .env
 .env.local
@@ -22,9 +23,12 @@ services/auth-api/node_modules/
 services/auth-api/storage/logs/*.log
 services/auth-api/bootstrap/cache/*.php
 
-php-auth/auth-lib/.env
-php-auth/auth-lib/vendor/
-php-auth/composer.phar
+services/php-auth-legacy/auth-lib/.env
+services/php-auth-legacy/auth-lib/vendor/
+services/php-auth-legacy/composer.phar
 
 .pnpm-store
 .build-node.lock
+
+CLAUDE.md
+image.png
