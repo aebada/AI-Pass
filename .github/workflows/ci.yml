@@ -1,0 +1,104 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  install-and-core-build:
+    name: Install and build core workspace packages
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9.15.0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install dependencies reproducibly
+        run: pnpm install --frozen-lockfile
+
+      - name: Build shared package
+        run: pnpm --filter @ai-pass/shared run build
+
+      - name: Build auth core package
+        run: pnpm --filter @ai-pass/auth-core run build
+
+      - name: Build platform core package
+        run: pnpm --filter @ai-pass/platform-core run build
+
+  baseline-typecheck:
+    name: "Baseline: repository-wide type check (non-blocking)"
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    continue-on-error: true
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9.15.0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install dependencies reproducibly
+        run: pnpm install --frozen-lockfile
+
+      - name: Run package type check
+        run: pnpm typecheck:ci
+
+  baseline-full-build:
+    name: "Baseline: full monorepo build (non-blocking)"
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    continue-on-error: true
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9.15.0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install dependencies reproducibly
+        run: pnpm install --frozen-lockfile
+
+      - name: Run full monorepo build
+        run: pnpm build
