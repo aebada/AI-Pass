@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security vulnerability
+    url: https://github.com/aebada/AI-Pass/blob/main/SECURITY.md
+    about: Report security issues privately — do not open a public issue
+  - name: AI Pass live site
+    url: https://aipass.space
+    about: Product site and workspace demos
+  - name: Development docs
+    url: https://github.com/aebada/AI-Pass/blob/main/docs/DEVELOPMENT.md
+    about: Local setup, pnpm, and common pitfalls
