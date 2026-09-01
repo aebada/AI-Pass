@@ -12,7 +12,7 @@ const siteUrl = 'https://aipass.space';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: 'AI-Pass — The Enterprise AI Operating System',
+  title: 'AI-Pass - The Enterprise AI Operating System',
   description:
     'One workspace, one membership, every AI model, agent, and business application. AI-Pass unifies models, agents, workflows, governance, compliance, and marketplaces into one secure enterprise platform.',
   manifest: '/manifest.json',
@@ -29,9 +29,9 @@ export const metadata: Metadata = {
   openGraph: {
     url: siteUrl,
     siteName: 'AI-Pass',
-    title: 'AI-Pass — The Enterprise AI Operating System',
+    title: 'AI-Pass - The Enterprise AI Operating System',
     description:
-      'One workspace. One membership. Every AI model, agent, and business application — unified under enterprise governance and compliance.',
+      'One workspace. One membership. Every AI model, agent, and business application - unified under enterprise governance and compliance.',
     type: 'website',
     images: [{ url: '/logo.png', alt: 'AI-Pass' }],
   },

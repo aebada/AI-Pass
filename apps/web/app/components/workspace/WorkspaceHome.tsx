@@ -13,7 +13,7 @@ function EmptySection({ title, message }: { title: string; message: string }) {
   return (
     <p style={{ margin: 0, fontSize: 13, color: workspaceTokens.colors.textMuted }}>
       <strong style={{ color: workspaceTokens.colors.text }}>{title}</strong>
-      {' — '}
+      {' - '}
       {message}
     </p>
   );
@@ -75,7 +75,7 @@ export function WorkspaceHome() {
         <div>
           <h1 className={styles.title}>Welcome, {firstName}</h1>
           <p className={styles.subtitle}>
-            Unified workspace — tasks, agents, workflows, credits, and governance at a glance.
+            Unified workspace - tasks, agents, workflows, credits, and governance at a glance.
           </p>
         </div>
       </header>

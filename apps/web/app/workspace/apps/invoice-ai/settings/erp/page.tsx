@@ -78,7 +78,7 @@ export default function ERPConnectionsPage() {
       }
       setShowWizard(false);
       setConnectionName('');
-      setMessage('Connection created — run Test to verify credentials');
+      setMessage('Connection created - run Test to verify credentials');
     } catch (err) {
       setMessage(err instanceof Error ? err.message : 'Create failed');
     } finally {
@@ -131,7 +131,7 @@ export default function ERPConnectionsPage() {
         ? await defaultERPService.healthCheck(id, DEMO_TENANT_ID)
         : await apiCall(`/connections/${id}/health`, 'GET');
       refresh();
-      setMessage(`Health: ${result?.status ?? 'checked'} — ${result?.message ?? ''}`);
+      setMessage(`Health: ${result?.status ?? 'checked'} - ${result?.message ?? ''}`);
     } catch (err) {
       setMessage(err instanceof Error ? err.message : 'Health check failed');
     } finally {
@@ -147,7 +147,7 @@ export default function ERPConnectionsPage() {
             <h2 className={styles.cardTitle}>ERP Connections</h2>
             <p className={styles.hint}>
               Connect Oracle, SAP, DATEV, Dynamics, QuickBooks, Xero, or custom APIs. Credentials
-              stored via env/vault references — never in code.
+              stored via env/vault references - never in code.
             </p>
           </div>
           <button
@@ -181,7 +181,7 @@ export default function ERPConnectionsPage() {
                     {conn.status}
                   </span>
                 </td>
-                <td>{conn.lastSyncAt ? new Date(conn.lastSyncAt).toLocaleString() : '—'}</td>
+                <td>{conn.lastSyncAt ? new Date(conn.lastSyncAt).toLocaleString() : '-'}</td>
                 <td className={styles.actionRow}>
                   <button
                     type="button"

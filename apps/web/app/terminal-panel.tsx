@@ -24,7 +24,7 @@ export function TerminalPanel() {
     term.loadAddon(fitAddon);
     term.open(containerRef.current);
     fitAddon.fit();
-    term.writeln('AI Pass terminal — web (xterm.js)');
+    term.writeln('AI Pass terminal - web (xterm.js)');
     term.write('$ ');
 
     const observer = new ResizeObserver(() => fitAddon.fit());

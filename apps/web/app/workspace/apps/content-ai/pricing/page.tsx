@@ -18,7 +18,7 @@ export default function PricingPage() {
       <section className={styles.card}>
         <h2 style={{ margin: '0 0 8px', fontSize: 20 }}>Detect AI. Humanize with Confidence.</h2>
         <p style={{ fontSize: 14, color: 'var(--ai-text-muted)', margin: '0 0 24px' }}>
-          Professional AI content detection and humanization — integrated with AI-Pass Trust Engine and multi-model Provider Hub.
+          Professional AI content detection and humanization - integrated with AI-Pass Trust Engine and multi-model Provider Hub.
         </p>
         <div className={styles.grid}>
           <div className={styles.card}>
@@ -63,8 +63,8 @@ export default function PricingPage() {
                 <td>{t.name}</td>
                 <td>{t.detects}</td>
                 <td>{t.humanizes}</td>
-                <td>{t.batch ? '✓' : '—'}</td>
-                <td>{t.api ? '✓' : '—'}</td>
+                <td>{t.batch ? '✓' : '-'}</td>
+                <td>{t.api ? '✓' : '-'}</td>
                 <td>{t.price}</td>
               </tr>
             ))}

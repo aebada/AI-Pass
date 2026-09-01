@@ -127,7 +127,7 @@ function PlaygroundContent() {
 
   useEffect(() => {
     if (searchParams.get('welcome') === '1' && isAuthenticated) {
-      setToast('You have 500 free credits — start chatting!');
+      setToast('You have 500 free credits - start chatting!');
       const url = new URL(window.location.href);
       url.searchParams.delete('welcome');
       window.history.replaceState({}, '', url.pathname);
@@ -264,7 +264,7 @@ function PlaygroundContent() {
     return (
       <WorkspaceLayoutClient
         title="AI Playground"
-        subtitle="One membership — chat any model, compare responses, run benchmarks"
+        subtitle="One membership - chat any model, compare responses, run benchmarks"
       >
         <div className={styles.signInGate}>
           <h2>Sign in with Google to get 500 free credits</h2>
@@ -288,7 +288,7 @@ function PlaygroundContent() {
   return (
     <WorkspaceLayoutClient
       title="AI Playground"
-      subtitle="One membership — chat any model, compare responses, run benchmarks"
+      subtitle="One membership - chat any model, compare responses, run benchmarks"
     >
       {toast && (
         <div className={styles.toast} role="status">
@@ -301,7 +301,7 @@ function PlaygroundContent() {
 
       <div className={styles.headerBar}>
         <span className={styles.creditsBadge}>
-          {platform?.creditsRemaining ?? '—'} / {platform?.creditsTotal ?? 500} credits
+          {platform?.creditsRemaining ?? '-'} / {platform?.creditsTotal ?? 500} credits
         </span>
         <span className={styles.tierBadge}>{platform?.tier ?? 'free'} plan</span>
         {platform?.dailyRequestLimit != null && (
@@ -374,7 +374,7 @@ function PlaygroundContent() {
         <section className={styles.panel}>
           <textarea
             className={styles.input}
-            placeholder="Ask anything — routed through Provider Hub…"
+            placeholder="Ask anything - routed through Provider Hub…"
             value={input}
             onChange={(e) => setInput(e.target.value)}
             rows={4}

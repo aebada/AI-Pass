@@ -40,7 +40,7 @@ function XtermTerminal() {
       term.loadAddon(fitAddon);
       term.open(containerRef.current);
       fitAddon.fit();
-      term.writeln('AI Pass terminal — xterm.js (web)');
+      term.writeln('AI Pass terminal - xterm.js (web)');
       term.writeln('Desktop app provides native shell via Electron.');
       term.write('$ ');
 
@@ -64,7 +64,7 @@ function XtermTerminal() {
 export function TerminalPanel({ useXterm = false }: TerminalPanelProps) {
   const [lines, setLines] = useState<TerminalLine[]>([
     { type: 'output', text: 'AI Pass Terminal v0.1.0' },
-    { type: 'output', text: 'Type commands below. (Browser stub — native shell in desktop app)' },
+    { type: 'output', text: 'Type commands below. (Browser stub - native shell in desktop app)' },
   ]);
   const [input, setInput] = useState('');
   const endRef = useRef<HTMLDivElement>(null);

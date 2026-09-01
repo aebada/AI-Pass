@@ -52,7 +52,7 @@ export default function TrustLandingPage() {
           <span className={styles.eyebrow}>AI-Pass Trust Layer</span>
           <h1 className={styles.title}>The TÜV for Enterprise AI</h1>
           <p className={styles.subtitle}>
-            Validate, certify, monitor, and publicly verify AI systems — before and after deployment.
+            Validate, certify, monitor, and publicly verify AI systems - before and after deployment.
             Built into the AI-Pass Enterprise Operating System, not bolted on.
           </p>
           <div className={styles.ctas}>
@@ -79,7 +79,7 @@ export default function TrustLandingPage() {
         </div>
         <p style={{ textAlign: 'center', color: 'var(--text-muted)', fontSize: '0.9375rem', lineHeight: 1.65, maxWidth: 640, margin: '0 auto' }}>
           Every certified AI system receives a trust score, risk assessment, public verification URL,
-          and continuous monitoring — integrated with Invoice AI, Agent Studio, and the full platform.
+          and continuous monitoring - integrated with Invoice AI, Agent Studio, and the full platform.
         </p>
       </section>
 

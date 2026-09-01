@@ -16,7 +16,7 @@ export default function SettingsPage() {
           <h2 style={{ fontSize: 14, margin: '0 0 16px' }}>Active Policies</h2>
           {policies.map((p) => (
             <div key={p.id} style={{ marginBottom: 12, fontSize: 13 }}>
-              <strong>{p.name}</strong> — v{p.version}
+              <strong>{p.name}</strong> - v{p.version}
               <div className={styles.muted}>{p.knowledgeRef}</div>
             </div>
           ))}
@@ -25,9 +25,9 @@ export default function SettingsPage() {
         <section className={styles.card}>
           <h2 style={{ fontSize: 14, margin: '0 0 16px' }}>ERP Connectors (stub)</h2>
           <ul style={{ fontSize: 13, paddingLeft: 20 }}>
-            <li>Coupa — connected (stub)</li>
-            <li>SAP Ariba — available</li>
-            <li>Jaggaer — available</li>
+            <li>Coupa - connected (stub)</li>
+            <li>SAP Ariba - available</li>
+            <li>Jaggaer - available</li>
           </ul>
           <p className={styles.muted} style={{ marginTop: 12 }}>
             Coupa events: use listSourcingEvents() via @ai-pass/erp-connectors
@@ -48,9 +48,9 @@ export default function SettingsPage() {
           <table className={styles.table}>
             <thead><tr><th>Feature</th><th>Free</th><th>Pro</th><th>Power</th><th>Enterprise</th></tr></thead>
             <tbody>
-              <tr><td>Supply Chain AI</td><td>—</td><td>✓</td><td>✓</td><td>✓</td></tr>
-              <tr><td>Advanced Scoring</td><td>—</td><td>—</td><td>✓</td><td>✓</td></tr>
-              <tr><td>ERP Sync</td><td>—</td><td>—</td><td>—</td><td>✓</td></tr>
+              <tr><td>Supply Chain AI</td><td>-</td><td>✓</td><td>✓</td><td>✓</td></tr>
+              <tr><td>Advanced Scoring</td><td>-</td><td>-</td><td>✓</td><td>✓</td></tr>
+              <tr><td>ERP Sync</td><td>-</td><td>-</td><td>-</td><td>✓</td></tr>
             </tbody>
           </table>
         </section>
