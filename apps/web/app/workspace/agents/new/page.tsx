@@ -38,7 +38,9 @@ export default function AgentWizardPage() {
   const [saving, setSaving] = useState(false);
 
   useEffect(() => {
-    fetch('/api/v1/agents/skills')
+    fetch('/api/v1/agents/skills?scope=member', {
+      headers: { 'x-aipass-role': 'builder', 'x-aipass-user-id': 'user_demo_builder' },
+    })
       .then((r) => r.json())
       .then((d) => setSkills(d.skills ?? []));
   }, []);

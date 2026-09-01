@@ -1,0 +1,165 @@
+.layout {
+  display: grid;
+  gap: 20px;
+}
+
+.panel {
+  background: var(--bg-elevated, #12151a);
+  border: 1px solid var(--border, #30363d);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.panel h2 {
+  margin: 0 0 8px;
+  font-size: 1.05rem;
+}
+
+.panelHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.lead {
+  margin: 0 0 16px;
+  color: var(--text-muted, #8b949e);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  max-width: 62ch;
+}
+
+.formGrid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  margin-bottom: 20px;
+}
+
+.field {
+  display: grid;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: var(--text-muted, #8b949e);
+}
+
+.field select,
+.availability select {
+  background: var(--bg, #0d1117);
+  color: var(--text, #e6edf3);
+  border: 1px solid var(--border, #30363d);
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 0.875rem;
+}
+
+.legend h3 {
+  margin: 0 0 10px;
+  font-size: 0.9rem;
+}
+
+.legend ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.legend li {
+  display: grid;
+  gap: 2px;
+  font-size: 0.85rem;
+  line-height: 1.45;
+}
+
+.legend li strong {
+  color: var(--text, #e6edf3);
+}
+
+.legend li span {
+  color: var(--text-muted, #8b949e);
+}
+
+.note {
+  margin: 14px 0 0;
+  font-size: 0.8rem;
+  color: var(--text-muted, #8b949e);
+  line-height: 1.5;
+}
+
+.skillList {
+  display: grid;
+  gap: 10px;
+}
+
+.skillRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 12px 0;
+  border-top: 1px solid var(--border, #30363d);
+}
+
+.skillRow:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
+
+.skillRow h3 {
+  margin: 0 0 4px;
+  font-size: 0.95rem;
+}
+
+.skillRow p {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--text-muted, #8b949e);
+  line-height: 1.4;
+}
+
+.meta {
+  margin-top: 6px !important;
+  font-size: 0.75rem !important;
+}
+
+.availability {
+  display: grid;
+  gap: 6px;
+  min-width: 200px;
+  font-size: 0.75rem;
+  color: var(--text-muted, #8b949e);
+}
+
+.link {
+  color: var(--accent, #58a6ff);
+  font-size: 0.8rem;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.message {
+  margin: 0 0 12px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: rgba(88, 166, 255, 0.1);
+  color: var(--accent, #58a6ff);
+  font-size: 0.8rem;
+}
+
+@media (max-width: 720px) {
+  .skillRow {
+    flex-direction: column;
+  }
+
+  .availability {
+    min-width: 0;
+    width: 100%;
+  }
+}

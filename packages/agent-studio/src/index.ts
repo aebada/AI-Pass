@@ -12,6 +12,7 @@ export type { AgentStudioPlatform, AgentStudioPlatformOptions } from './platform
 
 export { AgentService, AgentRegistry } from './services/agent-service.js';
 export { SkillService } from './services/skill-service.js';
+export { SkillGovernanceService } from './services/skill-governance-service.js';
 export { WorkflowService } from './services/workflow-service.js';
 export { ExecutionService } from './services/execution-service.js';
 export { PlannerService } from './services/planner-service.js';

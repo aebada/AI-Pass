@@ -22,14 +22,16 @@ export default function AgentSettingsPage() {
       </div>
 
       <div className={styles.card} style={{ marginTop: 16 }}>
-        <h3>Integrations</h3>
-        <ul className={styles.logs}>
-          <li>AI Wallet — credit deduction per execution</li>
-          <li>LiveSync — event-driven agent triggers</li>
-          <li>Knowledge Pipeline — RAG retrieval for agents</li>
-          <li>Trust Engine — certification and trust scores</li>
-          <li>Governance — policy enforcement before execute</li>
-        </ul>
+        <h3>Skill availability</h3>
+        <p>
+          Workspace skills use availability states: Editors only, All members, or Members and Agents.
+          Configure create/change policies and per-skill availability in{' '}
+          <a href="/workspace/settings/skills">Settings → Skills</a>.
+        </p>
+        <p className={styles.meta}>
+          Agents only auto-discover skills set to Members and Agents. Indirect use via agent
+          attachment still works for Editors only skills.
+        </p>
       </div>
     </>
   );

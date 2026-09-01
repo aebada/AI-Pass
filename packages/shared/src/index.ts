@@ -418,6 +418,26 @@ export type {
 export { DEFAULT_RBAC, memberHasPermission } from './tenant.js';
 
 export type {
+  SkillAvailability,
+  SkillCreatePolicy,
+  SkillAvailabilityChangePolicy,
+  WorkspaceSkillPermissions,
+  SkillGovernanceActor,
+} from './skill-governance.js';
+export {
+  SKILL_AVAILABILITY_OPTIONS,
+  DEFAULT_SKILL_AVAILABILITY,
+  DEFAULT_WORKSPACE_SKILL_PERMISSIONS,
+  actorIsAdmin,
+  actorIsBuilder,
+  canCreateSkill,
+  canChangeSkillAvailability,
+  isSkillVisibleToMember,
+  isSkillDiscoverableByAgents,
+  skillAvailabilityLabel,
+} from './skill-governance.js';
+
+export type {
   LiveSyncEventStatus,
   WorkflowExecutionStatus,
   LogLevel,
