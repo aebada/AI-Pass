@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import { useApp } from './AppProviders';
 import styles from './onboarding.module.css';
@@ -8,7 +9,7 @@ import styles from './onboarding.module.css';
 const STEPS = [
   {
     title: 'Welcome to AI Pass',
-    body: 'Build complete business solutions from requirements — web, mobile, workflows, and AI agents in one platform.',
+    body: 'Build complete business solutions from requirements - web, mobile, workflows, and AI agents in one platform.',
     icon: '✨',
   },
   {
@@ -28,11 +29,20 @@ const STEPS = [
   },
 ];
 
+/** Marketing + product surfaces should never be covered by the studio welcome modal. */
+const HIDE_ON_PREFIXES = ['/', '/workspace', '/discover', '/demo', '/pricing', '/platform', '/solutions'];
+
 export function OnboardingModal() {
   const { showOnboarding, completeOnboarding } = useApp();
+  const pathname = usePathname() ?? '';
   const [step, setStep] = useState(0);
 
-  if (!showOnboarding) return null;
+  const hideOnMarketingOrProduct = HIDE_ON_PREFIXES.some((prefix) => {
+    if (prefix === '/') return pathname === '/';
+    return pathname === prefix || pathname.startsWith(`${prefix}/`);
+  });
+
+  if (!showOnboarding || hideOnMarketingOrProduct) return null;
 
   const current = STEPS[step];
   const isLast = step === STEPS.length - 1;
@@ -60,8 +70,8 @@ export function OnboardingModal() {
           </button>
           {isLast ? (
             <>
-              <Link href="/dashboard" className={styles.btnPrimary} onClick={completeOnboarding}>
-                Go to Dashboard →
+              <Link href="/workspace" className={styles.btnPrimary} onClick={completeOnboarding}>
+                Go to Workspace →
               </Link>
               <Link href="/requirements" className={styles.btnSecondary} onClick={completeOnboarding}>
                 Start building

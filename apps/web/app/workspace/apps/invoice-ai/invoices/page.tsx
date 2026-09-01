@@ -38,7 +38,7 @@ export default function InvoicesListPage() {
                   </Link>
                 </td>
                 <td>{inv.vendorName}</td>
-                <td>{inv.department ?? '—'}</td>
+                <td>{inv.department ?? '-'}</td>
                 <td>
                   {inv.currency} {inv.amount.toLocaleString()}
                 </td>

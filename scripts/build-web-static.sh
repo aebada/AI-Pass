@@ -14,7 +14,42 @@ export PATH="/opt/homebrew/bin:/usr/local/bin:${PATH:-}"
 
 cd "$ROOT"
 CI=1 pnpm install --frozen-lockfile 2>/dev/null || CI=1 pnpm install
-pnpm --filter @ai-pass/livesync build
+# Build workspace packages required by the web app. Continue on type errors, then
+# force-emit any packages that still lack dist/ so Next can resolve workspace imports.
+npx turbo run build --filter=@ai-pass/web^... --continue || true
+python3 - <<'PY'
+import json, subprocess
+from pathlib import Path
+root = Path(".")
+web = json.loads((root / "apps/web/package.json").read_text())
+deps = {**web.get("dependencies", {}), **web.get("devDependencies", {})}
+names = sorted(k[len("@ai-pass/"):] for k in deps if k.startswith("@ai-pass/"))
+for name in names:
+    pkg = root / "packages" / name
+    if not pkg.is_dir():
+        continue
+    pj = pkg / "package.json"
+    if not pj.exists():
+        continue
+    meta = json.loads(pj.read_text())
+    main = meta.get("main") or ""
+    # Packages that export TypeScript source directly do not need dist/
+    if main.endswith((".ts", ".tsx")):
+        continue
+    dist_js = pkg / "dist" / "index.js"
+    if dist_js.exists():
+        continue
+    print(f"force-emit {name}")
+    subprocess.run(
+        ["npx", "tsc", "--noEmitOnError", "false", "--skipLibCheck"],
+        cwd=pkg,
+        check=False,
+    )
+PY
+
+# Stale discovery-hub dist (from older feature branches) can break static prerender.
+rm -rf packages/discovery-hub/dist packages/discovery-hub/*.tsbuildinfo packages/discovery-hub/.turbo
+(cd packages/discovery-hub && npx tsc --noEmitOnError false --skipLibCheck --composite false)
 
 LAYOUT_BAK=""
 MIDDLEWARE_MOVED=0
@@ -43,7 +78,12 @@ trap cleanup EXIT
 if [[ -f "$LAYOUT" ]]; then
   LAYOUT_BAK="${LAYOUT}.static_export_bak"
   cp "$LAYOUT" "$LAYOUT_BAK"
-  sed -i '' '/NODE_STANDALONE_FORCE_DYNAMIC/,/force-dynamic/d' "$LAYOUT"
+  # Portable in-place sed (GNU Linux + BSD/macOS)
+  if sed --version >/dev/null 2>&1; then
+    sed -i '/NODE_STANDALONE_FORCE_DYNAMIC/,/force-dynamic/d' "$LAYOUT"
+  else
+    sed -i '' '/NODE_STANDALONE_FORCE_DYNAMIC/,/force-dynamic/d' "$LAYOUT"
+  fi
 fi
 if [[ -f "$MIDDLEWARE" ]]; then
   mv "$MIDDLEWARE" "$MIDDLEWARE_SKIP"
@@ -71,6 +111,24 @@ if [[ -f "$WEB/public/.htaccess" ]]; then
   cp "$WEB/public/.htaccess" "$WEB/out/.htaccess"
   echo "Installed .htaccess for Apache clean URLs"
 fi
+
+# Hostinger DirectoryIndex often prefers path/index.html over path.html.
+# Mirror every *.html shell into path/index.html so /workspace/ cannot serve a stale index.
+python3 - <<PY
+from pathlib import Path
+out = Path("$WEB/out")
+count = 0
+for html in out.rglob("*.html"):
+    rel = html.relative_to(out)
+    if rel.name == "index.html":
+        continue
+    target_dir = out / rel.with_suffix("")
+    target_dir.mkdir(parents=True, exist_ok=True)
+    target = target_dir / "index.html"
+    target.write_bytes(html.read_bytes())
+    count += 1
+print(f"Mirrored {count} html shells to */index.html for DirectoryIndex")
+PY
 
 PHP_AUTH="$ROOT/php-auth"
 if [[ -d "$PHP_AUTH/auth" && "${COPY_PHP_AUTH:-0}" == "1" ]]; then

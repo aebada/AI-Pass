@@ -12,6 +12,8 @@ const NAV = [
   { href: '/workspace/governance/approvals', label: 'Approvals' },
   { href: '/workspace/governance/monitoring', label: 'Monitoring' },
   { href: '/workspace/governance/reports', label: 'Reports' },
+  { href: '/workspace/identity', label: 'Identity' },
+  { href: '/workspace/trust', label: 'Trust' },
   { href: '/workspace/governance/settings', label: 'Settings' },
 ];
 

@@ -26,7 +26,7 @@ export default function OrgSettingsPage() {
   return (
     <WorkspaceLayoutClient
       title="Organization AI Policy"
-      subtitle="Enterprise scaffold — quotas, allowed providers, model restrictions, budget controls"
+      subtitle="Enterprise scaffold - quotas, allowed providers, model restrictions, budget controls"
     >
       <div className={styles.grid}>
         <section className={styles.card}>
@@ -102,7 +102,7 @@ export default function OrgSettingsPage() {
 
       <p className={styles.note}>
         Flutter and Tauri clients will consume <code>OrgMembershipPolicy</code> from{' '}
-        <code>@ai-pass/shared</code> — see docs/UNIVERSAL-MEMBERSHIP.md.
+        <code>@ai-pass/shared</code> - see docs/UNIVERSAL-MEMBERSHIP.md.
       </p>
     </WorkspaceLayoutClient>
   );

@@ -28,7 +28,7 @@ export function PendingApprovals({ approvals, subtitle, onApprove, onReject }: P
 
       <div className={styles.list}>
         {approvals.length === 0 ? (
-          <p className={styles.empty}>All caught up — no pending approvals.</p>
+          <p className={styles.empty}>All caught up - no pending approvals.</p>
         ) : (
           approvals.map((item) => (
             <article key={item.id} className={styles.item}>

@@ -34,7 +34,7 @@ export default function WorkflowBuilderPage() {
               <div>
                 <h2 style={{ margin: '0 0 4px', fontSize: 18 }}>{wf.name}</h2>
                 <p style={{ margin: 0, fontSize: 13, color: 'var(--ai-text-muted)' }}>
-                  {wf.description} — mode: {wf.mode.replace(/_/g, ' ')}
+                  {wf.description} - mode: {wf.mode.replace(/_/g, ' ')}
                 </p>
               </div>
               <span className={styles.badge} style={{ background: wf.isActive ? 'rgba(63,185,80,0.2)' : 'rgba(139,148,158,0.2)', color: wf.isActive ? '#3fb950' : '#8b949e' }}>

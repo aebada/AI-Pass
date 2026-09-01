@@ -34,7 +34,7 @@ export default function SystemDetailPage() {
 
         <div className={styles.kpiGrid}>
           <Card padding="md" className={styles.kpi}>
-            <div className={styles.kpiValue}>{certs[0]?.scorecard.overall ?? '—'}</div>
+            <div className={styles.kpiValue}>{certs[0]?.scorecard.overall ?? '-'}</div>
             <div className={styles.kpiLabel}>Trust score</div>
           </Card>
           <Card padding="md" className={styles.kpi}>

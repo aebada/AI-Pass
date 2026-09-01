@@ -75,7 +75,7 @@ export default function OffersPage() {
                   <td>{o.supplierName}</td>
                   <td>€{(o.totalPrice ?? 0).toLocaleString()}</td>
                   <td>{o.deliveryDays}d</td>
-                  <td>{o.overallScore ?? '—'}</td>
+                  <td>{o.overallScore ?? '-'}</td>
                   <td>
                     <span className={o.status === 'PASS' ? styles.badgePass : o.status === 'FAIL' ? styles.badgeFail : styles.badgeInfo}>
                       {o.status}

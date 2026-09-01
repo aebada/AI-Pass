@@ -12,20 +12,32 @@ export default function GovernanceDashboardPage() {
   const gov = getGovernanceService();
 
   return (
-    <WorkspaceLayoutClient title="Governance" subtitle="AI governance operations — continuous monitoring and policy enforcement">
+    <WorkspaceLayoutClient title="Governance Center" subtitle="Permissions, groups, roles, approvals, risk, audit, inventory, policies, trust, and compliance">
       <ModuleScaffold
-        title="Governance Operations"
-        description="Enterprise operational governance — inventory, risk, policies, approvals, and continuous monitoring."
+        title="Enterprise Governance Center"
+        description="Operational control plane for AI inventory, risk, policies, approvals, continuous monitoring, Trust Engine, and enterprise identity."
         moduleId="governance"
         icon="🏛"
         status="done"
-        features={['AI inventory', 'Policy enforcement', 'Risk register', 'Approval workflows', 'Continuous monitoring']}
+        features={['AI inventory', 'Policy enforcement', 'Risk register', 'Approval workflows', 'Continuous monitoring', 'Identity & RBAC/ABAC']}
         actions={[
           { label: 'Register system', href: '/workspace/governance/inventory', primary: true },
           { label: 'Trust Center', href: '/workspace/trust' },
+          { label: 'Enterprise Identity', href: '/workspace/identity' },
         ]}
       >
         <GovernanceShell>
+          <Card padding="md" style={{ marginBottom: 24 }}>
+            <h3 style={{ fontSize: 14, fontWeight: 600, margin: '0 0 8px' }}>Control domains</h3>
+            <p style={{ fontSize: 13, color: workspaceTokens.colors.textMuted, margin: '0 0 12px' }}>
+              Permissions · Groups · Roles · Approvals · Risk · Audit · Inventory · Policies · Trust · Compliance
+            </p>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
+              <Link href="/workspace/identity" style={{ color: workspaceTokens.colors.accent, fontSize: 13 }}>Identity (SSO / SCIM / Entra / LDAP) →</Link>
+              <Link href="/workspace/trust" style={{ color: workspaceTokens.colors.accent, fontSize: 13 }}>Trust Bronze→Platinum →</Link>
+              <Link href="/workspace/compliance" style={{ color: workspaceTokens.colors.accent, fontSize: 13 }}>Compliance frameworks →</Link>
+            </div>
+          </Card>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(140px, 1fr))', gap: 12, marginBottom: 24 }}>
             <StatCard label="AI Systems" value={dash.systemCount} />
             <StatCard label="High Risk" value={dash.highRiskCount} tone="error" />

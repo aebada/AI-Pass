@@ -32,7 +32,7 @@ export default function SourcingEventsPage() {
                 <td>{e.title}</td>
                 <td>{e.category}</td>
                 <td>{e.department}</td>
-                <td>{e.budgetCap ? `€${e.budgetCap.toLocaleString()}` : '—'}</td>
+                <td>{e.budgetCap ? `€${e.budgetCap.toLocaleString()}` : '-'}</td>
                 <td><span className={styles.badgeInfo}>{e.status}</span></td>
                 <td>{e.deadline}</td>
               </tr>

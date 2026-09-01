@@ -19,7 +19,7 @@ export async function GET(): Promise<NextResponse> {
     info: {
       title: 'AI Pass Platform API',
       version: API_VERSION,
-      description: 'Enterprise AI Operating System — REST API (scaffold)',
+      description: 'Enterprise AI Operating System - REST API (scaffold)',
     },
     servers: [{ url: '/api/v1', description: 'API v1' }],
     paths,

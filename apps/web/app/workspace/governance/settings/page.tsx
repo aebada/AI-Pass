@@ -25,12 +25,12 @@ export default function GovernanceSettingsPage() {
           <Card padding="md" style={{ marginBottom: 16 }}>
             <h3 style={{ fontSize: 14, fontWeight: 600, margin: '0 0 12px' }}>Integrations</h3>
             <ul style={{ fontSize: 13, margin: 0, paddingLeft: 20, color: workspaceTokens.colors.textMuted }}>
-              <li>Trust Engine — validation, certification, trust score, revalidation</li>
-              <li>LiveSync — event-driven workflow triggers on policy/risk changes</li>
-              <li>Provider Hub — model allowlist/blocklist enforcement</li>
-              <li>AI Wallet — governance usage credits and audit reports</li>
-              <li>Membership — Enterprise unlocks org-wide governance</li>
-              <li>Marketplace — install approval gates</li>
+              <li>Trust Engine - validation, certification, trust score, revalidation</li>
+              <li>LiveSync - event-driven workflow triggers on policy/risk changes</li>
+              <li>Provider Hub - model allowlist/blocklist enforcement</li>
+              <li>AI Wallet - governance usage credits and audit reports</li>
+              <li>Membership - Enterprise unlocks org-wide governance</li>
+              <li>Marketplace - install approval gates</li>
             </ul>
           </Card>
 

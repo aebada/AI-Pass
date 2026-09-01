@@ -86,10 +86,12 @@ export function AppProviders({ children }: { children: ReactNode }) {
     const storedModel = localStorage.getItem('ai-pass:ai-model') ?? 'gpt-4o';
 
     if (storedTheme) setThemeState(storedTheme);
+    let profile: UserProfile | null = null;
     if (storedProfile) {
       try {
         const parsed = JSON.parse(storedProfile) as UserProfile;
         if (!isLegacyDemoProfile(parsed)) {
+          profile = parsed;
           setUser(parsed);
         } else {
           localStorage.removeItem(PROFILE_STORAGE_KEY);
@@ -100,7 +102,10 @@ export function AppProviders({ children }: { children: ReactNode }) {
     }
     setApiKeyState(storedApiKey);
     setAiModelState(storedModel);
-    setShowOnboarding(storedOnboarded !== 'true');
+    // Never auto-open onboarding for anonymous marketing visitors.
+    const needsOnboarding =
+      Boolean(profile) && storedOnboarded !== 'true' && profile?.onboarded !== true;
+    setShowOnboarding(needsOnboarding);
   }, []);
 
   useEffect(() => {

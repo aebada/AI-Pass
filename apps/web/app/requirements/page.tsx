@@ -73,7 +73,7 @@ export default function RequirementsPage() {
   return (
     <BusinessShell
       title="Requirements Wizard"
-      subtitle="Capture your business need in plain language — AI Pass parses actors, data, workflows, and screens"
+      subtitle="Capture your business need in plain language - AI Pass parses actors, data, workflows, and screens"
     >
       <nav className={styles.stepper} aria-label="Wizard progress">
         {WIZARD_STEPS.map((s, i) => (
@@ -191,11 +191,11 @@ export default function RequirementsPage() {
             <Card variant="glass" padding="md">
               <h3 className={styles.cardTitle}>Integrations <Badge>{parsed.integrations.length}</Badge></h3>
               {parsed.integrations.length === 0 ? (
-                <p className={styles.listMeta}>None detected — add in Studio</p>
+                <p className={styles.listMeta}>None detected - add in Studio</p>
               ) : (
                 parsed.integrations.map((i) => (
                   <div key={i.id} className={styles.listItem}>
-                    <strong>{i.name}</strong> — {i.purpose}
+                    <strong>{i.name}</strong> - {i.purpose}
                   </div>
                 ))
               )}
