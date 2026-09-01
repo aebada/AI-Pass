@@ -9,7 +9,7 @@ export default function AnalysisPage() {
   const insights = defaultWorkspaceService.getDashboard().insights;
 
   return (
-    <WorkspaceLayoutClient title="Analysis" subtitle="Analysis Studio — usage analytics and reports">
+    <WorkspaceLayoutClient title="Analysis" subtitle="Analysis Studio - usage analytics and reports">
       <ModuleScaffold
         title="Analysis Studio"
         description="Usage analytics, cost reports, agent performance, and custom dashboards."

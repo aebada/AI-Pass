@@ -22,7 +22,7 @@ export function ContentAIShell({ children }: { children: ReactNode }) {
   return (
     <WorkspaceLayoutClient
       title="Content AI"
-      subtitle="Detect AI. Humanize with Confidence. — AI Detector & Humanizer"
+      subtitle="Detect AI. Humanize with Confidence. - AI Detector & Humanizer"
     >
       <div className={styles.app}>
         <nav className={styles.subNav}>

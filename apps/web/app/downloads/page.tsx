@@ -11,7 +11,7 @@ const DOWNLOADS = {
     items: [
       {
         name: 'Use in Browser',
-        desc: 'No install required — open AI Pass in your browser.',
+        desc: 'No install required - open AI Pass in your browser.',
         href: '/ide',
         size: 'Instant',
         status: 'available' as const,
@@ -38,7 +38,7 @@ const DOWNLOADS = {
       },
       {
         name: 'Linux (.AppImage)',
-        desc: 'Portable AppImage — no install needed.',
+        desc: 'Portable AppImage - no install needed.',
         href: `${DESKTOP_BASE}#download-linux`,
         size: '~160 MB',
         status: 'soon' as const,
@@ -58,7 +58,7 @@ const DOWNLOADS = {
     items: [
       {
         name: 'iOS',
-        desc: 'App Store — iPhone & iPad.',
+        desc: 'App Store - iPhone & iPad.',
         href: `${DESKTOP_BASE}#download-ios`,
         size: 'Coming soon',
         status: 'soon' as const,

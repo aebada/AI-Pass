@@ -3,13 +3,28 @@
   "compilerOptions": {
     "outDir": "./dist",
     "rootDir": "./src",
-    "composite": true
+    "composite": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "types": [
+      "node"
+    ]
   },
-  "include": ["src"],
+  "include": [
+    "src"
+  ],
   "references": [
-    { "path": "../shared" },
-    { "path": "../ai-core" },
-    { "path": "../membership" },
-    { "path": "../wallet" }
+    {
+      "path": "../shared"
+    },
+    {
+      "path": "../ai-core"
+    },
+    {
+      "path": "../membership"
+    },
+    {
+      "path": "../wallet"
+    }
   ]
 }

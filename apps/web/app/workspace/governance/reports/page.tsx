@@ -25,7 +25,7 @@ export default function ReportsPage() {
             <Card key={m.id} padding="md" style={{ marginBottom: 8 }}>
               <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                 <div>
-                  <strong style={{ fontSize: 13 }}>{m.framework} — {m.controlName}</strong>
+                  <strong style={{ fontSize: 13 }}>{m.framework} - {m.controlName}</strong>
                   <p style={{ fontSize: 12, color: workspaceTokens.colors.textMuted, margin: '4px 0 0' }}>
                     {m.controlId} · {m.policyIds.length} policies · {m.systemIds.length} systems
                   </p>
@@ -36,7 +36,7 @@ export default function ReportsPage() {
           ))}
 
           <p style={{ fontSize: 12, color: workspaceTokens.colors.textMuted, marginTop: 24 }}>
-            Export formats (PDF, Excel, JSON, CSV) available via API — stub implementations.
+            Export formats (PDF, Excel, JSON, CSV) available via API - stub implementations.
           </p>
         </GovernanceShell>
       </ModuleScaffold>

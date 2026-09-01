@@ -12,10 +12,10 @@ export default function GovernanceDashboardPage() {
   const gov = getGovernanceService();
 
   return (
-    <WorkspaceLayoutClient title="Governance" subtitle="AI governance operations — continuous monitoring and policy enforcement">
+    <WorkspaceLayoutClient title="Governance" subtitle="AI governance operations - continuous monitoring and policy enforcement">
       <ModuleScaffold
         title="Governance Operations"
-        description="Enterprise operational governance — inventory, risk, policies, approvals, and continuous monitoring."
+        description="Enterprise operational governance - inventory, risk, policies, approvals, and continuous monitoring."
         moduleId="governance"
         icon="🏛"
         status="done"

@@ -8,11 +8,6 @@ import { FOOTER_COLUMNS } from './lib/site-nav';
 import styles from './page.module.css';
 import section from './home-sections.module.css';
 
-const TRUSTED_LOGOS = [
-  'Global Bank', 'AutoCorp', 'HealthNet', 'GovTech EU', 'RetailMax', 'LogiFlow',
-  'UniTech', 'InsureAI', 'ManufactureX', 'Enterprise Co.',
-];
-
 const PLATFORM_LAYERS = [
   { name: 'AI Workspace', desc: 'Unified command center', href: '/workspace', icon: '◫' },
   { name: 'AI Playground', desc: 'Every model, one membership', href: '/workspace/playground', icon: '✦' },
@@ -153,6 +148,7 @@ const ARCH_LAYERS = [
   'Trust & Compliance',
 ];
 
+/** Real model providers — used for integrations strip (never invent fake customer logos) */
 const PROVIDERS = ['OpenAI', 'Anthropic', 'Google', 'DeepSeek', 'xAI', 'Mistral', 'Meta', 'OpenRouter'];
 
 const ENTERPRISE_BADGES = [
@@ -227,13 +223,13 @@ const PRICING = [
 ];
 
 const INVESTOR_TOPICS = [
-  { title: 'Vision', text: 'Become the operating system for enterprise AI — one platform replacing fragmented chatbots, point apps, and shadow AI.' },
+  { title: 'Vision', text: 'Become the operating system for enterprise AI - one platform replacing fragmented chatbots, point apps, and shadow AI.' },
   { title: 'Market Opportunity', text: '$150B+ enterprise AI software market growing 35% CAGR. Every Fortune 500 needs governed AI infrastructure.' },
   { title: 'Why Now', text: 'Model proliferation, regulatory pressure (EU AI Act, ISO 42001), and board-level AI mandates create urgent demand.' },
   { title: 'Platform Strategy', text: 'Land with workspace + playground, expand via marketplace apps, monetize through membership + wallet + enterprise SLA.' },
   { title: 'Competitive Advantages', text: 'Only unified OS combining models, agents, workflows, apps, governance, and marketplace in one membership.' },
   { title: 'Business Model', text: 'SaaS membership tiers + usage-based AI Wallet + marketplace revenue share + enterprise contracts.' },
-  { title: 'Enterprise Focus', text: 'SSO, RBAC, private cloud, compliance frameworks, and trust certification built in — not bolted on.' },
+  { title: 'Enterprise Focus', text: 'SSO, RBAC, private cloud, compliance frameworks, and trust certification built in - not bolted on.' },
   { title: 'Marketplace Economy', text: 'Developer ecosystem publishing apps, skills, and automation packs with certified distribution.' },
 ];
 
@@ -246,7 +242,7 @@ const ROADMAP = [
 
 const CUSTOMER_STORIES = [
   { industry: 'Finance', quote: 'Invoice AI reduced our AP processing time by 73% while improving fraud detection accuracy.', author: 'CFO, Global Financial Services' },
-  { industry: 'Manufacturing', quote: 'Supply Chain AI transformed how we evaluate supplier proposals — from days to minutes.', author: 'VP Procurement, ManufactureX' },
+  { industry: 'Manufacturing', quote: 'Supply Chain AI transformed how we evaluate supplier proposals - from days to minutes.', author: 'VP Procurement, ManufactureX' },
   { industry: 'Government', quote: 'AI Pass gave us governed AI access across departments without shadow IT risk.', author: 'CIO, GovTech Agency' },
   { industry: 'Healthcare', quote: 'Compliance AI keeps our document workflows HIPAA-ready with full audit trails.', author: 'Compliance Director, HealthNet' },
   { industry: 'Automotive', quote: 'One membership for every model let our R&D teams compare frontier AI without vendor lock-in.', author: 'Head of AI, AutoCorp' },
@@ -254,8 +250,8 @@ const CUSTOMER_STORIES = [
 
 const AI_NEWS = [
   { slug: 'gpt-5-provider-update', title: 'GPT-5 Now Available in AI Pass Provider Hub', summary: 'All Professional and Power members can route requests to GPT-5 via unified wallet billing.', date: 'Jun 15, 2026' },
-  { slug: 'invoice-ai-v21-launch', title: 'Invoice AI v2.1 — Fraud Detection Upgrade', summary: 'New anomaly scoring model reduces false positives by 34% in enterprise deployments.', date: 'Jun 10, 2026' },
-  { slug: 'summer-deals-hub', title: 'Summer Deals Hub — 8 Limited-Time Offers', summary: 'Discovery Hub launches Deals Hub with lifetime deals, bundles, and enterprise packages.', date: 'Jun 1, 2026' },
+  { slug: 'invoice-ai-v21-launch', title: 'Invoice AI v2.1 - Fraud Detection Upgrade', summary: 'New anomaly scoring model reduces false positives by 34% in enterprise deployments.', date: 'Jun 10, 2026' },
+  { slug: 'summer-deals-hub', title: 'Summer Deals Hub - 8 Limited-Time Offers', summary: 'Discovery Hub launches Deals Hub with lifetime deals, bundles, and enterprise packages.', date: 'Jun 1, 2026' },
 ];
 
 const DEV_ITEMS = [
@@ -268,9 +264,9 @@ const DEV_ITEMS = [
 ];
 
 const CHAT_RESPONSES: Record<string, string> = {
-  GPT: 'GPT-5 analysis: Invoice batch processed — 847 documents validated, 3 flagged for review. Estimated savings: $12,400/month.',
+  GPT: 'GPT-5 analysis: Invoice batch processed - 847 documents validated, 3 flagged for review. Estimated savings: $12,400/month.',
   Claude: 'Claude assessment: Strong pattern match on vendor invoices. Recommend auto-approval threshold at 95% confidence for recurring suppliers.',
-  Gemini: 'Gemini insight: Cross-referenced ERP data — 2 duplicate submissions detected. Workflow routed to finance approval queue.',
+  Gemini: 'Gemini insight: Cross-referenced ERP data - 2 duplicate submissions detected. Workflow routed to finance approval queue.',
   DeepSeek: 'DeepSeek report: Processing complete. OCR accuracy 99.2%. Three-way match validated against PO and receipt records.',
 };
 
@@ -299,7 +295,7 @@ function LiveDemoSection() {
         setSteps((prev) => [...prev, step]);
         if (i === DEMO_STEPS.length - 1) {
           setTimeout(() => {
-            setResult(`✓ "${q}" complete — 847 invoices analyzed, 3 flagged for review, $12,400/month savings identified. Results synced to ERP.`);
+            setResult(`✓ "${q}" complete - 847 invoices analyzed, 3 flagged for review, $12,400/month savings identified. Results synced to ERP.`);
             setRunning(false);
           }, 600);
         }
@@ -430,16 +426,23 @@ export default function HomePageContent() {
         </div>
       </section>
 
-      {/* Social Proof */}
-      <section className={section.section} id="trusted">
-        <div className={section.sectionHeader}>
-          <span className={section.sectionLabel}>Trusted by</span>
-          <h2 className={section.sectionTitle}>Enterprises, partners, and institutions worldwide</h2>
-        </div>
-        <div className={section.logoGrid}>
-          {TRUSTED_LOGOS.map((name) => (
-            <div key={name} className={section.logoPlaceholder}>{name}</div>
-          ))}
+      {/* Integrations — honest provider strip, no fake customer logos */}
+      <section className={`${section.section} ${section.trustedSection}`} id="trusted" aria-labelledby="trusted-heading">
+        <div className={section.container}>
+          <div className={section.trustedHeader}>
+            <span className={section.sectionLabel}>Integrations</span>
+            <h2 id="trusted-heading" className={section.sectionTitle}>
+              Built on the technologies enterprises trust
+            </h2>
+            <p className={section.sectionDesc}>
+              Route work across leading model providers from one membership, wallet, and governance layer.
+            </p>
+          </div>
+          <ul className={section.providerStrip} aria-label="Integrated AI providers">
+            {PROVIDERS.map((name) => (
+              <li key={name} className={section.providerWordmark}>{name}</li>
+            ))}
+          </ul>
         </div>
       </section>
 
@@ -449,7 +452,7 @@ export default function HomePageContent() {
           <span className={section.sectionLabel}>Platform</span>
           <h2 className={section.sectionTitle}>One operating system, every capability</h2>
           <p className={section.sectionDesc}>
-            From workspace to governance — every module connected in a unified enterprise stack.
+            From workspace to governance - every module connected in a unified enterprise stack.
           </p>
         </div>
         <div className={section.platformStack}>
@@ -721,7 +724,7 @@ export default function HomePageContent() {
           ))}
         </div>
         <div className={section.walletCallout}>
-          <strong>AI Wallet</strong> — Unified credits for models, apps, and marketplace purchases.
+          <strong>AI Wallet</strong> - Unified credits for models, apps, and marketplace purchases.
           Track usage, set budgets, and pay once across the entire platform.{' '}
           <Link href="/workspace/wallet" style={{ color: 'var(--accent)' }}>Learn about AI Wallet →</Link>
         </div>
@@ -781,7 +784,7 @@ export default function HomePageContent() {
       <section className={section.section} id="stories">
         <div className={section.sectionHeader}>
           <span className={section.sectionLabel}>Customer Stories</span>
-          <h2 className={section.sectionTitle}>Trusted by industry leaders</h2>
+          <h2 className={section.sectionTitle}>Outcomes across industries</h2>
         </div>
         <div className={section.storyGrid}>
           {CUSTOMER_STORIES.map((story) => (
@@ -836,7 +839,7 @@ export default function HomePageContent() {
       <div className={styles.ctaBand}>
         <h2 className={styles.ctaBandTitle}>Your Enterprise AI Operating System awaits</h2>
         <p className={styles.ctaBandText}>
-          One workspace. One membership. Every model, agent, and business application — governed and secure.
+          One workspace. One membership. Every model, agent, and business application - governed and secure.
         </p>
         <div className={styles.ctaBandActions}>
           <Link href="/workspace" className={styles.btnPrimary}>Start Free</Link>
