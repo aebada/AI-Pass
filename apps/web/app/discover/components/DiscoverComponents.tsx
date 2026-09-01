@@ -6,13 +6,17 @@ export function DiscoverSubNav({ base = '/discover' }: { base?: string }) {
   const links = [
     { href: base, label: 'Home' },
     { href: `${base}/search`, label: 'Search' },
+    { href: `${base}/taxonomy`, label: 'Taxonomy' },
     { href: `${base}/categories`, label: 'Categories' },
     { href: `${base}/collections`, label: 'Collections' },
+    { href: `${base}/compare`, label: 'Compare' },
+    { href: `${base}/benchmarks`, label: 'Benchmarks' },
     { href: `${base}/deals`, label: 'Deals' },
+    { href: `${base}/analytics`, label: 'Analytics' },
+    { href: `${base}/enterprise`, label: 'Enterprise' },
     { href: `${base}/trending`, label: 'Trending' },
     { href: `${base}/news`, label: 'AI News' },
     { href: `${base}/research`, label: 'Research' },
-    { href: `${base}/developers/promotions`, label: 'Dev Promos' },
   ];
 
   return (
@@ -27,25 +31,32 @@ export function DiscoverSubNav({ base = '/discover' }: { base?: string }) {
 }
 
 export function ToolCard({ tool, base = '/discover' }: { tool: Tool; base?: string }) {
+  const trustLabel = tool.profile.trust?.label ?? `Trust ${tool.trustScore}`;
   return (
     <article className={styles.card}>
       <div className={styles.badges}>
-        {tool.certified && <span className={styles.badge}>Certified</span>}
         {tool.trending && <span className={styles.badge}>Trending</span>}
-        <span className={`${styles.badge} ${styles.badgeTrust}`}>Trust {tool.trustScore}</span>
+        {tool.openSource && <span className={styles.badge}>Open Source</span>}
+        <span className={`${styles.badge} ${styles.badgeTrust}`}>
+          {tool.trustScore}/100 · {trustLabel}
+        </span>
       </div>
       <h3 className={styles.cardTitle}>
         <Link href={`${base}/tools/${tool.slug}`}>{tool.name}</Link>
       </h3>
       <p className={styles.cardMeta}>{tool.description.slice(0, 120)}…</p>
       <p className={styles.cardMeta}>
-        ★ {tool.rating.toFixed(1)} · {tool.installCount.toLocaleString()} installs · {tool.creditsRequired} credits
+        ★ {tool.rating.toFixed(1)} · {tool.installCount.toLocaleString()} installs ·{' '}
+        {tool.profile.capabilities.join(', ')}
       </p>
       <div className={styles.cardActions}>
-        <Link href={tool.storeRoute} className={styles.btnPrimary}>Install</Link>
-        {tool.workspaceRoute && (
-          <Link href={tool.workspaceRoute} className={styles.btnSecondary}>Run in AI-Pass</Link>
-        )}
+        <Link href={tool.storeRoute} className={styles.btnPrimary}>
+          {tool.source === 'marketplace' ? 'Install' : 'Connect'}
+        </Link>
+        <Link href={`/workspace/workflows?addTool=${tool.slug}`} className={styles.btnSecondary}>
+          Add to Workflow
+        </Link>
+        <Link href={`${base}/compare?ids=${tool.id}`} className={styles.btnSecondary}>Compare</Link>
       </div>
     </article>
   );

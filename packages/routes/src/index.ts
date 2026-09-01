@@ -27,6 +27,36 @@ export const MARKETPLACE_ROUTES = {
   categories: `${WORKSPACE_BASE}/marketplace/categories`,
 } as const;
 
+export const DISCOVERY_ROUTES = {
+  home: '/discover',
+  workspace: `${WORKSPACE_BASE}/discover`,
+  search: '/discover/search',
+  taxonomy: '/discover/taxonomy',
+  taxonomyNode: (slug: string) => `/discover/taxonomy/${slug}`,
+  tool: (slug: string) => `/discover/tools/${slug}`,
+  compare: '/discover/compare',
+  benchmarks: '/discover/benchmarks',
+  collections: '/discover/collections',
+  deals: '/discover/deals',
+  analytics: '/discover/analytics',
+  enterprise: '/discover/enterprise',
+  categories: '/discover/categories',
+  trending: '/discover/trending',
+} as const;
+
+export const DISCOVERY_API_ROUTES = {
+  home: '/api/v1/discovery',
+  search: '/api/v1/discovery/search',
+  taxonomy: '/api/v1/discovery/taxonomy',
+  compare: '/api/v1/discovery/compare',
+  benchmarks: '/api/v1/discovery/benchmarks',
+  enterprise: '/api/v1/discovery/enterprise',
+  analytics: '/api/v1/discovery/analytics',
+  actions: '/api/v1/discovery/actions',
+  deals: '/api/v1/discovery/deals',
+  recommendations: '/api/v1/discovery/recommendations',
+} as const;
+
 export const KNOWLEDGE_ROUTES = {
   home: `${WORKSPACE_BASE}/knowledge`,
   sources: `${WORKSPACE_BASE}/knowledge/sources`,
@@ -53,6 +83,7 @@ export const KNOWLEDGE_API_ROUTES = {
 
 export const API_ROUTES = {
   knowledge: KNOWLEDGE_API_ROUTES,
+  discovery: DISCOVERY_API_ROUTES,
   store: {
     apps: '/api/v1/store/apps',
     app: (id: string) => `/api/v1/store/apps/${id}`,

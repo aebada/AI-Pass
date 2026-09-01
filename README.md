@@ -54,6 +54,7 @@ graph TB
   subgraph marketplace [Marketplace Ecosystem]
     Store[packages/store]
     Marketplace[packages/marketplace]
+    Discovery[packages/discovery-hub]
   end
 
   subgraph verticals [Vertical Apps]
@@ -81,6 +82,9 @@ graph TB
   LiveSync --> Governance
 
   Trust --> Governance
+  Discovery --> Marketplace
+  Discovery --> Store
+  Discovery --> Trust
   Store --> InvoiceAI
   Store --> SupplyChain
   Store --> CustomerSupport

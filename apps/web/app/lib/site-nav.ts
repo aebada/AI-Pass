@@ -55,7 +55,9 @@ export const SITE_NAV: SiteNavItem[] = [
     wide: true,
     items: [
       { label: 'AI Store', href: '/workspace/store', description: 'Install certified enterprise apps' },
-      { label: 'Discovery Hub', href: '/discover', description: 'Find and compare AI tools' },
+      { label: 'Discovery Hub', href: '/discover', description: 'Discover, evaluate, install & orchestrate AI tools' },
+      { label: 'AI Benchmarks', href: '/discover/benchmarks', description: 'Independent model and tool evaluations' },
+      { label: 'Enterprise Catalog', href: '/discover/enterprise', description: 'Approve, block, and govern AI inventory' },
       { label: 'AI Skills', href: '/workspace/skills', description: 'Agent skills and capability packs' },
       { label: 'Automation Packs', href: '/workspace/marketplace', description: 'Pre-built workflow templates' },
       { label: 'Industry Solutions', href: '/discover/categories', description: 'Vertical AI collections' },

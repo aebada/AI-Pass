@@ -6,7 +6,10 @@
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
-    ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" }
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
   },
   "scripts": {
     "build": "tsc",
@@ -16,7 +19,6 @@
   "dependencies": {
     "@ai-pass/marketplace-core": "workspace:*",
     "@ai-pass/shared": "workspace:*",
-    "@ai-pass/store": "workspace:*",
     "@ai-pass/trust-engine": "workspace:*"
   },
   "devDependencies": {
