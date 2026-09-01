@@ -76,7 +76,7 @@ export default async function VerifyPage({ params }: { params: Promise<{ id: str
       </Card>
 
       <p style={{ textAlign: 'center', fontSize: 12, opacity: 0.5, marginTop: 24 }}>
-        AI-Pass Trust Engine — Enterprise certification for AI systems
+        AI-Pass Trust Engine - Enterprise certification for AI systems
       </p>
     </div>
   );

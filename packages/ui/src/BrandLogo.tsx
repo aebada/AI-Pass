@@ -1,15 +1,15 @@
-export const BRAND_LOGO_SRC = '/logo.png';
+export const BRAND_LOGO_SRC = '/logo.svg';
 export const BRAND_LOGO_ALT = 'AI-Pass';
 export const BRAND_HOME_ARIA_LABEL = 'AI-Pass home';
 
 export type BrandLogoSize = 'nav' | 'hero' | 'sidebar' | 'footer';
 
-/** Horizontal logo (~3:2); height drives nav/sidebar, maxWidth drives hero/footer */
+/** Horizontal logo wordmark; height drives nav/sidebar, maxWidth drives hero/footer */
 const SIZE_STYLES: Record<BrandLogoSize, { height?: number; maxWidth: number }> = {
-  nav: { height: 40, maxWidth: 240 },
-  sidebar: { height: 32, maxWidth: 200 },
-  hero: { maxWidth: 320 },
-  footer: { height: 40, maxWidth: 240 },
+  nav: { height: 36, maxWidth: 176 },
+  sidebar: { height: 32, maxWidth: 160 },
+  hero: { maxWidth: 220 },
+  footer: { height: 36, maxWidth: 176 },
 };
 
 export interface BrandLogoProps {

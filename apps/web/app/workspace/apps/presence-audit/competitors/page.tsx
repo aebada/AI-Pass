@@ -29,7 +29,7 @@ export default function CompetitorsPage() {
           {comparison.sideBySide.map((row) => (
             <div key={row.dimension} className={styles.listItem} style={{ display: 'flex', justifyContent: 'space-between' }}>
               <span>{row.dimension}</span>
-              <span>AI-Pass {row.company}% vs {row.competitor}% — winner: {row.winner}</span>
+              <span>AI-Pass {row.company}% vs {row.competitor}% - winner: {row.winner}</span>
             </div>
           ))}
         </div>

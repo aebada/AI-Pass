@@ -73,7 +73,7 @@ export default function PublishAppWizardPage() {
 
   return (
     <div className={styles.wizard}>
-      <h1 className={styles.heroTitle}>Publish App — 7-Step Wizard</h1>
+      <h1 className={styles.heroTitle}>Publish App - 7-Step Wizard</h1>
       <div className={styles.wizardSteps}>
         {STEPS.map((label, i) => (
           <span key={label} className={`${styles.wizardStep} ${i === step ? styles.wizardStepActive : ''}`}>

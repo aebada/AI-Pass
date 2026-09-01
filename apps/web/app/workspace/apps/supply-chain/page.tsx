@@ -21,7 +21,7 @@ export default function SupplyChainAppPage() {
       >
         <Card padding="md">
           <h3 style={{ fontSize: 14, fontWeight: 600, margin: '0 0 12px' }}>Active evaluations</h3>
-          {['RFQ-1042 — 5 suppliers — Ranking in progress', 'RFQ-1041 — 3 suppliers — Completed'].map((r) => (
+          {['RFQ-1042 - 5 suppliers - Ranking in progress', 'RFQ-1041 - 3 suppliers - Completed'].map((r) => (
             <div key={r} style={{ padding: '8px 0', borderBottom: `1px solid ${workspaceTokens.colors.border}`, fontSize: 13 }}>
               {r}
             </div>

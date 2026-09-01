@@ -37,6 +37,49 @@ function estimateCredits(app: Application): number {
   return 5;
 }
 
+function pricingLabel(app: Application): string {
+  if (app.pricingModel === 'free') return app.openSource ? 'Free / Open Source' : 'Free';
+  if (app.pricingModel === 'enterprise_license') return 'Enterprise license';
+  if (app.pricingModel === 'freemium') return 'Freemium';
+  if (app.priceMonthly != null) return `$${app.priceMonthly}/mo`;
+  if (app.pricePerUse != null) return `$${app.pricePerUse}/use`;
+  return app.pricingModel.replace(/_/g, ' ');
+}
+
+function inferProvider(app: Application, developerName?: string): string {
+  const modelHint = (app.modelsUsed[0] ?? '').toLowerCase();
+  if (modelHint.includes('gpt') || modelHint.includes('openai')) return 'OpenAI';
+  if (modelHint.includes('claude') || modelHint.includes('anthropic')) return 'Anthropic';
+  if (modelHint.includes('gemini')) return 'Google';
+  if (modelHint.includes('llama') || modelHint.includes('ollama')) return 'Local / Ollama';
+  if (modelHint.includes('mistral')) return 'Mistral';
+  if (modelHint.includes('deepseek')) return 'DeepSeek';
+  return developerName ?? 'AI-Pass Hosted';
+}
+
+function complianceFor(app: Application): string[] {
+  const frameworks: string[] = [];
+  if (app.enterpriseReady || app.certified) {
+    frameworks.push('ISO 42001', 'ISO 27001', 'GDPR');
+  }
+  if (app.certified) frameworks.push('SOC 2');
+  if (app.category === 'compliance' || app.riskLevel === 'high' || app.riskLevel === 'critical') {
+    frameworks.push('NIS2');
+  }
+  if (app.enterpriseReady) frameworks.push('Enterprise Ready');
+  return [...new Set(frameworks)];
+}
+
+function benchmarksFor(app: Application, trustScore: number): { name: string; score: number; unit?: string }[] {
+  const quality = Math.min(100, Math.round(app.rating * 20));
+  return [
+    { name: 'Quality', score: quality, unit: '/100' },
+    { name: 'Trust', score: trustScore, unit: '/100' },
+    { name: 'Adoption', score: Math.min(100, Math.round(Math.log10(Math.max(app.installCount, 1)) * 25)), unit: '/100' },
+    { name: 'Risk posture', score: app.riskLevel === 'critical' ? 40 : app.riskLevel === 'high' ? 55 : app.riskLevel === 'medium' ? 75 : 90, unit: '/100' },
+  ];
+}
+
 export function appToTool(app: Application, platform: MarketplaceCorePlatform): Tool {
   const developer = platform.developers.get(app.developerId);
   const trustScore = computeTrustScore(app);
@@ -54,6 +97,11 @@ export function appToTool(app: Application, platform: MarketplaceCorePlatform): 
     'sales-copilot': '/workspace/apps/sales-ai',
   };
 
+  const storeRoute = `/workspace/store/apps/${app.slug}`;
+  const workspaceRoute = workspaceRoutes[app.slug] ?? `/workspace/marketplace/apps/${app.slug}`;
+  const latencyBase = app.appType === 'hosted_saas' ? 420 : app.appType === 'agent_pack' ? 680 : 520;
+  const latencyMs = latencyBase + Math.round((100 - trustScore) * 2.2);
+
   return {
     id: app.id,
     slug: app.slug,
@@ -63,9 +111,14 @@ export function appToTool(app: Application, platform: MarketplaceCorePlatform): 
     tags: app.tags,
     developerId: app.developerId,
     developerName: developer?.name,
+    logoUrl: `/discover/logos/${app.slug}.svg`,
+    provider: inferProvider(app, developer?.name),
     pricingModel: app.pricingModel,
     priceMonthly: app.priceMonthly,
     pricePerUse: app.pricePerUse,
+    pricingLabel: pricingLabel(app),
+    apiAvailable: app.permissions.includes('api') || app.category === 'developer_tools' || app.appType === 'hosted_saas',
+    apiDocsUrl: `/developers#${app.slug}`,
     certified: app.certified,
     enterpriseReady: app.enterpriseReady,
     openSource: app.openSource,
@@ -76,6 +129,10 @@ export function appToTool(app: Application, platform: MarketplaceCorePlatform): 
     reviewCount: app.reviewCount,
     trustScore,
     trustBadges: badges,
+    latencyMs,
+    complianceFrameworks: complianceFor(app),
+    benchmarks: benchmarksFor(app, trustScore),
+    integrations: app.supportedPlatforms.length > 0 ? app.supportedPlatforms : ['AI-Pass Workspace', 'Webhook'],
     creditsRequired: estimateCredits(app),
     estimatedCostPerRun: app.pricePerUse ?? (app.priceMonthly ? app.priceMonthly / 100 : undefined),
     supportedPlatforms: app.supportedPlatforms,
@@ -83,9 +140,11 @@ export function appToTool(app: Application, platform: MarketplaceCorePlatform): 
     screenshots: [`/discover/screenshots/${app.slug}-1.png`, `/discover/screenshots/${app.slug}-2.png`],
     features: FEATURE_MAP[app.slug] ?? app.tags,
     membershipTierRequired: app.enterpriseReady ? 'professional' : 'free',
-    workspaceRoute: workspaceRoutes[app.slug] ?? `/workspace/marketplace/apps/${app.slug}`,
-    storeRoute: `/workspace/store/apps/${app.slug}`,
+    workspaceRoute,
+    storeRoute,
+    connectRoute: `/workspace/store/apps/${app.slug}?connect=1`,
     presenceAuditRoute: '/workspace/presence',
+    appType: app.appType,
   };
 }
 

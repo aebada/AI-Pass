@@ -80,14 +80,26 @@ export class RoutingEngine {
     let score = 0;
     const qualityRank = { good: 1, great: 2, frontier: 3 };
     const speedRank = { fast: 3, balanced: 2, quality: 1 };
+    const isLocal = model.providerId === 'ollama' || model.tags.includes('local');
 
     if (criteria.preferQuality) score += qualityRank[model.quality] * 10;
     if (criteria.preferSpeed) score += speedRank[model.speed] * 10;
-    if (criteria.preferCost) score += (10 - Math.min(model.inputCostPer1M, 10));
+    if (criteria.preferCost) score += 10 - Math.min(model.inputCostPer1M, 10);
+    if (criteria.preferPrivacy || criteria.preferLocal) score += isLocal ? 25 : -4;
+    if (criteria.preferCompliance) {
+      score += model.tier === 'frontier' || model.tier === 'premium' ? 12 : 4;
+      if (isLocal) score += 8;
+    }
+    if (criteria.preferReasoning) {
+      score += model.bestUseCases.some((u) => /reason|agent|code/i.test(u)) ? 14 : 0;
+      score += qualityRank[model.quality] * 4;
+    }
+    if (criteria.preferContext) score += Math.min(model.contextLength / 8000, 20);
 
     score += qualityRank[model.quality] * 2;
     score += speedRank[model.speed];
 
+    if (criteria.maxLatencyMs && model.speed === 'quality') score -= 3;
     if (model.availability === 'degraded') score -= 5;
     return score;
   }
@@ -97,6 +109,11 @@ export class RoutingEngine {
     if (criteria.preferSpeed) parts.push('optimized for latency');
     if (criteria.preferQuality) parts.push('optimized for quality');
     if (criteria.preferCost) parts.push('optimized for cost');
+    if (criteria.preferPrivacy) parts.push('optimized for privacy');
+    if (criteria.preferCompliance) parts.push('optimized for compliance');
+    if (criteria.preferReasoning) parts.push('optimized for reasoning');
+    if (criteria.preferContext) parts.push('optimized for context window');
+    if (criteria.preferLocal) parts.push('preferring local / air-gapped');
     return parts.join(' — ');
   }
 

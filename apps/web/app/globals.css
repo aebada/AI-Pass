@@ -1,40 +1,38 @@
+/* AI-Pass — Glean-inspired enterprise palette (indigo + warm paper) */
 :root,
-[data-theme='dark'] {
-  --bg: #0d1117;
-  --bg-elevated: #161b22;
-  --bg-hover: #21262d;
-  --border: #30363d;
-  --text: #e6edf3;
-  --text-muted: #8b949e;
-  --accent: #58a6ff;
-  --accent-muted: #1f6feb;
-  --success: #3fb950;
-  --warning: #d29922;
-  --error: #f85149;
-  --font-sans: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-mono: ui-monospace, 'Cascadia Code', 'SF Mono', Menlo, monospace;
-  --ai-bg: var(--bg);
-  --ai-bg-elevated: var(--bg-elevated);
-  --ai-bg-hover: var(--bg-hover);
-  --ai-border: var(--border);
-  --ai-text: var(--text);
-  --ai-text-muted: var(--text-muted);
-  --ai-accent: var(--accent);
-  color-scheme: dark;
-}
-
 [data-theme='light'] {
-  --bg: #f6f8fa;
+  --bg: #f6f3eb;
   --bg-elevated: #ffffff;
-  --bg-hover: #eaeef2;
-  --border: #d0d7de;
-  --text: #1f2328;
-  --text-muted: #656d76;
-  --accent: #0969da;
-  --accent-muted: #0550ae;
-  --success: #1a7f37;
+  --bg-hover: #efece4;
+  --bg-soft: #ebe8e0;
+  --border: #d6d2c8;
+  --text: #1f1f1f;
+  --text-muted: #727272;
+  --color-accent: #343ced;
+  --accent: var(--color-accent);
+  --accent-muted: #131bd4;
+  --accent-deep: #1e2287;
+  --accent-soft: #e2e3fb;
+  --highlight: #d8fd49;
+  --highlight-ink: #1f1f1f;
+  --magenta: #e16bff;
+  --coral: #ff7e4c;
+  --success: #0f9f6e;
   --warning: #9a6700;
   --error: #cf222e;
+  --font-display: 'Space Grotesk', 'DM Sans', sans-serif;
+  --font-sans: 'DM Sans', 'Segoe UI', sans-serif;
+  --font-mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  --space: 8px;
+  --radius: 12px;
+  --text-xs: 0.875rem;
+  --text-sm: 1rem;
+  --text-md: 1.25rem;
+  --text-lg: 1.75rem;
+  --text-xl: 2.75rem;
+  --text-2xl: 3.75rem;
+  --text-3xl: 4.75rem;
+  --section-y: clamp(96px, 12vw, 144px);
   --ai-bg: var(--bg);
   --ai-bg-elevated: var(--bg-elevated);
   --ai-bg-hover: var(--bg-hover);
@@ -42,7 +40,40 @@
   --ai-text: var(--text);
   --ai-text-muted: var(--text-muted);
   --ai-accent: var(--accent);
+  --shadow-soft: 0 18px 48px rgba(31, 31, 31, 0.08);
+  --recover-cache-bust: 2026-08-15-glean-palette;
   color-scheme: light;
+}
+
+[data-theme='dark'] {
+  --bg: #0a0227;
+  --bg-elevated: #12103a;
+  --bg-hover: #1a1750;
+  --bg-soft: #0e0a32;
+  --border: #2a2760;
+  --text: #f7f7f5;
+  --text-muted: #a8a6b8;
+  --color-accent: #535bff;
+  --accent: var(--color-accent);
+  --accent-muted: #343ced;
+  --accent-deep: #131bd4;
+  --accent-soft: rgba(83, 91, 255, 0.18);
+  --highlight: #d8fd49;
+  --highlight-ink: #0a0227;
+  --magenta: #e16bff;
+  --coral: #ff7e4c;
+  --success: #3ecf8e;
+  --warning: #e3b341;
+  --error: #f07178;
+  --ai-bg: var(--bg);
+  --ai-bg-elevated: var(--bg-elevated);
+  --ai-bg-hover: var(--bg-hover);
+  --ai-border: var(--border);
+  --ai-text: var(--text);
+  --ai-text-muted: var(--text-muted);
+  --ai-accent: var(--accent);
+  --shadow-soft: 0 22px 56px rgba(0, 0, 0, 0.45);
+  color-scheme: dark;
 }
 
 * {
@@ -58,17 +89,29 @@ html {
 html,
 body {
   min-height: 100%;
-  background-color: #0d1117;
+  background-color: #f6f3eb;
   background-color: var(--bg);
-  color: #e6edf3;
+  color: #1f1f1f;
   color: var(--text);
   font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  line-height: 1.55;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 body {
   display: block;
+}
+
+h1,
+h2,
+h3,
+.display {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 1.08;
 }
 
 a {
@@ -85,4 +128,64 @@ a {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* Motion system — presence + 150ms micro-interactions */
+@keyframes hero-presence {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.hero-presence,
+.reveal {
+  animation: reveal-up 560ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.hero-presence {
+  animation-name: hero-presence;
+  animation-duration: 700ms;
+}
+
+a,
+button,
+[role='button'],
+input,
+select,
+textarea {
+  transition:
+    color 150ms ease,
+    background-color 150ms ease,
+    border-color 150ms ease,
+    opacity 150ms ease,
+    transform 150ms ease,
+    box-shadow 150ms ease;
+}
+
+[data-theme='light'] body {
+  background-image:
+    radial-gradient(ellipse 75% 48% at 50% -12%, rgba(52, 60, 237, 0.1), transparent 62%),
+    linear-gradient(180deg, #f6f3eb 0%, #ebe8e0 100%);
+}
+
+[data-theme='dark'] body {
+  background-image:
+    radial-gradient(ellipse 70% 45% at 50% -8%, rgba(83, 91, 255, 0.22), transparent),
+    linear-gradient(180deg, #0a0227 0%, #0e0a32 100%);
 }
