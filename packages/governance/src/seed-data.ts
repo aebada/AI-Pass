@@ -1,7 +1,6 @@
 import type {
   AISystem,
   Approval,
-  ComplianceFramework,
   ComplianceMapping,
   GovernancePolicy,
   MonitoringEvent,

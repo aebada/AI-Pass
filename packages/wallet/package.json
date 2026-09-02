@@ -21,6 +21,7 @@
     "@ai-pass/shared": "workspace:*"
   },
   "devDependencies": {
+    "@types/node": "^22.19.21",
     "typescript": "^5.8.3"
   }
 }
