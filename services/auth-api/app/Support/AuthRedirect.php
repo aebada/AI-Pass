@@ -30,4 +30,16 @@ final class AuthRedirect
 
         return $default;
     }
+
+    /** Frontend (Next) login URL used for OAuth error redirects. */
+    public static function loginError(string $error, ?string $callback = null): string
+    {
+        $frontend = rtrim((string) config('aipass.frontend_url', config('app.url')), '/');
+        $query = ['error' => $error];
+        if ($callback) {
+            $query['callbackUrl'] = $callback;
+        }
+
+        return $frontend.'/login?'.http_build_query($query);
+    }
 }

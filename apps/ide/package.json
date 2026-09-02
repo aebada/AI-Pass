@@ -1,0 +1,29 @@
+{
+  "name": "@ai-pass/ide",
+  "version": "1.0.3",
+  "private": true,
+  "description": "AI-Pass IDE — Electron shell for the live aipass.space workspace",
+  "author": "AI Pass <support@aipass.space>",
+  "homepage": "https://aipass.space",
+  "main": "dist/main.js",
+  "scripts": {
+    "start": "pnpm build && electron .",
+    "dev": "pnpm build && AIPASS_WEB_URL=http://localhost:3000 electron .",
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "dist": "pnpm build && electron-builder --config electron-builder.yml",
+    "dist:mac": "pnpm build && electron-builder --config electron-builder.yml --mac",
+    "dist:win": "pnpm build && electron-builder --config electron-builder.yml --win",
+    "dist:linux": "pnpm build && electron-builder --config electron-builder.yml --linux",
+    "clean": "rm -rf dist release"
+  },
+  "dependencies": {
+    "electron-updater": "^6.6.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.0",
+    "electron": "^35.2.0",
+    "electron-builder": "^26.0.12",
+    "typescript": "^5.8.3"
+  }
+}
