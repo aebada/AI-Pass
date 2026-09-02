@@ -7,6 +7,9 @@ dist
 .DS_Store
 .env
 .env.*
+.env.development
+.env.staging
+.env.production
 !.env.example
 !.env.*.example
 .env.local
