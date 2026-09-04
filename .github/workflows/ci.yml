@@ -57,8 +57,11 @@ jobs:
       - name: Typecheck
         run: pnpm typecheck:ci
 
+      # Scoped to packages. apps/web runs `next lint` with no ESLint config, so
+      # it opens an interactive setup prompt and fails in CI. That belongs to
+      # the frontend team; widen this once it is configured.
       - name: Lint
-        run: pnpm lint
+        run: pnpm exec turbo run lint --filter=./packages/*
 
       - name: Test
         run: pnpm test
