@@ -6,7 +6,8 @@
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
-    ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" }
+    ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" },
+    "./server": { "types": "./dist/server/index.d.ts", "import": "./dist/server/index.js" }
   },
   "scripts": {
     "build": "tsc",
@@ -15,7 +16,9 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
-    "@ai-pass/shared": "workspace:*"
+    "@ai-pass/db": "workspace:*",
+    "@better-auth/prisma-adapter": "1.7.2",
+    "better-auth": "1.7.2"
   },
   "devDependencies": {
     "typescript": "^5.8.3"
