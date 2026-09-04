@@ -6,3 +6,5 @@ export { ac, admin, member, owner, roles, statement, isOrganizationRole } from '
 export type { OrganizationRole } from './permissions.js';
 export { provisionOrganization, resolveSessionContext } from './provisioning.js';
 export type { SessionContext } from './provisioning.js';
+export { requireAuth, requirePermission, requireWorkspace } from './middleware.js';
+export type { AuthContext } from './middleware.js';
