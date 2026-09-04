@@ -30,7 +30,7 @@
     "test": "turbo run test",
     "test:e2e": "playwright test",
     "test:e2e:smoke": "playwright test e2e/smoke.spec.ts",
-    "typecheck:ci": "pnpm --filter './packages/*' --filter '!@ai-pass/api-server' typecheck"
+    "typecheck:ci": "pnpm --filter './packages/*' typecheck"
   },
   "devDependencies": {
     "@playwright/test": "^1.54.2",

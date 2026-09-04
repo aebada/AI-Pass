@@ -1,3 +1,5 @@
+import { getAuth, readAuthConfig } from '@ai-pass/auth-core/server';
+import { toNodeHandler } from 'better-auth/node';
 import cors from 'cors';
 import express, { type Express } from 'express';
 import {
@@ -25,7 +27,13 @@ const PORT = Number(process.env.PORT ?? 4000);
 
 export function createApiServer(): Express {
   const app = express();
-  app.use(cors());
+
+  app.use(cors({ origin: readAuthConfig().trustedOrigins, credentials: true }));
+
+  // Better Auth parses the raw request body itself, so it has to be mounted
+  // ahead of express.json().
+  app.all('/api/auth/*', toNodeHandler(getAuth()));
+
   app.use(express.json());
 
   app.get('/api/v1/health', (_req, res) => res.json(handleHealth()));
