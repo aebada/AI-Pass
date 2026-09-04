@@ -4,3 +4,5 @@ export { readAuthConfig } from './config.js';
 export type { AuthConfig } from './config.js';
 export { ac, admin, member, owner, roles, statement, isOrganizationRole } from './permissions.js';
 export type { OrganizationRole } from './permissions.js';
+export { provisionOrganization, resolveSessionContext } from './provisioning.js';
+export type { SessionContext } from './provisioning.js';

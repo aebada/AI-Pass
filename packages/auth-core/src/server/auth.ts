@@ -4,6 +4,7 @@ import { betterAuth } from 'better-auth';
 import { organization } from 'better-auth/plugins';
 import { readAuthConfig } from './config.js';
 import { ac, roles } from './permissions.js';
+import { resolveSessionContext } from './provisioning.js';
 
 const SESSION_LIFETIME_SECONDS = 60 * 60 * 24 * 7;
 const SESSION_REFRESH_SECONDS = 60 * 60 * 24;
@@ -38,6 +39,22 @@ export function createAuth() {
       customRules: {
         '/sign-in/email': { window: 60, max: 5 },
         '/sign-up/email': { window: 3600, max: 10 },
+      },
+    },
+    databaseHooks: {
+      session: {
+        create: {
+          before: async (session) => {
+            const context = await resolveSessionContext(session.userId);
+            return {
+              data: {
+                ...session,
+                activeOrganizationId: context.organizationId,
+                activeTeamId: context.teamId,
+              },
+            };
+          },
+        },
       },
     },
     plugins: [
