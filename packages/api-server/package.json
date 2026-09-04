@@ -19,7 +19,7 @@
     "dev": "tsx watch src/index.ts",
     "start": "node dist/main.js",
     "typecheck": "tsc --noEmit",
-    "clean": "rm -rf dist"
+    "clean": "rm -rf dist *.tsbuildinfo"
   },
   "dependencies": {
     "@ai-pass/auth-core": "workspace:*",

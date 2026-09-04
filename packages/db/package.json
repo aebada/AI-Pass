@@ -15,7 +15,7 @@
     "build": "prisma generate && tsc",
     "dev": "tsc --watch",
     "typecheck": "tsc --noEmit",
-    "clean": "rm -rf dist src/generated",
+    "clean": "rm -rf dist src/generated *.tsbuildinfo",
     "generate": "prisma generate",
     "migrate": "prisma migrate dev",
     "migrate:deploy": "prisma migrate deploy",
