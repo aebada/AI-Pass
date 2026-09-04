@@ -20,9 +20,13 @@ export async function GET(request: Request) {
 
 export async function POST(request: Request) {
   const body = await request.json();
+
   const idempotencyKey = request.headers.get('X-Idempotency-Key') ?? undefined;
   const tenantId = request.headers.get('X-Tenant-Id') ?? undefined;
-  const result = await getLiveSyncEngine().ingestEvent(body, { tenantId });
+
+  const result = await getLiveSyncEngine().ingestEvent(body, {tenantId,idempotencyKey,});
+
   const status = result.status === 'accepted' ? 202 : 400;
+
   return NextResponse.json(result, { status });
 }
