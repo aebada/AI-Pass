@@ -14,7 +14,7 @@
   "scripts": {
     "build": "prisma generate && tsc",
     "dev": "tsc --watch",
-    "typecheck": "prisma generate && tsc --noEmit",
+    "typecheck": "tsc --noEmit",
     "clean": "rm -rf dist src/generated",
     "generate": "prisma generate",
     "migrate": "prisma migrate dev",
