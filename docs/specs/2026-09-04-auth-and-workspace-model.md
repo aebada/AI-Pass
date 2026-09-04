@@ -115,15 +115,25 @@ Access control is statement-based: resources map to actions, and roles grant sub
 
 | Resource | Actions | owner | admin | member |
 |---|---|---|---|---|
-| organization | update, delete, transfer | all | update | — |
-| member | invite, remove, set-role, list | all | all | list |
-| workspace | create, update, delete, list | all | all | list own |
-| workspace-member | add, remove | all | all | — |
-| provider | configure, list | all | all | list |
+| organization | update, delete | both | update | — |
+| member | create, update, delete | all | all | — |
+| invitation | create, cancel | both | both | — |
+| team | create, update, delete | all | all | — |
+| ac | create, read, update, delete | all | all | read |
+| provider | configure, list | both | both | list |
 | model | invoke | yes | yes | yes |
 | apikey | create, revoke, list | all | all | — |
-| billing | view, manage | all | view | — |
+| billing | view, manage | both | view | — |
 | audit | view | yes | yes | — |
+
+`organization`, `member`, `invitation`, `team` and `ac` are the organization
+plugin's own statements and keep its default grants. The remaining four are
+ours.
+
+Reading is not modelled as an action. There is no `list` permission, because
+what a caller may read is decided by which organization and workspaces they
+belong to, not by their role. That scoping is the middleware's job, described
+below.
 
 Better Auth's access control is organization-scoped. It answers whether a user is an admin of
 a given organization; it does not answer whether they may act inside a specific workspace.
