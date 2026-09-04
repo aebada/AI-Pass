@@ -2,6 +2,7 @@ import { getPrisma } from '@ai-pass/db';
 import { prismaAdapter } from '@better-auth/prisma-adapter';
 import { betterAuth } from 'better-auth';
 import { organization } from 'better-auth/plugins';
+import { recordAuditEvent } from './audit.js';
 import { readAuthConfig } from './config.js';
 import { ac, roles } from './permissions.js';
 import { resolveSessionContext } from './provisioning.js';
@@ -10,6 +11,11 @@ const SESSION_LIFETIME_SECONDS = 60 * 60 * 24 * 7;
 const SESSION_REFRESH_SECONDS = 60 * 60 * 24;
 const MIN_PASSWORD_LENGTH = 12;
 const MAX_WORKSPACES_PER_ORGANIZATION = 25;
+
+// Plugin added session columns are loosely typed on the hook payload.
+function asId(value: unknown): string | null {
+  return typeof value === 'string' ? value : null;
+}
 
 export function createAuth() {
   const config = readAuthConfig();
@@ -24,6 +30,15 @@ export function createAuth() {
       enabled: true,
       minPasswordLength: MIN_PASSWORD_LENGTH,
       autoSignIn: false,
+    },
+    socialProviders: config.google ? { google: config.google } : {},
+    account: {
+      accountLinking: {
+        enabled: true,
+        // Google verifies the address it returns, so an existing password
+        // account for that address is the same person.
+        trustedProviders: ['google'],
+      },
     },
     session: {
       expiresIn: SESSION_LIFETIME_SECONDS,
@@ -42,6 +57,18 @@ export function createAuth() {
       },
     },
     databaseHooks: {
+      user: {
+        create: {
+          after: async (user) => {
+            await recordAuditEvent({
+              action: 'auth.user.created',
+              actorUserId: user.id,
+              targetType: 'user',
+              targetId: user.id,
+            });
+          },
+        },
+      },
       session: {
         create: {
           before: async (session) => {
@@ -54,6 +81,16 @@ export function createAuth() {
               },
             };
           },
+          after: async (session) => {
+            await recordAuditEvent({
+              action: 'auth.session.created',
+              actorUserId: session.userId,
+              organizationId: asId(session.activeOrganizationId),
+              teamId: asId(session.activeTeamId),
+              ipAddress: session.ipAddress ?? null,
+              userAgent: session.userAgent ?? null,
+            });
+          },
         },
       },
     },
@@ -65,6 +102,28 @@ export function createAuth() {
           enabled: true,
           maximumTeams: MAX_WORKSPACES_PER_ORGANIZATION,
           allowRemovingAllTeams: false,
+        },
+        organizationHooks: {
+          afterCreateInvitation: async ({ invitation, inviter, organization }) => {
+            await recordAuditEvent({
+              action: 'organization.invitation.created',
+              actorUserId: inviter.user.id,
+              organizationId: organization.id,
+              targetType: 'invitation',
+              targetId: invitation.id,
+              detail: { email: invitation.email, role: invitation.role ?? 'member' },
+            });
+          },
+          afterAcceptInvitation: async ({ invitation, member, organization }) => {
+            await recordAuditEvent({
+              action: 'organization.invitation.accepted',
+              actorUserId: member.userId,
+              organizationId: organization.id,
+              targetType: 'member',
+              targetId: member.id,
+              detail: { invitationId: invitation.id, role: member.role },
+            });
+          },
         },
       }),
     ],
