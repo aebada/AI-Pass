@@ -1,0 +1,64 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: aipass
+          POSTGRES_PASSWORD: aipass
+          POSTGRES_DB: aipass_test
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    env:
+      DATABASE_URL: postgresql://aipass:aipass@localhost:5432/aipass_test
+      BETTER_AUTH_SECRET: ci-only-secret-never-used-outside-ci
+      BETTER_AUTH_URL: http://localhost:4000
+      AUTH_TRUSTED_ORIGINS: http://localhost:3000
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9.15.0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - name: Generate Prisma client
+        run: pnpm --filter @ai-pass/db generate
+
+      - name: Apply migrations
+        run: pnpm --filter @ai-pass/db migrate:deploy
+
+      - name: Typecheck
+        run: pnpm typecheck:ci
+
+      - name: Lint
+        run: pnpm lint
+
+      - name: Test
+        run: pnpm test
