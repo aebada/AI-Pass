@@ -24,9 +24,13 @@
   },
   "dependencies": {
     "@prisma/adapter-pg": "7.10.0",
-    "@prisma/client": "7.10.0"
+    "@prisma/client": "7.10.0",
+    "pg": "^8.13.1"
   },
   "devDependencies": {
+    "@types/node": "^22.10.2",
+    "@types/pg": "^8.11.10",
+    "dotenv": "^16.4.7",
     "prisma": "7.10.0",
     "typescript": "^5.8.3"
   }
