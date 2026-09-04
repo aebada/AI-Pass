@@ -1,0 +1,33 @@
+{
+  "name": "@ai-pass/db",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "prisma generate && tsc",
+    "dev": "tsc --watch",
+    "typecheck": "prisma generate && tsc --noEmit",
+    "clean": "rm -rf dist src/generated",
+    "generate": "prisma generate",
+    "migrate": "prisma migrate dev",
+    "migrate:deploy": "prisma migrate deploy",
+    "migrate:status": "prisma migrate status",
+    "studio": "prisma studio"
+  },
+  "dependencies": {
+    "@prisma/adapter-pg": "7.10.0",
+    "@prisma/client": "7.10.0"
+  },
+  "devDependencies": {
+    "prisma": "7.10.0",
+    "typescript": "^5.8.3"
+  }
+}
