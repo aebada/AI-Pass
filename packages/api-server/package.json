@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "@ai-pass/auth-core": "workspace:*",
+    "@ai-pass/db": "workspace:*",
     "@ai-pass/invoice-ai": "workspace:*",
     "@ai-pass/platform-api": "workspace:*",
     "@ai-pass/platform-core": "workspace:*",
