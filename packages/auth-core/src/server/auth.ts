@@ -1,11 +1,14 @@
 import { getPrisma } from '@ai-pass/db';
 import { prismaAdapter } from '@better-auth/prisma-adapter';
 import { betterAuth } from 'better-auth';
+import { organization } from 'better-auth/plugins';
 import { readAuthConfig } from './config.js';
+import { ac, roles } from './permissions.js';
 
 const SESSION_LIFETIME_SECONDS = 60 * 60 * 24 * 7;
 const SESSION_REFRESH_SECONDS = 60 * 60 * 24;
 const MIN_PASSWORD_LENGTH = 12;
+const MAX_WORKSPACES_PER_ORGANIZATION = 25;
 
 export function createAuth() {
   const config = readAuthConfig();
@@ -37,6 +40,17 @@ export function createAuth() {
         '/sign-up/email': { window: 3600, max: 10 },
       },
     },
+    plugins: [
+      organization({
+        ac,
+        roles,
+        teams: {
+          enabled: true,
+          maximumTeams: MAX_WORKSPACES_PER_ORGANIZATION,
+          allowRemovingAllTeams: false,
+        },
+      }),
+    ],
   });
 }
 
