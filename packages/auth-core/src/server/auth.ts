@@ -33,11 +33,12 @@ export function createAuth() {
     },
     socialProviders: config.google ? { google: config.google } : {},
     account: {
+      // Linking Google to an existing password account is only safe once the
+      // password side proves the address too. Until email verification is
+      // delivered, someone could register with an address they do not own and
+      // be linked to its real owner when that owner signs in with Google.
       accountLinking: {
-        enabled: true,
-        // Google verifies the address it returns, so an existing password
-        // account for that address is the same person.
-        trustedProviders: ['google'],
+        enabled: false,
       },
     },
     session: {

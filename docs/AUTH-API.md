@@ -106,6 +106,17 @@ Three roles: `owner`, `admin`, `member`. The full matrix is in
 The first user to register gets an organization and a `General` workspace, and
 becomes its owner.
 
+## Account linking
+
+Signing in with Google using an address that already has a password account
+fails rather than linking the two. Linking is disabled on purpose.
+
+Enabling it would let someone register with an address they do not control and
+be linked to the real owner the moment that owner signs in with Google. The
+protection against that is verifying the address on the password side, which
+needs an email provider. Turn linking on in the same change that makes email
+verification work, not before.
+
 ## Not yet available
 
 These are configured in schema or planned but do not work today:

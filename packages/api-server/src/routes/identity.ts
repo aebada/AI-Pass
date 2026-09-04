@@ -63,7 +63,7 @@ export function createIdentityRouter(): Router {
     requireWorkspace(),
     wrap(async (req, res) => {
       const workspace = await getPrisma().team.findUnique({
-        where: { id: req.params.workspaceId as string },
+        where: { id: req.params.workspaceId },
         select: {
           id: true,
           name: true,
