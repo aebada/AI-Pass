@@ -1,0 +1,20 @@
+FROM node:22-slim AS build
+RUN apt-get update && apt-get install -y --no-install-recommends openssl ca-certificates \
+  && rm -rf /var/lib/apt/lists/*
+RUN corepack enable
+WORKDIR /app
+COPY . .
+RUN pnpm install --frozen-lockfile --filter "@ai-pass/api-server..."
+RUN pnpm --filter @ai-pass/db generate
+RUN pnpm --filter "@ai-pass/api-server..." build
+
+FROM node:22-slim AS runtime
+RUN apt-get update && apt-get install -y --no-install-recommends openssl ca-certificates \
+  && rm -rf /var/lib/apt/lists/*
+ENV NODE_ENV=production
+ENV PORT=4000
+WORKDIR /app
+COPY --from=build /app .
+USER node
+EXPOSE 4000
+CMD ["node", "packages/api-server/dist/main.js"]
