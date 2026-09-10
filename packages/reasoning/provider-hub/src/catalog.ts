@@ -77,7 +77,7 @@ export const PROVIDER_DEFINITIONS: ProviderDefinition[] = [
     website: 'https://mistral.ai',
     supportsStreaming: true,
     supportsTools: true,
-    backendProvider: 'openai-compatible',
+    backendProvider: 'mistral',
     defaultBaseUrl: 'https://api.mistral.ai/v1',
   },
   {
@@ -108,7 +108,7 @@ export const PROVIDER_DEFINITIONS: ProviderDefinition[] = [
     website: 'https://ollama.com',
     supportsStreaming: true,
     supportsTools: false,
-    backendProvider: 'openai-compatible',
+    backendProvider: 'local',
     defaultBaseUrl: 'http://localhost:11434/v1',
   },
   {

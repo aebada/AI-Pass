@@ -112,7 +112,7 @@ export interface AgentContext {
   cwd: string;
 }
 
-export type ProviderId = 'openai' | 'anthropic' | 'openai-compatible';
+export type ProviderId = 'openai' | 'anthropic' | 'openai-compatible' | 'mistral' | 'local';
 
 export interface ModelConfig {
   provider: ProviderId;

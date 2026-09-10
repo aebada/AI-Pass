@@ -3,11 +3,15 @@ import type { AIProvider } from './index.js';
 import { OpenAIProvider } from './providers/openai.js';
 import { AnthropicProvider } from './providers/anthropic.js';
 import { OpenAICompatibleProvider } from './providers/openai-compatible.js';
+import { MistralProvider } from './providers/mistral.js';
+import { LocalProvider } from './providers/local.js';
 
 const providers = new Map<string, () => AIProvider>([
   ['openai', () => new OpenAIProvider()],
   ['anthropic', () => new AnthropicProvider()],
   ['openai-compatible', () => new OpenAICompatibleProvider()],
+  ['mistral', () => new MistralProvider()],
+  ['local', () => new LocalProvider()],
 ]);
 
 export function createProvider(config: ModelConfig): AIProvider {
