@@ -15,7 +15,7 @@ export default function PublishAppWizardPage() {
   const [step, setStep] = useState(0);
 
   return (
-    <WorkspaceLayoutClient title="Publish App" subtitle="7-step wizard — reuses marketplace publish flow">
+    <WorkspaceLayoutClient title="Publish App" subtitle="7-step wizard - reuses marketplace publish flow">
       <Link href={STORE_ROUTES.developer} className={styles.navLink}>← Developer Dashboard</Link>
       <div className={styles.wizard} style={{ marginTop: 16 }}>
         <div className={styles.wizardSteps}>

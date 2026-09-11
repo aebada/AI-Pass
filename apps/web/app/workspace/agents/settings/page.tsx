@@ -24,11 +24,11 @@ export default function AgentSettingsPage() {
       <div className={styles.card} style={{ marginTop: 16 }}>
         <h3>Integrations</h3>
         <ul className={styles.logs}>
-          <li>AI Wallet — credit deduction per execution</li>
-          <li>LiveSync — event-driven agent triggers</li>
-          <li>Knowledge Pipeline — RAG retrieval for agents</li>
-          <li>Trust Engine — certification and trust scores</li>
-          <li>Governance — policy enforcement before execute</li>
+          <li>AI Wallet - credit deduction per execution</li>
+          <li>LiveSync - event-driven agent triggers</li>
+          <li>Knowledge Pipeline - RAG retrieval for agents</li>
+          <li>Trust Engine - certification and trust scores</li>
+          <li>Governance - policy enforcement before execute</li>
         </ul>
       </div>
     </>

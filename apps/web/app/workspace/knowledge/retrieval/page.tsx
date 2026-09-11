@@ -31,7 +31,7 @@ export default function RetrievalPlaygroundPage() {
   }
 
   return (
-    <WorkspaceLayoutClient title="RAG Playground" subtitle="Retrieval testing — chunks, citations, confidence, graph links">
+    <WorkspaceLayoutClient title="RAG Playground" subtitle="Retrieval testing - chunks, citations, confidence, graph links">
       <KnowledgeShell>
         <Card padding="md" style={{ marginBottom: 16 }}>
           <textarea value={query} onChange={(e) => setQuery(e.target.value)} rows={3} style={{ width: '100%', padding: 8, borderRadius: 6, border: `1px solid ${workspaceTokens.colors.border}`, marginBottom: 8 }} />

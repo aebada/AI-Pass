@@ -48,7 +48,7 @@ export default function FrameworksPage() {
                 <td><strong>{f.name}</strong> ({f.code})</td>
                 <td>{f.progress}%</td>
                 <td>{f.ownerName}</td>
-                <td>{f.targetCertificationDate ? new Date(f.targetCertificationDate).toLocaleDateString() : '—'}</td>
+                <td>{f.targetCertificationDate ? new Date(f.targetCertificationDate).toLocaleDateString() : '-'}</td>
               </tr>
             ))}
           </tbody>

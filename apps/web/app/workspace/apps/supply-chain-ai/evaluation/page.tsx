@@ -76,7 +76,7 @@ export default function EvaluationPage() {
               <ul style={{ margin: 0, padding: 0, listStyle: 'none' }}>
                 {result.agentResults.map((a, i) => (
                   <li key={i} style={{ padding: '10px 0', borderBottom: '1px solid var(--border)', fontSize: 13 }}>
-                    <strong>{a.agentName}</strong> — {a.summary}
+                    <strong>{a.agentName}</strong> - {a.summary}
                     <div className={styles.muted}>{a.creditsUsed} credits · {Math.round(a.confidence * 100)}% confidence</div>
                   </li>
                 ))}

@@ -11,7 +11,7 @@ export async function POST(request: Request) {
     defaultPresenceAuditPlatform.companies.getByTenant(tenantId);
 
   if (!company) {
-    return NextResponse.json({ error: 'Company not found — create company profile first' }, { status: 404 });
+    return NextResponse.json({ error: 'Company not found - create company profile first' }, { status: 404 });
   }
 
   try {

@@ -24,7 +24,7 @@ export default function VendorsPage() {
             {DEMO_VENDORS.map((v) => (
               <tr key={v.id}>
                 <td>{v.name}</td>
-                <td>{v.country ?? '—'}</td>
+                <td>{v.country ?? '-'}</td>
                 <td>
                   <span
                     style={{

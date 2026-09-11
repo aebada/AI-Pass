@@ -40,7 +40,7 @@ export default async function PublicTrustCenterPage({
         </ul>
         {trustCenter.certifications.map((c) => (
           <p key={c.name} style={{ fontSize: 14 }}>
-            {c.name} ({c.level}) — valid until {new Date(c.validUntil).toLocaleDateString()}
+            {c.name} ({c.level}) - valid until {new Date(c.validUntil).toLocaleDateString()}
             {' · '}
             <a href={c.verificationUrl}>Verify</a>
           </p>

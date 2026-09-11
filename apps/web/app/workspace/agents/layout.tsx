@@ -23,7 +23,7 @@ export default function AgentsLayout({ children }: { children: React.ReactNode }
   return (
     <WorkspaceLayoutClient
       title="Agent Studio"
-      subtitle="Professional agent development platform — core intelligence layer for AI-Pass"
+      subtitle="Professional agent development platform - core intelligence layer for AI-Pass"
     >
       <div className={styles.layout}>
         <nav className={styles.nav}>

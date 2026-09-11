@@ -34,7 +34,7 @@ export default async function BestAiPage({ params }: { params: Promise<{ slug: s
       <h1 className={styles.heroTitle}>{page.headline}</h1>
       <p className={styles.heroSub}>{page.description}</p>
       {page.membershipGate && (
-        <p className={styles.cardMeta}>🔒 Premium list — requires {page.membershipGate} membership</p>
+        <p className={styles.cardMeta}>🔒 Premium list - requires {page.membershipGate} membership</p>
       )}
       <div className={styles.grid}>
         {tools.map((t) => <ToolCard key={t.id} tool={t} />)}

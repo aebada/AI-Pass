@@ -4,7 +4,7 @@ import { DealCard } from '../components/DiscoverComponents';
 import styles from '../discover.module.css';
 
 export const metadata: Metadata = {
-  title: 'AI Deals Hub — Lifetime Deals & Discounts | AI Pass',
+  title: 'AI Deals Hub - Lifetime Deals & Discounts | AI Pass',
   description: 'Limited-time AI tool deals, bundles, enterprise packages, and lifetime offers.',
 };
 

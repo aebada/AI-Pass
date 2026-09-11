@@ -1,4 +1,4 @@
-/** Enterprise design tokens — light/dark via CSS variables */
+/** Enterprise design tokens - light/dark via CSS variables */
 export const tokens = {
   colors: {
     bg: 'var(--bg, #0d1117)',

@@ -34,7 +34,7 @@ export function ComplianceShell({
   return (
     <WorkspaceLayoutClient
       title="Compliance AI"
-      subtitle="Enterprise compliance operations — frameworks, risks, evidence, and trust"
+      subtitle="Enterprise compliance operations - frameworks, risks, evidence, and trust"
     >
       <div className={styles.app}>
         <nav className={styles.subNav}>

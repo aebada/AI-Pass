@@ -39,7 +39,7 @@ export default function EvidencePage() {
                 <td>{e.type}</td>
                 <td>{e.source}</td>
                 <td>{e.status}</td>
-                <td>{e.collectedAt ? new Date(e.collectedAt).toLocaleDateString() : '—'}</td>
+                <td>{e.collectedAt ? new Date(e.collectedAt).toLocaleDateString() : '-'}</td>
               </tr>
             ))}
           </tbody>

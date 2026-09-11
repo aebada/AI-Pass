@@ -54,7 +54,7 @@ export default function AppDetailClient() {
             </div>
             <ul style={{ marginTop: 12, fontSize: 13 }}>
               {detail.permissionsDetail.map((p) => (
-                <li key={p.id}>{p.label} — {p.description}</li>
+                <li key={p.id}>{p.label} - {p.description}</li>
               ))}
             </ul>
           </Card>
@@ -103,7 +103,7 @@ export default function AppDetailClient() {
           <Card padding="md">
             <h4 className={styles.sectionTitle}>Versions</h4>
             {detail.versions.map((v) => (
-              <p key={v.id} className={styles.cardMeta}>v{v.version} — {v.status}</p>
+              <p key={v.id} className={styles.cardMeta}>v{v.version} - {v.status}</p>
             ))}
           </Card>
           <Card padding="md">

@@ -70,7 +70,7 @@ export default function AgentsDashboardPage() {
           <p className={styles.statLabel}>Credits Used</p>
         </div>
         <div className={styles.stat}>
-          <p className={styles.statValue}>{monitoring?.health ?? '—'}</p>
+          <p className={styles.statValue}>{monitoring?.health ?? '-'}</p>
           <p className={styles.statLabel}>Health</p>
         </div>
       </div>

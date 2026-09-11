@@ -7,7 +7,7 @@ import styles from '../compliance-ai.module.css';
 export default function AdminPage() {
   return (
     <ComplianceShell>
-      <p className={styles.hint}>Administration — workflows, integrations, membership gates, and audit configuration.</p>
+      <p className={styles.hint}>Administration - workflows, integrations, membership gates, and audit configuration.</p>
       <div className={styles.card}>
         <p className={styles.cardTitle}>Compliance Workflows</p>
         <ul style={{ margin: 0, paddingLeft: 20, fontSize: 13 }}>
@@ -21,10 +21,10 @@ export default function AdminPage() {
         <table className={styles.table}>
           <thead><tr><th>Feature</th><th>Free</th><th>Starter (Pro)</th><th>Growth (Power)</th><th>Enterprise</th></tr></thead>
           <tbody>
-            <tr><td>Compliance AI core</td><td>—</td><td>✓</td><td>✓</td><td>✓</td></tr>
-            <tr><td>Trust Center publish</td><td>—</td><td>—</td><td>✓</td><td>✓</td></tr>
-            <tr><td>AI Copilot</td><td>—</td><td>—</td><td>✓</td><td>✓</td></tr>
-            <tr><td>Audit evidence packages</td><td>—</td><td>—</td><td>—</td><td>✓</td></tr>
+            <tr><td>Compliance AI core</td><td>-</td><td>✓</td><td>✓</td><td>✓</td></tr>
+            <tr><td>Trust Center publish</td><td>-</td><td>-</td><td>✓</td><td>✓</td></tr>
+            <tr><td>AI Copilot</td><td>-</td><td>-</td><td>✓</td><td>✓</td></tr>
+            <tr><td>Audit evidence packages</td><td>-</td><td>-</td><td>-</td><td>✓</td></tr>
           </tbody>
         </table>
       </div>

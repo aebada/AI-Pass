@@ -15,7 +15,7 @@ const DOCS = [
 ];
 
 const FAQ = [
-  { q: 'What makes AI Pass different?', a: 'AI Pass is an enterprise AI operating system — not just a chatbot or IDE. Describe requirements in plain language, generate apps and workflows, and deploy with governance, trust, and compliance built in.' },
+  { q: 'What makes AI Pass different?', a: 'AI Pass is an enterprise AI operating system - not just a chatbot or IDE. Describe requirements in plain language, generate apps and workflows, and deploy with governance, trust, and compliance built in.' },
   { q: 'Where are API keys stored?', a: 'Locally in your browser via localStorage. Production should use a secure vault.' },
   { q: 'Can I deploy on-prem?', a: 'Enterprise plan supports VPC and on-prem deployments (contact sales).' },
 ];

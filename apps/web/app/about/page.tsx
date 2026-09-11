@@ -7,7 +7,7 @@ const PILLARS = [
   {
     icon: '🏢',
     title: 'One Workspace',
-    text: 'Agents, workflows, knowledge, apps, and governance in a single command center — no fragmented dashboards.',
+    text: 'Agents, workflows, knowledge, apps, and governance in a single command center - no fragmented dashboards.',
   },
   {
     icon: '🎫',
@@ -45,7 +45,7 @@ export default function AboutPage() {
           <h1 className={styles.heroTitle}>Unified AI Operating System</h1>
           <p className={styles.heroSub}>
             Our mission is to give every enterprise a single, governed platform where AI agents, workflows,
-            apps, and knowledge work together — not as disconnected tools, but as one operating system.
+            apps, and knowledge work together - not as disconnected tools, but as one operating system.
           </p>
         </div>
       </section>
@@ -58,19 +58,19 @@ export default function AboutPage() {
         <div className={styles.contentBlock}>
           <p>
             We envision a world where teams describe outcomes in plain language and AI Pass orchestrates the
-            agents, workflows, and apps to deliver them — with governance, audit trails, and trust built in
+            agents, workflows, and apps to deliver them - with governance, audit trails, and trust built in
             from day one.
           </p>
           <p>
             <strong>AI Pass is an enterprise AI operating system.</strong> It unifies the full stack of AI
-            capabilities — from model access and agent studio to marketplace apps and compliance — under one
+            capabilities - from model access and agent studio to marketplace apps and compliance - under one
             roof.
           </p>
         </div>
         <div className={styles.notList}>
           <div className={styles.notCard}>
             <span className={styles.notLabel}>Not a chatbot</span>
-            <span className={styles.notText}>Conversational AI is one module — not the whole platform.</span>
+            <span className={styles.notText}>Conversational AI is one module - not the whole platform.</span>
           </div>
           <div className={styles.notCard}>
             <span className={styles.notLabel}>Not IDE-only</span>

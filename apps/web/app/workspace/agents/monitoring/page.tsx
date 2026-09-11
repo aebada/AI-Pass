@@ -39,7 +39,7 @@ export default function AgentMonitoringPage() {
           <p className={styles.statLabel}>Credits</p>
         </div>
         <div className={styles.stat}>
-          <p className={styles.statValue}>{String(snapshot?.health ?? '—')}</p>
+          <p className={styles.statValue}>{String(snapshot?.health ?? '-')}</p>
           <p className={styles.statLabel}>Health</p>
         </div>
       </div>

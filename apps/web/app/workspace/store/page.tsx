@@ -39,7 +39,7 @@ export default function StoreHomePage() {
           <form className={styles.searchBar} onSubmit={handleSearch}>
             <input
               className={styles.searchInput}
-              placeholder="Search apps — keyword or semantic…"
+              placeholder="Search apps - keyword or semantic…"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
             />

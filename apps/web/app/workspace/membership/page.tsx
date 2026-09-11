@@ -51,7 +51,7 @@ export default function MembershipPage() {
     >
       <div className={styles.hero}>
         <p className={styles.heroText}>
-          Like Netflix for AI — subscribe once, access GPT-5, Claude, Gemini, DeepSeek, and {MEMBERSHIP_PLANS.length > 0 ? '30+' : 'all'} models
+          Like Netflix for AI - subscribe once, access GPT-5, Claude, Gemini, DeepSeek, and {MEMBERSHIP_PLANS.length > 0 ? '30+' : 'all'} models
           without managing separate API keys or provider subscriptions.
         </p>
       </div>
@@ -115,7 +115,7 @@ export default function MembershipPage() {
                   <td>{FEATURE_LABELS[feature] ?? feature}</td>
                   {(['free', 'professional', 'power', 'enterprise'] as MembershipTier[]).map((tier) => (
                     <td key={tier} className={styles.checkCell}>
-                      {MEMBERSHIP_FEATURE_MATRIX[feature]?.[tier] ? '✓' : '—'}
+                      {MEMBERSHIP_FEATURE_MATRIX[feature]?.[tier] ? '✓' : '-'}
                     </td>
                   ))}
                 </tr>

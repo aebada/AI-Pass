@@ -35,50 +35,50 @@ export default function ComplianceDashboardPage() {
   return (
     <ComplianceShell showCopilot>
       <p className={styles.hint}>
-        Complete compliance operations platform — security, privacy, AI governance, certification, and regulatory automation.
+        Complete compliance operations platform - security, privacy, AI governance, certification, and regulatory automation.
       </p>
 
       <div className={styles.grid}>
         <div className={styles.card}>
           <p className={styles.cardTitle}>Compliance Score</p>
-          <p className={styles.statValue}>{d?.complianceScore ?? '—'}%</p>
+          <p className={styles.statValue}>{d?.complianceScore ?? '-'}%</p>
         </div>
         <div className={styles.card}>
           <p className={styles.cardTitle}>Active Frameworks</p>
-          <p className={styles.statValue}>{d?.activeFrameworks ?? '—'}</p>
+          <p className={styles.statValue}>{d?.activeFrameworks ?? '-'}</p>
           <p className={styles.statSub}>ISO 27001, GDPR, ISO 42001</p>
         </div>
         <div className={styles.card}>
           <p className={styles.cardTitle}>Open Risks</p>
-          <p className={styles.statValue}>{d?.openRisks ?? '—'}</p>
+          <p className={styles.statValue}>{d?.openRisks ?? '-'}</p>
           <p className={styles.statSub}>{d?.criticalRisks ?? 0} critical/high</p>
         </div>
         <div className={styles.card}>
           <p className={styles.cardTitle}>Evidence</p>
-          <p className={styles.statValue}>{d?.evidenceCollected ?? '—'}</p>
+          <p className={styles.statValue}>{d?.evidenceCollected ?? '-'}</p>
           <p className={styles.statSub}>{d?.evidencePending ?? 0} pending</p>
         </div>
         <div className={styles.card}>
           <p className={styles.cardTitle}>Vendor Risk</p>
-          <p className={styles.statValue}>{d?.vendorHighRisk ?? '—'}</p>
+          <p className={styles.statValue}>{d?.vendorHighRisk ?? '-'}</p>
           <p className={styles.statSub}>high-risk vendors</p>
         </div>
         <div className={styles.card}>
           <p className={styles.cardTitle}>AI Governance</p>
-          <p className={styles.statValue} style={{ fontSize: 14 }}>{d?.aiGovernanceStatus ?? '—'}</p>
+          <p className={styles.statValue} style={{ fontSize: 14 }}>{d?.aiGovernanceStatus ?? '-'}</p>
         </div>
         <div className={styles.card}>
           <p className={styles.cardTitle}>Employee Compliance</p>
-          <p className={styles.statValue}>{d?.employeeComplianceRate ?? '—'}%</p>
+          <p className={styles.statValue}>{d?.employeeComplianceRate ?? '-'}%</p>
         </div>
         <div className={styles.card}>
           <p className={styles.cardTitle}>Audit Readiness</p>
-          <p className={styles.statValue}>{d?.auditReadiness ?? '—'}%</p>
+          <p className={styles.statValue}>{d?.auditReadiness ?? '-'}%</p>
         </div>
         <div className={styles.card}>
           <p className={styles.cardTitle}>Trust Center</p>
           <p className={styles.statValue} style={{ fontSize: 16, textTransform: 'capitalize' }}>
-            {d?.trustCenterStatus ?? '—'}
+            {d?.trustCenterStatus ?? '-'}
           </p>
         </div>
       </div>

@@ -33,7 +33,7 @@ export default function VendorsPage() {
                 <td>{v.category}</td>
                 <td><SeverityBadge severity={v.riskClass} /></td>
                 <td>{v.questionnaireStatus.replace(/_/g, ' ')}</td>
-                <td>{v.integrationProvider ?? '—'}</td>
+                <td>{v.integrationProvider ?? '-'}</td>
                 <td>{v.status}</td>
               </tr>
             ))}

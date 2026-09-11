@@ -40,7 +40,7 @@ export default function AgentMonitorPage() {
         </tbody>
       </table>
       {agentEvents.length === 0 && (
-        <p style={{ color: '#8b949e', fontSize: 13 }}>No agent events yet — trigger via Execution or LiveSync test.</p>
+        <p style={{ color: '#8b949e', fontSize: 13 }}>No agent events yet - trigger via Execution or LiveSync test.</p>
       )}
     </LiveSyncShell>
   );

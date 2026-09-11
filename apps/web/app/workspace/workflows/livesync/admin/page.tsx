@@ -35,12 +35,12 @@ export default function AdminPage() {
 
       <h3 style={{ fontSize: 14, marginTop: 32 }}>Security (stubs)</h3>
       <ul style={{ fontSize: 13, color: '#8b949e', lineHeight: 1.8 }}>
-        <li>RBAC — roles: admin, events:write</li>
-        <li>Tenant isolation — X-Tenant-Id header</li>
-        <li>Signed webhooks — LIVESYNC_WEBHOOK_SECRET</li>
-        <li>Rate limiting — 120 req/min per tenant</li>
-        <li>Replay protection — X-Idempotency-Key</li>
-        <li>Audit logs — in-engine security service</li>
+        <li>RBAC - roles: admin, events:write</li>
+        <li>Tenant isolation - X-Tenant-Id header</li>
+        <li>Signed webhooks - LIVESYNC_WEBHOOK_SECRET</li>
+        <li>Rate limiting - 120 req/min per tenant</li>
+        <li>Replay protection - X-Idempotency-Key</li>
+        <li>Audit logs - in-engine security service</li>
       </ul>
 
       <h3 style={{ fontSize: 14, marginTop: 24 }}>DevOps</h3>

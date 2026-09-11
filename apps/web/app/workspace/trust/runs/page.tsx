@@ -22,7 +22,7 @@ export default function ValidationRunsPage() {
                 <div style={{ fontSize: 11, opacity: 0.6 }}>{r.id} · {new Date(r.startedAt).toLocaleString()}</div>
               </div>
               <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
-                <span>{r.scorecard?.overall ?? '—'}</span>
+                <span>{r.scorecard?.overall ?? '-'}</span>
                 <Badge variant={r.recommendation === 'PASS' ? 'success' : r.recommendation === 'FAIL' ? 'danger' : 'outline'}>
                   {r.recommendation ?? r.status}
                 </Badge>

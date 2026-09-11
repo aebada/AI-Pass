@@ -48,7 +48,7 @@ export default function LiveSyncDashboardPage() {
       <div className={styles.grid}>
         <article className={styles.stat}>
           <h3>Engine Status</h3>
-          <p className={styles.value}>{String(health?.status ?? '—')}</p>
+          <p className={styles.value}>{String(health?.status ?? '-')}</p>
           <StatusBadge status={String(health?.queue ?? 'unknown')} />
         </article>
         <article className={styles.stat}>

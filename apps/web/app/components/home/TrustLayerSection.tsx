@@ -186,7 +186,7 @@ export function TrustLayerSection() {
               <span className={styles.trustDashDot} />
               <span className={styles.trustDashDot} />
               <span className={styles.trustDashDot} />
-              <span className={styles.trustDashTitle}>Trust Engine — Live Overview</span>
+              <span className={styles.trustDashTitle}>Trust Engine - Live Overview</span>
             </div>
             <div className={styles.trustDashBody}>
               <div className={styles.trustDashMetric}>
@@ -201,7 +201,7 @@ export function TrustLayerSection() {
               </div>
               <div className={styles.trustDashMetric}>
                 <span className={styles.trustDashMetricLabel}>Certification</span>
-                <span className={styles.trustDashBadgeGold}>Gold — Active</span>
+                <span className={styles.trustDashBadgeGold}>Gold - Active</span>
               </div>
               <div className={styles.trustDashMetric}>
                 <span className={styles.trustDashMetricLabel}>Monitoring</span>
@@ -211,7 +211,7 @@ export function TrustLayerSection() {
               <div className={styles.trustDashAlerts}>
                 <span className={styles.trustDashMetricLabel}>Alerts</span>
                 <div className={styles.trustDashAlertRow}>
-                  <span className={styles.trustDashAlertWarn}>⚠ Drift detected — Model v2.3</span>
+                  <span className={styles.trustDashAlertWarn}>⚠ Drift detected - Model v2.3</span>
                   <span className={styles.trustDashAlertOk}>✓ Compliance scan passed</span>
                 </div>
               </div>
@@ -271,7 +271,7 @@ export function TrustLayerSection() {
           </div>
           <p className={styles.trustStoriesNote}>
             Finance teams certify invoice AI. Healthcare validates diagnostic assistants.
-            Government agencies audit citizen-facing chatbots — all through one Trust Engine.
+            Government agencies audit citizen-facing chatbots - all through one Trust Engine.
           </p>
         </div>
 

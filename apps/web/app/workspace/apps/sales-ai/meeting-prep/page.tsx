@@ -51,7 +51,7 @@ export default function MeetingPrepPage() {
           <div className={styles.grid}>
             <section className={styles.card}>
               <h3 className={styles.cardTitle}>Decision Makers</h3>
-              <ul>{display.decisionMakers.map((d) => <li key={d.name}>{d.name} — {d.title}</li>)}</ul>
+              <ul>{display.decisionMakers.map((d) => <li key={d.name}>{d.name} - {d.title}</li>)}</ul>
             </section>
             <section className={styles.card}>
               <h3 className={styles.cardTitle}>Recent News</h3>

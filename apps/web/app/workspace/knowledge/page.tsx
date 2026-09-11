@@ -36,7 +36,7 @@ export default function KnowledgeDashboardPage() {
   const s = data?.status;
 
   return (
-    <WorkspaceLayoutClient title="Knowledge" subtitle="Enterprise knowledge infrastructure — single source of truth for AI context">
+    <WorkspaceLayoutClient title="Knowledge" subtitle="Enterprise knowledge infrastructure - single source of truth for AI context">
       <ModuleScaffold
         title="Knowledge Pipeline"
         description="Ingest, enrich, index, and serve knowledge to all AI agents and applications."
@@ -51,17 +51,17 @@ export default function KnowledgeDashboardPage() {
       >
         <KnowledgeShell>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(130px, 1fr))', gap: 12, marginBottom: 24 }}>
-            <StatCard label="Sources" value={s?.sources ?? '—'} />
-            <StatCard label="Active Pipelines" value={s?.activePipelines ?? '—'} tone="success" />
-            <StatCard label="Documents" value={s?.documents ?? '—'} />
-            <StatCard label="Chunks" value={s?.chunks ?? '—'} />
-            <StatCard label="Embeddings" value={s?.embeddings ?? '—'} />
-            <StatCard label="Graph Entities" value={s?.graphEntities ?? '—'} />
-            <StatCard label="Graph Edges" value={s?.graphEdges ?? '—'} />
-            <StatCard label="Sync Events" value={s?.syncEvents ?? '—'} />
-            <StatCard label="Retrieval (ms)" value={s?.retrievalLatencyMs ?? '—'} tone="success" />
+            <StatCard label="Sources" value={s?.sources ?? '-'} />
+            <StatCard label="Active Pipelines" value={s?.activePipelines ?? '-'} tone="success" />
+            <StatCard label="Documents" value={s?.documents ?? '-'} />
+            <StatCard label="Chunks" value={s?.chunks ?? '-'} />
+            <StatCard label="Embeddings" value={s?.embeddings ?? '-'} />
+            <StatCard label="Graph Entities" value={s?.graphEntities ?? '-'} />
+            <StatCard label="Graph Edges" value={s?.graphEdges ?? '-'} />
+            <StatCard label="Sync Events" value={s?.syncEvents ?? '-'} />
+            <StatCard label="Retrieval (ms)" value={s?.retrievalLatencyMs ?? '-'} tone="success" />
             <StatCard label="Failures" value={s?.failures ?? 0} tone={s?.failures ? 'error' : undefined} />
-            <StatCard label="Storage" value={s ? `${(s.storageBytes / 1024).toFixed(0)} KB` : '—'} />
+            <StatCard label="Storage" value={s ? `${(s.storageBytes / 1024).toFixed(0)} KB` : '-'} />
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>

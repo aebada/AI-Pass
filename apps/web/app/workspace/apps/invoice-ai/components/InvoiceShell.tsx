@@ -31,7 +31,7 @@ export function InvoiceShell({
   return (
     <WorkspaceLayoutClient
       title="Invoice AI"
-      subtitle="Enterprise finance automation — extraction, validation, fraud, approvals"
+      subtitle="Enterprise finance automation - extraction, validation, fraud, approvals"
     >
       <div className={styles.app}>
         <nav className={styles.subNav}>

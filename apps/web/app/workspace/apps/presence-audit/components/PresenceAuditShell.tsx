@@ -25,7 +25,7 @@ export function PresenceAuditShell({ children }: { children: ReactNode }) {
   return (
     <WorkspaceLayoutClient
       title="Presence Audit"
-      subtitle="AI Visibility Intelligence — ChatGPT, Claude, Gemini, Perplexity"
+      subtitle="AI Visibility Intelligence - ChatGPT, Claude, Gemini, Perplexity"
     >
       <div className={styles.app}>
         <nav className={styles.subNav}>

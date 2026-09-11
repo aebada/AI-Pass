@@ -85,7 +85,7 @@ export default function MarketplaceBillingPage() {
           Platform fee: ${sampleRevenue.platformFee.toFixed(2)} ·
           Gross: ${sampleRevenue.grossRevenue.toFixed(2)}
         </p>
-        <Badge variant="outline">Refunds: stub — contact support</Badge>
+        <Badge variant="outline">Refunds: stub - contact support</Badge>
       </Card>
 
       <Link href="/workspace/wallet" className={styles.navLink}>

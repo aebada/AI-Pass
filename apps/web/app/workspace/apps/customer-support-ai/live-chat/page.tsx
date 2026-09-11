@@ -89,7 +89,7 @@ export default function LiveChatPage() {
                     Sources:
                     {m.citations.map((c) => (
                       <span key={c.id} className={styles.citation}>
-                        [{c.type}] {c.title} — {c.excerpt.slice(0, 60)}…
+                        [{c.type}] {c.title} - {c.excerpt.slice(0, 60)}…
                       </span>
                     ))}
                   </div>

@@ -30,9 +30,9 @@ export default function TriggersPage() {
             <tr key={String(t.id)}>
               <td>{String(t.event_type)}</td>
               <td>{String(t.workflow_id)}</td>
-              <td>{String(t.agent_name ?? '—')}</td>
+              <td>{String(t.agent_name ?? '-')}</td>
               <td>{String(t.target_type ?? 'workflow')}</td>
-              <td>{t.is_active ? '✓' : '—'}</td>
+              <td>{t.is_active ? '✓' : '-'}</td>
             </tr>
           ))}
         </tbody>

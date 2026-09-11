@@ -67,7 +67,7 @@ export function ModulePageClient({
 
           {status === 'stub' && (
             <p style={{ fontSize: 13, color: workspaceTokens.colors.warning, marginTop: 16 }}>
-              This module is in beta — full workspace integration coming soon.
+              This module is in beta - full workspace integration coming soon.
             </p>
           )}
         </Card>

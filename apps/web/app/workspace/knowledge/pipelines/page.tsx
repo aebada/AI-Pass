@@ -17,7 +17,7 @@ export default function PipelineBuilderPage() {
   }, []);
 
   return (
-    <WorkspaceLayoutClient title="Pipeline Builder" subtitle="Visual pipeline stages — Connect to Sync">
+    <WorkspaceLayoutClient title="Pipeline Builder" subtitle="Visual pipeline stages - Connect to Sync">
       <KnowledgeShell>
         <Card padding="md" style={{ marginBottom: 16 }}>
           <h3 style={{ fontSize: 14, fontWeight: 600, margin: '0 0 16px' }}>Pipeline stages</h3>

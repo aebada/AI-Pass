@@ -10,7 +10,7 @@ export default function AutomationPage() {
   return (
     <WorkspaceLayoutClient
       title="Automation Builder"
-      subtitle="Visual workflow editor — n8n-like nodes and LiveSync triggers"
+      subtitle="Visual workflow editor - n8n-like nodes and LiveSync triggers"
     >
       <div className={styles.palette}>
         <h2>Node Types</h2>

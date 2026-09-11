@@ -8,7 +8,7 @@ import styles from './onboarding.module.css';
 const STEPS = [
   {
     title: 'Welcome to AI Pass',
-    body: 'Build complete business solutions from requirements — web, mobile, workflows, and AI agents in one platform.',
+    body: 'Build complete business solutions from requirements - web, mobile, workflows, and AI agents in one platform.',
     icon: '✨',
   },
   {

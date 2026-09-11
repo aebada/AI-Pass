@@ -11,7 +11,7 @@ const INSTALLED_APPS = [
   {
     id: 'invoice-ai',
     name: 'Invoice AI',
-    description: 'Finance automation — extract, validate, and route invoices',
+    description: 'Finance automation - extract, validate, and route invoices',
     icon: '🧾',
     route: '/workspace/apps/invoice-ai',
     status: 'done' as const,
@@ -29,7 +29,7 @@ const INSTALLED_APPS = [
   {
     id: 'presence-audit',
     name: 'Presence Audit',
-    description: 'AI Visibility Intelligence — audit brand presence across ChatGPT, Claude, Gemini, Perplexity',
+    description: 'AI Visibility Intelligence - audit brand presence across ChatGPT, Claude, Gemini, Perplexity',
     icon: '👁',
     route: '/workspace/apps/presence-audit',
     status: 'done' as const,
@@ -38,7 +38,7 @@ const INSTALLED_APPS = [
   {
     id: 'sales-ai',
     name: 'Sales AI',
-    description: 'Close More Deals with AI — email, LinkedIn, proposals, CRM, campaigns',
+    description: 'Close More Deals with AI - email, LinkedIn, proposals, CRM, campaigns',
     icon: '📈',
     route: '/workspace/apps/sales-ai',
     status: 'done' as const,
@@ -47,7 +47,7 @@ const INSTALLED_APPS = [
   {
     id: 'content-ai',
     name: 'Content AI',
-    description: 'AI Detector & Humanizer — detect AI text, humanize with confidence',
+    description: 'AI Detector & Humanizer - detect AI text, humanize with confidence',
     icon: '✍',
     route: '/workspace/apps/content-ai',
     status: 'done' as const,

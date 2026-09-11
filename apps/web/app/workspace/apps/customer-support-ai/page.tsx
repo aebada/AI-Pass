@@ -90,7 +90,7 @@ export default function CustomerSupportDashboardPage() {
                 <td>{c.id}</td>
                 <td>{c.channel}</td>
                 <td>{c.language.toUpperCase()}</td>
-                <td>{c.intent ?? '—'}</td>
+                <td>{c.intent ?? '-'}</td>
                 <td>
                   <span className={`${styles.badge} ${
                     c.status === 'escalated' ? styles.badgeEscalated :

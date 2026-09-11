@@ -14,7 +14,7 @@ export default function CampaignsPage() {
   const [type, setType] = useState('cold');
 
   return (
-    <SalesAppShell title="Campaign Builder" subtitle="Visual sequences — cold, nurturing, follow-up, upsell, renewals">
+    <SalesAppShell title="Campaign Builder" subtitle="Visual sequences - cold, nurturing, follow-up, upsell, renewals">
       <div className={styles.card}>
         <div className={styles.formGroup}>
           <label className={styles.label}>Campaign Name</label>
@@ -34,19 +34,19 @@ export default function CampaignsPage() {
       </div>
 
       <section className={styles.card} style={{ marginTop: 16 }}>
-        <h3 className={styles.cardTitle}>Sequence Preview — {type.replace('_', ' ')}</h3>
+        <h3 className={styles.cardTitle}>Sequence Preview - {type.replace('_', ' ')}</h3>
         <div className={styles.sequenceSteps}>
           <div className={styles.sequenceStep}>
             <span className={styles.stepNum}>1</span>
-            <span>Email — cold intro (Day 0)</span>
+            <span>Email - cold intro (Day 0)</span>
           </div>
           <div className={styles.sequenceStep}>
             <span className={styles.stepNum}>2</span>
-            <span>LinkedIn — connection request (Day 2)</span>
+            <span>LinkedIn - connection request (Day 2)</span>
           </div>
           <div className={styles.sequenceStep}>
             <span className={styles.stepNum}>3</span>
-            <span>Email — follow-up (Day 5)</span>
+            <span>Email - follow-up (Day 5)</span>
           </div>
           <div className={styles.sequenceStep}>
             <span className={styles.stepNum}>4</span>

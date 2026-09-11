@@ -40,10 +40,10 @@ export default function SettingsPage() {
       <section className={styles.card}>
         <h2 className={styles.cardTitle}>Integrations</h2>
         <ul style={{ fontSize: 14, lineHeight: 2, paddingLeft: 20 }}>
-          <li><Link href="/workspace/providers" style={{ color: 'var(--ai-accent)' }}>Provider Hub</Link> — multi-model routing</li>
-          <li><Link href="/workspace/wallet" style={{ color: 'var(--ai-accent)' }}>AI Wallet</Link> — credit billing</li>
-          <li><Link href="/workspace/trust" style={{ color: 'var(--ai-accent)' }}>Trust Engine</Link> — output quality scoring</li>
-          <li><Link href="/workspace/membership" style={{ color: 'var(--ai-accent)' }}>Membership</Link> — tier gates</li>
+          <li><Link href="/workspace/providers" style={{ color: 'var(--ai-accent)' }}>Provider Hub</Link> - multi-model routing</li>
+          <li><Link href="/workspace/wallet" style={{ color: 'var(--ai-accent)' }}>AI Wallet</Link> - credit billing</li>
+          <li><Link href="/workspace/trust" style={{ color: 'var(--ai-accent)' }}>Trust Engine</Link> - output quality scoring</li>
+          <li><Link href="/workspace/membership" style={{ color: 'var(--ai-accent)' }}>Membership</Link> - tier gates</li>
         </ul>
       </section>
     </ContentAIShell>

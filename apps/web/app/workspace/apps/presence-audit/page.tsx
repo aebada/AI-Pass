@@ -37,7 +37,7 @@ export default function PresenceAuditDashboardPage() {
         </div>
         <div className={styles.card}>
           <p className={styles.cardTitle}>Trust Score</p>
-          <p className={styles.statValue}>{trustScore ?? '—'}{trustCertified ? ' ✓' : ''}</p>
+          <p className={styles.statValue}>{trustScore ?? '-'}{trustCertified ? ' ✓' : ''}</p>
         </div>
       </div>
 

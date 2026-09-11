@@ -24,7 +24,7 @@ export default function SyncMonitorPage() {
   }
 
   return (
-    <WorkspaceLayoutClient title="Synchronization" subtitle="LiveSync monitor — re-index, refresh embeddings, update graph">
+    <WorkspaceLayoutClient title="Synchronization" subtitle="LiveSync monitor - re-index, refresh embeddings, update graph">
       <KnowledgeShell>
         <Card padding="md" style={{ marginBottom: 16 }}>
           <p style={{ fontSize: 13, color: workspaceTokens.colors.textMuted, margin: 0 }}>

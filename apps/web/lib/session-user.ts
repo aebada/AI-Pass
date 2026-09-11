@@ -6,7 +6,7 @@ export function resolveSessionUserId(session: Session | null | undefined): strin
   return session.user.id ?? session.authSession?.userId ?? null;
 }
 
-/** Resolve user id or throw — for authenticated API routes. */
+/** Resolve user id or throw - for authenticated API routes. */
 export function requireSessionUserId(session: Session | null | undefined): string {
   const userId = resolveSessionUserId(session);
   if (!userId) {

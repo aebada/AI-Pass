@@ -28,7 +28,7 @@ export default function ConversationHistoryPage() {
                 <td>{c.id}</td>
                 <td>{c.channel}</td>
                 <td>{c.language.toUpperCase()}</td>
-                <td>{c.intent ?? '—'}</td>
+                <td>{c.intent ?? '-'}</td>
                 <td>
                   <span className={`${styles.badge} ${
                     c.status === 'escalated' ? styles.badgeEscalated :
@@ -50,7 +50,7 @@ export default function ConversationHistoryPage() {
         if (msgs.length === 0) return null;
         return (
           <section key={c.id} className={styles.card} style={{ marginTop: 16 }}>
-            <h3 className={styles.cardTitle}>{c.id} — {c.language.toUpperCase()}</h3>
+            <h3 className={styles.cardTitle}>{c.id} - {c.language.toUpperCase()}</h3>
             {msgs.map((m) => (
               <div key={m.id} style={{ marginBottom: 8, fontSize: 13 }}>
                 <strong>{m.role}:</strong> {m.content}

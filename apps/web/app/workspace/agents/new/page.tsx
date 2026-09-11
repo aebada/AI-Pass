@@ -164,9 +164,9 @@ export default function AgentWizardPage() {
             <h3>Permissions</h3>
             <p className={styles.meta}>Governance policies enforced before execute. Wallet credits deducted per skill.</p>
             <ul className={styles.logs}>
-              <li>wallet.deduct — required</li>
-              <li>documents.read — if OCR/Vision skills attached</li>
-              <li>governance.read — if Compliance skills attached</li>
+              <li>wallet.deduct - required</li>
+              <li>documents.read - if OCR/Vision skills attached</li>
+              <li>governance.read - if Compliance skills attached</li>
             </ul>
           </>
         )}

@@ -15,7 +15,7 @@ export function EmbeddedSupportWidget() {
             Support Chat
           </div>
           <div style={{ flex: 1, padding: 16, fontSize: 13, color: 'var(--text-muted)' }}>
-            Widget stub — embed on external sites via script tag.
+            Widget stub - embed on external sites via script tag.
             <br /><br />
             Connect to <code>/api/customer-support-ai/conversation/start</code>
           </div>

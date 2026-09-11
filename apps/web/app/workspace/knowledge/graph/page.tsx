@@ -25,7 +25,7 @@ export default function KnowledgeGraphPage() {
       <KnowledgeShell>
         <Card padding="md" style={{ marginBottom: 16, minHeight: 120, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
           <p style={{ fontSize: 13, color: workspaceTokens.colors.textMuted, textAlign: 'center' }}>
-            Graph visualization scaffold — {entities.length} entities, {edges.length} relationships
+            Graph visualization scaffold - {entities.length} entities, {edges.length} relationships
           </p>
         </Card>
 
@@ -33,7 +33,7 @@ export default function KnowledgeGraphPage() {
         {edges.map((e, i) => (
           <Card key={i} padding="sm" style={{ marginBottom: 6, fontSize: 13 }}>
             <span style={{ fontWeight: 600 }}>{entityMap[e.subjectId]?.name ?? e.subjectId}</span>
-            <span style={{ color: workspaceTokens.colors.textMuted }}> —{e.predicate}→ </span>
+            <span style={{ color: workspaceTokens.colors.textMuted }}> -{e.predicate}→ </span>
             <span style={{ fontWeight: 600 }}>{entityMap[e.objectId]?.name ?? e.objectId}</span>
           </Card>
         ))}

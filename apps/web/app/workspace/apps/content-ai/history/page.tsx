@@ -34,7 +34,7 @@ export default function HistoryPage() {
                       score={entry.aiScore}
                     />
                   ) : (
-                    entry.tone ?? '—'
+                    entry.tone ?? '-'
                   )}
                 </td>
                 <td>{entry.trustScore}</td>

@@ -71,7 +71,7 @@ export default function InvoiceDetailPage({
           <h3 className={styles.cardTitle}>Fraud alerts</h3>
           {fraudAlerts.map((f) => (
             <div key={f.id} style={{ marginBottom: 8, fontSize: 13 }}>
-              <strong>{f.title}</strong> — {f.description}
+              <strong>{f.title}</strong> - {f.description}
             </div>
           ))}
         </section>
@@ -93,7 +93,7 @@ export default function InvoiceDetailPage({
                 <tr key={a.id}>
                   <td>{a.approverName}</td>
                   <td>{a.status}</td>
-                  <td>{a.comment ?? '—'}</td>
+                  <td>{a.comment ?? '-'}</td>
                 </tr>
               ))}
             </tbody>
@@ -130,7 +130,7 @@ export default function InvoiceDetailPage({
           <h3 className={styles.cardTitle}>Audit trail</h3>
           {auditLogs.map((a) => (
             <div key={a.id} style={{ fontSize: 12, marginBottom: 4 }}>
-              {new Date(a.timestamp).toLocaleString()} — {a.action} by {a.actorName}
+              {new Date(a.timestamp).toLocaleString()} - {a.action} by {a.actorName}
             </div>
           ))}
         </section>

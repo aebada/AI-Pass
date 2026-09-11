@@ -32,8 +32,8 @@ export default function AdministrationPage() {
                   <td style={{ padding: 8 }}>{limits.auditsPerMonth === Infinity ? '∞' : limits.auditsPerMonth}</td>
                   <td style={{ padding: 8 }}>{limits.maxProviders}</td>
                   <td style={{ padding: 8 }}>{limits.maxCompetitors === Infinity ? '∞' : limits.maxCompetitors}</td>
-                  <td style={{ padding: 8 }}>{limits.monitoringSchedules ? 'Yes' : '—'}</td>
-                  <td style={{ padding: 8 }}>{limits.apiAccess ? 'Yes' : '—'}</td>
+                  <td style={{ padding: 8 }}>{limits.monitoringSchedules ? 'Yes' : '-'}</td>
+                  <td style={{ padding: 8 }}>{limits.apiAccess ? 'Yes' : '-'}</td>
                 </tr>
               );
             })}
@@ -45,14 +45,14 @@ export default function AdministrationPage() {
         <h2 className={styles.cardTitle}>Integrations</h2>
         <div className={styles.list} style={{ marginTop: 12 }}>
           {[
-            'AI Provider Hub — all audit queries',
-            'AI Wallet — credits per provider request',
-            'Membership — tier limits',
-            'Trust Engine — trust score in recommendations',
-            'Knowledge Pipeline — content for optimization',
-            'Analysis Studio — trend charts',
-            'LiveSync — event-driven re-audits',
-            'Discovery Hub — tool visibility linkage',
+            'AI Provider Hub - all audit queries',
+            'AI Wallet - credits per provider request',
+            'Membership - tier limits',
+            'Trust Engine - trust score in recommendations',
+            'Knowledge Pipeline - content for optimization',
+            'Analysis Studio - trend charts',
+            'LiveSync - event-driven re-audits',
+            'Discovery Hub - tool visibility linkage',
           ].map((item) => (
             <div key={item} className={styles.listItem}>{item}</div>
           ))}

@@ -17,7 +17,7 @@ export default function SettingsPage() {
             <div key={ch} className={styles.card} style={{ padding: 12 }}>
               <strong style={{ textTransform: 'capitalize' }}>{ch}</strong>
               <p className={styles.statMeta}>
-                {ch === 'web' ? 'Enabled' : 'Stub — configure integration'}
+                {ch === 'web' ? 'Enabled' : 'Stub - configure integration'}
               </p>
             </div>
           ))}

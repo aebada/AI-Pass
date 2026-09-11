@@ -20,8 +20,8 @@ export default function EmbeddingsPage() {
     <WorkspaceLayoutClient title="Embeddings" subtitle="Embedding models, vectors, and index management">
       <KnowledgeShell>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(140px, 1fr))', gap: 12, marginBottom: 24 }}>
-          <StatCard label="Total Embeddings" value={status?.embeddings ?? '—'} />
-          <StatCard label="Indexed Chunks" value={status?.chunks ?? '—'} />
+          <StatCard label="Total Embeddings" value={status?.embeddings ?? '-'} />
+          <StatCard label="Indexed Chunks" value={status?.chunks ?? '-'} />
         </div>
 
         <h3 style={{ fontSize: 14, fontWeight: 600, marginBottom: 12 }}>Embedding providers</h3>

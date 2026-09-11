@@ -33,7 +33,7 @@ export default function ChatPage() {
     <div>
       <header className={styles.header}>
         <h1>Procurement Chat</h1>
-        <p className={styles.muted}>Compare suppliers, explain scoring, policy violations — multilingual stub</p>
+        <p className={styles.muted}>Compare suppliers, explain scoring, policy violations - multilingual stub</p>
       </header>
 
       <div className={styles.card} style={{ maxWidth: 720, minHeight: 400, display: 'flex', flexDirection: 'column' }}>

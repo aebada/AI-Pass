@@ -12,7 +12,7 @@ export default function RisksPage() {
   const systemName = (id: string) => systems.find((s) => s.id === id)?.name ?? id;
 
   return (
-    <WorkspaceLayoutClient title="Risk Register" subtitle="AI risk register — hallucination, bias, privacy, security, and operational risks">
+    <WorkspaceLayoutClient title="Risk Register" subtitle="AI risk register - hallucination, bias, privacy, security, and operational risks">
       <ModuleScaffold title="Risk Register" description="Track, mitigate, and review AI risks across all registered systems." moduleId="governance" icon="🏛" status="done">
         <GovernanceShell>
           {risks.map((r) => (
