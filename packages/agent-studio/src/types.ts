@@ -2,6 +2,7 @@ import type {
   AgentDecision,
   ExecutionStatus,
   RiskLevel,
+  SkillAvailability,
   StudioAgent,
   StudioAgentStatus,
   WorkflowConfig,
@@ -73,11 +74,21 @@ export interface Skill {
   inputSchema: Record<string, unknown>;
   outputSchema: Record<string, unknown>;
   creditCost: number;
+  /** Runtime capability scopes (e.g. documents.read) — not workspace ACLs. */
   permissions: string[];
   riskLevel: RiskLevel;
   version: string;
   marketplaceSkillId?: string;
   certified?: boolean;
+  /**
+   * Workspace visibility / discoverability.
+   * Defaults to all_members for migrated skills.
+   */
+  availability: SkillAvailability;
+  /** User IDs who may edit this skill (and see it when editors_only). */
+  editorIds: string[];
+  createdBy?: string;
+  workspaceId?: string;
   createdAt: string;
   updatedAt: string;
 }

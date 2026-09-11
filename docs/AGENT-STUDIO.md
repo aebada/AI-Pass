@@ -93,16 +93,15 @@ Input → Planning → Skill Selection → Execution → Evaluation → Output �
 | GET/PUT/DELETE | `/api/v1/agents/{id}` | Agent details, update, delete |
 | POST | `/api/v1/agents/{id}/execute` | Execute agent via runtime-core |
 | POST | `/api/v1/agents/{id}/publish` | Publish to marketplace |
-| GET/POST | `/api/v1/agents/skills` | List/create skills |
-| GET | `/api/v1/agents/executions` | Execution history |
-| GET | `/api/v1/agents/executions/{id}` | Execution detail + logs |
-| GET | `/api/v1/agents/monitoring` | Health and metrics snapshot |
-| GET | `/api/v1/agents/analytics` | Analytics summary + listings |
+| GET/POST/PATCH | `/api/v1/agents/skills` | List/create/update skills (`?scope=member\|agents\|all`) |
+| GET/PATCH | `/api/v1/workspace/skills/permissions` | Workspace skill create / availability policies |
+
+See also: [Skill availability & permissions](./SKILL-GOVERNANCE.md).
 
 ## Seed Data
 
 - **8 demo agents**: Invoice Extraction, Fraud Detection, Procurement Evaluator, Support Intent Router, Compliance Copilot, Research Analyst, Workflow Automation, Document Analysis
-- **12 skills**: OCR, Fraud Scoring, RAG Retrieval, Decision Engine, Summarizer, Compliance Validator, Notifications, Support Intent, Procurement Scorer, Translation, Vision Inspector, API Bridge
+- **12 skills**: OCR, Fraud Scoring, RAG Retrieval, Decision Engine, Summarizer, Compliance Validator, Notifications, Support Intent, Procurement Scorer, Translation, Vision Inspector, API Bridge — migrated to **All members** availability
 - **5 executions** with full step logs and decisions
 
 ## Multi-Agent Orchestration

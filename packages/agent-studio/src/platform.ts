@@ -3,6 +3,7 @@ import type { SkillExecutor } from '@ai-pass/marketplace';
 import type { WorkflowConfig, WorkflowStepDef } from '@ai-pass/shared';
 import { AgentService } from './services/agent-service.js';
 import { SkillService } from './services/skill-service.js';
+import { SkillGovernanceService } from './services/skill-governance-service.js';
 import { WorkflowService } from './services/workflow-service.js';
 import { PlannerService } from './services/planner-service.js';
 import { EvaluationService } from './services/evaluation-service.js';
@@ -113,7 +114,9 @@ function loadSeed(platform: ReturnType<typeof buildPlatform>): void {
 
 function buildPlatform(options: AgentStudioPlatformOptions) {
   const agents = new AgentService();
+  const skillGovernance = new SkillGovernanceService();
   const skills = new SkillService(options.skillRegistry);
+  skills.setGovernance(skillGovernance);
   const workflows = new WorkflowService(agents);
   const planner = new PlannerService(agents);
   const evaluator = new EvaluationService();
@@ -137,6 +140,7 @@ function buildPlatform(options: AgentStudioPlatformOptions) {
   return {
     agents,
     skills,
+    skillGovernance,
     workflows,
     planner,
     evaluator,

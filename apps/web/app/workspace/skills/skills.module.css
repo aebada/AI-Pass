@@ -4,6 +4,22 @@
   gap: 16px;
 }
 
+.toolbar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 12px;
+}
+
+.settingsLink {
+  font-size: 0.8rem;
+  color: var(--accent, #58a6ff);
+  text-decoration: none;
+}
+
+.settingsLink:hover {
+  text-decoration: underline;
+}
+
 .card {
   background: var(--bg-elevated);
   border: 1px solid var(--border);
@@ -14,7 +30,15 @@
 .cardTop {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  justify-content: flex-end;
 }
 
 .badge {
@@ -23,6 +47,15 @@
   border-radius: 999px;
   background: rgba(16, 185, 129, 0.15);
   color: #10b981;
+}
+
+.availBadge {
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: rgba(88, 166, 255, 0.12);
+  color: #58a6ff;
+  white-space: nowrap;
 }
 
 .meta {

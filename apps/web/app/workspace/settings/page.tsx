@@ -8,6 +8,11 @@ import { Card, workspaceTokens } from '@ai-pass/ui';
 const SETTINGS_LINKS = [
   { label: 'Membership & plans', href: '/workspace/membership', desc: 'Universal AI membership' },
   { label: 'Providers & models', href: '/workspace/providers', desc: 'Model catalog and BYOK' },
+  {
+    label: 'Skill availability & permissions',
+    href: '/workspace/settings/skills',
+    desc: 'Who can create skills and how they are shared with members and agents',
+  },
   { label: 'Organization', href: '/workspace/settings/org', desc: 'Teams, departments, RBAC' },
   { label: 'Requirements', href: '/workspace/requirements', desc: 'Business requirements capture' },
   { label: 'Account', href: '/settings', desc: 'Profile and preferences' },
