@@ -16,8 +16,8 @@ export const metadata: Metadata = {
   manifest: '/manifest.json',
   icons: {
     icon: [
-      { url: '/logo.png', type: 'image/png' },
       { url: '/icon.svg', type: 'image/svg+xml' },
+      { url: '/logo-icon.png', type: 'image/png' },
     ],
     apple: '/apple-touch-icon.png',
   },
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     description:
       'One workspace. One membership. Every AI model, agent, and business application — unified under enterprise governance and compliance.',
     type: 'website',
-    images: [{ url: '/logo.png', alt: 'AI-Pass' }],
+    images: [{ url: '/logo-icon.png', alt: 'AI-Pass' }],
   },
   appleWebApp: {
     capable: true,
