@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\DesktopAuthController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\GoogleAuthController;
 use App\Http\Controllers\Auth\LoginController;
@@ -17,6 +18,9 @@ Route::get('/', function () {
 Route::prefix('auth')->group(function (): void {
     Route::get('google', [GoogleAuthController::class, 'redirect'])->name('auth.google');
     Route::get('google/callback', [GoogleAuthController::class, 'callback'])->name('auth.google.callback');
+
+    Route::get('google/desktop-complete', [DesktopAuthController::class, 'complete'])->name('auth.desktop.complete');
+    Route::get('google/desktop-exchange', [DesktopAuthController::class, 'exchange'])->name('auth.desktop.exchange');
 
     Route::get('login', [LoginController::class, 'show'])->name('auth.login');
     Route::post('login', [LoginController::class, 'login'])->name('auth.login.submit');

@@ -18,7 +18,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
   providers: [
     Google({
       clientId: process.env.GOOGLE_CLIENT_ID,
-      clientSecret: process.env.GOGLE_CLIENT_SECRET,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET ?? process.env.GOGLE_CLIENT_SECRET,
     }),
     // Microsoft Entra ID (Azure AD) — enable when MICROSOFT_CLIENT_ID / MICROSOFT_CLIENT_SECRET are set.
     // MicrosoftEntraID({

@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { signIn, useSession } from 'next-auth/react';
+import { useSession } from 'next-auth/react';
 import { useSearchParams } from 'next/navigation';
 import { Suspense, useCallback, useEffect, useMemo, useState } from 'react';
 import { MODEL_CATALOG, PROVIDER_DEFINITIONS } from '@ai-pass/provider-hub';
@@ -269,16 +269,14 @@ function PlaygroundContent() {
         <div className={styles.signInGate}>
           <h2>Sign in with Google to get 500 free credits</h2>
           <p>Use GPT-4o Mini, Gemini Flash, and DeepSeek Free on the free tier. Upgrade anytime for premium models.</p>
-          <button
-            type="button"
+          <Link
+            href="/login?callbackUrl=/workspace/playground%3Fwelcome%3D1"
             className={styles.primaryBtn}
-            onClick={() => signIn('google', { callbackUrl: '/workspace/playground?welcome=1' })}
           >
             Continue with Google
-          </button>
+          </Link>
           <p className={styles.hint}>
-            Already have an account?{' '}
-            <Link href="/login?callbackUrl=/workspace/playground%3Fwelcome%3D1">Sign in</Link>
+            Opens the secure AI-Pass login page (system browser inside the desktop IDE).
           </p>
         </div>
       </WorkspaceLayoutClient>

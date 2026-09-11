@@ -2,29 +2,71 @@
 
 import { signIn } from 'next-auth/react';
 import { useSearchParams } from 'next/navigation';
-import { Suspense, useState } from 'react';
-import { authApiUrl, authCallbackQuery, useLaravelAuth } from '@/lib/auth-api';
+import { Suspense, useEffect, useState } from 'react';
+import { authApiUrl, useLaravelAuth } from '@/lib/auth-api';
 import { PremiumNav } from '../components/premium/PremiumNav';
 import styles from './login.module.css';
 
 const usePhpAuth = process.env.NEXT_PUBLIC_USE_PHP_AUTH === '1';
-const useLaravelAuth = process.env.NEXT_PUBLIC_USE_LARAVEL_AUTH === '1';
-const useServerAuth = usePhpAuth || useLaravelAuth;
+
+declare global {
+  interface Window {
+    aiPassIde?: {
+      openExternal: (url: string) => Promise<void>;
+      getAppVersion?: () => Promise<string>;
+    };
+  }
+}
+
+function isIdeShell(): boolean {
+  return typeof window !== 'undefined' && Boolean(window.aiPassIde);
+}
+
+function googleAuthStartUrl(callbackUrl: string): string {
+  const params = new URLSearchParams();
+  if (callbackUrl && callbackUrl !== '/workspace') {
+    params.set('callback', callbackUrl);
+  } else {
+    params.set('callback', '/workspace');
+  }
+  if (isIdeShell()) {
+    params.set('desktop', '1');
+  }
+  const qs = params.toString();
+  if (useLaravelAuth) {
+    return authApiUrl(`/auth/google${qs ? `?${qs}` : ''}`);
+  }
+  if (usePhpAuth) {
+    return `/auth/google.php${qs ? `?${qs}` : ''}`;
+  }
+  return '';
+}
 
 function LoginContent() {
   const searchParams = useSearchParams();
   const callbackUrl = searchParams.get('callbackUrl') ?? '/workspace';
   const error = searchParams.get('error');
   const [loading, setLoading] = useState(false);
+  const [inIde, setInIde] = useState(false);
+
+  useEffect(() => {
+    setInIde(isIdeShell());
+  }, []);
 
   async function handleGoogleSignIn() {
-    if (useLaravelAuth) {
-      window.location.href = authApiUrl(`/auth/google${authCallbackQuery(callbackUrl)}`);
-      return;
-    }
-    if (usePhpAuth) {
-      const params = callbackUrl !== '/workspace' ? `?callback=${encodeURIComponent(callbackUrl)}` : '';
-      window.location.href = `/auth/google.php${params}`;
+    if (useLaravelAuth || usePhpAuth) {
+      const url = googleAuthStartUrl(callbackUrl);
+      // IDE: never navigate in-app to Google — Electron Chromium gets Google HTTP 500.
+      if (isIdeShell() && window.aiPassIde?.openExternal) {
+        setLoading(true);
+        try {
+          await window.aiPassIde.openExternal(url);
+        } finally {
+          setLoading(false);
+        }
+        return;
+      }
+      window.location.href = url;
       return;
     }
     setLoading(true);
@@ -32,14 +74,27 @@ function LoginContent() {
   }
 
   const emailLoginHref = useLaravelAuth
-    ? authApiUrl(`/auth/login${authCallbackQuery(callbackUrl)}`)
+    ? authApiUrl(
+        `/auth/login${callbackUrl !== '/workspace' ? `?callback=${encodeURIComponent(callbackUrl)}` : ''}`,
+      )
     : `/auth/login.php${
         callbackUrl !== '/workspace' ? `?callback=${encodeURIComponent(callbackUrl)}` : ''
       }`;
 
   const registerHref = useLaravelAuth
-    ? authApiUrl(`/auth/register${authCallbackQuery(callbackUrl)}`)
+    ? authApiUrl(
+        `/auth/register${callbackUrl !== '/workspace' ? `?callback=${encodeURIComponent(callbackUrl)}` : ''}`,
+      )
     : '/auth/register.php';
+
+  const errorMessage =
+    error === 'desktop_browser'
+      ? 'Finish Google sign-in in your system browser. When it asks to open AI-Pass IDE, allow it — then you will return here signed in.'
+      : error === 'google_state'
+        ? 'Sign-in session expired. Please try Google again.'
+        : error
+          ? 'Sign-in failed. Please try again.'
+          : null;
 
   if (useLaravelAuth || usePhpAuth) {
     return (
@@ -50,11 +105,13 @@ function LoginContent() {
             <div className={styles.badge}>Secure sign-in</div>
             <h1 className={styles.title}>Welcome to AI-Pass</h1>
             <p className={styles.subtitle}>
-              Sign in with Google or email to get 500 free credits and access the AI Playground.
+              {inIde
+                ? 'Continue with Google opens your system browser, then returns you to the IDE.'
+                : 'Sign in with Google or email to get 500 free credits and access the AI Playground.'}
             </p>
-            {error && (
+            {errorMessage && (
               <div className={styles.error} role="alert">
-                Sign-in failed. Please try again.
+                {errorMessage}
               </div>
             )}
             <button
@@ -64,7 +121,11 @@ function LoginContent() {
               disabled={loading}
             >
               <GoogleIcon />
-              {loading ? 'Redirecting…' : 'Continue with Google'}
+              {loading
+                ? inIde
+                  ? 'Opening browser…'
+                  : 'Redirecting…'
+                : 'Continue with Google'}
             </button>
             <p className={styles.hint}>
               <a href={emailLoginHref}>Email sign-in</a>
@@ -92,9 +153,9 @@ function LoginContent() {
             Sign in with Google to get 500 free credits and access the AI Playground.
           </p>
 
-          {error && (
+          {errorMessage && (
             <div className={styles.error} role="alert">
-              Sign-in failed. Check your OAuth credentials and try again.
+              {errorMessage}
             </div>
           )}
 
@@ -109,7 +170,7 @@ function LoginContent() {
           </button>
 
           <p className={styles.hint}>
-            Configure Google OAuth in your Cloud Console (e.g. Sportify project). See repository{' '}
+            Configure Google OAuth in your Cloud Console. See repository{' '}
             <code>docs/AUTH.md</code> for setup steps.
           </p>
 
