@@ -5,8 +5,6 @@ import './globals.css';
 import { AppProviders } from './components/premium/AppProviders';
 import { OnboardingModal } from './components/premium/OnboardingModal';
 
-// NODE_STANDALONE_FORCE_DYNAMIC (patched during build-node-prod.sh)
-export const dynamic = 'force-dynamic';
 
 const siteUrl = 'https://aipass.space';
 
