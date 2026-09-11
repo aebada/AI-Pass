@@ -43,7 +43,11 @@ trap cleanup EXIT
 if [[ -f "$LAYOUT" ]]; then
   LAYOUT_BAK="${LAYOUT}.static_export_bak"
   cp "$LAYOUT" "$LAYOUT_BAK"
-  sed -i '' '/NODE_STANDALONE_FORCE_DYNAMIC/,/force-dynamic/d' "$LAYOUT"
+  if sed --version >/dev/null 2>&1; then
+    sed -i '/NODE_STANDALONE_FORCE_DYNAMIC/,/force-dynamic/d' "$LAYOUT"
+  else
+    sed -i '' '/NODE_STANDALONE_FORCE_DYNAMIC/,/force-dynamic/d' "$LAYOUT"
+  fi
 fi
 if [[ -f "$MIDDLEWARE" ]]; then
   mv "$MIDDLEWARE" "$MIDDLEWARE_SKIP"
