@@ -7,8 +7,11 @@ import { authApiUrl, authCallbackQuery, useLaravelAuth } from '@/lib/auth-api';
 import { PremiumNav } from '../components/premium/PremiumNav';
 import styles from './login.module.css';
 
-const usePhpAuth = process.env.NEXT_PUBLIC_USE_PHP_AUTH === '1';
-const useLaravelAuth = process.env.NEXT_PUBLIC_USE_LARAVEL_AUTH === '1';
+const usePhpAuth =
+  process.env.NEXT_PUBLIC_USE_PHP_AUTH === '1' ||
+  process.env.NEXT_PUBLIC_STATIC_EXPORT === '1';
+const useLaravelAuth =
+  process.env.NEXT_PUBLIC_USE_LARAVEL_AUTH === '1' && !usePhpAuth;
 const useServerAuth = usePhpAuth || useLaravelAuth;
 
 function LoginContent() {

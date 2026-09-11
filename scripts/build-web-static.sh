@@ -13,7 +13,7 @@ MIDDLEWARE_SKIP="$WEB/_middleware_static_export_skip.ts"
 export PATH="/opt/homebrew/bin:/usr/local/bin:${PATH:-}"
 
 cd "$ROOT"
-CI=1 pnpm install --frozen-lockfile 2>/dev/null || CI=1 pnpm install
+CI=1 pnpm install --frozen-lockfile 2>/dev/null || CI=1 pnpm install --no-frozen-lockfile
 pnpm --filter @ai-pass/livesync build
 
 LAYOUT_BAK=""
@@ -64,7 +64,8 @@ if [[ -d "$AUTH_CALLBACK" ]]; then
 fi
 
 cd "$WEB"
-NEXT_PUBLIC_STATIC_EXPORT=1 NEXT_PUBLIC_USE_LARAVEL_AUTH=1 STATIC_EXPORT=1 pnpm build
+# Hostinger shared hosting: use PHP session auth (not Laravel/Node).
+NEXT_PUBLIC_STATIC_EXPORT=1 NEXT_PUBLIC_USE_PHP_AUTH=1 STATIC_EXPORT=1 pnpm build
 
 if [[ ! -f "$WEB/out/index.html" ]]; then
   echo "error: $WEB/out/index.html not found after build" >&2
