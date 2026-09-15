@@ -49,6 +49,7 @@ model Session {
 
 model Account {
   id                    String    @id
+  issuer                String
   accountId             String
   providerId            String
   userId                String
@@ -64,6 +65,7 @@ model Account {
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
+  @@unique([issuer, accountId])
   @@index([userId])
   @@map("account")
 }
