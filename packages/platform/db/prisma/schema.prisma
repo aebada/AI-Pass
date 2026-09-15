@@ -87,6 +87,7 @@ model Organization {
   logo      String?
   metadata  String?
   createdAt DateTime @default(now())
+  updatedAt DateTime @default(now()) @updatedAt
 
   members     Member[]
   invitations Invitation[]
