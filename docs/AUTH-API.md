@@ -65,7 +65,10 @@ A workspace is a team. The endpoint names come from the organization plugin.
 | POST | `/api/auth/organization/create` | Create an organization |
 | POST | `/api/auth/organization/set-active` | Switch active organization |
 | GET | `/api/auth/organization/list` | Organizations the caller belongs to |
+| GET | `/api/auth/organization/get-organization` | One organization (metadata only) |
 | GET | `/api/auth/organization/get-full-organization` | Members, teams, invitations |
+| POST | `/api/auth/organization/update` | Update an organization |
+| POST | `/api/auth/organization/delete` | Delete an organization |
 | POST | `/api/auth/organization/invite-member` | Invite by email and role |
 | POST | `/api/auth/organization/accept-invitation` | Accept an invitation |
 | POST | `/api/auth/organization/cancel-invitation` | Cancel a pending invitation |
