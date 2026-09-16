@@ -26,5 +26,7 @@ export interface ProviderFactory {
 export { OpenAIProvider } from './providers/openai.js';
 export { AnthropicProvider } from './providers/anthropic.js';
 export { OpenAICompatibleProvider } from './providers/openai-compatible.js';
+export { MistralProvider } from './providers/mistral.js';
+export { LocalProvider } from './providers/local.js';
 export { createProvider, getProvider } from './provider-registry.js';
 export { buildSystemPrompt } from './prompt-builder.js';

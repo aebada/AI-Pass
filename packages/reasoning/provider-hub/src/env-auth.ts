@@ -16,11 +16,11 @@ export function createManagedAuthFromEnv(): AuthConfig {
   set('grok', process.env.XAI_GROK_API_KEY);
   set('cerebras', process.env.CEREBRAS_API_KEY);
   set('sambanova', process.env.SAMBANOVA_API_KEY);
+  set('mistral', process.env.MISTRAL_API_KEY);
 
   // DeepSeek / Chinese models route through OpenRouter when no direct key is set.
   set('deepseek', process.env.DEEPSEEK_API_KEY ?? openrouter);
   set('qwen', openrouter);
-  set('mistral', process.env.MISTRAL_API_KEY ?? openrouter);
   set('llama', openrouter);
   set('groq', process.env.GROQ_API_KEY);
   set('together', process.env.TOGETHER_API_KEY);
