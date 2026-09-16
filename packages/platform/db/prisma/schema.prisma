@@ -151,10 +151,11 @@ model Team {
 }
 
 model TeamMember {
-  id        String   @id
-  teamId    String
-  userId    String
-  createdAt DateTime @default(now())
+  id            String   @id
+  teamId        String
+  userId        String
+  membershipKey String?  @unique
+  createdAt     DateTime @default(now())
 
   team Team @relation(fields: [teamId], references: [id], onDelete: Cascade)
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)

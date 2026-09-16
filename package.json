@@ -5,8 +5,9 @@
   "license": "MIT",
   "description": "AI Pass — open-source business solution platform (requirements, builder, governance, marketplace, agents)",
   "scripts": {
-    "dev": "turbo run dev",
+    "dev": "turbo run dev --filter=@ai-pass/web",
     "dev:web": "turbo run dev --filter=@ai-pass/web",
+    "dev:api": "turbo run dev --filter=@ai-pass/api-server",
     "dev:desktop": "turbo run dev --filter=@ai-pass/desktop",
     "dev:mobile": "turbo run dev --filter=@ai-pass/mobile",
     "build": "turbo run build",
@@ -30,7 +31,7 @@
     "test": "turbo run test",
     "test:e2e": "playwright test",
     "test:e2e:smoke": "playwright test e2e/smoke.spec.ts",
-    "typecheck:ci": "turbo run typecheck --filter=./packages/*"
+    "typecheck:ci": "turbo run typecheck --filter=./packages/**"
   },
   "devDependencies": {
     "@playwright/test": "^1.54.2",

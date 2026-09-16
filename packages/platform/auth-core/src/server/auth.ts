@@ -6,6 +6,7 @@ import { recordAuditEvent } from './audit.js';
 import { readAuthConfig } from './config.js';
 import { ac, roles } from './permissions.js';
 import { resolveSessionContext } from './provisioning.js';
+import { validateRegistration } from './validation.js';
 
 const SESSION_LIFETIME_SECONDS = 60 * 60 * 24 * 7;
 const SESSION_REFRESH_SECONDS = 60 * 60 * 24;
@@ -49,13 +50,18 @@ export function createAuth() {
       useSecureCookies: process.env.NODE_ENV === 'production',
     },
     rateLimit: {
-      enabled: true,
+      // A suite that signs in more than five times a minute would otherwise
+      // trip the sign-in limiter and fail for the wrong reason.
+      enabled: process.env.AUTH_DISABLE_RATE_LIMIT !== 'true',
       window: 60,
       max: 100,
       customRules: {
         '/sign-in/email': { window: 60, max: 5 },
         '/sign-up/email': { window: 3600, max: 10 },
       },
+    },
+    hooks: {
+      before: validateRegistration,
     },
     databaseHooks: {
       user: {
