@@ -24,7 +24,7 @@ laravel-auth/             ← services/auth-api (outside public_html)
 | Laravel app | `services/auth-api/` |
 | Google OAuth | `app/Http/Controllers/Auth/GoogleAuthController.php` |
 | User model | `app/Models/User.php` (UUID, `google_id`, `avatar_url`, `auth_provider`) |
-| php-auth migration (same DB) | `php artisan php-auth:migrate-users` |
+| php-auth-legacy migration (same DB) | `php artisan php-auth:migrate-users` |
 | php-auth migration (remote DB) | `php artisan auth:migrate-from-legacy` |
 | Static bridge | `apps/web/app/components/auth/LaravelAuthBridge.tsx` |
 | Build hook | `scripts/build-web-static.sh` (sets `NEXT_PUBLIC_USE_LARAVEL_AUTH=1`) |
@@ -45,7 +45,7 @@ Install dependencies:
 
 ```bash
 cd services/auth-api
-composer install   # or: php ../../php-auth/composer.phar install
+composer install   # or: php ../php-auth-legacy/composer.phar install
 ```
 
 ## Environment variables
@@ -218,7 +218,7 @@ curl -sS https://aipass.space/auth/me
 
 ## Legacy php-auth
 
-`php-auth/` remains in the repository until Laravel auth is validated in production. To fall back during static builds:
+`services/php-auth-legacy/` remains in the repository until Laravel auth is validated in production. To fall back during static builds:
 
 ```bash
 COPY_PHP_AUTH=1 NEXT_PUBLIC_USE_PHP_AUTH=1 ./scripts/build-web-static.sh

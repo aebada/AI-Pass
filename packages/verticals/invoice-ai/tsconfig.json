@@ -1,0 +1,18 @@
+{
+  "extends": "../../../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "composite": true
+  },
+  "include": ["src"],
+  "references": [
+    { "path": "../../platform/shared" },
+    { "path": "../../platform/membership" },
+    { "path": "../../platform/wallet" },
+    { "path": "../../reasoning/ai-core" },
+    { "path": "../../reasoning/provider-hub" },
+    { "path": "../../execution/erp-connectors" },
+    { "path": "../../orchestration/livesync" }
+  ]
+}

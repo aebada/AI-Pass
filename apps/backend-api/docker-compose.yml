@@ -1,0 +1,37 @@
+# Runs the backend API in a chosen environment via Docker Compose profiles:
+#   docker compose --profile development up   (hot reload, port 8001)
+#   docker compose --profile staging up
+#   docker compose --profile production up
+services:
+  backend-api-development:
+    profiles: ["development"]
+    build:
+      context: .
+      args:
+        APP_ENV: development
+    env_file: .env.development
+    ports:
+      - "8001:8001"
+    volumes:
+      - ./app:/app/app
+    command: ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8001", "--reload"]
+
+  backend-api-staging:
+    profiles: ["staging"]
+    build:
+      context: .
+      args:
+        APP_ENV: staging
+    env_file: .env.staging
+    ports:
+      - "8001:8001"
+
+  backend-api-production:
+    profiles: ["production"]
+    build:
+      context: .
+      args:
+        APP_ENV: production
+    env_file: .env.production
+    ports:
+      - "8001:8001"

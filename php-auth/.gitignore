@@ -1,5 +1,0 @@
-# PHP Auth (Google OAuth + email/password)
-
-php-auth/auth-lib/.env
-php-auth/auth-lib/vendor/
-php-auth/composer.lock

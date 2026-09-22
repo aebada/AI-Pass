@@ -45,7 +45,7 @@ Route::prefix('auth')->group(function (): void {
         ->name('verification.send');
 });
 
-// Legacy php-auth URLs (keep until php-auth/ is removed from deploy)
+// Legacy php-auth URLs (keep until services/php-auth-legacy/ is removed from deploy)
 Route::redirect('/auth/google.php', '/auth/google');
 Route::redirect('/auth/google-callback.php', '/auth/google/callback');
 Route::redirect('/auth/login.php', '/auth/login');
