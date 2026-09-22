@@ -61,7 +61,7 @@ jobs:
       # it opens an interactive setup prompt and fails in CI. That belongs to
       # the frontend team; widen this once it is configured.
       - name: Lint
-        run: pnpm exec turbo run lint --filter=./packages/*
+        run: pnpm exec turbo run lint --filter=./packages/**
 
       - name: Test
         run: pnpm test

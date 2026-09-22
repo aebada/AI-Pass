@@ -49,6 +49,7 @@ model Session {
 
 model Account {
   id                    String    @id
+  issuer                String
   accountId             String
   providerId            String
   userId                String
@@ -64,6 +65,7 @@ model Account {
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
+  @@unique([issuer, accountId])
   @@index([userId])
   @@map("account")
 }
@@ -87,6 +89,7 @@ model Organization {
   logo      String?
   metadata  String?
   createdAt DateTime @default(now())
+  updatedAt DateTime @default(now()) @updatedAt
 
   members     Member[]
   invitations Invitation[]
@@ -148,10 +151,11 @@ model Team {
 }
 
 model TeamMember {
-  id        String   @id
-  teamId    String
-  userId    String
-  createdAt DateTime @default(now())
+  id            String   @id
+  teamId        String
+  userId        String
+  membershipKey String?  @unique
+  createdAt     DateTime @default(now())
 
   team Team @relation(fields: [teamId], references: [id], onDelete: Cascade)
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)

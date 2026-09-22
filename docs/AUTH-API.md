@@ -23,8 +23,19 @@ request. There is no wildcard, because the requests carry cookies.
 | POST | `/api/auth/sign-out` | — |
 | GET | `/api/auth/get-session` | — |
 
-Passwords are a minimum of 12 characters. `autoSignIn` is off, so registration
-does not create a session; the client signs in as a second step.
+`autoSignIn` is off, so registration does not create a session; the client
+signs in as a second step.
+
+Registration rejects the following with `400` and a message suitable for
+showing to the user:
+
+| Rule | Message |
+|---|---|
+| Email must parse and be 254 characters or fewer | Enter a valid email address |
+| Name must not be blank | Name is required |
+| Name must be 100 characters or fewer | Name must be 100 characters or fewer |
+| Password must differ from the email address | Password must not be the same as your email address |
+| Password must be at least 12 characters | Better Auth's own message |
 
 Sign-in returns the same error for an unknown email and a wrong password. This
 is deliberate. Do not add a "no account found" message on the client, because
@@ -54,7 +65,10 @@ A workspace is a team. The endpoint names come from the organization plugin.
 | POST | `/api/auth/organization/create` | Create an organization |
 | POST | `/api/auth/organization/set-active` | Switch active organization |
 | GET | `/api/auth/organization/list` | Organizations the caller belongs to |
+| GET | `/api/auth/organization/get-organization` | One organization (metadata only) |
 | GET | `/api/auth/organization/get-full-organization` | Members, teams, invitations |
+| POST | `/api/auth/organization/update` | Update an organization |
+| POST | `/api/auth/organization/delete` | Delete an organization |
 | POST | `/api/auth/organization/invite-member` | Invite by email and role |
 | POST | `/api/auth/organization/accept-invitation` | Accept an invitation |
 | POST | `/api/auth/organization/cancel-invitation` | Cancel a pending invitation |
@@ -96,11 +110,33 @@ A workspace belonging to another organization returns 404, not 403, so that
 workspace ids cannot be probed across organizations. A test asserting 403 for
 that case is asserting the wrong thing.
 
+## Tests
+
+`packages/api-server/src/__tests__/auth.test.ts` runs the flows above against a
+real Postgres and the actual Express app: registration and the organization it
+provisions, password hashing, input rejection, sign in, invalid credentials,
+the current user endpoint, sign out, session expiry, workspace access, and the
+audit trail.
+
+```bash
+docker compose up -d postgres
+pnpm --filter @ai-pass/db migrate
+pnpm --filter @ai-pass/api-server test
+```
+
+Without `DATABASE_URL` the suite skips rather than mocking the database into
+passing, so a green run with no database means nothing ran. CI always provides
+one.
+
+The suite sets `AUTH_DISABLE_RATE_LIMIT` because signing in more than five
+times a minute would otherwise trip the limiter and fail tests for the wrong
+reason. The limiter itself is therefore not covered.
+
 ## Roles
 
 Three roles: `owner`, `admin`, `member`. The full matrix is in
 `docs/specs/2026-09-04-auth-and-workspace-model.md` and is enforced by
-`packages/auth-core/src/server/permissions.ts`. The test in
+`packages/platform/auth-core/src/server/permissions.ts`. The test in
 `permissions.test.ts` covers it cell by cell.
 
 The first user to register gets an organization and a `General` workspace, and

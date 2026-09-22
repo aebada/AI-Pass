@@ -14,7 +14,15 @@
     },
     "test": {
       "dependsOn": ["^build"],
-      "outputs": []
+      "outputs": [],
+      "env": [
+        "CI",
+        "DATABASE_URL",
+        "BETTER_AUTH_SECRET",
+        "BETTER_AUTH_URL",
+        "AUTH_TRUSTED_ORIGINS",
+        "AUTH_DISABLE_RATE_LIMIT"
+      ]
     },
     "lint": {},
     "clean": {
