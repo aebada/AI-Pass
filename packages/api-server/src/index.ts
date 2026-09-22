@@ -23,7 +23,7 @@ import {
   PLATFORM_API_ROUTES,
 } from '@ai-pass/platform-api';
 import { createIdentityRouter } from './routes/identity.js';
-
+import { createOrganizationRouter } from './routes/organization.js';
 const PORT = Number(process.env.PORT ?? 4000);
 
 export function createApiServer(): Express {
@@ -38,7 +38,7 @@ export function createApiServer(): Express {
   app.use(express.json());
 
   app.use('/api/v1', createIdentityRouter());
-
+  app.use('/api/v1', createOrganizationRouter());
   app.get('/api/v1/health', (_req, res) => res.json(handleHealth()));
   app.get('/api/v1/modules', (_req, res) => res.json(handleModules()));
   app.get('/api/v1/search', (req, res) => res.json(handleSearch(String(req.query.q ?? ''))));

@@ -88,6 +88,48 @@ export function requirePermission(permissions: Record<string, string[]>): Reques
   });
 }
 
+
+/**
+ * Ensures that a route-scoped organization matches the user's active
+ * organization. This prevents permissions granted in Organization A from
+ * being reused against Organization B.
+ */
+export function requireOrganization(paramName = 'organizationId'): RequestHandler {
+  return wrap(async (req, res, next) => {
+    const context = req.auth;
+
+    if (!context) {
+      unauthenticated(res);
+      return;
+    }
+
+    if (!context.organizationId) {
+      forbidden(res, 'No active organization');
+      return;
+    }
+
+    const organizationId = req.params[paramName];
+
+    if (!organizationId) {
+      res.status(400).json({
+        error: {
+          code: 'invalid_request',
+          message: 'Organization id missing',
+        },
+      });
+      return;
+    }
+
+    if (organizationId !== context.organizationId) {
+      forbidden(res, 'Organization access denied');
+      return;
+    }
+
+    next();
+  });
+}
+
+
 /**
  * Organization role alone does not decide workspace access, so this checks
  * membership of the specific workspace. Owners and admins pass by role.
