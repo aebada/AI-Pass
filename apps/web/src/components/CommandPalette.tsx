@@ -109,7 +109,7 @@ export function CommandPalette({
         group: 'navigation',
         icon: '📦',
         action: () => {
-          window.location.href = '/solutions';
+          window.location.href = '/workspace/solutions';
         },
       },
       {

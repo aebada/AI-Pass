@@ -9,7 +9,7 @@ const BUSINESS_LINKS = [
   { href: '/studio', icon: '🎨', label: 'Solution Studio' },
   { href: '/requirements', icon: '📝', label: 'Requirements' },
   { href: '/marketplace', icon: '🏪', label: 'Marketplace' },
-  { href: '/solutions', icon: '📦', label: 'My Solutions' },
+  { href: '/workspace/solutions', icon: '📦', label: 'My Solutions' },
   { href: '/platform', icon: '⚙️', label: 'Platform' },
   { href: '/platform/governance', icon: '⚖️', label: 'Governance' },
 ];
