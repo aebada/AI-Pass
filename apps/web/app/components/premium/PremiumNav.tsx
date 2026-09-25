@@ -313,7 +313,7 @@ export function PremiumNav({ variant = 'business' }: { variant?: 'landing' | 'bu
                   <Link href="/billing" className={styles.menuItem} onClick={() => setUserOpen(false)}>
                     Billing & Plan
                   </Link>
-                  <Link href="/solutions" className={styles.menuItem} onClick={() => setUserOpen(false)}>
+                  <Link href="/workspace/solutions" className={styles.menuItem} onClick={() => setUserOpen(false)}>
                     My Solutions
                   </Link>
                   <button type="button" className={styles.menuItemBtn} onClick={() => setUserOpen(false)}>

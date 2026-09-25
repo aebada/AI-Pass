@@ -20,6 +20,17 @@ export class AppRegistry {
     return this.delegate.list();
   }
 
+  featured() {
+    const apps = this.delegate.list();
+    return apps.filter((a: { featured?: boolean; certified?: boolean; enterpriseReady?: boolean }) =>
+      Boolean(a.featured || a.certified || a.enterpriseReady)
+    ).slice(0, 10);
+  }
+
+  trending() {
+    return this.delegate.list().slice(0, 10);
+  }
+
   update(...args: Parameters<MarketplaceAppRegistry['update']>) {
     return this.delegate.update(...args);
   }
