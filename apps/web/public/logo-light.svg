@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 188 40" fill="none" role="img" aria-label="AI-Pass">
+  <defs>
+    <linearGradient id="apMarkLight" x1="4" y1="2" x2="36" y2="38" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8B6FFF"/>
+      <stop offset="1" stop-color="#673DE6"/>
+    </linearGradient>
+  </defs>
+  <rect width="40" height="40" rx="10" fill="url(#apMarkLight)"/>
+  <path d="M12 20h10.5" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/>
+  <path d="M17.5 13.5 27 20l-9.5 6.5" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M22.5 13.5 32 20l-9.5 6.5" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" opacity="0.55"/>
+  <g font-family="DM Sans, Inter, Helvetica, Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="-0.04em">
+    <text x="52" y="27" fill="#FFFFFF">AI-Pass</text>
+  </g>
+</svg>
