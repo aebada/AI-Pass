@@ -29,6 +29,12 @@ import {
   DEMO_MEETING_PREP,
   DEMO_PROPOSAL,
 } from '../demo-data.js';
+import {
+  buildOnboardingCampaign,
+  buildOnboardingContacts,
+  buildOnboardingEmailDrafts,
+  buildOnboardingLeads,
+} from '../onboarding-batch-100.js';
 import { emitAnalyticsRefresh } from '../livesync.js';
 import { canAccessCrmIntegration } from '../membership-gates.js';
 import type { AuditLog, Campaign, Contact, Deal, Lead, MeetingPrep, Proposal } from '../types.js';
@@ -75,10 +81,17 @@ export class SalesAIService {
     for (const c of DEMO_CONTACTS) this.contacts.set(c.id, c);
     for (const l of DEMO_LEADS) this.leads.set(l.id, l);
     for (const d of DEMO_DEALS) this.deals.set(d.id, d);
-    this.emailAssistant = new EmailAssistantService(DEMO_EMAILS);
+    // 100 regulated ICP prospects for customer onboarding outreach
+    for (const c of buildOnboardingContacts()) this.contacts.set(c.id, c);
+    for (const l of buildOnboardingLeads()) this.leads.set(l.id, l);
+    const onboardEmails = buildOnboardingEmailDrafts();
+    this.emailAssistant = new EmailAssistantService([...DEMO_EMAILS, ...onboardEmails]);
     this.proposalGenerator = new ProposalGeneratorService([DEMO_PROPOSAL]);
     this.meetingPrep = new MeetingPrepService([DEMO_MEETING_PREP]);
-    this.campaignBuilder = new CampaignBuilderService(DEMO_CAMPAIGNS);
+    this.campaignBuilder = new CampaignBuilderService([
+      ...DEMO_CAMPAIGNS,
+      buildOnboardingCampaign(),
+    ]);
     this.auditLogs = [...DEMO_AUDIT_LOGS];
   }
 

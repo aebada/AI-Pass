@@ -59,6 +59,7 @@
     "@ai-pass/sales-ai": "workspace:*",
     "@ai-pass/compliance-ai": "workspace:*",
     "@ai-pass/content-ai": "workspace:*",
+    "@ai-pass/data-masking": "workspace:*",
     "@ai-pass/crm-connectors": "workspace:*",
     "@ai-pass/view": "workspace:*",
     "@ai-pass/wallet": "workspace:*",

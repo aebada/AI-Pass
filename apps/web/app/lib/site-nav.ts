@@ -13,7 +13,7 @@ export const DOCS_URL = 'https://docs.ai-pass.com';
 export const API_DOCS_HREF = '/api/docs';
 export const GITHUB_URL = 'https://github.com/ai-pass';
 export const DEMO_MAILTO =
-  'mailto:hello@ai-pass.com?subject=Enterprise%20AI%20Infrastructure%20Demo';
+  'mailto:contact@ehopn.com?subject=AI-Pass%20Enterprise%20Demo%20(HOPn)';
 
 /** Primary marketing nav — Enterprise AI Infrastructure Platform IA */
 export const SITE_NAV: SiteNavItem[] = [

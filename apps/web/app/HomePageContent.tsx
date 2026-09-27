@@ -7,7 +7,7 @@ import { FOOTER_COLUMNS } from './lib/site-nav';
 import styles from './page.module.css';
 
 const DEMO_MAILTO =
-  'mailto:hello@ai-pass.com?subject=Enterprise%20AI%20Infrastructure%20Demo';
+  'mailto:contact@ehopn.com?subject=AI-Pass%20Enterprise%20Demo%20(HOPn)';
 
 const TRUST = [
   'Manufacturing',
@@ -312,8 +312,8 @@ export default function HomePageContent() {
           ))}
         </div>
         <div className={styles.footerBottom}>
-          <span>© {new Date().getFullYear()} AI-Pass</span>
-          <span>Secure · Governed · Deployable</span>
+          <span>© {new Date().getFullYear()} AI-Pass · A HOPn company</span>
+          <span>Secure · Governed · Deployable · contact@ehopn.com</span>
         </div>
       </footer>
     </div>

@@ -72,6 +72,15 @@ const INSTALLED_APPS = [
     installed: true,
   },
   {
+    id: 'data-masking',
+    name: 'Data Masking',
+    description: 'Secure API shares — mask names, passwords, secrets, and PII in one line',
+    icon: '🛡',
+    route: '/workspace/apps/data-masking',
+    status: 'done' as const,
+    installed: true,
+  },
+  {
     id: 'hr-ai',
     name: 'HR AI',
     description: 'Onboarding, policy Q&A, and employee workflows',

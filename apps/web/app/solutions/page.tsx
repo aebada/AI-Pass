@@ -109,6 +109,11 @@ const CAPABILITIES = [
     copy: 'Prompts, PDFs, and form content generate your solution — not someone else’s training set. Encryption, residency, audit, and deletion controls stay under AI-Pass governance.',
   },
   {
+    id: 'data-masking',
+    title: 'Data masking for API shares',
+    copy: 'Apply one line — applyMasking(payload) — before webhooks, partner APIs, or exports. Masks names, passwords, API keys, emails, phones, and payment fields under governed presets.',
+  },
+  {
     id: 'templates',
     title: 'Templates library',
     copy: 'Start from lead capture, registration, application, quiz, survey, order, and industry packs. Duplicate forms, save your own templates, and tag for reuse.',
@@ -271,7 +276,7 @@ export default function SolutionsPage() {
           <Link href="/requirements" className={styles.btnPrimary}>
             Start free
           </Link>
-          <a href="mailto:info@aipass.space?subject=Enterprise%20Forms%20Demo" className={styles.btnSecondary}>
+          <a href="mailto:contact@ehopn.com?subject=AI-Pass%20Enterprise%20Forms%20Demo" className={styles.btnSecondary}>
             Book enterprise demo
           </a>
         </div>
