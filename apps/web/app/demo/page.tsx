@@ -11,7 +11,7 @@ import { PremiumNav } from '../components/premium/PremiumNav';
 import { DEMO_MAILTO } from '../lib/site-nav';
 import styles from './demo.module.css';
 
-type Tab = 'answer' | 'graph' | 'compliance' | 'lineage';
+type Tab = 'answer' | 'graph' | 'ontology' | 'rules' | 'compliance' | 'lineage';
 
 function layoutNodes(count: number, width: number, height: number) {
   if (count === 0) return [] as { x: number; y: number }[];
@@ -64,9 +64,8 @@ export default function SemanticDemoPage() {
         <span className={styles.eyebrow}>Interactive demo · Semantic Graph</span>
         <h1 className={styles.title}>Watch agents think in your business model</h1>
         <p className={styles.sub}>
-          AI-Pass does not only route models — it grounds them in a governed knowledge graph.
-          Pick a regulated scenario, see multi-hop Graph RAG with provenance, ontology compliance gaps,
-          and the full agent decision lineage.
+          AI-Pass grounds agents in a full semantics layer: OWL/RDFS ontology, layered knowledge graph,
+          business rules, SHACL shapes, and multi-hop Graph RAG with provenance and decision lineage.
         </p>
       </header>
 
@@ -112,6 +111,10 @@ export default function SemanticDemoPage() {
               <span className={styles.statLabel}>Relations</span>
             </div>
             <div className={styles.stat}>
+              <span className={styles.statValue}>{snapshot.fullGraphStats.inferredEdges}</span>
+              <span className={styles.statLabel}>Inferred</span>
+            </div>
+            <div className={styles.stat}>
               <span className={styles.statValue}>{Math.round(snapshot.answer.confidence * 100)}%</span>
               <span className={styles.statLabel}>Confidence</span>
             </div>
@@ -122,10 +125,12 @@ export default function SemanticDemoPage() {
           <div className={styles.tabs}>
             {(
               [
-                ['answer', 'Graph RAG answer'],
-                ['graph', 'Knowledge graph'],
-                ['compliance', 'Ontology compliance'],
-                ['lineage', 'Decision lineage'],
+                ['answer', 'Graph RAG'],
+                ['graph', 'Layers'],
+                ['ontology', 'Ontology'],
+                ['rules', 'Business rules'],
+                ['compliance', 'Compliance'],
+                ['lineage', 'Lineage'],
               ] as const
             ).map(([id, label]) => (
               <button
@@ -173,8 +178,22 @@ export default function SemanticDemoPage() {
           {tab === 'graph' && (
             <>
               <p className={styles.itemBody} style={{ marginBottom: '0.75rem' }}>
-                Subgraph used for this answer — entities and predicates the agent is allowed to traverse.
+                Knowledge graph layers — TBox, ABox, inferred edges, provenance, and policy — plus the
+                answer subgraph.
               </p>
+              <div className={styles.evidenceList} style={{ marginBottom: '0.85rem' }}>
+                {snapshot.layers.layers.map((layer) => (
+                  <div key={layer.id} className={styles.evidenceItem}>
+                    <div className={styles.itemTitle}>
+                      {layer.label}
+                      <span className={styles.badge} style={{ marginLeft: 8 }}>
+                        {layer.nodeCount}n · {layer.edgeCount}e
+                      </span>
+                    </div>
+                    <p className={styles.itemBody}>{layer.description}</p>
+                  </div>
+                ))}
+              </div>
               <div className={styles.graphCanvas}>
                 <svg className={styles.graphSvg} viewBox="0 0 720 340" role="img" aria-label="Knowledge graph">
                   {snapshot.graph.edges.map((e) => {
@@ -228,6 +247,137 @@ export default function SemanticDemoPage() {
                   </div>
                 ))}
               </div>
+            </>
+          )}
+
+          {tab === 'ontology' && (
+            <>
+              <div className={styles.stats} style={{ marginTop: 0, marginBottom: '1rem' }}>
+                <div className={styles.stat}>
+                  <span className={styles.statValue}>{snapshot.ontology.classes}</span>
+                  <span className={styles.statLabel}>Classes</span>
+                </div>
+                <div className={styles.stat}>
+                  <span className={styles.statValue}>{snapshot.ontology.properties}</span>
+                  <span className={styles.statLabel}>Properties</span>
+                </div>
+                <div className={styles.stat}>
+                  <span className={styles.statValue}>{snapshot.ontology.axioms}</span>
+                  <span className={styles.statLabel}>Axioms</span>
+                </div>
+                <div className={styles.stat}>
+                  <span className={styles.statValue}>{snapshot.ontology.shapes}</span>
+                  <span className={styles.statLabel}>SHACL</span>
+                </div>
+              </div>
+              <p className={styles.itemBody} style={{ marginBottom: '0.75rem' }}>
+                Namespaces: {snapshot.ontology.namespaces.join(', ')} · Reasoner applied{' '}
+                {snapshot.reasoner.stats.axiomsApplied} axioms ·{' '}
+                {snapshot.reasoner.shapeViolations.length} shape findings
+              </p>
+              <h3 className={styles.panelTitle}>Sample inferences</h3>
+              <div className={styles.evidenceList}>
+                {snapshot.reasoner.inferences.slice(0, 8).map((inf) => (
+                  <div key={inf.id} className={styles.evidenceItem}>
+                    <div className={styles.itemTitle}>{inf.kind}</div>
+                    <p className={styles.itemBody}>{inf.justification}</p>
+                  </div>
+                ))}
+              </div>
+              {snapshot.reasoner.shapeViolations.length > 0 && (
+                <>
+                  <h3 className={styles.panelTitle} style={{ marginTop: '1.1rem' }}>
+                    SHACL findings
+                  </h3>
+                  <div className={styles.gapList}>
+                    {snapshot.reasoner.shapeViolations.slice(0, 6).map((v) => (
+                      <div key={`${v.shapeId}-${v.targetId}`} className={styles.gapItem}>
+                        <div className={styles.itemTitle}>
+                          {v.targetLabel}
+                          <span
+                            className={`${styles.badge} ${
+                              v.severity === 'Violation' ? styles.badgeGap : styles.badgePartial
+                            }`}
+                            style={{ marginLeft: 8 }}
+                          >
+                            {v.severity}
+                          </span>
+                        </div>
+                        <p className={styles.itemBody}>
+                          {v.property}: {v.message}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </>
+              )}
+            </>
+          )}
+
+          {tab === 'rules' && (
+            <>
+              <div className={styles.stats} style={{ marginTop: 0, marginBottom: '1rem' }}>
+                <div className={styles.stat}>
+                  <span className={styles.statValue}>{snapshot.ruleEvaluation.rulesEvaluated}</span>
+                  <span className={styles.statLabel}>Evaluated</span>
+                </div>
+                <div className={styles.stat}>
+                  <span className={styles.statValue}>{snapshot.ruleEvaluation.passed}</span>
+                  <span className={styles.statLabel}>Passed</span>
+                </div>
+                <div className={styles.stat}>
+                  <span className={styles.statValue}>{snapshot.ruleEvaluation.failed}</span>
+                  <span className={styles.statLabel}>Failed</span>
+                </div>
+                <div className={styles.stat}>
+                  <span className={styles.statValue}>{snapshot.ruleEvaluation.bySeverity.critical}</span>
+                  <span className={styles.statLabel}>Critical</span>
+                </div>
+              </div>
+              <h3 className={styles.panelTitle}>Rule catalog</h3>
+              <div className={styles.evidenceList} style={{ marginBottom: '1rem' }}>
+                {snapshot.rules.map((r) => (
+                  <div key={r.id} className={styles.evidenceItem}>
+                    <div className={styles.itemTitle}>
+                      {r.name}
+                      <span className={styles.badge} style={{ marginLeft: 8 }}>
+                        {r.category} · {r.severity}
+                      </span>
+                    </div>
+                    <p className={styles.itemBody}>
+                      WHEN {r.when} THEN {r.then}
+                    </p>
+                  </div>
+                ))}
+              </div>
+              {snapshot.ruleEvaluation.violations.length > 0 && (
+                <>
+                  <h3 className={styles.panelTitle}>Violations</h3>
+                  <div className={styles.gapList}>
+                    {snapshot.ruleEvaluation.violations.map((v, i) => (
+                      <div key={`${v.ruleId}-${v.subjectId}-${i}`} className={styles.gapItem}>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', gap: 8, marginBottom: 6 }}>
+                          <div className={styles.itemTitle}>
+                            {v.subjectLabel}: {v.ruleName}
+                          </div>
+                          <span
+                            className={`${styles.badge} ${
+                              v.severity === 'critical'
+                                ? styles.badgeGap
+                                : v.severity === 'warning'
+                                  ? styles.badgePartial
+                                  : styles.badgeCovered
+                            }`}
+                          >
+                            {v.severity}
+                          </span>
+                        </div>
+                        <p className={styles.itemBody}>{v.message}</p>
+                      </div>
+                    ))}
+                  </div>
+                </>
+              )}
             </>
           )}
 

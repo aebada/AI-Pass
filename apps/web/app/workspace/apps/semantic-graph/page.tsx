@@ -59,10 +59,23 @@ export default function SemanticGraphAppPage() {
           ))}
         </ul>
 
-        <h3 style={{ fontSize: 14, fontWeight: 700, marginTop: 20 }}>Compliance snapshot</h3>
+        <h3 style={{ fontSize: 14, fontWeight: 700, marginTop: 20 }}>Semantics layer</h3>
         <p style={{ color: 'var(--text-muted, #64748b)' }}>
-          {snap.compliance.covered} covered · {snap.compliance.partial} partial · {snap.compliance.gap} gaps
+          Ontology: {snap.ontology.classes} classes · {snap.ontology.properties} properties ·{' '}
+          {snap.ontology.shapes} SHACL · {snap.fullGraphStats.inferredEdges} inferred edges
         </p>
+        <p style={{ color: 'var(--text-muted, #64748b)' }}>
+          Rules: {snap.ruleEvaluation.passed}/{snap.ruleEvaluation.rulesEvaluated} passed ·{' '}
+          {snap.ruleEvaluation.bySeverity.critical} critical · Compliance:{' '}
+          {snap.compliance.covered} covered / {snap.compliance.partial} partial / {snap.compliance.gap} gaps
+        </p>
+        <ul style={{ paddingLeft: 18, marginTop: 8 }}>
+          {snap.layers.layers.map((l) => (
+            <li key={l.id} style={{ marginBottom: 4 }}>
+              <strong>{l.label}</strong> — {l.nodeCount} nodes, {l.edgeCount} edges
+            </li>
+          ))}
+        </ul>
 
         <pre style={{
           marginTop: 16,
@@ -73,7 +86,10 @@ export default function SemanticGraphAppPage() {
           fontSize: 12,
           overflow: 'auto',
         }}>
-{`import { runSemanticDemo } from '@ai-pass/semantic-graph';
+{`import { loadSemanticLayer, runSemanticDemo } from '@ai-pass/semantic-graph';
+
+const layer = loadSemanticLayer('banking');
+// layer.ontology + layer.layers + layer.rules + layer.reasoner
 
 const result = runSemanticDemo({ scenarioId: 'banking-wire' });
 // result.answer + result.graph + result.gaps + result.lineage`}

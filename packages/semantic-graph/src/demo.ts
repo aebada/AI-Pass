@@ -2,6 +2,10 @@ import { complianceSummary, getComplianceGaps } from './compliance-ontology';
 import { getLineages } from './decision-lineage';
 import { edgesAmong, getEnterpriseGraph, nodesForIndustry } from './enterprise-graph';
 import { graphRagQuery, subgraphForAnswer } from './graph-rag';
+import { evaluateBusinessRules, getBusinessRules } from './business-rules';
+import { ontologySummary } from './ontology';
+import { runReasoner } from './reasoner';
+import { getSemanticPlatform } from './semantic-platform';
 import type { DemoScenario, GraphRagAnswer, Industry } from './types';
 
 export const DEMO_SCENARIOS: DemoScenario[] = [
@@ -57,11 +61,17 @@ export interface DemoSnapshot {
   scenario: DemoScenario;
   answer: GraphRagAnswer;
   graph: ReturnType<typeof subgraphForAnswer>;
-  fullGraphStats: { nodes: number; edges: number };
+  fullGraphStats: { nodes: number; edges: number; inferredEdges: number };
   industryNodes: number;
   compliance: ReturnType<typeof complianceSummary>;
   gaps: ReturnType<typeof getComplianceGaps>;
   lineage: ReturnType<typeof getLineages>[number] | null;
+  ontology: ReturnType<typeof ontologySummary>;
+  layers: ReturnType<ReturnType<typeof getSemanticPlatform>['getLayers']>;
+  rules: ReturnType<typeof getBusinessRules>;
+  ruleEvaluation: ReturnType<typeof evaluateBusinessRules>;
+  reasoner: ReturnType<typeof runReasoner>;
+  capabilities: ReturnType<ReturnType<typeof getSemanticPlatform>['getCapabilities']>;
 }
 
 /** One-call demo runner for UI — pick a scenario (or custom question) */
@@ -81,16 +91,28 @@ export function runSemanticDemo(options: {
   const graph = subgraphForAnswer(answer, industry);
   const full = getEnterpriseGraph();
   const lineages = getLineages(industry === 'government' ? undefined : industry);
+  const platform = getSemanticPlatform();
+  const reasoner = platform.reason();
 
   return {
     scenario,
     answer,
     graph,
-    fullGraphStats: { nodes: full.nodes.length, edges: full.edges.length },
+    fullGraphStats: {
+      nodes: full.nodes.length,
+      edges: full.edges.length,
+      inferredEdges: reasoner.inferredEdges.length,
+    },
     industryNodes: nodesForIndustry(industry).length,
     compliance: complianceSummary(),
     gaps: getComplianceGaps(),
     lineage: lineages[0] ?? null,
+    ontology: ontologySummary(),
+    layers: platform.getLayers(industry === 'government' ? undefined : industry),
+    rules: getBusinessRules(industry === 'government' ? undefined : industry),
+    ruleEvaluation: evaluateBusinessRules(industry === 'government' ? undefined : industry),
+    reasoner,
+    capabilities: platform.getCapabilities(),
   };
 }
 

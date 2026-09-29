@@ -64,7 +64,7 @@ flowchart TB
 | `DataCleaningService` | Dedup, normalize, validate, encode |
 | `MetadataService` | Semantic enrichment — entities, topics, keywords |
 | `EmbeddingService` | Embeddings via provider-hub stubs |
-| `GraphService` | Entity-relationship graph, ontology stubs |
+| `GraphService` | Entity-relationship graph + full semantics layer (`@ai-pass/semantic-graph`) |
 | `VectorStore` | Pluggable vector backends (FAISS default) |
 | `RetrievalService` | Semantic, keyword, hybrid, metadata filter |
 | `RAGService` | Unified agent context API |
@@ -158,18 +158,36 @@ store.search(queryVector, topK);
 - Sample graph: Acme Corp → products → policies
 - 6 retrieval test queries
 
-## Semantic Graph Demo (product-facing)
+## Semantics Layer (`@ai-pass/semantic-graph`)
 
-The interactive differentiator for governed Graph RAG, ontology compliance, and agent lineage lives in `@ai-pass/semantic-graph` (thin consumer API, same pattern as `@ai-pass/data-masking`). It complements — does not replace — `GraphService` / `RAGService` in this package.
+Full enterprise semantics stack — ontology (TBox), layered knowledge graph, business rules, SHACL, reasoner, Graph RAG, and decision lineage. Bridged into `GraphService.getOntologySupport()` / `getSemanticLayer()` / `seedSemanticTwin()`.
+
+| Module | Role |
+|--------|------|
+| `ontology.ts` | OWL/RDFS classes, properties, axioms, SHACL shapes |
+| `layers.ts` | Conceptual / assertional / inferential / provenance / policy layers |
+| `business-rules.ts` | Executable governance & compliance rules |
+| `reasoner.ts` | Subclass expansion, transitive `part_of`, inverses, SHACL validation |
+| `semantic-platform.ts` | Unified facade (`loadSemanticLayer()`, `SemanticPlatform`) |
+| `graph-rag.ts` + `enterprise-graph.ts` | Multi-hop Graph RAG over the enterprise twin |
 
 | Surface | Path |
 |---------|------|
-| Public demo | [`/demo`](../apps/web/app/demo/page.tsx) |
+| Public demo | [`/demo`](../apps/web/app/demo/page.tsx) — Graph RAG, layers, ontology, rules, compliance, lineage |
 | Workspace app | `/workspace/apps/semantic-graph` |
-| Knowledge Graph UI | `/workspace/knowledge/graph` (uses demo scenarios client-side) |
-| Package | `packages/semantic-graph` — `runSemanticDemo()`, `graphRagQuery()`, compliance gaps, decision lineage |
+| Knowledge Graph UI | `/workspace/knowledge/graph` |
+| Package API | `loadSemanticLayer()`, `runSemanticDemo()`, `getSemanticPlatform()` |
 
-Server-side graph traversal and hybrid RAG remain on `getKnowledgePlatform().graph` / `.rag` and `/api/v1/knowledge/*`. Extend `graph-service.ts` for production RDF/OWL/SPARQL; keep the demo package for explainable, static-export-safe showcases.
+```typescript
+import { getKnowledgePlatform } from '@ai-pass/knowledge-pipeline';
+
+const kp = getKnowledgePlatform();
+kp.graph.getOntologySupport(); // rdf/rdfs/owl/sparql/shacl + rules + reasoner stats
+kp.graph.getSemanticLayer();   // full snapshot
+kp.graph.seedSemanticTwin();   // ABox into GraphService (also called from seed)
+```
+
+Server-side graph traversal and hybrid RAG remain on `getKnowledgePlatform().graph` / `.rag` and `/api/v1/knowledge/*`.
 
 ## Workspace UI
 

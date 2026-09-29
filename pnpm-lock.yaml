@@ -704,6 +704,9 @@ importers:
       '@ai-pass/provider-hub':
         specifier: workspace:*
         version: link:../provider-hub
+      '@ai-pass/semantic-graph':
+        specifier: workspace:*
+        version: link:../semantic-graph
       '@ai-pass/shared':
         specifier: workspace:*
         version: link:../shared

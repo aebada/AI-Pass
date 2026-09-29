@@ -150,6 +150,9 @@ export function seedKnowledgePlatform(platform: KnowledgePlatform, tenantId = 't
 
   platform.graph.createGraph(tenantId, 'Acme Enterprise Knowledge Graph');
 
+  // Seed full enterprise semantic twin (ontology ABox) alongside demo Acme graph
+  platform.graph.seedSemanticTwin(tenantId);
+
   platform.governance.recordLineage({
     entityType: 'source',
     entityId: src1.id,

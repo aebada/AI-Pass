@@ -36,7 +36,13 @@ export default function KnowledgeGraphPage() {
             ))}
           </select>
           <p style={{ margin: '12px 0 0', fontSize: 13, color: workspaceTokens.colors.textMuted }}>
-            Graph overview: {overview.nodes.length} entities · {overview.edges.length} relationships · answer hops {snap.answer.hops.length}
+            Graph overview: {overview.nodes.length} entities · {overview.edges.length} relationships ·{' '}
+            {snap.fullGraphStats.inferredEdges} inferred · answer hops {snap.answer.hops.length}
+          </p>
+          <p style={{ margin: '6px 0 0', fontSize: 13, color: workspaceTokens.colors.textMuted }}>
+            Ontology {snap.ontology.classes}c/{snap.ontology.properties}p · Rules{' '}
+            {snap.ruleEvaluation.passed}/{snap.ruleEvaluation.rulesEvaluated} · Layers{' '}
+            {snap.layers.layers.map((l) => l.id).join(', ')}
           </p>
         </Card>
 
