@@ -412,6 +412,67 @@
 .featureBars span:nth-child(2) { width: 74%; }
 .featureBars span:nth-child(3) { width: 58%; }
 
+.mockList {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.mockRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.75rem 0.85rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.mockRow strong {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.mockRow span {
+  display: block;
+  margin-top: 0.15rem;
+  font-size: 0.75rem;
+  opacity: 0.85;
+}
+
+.mockRow em {
+  flex-shrink: 0;
+  font-style: normal;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.28rem 0.55rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.mockScore {
+  display: flex;
+  align-items: baseline;
+  gap: 0.65rem;
+  margin-bottom: 0.25rem;
+}
+
+.mockScore strong {
+  font-size: clamp(2.5rem, 5vw, 3.25rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.mockScore span {
+  font-size: 0.9rem;
+  font-weight: 600;
+  opacity: 0.9;
+}
+
 .pricingGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
