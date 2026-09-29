@@ -32,6 +32,7 @@ const DEMO_INDEX: SearchResult[] = [
   { id: 'mod-agents', type: 'module', title: 'Agents', description: 'Agent Studio integration', route: '/workspace/agents', icon: '🤖', score: 1 },
   { id: 'mod-workflows', type: 'module', title: 'Workflows', description: 'Visual workflow builder', route: '/workspace/workflows', icon: '⟳', score: 1 },
   { id: 'mod-knowledge', type: 'module', title: 'Knowledge', description: 'Knowledge pipeline', route: '/workspace/knowledge', icon: '📚', score: 1 },
+  { id: 'mod-semantic-graph', type: 'module', title: 'Semantic Graph Demo', description: 'Graph RAG, ontology compliance, agent lineage', route: '/demo', icon: '🕸', score: 0.95 },
   { id: 'mod-marketplace', type: 'module', title: 'Marketplace', description: 'Skills, templates, apps', route: '/workspace/marketplace', icon: '🏪', score: 1 },
   { id: 'app-invoice', type: 'app', title: 'Invoice AI', description: 'Finance automation and invoice lifecycle', route: '/workspace/apps/invoice-ai', icon: '🧾', score: 0.95 },
   { id: 'app-supply', type: 'app', title: 'Supply Chain AI', description: 'Procurement offer evaluation', route: '/workspace/apps/supply-chain', icon: '📦', score: 0.95 },

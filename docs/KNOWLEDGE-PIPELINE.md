@@ -158,6 +158,19 @@ store.search(queryVector, topK);
 - Sample graph: Acme Corp → products → policies
 - 6 retrieval test queries
 
+## Semantic Graph Demo (product-facing)
+
+The interactive differentiator for governed Graph RAG, ontology compliance, and agent lineage lives in `@ai-pass/semantic-graph` (thin consumer API, same pattern as `@ai-pass/data-masking`). It complements — does not replace — `GraphService` / `RAGService` in this package.
+
+| Surface | Path |
+|---------|------|
+| Public demo | [`/demo`](../apps/web/app/demo/page.tsx) |
+| Workspace app | `/workspace/apps/semantic-graph` |
+| Knowledge Graph UI | `/workspace/knowledge/graph` (uses demo scenarios client-side) |
+| Package | `packages/semantic-graph` — `runSemanticDemo()`, `graphRagQuery()`, compliance gaps, decision lineage |
+
+Server-side graph traversal and hybrid RAG remain on `getKnowledgePlatform().graph` / `.rag` and `/api/v1/knowledge/*`. Extend `graph-service.ts` for production RDF/OWL/SPARQL; keep the demo package for explainable, static-export-safe showcases.
+
 ## Workspace UI
 
 Navigate to `/workspace/knowledge` for:
@@ -172,6 +185,8 @@ Navigate to `/workspace/knowledge` for:
 - Synchronization Monitor
 - Governance
 - Administration
+
+Also open **[/demo](https://aipass.space/demo)** for the regulated-industry Graph RAG walkthrough.
 
 ## Membership Limits
 

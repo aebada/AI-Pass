@@ -147,6 +147,7 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
     links: [
       { label: 'Workspace', href: '/workspace' },
       { label: 'Semantic Graph Demo', href: '/demo' },
+      { label: 'Knowledge Pipeline', href: '/workspace/knowledge' },
       { label: 'Trust Engine', href: '/workspace/trust' },
       { label: 'AI Governance', href: '/workspace/governance' },
       { label: 'Routing', href: '/workspace/providers' },

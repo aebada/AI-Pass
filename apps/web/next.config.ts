@@ -37,6 +37,7 @@ const nextConfig: NextConfig = {
     '@ai-pass/sales-ai',
     '@ai-pass/content-ai',
     '@ai-pass/data-masking',
+    '@ai-pass/semantic-graph',
     '@ai-pass/crm-connectors',
   ],
   reactStrictMode: true,
