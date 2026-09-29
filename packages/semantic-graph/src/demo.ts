@@ -1,8 +1,8 @@
-import { complianceSummary, getComplianceGaps } from './compliance-ontology.js';
-import { getLineages } from './decision-lineage.js';
-import { edgesAmong, getEnterpriseGraph, nodesForIndustry } from './enterprise-graph.js';
-import { graphRagQuery, subgraphForAnswer } from './graph-rag.js';
-import type { DemoScenario, GraphRagAnswer, Industry } from './types.js';
+import { complianceSummary, getComplianceGaps } from './compliance-ontology';
+import { getLineages } from './decision-lineage';
+import { edgesAmong, getEnterpriseGraph, nodesForIndustry } from './enterprise-graph';
+import { graphRagQuery, subgraphForAnswer } from './graph-rag';
+import type { DemoScenario, GraphRagAnswer, Industry } from './types';
 
 export const DEMO_SCENARIOS: DemoScenario[] = [
   {

@@ -1,4 +1,4 @@
-import type { GraphEdge, GraphNode, Industry } from './types.js';
+import type { GraphEdge, GraphNode, Industry } from './types';
 
 /** Shared enterprise digital twin used by the interactive demo */
 const NODES: GraphNode[] = [

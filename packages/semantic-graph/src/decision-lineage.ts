@@ -1,4 +1,4 @@
-import type { DecisionLineage, Industry } from './types.js';
+import type { DecisionLineage, Industry } from './types';
 
 const LINEAGES: DecisionLineage[] = [
   {

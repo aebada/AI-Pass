@@ -1,4 +1,4 @@
-import type { ComplianceGap } from './types.js';
+import type { ComplianceGap } from './types';
 
 /** Ontology-driven compliance mapping — obligations → platform components */
 export function getComplianceGaps(): ComplianceGap[] {

@@ -1,5 +1,5 @@
-import { edgesAmong, getEnterpriseGraph, nodesForIndustry } from './enterprise-graph.js';
-import type { GraphRagAnswer, Industry, ProvenanceHop } from './types.js';
+import { edgesAmong, getEnterpriseGraph, nodesForIndustry } from './enterprise-graph';
+import type { GraphRagAnswer, Industry, ProvenanceHop } from './types';
 
 interface ScenarioAnswer {
   match: RegExp;

@@ -9,24 +9,24 @@ export type {
   DecisionStep,
   DecisionLineage,
   DemoScenario,
-} from './types.js';
+} from './types';
 
 export {
   getEnterpriseGraph,
   nodesForIndustry,
   edgesAmong,
-} from './enterprise-graph.js';
+} from './enterprise-graph';
 
-export { graphRagQuery, subgraphForAnswer } from './graph-rag.js';
+export { graphRagQuery, subgraphForAnswer } from './graph-rag';
 
-export { getComplianceGaps, complianceSummary } from './compliance-ontology.js';
+export { getComplianceGaps, complianceSummary } from './compliance-ontology';
 
-export { getLineages, getLineage } from './decision-lineage.js';
+export { getLineages, getLineage } from './decision-lineage';
 
 export {
   DEMO_SCENARIOS,
   INDUSTRY_LABELS,
   runSemanticDemo,
   listGraphOverview,
-} from './demo.js';
-export type { DemoSnapshot } from './demo.js';
+} from './demo';
+export type { DemoSnapshot } from './demo';
