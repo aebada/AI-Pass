@@ -3,7 +3,7 @@
   min-height: 100vh;
   background-color: var(--bg);
   color: var(--text);
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 .hero {

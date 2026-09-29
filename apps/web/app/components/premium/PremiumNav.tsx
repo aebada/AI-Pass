@@ -174,7 +174,18 @@ export function PremiumNav({ variant = 'business' }: { variant?: 'landing' | 'bu
               </button>
               {openDropdown === item.label && (
                 <div
-                  className={`${styles.megaMenu} ${item.wide ? styles.megaMenuWide : ''}`}
+                  className={[
+                    styles.megaMenu,
+                    item.wide ? styles.megaMenuWide : '',
+                    item.label === 'Platform' || item.label === 'Solutions' || item.label === 'Industries'
+                      ? styles.megaMenuStart
+                      : '',
+                    item.label === 'Company' || item.label === 'Resources' || item.label === 'Developers'
+                      ? styles.megaMenuEnd
+                      : '',
+                  ]
+                    .filter(Boolean)
+                    .join(' ')}
                   role="menu"
                 >
                   {item.items.map((link) => (

@@ -55,15 +55,11 @@
   flex: 1;
   min-width: 0;
   flex-wrap: nowrap;
-  overflow-x: auto;
-  scrollbar-width: none;
+  /* Must stay visible — overflow-x:auto clips absolute mega menus */
+  overflow: visible;
 }
 
-.navLinks::-webkit-scrollbar {
-  display: none;
-}
-
-@media (min-width: 960px) {
+@media (min-width: 900px) {
   .navLinks {
     display: flex;
   }
@@ -76,12 +72,12 @@
 .navDropdownTrigger {
   display: inline-flex;
   align-items: center;
-  gap: 0.3rem;
-  padding: 0.35rem 0.4rem;
+  gap: 0.25rem;
+  padding: 0.35rem 0.35rem;
   border: none;
   border-radius: 6px;
   background: transparent;
-  font-size: 0.8125rem;
+  font-size: 0.78rem;
   font-weight: 600;
   color: var(--text-muted);
   cursor: pointer;
@@ -118,18 +114,41 @@
 
 .megaMenu {
   position: absolute;
-  top: calc(100% + 4px);
+  /* Flush to trigger so hover does not drop across a gap */
+  top: 100%;
   left: 50%;
   transform: translateX(-50%);
   min-width: 240px;
   max-width: 320px;
   padding: 0.5rem;
+  margin-top: 0;
   background: var(--bg-elevated);
   border: 1px solid var(--border);
   border-radius: 12px;
   box-shadow: 0 16px 48px rgba(0, 0, 0, 0.35);
   z-index: 200;
   animation: dropIn 0.2s ease-out;
+}
+
+/* Invisible hover bridge between trigger and panel */
+.megaMenu::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 0;
+  right: 0;
+  height: 10px;
+}
+
+.megaMenuStart {
+  left: 0;
+  transform: none;
+}
+
+.megaMenuEnd {
+  left: auto;
+  right: 0;
+  transform: none;
 }
 
 .megaMenuWide {
@@ -141,7 +160,7 @@
   padding: 0.625rem;
 }
 
-@media (max-width: 959px) {
+@media (max-width: 899px) {
   .megaMenuWide {
     min-width: 280px;
     max-width: 100%;
@@ -215,7 +234,7 @@
   transform: translateY(-7px) rotate(-45deg);
 }
 
-@media (min-width: 960px) {
+@media (min-width: 900px) {
   .hamburger {
     display: none;
   }
@@ -332,7 +351,7 @@
   display: none;
 }
 
-@media (min-width: 960px) {
+@media (min-width: 900px) {
   .desktopOnly {
     display: inline-flex;
   }
@@ -343,7 +362,7 @@
 }
 
 .navLink {
-  font-size: 0.8125rem;
+  font-size: 0.78rem;
   font-weight: 600;
   color: var(--text-muted);
   text-decoration: none;

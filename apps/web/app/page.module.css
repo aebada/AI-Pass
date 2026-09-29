@@ -4,7 +4,8 @@
   min-height: 100vh;
   background: var(--bg);
   color: var(--text);
-  overflow-x: hidden;
+  /* clip avoids creating a scrollport that hides sticky-nav mega menus */
+  overflow-x: clip;
 }
 
 .btnPrimary,
