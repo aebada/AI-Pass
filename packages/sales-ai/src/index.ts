@@ -1,6 +1,7 @@
 export * from './types.js';
 export * from './api-types.js';
 export * from './demo-data.js';
+export * from './onboarding-batch-100.js';
 export * from './skills.js';
 export * from './agents.js';
 export * from './membership-gates.js';

@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server';
 
 export const runtime = 'nodejs';
 
-export async function GET(request: Request) {
+export async function GET(request: Request): Promise<NextResponse> {
   const tenantId = parseTenantId(request.headers);
   const tier = parseTier(request.headers);
   const usage = defaultContentAIPlatform.getUsage(tenantId, tier);

@@ -129,9 +129,12 @@ export default function AboutPage() {
             For enterprise inquiries, partnerships, or platform questions, reach out to our team.
             Full contact forms and regional offices coming soon.
           </p>
-          <a href="mailto:hello@ai-pass.com" className={styles.contactEmail}>
-            hello@ai-pass.com
+          <a href="mailto:contact@ehopn.com" className={styles.contactEmail}>
+            contact@ehopn.com
           </a>
+          <p className={styles.contactText} style={{ marginTop: 12 }}>
+            AI-Pass is a HOPn company — <a href="https://ehopn.com" target="_blank" rel="noopener noreferrer">ehopn.com</a>
+          </p>
         </div>
       </section>
 
@@ -149,7 +152,7 @@ export default function AboutPage() {
       </div>
 
       <footer className={styles.footer}>
-        <span>© 2026 AI Pass. All rights reserved.</span>
+        <span>© 2026 AI-Pass · A HOPn company. All rights reserved.</span>
       </footer>
     </div>
   );

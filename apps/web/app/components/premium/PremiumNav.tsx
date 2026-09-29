@@ -174,7 +174,18 @@ export function PremiumNav({ variant = 'business' }: { variant?: 'landing' | 'bu
               </button>
               {openDropdown === item.label && (
                 <div
-                  className={`${styles.megaMenu} ${item.wide ? styles.megaMenuWide : ''}`}
+                  className={[
+                    styles.megaMenu,
+                    item.wide ? styles.megaMenuWide : '',
+                    item.label === 'Platform' || item.label === 'Solutions' || item.label === 'Industries'
+                      ? styles.megaMenuStart
+                      : '',
+                    item.label === 'Company' || item.label === 'Resources' || item.label === 'Developers'
+                      ? styles.megaMenuEnd
+                      : '',
+                  ]
+                    .filter(Boolean)
+                    .join(' ')}
                   role="menu"
                 >
                   {item.items.map((link) => (
@@ -313,7 +324,7 @@ export function PremiumNav({ variant = 'business' }: { variant?: 'landing' | 'bu
                   <Link href="/billing" className={styles.menuItem} onClick={() => setUserOpen(false)}>
                     Billing & Plan
                   </Link>
-                  <Link href="/solutions" className={styles.menuItem} onClick={() => setUserOpen(false)}>
+                  <Link href="/workspace/solutions" className={styles.menuItem} onClick={() => setUserOpen(false)}>
                     My Solutions
                   </Link>
                   <button type="button" className={styles.menuItemBtn} onClick={() => setUserOpen(false)}>
@@ -339,7 +350,7 @@ export function PremiumNav({ variant = 'business' }: { variant?: 'landing' | 'bu
         <button
           type="button"
           className={styles.hamburger}
-          aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+          aria-label={mobileOpen ? 'Close main menu' : 'Open main menu'}
           aria-expanded={mobileOpen}
           onClick={() => setMobileOpen((o) => !o)}
         >

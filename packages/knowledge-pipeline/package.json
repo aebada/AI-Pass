@@ -16,7 +16,8 @@
     "@ai-pass/shared": "workspace:*",
     "@ai-pass/provider-hub": "workspace:*",
     "@ai-pass/wallet": "workspace:*",
-    "@ai-pass/membership": "workspace:*"
+    "@ai-pass/membership": "workspace:*",
+    "@ai-pass/semantic-graph": "workspace:*"
   },
   "devDependencies": { "typescript": "^5.8.3" }
 }

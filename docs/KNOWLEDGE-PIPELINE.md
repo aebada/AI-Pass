@@ -64,7 +64,7 @@ flowchart TB
 | `DataCleaningService` | Dedup, normalize, validate, encode |
 | `MetadataService` | Semantic enrichment — entities, topics, keywords |
 | `EmbeddingService` | Embeddings via provider-hub stubs |
-| `GraphService` | Entity-relationship graph, ontology stubs |
+| `GraphService` | Entity-relationship graph + full semantics layer (`@ai-pass/semantic-graph`) |
 | `VectorStore` | Pluggable vector backends (FAISS default) |
 | `RetrievalService` | Semantic, keyword, hybrid, metadata filter |
 | `RAGService` | Unified agent context API |
@@ -158,6 +158,37 @@ store.search(queryVector, topK);
 - Sample graph: Acme Corp → products → policies
 - 6 retrieval test queries
 
+## Semantics Layer (`@ai-pass/semantic-graph`)
+
+Full enterprise semantics stack — ontology (TBox), layered knowledge graph, business rules, SHACL, reasoner, Graph RAG, and decision lineage. Bridged into `GraphService.getOntologySupport()` / `getSemanticLayer()` / `seedSemanticTwin()`.
+
+| Module | Role |
+|--------|------|
+| `ontology.ts` | OWL/RDFS classes, properties, axioms, SHACL shapes |
+| `layers.ts` | Conceptual / assertional / inferential / provenance / policy layers |
+| `business-rules.ts` | Executable governance & compliance rules |
+| `reasoner.ts` | Subclass expansion, transitive `part_of`, inverses, SHACL validation |
+| `semantic-platform.ts` | Unified facade (`loadSemanticLayer()`, `SemanticPlatform`) |
+| `graph-rag.ts` + `enterprise-graph.ts` | Multi-hop Graph RAG over the enterprise twin |
+
+| Surface | Path |
+|---------|------|
+| Public demo | [`/demo`](../apps/web/app/demo/page.tsx) — Graph RAG, layers, ontology, rules, compliance, lineage |
+| Workspace app | `/workspace/apps/semantic-graph` |
+| Knowledge Graph UI | `/workspace/knowledge/graph` |
+| Package API | `loadSemanticLayer()`, `runSemanticDemo()`, `getSemanticPlatform()` |
+
+```typescript
+import { getKnowledgePlatform } from '@ai-pass/knowledge-pipeline';
+
+const kp = getKnowledgePlatform();
+kp.graph.getOntologySupport(); // rdf/rdfs/owl/sparql/shacl + rules + reasoner stats
+kp.graph.getSemanticLayer();   // full snapshot
+kp.graph.seedSemanticTwin();   // ABox into GraphService (also called from seed)
+```
+
+Server-side graph traversal and hybrid RAG remain on `getKnowledgePlatform().graph` / `.rag` and `/api/v1/knowledge/*`.
+
 ## Workspace UI
 
 Navigate to `/workspace/knowledge` for:
@@ -172,6 +203,8 @@ Navigate to `/workspace/knowledge` for:
 - Synchronization Monitor
 - Governance
 - Administration
+
+Also open **[/demo](https://aipass.space/demo)** for the regulated-industry Graph RAG walkthrough.
 
 ## Membership Limits
 
