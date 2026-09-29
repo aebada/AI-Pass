@@ -22,12 +22,13 @@ export const SITE_NAV: SiteNavItem[] = [
     label: 'Platform',
     wide: true,
     items: [
-      { label: 'Interactive Demo', href: '/demo', description: 'Click through routing, governance, trust, store, and savings' },
+      { label: 'Semantic Graph Demo', href: '/demo', description: 'Graph RAG, ontology compliance, and agent lineage' },
       { label: 'Dashboard', href: '/workspace', description: 'Executive view of usage, cost, and control' },
       { label: 'Workspace', href: '/workspace', description: 'Unified command center for enterprise AI' },
       { label: 'Agent Studio', href: '/workspace/agents', description: 'Build and operate autonomous agents' },
       { label: 'Workflow Engine', href: '/workspace/workflows', description: 'Orchestrate business processes' },
       { label: 'Knowledge Pipeline', href: '/workspace/knowledge', description: 'RAG and enterprise knowledge' },
+      { label: 'Semantic Knowledge Graph', href: '/workspace/apps/semantic-graph', description: 'Governed ontology for agent context' },
       { label: 'LiveSync', href: '/workspace/workflows/livesync', description: 'Real-time event orchestration' },
       { label: 'Analysis Studio', href: '/workspace/analysis', description: 'Analytics and decision support' },
       { label: 'Trust Engine', href: '/workspace/trust', description: 'Certify and monitor AI systems' },
@@ -145,7 +146,7 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
     title: 'Platform',
     links: [
       { label: 'Workspace', href: '/workspace' },
-      { label: 'Interactive Demo', href: '/demo' },
+      { label: 'Semantic Graph Demo', href: '/demo' },
       { label: 'Trust Engine', href: '/workspace/trust' },
       { label: 'AI Governance', href: '/workspace/governance' },
       { label: 'Routing', href: '/workspace/providers' },

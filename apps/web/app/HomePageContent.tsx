@@ -124,7 +124,7 @@ export default function HomePageContent() {
                 Book enterprise demo
               </a>
               <Link href="/demo" className={styles.btnSecondary}>
-                Try interactive demo
+                Try semantic graph demo
               </Link>
             </div>
             <p className={styles.heroNote}>No credit card · Enterprise-ready · On-prem options</p>
@@ -280,7 +280,7 @@ export default function HomePageContent() {
               Book enterprise demo
             </a>
             <Link href="/demo" className={styles.btnGhostOnPurple}>
-              Try interactive demo
+              Try semantic graph demo
             </Link>
           </div>
         </section>

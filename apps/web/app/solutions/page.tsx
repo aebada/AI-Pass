@@ -114,6 +114,11 @@ const CAPABILITIES = [
     copy: 'Apply one line — applyMasking(payload) — before webhooks, partner APIs, or exports. Masks names, passwords, API keys, emails, phones, and payment fields under governed presets.',
   },
   {
+    id: 'semantic-graph',
+    title: 'Semantic knowledge graph & Graph RAG',
+    copy: 'Ground agents in your enterprise ontology — entities, relationships, ISO/SOC obligations, and decision lineage. Multi-hop answers with traceable provenance, not black-box retrieval.',
+  },
+  {
     id: 'templates',
     title: 'Templates library',
     copy: 'Start from lead capture, registration, application, quiz, survey, order, and industry packs. Duplicate forms, save your own templates, and tag for reuse.',
@@ -197,7 +202,7 @@ export default function SolutionsPage() {
               Build a solution
             </Link>
             <Link href="/demo" className={styles.btnSecondary}>
-              Try interactive demo
+              Try semantic graph demo
             </Link>
             <Link href="/workspace/solutions" className={styles.btnGhost}>
               Open My Solutions

@@ -81,6 +81,15 @@ const INSTALLED_APPS = [
     installed: true,
   },
   {
+    id: 'semantic-graph',
+    name: 'Semantic Graph',
+    description: 'Knowledge graph, Graph RAG provenance, ontology compliance, agent lineage',
+    icon: '🕸',
+    route: '/workspace/apps/semantic-graph',
+    status: 'done' as const,
+    installed: true,
+  },
+  {
     id: 'hr-ai',
     name: 'HR AI',
     description: 'Onboarding, policy Q&A, and employee workflows',

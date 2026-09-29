@@ -206,6 +206,9 @@ importers:
       '@ai-pass/sales-ai':
         specifier: workspace:*
         version: link:../../packages/sales-ai
+      '@ai-pass/semantic-graph':
+        specifier: workspace:*
+        version: link:../../packages/semantic-graph
       '@ai-pass/shared':
         specifier: workspace:*
         version: link:../../packages/shared
@@ -970,6 +973,12 @@ importers:
       '@ai-pass/wallet':
         specifier: workspace:*
         version: link:../wallet
+    devDependencies:
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/semantic-graph:
     devDependencies:
       typescript:
         specifier: ^5.8.3
