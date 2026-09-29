@@ -339,7 +339,7 @@ export function PremiumNav({ variant = 'business' }: { variant?: 'landing' | 'bu
         <button
           type="button"
           className={styles.hamburger}
-          aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+          aria-label={mobileOpen ? 'Close main menu' : 'Open main menu'}
           aria-expanded={mobileOpen}
           onClick={() => setMobileOpen((o) => !o)}
         >
