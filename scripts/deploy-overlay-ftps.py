@@ -76,8 +76,7 @@ echo "RECEIVE_OK files=$n " . date('c');
     ftp.prot_p()
     ftp.set_pasv(True)
 
-    for victim in (recv, f".in.{recv}", f".in.{recv}.", f"/ .in.{recv}."):
-        victim = victim.replace("/ ", "/")
+    for victim in (recv, f".in.{recv}", f".in.{recv}."):
         try:
             ftp.delete(victim)
         except error_perm:
