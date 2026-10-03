@@ -1,7 +1,7 @@
 .nav {
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 160;
   display: flex;
   align-items: center;
   gap: 1.5rem;
@@ -239,13 +239,14 @@
 
 .mobilePanel {
   position: fixed;
-  top: 65px;
+  top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   z-index: 150;
   display: flex;
   flex-direction: column;
+  padding-top: 72px;
   background: var(--bg);
   border-top: 1px solid var(--border);
   animation: slideDown 0.25s ease-out;
@@ -342,20 +343,6 @@
 .mobileThemeBtn:hover {
   border-color: var(--accent);
   color: var(--text);
-}
-
-.desktopOnly {
-  display: none;
-}
-
-@media (min-width: 900px) {
-  .desktopOnly {
-    display: inline-flex;
-  }
-
-  .dropdownWrap.desktopOnly {
-    display: block;
-  }
 }
 
 .navLink {
@@ -625,4 +612,23 @@
   border: none;
   border-top: 1px solid var(--border);
   margin: 4px 0;
+}
+
+/* Keep last so later display rules do not un-hide these on small screens. */
+.desktopOnly,
+a.desktopOnly,
+button.desktopOnly {
+  display: none;
+}
+
+@media (min-width: 900px) {
+  .desktopOnly,
+  a.desktopOnly,
+  button.desktopOnly {
+    display: inline-flex;
+  }
+
+  .dropdownWrap.desktopOnly {
+    display: block;
+  }
 }

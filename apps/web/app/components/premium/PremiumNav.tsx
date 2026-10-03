@@ -114,8 +114,8 @@ export function PremiumNav({ variant = 'business' }: { variant?: 'landing' | 'bu
     setMobileExpanded(null);
   };
 
-  const toggleDropdown = (label: string) => {
-    setOpenDropdown((current) => (current === label ? null : label));
+  const openMenu = (label: string) => {
+    setOpenDropdown(label);
   };
 
   const toggleMobileSection = (label: string) => {
@@ -165,7 +165,7 @@ export function PremiumNav({ variant = 'business' }: { variant?: 'landing' | 'bu
             <div
               key={item.label}
               className={styles.navDropdown}
-              onMouseEnter={() => setOpenDropdown(item.label)}
+              onMouseEnter={() => openMenu(item.label)}
               onMouseLeave={() => setOpenDropdown(null)}
             >
               <button
@@ -173,7 +173,7 @@ export function PremiumNav({ variant = 'business' }: { variant?: 'landing' | 'bu
                 className={`${styles.navDropdownTrigger} ${isNavItemActive(pathname, item) ? styles.navLinkActive : ''}`}
                 aria-expanded={openDropdown === item.label}
                 aria-haspopup="true"
-                onClick={() => toggleDropdown(item.label)}
+                onClick={() => openMenu(item.label)}
               >
                 {item.label}
                 <span className={styles.chevron} aria-hidden />
