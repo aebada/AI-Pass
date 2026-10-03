@@ -43,11 +43,16 @@ if [[ "$FTP_DELETE" == "1" ]]; then
 fi
 
 echo "Uploading $OUT_DIR -> ftp://${FTP_HOST}${FTP_REMOTE_DIR} (overlay, delete=${FTP_DELETE})"
+# Hostinger data channels fail when EPSV is used from some clouds; force PASV.
 # shellcheck disable=SC2086
 lftp -u "$FTP_USER","$FTP_PASS" "ftp://${FTP_HOST}" -e "\
   set ftp:ssl-allow no; \
-  set net:max-retries 3; \
-  set net:timeout 30; \
+  set ftp:prefer-epsv no; \
+  set ftp:passive-mode yes; \
+  set net:max-retries 5; \
+  set net:timeout 60; \
+  set net:persist-retries 3; \
+  set mirror:parallel 4; \
   mirror -R -a --verbose ${DELETE_FLAG} \
     --exclude-glob auth/ \
     --exclude-glob auth-lib/ \
