@@ -65,12 +65,11 @@ export function ResearchShell({
         </div>
         <footer style={{ padding: '2rem 0 3rem', color: 'var(--text-muted)', fontSize: 13 }}>
           <div>
-            {FOOTER_COLUMNS[4]?.links.slice(0, 4).map((l) => (
-              <Link key={l.href} href={l.href} style={{ marginInlineEnd: 12 }}>
+            {FOOTER_COLUMNS.find((column) => column.title === 'Research')?.links.slice(0, 8).map((l) => (
+              <Link key={`${l.href}-${l.label}`} href={l.href} style={{ marginInlineEnd: 12 }}>
                 {l.label}
               </Link>
             ))}
-            <Link href="/research">HOPN Lab</Link>
           </div>
           <p>HOPN Lab is the research arm of HOPN UG.</p>
         </footer>

@@ -103,3 +103,24 @@ export const RESEARCH_NAV = [
   { href: '/research/roadmap', label: 'Roadmap' },
   { href: '/research/evidence', label: 'Evidence' },
 ] as const;
+
+/** Top-menu Research dropdown: programs plus lab pages, demo, and contact. */
+export function researchMenuItems(): { href: string; label: string; description: string }[] {
+  const programItems = PROGRAM_ORDER.map((id) => {
+    const program = getProgram(id);
+    return {
+      href: `/research/${id}`,
+      label: program?.name ?? id,
+      description: program?.direction ?? '',
+    };
+  });
+
+  return [
+    { href: '/research', label: 'HOPN Lab overview', description: 'Thesis, diagrams, and walkthrough' },
+    ...programItems,
+    { href: '/research/roadmap', label: 'Roadmap', description: 'Twelve-month plan and stage gates' },
+    { href: '/research/evidence', label: 'Evidence', description: 'How the lab publishes' },
+    { href: '/demo', label: 'Interactive demo', description: 'Graph RAG with provenance' },
+    { href: LAB_CONTACT_MAILTO, label: 'Contact the lab', description: `Email ${LAB_EMAIL}` },
+  ];
+}

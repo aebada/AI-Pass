@@ -2,6 +2,9 @@
   min-height: 100vh;
   background: var(--bg);
   color: var(--text);
+}
+
+.page > :not(nav) {
   overflow-x: clip;
 }
 

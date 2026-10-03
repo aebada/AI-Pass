@@ -1,3 +1,5 @@
+import { researchMenuItems } from './hopn-lab';
+
 export type SiteNavLink = {
   label: string;
   href: string;
@@ -28,6 +30,8 @@ export const SITE_NAV: SiteNavItem[] = [
       { label: 'Agent Studio', href: '/workspace/agents', description: 'Build and operate autonomous agents' },
       { label: 'Workflow Engine', href: '/workspace/workflows', description: 'Orchestrate business processes' },
       { label: 'Knowledge Pipeline', href: '/workspace/knowledge', description: 'RAG and enterprise knowledge' },
+      { label: 'HOPN Lab', href: '/research', description: 'Research agenda and conceptual diagrams' },
+      { label: 'Knowledge graph', href: '/research/ground', description: 'Provenance graph program' },
       { label: 'LiveSync', href: '/workspace/workflows/livesync', description: 'Real-time event orchestration' },
       { label: 'Analysis Studio', href: '/workspace/analysis', description: 'Analytics and decision support' },
       { label: 'Trust Engine', href: '/workspace/trust', description: 'Certify and monitor AI systems' },
@@ -80,9 +84,10 @@ export const SITE_NAV: SiteNavItem[] = [
     ],
   },
   {
-    type: 'link',
+    type: 'dropdown',
     label: 'Research',
-    href: '/research',
+    wide: true,
+    items: researchMenuItems(),
   },
   {
     type: 'link',
@@ -147,6 +152,12 @@ export type FooterColumn = {
 };
 
 export const FOOTER_COLUMNS: FooterColumn[] = [
+  {
+    title: 'Research',
+    links: researchMenuItems()
+      .filter((item) => !item.href.startsWith('mailto:'))
+      .map(({ label, href, description }) => ({ label, href, description })),
+  },
   {
     title: 'Platform',
     links: [

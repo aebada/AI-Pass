@@ -60,5 +60,33 @@ if (publicNames.includes('Swarmmind') || publicNames.includes('SAFE-CARE')) {
   failed = true;
 }
 
+const navSource = readFileSync(new URL('../app/lib/site-nav.ts', import.meta.url), 'utf8');
+if (!navSource.includes("label: 'Research'") || !navSource.includes('researchMenuItems()')) {
+  console.error('Top menu is missing the Research dropdown');
+  failed = true;
+}
+
+const menuSource = readFileSync(new URL('../app/lib/hopn-lab.ts', import.meta.url), 'utf8');
+for (const token of [
+  'researchMenuItems',
+  'PROGRAM_ORDER',
+  '/research',
+  '/research/roadmap',
+  '/research/evidence',
+  '/demo',
+  'mailto:contact@ehopn.com',
+]) {
+  if (!menuSource.includes(token)) {
+    console.error(`Research menu helper is missing "${token}"`);
+    failed = true;
+  }
+}
+for (const id of ['route', 'ground', 'assure', 'foundation', 'physical']) {
+  if (!data.programs.some((p) => p.id === id)) {
+    console.error(`Program "${id}" missing from hopn-lab.json`);
+    failed = true;
+  }
+}
+
 if (failed) process.exit(1);
 console.log('Research copy checks passed');

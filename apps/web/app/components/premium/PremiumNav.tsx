@@ -51,9 +51,15 @@ function NavDropdownLink({
     </>
   );
 
-  if (external) {
+  if (external || href.startsWith('mailto:')) {
     return (
-      <a href={href} className={className} target="_blank" rel="noopener noreferrer" onClick={onNavigate}>
+      <a
+        href={href}
+        className={className}
+        target={href.startsWith('mailto:') ? undefined : '_blank'}
+        rel={href.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
+        onClick={onNavigate}
+      >
         {content}
       </a>
     );
