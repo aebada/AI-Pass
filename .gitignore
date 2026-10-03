@@ -60,3 +60,5 @@ apps/web/tmp/
 
 # Scratch clone of the investor-pack repo — not part of this project
 .tmp-investor-pack/
+
+.local-secrets/

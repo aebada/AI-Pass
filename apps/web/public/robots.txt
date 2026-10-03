@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Allow: /research
+Allow: /demo
+Sitemap: https://aipass.space/sitemap.xml
