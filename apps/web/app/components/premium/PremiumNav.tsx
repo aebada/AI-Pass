@@ -7,6 +7,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Badge } from '@ai-pass/ui';
 import { BrandLogoLink } from '../BrandLogoLink';
 import { SITE_NAV, type SiteNavItem } from '../../lib/site-nav';
+import { researchBarItems } from '../../lib/hopn-lab';
 import { useApp } from './AppProviders';
 import styles from './premium-nav.module.css';
 
@@ -79,7 +80,7 @@ export function PremiumNav({ variant = 'business' }: { variant?: 'landing' | 'bu
   const [userOpen, setUserOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
+  const [mobileExpanded, setMobileExpanded] = useState<string | null>('Research');
   const notifRef = useRef<HTMLDivElement>(null);
   const userRef = useRef<HTMLDivElement>(null);
   const navRef = useRef<HTMLElement>(null);
@@ -135,7 +136,10 @@ export function PremiumNav({ variant = 'business' }: { variant?: 'landing' | 'bu
     return <span className={styles.avatar}>{user?.avatarInitials ?? '?'}</span>;
   };
 
+  const researchLinks = researchBarItems();
+
   return (
+    <header className={styles.navShell}>
     <nav className={styles.nav} ref={navRef}>
       <BrandLogoLink className={styles.logo} logoClassName={styles.logoImg} height={40} onClick={closeMobile} />
 
@@ -358,6 +362,18 @@ export function PremiumNav({ variant = 'business' }: { variant?: 'landing' | 'bu
       {mobileOpen && (
         <div className={styles.mobilePanel}>
           <div className={styles.mobileScroll}>
+            <p className={styles.mobileSectionLabel}>Research</p>
+            {researchLinks.map((link) => (
+              <Link
+                key={`mobile-research-${link.href}`}
+                href={link.href}
+                className={`${styles.mobileTopLink} ${isActive(pathname, link.href) ? styles.mobileTopLinkActive : ''}`}
+                onClick={closeMobile}
+              >
+                {link.label}
+              </Link>
+            ))}
+            <p className={styles.mobileSectionLabel}>Menu</p>
             {SITE_NAV.map((item) =>
               item.type === 'link' ? (
                 item.external ? (
@@ -392,7 +408,7 @@ export function PremiumNav({ variant = 'business' }: { variant?: 'landing' | 'bu
                     {item.label}
                     <span className={styles.chevron} aria-hidden />
                   </button>
-                  {mobileExpanded === item.label && (
+                  {(mobileExpanded === item.label || item.label === 'Research') && (
                     <div className={styles.mobileSubmenu}>
                       {item.items.map((link) => (
                         <NavDropdownLink
@@ -430,5 +446,24 @@ export function PremiumNav({ variant = 'business' }: { variant?: 'landing' | 'bu
         </div>
       )}
     </nav>
+    <div className={styles.navStrip} aria-label="Research programs">
+      {researchLinks.map((link) =>
+        link.href.startsWith('mailto:') ? (
+          <a key={link.href} href={link.href} className={styles.navStripLink}>
+            {link.label}
+          </a>
+        ) : (
+          <Link
+            key={link.href}
+            href={link.href}
+            className={`${styles.navStripLink} ${pathname === link.href ? styles.navStripLinkActive : ''}`}
+            onClick={closeMobile}
+          >
+            {link.label}
+          </Link>
+        ),
+      )}
+    </div>
+    </header>
   );
 }

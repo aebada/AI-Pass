@@ -124,3 +124,17 @@ export function researchMenuItems(): { href: string; label: string; description:
     { href: LAB_CONTACT_MAILTO, label: 'Contact the lab', description: `Email ${LAB_EMAIL}` },
   ];
 }
+
+/** Always-visible main-menu row: programs and lab pages. */
+export function researchBarItems(): { href: string; label: string }[] {
+  return [
+    { href: '/research', label: 'Overview' },
+    ...PROGRAM_ORDER.map((id) => {
+      const program = getProgram(id);
+      return { href: `/research/${id}`, label: program?.name ?? id };
+    }),
+    { href: '/research/roadmap', label: 'Roadmap' },
+    { href: '/research/evidence', label: 'Evidence' },
+    { href: '/demo', label: 'Demo' },
+  ];
+}

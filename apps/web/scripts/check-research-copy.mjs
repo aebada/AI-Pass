@@ -69,6 +69,7 @@ if (!navSource.includes("label: 'Research'") || !navSource.includes('researchMen
 const menuSource = readFileSync(new URL('../app/lib/hopn-lab.ts', import.meta.url), 'utf8');
 for (const token of [
   'researchMenuItems',
+  'researchBarItems',
   'PROGRAM_ORDER',
   '/research',
   '/research/roadmap',
