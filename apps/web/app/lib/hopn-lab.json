@@ -1,0 +1,203 @@
+{
+  "lab": {
+    "name": "HOPN Lab",
+    "org": "HOPN UG",
+    "headline": "Trustworthy AI under constraint.",
+    "question": "How do we build AI systems that organizations can trust, audit and afford to run themselves?",
+    "intro": "HOPN Lab studies AI systems that stay reliable, private and verifiable under real-world constraints: limited compute, no cloud access, sensitive data, regulated domains and physical safety. Our work is organized as three layers (Route, Ground, Assure), one foundation program and one physical-world track.",
+    "agendaNote": "This page describes our research agenda. Status labels show what is planned, in progress or complete."
+  },
+  "showGovernance": false,
+  "why": [
+    {
+      "title": "Constraint is the research question",
+      "text": "Frontier labs optimize capability at scale. Few groups own the question of verified deployment under constraint."
+    },
+    {
+      "title": "Europe makes constraint a requirement",
+      "text": "GDPR, the EU AI Act and data sovereignty make constraint a requirement, not a weakness."
+    },
+    {
+      "title": "Protocols and relationships are public",
+      "text": "We publish our protocols and raw logs, and we disclose our commercial relationships."
+    }
+  ],
+  "programs": [
+    {
+      "id": "route",
+      "name": "Route",
+      "track": "A",
+      "question": "How do we compose many models and providers behind one reliable interface?",
+      "direction": "Policy-driven routing across cost, latency, privacy and quality",
+      "status": "in_progress",
+      "why": "AI-Pass is the infrastructure layer the other tracks plug into.",
+      "directions": [
+        "Routing as a learned policy over predicted quality, cost, latency, data sensitivity and jurisdiction.",
+        "Provider heterogeneity: schema drift, failure modes and silent model updates.",
+        "Sovereignty constraints as first-class routing rules with verifiable enforcement.",
+        "Measured modularity: cost of adding a provider and overhead versus direct calls."
+      ]
+    },
+    {
+      "id": "ground",
+      "name": "Ground",
+      "track": "B",
+      "question": "What does the system know, and how do we prove where it came from?",
+      "direction": "Provenance-first knowledge graphs",
+      "status": "in_progress",
+      "why": "The knowledge graph is a provenance and governance layer, not only a retrieval technique.",
+      "directions": [
+        "Corroboration-gated graph construction.",
+        "Selective graph pruning for constrained devices.",
+        "GraphRAG versus vector RAG compared on quality per watt and per euro.",
+        "Temporal and versioned memory with contradiction detection.",
+        "Policy as graph."
+      ]
+    },
+    {
+      "id": "assure",
+      "name": "Assure",
+      "track": "C",
+      "question": "How do we know each output is good enough, at runtime, before it ships?",
+      "direction": "Quality orchestration with contracts and service levels",
+      "status": "planned",
+      "why": "Orchestration manages where a request runs. Quality orchestration manages whether the result is good enough, as a control loop. Quality is treated as a managed service level.",
+      "directions": [
+        "Quality contracts: acceptable quality, error cost, abstention rule.",
+        "Runtime estimation: verifiers, self-consistency, cross-provider agreement, graph consistency.",
+        "Cascades with contracts: cheap model first, escalate below contract, calibrated methods.",
+        "Judge reliability and drift monitoring.",
+        "Closed learning loop back into Route and Assure."
+      ]
+    },
+    {
+      "id": "foundation",
+      "name": "Foundation",
+      "track": "F",
+      "question": "What quality per watt and per euro is possible when data never leaves the organization?",
+      "direction": "Private and efficient AI",
+      "status": "in_progress",
+      "why": "Compute-spectrum efficiency, private retrieval-augmented generation, phone-scale inference, and offline self-learning document extraction.",
+      "directions": [
+        "Compute-spectrum efficiency study across local and private hardware.",
+        "Private retrieval-augmented generation when data never leaves the organization.",
+        "Phone-scale inference under energy and memory limits.",
+        "Offline self-learning document extraction with LoRA.",
+        "Reproducible benchmarks across the hardware spectrum, with raw logs."
+      ]
+    },
+    {
+      "id": "physical",
+      "name": "Physical",
+      "track": "D",
+      "question": "How do Route, Ground and Assure apply where errors have physical consequences?",
+      "direction": "Verified physical autonomy",
+      "status": "planned",
+      "why": "The same Route, Ground, Assure stack where errors have physical consequences. Every claim will name its testbed stage and report sim-to-real gaps.",
+      "directions": [
+        "D1: swarm coordination under degraded conditions.",
+        "D2: assurance for learned autonomy (runtime monitors and safety shields).",
+        "D3: language and agents as robot interfaces, with verification gates.",
+        "D4: assistive robotics with demonstrable safety."
+      ]
+    }
+  ],
+  "projects": [
+    { "name": "AI-Pass", "programs": ["route"], "role": "Infrastructure layer for the other tracks", "public": true },
+    { "name": "TEAOA", "programs": ["route"], "role": "Trust model for orchestration", "public": true },
+    { "name": "SLDE-AFT and offline LoRA extraction", "programs": ["ground", "foundation"], "role": "Corroborated extraction feeding the knowledge graph", "public": true },
+    { "name": "Semvec", "programs": ["ground"], "role": "Temporal and versioned memory", "public": true },
+    { "name": "ServAlign", "programs": ["assure"], "role": "Constraints and policy as machine-checkable objects", "public": true },
+    { "name": "Invoice automation", "programs": ["route", "ground", "assure"], "role": "Shared testbed", "public": true },
+    { "name": "Sovra", "programs": ["foundation", "ground"], "role": "Compute-spectrum efficiency, private RAG, graph pruning", "public": true },
+    { "name": "Swarmmind", "programs": ["physical"], "role": "Swarm coordination under degraded conditions", "public": false },
+    { "name": "SAFE-CARE", "programs": ["physical"], "role": "Assistive device with demonstrable safety", "public": false }
+  ],
+  "roadmap": [
+    { "id": "r1", "program": "route", "label": "AI-Pass submission", "start_month": 0, "end_month": 2, "status": "in_progress" },
+    { "id": "r2", "program": "assure", "label": "Quality orchestration charter and shared invoice benchmark", "start_month": 0, "end_month": 3, "status": "planned" },
+    { "id": "r3", "program": "physical", "label": "Simulation baseline with fault injection (ROS 2, Gazebo)", "start_month": 0, "end_month": 3, "status": "planned" },
+    { "id": "r4", "program": "ground", "label": "Graph-pruning study", "start_month": 3, "end_month": 6, "status": "planned" },
+    { "id": "r5", "program": "assure", "label": "First quality-routing results", "start_month": 3, "end_month": 6, "status": "planned" },
+    { "id": "r6", "program": "foundation", "label": "Sovra raw data and scoping", "start_month": 0, "end_month": 3, "status": "in_progress" },
+    { "id": "r7", "program": "physical", "label": "Degradation curves and verification methodology note", "start_month": 3, "end_month": 6, "status": "planned" },
+    { "id": "r8", "program": "route", "label": "Integrated pipeline paper", "start_month": 6, "end_month": 12, "status": "planned" },
+    { "id": "r9", "program": "foundation", "label": "Open benchmark for extraction or orchestration under constraint", "start_month": 6, "end_month": 12, "status": "planned" }
+  ],
+  "stage_gates": ["Scoping", "Data and logs reviewed", "Draft", "Internal referee-style review", "Submission"],
+  "pipeline_counts": {
+    "Scoping": 0,
+    "Data and logs reviewed": 0,
+    "Draft": 0,
+    "Internal referee-style review": 0,
+    "Submission": 0
+  },
+  "testbed_ladder": [
+    { "step": "Simulation", "tools": "ROS 2, Gazebo", "status": "planned" },
+    { "step": "Hardware-in-the-loop", "tools": "Flight controller or board with simulated environment", "status": "planned" },
+    { "step": "Controlled indoor trials", "tools": "Small, safe, repeatable", "status": "planned" },
+    { "step": "Outdoor field trials", "tools": "Only with permissions and a safety pilot", "status": "planned" }
+  ],
+  "metrics": {
+    "route": [
+      { "name": "Routing regret", "definition": "Gap versus an oracle routing policy on the same request set." },
+      { "name": "Cost per request", "definition": "Monetary cost of a routed request, including fallbacks." },
+      { "name": "Latency overhead", "definition": "Added latency versus a direct provider call." },
+      { "name": "Policy-violation rate", "definition": "Share of requests that break a stated routing rule." },
+      { "name": "Time to onboard a provider", "definition": "Elapsed time from contract to first routed request." }
+    ],
+    "ground": [
+      { "name": "Provenance coverage", "definition": "Share of graph facts with a cited source." },
+      { "name": "Contradiction rate", "definition": "Share of facts that conflict with another retained fact." },
+      { "name": "Update cost", "definition": "Compute and euro cost of a graph refresh." },
+      { "name": "Answer accuracy per unit of graph size", "definition": "Correct answers relative to nodes retained after pruning." }
+    ],
+    "assure": [
+      { "name": "Cost per correct answer", "definition": "Spend divided by answers that meet the quality contract." },
+      { "name": "Abstention-adjusted accuracy", "definition": "Accuracy after counting allowed abstentions separately." },
+      { "name": "Calibration error", "definition": "Gap between estimated quality and adjudicated quality." },
+      { "name": "Escalation rate", "definition": "Share of requests sent to a stronger model." },
+      { "name": "Time to detect drift", "definition": "Delay from a distribution shift to an alert." }
+    ],
+    "foundation": [
+      { "name": "Quality per watt", "definition": "Adjudicated quality divided by energy used." },
+      { "name": "Quality per euro", "definition": "Adjudicated quality divided by monetary cost." },
+      { "name": "Offline extraction completeness", "definition": "Share of required fields recovered without cloud access." }
+    ],
+    "physical": [
+      { "name": "Mission completion under injected faults", "definition": "Share of missions completed after planned faults." },
+      { "name": "Time to re-plan after losing an agent", "definition": "Seconds from agent loss to a new valid plan." },
+      { "name": "Unsafe-plan interception rate", "definition": "Share of unsafe plans stopped by the shield." },
+      { "name": "False-block rate", "definition": "Share of safe plans incorrectly blocked." }
+    ]
+  },
+  "results": [],
+  "physicalStack": [
+    { "layer": "Route", "digital": "Policy-driven model and provider selection", "physical": "Policy-driven planner, controller and fallback selection" },
+    { "layer": "Ground", "digital": "Provenance-first knowledge graph", "physical": "World model with sourced observations and versioned maps" },
+    { "layer": "Assure", "digital": "Quality contracts before an answer ships", "physical": "Runtime monitors and safety shields before an action executes" }
+  ],
+  "risks": [
+    { "label": "Dependence on student labor", "likelihood": "medium", "impact": "high", "mitigation": "Two people per program, documented pipelines" },
+    { "label": "Spread across too many tracks", "likelihood": "high", "impact": "medium", "mitigation": "One lead per track, small physical track" },
+    { "label": "Benchmark credibility", "likelihood": "medium", "impact": "high", "mitigation": "Independent adjudication, disclosed construction" },
+    { "label": "Overclaimed service levels", "likelihood": "medium", "impact": "high", "mitigation": "State assumptions explicitly" },
+    { "label": "Safety overclaim", "likelihood": "low", "impact": "high", "mitigation": "Name the testbed stage for every claim" },
+    { "label": "Dual-use drift", "likelihood": "low", "impact": "high", "mitigation": "Written policy before any public release" }
+  ],
+  "evidencePrinciples": [
+    "Raw logs, protocols and configurations released with every paper.",
+    "Evaluation protocols pre-registered where feasible.",
+    "Commercial relationship disclosed for every study.",
+    "Verified Q1 venues only, checked against current indexing.",
+    "Reviewer-risk checks before submission: no unverifiable model identifiers, no missing baselines, no marketing framing.",
+    "Human-adjudicated samples for any LLM-judge evaluation, with agreement reported.",
+    "Statistical guarantees stated with their assumptions."
+  ],
+  "artifacts": [
+    { "label": "Quality orchestration charter", "status": "planned" },
+    { "label": "Shared invoice testbed protocol", "status": "planned" },
+    { "label": "Graph-pruning study protocol", "status": "planned" },
+    { "label": "Sovra scoping note and raw-log schema", "status": "in_progress" }
+  ]
+}

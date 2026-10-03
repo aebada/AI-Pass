@@ -81,6 +81,11 @@ export const SITE_NAV: SiteNavItem[] = [
   },
   {
     type: 'link',
+    label: 'Research',
+    href: '/research',
+  },
+  {
+    type: 'link',
     label: 'Marketplace',
     href: '/workspace/store',
   },
@@ -104,8 +109,9 @@ export const SITE_NAV: SiteNavItem[] = [
       { label: 'Documentation', href: DOCS_URL, external: true },
       { label: 'Blog', href: '/discover/news' },
       { label: 'Case Studies', href: '/case-studies' },
-      { label: 'Research', href: '/research' },
-      { label: 'Whitepapers', href: '/research' },
+      { label: 'HOPN Lab', href: '/research', description: 'Research agenda, diagrams, live demo' },
+      { label: 'Interactive Demo', href: '/demo', description: 'Graph RAG walkthrough' },
+      { label: 'Whitepapers', href: '/research/evidence' },
       { label: 'API', href: API_DOCS_HREF },
       { label: 'Community', href: '/developers' },
       { label: 'Academy', href: DOCS_URL, external: true },
@@ -184,12 +190,12 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
   {
     title: 'Company',
     links: [
+      { label: 'HOPN Lab', href: '/research' },
       { label: 'About', href: '/about' },
       { label: 'Partners', href: '/partners' },
       { label: 'Investors', href: '/investors' },
       { label: 'Careers', href: '/careers' },
       { label: 'Contact', href: '/contact' },
-      { label: 'Roadmap', href: '/roadmap' },
     ],
   },
   {

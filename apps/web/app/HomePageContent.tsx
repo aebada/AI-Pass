@@ -167,6 +167,42 @@ export default function HomePageContent() {
           ))}
         </section>
 
+        <section className={styles.section} aria-labelledby="lab-heading">
+          <div className={styles.sectionHead}>
+            <p className={styles.eyebrow}>HOPN Lab</p>
+            <h2 id="lab-heading">Research you can click through</h2>
+            <p className={styles.sectionSub}>
+              Knowledge graphs, a clear data path, and deterministic checks. Agenda, not results. Try the demo or email the lab.
+            </p>
+          </div>
+          <div className={styles.pillarGrid}>
+            <article className={styles.pillar}>
+              <h3>Knowledge graph</h3>
+              <p>See how an invoice links to evidence, not a black-box answer.</p>
+            </article>
+            <article className={styles.pillar}>
+              <h3>Data path</h3>
+              <p>Records to extract to graph to a decision you can repeat.</p>
+            </article>
+            <article className={styles.pillar}>
+              <h3>Deterministic models</h3>
+              <p>Same facts and same contract, same decision. Sampling stays for drafts.</p>
+            </article>
+            <article className={styles.pillar}>
+              <h3>Talk to us</h3>
+              <p>contact@ehopn.com or the live Graph RAG demo in one click.</p>
+            </article>
+          </div>
+          <div className={styles.heroCtas} style={{ justifyContent: 'center', marginTop: '1.5rem' }}>
+            <Link href="/research" className={styles.btnPrimary}>
+              Open HOPN Lab
+            </Link>
+            <Link href="/demo" className={styles.btnSecondary}>
+              Try interactive demo
+            </Link>
+          </div>
+        </section>
+
         <section className={styles.section} aria-labelledby="pillars-heading">
           <div className={styles.sectionHead}>
             <p className={styles.eyebrow}>Platform</p>
