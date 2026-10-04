@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { PremiumNav } from './components/premium/PremiumNav';
 import { BrandLogoLink } from './components/BrandLogoLink';
+import { DemoBookingForm } from './components/DemoBookingForm';
 import { FOOTER_COLUMNS } from './lib/site-nav';
 import styles from './page.module.css';
 
@@ -109,52 +110,31 @@ export default function HomePageContent() {
       <main>
         <section className={`${styles.hero} hero-presence`} aria-labelledby="hero-heading">
           <div className={styles.heroGlow} aria-hidden />
-          <div className={styles.heroInner}>
-            <p className={styles.brandMark}>AI-Pass</p>
-            <h1 id="hero-heading" className={styles.heroTitle}>
-              Enterprise AI infrastructure.
-              <span className={styles.heroTitleAccent}> Made clear.</span>
-            </h1>
-            <p className={styles.heroSub}>
-              Build, orchestrate, govern, and deploy secure AI across cloud and on-premises — one
-              platform for regulated business operations.
-            </p>
-            <div className={styles.heroCtas}>
-              <a href={DEMO_MAILTO} className={styles.btnPrimary}>
-                Book enterprise demo
-              </a>
-              <Link href="/demo" className={styles.btnSecondary}>
-                Try interactive demo
-              </Link>
+          <div className={styles.heroSplit}>
+            <div className={styles.heroInner}>
+              <p className={styles.brandMark}>AI-Pass</p>
+              <h1 id="hero-heading" className={styles.heroTitle}>
+                AI that answers like your people.
+                <span className={styles.heroTitleAccent}> Under your rules.</span>
+              </h1>
+              <p className={styles.heroSub}>
+                Explainable paths, deterministic checks, and human role-based access so results follow
+                organization policy — not a black box. Book the demo in the product itself.
+              </p>
+              <div className={styles.heroCtas}>
+                <a href="#book-demo" className={styles.btnPrimary}>
+                  Book a demo
+                </a>
+                <Link href="/demo" className={styles.btnSecondary}>
+                  Open the knowledge graph
+                </Link>
+              </div>
+              <p className={styles.heroNote}>Self-serve form · Role-aware walkthrough · No credit card</p>
             </div>
-            <p className={styles.heroNote}>No credit card · Enterprise-ready · On-prem options</p>
-          </div>
-
-          <div className={styles.heroVisual} aria-hidden>
-            <div className={styles.productStage}>
-              <div className={styles.productChrome}>
-                <span>AI-Pass Workspace</span>
-                <span className={styles.productMeta}>Governed · Routed · Certified</span>
-              </div>
-              <div className={styles.productBody}>
-                <div className={styles.productRail}>
-                  {['Route', 'Govern', 'Trust', 'Store'].map((item) => (
-                    <span key={item} className={styles.productPill}>
-                      {item}
-                    </span>
-                  ))}
-                </div>
-                <div className={styles.productPanels}>
-                  <div>
-                    <strong>Model router</strong>
-                    <p>Policy-aware routing across public and private models.</p>
-                  </div>
-                  <div>
-                    <strong>Trust score</strong>
-                    <p>Live certification status for production systems.</p>
-                  </div>
-                </div>
-              </div>
+            <div className={styles.heroFormCard} id="book-demo">
+              <p className={styles.eyebrow}>Self-serve demo</p>
+              <h2 className={styles.heroFormTitle}>Fill the form. Walk the graph as your role.</h2>
+              <DemoBookingForm compact />
             </div>
           </div>
         </section>
@@ -167,30 +147,31 @@ export default function HomePageContent() {
           ))}
         </section>
 
-        <section className={styles.section} aria-labelledby="lab-heading">
+        <section className={styles.section} aria-labelledby="power-heading">
           <div className={styles.sectionHead}>
-            <p className={styles.eyebrow}>HOPN Lab</p>
-            <h2 id="lab-heading">Research you can click through</h2>
+            <p className={styles.eyebrow}>The power of the solution</p>
+            <h2 id="power-heading">Explainable. Deterministic. Role-based.</h2>
             <p className={styles.sectionSub}>
-              Knowledge graphs, a clear data path, and deterministic checks. Agenda, not results. Try the demo or email the lab.
+              AI-Pass connects models to human roles and organization rules. The answer is a path you
+              can audit: who may see it, which rule fired, and which sources corroborate it.
             </p>
           </div>
           <div className={styles.pillarGrid}>
             <article className={styles.pillar}>
-              <h3>Knowledge graph</h3>
-              <p>See how an invoice links to evidence, not a black-box answer.</p>
+              <h3>Explainability</h3>
+              <p>Every decision is a hop list: node, predicate, source, confidence. No orphan labels.</p>
             </article>
             <article className={styles.pillar}>
-              <h3>Data path</h3>
-              <p>Records to extract to graph to a decision you can repeat.</p>
+              <h3>Deterministic</h3>
+              <p>Same graph and same contract produce the same decision. Sampling stays for drafts only.</p>
             </article>
             <article className={styles.pillar}>
-              <h3>Deterministic models</h3>
-              <p>Same facts and same contract, same decision. Sampling stays for drafts.</p>
+              <h3>Human role-based</h3>
+              <p>Quality, plant, audit, and operator each see the slice their job is allowed to act on.</p>
             </article>
             <article className={styles.pillar}>
-              <h3>Talk to us</h3>
-              <p>contact@ehopn.com or the live Graph RAG demo in one click.</p>
+              <h3>Organization rules</h3>
+              <p>Policies sit in the graph. If a second source is required, the answer will not publish without it.</p>
             </article>
           </div>
           <div className={styles.heroCtas} style={{ justifyContent: 'center', marginTop: '1.5rem' }}>
@@ -310,13 +291,13 @@ export default function HomePageContent() {
 
         <section className={styles.finalCta} aria-labelledby="final-cta">
           <h2 id="final-cta">Ready to run AI like infrastructure?</h2>
-          <p>Book a demo with our team, or explore the interactive product walkthrough.</p>
+          <p>Book from the form on this page, or open the full knowledge graph walkthrough.</p>
           <div className={styles.heroCtas}>
-            <a href={DEMO_MAILTO} className={styles.btnOnPurple}>
-              Book enterprise demo
+            <a href="#book-demo" className={styles.btnOnPurple}>
+              Book a demo
             </a>
             <Link href="/demo" className={styles.btnGhostOnPurple}>
-              Try interactive demo
+              Open the knowledge graph
             </Link>
           </div>
         </section>
