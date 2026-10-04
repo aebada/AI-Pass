@@ -152,6 +152,20 @@ def collect_files(root: Path, focus: bool) -> list[Path]:
                 continue
             seen.add(path)
             files.append(path)
+
+        def focus_rank(path: Path) -> tuple[int, str]:
+            rel = path.relative_to(root).as_posix()
+            if rel == ".htaccess":
+                return (0, rel)
+            if rel.endswith(".html") and rel.startswith("research"):
+                return (1, rel)
+            if rel == "research.html":
+                return (1, rel)
+            if rel == "index.html":
+                return (2, rel)
+            return (3, rel)
+
+        files.sort(key=focus_rank)
         return files
 
     files = [p for p in root.rglob("*") if p.is_file() and not should_skip(p.relative_to(root))]
