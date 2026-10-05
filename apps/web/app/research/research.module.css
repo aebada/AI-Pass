@@ -1,0 +1,511 @@
+.page {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.page > :not(nav):not(header) {
+  overflow-x: clip;
+}
+
+.wrap {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 clamp(1rem, 4vw, 2.5rem);
+}
+
+.subnav {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  padding: 0.65rem 0;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.subnav a {
+  padding: 0.4rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.8125rem;
+  font-weight: 650;
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.subnav a:hover,
+.subnav a:focus-visible {
+  color: var(--text);
+  background: var(--bg-hover);
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.subnavActive {
+  color: var(--text) !important;
+  background: var(--accent-soft);
+}
+
+.crumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 1rem 0 0;
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+}
+
+.crumbs a {
+  color: inherit;
+}
+
+.hero {
+  padding: clamp(1.5rem, 4vw, 3rem) 0 1.25rem;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-bottom: 0.85rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--accent) 30%, var(--border));
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 750;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.title {
+  margin: 0 0 0.75rem;
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+}
+
+.question {
+  margin: 0 0 1rem;
+  max-width: 40rem;
+  font-size: 1.15rem;
+  line-height: 1.55;
+  color: var(--text-muted);
+}
+
+.note {
+  margin: 0 0 1.25rem;
+  padding: 0.75rem 0.9rem;
+  border-inline-start: 3px solid var(--accent);
+  background: var(--bg-soft);
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.ctaRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.btnPrimary,
+.btnSecondary,
+.btnGhost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 0.65rem 1.15rem;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+  border: 1px solid transparent;
+}
+
+.btnPrimary {
+  background: var(--accent);
+  color: #fff;
+}
+
+.btnPrimary:hover {
+  background: var(--accent-hover);
+}
+
+.btnSecondary {
+  background: var(--bg-elevated);
+  border-color: var(--border-strong);
+  color: var(--text);
+}
+
+.btnGhost {
+  color: var(--accent);
+}
+
+.section {
+  padding: 2rem 0;
+}
+
+.section h2 {
+  margin: 0 0 0.5rem;
+  font-size: clamp(1.35rem, 3vw, 1.85rem);
+}
+
+.lead {
+  margin: 0 0 1.25rem;
+  max-width: 42rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.whyGrid,
+.cardGrid,
+.metricGrid {
+  display: grid;
+  gap: 0.85rem;
+}
+
+@media (min-width: 720px) {
+  .whyGrid,
+  .metricGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .cardGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 960px) {
+  .cardGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card,
+.whyCard,
+.metricCard {
+  padding: 1rem 1.05rem;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--bg-elevated);
+}
+
+.card h3,
+.whyCard h3,
+.metricCard h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1.05rem;
+}
+
+.card p,
+.whyCard p,
+.metricCard p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.card a {
+  font-weight: 700;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.badge {
+  display: inline-block;
+  margin-bottom: 0.4rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 750;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.badgePlanned {
+  background: var(--bg-muted);
+  color: var(--text-muted);
+}
+
+.badgeProgress {
+  background: color-mix(in srgb, var(--warning) 18%, var(--bg));
+  color: #9a6700;
+}
+
+.badgeDone {
+  background: color-mix(in srgb, var(--success) 16%, var(--bg));
+  color: var(--success);
+}
+
+.conceptual {
+  display: inline-block;
+  margin-bottom: 0.55rem;
+  padding: 0.15rem 0.5rem;
+  border: 1px dashed var(--border-strong);
+  border-radius: 6px;
+  font-size: 0.7rem;
+  font-weight: 750;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.visual {
+  margin: 0 0 1rem;
+  padding: 0.85rem;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--bg-soft);
+}
+
+.visual svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.visual text {
+  font-family: var(--font-sans);
+  fill: var(--text);
+}
+
+.tableWrap {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.table th,
+.table td {
+  padding: 0.55rem 0.6rem;
+  border-bottom: 1px solid var(--border);
+  text-align: start;
+  vertical-align: top;
+}
+
+.table th {
+  color: var(--text-muted);
+  font-weight: 650;
+}
+
+.details {
+  margin-top: 0.6rem;
+}
+
+.details summary {
+  cursor: pointer;
+  font-weight: 650;
+  color: var(--accent);
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.85rem;
+}
+
+.tab {
+  min-height: 40px;
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--bg-elevated);
+  color: var(--text);
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.tab:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.tabOn {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.contactBar {
+  position: sticky;
+  bottom: 0;
+  z-index: 30;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 16px 16px 0 0;
+  background: var(--bg-elevated);
+  box-shadow: var(--shadow);
+}
+
+.contactBar p {
+  margin: 0;
+  font-size: 0.92rem;
+}
+
+.pager {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 1.5rem 0 0;
+}
+
+.pager a {
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.list {
+  margin: 0;
+  padding-inline-start: 1.15rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.gantt {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.ganttRow {
+  display: grid;
+  grid-template-columns: minmax(8rem, 1fr) minmax(12rem, 2.4fr);
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.ganttTrack {
+  position: relative;
+  height: 28px;
+  border-radius: 8px;
+  background: var(--bg-muted);
+}
+
+.ganttBar {
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  border-radius: 6px;
+  background: var(--accent-soft);
+  border: 1px solid color-mix(in srgb, var(--accent) 40%, var(--border));
+  font-size: 0.7rem;
+  display: flex;
+  align-items: center;
+  padding-inline: 0.4rem;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.funnel {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.funnelStep {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg-elevated);
+}
+
+.riskGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.4rem;
+}
+
+.riskCell {
+  min-height: 88px;
+  padding: 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg-elevated);
+  font-size: 0.75rem;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.form {
+  display: grid;
+  gap: 0.65rem;
+  max-width: 28rem;
+}
+
+.form label {
+  display: grid;
+  gap: 0.25rem;
+  font-size: 0.85rem;
+  font-weight: 650;
+}
+
+.form input,
+.form textarea {
+  min-height: 42px;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 10px;
+  background: var(--bg);
+  color: var(--text);
+  font: inherit;
+}
+
+@media (max-width: 719px) {
+  .ganttRow,
+  .riskGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flowDash {
+    animation: none !important;
+  }
+}
+
+@keyframes hopnDash {
+  to {
+    stroke-dashoffset: -24;
+  }
+}
+
+.flowDash {
+  stroke-dasharray: 6 6;
+  animation: hopnDash 1.2s linear infinite;
+}
+
+@media print {
+  .subnav,
+  .contactBar,
+  .ctaRow {
+    display: none;
+  }
+  .visual {
+    break-inside: avoid;
+    background: #fff;
+    border-color: #bbb;
+  }
+}

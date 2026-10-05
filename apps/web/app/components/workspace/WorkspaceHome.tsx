@@ -61,10 +61,65 @@ export function WorkspaceHome() {
       <div className={styles.container}>
         <header className={styles.header}>
           <div>
-            <h1 className={styles.title}>Welcome, {firstName}</h1>
-            <p className={styles.subtitle}>Sign in to load your workspace overview.</p>
+            <h1 className={styles.title}>Workspace</h1>
+            <p className={styles.subtitle}>
+              Browse the knowledge graph without an account. Sign in only when you want credits and saved runs.
+            </p>
           </div>
         </header>
+        <section style={{ display: 'grid', gap: 12, gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))' }}>
+          <Link
+            href="/workspace/knowledge/graph"
+            style={{
+              display: 'block',
+              padding: 16,
+              borderRadius: 12,
+              border: `1px solid ${workspaceTokens.colors.border}`,
+              background: workspaceTokens.colors.bgElevated,
+              textDecoration: 'none',
+              color: 'inherit',
+            }}
+          >
+            <strong>Knowledge graph</strong>
+            <p style={{ margin: '8px 0 0', color: workspaceTokens.colors.textMuted, fontSize: 13 }}>
+              21 nodes, attributes, metadata, and role-based explanations.
+            </p>
+          </Link>
+          <Link
+            href="/demo"
+            style={{
+              display: 'block',
+              padding: 16,
+              borderRadius: 12,
+              border: `1px solid ${workspaceTokens.colors.border}`,
+              background: workspaceTokens.colors.bgElevated,
+              textDecoration: 'none',
+              color: 'inherit',
+            }}
+          >
+            <strong>Self-serve demo</strong>
+            <p style={{ margin: '8px 0 0', color: workspaceTokens.colors.textMuted, fontSize: 13 }}>
+              Book a walkthrough and switch Quality, Plant, Audit, or Operator.
+            </p>
+          </Link>
+          <Link
+            href="/login"
+            style={{
+              display: 'block',
+              padding: 16,
+              borderRadius: 12,
+              border: `1px solid ${workspaceTokens.colors.border}`,
+              background: workspaceTokens.colors.bgElevated,
+              textDecoration: 'none',
+              color: 'inherit',
+            }}
+          >
+            <strong>Sign in</strong>
+            <p style={{ margin: '8px 0 0', color: workspaceTokens.colors.textMuted, fontSize: 13 }}>
+              Optional. Needed for wallet credits and saved playground runs.
+            </p>
+          </Link>
+        </section>
       </div>
     );
   }

@@ -13,7 +13,7 @@ MIDDLEWARE_SKIP="$WEB/_middleware_static_export_skip.ts"
 export PATH="/opt/homebrew/bin:/usr/local/bin:${PATH:-}"
 
 cd "$ROOT"
-CI=1 pnpm install --frozen-lockfile 2>/dev/null || CI=1 pnpm install
+CI=1 pnpm install --frozen-lockfile 2>/dev/null || CI=1 pnpm install --no-frozen-lockfile
 pnpm --filter @ai-pass/livesync build
 
 LAYOUT_BAK=""
@@ -43,7 +43,11 @@ trap cleanup EXIT
 if [[ -f "$LAYOUT" ]]; then
   LAYOUT_BAK="${LAYOUT}.static_export_bak"
   cp "$LAYOUT" "$LAYOUT_BAK"
-  sed -i '' '/NODE_STANDALONE_FORCE_DYNAMIC/,/force-dynamic/d' "$LAYOUT"
+  if sed --version >/dev/null 2>&1; then
+    sed -i '/NODE_STANDALONE_FORCE_DYNAMIC/,/force-dynamic/d' "$LAYOUT"
+  else
+    sed -i '' '/NODE_STANDALONE_FORCE_DYNAMIC/,/force-dynamic/d' "$LAYOUT"
+  fi
 fi
 if [[ -f "$MIDDLEWARE" ]]; then
   mv "$MIDDLEWARE" "$MIDDLEWARE_SKIP"
@@ -60,7 +64,8 @@ if [[ -d "$AUTH_CALLBACK" ]]; then
 fi
 
 cd "$WEB"
-NEXT_PUBLIC_STATIC_EXPORT=1 NEXT_PUBLIC_USE_LARAVEL_AUTH=1 STATIC_EXPORT=1 pnpm build
+# Hostinger shared hosting: use PHP session auth (not Laravel/Node).
+NEXT_PUBLIC_STATIC_EXPORT=1 NEXT_PUBLIC_USE_PHP_AUTH=1 STATIC_EXPORT=1 pnpm build
 
 if [[ ! -f "$WEB/out/index.html" ]]; then
   echo "error: $WEB/out/index.html not found after build" >&2
@@ -71,6 +76,23 @@ if [[ -f "$WEB/public/.htaccess" ]]; then
   cp "$WEB/public/.htaccess" "$WEB/out/.htaccess"
   echo "Installed .htaccess for Apache clean URLs"
 fi
+
+# Hostinger DirectoryIndex often prefers path/index.html over path.html.
+python3 - <<PY
+from pathlib import Path
+out = Path("$WEB/out")
+count = 0
+for html in out.rglob("*.html"):
+    rel = html.relative_to(out)
+    if rel.name == "index.html":
+        continue
+    target_dir = out / rel.with_suffix("")
+    target_dir.mkdir(parents=True, exist_ok=True)
+    target = target_dir / "index.html"
+    target.write_bytes(html.read_bytes())
+    count += 1
+print(f"Mirrored {count} html shells to */index.html for DirectoryIndex")
+PY
 
 PHP_AUTH="$ROOT/php-auth"
 if [[ -d "$PHP_AUTH/auth" && "${COPY_PHP_AUTH:-0}" == "1" ]]; then

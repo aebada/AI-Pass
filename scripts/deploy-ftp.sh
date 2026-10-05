@@ -10,6 +10,9 @@
 #   export FTP_REMOTE_DIR=/
 #   ./scripts/build-web-static.sh
 #   ./scripts/deploy-ftp.sh
+#
+# Overlay is the default so Hostinger auth/, auth-lib/, and .env stay on the server.
+# Set FTP_DELETE=1 only when you intend to wipe extra remote files.
 
 set -euo pipefail
 
@@ -20,6 +23,7 @@ OUT_DIR="$ROOT/apps/web/out"
 : "${FTP_USER:?Set FTP_USER}"
 : "${FTP_PASS:?Set FTP_PASS}"
 FTP_REMOTE_DIR="${FTP_REMOTE_DIR:-/}"
+FTP_DELETE="${FTP_DELETE:-0}"
 
 export PATH="/opt/homebrew/bin:/usr/local/bin:${PATH:-}"
 
@@ -33,10 +37,29 @@ if ! command -v lftp >/dev/null 2>&1; then
   exit 1
 fi
 
-echo "Uploading $OUT_DIR -> ftp://${FTP_HOST}${FTP_REMOTE_DIR}"
+DELETE_FLAG=""
+if [[ "$FTP_DELETE" == "1" ]]; then
+  DELETE_FLAG="--delete"
+fi
+
+echo "Uploading $OUT_DIR -> ftp://${FTP_HOST}${FTP_REMOTE_DIR} (overlay, delete=${FTP_DELETE})"
+# Hostinger data channels fail when EPSV is used from some clouds; force PASV.
+# shellcheck disable=SC2086
 lftp -u "$FTP_USER","$FTP_PASS" "ftp://${FTP_HOST}" -e "\
   set ftp:ssl-allow no; \
-  mirror -R -a --delete --verbose $OUT_DIR $FTP_REMOTE_DIR; \
+  set ftp:prefer-epsv no; \
+  set ftp:passive-mode yes; \
+  set net:max-retries 5; \
+  set net:timeout 60; \
+  set net:persist-retries 3; \
+  set mirror:parallel 4; \
+  mirror -R -a --verbose ${DELETE_FLAG} \
+    --exclude-glob auth/ \
+    --exclude-glob auth-lib/ \
+    --exclude-glob laravel-auth/ \
+    --exclude-glob .env \
+    --exclude-glob .env.* \
+    $OUT_DIR $FTP_REMOTE_DIR; \
   quit"
 
 echo "Deploy complete."
