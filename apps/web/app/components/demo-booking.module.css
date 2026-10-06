@@ -18,7 +18,7 @@
   gap: 0.3rem;
   font-size: 0.78rem;
   font-weight: 700;
-  color: var(--text-muted);
+  color: #16171a;
 }
 
 .wide {
@@ -28,12 +28,17 @@
 .grid input,
 .grid select,
 .grid textarea {
-  border: 1px solid var(--border-strong);
+  border: 1px solid #cfd0db;
   border-radius: 10px;
   padding: 0.65rem 0.75rem;
   background: #fff;
-  color: var(--text);
+  color: #16171a;
   font-weight: 500;
+}
+
+.grid input::placeholder,
+.grid textarea::placeholder {
+  color: #5c5f6b;
 }
 
 .grid input:focus,
@@ -47,8 +52,8 @@
   min-height: 48px;
   border: none;
   border-radius: 999px;
-  background: var(--accent);
-  color: #fff;
+  background: #5025d1;
+  color: #ffffff;
   font-weight: 700;
   cursor: pointer;
 }
@@ -60,7 +65,7 @@
 .fine,
 .error {
   font-size: 0.8rem;
-  color: var(--text-soft);
+  color: #3f424c;
   font-weight: 500;
 }
 

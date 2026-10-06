@@ -4,11 +4,12 @@ import Link from 'next/link';
 import { PremiumNav } from './components/premium/PremiumNav';
 import { BrandLogoLink } from './components/BrandLogoLink';
 import { DemoBookingForm } from './components/DemoBookingForm';
+import { MarketingThemeLock } from './components/MarketingThemeLock';
 import { FOOTER_COLUMNS } from './lib/site-nav';
 import styles from './page.module.css';
 
 const DEMO_MAILTO =
-  'mailto:hello@ai-pass.com?subject=Enterprise%20AI%20Infrastructure%20Demo';
+  'mailto:contact@aipass.space?subject=Enterprise%20AI%20Infrastructure%20Demo';
 
 const TRUST = [
   'Manufacturing',
@@ -21,49 +22,40 @@ const TRUST = [
   'Energy',
 ];
 
-const PILLARS = [
+const STEPS = [
   {
-    title: 'Route every model',
-    copy: 'One control plane for GPT, Claude, Gemini, and private endpoints — with spend and policy attached.',
+    n: '01',
+    title: 'Capture human expertise',
+    copy: 'Quality, plant, audit, and policy owners write the rules they already use. No prompt theatre.',
   },
   {
-    title: 'Govern by default',
-    copy: 'Approvals, inventory, and audit trails live in the infrastructure layer, not as an afterthought.',
+    n: '02',
+    title: 'Encode the knowledge graph',
+    copy: 'Nodes, attributes, metadata, and provenance become the source of truth. Policies sit in the graph.',
   },
   {
-    title: 'Deploy anywhere',
-    copy: 'Cloud, private cloud, hybrid, or air-gapped patterns for regulated operators.',
-  },
-  {
-    title: 'Certify trust',
-    copy: 'Trust Engine scoring, monitoring, and compliance packs for ISO 42001 and SOC 2 paths.',
+    n: '03',
+    title: 'Run role-based agents',
+    copy: 'Specialist agents answer on that graph. Each role sees only the slice their job may act on.',
   },
 ];
 
-const FEATURES = [
+const PILLARS = [
   {
-    eyebrow: 'Workspace',
-    title: 'One place to run enterprise AI',
-    copy: 'Agents, workflows, knowledge, and apps share the same identity, wallet, and governance rules.',
-    points: ['Unified command center', 'Shared AI wallet', 'Role-aware access'],
-    href: '/workspace',
-    cta: 'Open workspace',
+    title: 'Explainable',
+    copy: 'Every decision is a hop list: node, predicate, source, confidence. No orphan labels.',
   },
   {
-    eyebrow: 'Trust Engine',
-    title: 'Prove what your AI systems do',
-    copy: 'Certify systems, monitor runs, and keep an evidence trail ready for audits and regulators.',
-    points: ['Certification flows', 'Live monitoring', 'Public verification'],
-    href: '/workspace/trust',
-    cta: 'Explore Trust Engine',
+    title: 'Deterministic',
+    copy: 'Same graph and same contract produce the same decision. Sampling stays for drafts only.',
   },
   {
-    eyebrow: 'App Store',
-    title: 'Install certified business AI',
-    copy: 'Invoice, HR, supply chain, compliance, and more — scored apps ready for enterprise rollout.',
-    points: ['Scored catalog', 'Install into workspace', 'Enterprise admin controls'],
-    href: '/workspace/store',
-    cta: 'Browse App Store',
+    title: 'Role-based',
+    copy: 'Quality, plant, audit, and operator each see the slice their job is allowed to act on.',
+  },
+  {
+    title: 'Organization rules',
+    copy: 'If a second source is required, the answer will not publish without it.',
   },
 ];
 
@@ -100,11 +92,12 @@ const PLANS = [
   },
 ];
 
-const COMPLIANCE = ['ISO 42001', 'ISO 27001', 'GDPR', 'NIS2', 'SOC 2'];
+const COMPLIANCE = ['ISO 42001', 'ISO 27001', 'GDPR', 'NIS2', 'SOC 2 Type II ready'];
 
 export default function HomePageContent() {
   return (
     <div className={styles.page}>
+      <MarketingThemeLock />
       <PremiumNav variant="landing" />
 
       <main>
@@ -112,14 +105,14 @@ export default function HomePageContent() {
           <div className={styles.heroGlow} aria-hidden />
           <div className={styles.heroSplit}>
             <div className={styles.heroInner}>
-              <p className={styles.brandMark}>AI-Pass</p>
+              <p className={styles.eyebrow}>The deployment gate for enterprise AI</p>
               <h1 id="hero-heading" className={styles.heroTitle}>
-                AI that answers like your people.
-                <span className={styles.heroTitleAccent}> Under your rules.</span>
+                Your experts. Your rules.
+                <span className={styles.heroTitleAccent}> Answers you can audit.</span>
               </h1>
               <p className={styles.heroSub}>
-                Explainable paths, deterministic checks, and human role-based access so results follow
-                organization policy — not a black box. Book the demo in the product itself.
+                Models guess. AI-Pass turns human expertise into a knowledge graph and organization
+                rules, then runs specialist agents that stay explainable, deterministic, and role-based.
               </p>
               <div className={styles.heroCtas}>
                 <a href="#book-demo" className={styles.btnPrimary}>
@@ -129,7 +122,7 @@ export default function HomePageContent() {
                   Open the knowledge graph
                 </Link>
               </div>
-              <p className={styles.heroNote}>Self-serve form · Role-aware walkthrough · No credit card</p>
+              <p className={styles.heroNote}>Self-serve form. Role-aware walkthrough. No credit card.</p>
             </div>
             <div className={styles.heroFormCard} id="book-demo">
               <p className={styles.eyebrow}>Self-serve demo</p>
@@ -147,50 +140,57 @@ export default function HomePageContent() {
           ))}
         </section>
 
+        <section className={styles.section} aria-labelledby="problem-heading">
+          <div className={styles.sectionHead}>
+            <p className={styles.eyebrow}>The problem</p>
+            <h2 id="problem-heading">Copilots get bought. Then go-live freezes.</h2>
+            <p className={styles.sectionSub}>
+              Nobody can explain the answer, replay the decision, or prove the right role saw the
+              right slice. A black box cannot pass audit, plant quality, or a bank policy review.
+            </p>
+          </div>
+          <div className={styles.problemGrid}>
+            <article className={styles.problemCard}>
+              <h3>No path</h3>
+              <p>The model returns a label. There is no hop list back to lot, supplier, or rule.</p>
+            </article>
+            <article className={styles.problemCard}>
+              <h3>No replay</h3>
+              <p>Ask twice, get two stories. Sampling is not a control for regulated work.</p>
+            </article>
+            <article className={styles.problemCard}>
+              <h3>No role wall</h3>
+              <p>Operator, quality, and auditor share one unfiltered answer surface.</p>
+            </article>
+          </div>
+        </section>
+
+        <section className={styles.section} id="how-it-works" aria-labelledby="how-heading">
+          <div className={styles.sectionHead}>
+            <p className={styles.eyebrow}>How it works</p>
+            <h2 id="how-heading">Human expertise becomes software.</h2>
+            <p className={styles.sectionSub}>
+              We do not replace your people. We encode what they already know, then apply it every time.
+            </p>
+          </div>
+          <ol className={styles.stepGrid}>
+            {STEPS.map((step) => (
+              <li key={step.n} className={styles.step}>
+                <span className={styles.stepNum}>{step.n}</span>
+                <h3>{step.title}</h3>
+                <p>{step.copy}</p>
+              </li>
+            ))}
+          </ol>
+        </section>
+
         <section className={styles.section} aria-labelledby="power-heading">
           <div className={styles.sectionHead}>
             <p className={styles.eyebrow}>The power of the solution</p>
             <h2 id="power-heading">Explainable. Deterministic. Role-based.</h2>
             <p className={styles.sectionSub}>
-              AI-Pass connects models to human roles and organization rules. The answer is a path you
-              can audit: who may see it, which rule fired, and which sources corroborate it.
-            </p>
-          </div>
-          <div className={styles.pillarGrid}>
-            <article className={styles.pillar}>
-              <h3>Explainability</h3>
-              <p>Every decision is a hop list: node, predicate, source, confidence. No orphan labels.</p>
-            </article>
-            <article className={styles.pillar}>
-              <h3>Deterministic</h3>
-              <p>Same graph and same contract produce the same decision. Sampling stays for drafts only.</p>
-            </article>
-            <article className={styles.pillar}>
-              <h3>Human role-based</h3>
-              <p>Quality, plant, audit, and operator each see the slice their job is allowed to act on.</p>
-            </article>
-            <article className={styles.pillar}>
-              <h3>Organization rules</h3>
-              <p>Policies sit in the graph. If a second source is required, the answer will not publish without it.</p>
-            </article>
-          </div>
-          <div className={styles.heroCtas} style={{ justifyContent: 'center', marginTop: '1.5rem' }}>
-            <Link href="/research" className={styles.btnPrimary}>
-              Open HOPN Lab
-            </Link>
-            <Link href="/demo" className={styles.btnSecondary}>
-              Try interactive demo
-            </Link>
-          </div>
-        </section>
-
-        <section className={styles.section} aria-labelledby="pillars-heading">
-          <div className={styles.sectionHead}>
-            <p className={styles.eyebrow}>Platform</p>
-            <h2 id="pillars-heading">Everything you need to put AI to work safely</h2>
-            <p className={styles.sectionSub}>
-              Clear product storytelling with one job per section — infrastructure you can actually
-              operate.
+              The answer is a path you can audit: who may see it, which rule fired, and which sources
+              corroborate it.
             </p>
           </div>
           <div className={styles.pillarGrid}>
@@ -201,40 +201,64 @@ export default function HomePageContent() {
               </article>
             ))}
           </div>
+          <div className={styles.heroCtas} style={{ justifyContent: 'center', marginTop: '1.5rem' }}>
+            <Link href="/demo" className={styles.btnPrimary}>
+              Try the interactive demo
+            </Link>
+            <Link href="/research" className={styles.btnSecondary}>
+              Open HOPN Lab
+            </Link>
+          </div>
         </section>
 
-        {FEATURES.map((feature, index) => (
-          <section
-            key={feature.title}
-            className={`${styles.featureBand} ${index % 2 === 1 ? styles.featureBandAlt : ''}`}
-            aria-labelledby={`feature-${index}`}
-          >
-            <div className={styles.featureCopy}>
-              <p className={styles.eyebrow}>{feature.eyebrow}</p>
-              <h2 id={`feature-${index}`}>{feature.title}</h2>
-              <p className={styles.sectionSub}>{feature.copy}</p>
-              <ul className={styles.pointList}>
-                {feature.points.map((point) => (
-                  <li key={point}>{point}</li>
-                ))}
-              </ul>
-              <Link href={feature.href} className={styles.linkAccent}>
-                {feature.cta} →
+        <section className={styles.micro1} id="micro1" aria-labelledby="micro1-heading">
+          <div className={styles.micro1Inner}>
+            <p className={styles.eyebrow}>Partnership</p>
+            <h2 id="micro1-heading">How we collaborate with Micro1</h2>
+            <p className={styles.sectionSub}>
+              Micro1 is the training gate: expert humans who create and vet data so models learn the
+              right work. AI-Pass is the deployment gate: those same experts&apos; rules become a
+              knowledge graph so agents can run under organization policy.
+            </p>
+            <div className={styles.gateGrid}>
+              <article className={styles.gateCard}>
+                <p className={styles.gateKicker}>Micro1</p>
+                <h3>Training gate</h3>
+                <ul>
+                  <li>Source domain experts</li>
+                  <li>Create and vet training data</li>
+                  <li>Raise model quality before ship</li>
+                </ul>
+              </article>
+              <article className={styles.gateCardAccent}>
+                <p className={styles.gateKicker}>Together</p>
+                <h3>Expert to runtime</h3>
+                <ul>
+                  <li>Experts encode rules once</li>
+                  <li>Graph + policy sit in front of the model</li>
+                  <li>Joint pilots in manufacturing, banking, public sector</li>
+                </ul>
+              </article>
+              <article className={styles.gateCard}>
+                <p className={styles.gateKicker}>AI-Pass</p>
+                <h3>Deployment gate</h3>
+                <ul>
+                  <li>Knowledge graph + org rules</li>
+                  <li>Role-based specialist agents</li>
+                  <li>Cloud, private cloud, or air-gapped</li>
+                </ul>
+              </article>
+            </div>
+            <div className={styles.heroCtas} style={{ justifyContent: 'center', marginTop: '1.75rem' }}>
+              <Link href="/partners" className={styles.btnPrimary}>
+                See the partnership path
               </Link>
+              <a href="mailto:contact@aipass.space?subject=Micro1%20collaboration" className={styles.btnSecondary}>
+                Email partnerships
+              </a>
             </div>
-            <div className={styles.featureVisual} aria-hidden>
-              <div className={styles.featurePanel}>
-                <span className={styles.featureBadge}>{feature.eyebrow}</span>
-                <p className={styles.featurePanelTitle}>{feature.title}</p>
-                <div className={styles.featureBars}>
-                  <span />
-                  <span />
-                  <span />
-                </div>
-              </div>
-            </div>
-          </section>
-        ))}
+          </div>
+        </section>
 
         <section className={styles.section} id="pricing" aria-labelledby="pricing-heading">
           <div className={styles.sectionHead}>
@@ -264,17 +288,11 @@ export default function HomePageContent() {
                   ))}
                 </ul>
                 {plan.href.startsWith('mailto:') ? (
-                  <a
-                    href={plan.href}
-                    className={plan.popular ? styles.btnPrimary : styles.btnSecondary}
-                  >
+                  <a href={plan.href} className={plan.popular ? styles.btnPrimary : styles.btnSecondary}>
                     {plan.cta}
                   </a>
                 ) : (
-                  <Link
-                    href={plan.href}
-                    className={plan.popular ? styles.btnPrimary : styles.btnSecondary}
-                  >
+                  <Link href={plan.href} className={plan.popular ? styles.btnPrimary : styles.btnSecondary}>
                     {plan.cta}
                   </Link>
                 )}
@@ -290,7 +308,7 @@ export default function HomePageContent() {
         </section>
 
         <section className={styles.finalCta} aria-labelledby="final-cta">
-          <h2 id="final-cta">Ready to run AI like infrastructure?</h2>
+          <h2 id="final-cta">Ready to run AI under your rules?</h2>
           <p>Book from the form on this page, or open the full knowledge graph walkthrough.</p>
           <div className={styles.heroCtas}>
             <a href="#book-demo" className={styles.btnOnPurple}>
@@ -306,7 +324,7 @@ export default function HomePageContent() {
       <footer className={styles.footer}>
         <div className={styles.footerTop}>
           <BrandLogoLink />
-          <p className={styles.footerTag}>Enterprise AI Infrastructure Platform</p>
+          <p className={styles.footerTag}>Enterprise AI infrastructure. Human expertise, applied.</p>
         </div>
         <div className={styles.footerGrid}>
           {FOOTER_COLUMNS.slice(0, 5).map((column) => (

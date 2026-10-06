@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { PremiumNav } from '../components/premium/PremiumNav';
+import { MarketingThemeLock } from '../components/MarketingThemeLock';
 import styles from './solutions.module.css';
 
 const CAPABILITIES = [
@@ -171,6 +172,7 @@ const DIFFERENTIATORS = [
 export default function SolutionsPage() {
   return (
     <div className={styles.page}>
+      <MarketingThemeLock />
       <PremiumNav variant="landing" />
 
       <section className={styles.hero} aria-labelledby="solutions-hero">
