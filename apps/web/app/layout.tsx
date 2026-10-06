@@ -45,7 +45,16 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
-const themeBoot = `(function(){try{var t=localStorage.getItem('ai-pass:theme')||'light';var r=t==='dark'?'dark':t==='system'?(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'):'light';document.documentElement.dataset.theme=r;document.documentElement.style.colorScheme=r;}catch(e){document.documentElement.dataset.theme='light';}})();`;
+const themeBoot = `(function(){try{var p=location.pathname||'';var marketing=p==='/'||/^\\/(demo|partners|solutions|about|research|trust)(\\/|$)/.test(p);if(marketing){document.documentElement.dataset.theme='light';document.documentElement.style.colorScheme='light';return;}var t=localStorage.getItem('ai-pass:theme')||'light';var r=t==='dark'?'dark':t==='system'?(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'):'light';document.documentElement.dataset.theme=r;document.documentElement.style.colorScheme=r;}catch(e){document.documentElement.dataset.theme='light';}})();`;
+
+const marketingContrastCss = `
+html,body{background:#ffffff;color:#16171a;font-family:Arial,Helvetica,sans-serif;font-synthesis:none;-webkit-text-stroke:0;text-shadow:none;}
+a[class*="btnPrimary"],button[class*="submit"],button[class*="btnPrimary"]{background:#5025d1!important;color:#ffffff!important;border-color:#5025d1!important;}
+a[class*="btnSecondary"],button[class*="btnSecondary"]{background:#ffffff!important;color:#16171a!important;border:2px solid #16171a!important;}
+a[class*="btnGhost"],button[class*="btnGhost"]{color:#16171a!important;}
+h1,h2,h3,label,p{color:inherit;}
+input,select,textarea{color:#16171a!important;background:#ffffff!important;}
+`;
 
 export default function RootLayout({
   children,
@@ -56,6 +65,7 @@ export default function RootLayout({
     <html lang="en" data-theme="light" suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeBoot }} />
+        <style dangerouslySetInnerHTML={{ __html: marketingContrastCss }} />
       </head>
       <body suppressHydrationWarning>
         <AppProviders>
