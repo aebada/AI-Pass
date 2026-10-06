@@ -1,4 +1,5 @@
 import { PremiumNav } from '../components/premium/PremiumNav';
+import { MarketingThemeLock } from '../components/MarketingThemeLock';
 import { DemoStudio } from './DemoStudio';
 import styles from './demo.module.css';
 
@@ -11,6 +12,7 @@ export const metadata = {
 export default function DemoPage() {
   return (
     <div className={styles.page}>
+      <MarketingThemeLock />
       <PremiumNav variant="landing" />
       <main>
         <DemoStudio />

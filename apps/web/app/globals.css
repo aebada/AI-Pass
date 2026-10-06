@@ -96,6 +96,8 @@ body {
   line-height: 1.55;
   letter-spacing: 0;
   font-synthesis: none;
+  font-synthesis-weight: none;
+  font-synthesis-style: none;
   font-variant-ligatures: none;
   font-feature-settings: 'kern' 1, 'liga' 0, 'clig' 0, 'calt' 0, 'dlig' 0, 'swsh' 0, 'ss01' 0;
   -webkit-text-stroke: 0;

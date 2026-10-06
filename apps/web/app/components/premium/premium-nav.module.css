@@ -529,10 +529,10 @@
 }
 
 .btnPrimary {
-  background: var(--accent);
-  color: #fff;
+  background: #5025d1;
+  color: #ffffff;
   border-radius: 999px;
-  box-shadow: 0 8px 20px rgba(103, 61, 230, 0.28);
+  box-shadow: 0 8px 20px rgba(80, 37, 209, 0.28);
 }
 
 .btnPrimary:hover {
@@ -541,7 +541,7 @@
 
 .btnGhost {
   background: transparent;
-  color: var(--text-muted);
+  color: #16171a;
   border: 1px solid transparent;
 }
 

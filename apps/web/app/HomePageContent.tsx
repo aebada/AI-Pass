@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { PremiumNav } from './components/premium/PremiumNav';
 import { BrandLogoLink } from './components/BrandLogoLink';
 import { DemoBookingForm } from './components/DemoBookingForm';
+import { MarketingThemeLock } from './components/MarketingThemeLock';
 import { FOOTER_COLUMNS } from './lib/site-nav';
 import styles from './page.module.css';
 
@@ -96,6 +97,7 @@ const COMPLIANCE = ['ISO 42001', 'ISO 27001', 'GDPR', 'NIS2', 'SOC 2 Type II rea
 export default function HomePageContent() {
   return (
     <div className={styles.page}>
+      <MarketingThemeLock />
       <PremiumNav variant="landing" />
 
       <main>

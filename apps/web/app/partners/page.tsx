@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { PremiumNav } from '../components/premium/PremiumNav';
 import { BrandLogoLink } from '../components/BrandLogoLink';
+import { MarketingThemeLock } from '../components/MarketingThemeLock';
 import { FOOTER_COLUMNS } from '../lib/site-nav';
 import styles from '../page.module.css';
 
@@ -29,6 +30,7 @@ const PATHS = [
 export default function PartnersPage() {
   return (
     <div className={styles.page}>
+      <MarketingThemeLock />
       <PremiumNav variant="landing" />
       <main>
         <section className={styles.hero} aria-labelledby="partners-heading">

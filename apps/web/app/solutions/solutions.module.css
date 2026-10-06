@@ -1,8 +1,15 @@
 .page {
   --section-pad: clamp(1.5rem, 4vw, 4rem);
+  --bg: #ffffff;
+  --text: #16171a;
+  --text-muted: #3f424c;
+  --accent: #5025d1;
+  --border: #cfd0db;
   min-height: 100vh;
-  background-color: var(--bg);
-  color: var(--text);
+  background-color: #ffffff;
+  color: #16171a;
+  font-family: Arial, Helvetica, sans-serif;
+  font-synthesis: none;
 }
 
 .page > :not(nav):not(header) {
@@ -51,7 +58,7 @@
 
 .heroTitle {
   font-size: clamp(2rem, 4.5vw, 3.1rem);
-  font-weight: 800;
+  font-weight: 700;
   line-height: 1.12;
   letter-spacing: -0.03em;
   margin: 0 0 1rem;
@@ -86,30 +93,30 @@
 }
 
 .btnPrimary {
-  background: var(--accent, #673de6);
-  color: #fff;
+  background: #5025d1;
+  color: #ffffff;
   border: 1px solid transparent;
 }
 
 .btnPrimary:hover {
-  filter: brightness(1.05);
+  background: #3b1aab;
 }
 
 .btnSecondary {
-  background: transparent;
-  color: var(--text);
-  border: 1px solid var(--border);
+  background: #ffffff;
+  color: #16171a;
+  border: 2px solid #16171a;
 }
 
 .btnSecondary:hover {
-  border-color: var(--accent, #673de6);
-  color: var(--accent, #673de6);
+  background: #16171a;
+  color: #ffffff;
 }
 
 .btnGhost {
   background: transparent;
-  color: var(--text-muted);
-  border: 1px solid transparent;
+  color: #16171a;
+  border: 2px solid #cfd0db;
 }
 
 .btnGhost:hover {
@@ -143,7 +150,7 @@
 
 .sectionTitle {
   font-size: clamp(1.5rem, 3vw, 2.1rem);
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: -0.02em;
   margin: 0 0 0.75rem;
   line-height: 1.2;
@@ -256,7 +263,7 @@
   margin: 0 auto 0.75rem;
   max-width: 640px;
   font-size: clamp(1.5rem, 3vw, 2rem);
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: -0.02em;
 }
 
