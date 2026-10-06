@@ -1,3 +1,4 @@
+import Script from 'next/script';
 import { PremiumNav } from '../components/premium/PremiumNav';
 import { MarketingThemeLock } from '../components/MarketingThemeLock';
 import { DemoStudio } from './DemoStudio';
@@ -17,6 +18,7 @@ export default function DemoPage() {
       <main>
         <DemoStudio />
       </main>
+      <Script src="/demo-realtime.js" strategy="afterInteractive" />
     </div>
   );
 }
