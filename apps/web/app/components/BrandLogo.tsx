@@ -84,10 +84,10 @@ export function BrandLogo({
       {!markOnly ? (
         <span
           style={{
-            fontFamily: 'var(--font-sans, "DM Sans", Inter, system-ui, sans-serif)',
+            fontFamily: 'Arial, Helvetica, sans-serif',
             fontWeight: 700,
             fontSize: Math.round(height * 0.58),
-            letterSpacing: '-0.045em',
+            letterSpacing: '0',
             color: 'currentColor',
             whiteSpace: 'nowrap',
           }}

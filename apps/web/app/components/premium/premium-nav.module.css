@@ -11,11 +11,54 @@
   align-items: center;
   gap: 1.5rem;
   padding: 0.9rem clamp(1rem, 4vw, 2rem);
-  background: rgba(255, 255, 255, 0.9);
+  background: #ffffff;
+  color: #16171a;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid #e8e8f0;
   overflow: visible;
+}
+
+.navLanding {
+  background: #ffffff !important;
+  color: #16171a !important;
+  border-bottom: 1px solid #e8e8f0;
+}
+
+.navLanding .logo,
+.navLanding .navLink,
+.navLanding .navDropdownTrigger,
+.navLanding .btnGhost,
+.navLanding .hamburger {
+  color: #16171a;
+}
+
+.navLanding .navLink,
+.navLanding .navDropdownTrigger {
+  color: #3f424c;
+}
+
+.navLanding .navLink:hover,
+.navLanding .navLinkActive,
+.navLanding .navDropdownTrigger:hover,
+.navLanding .navDropdownTrigger.navLinkActive {
+  color: #16171a;
+}
+
+.navLanding .hamburger span {
+  background: #16171a;
+}
+
+.navLanding .mobilePanel,
+.navLanding .mobileFooter {
+  background: #ffffff;
+  color: #16171a;
+}
+
+.navLanding .mobileTopLink,
+.navLanding .mobileAccordionTrigger,
+.navLanding .btnGhost {
+  color: #16171a;
 }
 
 [data-theme='dark'] .nav,

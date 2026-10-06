@@ -8,9 +8,9 @@
   --bg-hover: #eeeef8;
   --border: #e8e8f0;
   --border-strong: #d5d5e2;
-  --text: #1d1e20;
-  --text-muted: #6b6d76;
-  --text-soft: #8b8d98;
+  --text: #16171a;
+  --text-muted: #3f424c;
+  --text-soft: #5c5f6b;
   --color-accent: #673de6;
   --accent: #673de6;
   --accent-hover: #5025d1;
@@ -28,8 +28,8 @@
   --shadow-sm: 0 1px 2px rgba(29, 30, 32, 0.04);
   --shadow: 0 8px 24px rgba(29, 30, 32, 0.06);
   --shadow-lg: 0 24px 64px rgba(103, 61, 230, 0.14);
-  --font-display: 'Segoe UI', system-ui, -apple-system, sans-serif;
-  --font-sans: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-display: Arial, Helvetica, sans-serif;
+  --font-sans: Arial, Helvetica, sans-serif;
   --font-mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
   --section-y: clamp(72px, 10vw, 120px);
   --container: 1120px;
@@ -91,12 +91,15 @@ body {
   min-height: 100%;
   background: var(--bg);
   color: var(--text);
-  font-family: var(--font-sans);
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
   line-height: 1.55;
+  letter-spacing: 0;
   font-synthesis: none;
   font-variant-ligatures: none;
   font-feature-settings: 'kern' 1, 'liga' 0, 'clig' 0, 'calt' 0, 'dlig' 0, 'swsh' 0, 'ss01' 0;
+  -webkit-text-stroke: 0;
+  text-shadow: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -109,10 +112,10 @@ h1,
 h2,
 h3,
 .display {
-  font-family: var(--font-display);
+  font-family: Arial, Helvetica, sans-serif;
   font-weight: 700;
-  letter-spacing: -0.02em;
-  line-height: 1.15;
+  letter-spacing: 0;
+  line-height: 1.2;
   color: var(--text);
 }
 

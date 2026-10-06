@@ -2,8 +2,9 @@
 
 .page {
   min-height: 100vh;
-  background: var(--bg);
-  color: var(--text);
+  background: #ffffff;
+  color: #16171a;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .page > :not(nav):not(header) {
@@ -23,7 +24,7 @@
   border-radius: 999px;
   font-size: 1rem;
   font-weight: 700;
-  letter-spacing: -0.01em;
+  letter-spacing: 0;
   white-space: nowrap;
   border: 1px solid transparent;
   cursor: pointer;
@@ -119,6 +120,7 @@
 .heroFormTitle {
   font-size: 1.25rem;
   margin-bottom: 1rem;
+  color: #16171a;
 }
 
 @media (max-width: 900px) {
@@ -136,20 +138,21 @@
 }
 
 .brandMark {
-  font-family: var(--font-display);
+  font-family: Arial, Helvetica, sans-serif;
   font-size: clamp(1.75rem, 3vw, 2.35rem);
   font-weight: 800;
-  letter-spacing: -0.04em;
-  color: var(--text);
+  letter-spacing: 0;
+  color: #16171a;
   margin-bottom: 1rem;
 }
 
 .heroTitle {
-  font-size: clamp(2.4rem, 6vw, 4.25rem);
+  font-size: clamp(2.1rem, 5vw, 3.6rem);
   font-weight: 800;
-  letter-spacing: -0.02em;
-  line-height: 1.02;
+  letter-spacing: 0;
+  line-height: 1.12;
   margin-bottom: 1.25rem;
+  color: #16171a;
 }
 
 .heroTitleAccent {
@@ -158,10 +161,10 @@
 
 .heroSub {
   max-width: 38rem;
-  margin: 0 auto 2rem;
-  font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+  margin: 0 0 2rem;
+  font-size: clamp(1.05rem, 1.8vw, 1.2rem);
   line-height: 1.6;
-  color: var(--text-muted);
+  color: #3f424c;
 }
 
 .heroCtas {
@@ -174,7 +177,7 @@
 .heroNote {
   margin-top: 1rem;
   font-size: 0.875rem;
-  color: var(--text-soft);
+  color: #5c5f6b;
 }
 
 .heroVisual {
@@ -271,8 +274,8 @@
 .logoItem {
   font-size: 0.9rem;
   font-weight: 700;
-  letter-spacing: -0.02em;
-  color: var(--text-soft);
+  letter-spacing: 0;
+  color: #5c5f6b;
 }
 
 .section {
@@ -305,9 +308,124 @@
 }
 
 .sectionSub {
-  color: var(--text-muted);
+  color: #3f424c;
   font-size: 1.0625rem;
   line-height: 1.65;
+}
+
+.problemGrid,
+.stepGrid,
+.gateGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.problemCard,
+.step,
+.gateCard,
+.gateCardAccent {
+  padding: 1.5rem 1.35rem;
+  border-radius: var(--radius-lg);
+  background: #fff;
+  border: 1px solid var(--border);
+}
+
+.problemCard h3,
+.step h3,
+.gateCard h3,
+.gateCardAccent h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.65rem;
+  color: #16171a;
+}
+
+.problemCard p,
+.step p,
+.gateCard li,
+.gateCardAccent li {
+  color: #3f424c;
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.step {
+  list-style: none;
+}
+
+.stepNum {
+  display: inline-block;
+  margin-bottom: 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: var(--accent);
+}
+
+.micro1 {
+  margin: 0 clamp(20px, 4vw, 48px);
+  padding: var(--section-y) clamp(20px, 3vw, 40px);
+  border-radius: var(--radius-xl);
+  background: #f4f1ff;
+  border: 1px solid #e0d7ff;
+}
+
+.micro1Inner {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.micro1Inner .sectionHead,
+.micro1Inner > .sectionSub {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.micro1Inner > h2 {
+  text-align: center;
+  margin-bottom: 0.85rem;
+  color: #16171a;
+}
+
+.micro1Inner > .eyebrow,
+.micro1Inner > .sectionSub {
+  display: block;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.micro1Inner > .sectionSub {
+  margin-bottom: 2rem;
+}
+
+.gateCard ul,
+.gateCardAccent ul {
+  list-style: none;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.gateKicker {
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.gateCardAccent {
+  background: #673de6;
+  border-color: #673de6;
+  color: #fff;
+}
+
+.gateCardAccent h3,
+.gateCardAccent .gateKicker,
+.gateCardAccent li {
+  color: #fff;
 }
 
 .pillarGrid {
@@ -636,7 +754,10 @@
 @media (max-width: 980px) {
   .pillarGrid,
   .pricingGrid,
-  .footerGrid {
+  .footerGrid,
+  .problemGrid,
+  .stepGrid,
+  .gateGrid {
     grid-template-columns: 1fr 1fr;
   }
 
@@ -658,7 +779,10 @@
 @media (max-width: 640px) {
   .pillarGrid,
   .pricingGrid,
-  .footerGrid {
+  .footerGrid,
+  .problemGrid,
+  .stepGrid,
+  .gateGrid {
     grid-template-columns: 1fr;
   }
 

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: 'AI-Pass — The Enterprise AI Operating System',
   description:
-    'One workspace, one membership, every AI model, agent, and business application. AI-Pass unifies models, agents, workflows, governance, compliance, and marketplaces into one secure enterprise platform.',
+    'The deployment gate for enterprise AI. Human expertise becomes a knowledge graph and organization rules, then specialist agents answer with an audit path.',
   manifest: '/manifest.json',
   icons: {
     icon: [

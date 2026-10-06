@@ -6,7 +6,7 @@ import { signOut as nextAuthSignOut } from 'next-auth/react';
 import { useEffect, useRef, useState } from 'react';
 import { Badge } from '@ai-pass/ui';
 import { BrandLogoLink } from '../BrandLogoLink';
-import { SITE_NAV, type SiteNavItem } from '../../lib/site-nav';
+import { LANDING_NAV, SITE_NAV, type SiteNavItem } from '../../lib/site-nav';
 import { researchBarItems } from '../../lib/hopn-lab';
 import { useApp } from './AppProviders';
 import styles from './premium-nav.module.css';
@@ -137,14 +137,15 @@ export function PremiumNav({ variant = 'business' }: { variant?: 'landing' | 'bu
   };
 
   const researchLinks = researchBarItems();
+  const menuItems = variant === 'landing' ? LANDING_NAV : SITE_NAV;
 
   return (
     <header className={styles.navShell}>
-    <nav className={styles.nav} ref={navRef}>
+    <nav className={`${styles.nav} ${variant === 'landing' ? styles.navLanding : ''}`} ref={navRef}>
       <BrandLogoLink className={styles.logo} logoClassName={styles.logoImg} height={40} onClick={closeMobile} />
 
       <div className={styles.navLinks}>
-        {SITE_NAV.map((item) =>
+        {menuItems.map((item) =>
           item.type === 'link' ? (
             item.external ? (
               <a
@@ -205,6 +206,7 @@ export function PremiumNav({ variant = 'business' }: { variant?: 'landing' | 'bu
       </div>
 
       <div className={styles.navActions}>
+        {variant === 'business' ? (
         <button
           type="button"
           className={`${styles.iconBtn} ${styles.desktopOnly}`}
@@ -214,6 +216,7 @@ export function PremiumNav({ variant = 'business' }: { variant?: 'landing' | 'bu
         >
           {resolvedTheme === 'dark' ? '☀️' : '🌙'}
         </button>
+        ) : null}
 
         {variant === 'business' && (
           <>
@@ -362,6 +365,8 @@ export function PremiumNav({ variant = 'business' }: { variant?: 'landing' | 'bu
       {mobileOpen && (
         <div className={styles.mobilePanel}>
           <div className={styles.mobileScroll}>
+            {variant === 'business' ? (
+              <>
             <p className={styles.mobileSectionLabel}>Research</p>
             {researchLinks.map((link) => (
               <Link
@@ -373,8 +378,10 @@ export function PremiumNav({ variant = 'business' }: { variant?: 'landing' | 'bu
                 {link.label}
               </Link>
             ))}
+              </>
+            ) : null}
             <p className={styles.mobileSectionLabel}>Menu</p>
-            {SITE_NAV.map((item) =>
+            {menuItems.map((item) =>
               item.type === 'link' ? (
                 item.external ? (
                   <a
@@ -427,6 +434,7 @@ export function PremiumNav({ variant = 'business' }: { variant?: 'landing' | 'bu
             )}
           </div>
           <div className={styles.mobileFooter}>
+            {variant === 'business' ? (
             <button
               type="button"
               className={styles.mobileThemeBtn}
@@ -434,6 +442,7 @@ export function PremiumNav({ variant = 'business' }: { variant?: 'landing' | 'bu
             >
               {resolvedTheme === 'dark' ? '☀️ Light mode' : '🌙 Dark mode'}
             </button>
+            ) : null}
             <Link href={user ? '/workspace' : '/login'} className={styles.btnPrimary} onClick={closeMobile}>
               {user ? 'Go to Workspace' : 'Start Free'}
             </Link>

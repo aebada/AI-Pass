@@ -17,6 +17,16 @@ export const GITHUB_URL = 'https://github.com/ai-pass';
 export const DEMO_MAILTO =
   'mailto:hello@ai-pass.com?subject=Enterprise%20AI%20Infrastructure%20Demo';
 
+/** Short public marketing nav — high contrast, no mega-menu overflow */
+export const LANDING_NAV: SiteNavItem[] = [
+  { type: 'link', label: 'Product', href: '/#how-it-works' },
+  { type: 'link', label: 'Demo', href: '/demo' },
+  { type: 'link', label: 'Solutions', href: '/solutions' },
+  { type: 'link', label: 'Partners', href: '/partners' },
+  { type: 'link', label: 'Research', href: '/research' },
+  { type: 'link', label: 'Pricing', href: '/#pricing' },
+];
+
 /** Primary marketing nav — Enterprise AI Infrastructure Platform IA */
 export const SITE_NAV: SiteNavItem[] = [
   {
