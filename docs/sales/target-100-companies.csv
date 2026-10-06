@@ -1,0 +1,102 @@
+rank,company,country,city,sector,wedge,email_primary,email_alt,priority,target_role,status,next_action
+1,HUMAIN,Saudi Arabia,Riyadh,Full-stack AI / PIF,Partnership / sovereign AI governance layer,pr@humain.com,connect@humain.ai,P0,CEO office / Partnerships / Solutions,SENT 2026-10-06,Wait for reply / follow up in 5 business days
+2,Saudi Aramco Digital,Saudi Arabia,Dhahran,Energy / digital,Plant + operations agents under policy,webmaster2@aramco.com,,P0,CDO / Digital,SENT 2026-10-06 as Saudi Aramco,Wait for reply / follow up in 5 business days
+3,NEOM,Saudi Arabia,NEOM,Smart city / sovereign,Governed agents for city ops,,,P0,AI / Digital,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+4,stc,Saudi Arabia,Riyadh,Telecom,Enterprise AI control plane,,,P0,Enterprise AI,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+5,SDAIA,Saudi Arabia,Riyadh,Government AI,Policy routing + audit for public AI,info@sdaia.gov.sa,,P0,Partnerships,SENT 2026-10-06,Wait for reply / follow up in 5 business days
+6,Elm Company,Saudi Arabia,Riyadh,Govtech,Governed forms + agent workflows,,,P0,Product / Partnerships,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+7,Taqnia,Saudi Arabia,Riyadh,Defence / tech,Air-gapped AI governance,info@taqnia.com,,P0,Business development,SENT 2026-10-06,Wait for reply / follow up in 5 business days
+8,SAUDIA / Flyadeal digital,Saudi Arabia,Jeddah,Aviation,Ops agents with audit trail,,,P1,Digital,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+9,Al Rajhi Bank,Saudi Arabia,Riyadh,Banking,Deployable AI under compliance,,,P0,CISO / Head of AI,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+10,SNB / AlAhli,Saudi Arabia,Riyadh,Banking,Policy gate for agents,,,P0,Innovation / Risk,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+11,SABIC,Saudi Arabia,Riyadh,Chemicals / manufacturing,Quality twin + KG rules,info@sabic.com,,P0,Digital Manufacturing,SENT 2026-10-06,Wait for reply / follow up in 5 business days
+12,Ma'aden,Saudi Arabia,Riyadh,Mining,Operational knowledge graph,,,P1,Operations AI,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+13,ACWA Power,Saudi Arabia,Riyadh,Energy,Plant agents + provenance,corporate.communications@acwapower.com,,P1,Digital,SENT 2026-10-06,Wait for reply / follow up in 5 business days
+14,Red Sea Global,Saudi Arabia,Riyadh,Hospitality / construction,Governed project AI,,,P1,Technology,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+15,Diriyah Gate,Saudi Arabia,Riyadh,Real estate mega-project,Intake + agent governance,,,P1,Digital,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+16,Siemens,Germany,Munich,Industrial,Digital twin defect + policy path,,,P0,Digital Industries / Quality,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+17,Siemens Healthineers,Germany,Erlangen,Healthcare devices,Explainable clinical-ops AI,,,P0,AI / Quality,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+18,BMW Group,Germany,Munich,Automotive,Plant quality KG + role rules,,,P0,Production / Quality AI,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+19,Mercedes-Benz,Germany,Stuttgart,Automotive,Shopfloor agents under SOP rules,,,P0,Manufacturing IT,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+20,Audi,Germany,Ingolstadt,Automotive,Quality twin localization,,,P0,Quality / Digitization,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+21,Volkswagen,Germany,Wolfsburg,Automotive,Cross-plant governed AI,,,P0,CDO / Quality,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+22,ZF Friedrichshafen,Germany,Friedrichshafen,Automotive supplier,BOM + lot provenance graph,,,P0,Quality / Digital,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+23,Schaeffler,Germany,Herzogenaurach,Bearings / supplier,Vibration → lot → supplier path,,,P0,Quality / IoT,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+24,Bosch,Germany,Stuttgart,Industrial,Edge agents + governance,,,P0,Corporate Research / IoT,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+25,Continental,Germany,Hanover,Automotive supplier,Plant KG + MDR evidence,,,P1,Quality,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+26,Infineon,Germany,Munich,Semiconductors,Fab yield rules in graph,,,P0,Digitalization,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+27,Trumpf,Germany,Ditzingen,Machine tools,Machine twin + SOP automation,,,P1,Digital Services,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+28,KUKA,Germany,Augsburg,Robotics,Physical autonomy + governance,,,P0,Software / Solutions,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+29,ABB,Switzerland,Zurich,Industrial,Installed-base agents under policy,,,P0,Digital,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+30,Schneider Electric,France,Rueil-Malmaison,Energy mgmt,OT knowledge graph governance,,,P1,Software,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+31,Siemens Energy,Germany,Munich,Energy,Asset twin + audit path,,,P1,Digital,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+32,GE Vernova,USA,Cambridge,Energy,Plant decision provenance,,,P1,Digital,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+33,Atlas Copco,Sweden,Nacka,Industrial,Compressor fleet rules,,,P1,Digital,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+34,Sandvik,Sweden,Stockholm,Mining equipment,Field service KG,,,P1,Digital,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+35,SAP,Germany,Walldorf,Enterprise software,Partner: ERP evidence into KG,,,P0,Partnerships / AI,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+36,Deutsche Bank,Germany,Frankfurt,Banking,Agent deployment under policy,,,P0,CISO / AI Governance,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+37,Commerzbank,Germany,Frankfurt,Banking,Governed copilots,,,P0,Digital / Risk,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+38,DZ Bank,Germany,Frankfurt,Banking,Cooperative bank AI control,,,P1,Innovation,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+39,KfW,Germany,Frankfurt,Development bank,Public-sector AI audit,,,P1,Digital,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+40,Allianz,Germany,Munich,Insurance,Claims agents + explainability,,,P0,AI / Compliance,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+41,Munich Re,Germany,Munich,Reinsurance,Risk models under governance,,,P0,Digital Partners,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+42,Helvetia,Switzerland,St. Gallen,Insurance,Policy-aware automation,,,P1,Innovation,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+43,Erste Group,Austria,Vienna,Banking,CEE bank AI gate,,,P1,Group Digitization,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+44,ING Germany,Germany,Frankfurt,Banking,Retail bank agent control,,,P1,Technology,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+45,Roche,Switzerland,Basel,Pharma,Lab / quality KG rules,,,P0,Informatics / Quality,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+46,Bayer,Germany,Leverkusen,Pharma / agri,Regulated AI decisions,,,P0,Digital Transformation,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+47,Merck KGaA,Germany,Darmstadt,Life science,Manufacturing quality path,,,P0,IT / Quality,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+48,Fresenius,Germany,Bad Homburg,Healthcare,Hospital ops agents + audit,,,P1,Digital,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+49,Charité,Germany,Berlin,Hospital,Clinical-ops governance (non-diagnostic),,,P1,CIO,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+50,Deutsche Bahn,Germany,Berlin,Rail / critical infra,Ops agents with provenance,,,P0,Digital / Safety,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+51,BWI GmbH,Germany,Meckenheim,Defence IT,Air-gapped AI OS,,,P0,Innovation / Procurement,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+52,Bundeswehr Cyber,Germany,Bonn,Defence,Governed autonomous systems track,,,P1,Capability development,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+53,Flughafen München,Germany,Munich,Airport,Ops intake + agent workflows,,,P1,IT,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+54,Stadtwerke München,Germany,Munich,Utilities,Grid / plant decision rules,,,P1,Digitalization,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+55,DHL Group,Germany,Bonn,Logistics,Network agents under policy,,,P0,IT / Innovation,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+56,Kühne+Nagel,Switzerland,Schindellegi,Logistics,Shipment exception graph,,,P0,Digital,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+57,DB Schenker,Germany,Essen,Logistics,Governed logistics copilots,,,P1,IT,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+58,Zalando,Germany,Berlin,Retail,Ops + support agents governed,,,P1,Tech,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+59,Otto Group,Germany,Hamburg,Retail,Enterprise AI control plane,,,P1,Digital,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+60,Schwarz Digits / Lidl,Germany,Neckarsulm,Retail / IT,Private cloud AI governance,,,P0,Schwarz Digits,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+61,REWE digital,Germany,Cologne,Retail,Store ops agents + audit,,,P1,Technology,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+62,Maschinenfabrik Reinhausen,Germany,Regensburg,Energy equipment,Quality twin KG,,,P1,Quality / IT,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+63,Krones,Germany,Neutraubling,Packaging machines,Line agents + SOP rules,,,P1,Digital Services,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+64,Manz AG,Germany,Reutlingen,Machine building,Production knowledge graph,,,P1,IT,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+65,Grenzebach,Germany,Asbach,Industrial automation,Plant digital twin rules,,,P1,Digital,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+66,Hirschmann Automation,Germany,Neckartenzlingen,Industrial networking,OT + AI governance,,,P1,Product,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+67,Softing,Germany,Haar,Industrial software,Partner / embed governance,,,P1,Partnerships,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+68,TÜV SÜD Digital,Germany,Munich,Certification,Trust evidence packs,,,P0,Digital Services,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+69,TÜV Rheinland,Germany,Cologne,Certification,AI Act evidence workflows,,,P0,Digital,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+70,Datev,Germany,Nuremberg,Accounting software,Governed finance agents,,,P1,Innovation,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+71,Bechtle,Germany,Neckarsulm,IT services,Reseller: on-prem AI-Pass,,,P0,Alliance,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+72,Cancom,Germany,Munich,IT services,Reseller governed AI stack,,,P0,Alliances,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+73,Msg systems,Germany,Ismaning,IT consulting,Implementation partner,,,P0,Alliances,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+74,Capgemini Germany,Germany,Berlin,Consulting,SI partner for regulated AI,,,P0,Alliances,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+75,Accenture DACH,Germany,Kronberg,Consulting,SI / GTM partner,,,P0,Alliances,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+76,Deloitte AI DACH,Germany,Munich,Consulting,Trust + audit co-sell,,,P0,Alliances,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+77,EY Germany AI,Germany,Stuttgart,Consulting,Governance co-sell (also HUMAIN/EY link),,,P0,Alliances,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+78,PwC Germany,Germany,Frankfurt,Consulting,AI Act readiness + AI-Pass,,,P0,Alliances,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+79,KPMG Germany,Germany,Berlin,Consulting,Risk / assurance co-sell,,,P1,Alliances,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+80,Nokia,Finland,Espoo,Telecom equipment,Network ops agents governed,,,P1,Digital,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+81,Ericsson,Sweden,Stockholm,Telecom,Ops automation under policy,,,P1,Digital,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+82,ASML ecosystem suppliers,Netherlands,Veldhoven,Semiconductor equip,Quality provenance path,,,P1,Quality,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+83,Philips,Netherlands,Amsterdam,Healthtech,Regulated device-adjacent ops AI,,,P1,Digital,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+84,Rolls-Royce,UK,London,Aerospace / energy,Asset twin decision path,,,P1,Digital,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+85,BAE Systems,UK,Farnborough,Defence,Air-gapped governance OS,,,P1,Digital,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+86,Thales,France,Paris,Defence / security,Sovereign AI control plane,,,P1,Digital,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+87,Airbus,France,Toulouse,Aerospace,Manufacturing quality KG,,,P0,Digital Manufacturing,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+88,Palantir,USA,Denver,Software,Competitive awareness / niche wedge,,,P2,BD (careful),DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+89,ServiceNow,USA,Santa Clara,Software,Partner: governance beside ITSM,,,P1,Partnerships,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+90,Microsoft Azure OpenAI partners DACH,Germany,Munich,Cloud,Complement: policy gate on Azure AI,,,P1,Partnerships,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+91,AWS DACH Public Sector,Germany,Munich,Cloud,On-prem + sovereign pattern,,,P1,Partnerships,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+92,Google Cloud DACH,Germany,Munich,Cloud,Governed Vertex deployments,,,P1,Partnerships,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+93,MTU Aero Engines,Germany,Munich,Aerospace,Quality + lot provenance,,,P0,Quality / Digital,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+94,KraussMaffei,Germany,Munich,Machinery,Line SOP automation,,,P1,Digital,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+95,Wacker Chemie,Germany,Munich,Chemicals,Plant decision provenance,,,P1,Digital Manufacturing,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+96,Linde / Linde Engineering,Germany,Munich,Industrial gases,Asset ops agents,,,P1,Digital,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+97,Rohde & Schwarz,Germany,Munich,Test & measurement,Manufacturing quality graph,,,P0,Digitalization,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+98,Knorr-Bremse,Germany,Munich,Rail / commercial vehicles,Safety-critical decision path,,,P0,Quality / Digital,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+99,Giesecke+Devrient,Germany,Munich,Security tech,Governed secure workflows,,,P1,Digital,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+100,HypoVereinsbank / UniCredit,Germany,Munich,Banking,Bank AI policy gate,,,P0,CISO / AI,DRAFT_READY_NO_PUBLIC_INBOX,Need published partnership inbox or LinkedIn intro — draft is ready
+101,Capgemini Middle East,Saudi Arabia,Riyadh,IT consulting,SI partnership to take governed agent packs into regulated KSA and DACH accounts,info.me@capgemini.com,,P0,Alliances,SENT 2026-10-06,Wait for reply / follow up in 5 business days
