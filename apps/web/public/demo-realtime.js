@@ -115,8 +115,8 @@
       }
       if (!parsed.ready) return parsed;
 
-      var ruleX = 80 + ((committed.length + (persist ? 0 : 0)) % 5) * 180;
-      var ruleY = persist ? 470 : 470;
+      var ruleX = 200 + (committed.length % 4) * 180;
+      var ruleY = 330;
       var dash = persist ? undefined : '6 4';
       var rule = svgEl('circle', {
         cx: String(ruleX),
