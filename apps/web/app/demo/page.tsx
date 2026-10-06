@@ -6,7 +6,7 @@ import styles from './demo.module.css';
 export const metadata = {
   title: 'Interactive demo — knowledge graph | AI-Pass',
   description:
-    'Self-serve knowledge graph demo with nodes, attributes, metadata, provenance, and role-based deterministic answers.',
+    'Self-serve knowledge graph demo. Type a human business rule and watch nodes, attributes, metadata, and edges appear in real time.',
 };
 
 export default function DemoPage() {

@@ -1,9 +1,12 @@
 .page {
   --bg: #ffffff;
+  --bg-soft: #f4f1ff;
   --text: #16171a;
   --text-muted: #3f424c;
+  --text-soft: #5c5f6b;
   --accent: #5025d1;
   --border: #cfd0db;
+  --border-strong: #16171a;
   min-height: 100vh;
   background: #ffffff;
   color: #16171a;
@@ -60,19 +63,21 @@
 
 .stats div {
   padding: 0.75rem 0.85rem;
-  border: 1px solid var(--border);
+  border: 1px solid #cfd0db;
   border-radius: 12px;
-  background: var(--bg-soft);
+  background: #f4f1ff;
+  color: #16171a;
 }
 
 .stats dt {
   font-size: 0.75rem;
-  color: var(--text-soft);
+  color: #5c5f6b;
 }
 
 .stats dd {
   font-size: 1.4rem;
   font-weight: 700;
+  color: #16171a;
 }
 
 .controls {
@@ -201,11 +206,166 @@
   align-items: start;
 }
 
+.composer {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+  padding: 1.25rem 1.35rem;
+  border: 1px solid #cfd0db;
+  border-radius: 16px;
+  background: #fff;
+}
+
+.composer h2 {
+  font-size: 1.35rem;
+  margin-bottom: 0.5rem;
+  color: #16171a;
+}
+
+.liveBadge {
+  display: inline-block;
+  margin-left: 0.55rem;
+  padding: 0.12rem 0.45rem;
+  border-radius: 999px;
+  background: #5025d1;
+  color: #fff;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  vertical-align: middle;
+}
+
+.tokens {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  min-height: 1.8rem;
+  margin-top: 0.65rem;
+}
+
+.tokens span {
+  border-radius: 999px;
+  padding: 0.22rem 0.6rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.tokenEntity {
+  background: #eee8ff;
+  color: #5025d1;
+}
+
+.tokenRole {
+  background: #e8f7f3;
+  color: #0a6b58;
+}
+
+.tokenAction {
+  background: #ffe8ee;
+  color: #b0103a;
+}
+
+.tokenThreshold {
+  background: #fff4d6;
+  color: #8a5a00;
+}
+
+.tokenHint {
+  background: transparent;
+  color: #5c5f6b;
+  font-weight: 500 !important;
+}
+
+.draftSwatch {
+  background: transparent !important;
+  border: 2px dashed #5025d1;
+  border-radius: 50%;
+}
+
+.livePath,
+.draftHop {
+  color: #5025d1 !important;
+}
+
+.composer label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #16171a;
+  margin-bottom: 0.35rem;
+}
+
+.composer textarea {
+  width: 100%;
+  border: 2px solid #16171a;
+  border-radius: 12px;
+  padding: 0.75rem 0.85rem;
+  color: #16171a;
+  background: #fff;
+  font: inherit;
+  resize: vertical;
+}
+
+.composerActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  margin-top: 0.75rem;
+}
+
+.composerActions p {
+  margin: 0;
+  color: #3f424c;
+  font-size: 0.9rem;
+}
+
+.addRule {
+  min-height: 44px;
+  padding: 0.6rem 1.1rem;
+  border: none;
+  border-radius: 999px;
+  background: #5025d1;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.addRule:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.examples {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.85rem;
+}
+
+.examples button {
+  border: 1px solid #cfd0db;
+  background: #f4f1ff;
+  color: #16171a;
+  border-radius: 999px;
+  padding: 0.4rem 0.75rem;
+  font-size: 0.78rem;
+  text-align: left;
+  cursor: pointer;
+}
+
+.ruleList {
+  margin: 0.85rem 0 0 1.1rem;
+  color: #16171a;
+  font-size: 0.9rem;
+}
+
 @media (max-width: 900px) {
   .toolbar,
   .controls,
   .board,
-  .book {
+  .book,
+  .composer {
     grid-template-columns: 1fr;
   }
 }

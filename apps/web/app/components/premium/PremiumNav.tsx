@@ -455,7 +455,7 @@ export function PremiumNav({ variant = 'business' }: { variant?: 'landing' | 'bu
         </div>
       )}
     </nav>
-    {pathname?.startsWith('/research') || pathname === '/demo' ? (
+    {pathname?.startsWith('/research') ? (
     <div className={styles.navStrip} aria-label="Research programs">
       {researchLinks.map((link) =>
         link.href.startsWith('mailto:') ? (
