@@ -24,8 +24,10 @@ final class Config
 
     public static function fromEnvironment(): self
     {
+        $appUrl = rtrim(self::env('APP_URL', 'http://localhost'), '/');
+
         return new self(
-            appUrl: rtrim(self::env('APP_URL', 'http://localhost'), '/'),
+            appUrl: $appUrl,
             appEnv: self::env('APP_ENV', 'production'),
             dbHost: self::env('DB_HOST', 'localhost'),
             dbPort: (int) self::env('DB_PORT', '3306'),
@@ -34,10 +36,38 @@ final class Config
             dbPass: self::env('DB_PASS', ''),
             googleClientId: self::env('GOOGLE_CLIENT_ID', ''),
             googleClientSecret: self::env('GOOGLE_CLIENT_SECRET', ''),
-            googleRedirectUri: self::env('GOOGLE_REDIRECT_URI', ''),
+            googleRedirectUri: self::resolveGoogleRedirectUri($appUrl),
             sessionSecret: self::env('SESSION_SECRET', ''),
             loginSuccessUrl: self::env('LOGIN_SUCCESS_URL', '/workspace'),
         );
+    }
+
+    /**
+     * Prefer the Google Cloud Console redirect URI registered for aipass.space.
+     * Older PHP installs used /auth/google-callback.php (not registered) and
+     * NextAuth docs used /api/auth/callback/google (also not registered).
+     * Live Console accepts: {APP_URL}/auth/google/callback
+     */
+    private static function resolveGoogleRedirectUri(string $appUrl): string
+    {
+        $configured = self::env('GOOGLE_REDIRECT_URI', '');
+        $preferred = $appUrl . '/auth/google/callback';
+        $mismatched = [
+            '#/auth/google-callback\\.php/?$#i',
+            '#/api/auth/callback/google/?$#i',
+        ];
+
+        if ($configured === '') {
+            return $preferred;
+        }
+
+        foreach ($mismatched as $pattern) {
+            if (preg_match($pattern, $configured) === 1) {
+                return $preferred;
+            }
+        }
+
+        return $configured;
     }
 
     public function isProduction(): bool
