@@ -8,6 +8,11 @@
 
   RewriteBase /
 
+  # Google OAuth callbacks → PHP session auth (Hostinger static + php-auth).
+  # Must stay above the SPA fallback. Query string (code/state) is preserved.
+  RewriteRule ^api/auth/callback/google/?$ /auth/google-callback.php [L,QSA]
+  RewriteRule ^auth/google/callback/?$ /auth/google-callback.php [L,QSA]
+
   # Existing files (incl. _next assets)
   RewriteRule ^index\.html$ - [L]
   RewriteCond %{REQUEST_FILENAME} -f

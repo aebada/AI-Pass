@@ -113,7 +113,7 @@ hPanel does **not** need separate PHP env vars for this stack — the `.env` fil
 | `DB_PASS` | Yes | *(from hPanel)* | Database password |
 | `GOOGLE_CLIENT_ID` | Yes | `….apps.googleusercontent.com` | OAuth client ID |
 | `GOOGLE_CLIENT_SECRET` | Yes | *(from Google Console)* | OAuth client secret |
-| `GOOGLE_REDIRECT_URI` | Yes | `https://aipass.space/auth/google-callback.php` | Must match Google Console exactly |
+| `GOOGLE_REDIRECT_URI` | Yes | `https://aipass.space/auth/google/callback` | Must match Google Console exactly (rewritten to `google-callback.php`) |
 | `SESSION_SECRET` | Recommended | `openssl rand -hex 32` | Session ID entropy hint |
 | `LOGIN_SUCCESS_URL` | No | `/workspace` | Default redirect after login |
 
@@ -132,10 +132,12 @@ hPanel does **not** need separate PHP env vars for this stack — the `.env` fil
 2. **Authorized JavaScript origins:**
    - `https://aipass.space`
 3. **Authorized redirect URIs** (exact match):
-   - `https://aipass.space/auth/google-callback.php`
-   - `http://localhost:8080/auth/google-callback.php` (optional, local PHP server)
+   - `https://aipass.space/auth/google/callback` (**required** — currently registered)
+   - `http://localhost:8080/auth/google/callback` (optional, local)
 
-You do **not** need `/api/auth/callback/google` for PHP auth.
+Apache/php-auth rewrites that URI to `/auth/google-callback.php`. Do not use
+`/auth/google-callback.php` or `/api/auth/callback/google` in `GOOGLE_REDIRECT_URI`
+unless those exact URIs are also added in Google Console.
 
 ### Database migration
 
@@ -173,7 +175,7 @@ Most Hostinger shared plans: run `composer install` **locally** and upload `auth
 3. **Deploy PHP auth:** `./scripts/deploy-hostinger-php-auth.sh`
 4. **Create** `public_html/auth-lib/.env` from `auth-lib/.env.example` (fill real secrets)
 5. **Run SQL** migration `001_users.sql` in phpMyAdmin
-6. **Google Console:** add redirect URI `https://aipass.space/auth/google-callback.php`
+6. **Google Console:** ensure redirect URI `https://aipass.space/auth/google/callback`
 7. **Verify:**
    - `https://aipass.space/auth/login.php` — login form loads
    - `https://aipass.space/auth/google.php` — redirects to Google
@@ -216,7 +218,7 @@ Most Hostinger shared plans: run `composer install` **locally** and upload `auth
 
 | Symptom | Fix |
 |---------|-----|
-| `redirect_uri_mismatch` | Add exact `GOOGLE_REDIRECT_URI` in Google Console |
+| `redirect_uri_mismatch` | Set `GOOGLE_REDIRECT_URI` to `https://aipass.space/auth/google/callback` (or add your URI in Google Console) |
 | Blank page / 500 on auth | Check PHP error log in hPanel; verify `vendor/` uploaded |
 | Database connection failed | Verify `DB_*` in `auth-lib/.env` |
 | Session not persisting | `APP_ENV=production`; site must be HTTPS |
