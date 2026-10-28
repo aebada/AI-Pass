@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { PremiumNav } from './components/premium/PremiumNav';
 import { BrandLogoLink } from './components/BrandLogoLink';
-import { DemoBookingForm } from './components/DemoBookingForm';
+import { LandingProof } from './components/LandingProof';
 import { MarketingThemeLock } from './components/MarketingThemeLock';
 import { FOOTER_COLUMNS } from './lib/site-nav';
 import styles from './page.module.css';
@@ -115,19 +115,17 @@ export default function HomePageContent() {
                 rules, then runs specialist agents that stay explainable, deterministic, and role-based.
               </p>
               <div className={styles.heroCtas}>
-                <a href="#book-demo" className={styles.btnPrimary}>
+                <Link href="/book-demo" className={styles.btnPrimary}>
                   Book a demo
-                </a>
+                </Link>
                 <Link href="/demo" className={styles.btnSecondary}>
                   Open the knowledge graph
                 </Link>
               </div>
-              <p className={styles.heroNote}>Self-serve form. Role-aware walkthrough. No credit card.</p>
+              <p className={styles.heroNote}>Role-aware walkthrough. Deterministic hops. No credit card.</p>
             </div>
-            <div className={styles.heroFormCard} id="book-demo">
-              <p className={styles.eyebrow}>Self-serve demo</p>
-              <h2 className={styles.heroFormTitle}>Fill the form. Walk the graph as your role.</h2>
-              <DemoBookingForm compact />
+            <div className={styles.heroProof} aria-label="Live product metrics">
+              <LandingProof />
             </div>
           </div>
         </section>
@@ -309,11 +307,11 @@ export default function HomePageContent() {
 
         <section className={styles.finalCta} aria-labelledby="final-cta">
           <h2 id="final-cta">Ready to run AI under your rules?</h2>
-          <p>Book from the form on this page, or open the full knowledge graph walkthrough.</p>
+          <p>Book a self-serve demo, or open the full knowledge graph walkthrough.</p>
           <div className={styles.heroCtas}>
-            <a href="#book-demo" className={styles.btnOnPurple}>
+            <Link href="/book-demo" className={styles.btnOnPurple}>
               Book a demo
-            </a>
+            </Link>
             <Link href="/demo" className={styles.btnGhostOnPurple}>
               Open the knowledge graph
             </Link>

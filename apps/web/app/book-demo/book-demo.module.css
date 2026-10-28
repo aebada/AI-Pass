@@ -1,0 +1,74 @@
+.page {
+  --bg: #ffffff;
+  --text: #16171a;
+  --text-muted: #3f424c;
+  --accent: #5025d1;
+  --border: #cfd0db;
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse 60% 40% at 80% 0%, rgba(80, 37, 209, 0.1), transparent 55%),
+    linear-gradient(180deg, #f7f5ff 0%, #ffffff 50%);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  font-synthesis: none;
+}
+
+.main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: clamp(2rem, 5vw, 3.5rem) clamp(16px, 3vw, 32px) 4rem;
+}
+
+.panel {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: start;
+}
+
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.copy h1 {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  line-height: 1.15;
+  margin-bottom: 0.85rem;
+  color: #16171a;
+}
+
+.lead {
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin-bottom: 1.25rem;
+}
+
+.bullets {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: #3f424c;
+  line-height: 1.7;
+}
+
+.bullets a {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.formWrap {
+  padding: 1.35rem 1.4rem 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: #fff;
+}
+
+@media (max-width: 900px) {
+  .panel {
+    grid-template-columns: 1fr;
+  }
+}

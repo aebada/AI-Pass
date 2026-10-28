@@ -129,18 +129,14 @@
   z-index: 1;
 }
 
-.heroFormCard {
-  padding: 1.25rem 1.3rem 1.4rem;
-  border-radius: 20px;
-  background: #fff;
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow-lg);
+.heroProof {
+  position: relative;
+  z-index: 1;
+  min-width: 0;
 }
 
-.heroFormTitle {
-  font-size: 1.25rem;
-  margin-bottom: 1rem;
-  color: #16171a;
+.heroInner .heroCtas {
+  justify-content: flex-start;
 }
 
 @media (max-width: 900px) {
@@ -152,6 +148,7 @@
     text-align: center;
   }
 
+  .heroInner .heroCtas,
   .heroCtas {
     justify-content: center;
   }

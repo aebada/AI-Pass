@@ -193,7 +193,7 @@ export default function SolutionsPage() {
             <Link href="/requirements" className={styles.btnPrimary}>
               Build a solution
             </Link>
-            <Link href="/demo#book-demo" className={styles.btnSecondary}>
+            <Link href="/book-demo" className={styles.btnSecondary}>
               Book a demo
             </Link>
             <Link href="/workspace/solutions" className={styles.btnGhost}>

@@ -121,7 +121,7 @@ export default function PartnersPage() {
             >
               Email contact@aipass.space
             </a>
-            <Link href="/#book-demo" className={styles.btnGhostOnPurple}>
+            <Link href="/book-demo" className={styles.btnGhostOnPurple}>
               Book a product demo
             </Link>
           </div>

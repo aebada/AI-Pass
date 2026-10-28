@@ -1,0 +1,82 @@
+.wrap {
+  display: grid;
+  gap: 1rem;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.65rem;
+}
+
+.stat {
+  padding: 0.85rem 0.9rem;
+  border: 1px solid #cfd0db;
+  border-radius: 14px;
+  background: #ffffff;
+}
+
+.statValue {
+  display: block;
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #16171a;
+  line-height: 1.1;
+}
+
+.statLabel {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #5025d1;
+}
+
+.statHint {
+  display: block;
+  margin-top: 0.15rem;
+  font-size: 0.75rem;
+  color: #5c5f6b;
+}
+
+.charts {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 0.75rem;
+}
+
+.chart,
+.pathChart {
+  margin: 0;
+  padding: 0.85rem 0.95rem 0.7rem;
+  border: 1px solid #cfd0db;
+  border-radius: 16px;
+  background: #ffffff;
+}
+
+.chart figcaption,
+.pathChart figcaption {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #5025d1;
+  margin-bottom: 0.35rem;
+}
+
+.chart svg,
+.pathChart svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .stats {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .charts {
+    grid-template-columns: 1fr;
+  }
+}
