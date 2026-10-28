@@ -21,7 +21,7 @@ export const DEMO_MAILTO =
 export const LANDING_NAV: SiteNavItem[] = [
   { type: 'link', label: 'Product', href: '/#how-it-works' },
   { type: 'link', label: 'Demo', href: '/demo' },
-  { type: 'link', label: 'Book', href: '/book-demo' },
+  { type: 'link', label: 'Book a demo', href: '/book-demo' },
   { type: 'link', label: 'Solutions', href: '/solutions' },
   { type: 'link', label: 'Partners', href: '/partners' },
   { type: 'link', label: 'Research', href: '/research' },
