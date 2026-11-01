@@ -1,0 +1,112 @@
+.stage {
+  position: relative;
+  width: 100%;
+  min-height: clamp(280px, 42vw, 460px);
+  overflow: hidden;
+  border-radius: 0;
+  isolation: isolate;
+}
+
+.grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(80, 37, 209, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(80, 37, 209, 0.05) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse 70% 65% at 50% 45%, #000 20%, transparent 75%);
+  pointer-events: none;
+}
+
+.svg {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: clamp(280px, 42vw, 460px);
+}
+
+.edge {
+  stroke-dasharray: 8 10;
+  animation: dash 8s linear infinite;
+}
+
+.node {
+  opacity: 0;
+  animation: rise 0.7s ease forwards;
+}
+
+.label {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  fill: #3f424c;
+}
+
+.caption {
+  position: absolute;
+  left: 50%;
+  bottom: 1.1rem;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid #cfd0db;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #3f424c;
+  backdrop-filter: blur(8px);
+  white-space: nowrap;
+}
+
+.pulse {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #00b090;
+  box-shadow: 0 0 0 0 rgba(0, 176, 144, 0.55);
+  animation: pulse 1.8s ease-out infinite;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: -120;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 176, 144, 0.55);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(0, 176, 144, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 176, 144, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .edge,
+  .node,
+  .pulse {
+    animation: none;
+  }
+
+  .node {
+    opacity: 1;
+  }
+}

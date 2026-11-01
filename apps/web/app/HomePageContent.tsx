@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { PremiumNav } from './components/premium/PremiumNav';
 import { BrandLogoLink } from './components/BrandLogoLink';
 import { LandingProof } from './components/LandingProof';
+import { HeroGraph } from './components/HeroGraph';
 import { MarketingThemeLock } from './components/MarketingThemeLock';
 import { FOOTER_COLUMNS } from './lib/site-nav';
 import styles from './page.module.css';
@@ -59,6 +60,21 @@ const PILLARS = [
   },
 ];
 
+const INVESTOR = [
+  {
+    title: 'Category',
+    copy: 'The deployment gate for enterprise AI — after training quality, before production agents.',
+  },
+  {
+    title: 'Why now',
+    copy: 'Regulated buyers bought copilots. Go-live stalls on audit, role walls, and replayable decisions.',
+  },
+  {
+    title: 'Moat',
+    copy: 'Human expertise encoded as graph + policy sits in front of any model. The path is the product.',
+  },
+];
+
 const PLANS = [
   {
     name: 'Free',
@@ -103,30 +119,29 @@ export default function HomePageContent() {
       <main>
         <section className={`${styles.hero} hero-presence`} aria-labelledby="hero-heading">
           <div className={styles.heroGlow} aria-hidden />
-          <div className={styles.heroSplit}>
-            <div className={styles.heroInner}>
-              <p className={styles.eyebrow}>The deployment gate for enterprise AI</p>
-              <h1 id="hero-heading" className={styles.heroTitle}>
-                Your experts. Your rules.
-                <span className={styles.heroTitleAccent}> Answers you can audit.</span>
-              </h1>
-              <p className={styles.heroSub}>
-                Models guess. AI-Pass turns human expertise into a knowledge graph and organization
-                rules, then runs specialist agents that stay explainable, deterministic, and role-based.
-              </p>
-              <div className={styles.heroCtas}>
-                <Link href="/book-demo" className={styles.btnPrimary}>
-                  Book a demo
-                </Link>
-                <Link href="/demo" className={styles.btnSecondary}>
-                  Open the knowledge graph
-                </Link>
-              </div>
-              <p className={styles.heroNote}>Role-aware walkthrough. Deterministic hops. No credit card.</p>
+          <div className={styles.heroInner}>
+            <p className={styles.brandMark}>AI-Pass</p>
+            <p className={styles.eyebrow}>The deployment gate for enterprise AI</p>
+            <h1 id="hero-heading" className={styles.heroTitle}>
+              Your experts. Your rules.
+              <span className={styles.heroTitleAccent}> Answers you can audit.</span>
+            </h1>
+            <p className={styles.heroSub}>
+              Models guess. AI-Pass turns human expertise into a knowledge graph and organization
+              rules, then runs specialist agents that stay explainable, deterministic, and role-based.
+            </p>
+            <div className={styles.heroCtas}>
+              <Link href="/book-demo" className={styles.btnPrimary}>
+                Book a demo
+              </Link>
+              <Link href="/demo" className={styles.btnSecondary}>
+                Open the knowledge graph
+              </Link>
             </div>
-            <div className={styles.heroProof} aria-label="Live product metrics">
-              <LandingProof />
-            </div>
+            <p className={styles.heroNote}>Self-serve walkthrough. Role-aware hops. No credit card.</p>
+          </div>
+          <div className={styles.heroVisual}>
+            <HeroGraph />
           </div>
         </section>
 
@@ -136,6 +151,39 @@ export default function HomePageContent() {
               {name}
             </span>
           ))}
+        </section>
+
+        <section className={styles.section} aria-labelledby="thesis-heading">
+          <div className={styles.sectionHead}>
+            <p className={styles.eyebrow}>For buyers and investors</p>
+            <h2 id="thesis-heading">Training gets the model ready. We make it deployable.</h2>
+            <p className={styles.sectionSub}>
+              The constraint in regulated markets is not another chatbot. It is proving the answer,
+              replaying the decision, and keeping the right role on the right slice.
+            </p>
+          </div>
+          <div className={styles.thesisGrid}>
+            {INVESTOR.map((item) => (
+              <article key={item.title} className={styles.thesisCard}>
+                <h3>{item.title}</h3>
+                <p>{item.copy}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className={styles.proofSection} aria-labelledby="proof-heading">
+          <div className={styles.sectionHead}>
+            <p className={styles.eyebrow}>Product proof</p>
+            <h2 id="proof-heading">A twin you can measure.</h2>
+            <p className={styles.sectionSub}>
+              Live manufacturing graph metrics from the interactive demo — provenance, role coverage,
+              and a deterministic hop path.
+            </p>
+          </div>
+          <div className={styles.proofWrap}>
+            <LandingProof />
+          </div>
         </section>
 
         <section className={styles.section} aria-labelledby="problem-heading">
@@ -251,7 +299,10 @@ export default function HomePageContent() {
               <Link href="/partners" className={styles.btnPrimary}>
                 See the partnership path
               </Link>
-              <a href="mailto:contact@aipass.space?subject=Micro1%20collaboration" className={styles.btnSecondary}>
+              <a
+                href="mailto:contact@aipass.space?subject=Micro1%20collaboration"
+                className={styles.btnSecondary}
+              >
                 Email partnerships
               </a>
             </div>
