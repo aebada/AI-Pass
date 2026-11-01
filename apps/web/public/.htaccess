@@ -8,6 +8,11 @@
 
   RewriteBase /
 
+  # Never serve Next.js RSC flight dumps (*.txt). Keep robots.txt public.
+  RewriteRule ^index\.txt$ / [R=301,L]
+  RewriteCond %{REQUEST_URI} !^/robots\.txt$ [NC]
+  RewriteRule ^(.+)\.txt$ /$1 [R=301,L]
+
   # Existing files (incl. _next assets)
   RewriteRule ^index\.html$ - [L]
   RewriteCond %{REQUEST_FILENAME} -f

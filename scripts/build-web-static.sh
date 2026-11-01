@@ -78,6 +78,7 @@ if [[ -f "$WEB/public/.htaccess" ]]; then
 fi
 
 # Hostinger DirectoryIndex often prefers path/index.html over path.html.
+# Also strip Next.js RSC *.txt flight files so /index.txt is never a destination.
 python3 - <<PY
 from pathlib import Path
 out = Path("$WEB/out")
@@ -92,6 +93,13 @@ for html in out.rglob("*.html"):
     target.write_bytes(html.read_bytes())
     count += 1
 print(f"Mirrored {count} html shells to */index.html for DirectoryIndex")
+removed = 0
+for txt in out.rglob("*.txt"):
+    if txt.name == "robots.txt":
+        continue
+    txt.unlink(missing_ok=True)
+    removed += 1
+print(f"Removed {removed} RSC .txt flight files from export")
 PY
 
 PHP_AUTH="$ROOT/php-auth"

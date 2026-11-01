@@ -29,6 +29,9 @@ def load_env() -> dict[str, str]:
 def should_skip(rel: Path) -> bool:
     if rel.name in SKIP_NAMES:
         return True
+    # Never publish Next.js RSC flight dumps (except robots.txt).
+    if rel.suffix == ".txt" and rel.name != "robots.txt":
+        return True
     return any(part in SKIP_DIRS for part in rel.parts)
 
 
