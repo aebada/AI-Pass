@@ -1,5 +1,6 @@
 appId: com.aipass.desktop
-productName: AI Pass
+productName: AI-Pass
+executableName: AI-Pass
 copyright: Copyright © 2026 AI Pass
 
 directories:
@@ -22,12 +23,13 @@ mac:
     - dmg
     - zip
   icon: resources/icon.png
+  artifactName: AI-Pass-macOS-${arch}.${ext}
 
 win:
   target:
-    - nsis
     - portable
   icon: resources/icon.png
+  artifactName: AI-Pass-Windows-${arch}.${ext}
 
 linux:
   target:
@@ -35,6 +37,10 @@ linux:
     - deb
   category: Development
   icon: resources/icon.png
+  executableName: AI-Pass
+  maintainer: AI-Pass <contact@aipass.space>
+  vendor: AI-Pass
+  artifactName: AI-Pass-Linux-${arch}.${ext}
 
 nsis:
   oneClick: false

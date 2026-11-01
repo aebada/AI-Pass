@@ -55,6 +55,10 @@ scripts/.deploy-env.local
 # Desktop installers — ~110MB each, above GitHub's 100MB per-file limit.
 # Served from the deploy target, not from git.
 apps/web/public/downloads/releases/
+apps/web/public/downloads/*.AppImage
+apps/web/public/downloads/*.deb
+apps/web/public/downloads/*.exe
+apps/web/public/downloads/AI-Pass-macOS*.zip
 apps/web/out/
 apps/web/tmp/
 

@@ -1,6 +1,7 @@
 import { app, BrowserWindow, dialog, ipcMain, shell } from 'electron';
 import { readdir, readFile, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
+import { pathToFileURL } from 'node:url';
 
 const isDev = !app.isPackaged;
 
@@ -8,7 +9,7 @@ function getWebUrl(): string {
   if (isDev) {
     return `${process.env.AI_PASS_WEB_URL ?? 'http://localhost:3000'}/ide`;
   }
-  return `file://${join(process.resourcesPath, 'web/ide.html')}`;
+  return pathToFileURL(join(process.resourcesPath, 'web', 'ide.html')).href;
 }
 
 function createWindow(): void {

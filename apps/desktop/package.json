@@ -1,5 +1,9 @@
 {
   "name": "@ai-pass/desktop",
+  "productName": "AI-Pass",
+  "description": "AI-Pass desktop IDE for agents, knowledge graphs, and governed workflows",
+  "author": "AI-Pass <contact@aipass.space>",
+  "homepage": "https://aipass.space",
   "version": "0.1.0",
   "private": true,
   "main": "dist/main.js",
@@ -22,6 +26,7 @@
     "concurrently": "^9.1.2",
     "electron": "^35.2.0",
     "electron-builder": "^26.0.12",
+    "electron-packager": "^17.1.2",
     "typescript": "^5.8.3",
     "wait-on": "^8.0.3"
   },

@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "AI-Pass Smart Collector",
+  "version": "0.1.0",
+  "description": "Collect consented page interactions into your AI-Pass digital twin.",
+  "action": {
+    "default_title": "AI-Pass Collector",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "https://aipass.space/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "128": "icon-128.png"
+  }
+}
