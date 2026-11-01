@@ -158,12 +158,6 @@
   justify-content: center;
 }
 
-.heroNote {
-  margin-top: 1rem;
-  font-size: 0.875rem;
-  color: #5c5f6b;
-}
-
 .heroVisual {
   position: relative;
   z-index: 1;
@@ -180,9 +174,110 @@
   object-position: center;
 }
 
-.twinGrid {
+.connectGrid,
+.actionGrid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.actionGrid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.connectCard,
+.actionCard {
+  padding: 1.35rem 1.4rem;
+  border-top: 3px solid #5025d1;
+  background: linear-gradient(180deg, #faf8ff 0%, #ffffff 100%);
+}
+
+.connectCard h3,
+.actionCard h3 {
+  margin: 0 0 0.55rem;
+  font-size: 1.1rem;
+  color: #16171a;
+}
+
+.connectCard p,
+.actionCard p {
+  margin: 0;
+  color: #3f424c;
+  line-height: 1.55;
+  font-size: 0.95rem;
+}
+
+.bringPanel {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: clamp(1.25rem, 3vw, 2rem);
+  align-items: stretch;
+  margin-top: 2rem;
+  padding: clamp(1.25rem, 3vw, 1.75rem);
+  border: 1px solid #cfd0db;
+  border-radius: 16px;
+  background: linear-gradient(180deg, #faf8ff 0%, #ffffff 100%);
+}
+
+.bringCopy h3 {
+  margin: 0 0 0.75rem;
+  font-size: 1.25rem;
+  color: #16171a;
+}
+
+.bringVisual {
+  min-height: 240px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #e0d7ff;
+  background: #f7f5ff;
+}
+
+.bandVisual {
+  margin-top: 2rem;
+  overflow: hidden;
+  border-radius: 16px;
+  border: 1px solid #cfd0db;
+}
+
+.bandVisual img,
+.bandVisualInline {
+  display: block;
+  width: 100%;
+  max-height: min(42vh, 420px);
+  object-fit: cover;
+  object-position: center;
+}
+
+.bandVisualInline {
+  border-radius: 12px;
+  border: 1px solid #e0d7ff;
+  max-height: 280px;
+}
+
+.graphSection {
+  padding: var(--section-y, 4.5rem) clamp(20px, 4vw, 48px);
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 0%, rgba(80, 37, 209, 0.1), transparent 60%),
+    #f7f5ff;
+  border-top: 1px solid #cfd0db;
+  border-bottom: 1px solid #cfd0db;
+}
+
+.graphSection .sectionHead {
+  max-width: 720px;
+  margin: 0 auto 2rem;
+  text-align: center;
+}
+
+.proofWrap {
+  max-width: 1120px;
+  margin: 1.75rem auto 0;
+}
+
+.twinGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 1rem;
 }
 
@@ -866,12 +961,15 @@
   .stepGrid,
   .gateGrid,
   .thesisGrid,
-  .twinGrid {
+  .twinGrid,
+  .connectGrid,
+  .actionGrid {
     grid-template-columns: 1fr 1fr;
   }
 
   .featureBand,
-  .featureBandAlt {
+  .featureBandAlt,
+  .bringPanel {
     grid-template-columns: 1fr;
     direction: ltr;
   }
@@ -893,7 +991,9 @@
   .stepGrid,
   .gateGrid,
   .thesisGrid,
-  .twinGrid {
+  .twinGrid,
+  .connectGrid,
+  .actionGrid {
     grid-template-columns: 1fr;
   }
 

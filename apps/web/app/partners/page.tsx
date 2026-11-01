@@ -9,21 +9,21 @@ import styles from '../page.module.css';
 export const metadata: Metadata = {
   title: 'Partners — collaborate with AI-Pass',
   description:
-    'How AI-Pass partners with Micro1 and implementation firms: training gate plus deployment gate for regulated AI.',
+    'Partner with AI-Pass on digital twins, knowledge graphs, and governed agents for regulated enterprises.',
 };
 
 const PATHS = [
   {
-    title: 'Expert encode',
-    copy: 'Micro1 experts sit with plant, quality, or risk owners. We turn that session into graph nodes, attributes, and rules.',
+    title: 'Implementation partners',
+    copy: 'Bring industry workflows. We supply the twin, ontology, and agent runtime under organization rules.',
   },
   {
-    title: 'Joint pilot',
-    copy: 'One regulated workflow. Micro1 covers expert data. AI-Pass covers runtime, roles, and audit path.',
+    title: 'Technology partners',
+    copy: 'Connect CRM, ERP, MES, and data platforms so agents act with live context and an audit path.',
   },
   {
-    title: 'Co-sell',
-    copy: 'Shared accounts in manufacturing, banking, and public sector. One story: train with experts, deploy under rules.',
+    title: 'Channel & co-sell',
+    copy: 'Joint go-to-market in manufacturing, banking, healthcare, and public sector with one deployable story.',
   },
 ];
 
@@ -37,20 +37,20 @@ export default function PartnersPage() {
           <div className={styles.heroInner} style={{ maxWidth: 760, margin: '0 auto', textAlign: 'center' }}>
             <p className={styles.eyebrow}>Partnerships</p>
             <h1 id="partners-heading" className={styles.heroTitle}>
-              Train with experts.
-              <span className={styles.heroTitleAccent}> Deploy under rules.</span>
+              Build twins together.
+              <span className={styles.heroTitleAccent}> Deploy agents under rules.</span>
             </h1>
             <p className={styles.heroSub} style={{ marginLeft: 'auto', marginRight: 'auto' }}>
-              Micro1 is the training gate. AI-Pass is the deployment gate. We collaborate so expert
-              humans are not only used to train a model, but also encoded as the graph and policy
-              that sit in front of it.
+              AI-Pass builds expert capture, knowledge graphs, ontologies, and the deployment gate
+              in one stack. Partner with us to connect apps, encode domain knowledge, and ship
+              governed agents.
             </p>
             <div className={styles.heroCtas}>
               <a
-                href="mailto:contact@aipass.space?subject=Micro1%20collaboration"
+                href="mailto:contact@aipass.space?subject=Partnership"
                 className={styles.btnPrimary}
               >
-                Start a Micro1 conversation
+                Talk to partnerships
               </a>
               <Link href="/demo" className={styles.btnSecondary}>
                 See the graph
@@ -61,7 +61,7 @@ export default function PartnersPage() {
 
         <section className={styles.section} aria-labelledby="how-collab">
           <div className={styles.sectionHead}>
-            <p className={styles.eyebrow}>How the collaboration works</p>
+            <p className={styles.eyebrow}>How we partner</p>
             <h2 id="how-collab">Three ways to work together</h2>
           </div>
           <div className={styles.pillarGrid} style={{ gridTemplateColumns: 'repeat(3, 1fr)' }}>
@@ -74,46 +74,49 @@ export default function PartnersPage() {
           </div>
         </section>
 
-        <section className={styles.micro1} aria-labelledby="split-heading">
-          <div className={styles.micro1Inner}>
-            <h2 id="split-heading" style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
-              Who does what
-            </h2>
-            <div className={styles.gateGrid}>
-              <article className={styles.gateCard}>
-                <p className={styles.gateKicker}>Micro1</p>
-                <h3>Training gate</h3>
-                <ul>
-                  <li>Find and qualify domain experts</li>
-                  <li>Build evaluation and training sets</li>
-                  <li>Raise model quality before any agent ships</li>
-                </ul>
-              </article>
-              <article className={styles.gateCardAccent}>
-                <p className={styles.gateKicker}>Shared motion</p>
-                <h3>One expert, two products</h3>
-                <ul>
-                  <li>The same human writes the rule once</li>
-                  <li>Data goes to training. Rules go to the graph.</li>
-                  <li>Customer gets a model and a governed runtime</li>
-                </ul>
-              </article>
-              <article className={styles.gateCard}>
-                <p className={styles.gateKicker}>AI-Pass</p>
-                <h3>Deployment gate</h3>
-                <ul>
-                  <li>Knowledge graph, provenance, org rules</li>
-                  <li>Role-based agents and audit hop paths</li>
-                  <li>Private cloud and air-gapped packaging</li>
-                </ul>
-              </article>
-            </div>
+        <section className={styles.section} aria-labelledby="stack-heading">
+          <div className={styles.sectionHead}>
+            <p className={styles.eyebrow}>What we bring</p>
+            <h2 id="stack-heading">Training quality and deployment in one product</h2>
+            <p className={styles.sectionSub}>
+              We encode human expertise, grow the ontology, and run agents with role walls — so
+              partners do not need a separate training-gate vendor to go live.
+            </p>
+          </div>
+          <div className={styles.gateGrid}>
+            <article className={styles.gateCard}>
+              <p className={styles.gateKicker}>Capture</p>
+              <h3>Expert knowledge</h3>
+              <ul>
+                <li>Domain rules and SOPs</li>
+                <li>Ontology and graph import</li>
+                <li>Evaluation sets for twin quality</li>
+              </ul>
+            </article>
+            <article className={styles.gateCardAccent}>
+              <p className={styles.gateKicker}>Connect</p>
+              <h3>Apps and interactions</h3>
+              <ul>
+                <li>CRM, ERP, MES, inbox, wallet</li>
+                <li>Smart collector for live context</li>
+                <li>Personal, business, robotics twins</li>
+              </ul>
+            </article>
+            <article className={styles.gateCard}>
+              <p className={styles.gateKicker}>Deploy</p>
+              <h3>Governed agents</h3>
+              <ul>
+                <li>Knowledge graph and org rules</li>
+                <li>Role-based agents and audit hops</li>
+                <li>Cloud, private cloud, or air-gapped</li>
+              </ul>
+            </article>
           </div>
         </section>
 
         <section className={styles.finalCta} aria-labelledby="partner-cta">
           <h2 id="partner-cta">Want to run a joint pilot?</h2>
-          <p>Email partnerships. We will map one workflow, one expert desk, and one audit path.</p>
+          <p>Email partnerships. We will map one workflow, one twin surface, and one audit path.</p>
           <div className={styles.heroCtas}>
             <a
               href="mailto:contact@aipass.space?subject=Partnership%20pilot"

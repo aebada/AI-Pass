@@ -41,6 +41,18 @@ export type { EmbedParams, EmbeddingProvider } from './embedding-service.js';
 
 export { GraphService, KnowledgeGraph } from './graph-service.js';
 
+export { OntologyService } from './ontology-service.js';
+export type {
+  OntologyClass,
+  OntologyProperty,
+  OntologyRecord,
+  Triple,
+  TriplePatch,
+  ExtractionJob,
+  ChangePlan,
+  ExplorerNode,
+} from './ontology-service.js';
+
 export { VectorStore } from './vector-store.js';
 export type { VectorSearchResult } from './vector-store.js';
 

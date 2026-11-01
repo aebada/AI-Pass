@@ -8,6 +8,7 @@ export const KNOWLEDGE_NAV = [
   { href: '/workspace/knowledge/sources', label: 'Data Sources' },
   { href: '/workspace/knowledge/pipelines', label: 'Pipeline Builder' },
   { href: '/workspace/knowledge/graph', label: 'Knowledge Graph' },
+  { href: '/workspace/knowledge/ontology', label: 'Ontology Studio' },
   { href: '/workspace/knowledge/embeddings', label: 'Embeddings' },
   { href: '/workspace/knowledge/search', label: 'Search Workspace' },
   { href: '/workspace/knowledge/retrieval', label: 'RAG Playground' },

@@ -4,6 +4,8 @@ import Link from 'next/link';
 import { PremiumNav } from './components/premium/PremiumNav';
 import { BrandLogoLink } from './components/BrandLogoLink';
 import { MarketingThemeLock } from './components/MarketingThemeLock';
+import { HeroGraph } from './components/HeroGraph';
+import { LandingProof } from './components/LandingProof';
 import { FOOTER_COLUMNS } from './lib/site-nav';
 import styles from './page.module.css';
 
@@ -21,21 +23,53 @@ const TRUST = [
   'Energy',
 ];
 
+const CONNECTIONS = [
+  { title: 'All apps', copy: 'CRM, ERP, inbox, calendar, wallet, MES, and the tools your teams already open every day.' },
+  { title: 'All solutions', copy: 'Sales, finance, ops, quality, and support share one twin instead of separate copilots.' },
+  { title: 'All interactions', copy: 'Chats, approvals, tickets, and sensor events become memory the agent can reason over.' },
+];
+
+const BRING_YOUR_OWN = [
+  {
+    title: 'Your ontology',
+    copy: 'Upload or define classes, properties, and constraints so the twin speaks your domain language.',
+  },
+  {
+    title: 'Your knowledge',
+    copy: 'Add SOPs, policies, manuals, tickets, and expert notes. Agents only act on what you encode.',
+  },
+  {
+    title: 'Your graphs',
+    copy: 'Import existing knowledge graphs or grow one live — nodes, edges, attributes, and provenance stay yours.',
+  },
+  {
+    title: 'Your sources',
+    copy: 'Connect files, databases, SharePoint, APIs, and streams. Sync into the twin without a rewrite.',
+  },
+];
+
+const ACTIONS = [
+  { title: 'Payments', copy: 'Draft transfers, match invoices, and hold until a human confirms the money move.' },
+  { title: 'Sales', copy: 'Follow deals, prepare quotes, and route next steps with role walls on customer data.' },
+  { title: 'Planning', copy: 'Sync calendars, capacity, and renewals so the twin proposes work you can accept or edit.' },
+  { title: 'Operations', copy: 'Open shop-floor and logistics actions with an audit path back to lots, SOPs, and owners.' },
+];
+
 const STEPS = [
   {
     n: '01',
-    title: 'Capture human expertise',
-    copy: 'Quality, plant, audit, and policy owners write the rules they already use. No prompt theatre.',
+    title: 'Connect the stack',
+    copy: 'Apps, solutions, and live interactions feed one digital twin — not another isolated chatbot.',
   },
   {
     n: '02',
-    title: 'Encode the twin and graph',
-    copy: 'Routines, machines, lots and policies become the source of truth. Agents only act inside that scope.',
+    title: 'Build the twin',
+    copy: 'People, policies, machines, and money flows become a knowledge graph agents can traverse.',
   },
   {
     n: '03',
-    title: 'Run role-based agents',
-    copy: 'Agents draft, route, approve and execute. Payments and orders still need a confirmation gate.',
+    title: 'Act with a gate',
+    copy: 'Agents draft, route, approve, and execute. Payments and irreversible moves still need confirmation.',
   },
 ];
 
@@ -46,6 +80,13 @@ const TWINS = [
     actions: ['Triage inbox', 'Propose calendar slots', 'Prepare forms', 'Track renewals'],
     image: '/marketing/twin-personal.jpg',
     alt: 'Person at a desk with a personal digital twin overlay',
+  },
+  {
+    title: 'Employee twin',
+    copy: 'Every employee is part of AI-Pass: role, skills, approvals, and workload live in the twin so agents assist people — not replace accountability.',
+    actions: ['Role & permission map', 'Workload balance', 'Skill routing', 'Handoff with audit'],
+    image: '/marketing/twin-employees.jpg',
+    alt: 'Employees at work with personal digital twins connected to company systems',
   },
   {
     title: 'Business twin',
@@ -61,6 +102,13 @@ const TWINS = [
     image: '/marketing/twin-robotics.jpg',
     alt: 'Industrial robot and production cell on a manufacturing floor',
   },
+];
+
+const TWIN_EVERYTHING = [
+  { title: 'People', copy: 'Employees, contractors, and customers with consent and role walls.' },
+  { title: 'Apps & workflows', copy: 'CRM, ERP, inbox, calendar, MES, wallet — every interaction that matters.' },
+  { title: 'Assets & robots', copy: 'Machines, lots, cells, and sensors bound to SOPs and owners.' },
+  { title: 'Money & plans', copy: 'Payments, sales, capacity, and renewals with a confirmation gate.' },
 ];
 
 const PILLARS = [
@@ -79,21 +127,6 @@ const PILLARS = [
   {
     title: 'Organization rules',
     copy: 'If a second source is required, the answer will not publish without it.',
-  },
-];
-
-const INVESTOR = [
-  {
-    title: 'Category',
-    copy: 'The deployment gate for enterprise AI — after training quality, before production agents.',
-  },
-  {
-    title: 'Why now',
-    copy: 'Regulated buyers bought copilots. Go-live stalls on audit, role walls, and replayable decisions.',
-  },
-  {
-    title: 'Moat',
-    copy: 'Human expertise encoded as graph + policy sits in front of any model. The path is the product.',
   },
 ];
 
@@ -143,38 +176,36 @@ export default function HomePageContent() {
           <div className={styles.heroGlow} aria-hidden />
           <div className={styles.heroInner}>
             <p className={styles.brandMark}>AI-Pass</p>
-            <p className={styles.eyebrow}>The deployment gate for enterprise AI</p>
+            <p className={styles.eyebrow}>Digital twins for everything</p>
             <h1 id="hero-heading" className={styles.heroTitle}>
-              Your experts. Your rules.
-              <span className={styles.heroTitleAccent}> Answers you can audit.</span>
+              Twins for people, apps, and machines.
+              <span className={styles.heroTitleAccent}> Agents that can act.</span>
             </h1>
             <p className={styles.heroSub}>
-              Models guess. AI-Pass turns human expertise into a knowledge graph and organization
-              rules, then runs specialist agents that stay explainable, deterministic, and role-based.
+              AI-Pass builds a digital twin for everything — including every employee — by connecting
+              apps, solutions, and interactions so agents can run payments, sales, planning, and ops
+              under your rules.
             </p>
-              <div className={styles.heroCtas}>
-                <Link href="/waitlist" className={styles.btnPrimary}>
-                  Join the waiting list
-                </Link>
-                <Link href="/book-demo" className={styles.btnSecondary}>
-                  Book a demo
-                </Link>
-              </div>
-              <p className={styles.heroNote}>
-                Personal, business and robotics twins. Knowledge graph is in the menu.
-              </p>
+            <div className={styles.heroCtas}>
+              <Link href="/waitlist" className={styles.btnPrimary}>
+                Join the waiting list
+              </Link>
+              <Link href="/book-demo" className={styles.btnSecondary}>
+                Book a demo
+              </Link>
             </div>
-            <div className={styles.heroVisual}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                className={styles.heroPhoto}
-                src="/marketing/twin-hero-production.jpg"
-                alt="Production line with collaborative robots — digital twin for manufacturing agents"
-                width={1600}
-                height={900}
-              />
-            </div>
-          </section>
+          </div>
+          <div className={styles.heroVisual}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              className={styles.heroPhoto}
+              src="/marketing/connect-apps-twin.jpg"
+              alt="Enterprise apps connected into a central digital twin"
+              width={1600}
+              height={900}
+            />
+          </div>
+        </section>
 
         <section className={styles.logoStrip} aria-label="Industries we support">
           {TRUST.map((name) => (
@@ -184,14 +215,148 @@ export default function HomePageContent() {
           ))}
         </section>
 
-        <section className={styles.section} aria-labelledby="twins-heading">
+        <section className={styles.section} aria-labelledby="connect-heading">
+          <div className={styles.sectionHead}>
+            <p className={styles.eyebrow}>How agents get smart</p>
+            <h2 id="connect-heading">Connect everything. Build the twin.</h2>
+            <p className={styles.sectionSub}>
+              Intelligence is not another prompt. It is context from the full stack — then a twin
+              that knows what the agent is allowed to do.
+            </p>
+          </div>
+          <div className={styles.connectGrid}>
+            {CONNECTIONS.map((item) => (
+              <article key={item.title} className={styles.connectCard}>
+                <h3>{item.title}</h3>
+                <p>{item.copy}</p>
+              </article>
+            ))}
+          </div>
+          <div className={styles.bandVisual}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/marketing/agent-actions.jpg"
+              alt="Professional approving agent actions across payments, sales, and planning"
+              width={1600}
+              height={900}
+            />
+          </div>
+        </section>
+
+        <section className={styles.section} id="smart-collector" aria-labelledby="collector-heading">
+          <div className={styles.sectionHead}>
+            <p className={styles.eyebrow}>Smart collector</p>
+            <h2 id="collector-heading">Download the app that feeds the twin</h2>
+            <p className={styles.sectionSub}>
+              Collect consented interactions across apps and workflows. The twin learns what users
+              actually do — so agents can plan, sell, pay, and operate with real context.
+            </p>
+          </div>
+          <div className={styles.bringPanel}>
+            <div className={styles.bringCopy}>
+              <h3>IDE, desktop, mobile, and extension</h3>
+              <ul className={styles.pointList}>
+                <li>Open the IDE in your browser today</li>
+                <li>Desktop and mobile apps collect live interactions</li>
+                <li>Browser extension covers web apps you already use</li>
+                <li>Everything lands in your ontology and knowledge graph</li>
+              </ul>
+              <div className={styles.heroCtas} style={{ justifyContent: 'flex-start', marginTop: '0.5rem' }}>
+                <Link href="/downloads" className={styles.btnPrimary}>
+                  Download apps &amp; IDE
+                </Link>
+                <Link href="/ide" className={styles.btnSecondary}>
+                  Open IDE
+                </Link>
+              </div>
+            </div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              className={styles.bandVisualInline}
+              src="/marketing/smart-collector-app.jpg"
+              alt="Smart collector on phone and laptop feeding the digital twin"
+              width={1200}
+              height={675}
+            />
+          </div>
+        </section>
+
+        <section className={styles.section} aria-labelledby="actions-heading">
+          <div className={styles.sectionHead}>
+            <p className={styles.eyebrow}>What the twin unlocks</p>
+            <h2 id="actions-heading">Agents that take real action</h2>
+            <p className={styles.sectionSub}>
+              Once apps and interactions sit in the twin, agents can move work forward — with a
+              confirmation gate for money and irreversible steps.
+            </p>
+          </div>
+          <div className={styles.actionGrid}>
+            {ACTIONS.map((item) => (
+              <article key={item.title} className={styles.actionCard}>
+                <h3>{item.title}</h3>
+                <p>{item.copy}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className={styles.section} id="bring-knowledge" aria-labelledby="bring-heading">
+          <div className={styles.sectionHead}>
+            <p className={styles.eyebrow}>Bring your own</p>
+            <h2 id="bring-heading">Add your ontology, knowledge, and graphs</h2>
+            <p className={styles.sectionSub}>
+              The twin is yours. Import domain models, documents, and existing graphs — then agents
+              reason and act on what you added, under your rules.
+            </p>
+          </div>
+          <div className={styles.actionGrid}>
+            {BRING_YOUR_OWN.map((item) => (
+              <article key={item.title} className={styles.actionCard}>
+                <h3>{item.title}</h3>
+                <p>{item.copy}</p>
+              </article>
+            ))}
+          </div>
+          <div className={styles.bringPanel}>
+            <div className={styles.bringCopy}>
+              <h3>Start with what you already have</h3>
+              <ul className={styles.pointList}>
+                <li>Ontology files and custom entity types</li>
+                <li>Knowledge bases, PDFs, wikis, and policy packs</li>
+                <li>Existing graphs — merge or run side by side</li>
+                <li>Live connectors for CRM, ERP, and ops data</li>
+              </ul>
+              <div className={styles.heroCtas} style={{ justifyContent: 'flex-start', marginTop: '0.5rem' }}>
+                <Link href="/workspace/knowledge/ontology" className={styles.btnPrimary}>
+                  Open ontology studio
+                </Link>
+                <Link href="/demo" className={styles.btnSecondary}>
+                  Try the graph demo
+                </Link>
+              </div>
+            </div>
+            <div className={styles.bringVisual} aria-hidden>
+              <HeroGraph />
+            </div>
+          </div>
+        </section>
+
+        <section className={styles.section} id="twins-heading" aria-labelledby="twins-title">
           <div className={styles.sectionHead}>
             <p className={styles.eyebrow}>Digital twins</p>
-            <h2 id="twins-heading">Personal. Business. Robotics.</h2>
+            <h2 id="twins-title">A twin for everything — including employees</h2>
             <p className={styles.sectionSub}>
-              One engine for three surfaces: your day, your company, and your machines. Agents act —
-              with consent, role walls and a confirmation gate for money moves.
+              Personal, employee, business, and robotics twins share one engine. People stay in the
+              loop; agents act inside role walls and confirmation gates.
             </p>
+          </div>
+          <div className={styles.actionGrid} style={{ marginBottom: '1.5rem' }}>
+            {TWIN_EVERYTHING.map((item) => (
+              <article key={item.title} className={styles.actionCard}>
+                <h3>{item.title}</h3>
+                <p>{item.copy}</p>
+              </article>
+            ))}
           </div>
           <div className={styles.twinGrid}>
             {TWINS.map((twin) => (
@@ -211,66 +376,73 @@ export default function HomePageContent() {
               </article>
             ))}
           </div>
+        </section>
+
+        <section className={styles.graphSection} aria-labelledby="graph-heading">
+          <div className={styles.sectionHead}>
+            <p className={styles.eyebrow}>Knowledge graph</p>
+            <h2 id="graph-heading">See the twin think in hops</h2>
+            <p className={styles.sectionSub}>
+              Every answer is a path through people, policies, machines, and money — not a black-box label.
+            </p>
+          </div>
+          <HeroGraph />
+          <div className={styles.proofWrap}>
+            <LandingProof />
+          </div>
           <div className={styles.heroCtas} style={{ justifyContent: 'center', marginTop: '1.75rem' }}>
-            <Link href="/waitlist" className={styles.btnPrimary}>
+            <Link href="/demo" className={styles.btnPrimary}>
+              Open the knowledge graph
+            </Link>
+            <Link href="/waitlist" className={styles.btnSecondary}>
               Join the waiting list
             </Link>
-            <Link href="/demo" className={styles.btnSecondary}>
-              Open knowledge graph
+          </div>
+        </section>
+
+        <section className={styles.section} id="ai-analysis" aria-labelledby="analysis-heading">
+          <div className={styles.sectionHead}>
+            <p className={styles.eyebrow}>AI analysis layer</p>
+            <h2 id="analysis-heading">Understand the twin before agents act</h2>
+            <p className={styles.sectionSub}>
+              The analysis layer reads interactions, employees, apps, and graph hops — then scores
+              risk, opportunity, and next best actions under your ontology and policies.
+            </p>
+          </div>
+          <div className={styles.actionGrid}>
+            <article className={styles.actionCard}>
+              <h3>Signal intake</h3>
+              <p>Apps, collector events, employee twins, and documents stream into one analysis fabric.</p>
+            </article>
+            <article className={styles.actionCard}>
+              <h3>Graph reasoning</h3>
+              <p>Hops across ontology, policy, and provenance explain why a recommendation exists.</p>
+            </article>
+            <article className={styles.actionCard}>
+              <h3>Decision scores</h3>
+              <p>Payments, sales, planning, and ops get ranked options with role walls and confidence.</p>
+            </article>
+            <article className={styles.actionCard}>
+              <h3>Human gate</h3>
+              <p>Critical moves stay confirmable. Analysis proposes; people and policy still decide.</p>
+            </article>
+          </div>
+          <div className={styles.heroCtas} style={{ justifyContent: 'center', marginTop: '1.75rem' }}>
+            <Link href="/workspace/analysis" className={styles.btnPrimary}>
+              Open Analysis Studio
             </Link>
-          </div>
-        </section>
-
-        <section className={styles.section} aria-labelledby="thesis-heading">
-          <div className={styles.sectionHead}>
-            <p className={styles.eyebrow}>For buyers and investors</p>
-            <h2 id="thesis-heading">Training gets the model ready. We make it deployable.</h2>
-            <p className={styles.sectionSub}>
-              The constraint in regulated markets is not another chatbot. It is proving the answer,
-              replaying the decision, and keeping the right role on the right slice.
-            </p>
-          </div>
-          <div className={styles.thesisGrid}>
-            {INVESTOR.map((item) => (
-              <article key={item.title} className={styles.thesisCard}>
-                <h3>{item.title}</h3>
-                <p>{item.copy}</p>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section className={styles.section} aria-labelledby="problem-heading">
-          <div className={styles.sectionHead}>
-            <p className={styles.eyebrow}>The problem</p>
-            <h2 id="problem-heading">Copilots get bought. Then go-live freezes.</h2>
-            <p className={styles.sectionSub}>
-              Nobody can explain the answer, replay the decision, or prove the right role saw the
-              right slice. A black box cannot pass audit, plant quality, or a bank policy review.
-            </p>
-          </div>
-          <div className={styles.problemGrid}>
-            <article className={styles.problemCard}>
-              <h3>No path</h3>
-              <p>The model returns a label. There is no hop list back to lot, supplier, or rule.</p>
-            </article>
-            <article className={styles.problemCard}>
-              <h3>No replay</h3>
-              <p>Ask twice, get two stories. Sampling is not a control for regulated work.</p>
-            </article>
-            <article className={styles.problemCard}>
-              <h3>No role wall</h3>
-              <p>Operator, quality, and auditor share one unfiltered answer surface.</p>
-            </article>
+            <Link href="/downloads" className={styles.btnSecondary}>
+              Download collector
+            </Link>
           </div>
         </section>
 
         <section className={styles.section} id="how-it-works" aria-labelledby="how-heading">
           <div className={styles.sectionHead}>
             <p className={styles.eyebrow}>How it works</p>
-            <h2 id="how-heading">Human expertise becomes software.</h2>
+            <h2 id="how-heading">From connections to confirmed actions</h2>
             <p className={styles.sectionSub}>
-              We do not replace your people. We encode what they already know, then apply it every time.
+              We do not replace your people. We connect what they already use, encode the twin, then let agents act inside policy.
             </p>
           </div>
           <ol className={styles.stepGrid}>
@@ -282,15 +454,23 @@ export default function HomePageContent() {
               </li>
             ))}
           </ol>
+          <div className={styles.bandVisual}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/marketing/twin-hero-production.jpg"
+              alt="Production line with collaborative robots powered by a digital twin"
+              width={1600}
+              height={900}
+            />
+          </div>
         </section>
 
         <section className={styles.section} aria-labelledby="power-heading">
           <div className={styles.sectionHead}>
-            <p className={styles.eyebrow}>The power of the solution</p>
+            <p className={styles.eyebrow}>Governed by design</p>
             <h2 id="power-heading">Explainable. Deterministic. Role-based.</h2>
             <p className={styles.sectionSub}>
-              The answer is a path you can audit: who may see it, which rule fired, and which sources
-              corroborate it.
+              The answer is a path you can audit: who may see it, which rule fired, and which sources corroborate it.
             </p>
           </div>
           <div className={styles.pillarGrid}>
@@ -301,66 +481,6 @@ export default function HomePageContent() {
               </article>
             ))}
           </div>
-          <div className={styles.heroCtas} style={{ justifyContent: 'center', marginTop: '1.5rem' }}>
-            <Link href="/demo" className={styles.btnPrimary}>
-              Try the interactive demo
-            </Link>
-            <Link href="/research" className={styles.btnSecondary}>
-              Open HOPN Lab
-            </Link>
-          </div>
-        </section>
-
-        <section className={styles.micro1} id="micro1" aria-labelledby="micro1-heading">
-          <div className={styles.micro1Inner}>
-            <p className={styles.eyebrow}>Partnership</p>
-            <h2 id="micro1-heading">How we collaborate with Micro1</h2>
-            <p className={styles.sectionSub}>
-              Micro1 is the training gate: expert humans who create and vet data so models learn the
-              right work. AI-Pass is the deployment gate: those same experts&apos; rules become a
-              knowledge graph so agents can run under organization policy.
-            </p>
-            <div className={styles.gateGrid}>
-              <article className={styles.gateCard}>
-                <p className={styles.gateKicker}>Micro1</p>
-                <h3>Training gate</h3>
-                <ul>
-                  <li>Source domain experts</li>
-                  <li>Create and vet training data</li>
-                  <li>Raise model quality before ship</li>
-                </ul>
-              </article>
-              <article className={styles.gateCardAccent}>
-                <p className={styles.gateKicker}>Together</p>
-                <h3>Expert to runtime</h3>
-                <ul>
-                  <li>Experts encode rules once</li>
-                  <li>Graph + policy sit in front of the model</li>
-                  <li>Joint pilots in manufacturing, banking, public sector</li>
-                </ul>
-              </article>
-              <article className={styles.gateCard}>
-                <p className={styles.gateKicker}>AI-Pass</p>
-                <h3>Deployment gate</h3>
-                <ul>
-                  <li>Knowledge graph + org rules</li>
-                  <li>Role-based specialist agents</li>
-                  <li>Cloud, private cloud, or air-gapped</li>
-                </ul>
-              </article>
-            </div>
-            <div className={styles.heroCtas} style={{ justifyContent: 'center', marginTop: '1.75rem' }}>
-              <Link href="/partners" className={styles.btnPrimary}>
-                See the partnership path
-              </Link>
-              <a
-                href="mailto:contact@aipass.space?subject=Micro1%20collaboration"
-                className={styles.btnSecondary}
-              >
-                Email partnerships
-              </a>
-            </div>
-          </div>
         </section>
 
         <section className={styles.section} id="pricing" aria-labelledby="pricing-heading">
@@ -368,8 +488,7 @@ export default function HomePageContent() {
             <p className={styles.eyebrow}>Pricing</p>
             <h2 id="pricing-heading">Plans that match how you operate</h2>
             <p className={styles.sectionSub}>
-              Start free, scale with Professional, or deploy Enterprise with private-cloud and
-              air-gapped options.
+              Start free, scale with Professional, or deploy Enterprise with private-cloud and air-gapped options.
             </p>
           </div>
           <div className={styles.pricingGrid}>
@@ -411,8 +530,8 @@ export default function HomePageContent() {
         </section>
 
         <section className={styles.finalCta} aria-labelledby="final-cta">
-          <h2 id="final-cta">Ready to run AI under your rules?</h2>
-          <p>Join the waiting list for early twin access, or book a self-serve demo.</p>
+          <h2 id="final-cta">Ready for agents that can act?</h2>
+          <p>Join the waiting list for twin access, or book a demo of the knowledge graph.</p>
           <div className={styles.heroCtas}>
             <Link href="/waitlist" className={styles.btnOnPurple}>
               Join the waiting list
@@ -427,7 +546,7 @@ export default function HomePageContent() {
       <footer className={styles.footer}>
         <div className={styles.footerTop}>
           <BrandLogoLink />
-          <p className={styles.footerTag}>Enterprise AI infrastructure. Human expertise, applied.</p>
+          <p className={styles.footerTag}>Connect everything. Build the twin. Let agents act.</p>
         </div>
         <div className={styles.footerGrid}>
           {FOOTER_COLUMNS.slice(0, 5).map((column) => (

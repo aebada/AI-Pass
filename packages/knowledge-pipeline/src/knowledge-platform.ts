@@ -5,6 +5,7 @@ import { EmbeddingService } from './embedding-service.js';
 import { GovernanceService } from './governance-service.js';
 import { GraphService } from './graph-service.js';
 import { MetadataService } from './metadata-service.js';
+import { OntologyService } from './ontology-service.js';
 import { PipelineService } from './pipeline-service.js';
 import { PublishingService } from './publishing-service.js';
 import { RAGService } from './rag-service.js';
@@ -26,6 +27,7 @@ export class KnowledgePlatform {
   readonly metadata = new MetadataService();
   readonly embeddings = new EmbeddingService();
   readonly graph = new GraphService();
+  readonly ontology = new OntologyService();
   readonly vectorStore: VectorStore;
   readonly retrieval: RetrievalService;
   readonly rag: RAGService;
@@ -52,6 +54,7 @@ export class KnowledgePlatform {
 
     if (options.seed !== false) {
       seedKnowledgePlatform(this);
+      this.ontology.seed('default');
     }
   }
 

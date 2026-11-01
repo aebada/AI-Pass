@@ -20,10 +20,13 @@ export const DEMO_MAILTO =
 /** Short public marketing nav — high contrast, no mega-menu overflow */
 export const LANDING_NAV: SiteNavItem[] = [
   { type: 'link', label: 'Product', href: '/#how-it-works' },
+  { type: 'link', label: 'Digital twin', href: '/#twins-heading' },
+  { type: 'link', label: 'AI analysis', href: '/#ai-analysis' },
   { type: 'link', label: 'Knowledge graph', href: '/demo' },
+  { type: 'link', label: 'Ontology', href: '/#bring-knowledge' },
+  { type: 'link', label: 'Download', href: '/downloads' },
   { type: 'link', label: 'Waiting list', href: '/waitlist' },
   { type: 'link', label: 'Book a demo', href: '/book-demo' },
-  { type: 'link', label: 'Solutions', href: '/solutions' },
   { type: 'link', label: 'Partners', href: '/partners' },
   { type: 'link', label: 'Pricing', href: '/#pricing' },
 ];

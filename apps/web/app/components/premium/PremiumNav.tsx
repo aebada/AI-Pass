@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { signOut as nextAuthSignOut } from 'next-auth/react';
 import { useEffect, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { Badge } from '@ai-pass/ui';
 import { BrandLogoLink } from '../BrandLogoLink';
 import { LANDING_NAV, SITE_NAV, type SiteNavItem } from '../../lib/site-nav';
@@ -103,10 +104,17 @@ export function PremiumNav({ variant = 'business' }: { variant?: 'landing' | 'bu
 
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? 'hidden' : '';
+    document.documentElement.classList.toggle('aipass-mobile-menu-open', mobileOpen);
     return () => {
       document.body.style.overflow = '';
+      document.documentElement.classList.remove('aipass-mobile-menu-open');
     };
   }, [mobileOpen]);
+
+  const [portalReady, setPortalReady] = useState(false);
+  useEffect(() => {
+    setPortalReady(true);
+  }, []);
 
   const planBadge = user?.plan === 'enterprise' ? 'enterprise' : user?.plan === 'pro' ? 'pro' : 'default';
 
@@ -140,7 +148,7 @@ export function PremiumNav({ variant = 'business' }: { variant?: 'landing' | 'bu
   const menuItems = variant === 'landing' ? LANDING_NAV : SITE_NAV;
 
   return (
-    <header className={styles.navShell}>
+    <header className={`${styles.navShell} ${mobileOpen ? styles.navShellMenuOpen : ''}`}>
     <nav className={`${styles.nav} ${variant === 'landing' ? styles.navLanding : ''}`} ref={navRef}>
       <BrandLogoLink className={styles.logo} logoClassName={styles.logoImg} height={40} onClick={closeMobile} />
 
@@ -362,99 +370,126 @@ export function PremiumNav({ variant = 'business' }: { variant?: 'landing' | 'bu
         </button>
       </div>
 
-      {mobileOpen && (
-        <div className={styles.mobilePanel}>
-          <div className={styles.mobileScroll}>
-            {variant === 'business' ? (
-              <>
-            <p className={styles.mobileSectionLabel}>Research</p>
-            {researchLinks.map((link) => (
-              <Link
-                key={`mobile-research-${link.href}`}
-                href={link.href}
-                className={`${styles.mobileTopLink} ${isActive(pathname, link.href) ? styles.mobileTopLinkActive : ''}`}
-                onClick={closeMobile}
-              >
-                {link.label}
-              </Link>
-            ))}
-              </>
-            ) : null}
-            <p className={styles.mobileSectionLabel}>Menu</p>
-            {menuItems.map((item) =>
-              item.type === 'link' ? (
-                item.external ? (
-                  <a
-                    key={item.label}
-                    href={item.href}
-                    className={styles.mobileTopLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={closeMobile}
-                  >
-                    {item.label}
-                  </a>
-                ) : (
-                  <Link
-                    key={item.label}
-                    href={item.href}
-                    className={`${styles.mobileTopLink} ${isActive(pathname, item.href) ? styles.mobileTopLinkActive : ''}`}
-                    onClick={closeMobile}
-                  >
-                    {item.label}
-                  </Link>
-                )
-              ) : (
-                <div key={item.label} className={styles.mobileAccordion}>
-                  <button
-                    type="button"
-                    className={`${styles.mobileAccordionTrigger} ${mobileExpanded === item.label ? styles.mobileAccordionOpen : ''}`}
-                    aria-expanded={mobileExpanded === item.label}
-                    onClick={() => toggleMobileSection(item.label)}
-                  >
-                    {item.label}
-                    <span className={styles.chevron} aria-hidden />
-                  </button>
-                  {(mobileExpanded === item.label || item.label === 'Research') && (
-                    <div className={styles.mobileSubmenu}>
-                      {item.items.map((link) => (
-                        <NavDropdownLink
-                          key={`${item.label}-${link.label}`}
-                          href={link.href}
-                          label={link.label}
-                          description={link.description}
-                          external={link.external}
-                          onNavigate={closeMobile}
-                        />
-                      ))}
-                    </div>
-                  )}
-                </div>
-              ),
-            )}
-          </div>
-          <div className={styles.mobileFooter}>
-            {variant === 'business' ? (
+    </nav>
+    {portalReady && mobileOpen
+      ? createPortal(
+          <div
+            className={`${styles.mobilePanel} ${variant === 'landing' ? styles.mobilePanelLanding : ''}`}
+            style={{
+              position: 'fixed',
+              inset: 0,
+              zIndex: 100000,
+              display: 'flex',
+              flexDirection: 'column',
+              paddingTop: 72,
+              background: '#ffffff',
+              color: '#16171a',
+              opacity: 1,
+            }}
+            role="dialog"
+            aria-modal="true"
+            aria-label="Site menu"
+          >
             <button
               type="button"
-              className={styles.mobileThemeBtn}
-              onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
+              className={styles.mobileClose}
+              aria-label="Close menu"
+              onClick={closeMobile}
             >
-              {resolvedTheme === 'dark' ? '☀️ Light mode' : '🌙 Dark mode'}
+              ×
             </button>
-            ) : null}
-            <Link href={user ? '/workspace' : '/login'} className={styles.btnPrimary} onClick={closeMobile}>
-              {user ? 'Go to Workspace' : 'Start Free'}
-            </Link>
-            {!user && (
-              <Link href="/login" className={styles.btnGhost} onClick={closeMobile}>
-                Sign In
+            <div className={styles.mobileScroll} style={{ background: '#ffffff' }}>
+              {variant === 'business' ? (
+                <>
+                  <p className={styles.mobileSectionLabel}>Research</p>
+                  {researchLinks.map((link) => (
+                    <Link
+                      key={`mobile-research-${link.href}`}
+                      href={link.href}
+                      className={`${styles.mobileTopLink} ${isActive(pathname, link.href) ? styles.mobileTopLinkActive : ''}`}
+                      onClick={closeMobile}
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </>
+              ) : null}
+              <p className={styles.mobileSectionLabel}>Menu</p>
+              {menuItems.map((item) =>
+                item.type === 'link' ? (
+                  item.external ? (
+                    <a
+                      key={item.label}
+                      href={item.href}
+                      className={styles.mobileTopLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={closeMobile}
+                    >
+                      {item.label}
+                    </a>
+                  ) : (
+                    <Link
+                      key={item.label}
+                      href={item.href}
+                      className={`${styles.mobileTopLink} ${isActive(pathname, item.href) ? styles.mobileTopLinkActive : ''}`}
+                      onClick={closeMobile}
+                    >
+                      {item.label}
+                    </Link>
+                  )
+                ) : (
+                  <div key={item.label} className={styles.mobileAccordion}>
+                    <button
+                      type="button"
+                      className={`${styles.mobileAccordionTrigger} ${mobileExpanded === item.label ? styles.mobileAccordionOpen : ''}`}
+                      aria-expanded={mobileExpanded === item.label}
+                      onClick={() => toggleMobileSection(item.label)}
+                    >
+                      {item.label}
+                      <span className={styles.chevron} aria-hidden />
+                    </button>
+                    {(mobileExpanded === item.label || item.label === 'Research') && (
+                      <div className={styles.mobileSubmenu}>
+                        {item.items.map((link) => (
+                          <NavDropdownLink
+                            key={`${item.label}-${link.label}`}
+                            href={link.href}
+                            label={link.label}
+                            description={link.description}
+                            external={link.external}
+                            onNavigate={closeMobile}
+                          />
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ),
+              )}
+            </div>
+            <div className={styles.mobileFooter} style={{ background: '#f4f5f8' }}>
+              {variant === 'business' ? (
+                <button
+                  type="button"
+                  className={styles.mobileThemeBtn}
+                  onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
+                >
+                  {resolvedTheme === 'dark' ? '☀️ Light mode' : '🌙 Dark mode'}
+                </button>
+              ) : null}
+              <Link href={user ? '/workspace' : '/login'} className={styles.btnPrimary} onClick={closeMobile}>
+                {user ? 'Go to Workspace' : 'Start Free'}
               </Link>
-            )}
-          </div>
-        </div>
-      )}
-    </nav>
+              {!user && (
+                <Link href="/login" className={styles.btnGhost} onClick={closeMobile}>
+                  Sign In
+                </Link>
+              )}
+            </div>
+          </div>,
+          document.body,
+        )
+      : null}
     {pathname?.startsWith('/research') ? (
     <div className={styles.navStrip} aria-label="Research programs">
       {researchLinks.map((link) =>

@@ -1,0 +1,88 @@
+{
+  "meta": {
+    "title": "AI-Pass — Policy checks before AI runs",
+    "description": "AI-Pass routes requests to frontier models only after they pass your organisation's policy. Every decision is recorded."
+  },
+  "hero": {
+    "headline": "Policy checks before any AI model runs.",
+    "subheadline": "AI-Pass routes requests to frontier models only after they pass your organisation's policy, including EU data residency and approval rules. Every decision is recorded.",
+    "primaryCta": { "label": "Request a design partner call", "href": "/design-partners" },
+    "secondaryCta": { "label": "See how a request is checked", "href": "/#how-it-works" }
+  },
+  "problem": {
+    "eyebrow": "The problem",
+    "headline": "Regulated work needs proof at the moment AI runs.",
+    "items": [
+      {
+        "title": "Rules must apply before the model",
+        "copy": "Regulated organisations need to show, at the moment an AI system runs, that the request met their rules."
+      },
+      {
+        "title": "Approvals need a queue",
+        "copy": "Some requests should wait for a named approver. Others must stay in an EU region or never leave the organisation."
+      },
+      {
+        "title": "Every decision needs a record",
+        "copy": "Auditors ask what was allowed, what was blocked, and why. Guesswork is not an audit trail."
+      }
+    ]
+  },
+  "howItWorks": {
+    "eyebrow": "How it works",
+    "headline": "One request. One policy check. One audit record.",
+    "steps": [
+      { "label": "Request", "copy": "An application or agent sends a model request with context." },
+      { "label": "Policy gate", "copy": "AI-Pass checks organisation rules, residency, and approval requirements." },
+      { "label": "Decision", "copy": "The gate allows, queues for approval, or blocks the request." },
+      { "label": "Model", "copy": "Only allowed requests reach a configured frontier or private model." },
+      { "label": "Audit record", "copy": "The decision and path are written to an immutable audit event." }
+    ]
+  },
+  "demo": {
+    "eyebrow": "Live policy demo",
+    "headline": "Coming soon",
+    "copy": "A client-side simulation will let you choose a sample request and policy type, then show allow, queue or block with an audit entry. Simulation using sample data only."
+  },
+  "capabilities": {
+    "eyebrow": "Capabilities",
+    "headline": "Shipped today",
+    "items": [
+      { "title": "Policy routing before model execution", "claimId": "policy-routing-shipped", "href": "/product" },
+      { "title": "Organisation default, EU data residency and sandbox policies", "claimId": "policy-routing-shipped", "href": "/product", "note": "Air-gapped packaging planned" },
+      { "title": "Multi-model routing for configured providers", "claimId": "providers-configured", "href": "/product" },
+      { "title": "PII masking", "claimId": "pii-masking-shipped", "href": "/product" },
+      { "title": "Bring-your-own-key", "claimId": "byok-shipped", "href": "/product" },
+      { "title": "Role-based access control and approval queues", "claimId": "rbac-approvals-shipped", "href": "/product" },
+      { "title": "Immutable audit events", "claimId": "audit-events-immutable", "href": "/product" },
+      { "title": "SCIM 2.0 user provisioning", "claimId": "scim-live", "href": "/product" }
+    ]
+  },
+  "governance": {
+    "eyebrow": "Governance",
+    "headline": "Built to support regulated obligations",
+    "introClaimId": "gdpr-support",
+    "intro": "AI-Pass is designed to support obligations under GDPR, the EU AI Act, DORA and NIS2.",
+    "soc2": "SOC 2 Type II: observation phase. Target completion March 2027.",
+    "soc2ClaimId": "soc2-observation",
+    "rows": [
+      { "regulation": "GDPR", "provides": "EU data residency policy type, audit records, access controls", "status": "shipped" },
+      { "regulation": "EU AI Act", "provides": "Policy checks and decision records before model execution", "status": "shipped" },
+      { "regulation": "DORA", "provides": "Operational controls and audit evidence for ICT risk reviews", "status": "planned" },
+      { "regulation": "NIS2", "provides": "Access control and logging aligned with security obligations", "status": "planned" }
+    ]
+  },
+  "deployment": {
+    "eyebrow": "Deployment",
+    "headline": "SaaS now. On-premises later.",
+    "saas": "SaaS: available.",
+    "saasClaimId": "saas-available",
+    "onprem": "Private cloud, on-premises and air-gapped: in development. Packaging planned for 30 April 2027.",
+    "onpremClaimId": "onprem-planned"
+  },
+  "designPartners": {
+    "eyebrow": "Design partners",
+    "headline": "Early access with direct roadmap input",
+    "copy": "We are working with a small number of regulated organisations on pilots. Design partners get early access and direct input into the roadmap.",
+    "cta": { "label": "Request a design partner call", "href": "/design-partners" }
+  }
+}

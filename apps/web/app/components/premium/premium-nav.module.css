@@ -4,6 +4,10 @@
   z-index: 160;
 }
 
+.navShellMenuOpen {
+  z-index: 5000;
+}
+
 .nav {
   position: relative;
   z-index: 161;
@@ -13,10 +17,12 @@
   padding: 0.9rem clamp(1rem, 4vw, 2rem);
   background: #ffffff;
   color: #16171a;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid #e8e8f0;
   overflow: visible;
+}
+
+.navShellMenuOpen .nav {
+  background: #ffffff;
 }
 
 .navLanding {
@@ -49,16 +55,42 @@
   background: #16171a;
 }
 
-.navLanding .mobilePanel,
+.navLanding .mobilePanel {
+  background: #ffffff !important;
+  color: #16171a !important;
+  opacity: 1 !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
 .navLanding .mobileFooter {
+  background: #f4f5f8 !important;
+  color: #16171a !important;
+  border-top-color: #cfd0db !important;
+}
+
+.navLanding .mobileScroll {
   background: #ffffff;
-  color: #16171a;
 }
 
 .navLanding .mobileTopLink,
 .navLanding .mobileAccordionTrigger,
-.navLanding .btnGhost {
-  color: #16171a;
+.navLanding .btnGhost,
+.navLanding .mobileSectionLabel {
+  color: #16171a !important;
+}
+
+.navLanding .mobileTopLink {
+  border-bottom-color: #e8e8f0;
+}
+
+.navLanding .mobileTopLinkActive {
+  color: #5025d1 !important;
+}
+
+.navLanding .mobilePanel .btnPrimary {
+  background: #5025d1 !important;
+  color: #ffffff !important;
 }
 
 [data-theme='dark'] .nav,
@@ -291,23 +323,37 @@
 
 .mobilePanel {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 400;
+  inset: 0;
+  z-index: 100000;
   display: flex;
   flex-direction: column;
   padding-top: 72px;
-  background: var(--bg);
-  border-top: 1px solid var(--border);
-  animation: slideDown 0.25s ease-out;
+  background: #ffffff;
+  color: #16171a;
+  border: none;
   pointer-events: auto;
+  opacity: 1;
 }
 
-@keyframes slideDown {
-  from { opacity: 0; transform: translateY(-8px); }
-  to { opacity: 1; transform: translateY(0); }
+.mobilePanelLanding {
+  background: #ffffff;
+  color: #16171a;
+}
+
+.mobileClose {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  border: 1px solid #cfd0db;
+  background: #ffffff;
+  color: #16171a;
+  font-size: 1.75rem;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 2;
 }
 
 .mobileScroll {

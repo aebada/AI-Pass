@@ -32,6 +32,7 @@ export const KNOWLEDGE_ROUTES = {
   sources: `${WORKSPACE_BASE}/knowledge/sources`,
   pipelines: `${WORKSPACE_BASE}/knowledge/pipelines`,
   graph: `${WORKSPACE_BASE}/knowledge/graph`,
+  ontology: `${WORKSPACE_BASE}/knowledge/ontology`,
   embeddings: `${WORKSPACE_BASE}/knowledge/embeddings`,
   search: `${WORKSPACE_BASE}/knowledge/search`,
   retrieval: `${WORKSPACE_BASE}/knowledge/retrieval`,
@@ -47,6 +48,7 @@ export const KNOWLEDGE_API_ROUTES = {
   embed: '/api/v1/knowledge/embed',
   query: '/api/v1/knowledge/query',
   graphQuery: '/api/v1/knowledge/graph/query',
+  ontology: '/api/v1/knowledge/ontology',
   sync: '/api/v1/knowledge/sync',
   status: '/api/v1/knowledge/status',
 } as const;
