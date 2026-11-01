@@ -1,0 +1,64 @@
+{
+  "primaryCurrency": "USD",
+  "fx": {
+    "rate": 0.92,
+    "quote": "EUR",
+    "asOf": "2026-11-01",
+    "claimId": "fx-rate"
+  },
+  "vatNote": "Prices exclude VAT.",
+  "plans": [
+    {
+      "id": "professional",
+      "name": "Professional",
+      "priceUsd": 49,
+      "period": "per seat per month",
+      "claimId": "pricing-professional-49",
+      "who": "Teams running governed AI daily",
+      "features": [
+        { "text": "Policy routing before model execution", "status": "shipped" },
+        { "text": "Multi-model routing", "status": "shipped" },
+        { "text": "PII masking", "status": "shipped" },
+        { "text": "Bring-your-own-key", "status": "shipped" },
+        { "text": "Immutable audit events", "status": "shipped" },
+        { "text": "Email support", "status": "shipped" }
+      ],
+      "cta": "Start Professional",
+      "href": "/login"
+    },
+    {
+      "id": "power",
+      "name": "Power",
+      "priceUsd": 149,
+      "period": "per seat per month",
+      "claimId": "pricing-power-149",
+      "who": "Organisations with approvals and higher volume",
+      "features": [
+        { "text": "Everything in Professional", "status": "shipped" },
+        { "text": "Approval queues", "status": "shipped" },
+        { "text": "SCIM 2.0 provisioning", "status": "shipped" },
+        { "text": "Higher routing limits", "status": "shipped" },
+        { "text": "Priority support", "status": "shipped" },
+        { "text": "On-premises packaging", "status": "planned" }
+      ],
+      "cta": "Choose Power",
+      "href": "/workspace/membership",
+      "popular": true
+    },
+    {
+      "id": "enterprise",
+      "name": "Enterprise",
+      "priceUsd": null,
+      "period": "",
+      "who": "Regulated and air-gapped operators",
+      "features": [
+        { "text": "Custom policy packs", "status": "shipped" },
+        { "text": "SSO / SCIM", "status": "shipped" },
+        { "text": "Dedicated success", "status": "shipped" },
+        { "text": "Private cloud and air-gapped packaging", "status": "planned" }
+      ],
+      "cta": "Contact us",
+      "href": "/contact"
+    }
+  ]
+}

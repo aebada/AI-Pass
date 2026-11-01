@@ -1,0 +1,17 @@
+{
+  "name": "AI-Pass",
+  "legalName": "HOPn UG (haftungsbeschränkt)",
+  "address": {
+    "street": "Weichter Straße 1",
+    "postal": "86807",
+    "city": "Buchloe",
+    "country": "Germany"
+  },
+  "register": "Amtsgericht Kempten (Allgäu), HRB 17191",
+  "vatId": "DE365178670",
+  "managingDirector": "Prof. Dr. Ahmed Ebada",
+  "contactEmail": "contact@aipass.space",
+  "canonicalOrigin": "https://aipass.space",
+  "lastReviewed": "2026-11-01",
+  "banner": { "enabled": false, "text": "", "date": "" }
+}

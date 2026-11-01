@@ -172,6 +172,68 @@
   animation: heroRise 0.9s ease 0.12s both;
 }
 
+.heroPhoto {
+  display: block;
+  width: 100%;
+  max-height: min(52vh, 520px);
+  object-fit: cover;
+  object-position: center;
+}
+
+.twinGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.twinCard {
+  overflow: hidden;
+  border: 1px solid #cfd0db;
+  border-radius: 16px;
+  background: #fff;
+}
+
+.twinImage {
+  display: block;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.twinBody {
+  padding: 1.1rem 1.15rem 1.25rem;
+}
+
+.twinBody h3 {
+  margin: 0 0 0.45rem;
+  font-size: 1.15rem;
+}
+
+.twinBody p {
+  margin: 0;
+  color: #3f424c;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+.twinActionsLabel {
+  margin: 0.9rem 0 0.35rem !important;
+  font-size: 0.72rem !important;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #5025d1 !important;
+}
+
+.twinActions {
+  margin: 0;
+  padding-left: 1.05rem;
+  color: #16171a;
+  line-height: 1.55;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
 @keyframes heroRise {
   from {
     opacity: 0;
@@ -803,7 +865,8 @@
   .problemGrid,
   .stepGrid,
   .gateGrid,
-  .thesisGrid {
+  .thesisGrid,
+  .twinGrid {
     grid-template-columns: 1fr 1fr;
   }
 
@@ -828,7 +891,9 @@
   .footerGrid,
   .problemGrid,
   .stepGrid,
-  .gateGrid {
+  .gateGrid,
+  .thesisGrid,
+  .twinGrid {
     grid-template-columns: 1fr;
   }
 

@@ -1,0 +1,168 @@
+{
+  "version": "1.0",
+  "lastReviewed": "2026-11-01",
+  "claims": [
+    {
+      "id": "policy-routing-shipped",
+      "claim": "Policy routing runs before model execution",
+      "status": "verified",
+      "source": "Internal product review of routing and governance path",
+      "verifiedBy": "Technical review",
+      "verifiedOn": "2026-10-04",
+      "pages": ["/", "/product", "/trust-center", "/security"]
+    },
+    {
+      "id": "audit-events-immutable",
+      "claim": "Immutable audit events record allow, queue and block decisions",
+      "status": "verified",
+      "source": "Audit schema and append-only write path described in security documentation",
+      "verifiedBy": "Technical review",
+      "verifiedOn": "2026-10-04",
+      "pages": ["/", "/product", "/trust-center", "/security"]
+    },
+    {
+      "id": "scim-live",
+      "claim": "SCIM 2.0 user provisioning is live",
+      "status": "verified",
+      "source": "Endpoint test GET /scim/v2/ServiceProviderConfig returns HTTP 200",
+      "verifiedBy": "Technical review",
+      "verifiedOn": "2026-10-04",
+      "pages": ["/", "/product", "/trust-center"]
+    },
+    {
+      "id": "pii-masking-shipped",
+      "claim": "PII masking is available on routed requests",
+      "status": "verified",
+      "source": "Internal capability review of masking pipeline",
+      "verifiedBy": "Technical review",
+      "verifiedOn": "2026-10-04",
+      "pages": ["/", "/product"]
+    },
+    {
+      "id": "byok-shipped",
+      "claim": "Bring-your-own-key is supported for configured providers",
+      "status": "verified",
+      "source": "Provider hub configuration review",
+      "verifiedBy": "Technical review",
+      "verifiedOn": "2026-10-04",
+      "pages": ["/", "/product"]
+    },
+    {
+      "id": "rbac-approvals-shipped",
+      "claim": "Role-based access control and approval queues are available",
+      "status": "verified",
+      "source": "Governance module review",
+      "verifiedBy": "Technical review",
+      "verifiedOn": "2026-10-04",
+      "pages": ["/", "/product"]
+    },
+    {
+      "id": "providers-configured",
+      "claim": "Multi-model routing covers OpenAI, Anthropic, Google and Mistral when keys are configured",
+      "status": "verified",
+      "source": "Provider hub adapter inventory",
+      "verifiedBy": "Technical review",
+      "verifiedOn": "2026-10-04",
+      "pages": ["/", "/product"]
+    },
+    {
+      "id": "saas-available",
+      "claim": "SaaS deployment is available",
+      "status": "verified",
+      "source": "Production site aipass.space serving the product",
+      "verifiedBy": "Operations",
+      "verifiedOn": "2026-11-01",
+      "pages": ["/", "/deployment"]
+    },
+    {
+      "id": "onprem-planned",
+      "claim": "On-premises packaging is in development with packaging planned for 30 April 2027",
+      "status": "in-development",
+      "source": "Product roadmap 2026-11-01",
+      "verifiedBy": "Product",
+      "verifiedOn": "2026-11-01",
+      "pages": ["/", "/deployment", "/trust-center"]
+    },
+    {
+      "id": "soc2-observation",
+      "claim": "SOC 2 Type II is in observation phase with target completion March 2027",
+      "status": "in-development",
+      "source": "Compliance programme plan",
+      "verifiedBy": "Compliance",
+      "verifiedOn": "2026-11-01",
+      "pages": ["/", "/security", "/trust-center"]
+    },
+    {
+      "id": "gdpr-support",
+      "claim": "AI-Pass is designed to support obligations under GDPR, the EU AI Act, DORA and NIS2",
+      "status": "verified",
+      "source": "Product architecture and compliance mapping notes",
+      "verifiedBy": "Product",
+      "verifiedOn": "2026-11-01",
+      "pages": ["/", "/security", "/trust-center"]
+    },
+    {
+      "id": "cicd-planned",
+      "claim": "CI/CD pipeline (GitHub Actions) target 15 November 2026",
+      "status": "planned",
+      "source": "Engineering roadmap",
+      "verifiedBy": "Engineering",
+      "verifiedOn": "2026-11-01",
+      "pages": ["/trust-center"]
+    },
+    {
+      "id": "e2e-planned",
+      "claim": "End-to-end tests for four core journeys target 30 November 2026",
+      "status": "planned",
+      "source": "Engineering roadmap",
+      "verifiedBy": "Engineering",
+      "verifiedOn": "2026-11-01",
+      "pages": ["/trust-center"]
+    },
+    {
+      "id": "no-paying-customers",
+      "claim": "No named paying customers yet",
+      "status": "known-gap",
+      "source": "Commercial status 2026-11-01",
+      "verifiedBy": "CEO office",
+      "verifiedOn": "2026-11-01",
+      "pages": ["/trust-center"]
+    },
+    {
+      "id": "unit-tests-10",
+      "claim": "Test coverage: 10 unit test suites; no end-to-end browser tests yet",
+      "status": "known-gap",
+      "source": "Engineering inventory 2026-11-01",
+      "verifiedBy": "Engineering",
+      "verifiedOn": "2026-11-01",
+      "pages": ["/trust-center"]
+    },
+    {
+      "id": "pricing-professional-49",
+      "claim": "Professional plan is USD 49 per seat per month",
+      "status": "verified",
+      "source": "Published pricing tiers reconciled 2026-11-01",
+      "verifiedBy": "CEO office",
+      "verifiedOn": "2026-11-01",
+      "pages": ["/", "/pricing"]
+    },
+    {
+      "id": "pricing-power-149",
+      "claim": "Power plan is USD 149 per seat per month",
+      "status": "verified",
+      "source": "Published pricing tiers reconciled 2026-11-01",
+      "verifiedBy": "CEO office",
+      "verifiedOn": "2026-11-01",
+      "pages": ["/pricing"]
+    },
+    {
+      "id": "fx-rate",
+      "claim": "Converted at 1 USD = 0.92 EUR on 2026-11-01",
+      "status": "verified",
+      "source": "Internal FX reference for display only",
+      "verifiedBy": "Finance",
+      "verifiedOn": "2026-11-01",
+      "pages": ["/pricing"]
+    }
+  ]
+}

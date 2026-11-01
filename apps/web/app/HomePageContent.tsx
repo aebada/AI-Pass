@@ -3,8 +3,6 @@
 import Link from 'next/link';
 import { PremiumNav } from './components/premium/PremiumNav';
 import { BrandLogoLink } from './components/BrandLogoLink';
-import { LandingProof } from './components/LandingProof';
-import { HeroGraph } from './components/HeroGraph';
 import { MarketingThemeLock } from './components/MarketingThemeLock';
 import { FOOTER_COLUMNS } from './lib/site-nav';
 import styles from './page.module.css';
@@ -31,13 +29,37 @@ const STEPS = [
   },
   {
     n: '02',
-    title: 'Encode the knowledge graph',
-    copy: 'Nodes, attributes, metadata, and provenance become the source of truth. Policies sit in the graph.',
+    title: 'Encode the twin and graph',
+    copy: 'Routines, machines, lots and policies become the source of truth. Agents only act inside that scope.',
   },
   {
     n: '03',
     title: 'Run role-based agents',
-    copy: 'Specialist agents answer on that graph. Each role sees only the slice their job may act on.',
+    copy: 'Agents draft, route, approve and execute. Payments and orders still need a confirmation gate.',
+  },
+];
+
+const TWINS = [
+  {
+    title: 'Personal twin',
+    copy: 'Learns consented routines, drafts replies, protects focus time, and prepares admin work for your approval.',
+    actions: ['Triage inbox', 'Propose calendar slots', 'Prepare forms', 'Track renewals'],
+    image: '/marketing/twin-personal.jpg',
+    alt: 'Person at a desk with a personal digital twin overlay',
+  },
+  {
+    title: 'Business twin',
+    copy: 'Company agents act on invoices, CRM and ops with role walls, budgets and an audit path for every decision.',
+    actions: ['Invoice intake', 'Approval routing', 'Deal follow-ups', 'Budget alerts'],
+    image: '/marketing/twin-business.jpg',
+    alt: 'Operations team in a control room reviewing agent action queues',
+  },
+  {
+    title: 'Robotics & production',
+    copy: 'Shop-floor agents bind sensors, lots and SOPs so quality and cell decisions stay explainable and replayable.',
+    actions: ['Quality hop path', 'Cell status briefs', 'SOP checks', 'Escalation to humans'],
+    image: '/marketing/twin-robotics.jpg',
+    alt: 'Industrial robot and production cell on a manufacturing floor',
   },
 ];
 
@@ -130,20 +152,29 @@ export default function HomePageContent() {
               Models guess. AI-Pass turns human expertise into a knowledge graph and organization
               rules, then runs specialist agents that stay explainable, deterministic, and role-based.
             </p>
-            <div className={styles.heroCtas}>
-              <Link href="/book-demo" className={styles.btnPrimary}>
-                Book a demo
-              </Link>
-              <Link href="/demo" className={styles.btnSecondary}>
-                Open the knowledge graph
-              </Link>
+              <div className={styles.heroCtas}>
+                <Link href="/waitlist" className={styles.btnPrimary}>
+                  Join the waiting list
+                </Link>
+                <Link href="/book-demo" className={styles.btnSecondary}>
+                  Book a demo
+                </Link>
+              </div>
+              <p className={styles.heroNote}>
+                Personal, business and robotics twins. Knowledge graph is in the menu.
+              </p>
             </div>
-            <p className={styles.heroNote}>Self-serve walkthrough. Role-aware hops. No credit card.</p>
-          </div>
-          <div className={styles.heroVisual}>
-            <HeroGraph />
-          </div>
-        </section>
+            <div className={styles.heroVisual}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                className={styles.heroPhoto}
+                src="/marketing/twin-hero-production.jpg"
+                alt="Production line with collaborative robots — digital twin for manufacturing agents"
+                width={1600}
+                height={900}
+              />
+            </div>
+          </section>
 
         <section className={styles.logoStrip} aria-label="Industries we support">
           {TRUST.map((name) => (
@@ -151,6 +182,43 @@ export default function HomePageContent() {
               {name}
             </span>
           ))}
+        </section>
+
+        <section className={styles.section} aria-labelledby="twins-heading">
+          <div className={styles.sectionHead}>
+            <p className={styles.eyebrow}>Digital twins</p>
+            <h2 id="twins-heading">Personal. Business. Robotics.</h2>
+            <p className={styles.sectionSub}>
+              One engine for three surfaces: your day, your company, and your machines. Agents act —
+              with consent, role walls and a confirmation gate for money moves.
+            </p>
+          </div>
+          <div className={styles.twinGrid}>
+            {TWINS.map((twin) => (
+              <article key={twin.title} className={styles.twinCard}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={twin.image} alt={twin.alt} className={styles.twinImage} width={800} height={600} />
+                <div className={styles.twinBody}>
+                  <h3>{twin.title}</h3>
+                  <p>{twin.copy}</p>
+                  <p className={styles.twinActionsLabel}>Agent actions</p>
+                  <ul className={styles.twinActions}>
+                    {twin.actions.map((action) => (
+                      <li key={action}>{action}</li>
+                    ))}
+                  </ul>
+                </div>
+              </article>
+            ))}
+          </div>
+          <div className={styles.heroCtas} style={{ justifyContent: 'center', marginTop: '1.75rem' }}>
+            <Link href="/waitlist" className={styles.btnPrimary}>
+              Join the waiting list
+            </Link>
+            <Link href="/demo" className={styles.btnSecondary}>
+              Open knowledge graph
+            </Link>
+          </div>
         </section>
 
         <section className={styles.section} aria-labelledby="thesis-heading">
@@ -169,20 +237,6 @@ export default function HomePageContent() {
                 <p>{item.copy}</p>
               </article>
             ))}
-          </div>
-        </section>
-
-        <section className={styles.proofSection} aria-labelledby="proof-heading">
-          <div className={styles.sectionHead}>
-            <p className={styles.eyebrow}>Product proof</p>
-            <h2 id="proof-heading">A twin you can measure.</h2>
-            <p className={styles.sectionSub}>
-              Live manufacturing graph metrics from the interactive demo — provenance, role coverage,
-              and a deterministic hop path.
-            </p>
-          </div>
-          <div className={styles.proofWrap}>
-            <LandingProof />
           </div>
         </section>
 
@@ -358,13 +412,13 @@ export default function HomePageContent() {
 
         <section className={styles.finalCta} aria-labelledby="final-cta">
           <h2 id="final-cta">Ready to run AI under your rules?</h2>
-          <p>Book a self-serve demo, or open the full knowledge graph walkthrough.</p>
+          <p>Join the waiting list for early twin access, or book a self-serve demo.</p>
           <div className={styles.heroCtas}>
-            <Link href="/book-demo" className={styles.btnOnPurple}>
-              Book a demo
+            <Link href="/waitlist" className={styles.btnOnPurple}>
+              Join the waiting list
             </Link>
-            <Link href="/demo" className={styles.btnGhostOnPurple}>
-              Open the knowledge graph
+            <Link href="/book-demo" className={styles.btnGhostOnPurple}>
+              Book a demo
             </Link>
           </div>
         </section>
