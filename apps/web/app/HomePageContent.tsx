@@ -55,6 +55,25 @@ const ACTIONS = [
   { title: 'Operations', copy: 'Open shop-floor and logistics actions with an audit path back to lots, SOPs, and owners.' },
 ];
 
+const PLM = [
+  {
+    title: 'BOM & structure',
+    copy: 'Parts, assemblies, and effectivity dates live in the product twin — not a disconnected vault.',
+  },
+  {
+    title: 'Engineering change',
+    copy: 'ECO/ECN plans show blast radius across BOM, process, and suppliers before release.',
+  },
+  {
+    title: 'Quality loop',
+    copy: 'Lots, CAPA, and policy rules bind to the same graph so quality hops stay explainable.',
+  },
+  {
+    title: 'Release to produce',
+    copy: 'Released revisions reach MES and ops with role walls and a confirmation gate.',
+  },
+];
+
 const STEPS = [
   {
     n: '01',
@@ -107,6 +126,7 @@ const TWINS = [
 const TWIN_EVERYTHING = [
   { title: 'People', copy: 'Employees, contractors, and customers with consent and role walls.' },
   { title: 'Apps & workflows', copy: 'CRM, ERP, inbox, calendar, MES, wallet — every interaction that matters.' },
+  { title: 'Products & PLM', copy: 'BOM, engineering change, quality, and release to produce in one twin.' },
   { title: 'Assets & robots', copy: 'Machines, lots, cells, and sensors bound to SOPs and owners.' },
   { title: 'Money & plans', copy: 'Payments, sales, capacity, and renewals with a confirmation gate.' },
 ];
@@ -338,6 +358,42 @@ export default function HomePageContent() {
             <div className={styles.bringVisual} aria-hidden>
               <HeroGraph />
             </div>
+          </div>
+        </section>
+
+        <section className={styles.section} id="plm" aria-labelledby="plm-heading">
+          <div className={styles.sectionHead}>
+            <p className={styles.eyebrow}>Product Lifecycle Management</p>
+            <h2 id="plm-heading">PLM for the product twin</h2>
+            <p className={styles.sectionSub}>
+              Concept to service in one governed lifecycle — BOM, change orders, quality, and
+              production connected so agents can act with an audit path.
+            </p>
+          </div>
+          <div className={styles.actionGrid}>
+            {PLM.map((item) => (
+              <article key={item.title} className={styles.actionCard}>
+                <h3>{item.title}</h3>
+                <p>{item.copy}</p>
+              </article>
+            ))}
+          </div>
+          <div className={styles.bandVisual}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/marketing/plm-lifecycle.jpg"
+              alt="Engineers managing product lifecycle from design to production"
+              width={1600}
+              height={900}
+            />
+          </div>
+          <div className={styles.heroCtas} style={{ justifyContent: 'center', marginTop: '1.5rem' }}>
+            <Link href="/plm" className={styles.btnPrimary}>
+              Explore PLM
+            </Link>
+            <Link href="/book-demo" className={styles.btnSecondary}>
+              Book a demo
+            </Link>
           </div>
         </section>
 

@@ -21,6 +21,7 @@ export const DEMO_MAILTO =
 export const LANDING_NAV: SiteNavItem[] = [
   { type: 'link', label: 'Product', href: '/#how-it-works' },
   { type: 'link', label: 'Digital twin', href: '/#twins-heading' },
+  { type: 'link', label: 'PLM', href: '/plm' },
   { type: 'link', label: 'AI analysis', href: '/#ai-analysis' },
   { type: 'link', label: 'Knowledge graph', href: '/demo' },
   { type: 'link', label: 'Ontology', href: '/#bring-knowledge' },
@@ -63,6 +64,7 @@ export const SITE_NAV: SiteNavItem[] = [
     wide: true,
     items: [
       { label: 'Solutions Overview', href: '/solutions', description: 'Full Formerr-class form and intake coverage' },
+      { label: 'Product Lifecycle (PLM)', href: '/plm', description: 'BOM, ECO, quality, and release in the product twin' },
       { label: 'AI Form Builder', href: '/solutions#ai-builder', description: 'Prompt, PDF, image, or URL to form' },
       { label: 'Quiz & Survey Kits', href: '/solutions#ai-kits', description: 'Scored quizzes, polls, and tests' },
       { label: 'Visual Builder', href: '/solutions#visual-editor', description: '50+ fields, multi-page layouts' },

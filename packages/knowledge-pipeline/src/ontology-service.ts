@@ -96,6 +96,11 @@ const SEED_CLASSES: OntologyClass[] = [
   { iri: 'aipass:Payment', label: 'Payment', parents: ['aipass:Process'] },
   { iri: 'aipass:SalesDeal', label: 'Sales deal', parents: ['aipass:Process'] },
   { iri: 'aipass:Plan', label: 'Plan', parents: ['aipass:Process'] },
+  { iri: 'aipass:Product', label: 'Product', parents: ['aipass:Asset'] },
+  { iri: 'aipass:Part', label: 'Part', parents: ['aipass:Product'] },
+  { iri: 'aipass:BOM', label: 'Bill of materials', parents: [] },
+  { iri: 'aipass:EngineeringChange', label: 'Engineering change', parents: ['aipass:Process'] },
+  { iri: 'aipass:QualityRecord', label: 'Quality record', parents: [] },
 ];
 
 const SEED_PROPERTIES: OntologyProperty[] = [
@@ -105,6 +110,10 @@ const SEED_PROPERTIES: OntologyProperty[] = [
   { iri: 'aipass:hasRole', label: 'has role', domain: 'aipass:Employee', range: 'xsd:string', kind: 'datatype' },
   { iri: 'aipass:governedBy', label: 'governed by', domain: 'aipass:Process', range: 'aipass:Policy', kind: 'object' },
   { iri: 'aipass:amount', label: 'amount', domain: 'aipass:Payment', range: 'xsd:decimal', kind: 'datatype' },
+  { iri: 'aipass:hasBOM', label: 'has BOM', domain: 'aipass:Product', range: 'aipass:BOM', kind: 'object' },
+  { iri: 'aipass:containsPart', label: 'contains part', domain: 'aipass:BOM', range: 'aipass:Part', kind: 'object' },
+  { iri: 'aipass:changes', label: 'changes', domain: 'aipass:EngineeringChange', range: 'aipass:Product', kind: 'object' },
+  { iri: 'aipass:affectsQuality', label: 'affects quality', domain: 'aipass:EngineeringChange', range: 'aipass:QualityRecord', kind: 'object' },
   { iri: 'aipass:relatedTo', label: 'related to', kind: 'object' },
 ];
 
