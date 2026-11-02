@@ -1,6 +1,7 @@
 {
-  "version": "0.1.0",
-  "generated": "2026-11-01T19:58:51.054072+00:00",
+  "version": "0.1.1",
+  "generated": "2026-11-02T16:04:43.470024+00:00",
+  "macosFix": "xattr -cr /path/to/AI-Pass.app then right-click Open",
   "files": [
     {
       "name": "AI-Pass-Extension.zip",
@@ -24,17 +25,17 @@
     },
     {
       "name": "AI-Pass-macOS-arm64.zip",
-      "size": 113488279,
+      "size": 113694527,
       "url": "/downloads/AI-Pass-macOS-arm64.zip"
     },
     {
       "name": "AI-Pass-macOS-x64.zip",
-      "size": 118013043,
+      "size": 118219291,
       "url": "/downloads/AI-Pass-macOS-x64.zip"
     },
     {
       "name": "AI-Pass-macOS.zip",
-      "size": 113488279,
+      "size": 113694527,
       "url": "/downloads/AI-Pass-macOS.zip"
     }
   ]

@@ -154,6 +154,11 @@ export default function DownloadsPage() {
           {' · '}
           <a href="/downloads/latest.json">latest.json</a>
         </p>
+        <p className={styles.sectionLead}>
+          macOS tip: if Finder says the app can&apos;t be opened, run{' '}
+          <code>xattr -cr ~/Downloads/AI-Pass.app</code> then right-click → Open. Apple Silicon uses the
+          default Mac zip; Intel Macs need the x64 build.
+        </p>
       </section>
 
       <section className={styles.section} id="apps" aria-labelledby="apps-heading">
