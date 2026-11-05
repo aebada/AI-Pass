@@ -49,6 +49,14 @@ const FEATURES = [
     cta: 'Open workspace',
   },
   {
+    eyebrow: 'Intelligence Lab',
+    title: 'Expert data that makes agents reliable',
+    copy: 'Flow, Realms, Cortex, Experts, and Robotics — first-party human data, RL environments, and agent evaluation inside AI-Pass.',
+    points: ['Expert dataset production', 'Frontier RL environments', 'Reliability monitoring'],
+    href: '/lab',
+    cta: 'Explore Intelligence Lab',
+  },
+  {
     eyebrow: 'Trust Engine',
     title: 'Prove what your AI systems do',
     copy: 'Certify systems, monitor runs, and keep an evidence trail ready for audits and regulators.',

@@ -37,6 +37,12 @@ export const SITE_NAV: SiteNavItem[] = [
       { label: 'Discovery Hub', href: '/discover', description: 'Directory of AI tools and providers' },
       { label: 'Presence Audit', href: '/workspace/apps/presence-audit', description: 'Brand and presence intelligence' },
       { label: 'Wallet', href: '/workspace/wallet', description: 'Credits, spend, and billing control' },
+      { label: 'Intelligence Lab', href: '/lab', description: 'Expert data, Realms, Cortex, Flow' },
+      { label: 'Flow', href: '/lab/flow', description: 'Expert dataset production' },
+      { label: 'Realms', href: '/lab/realms', description: 'Frontier evals and RL environments' },
+      { label: 'Cortex', href: '/lab/cortex', description: 'Agent reliability evaluation' },
+      { label: 'Experts', href: '/lab/experts', description: 'Domain specialist network' },
+      { label: 'Robotics Lab', href: '/lab/robotics', description: 'Embodied training data' },
     ],
   },
   {
@@ -146,6 +152,8 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
     links: [
       { label: 'Workspace', href: '/workspace' },
       { label: 'Interactive Demo', href: '/demo' },
+      { label: 'Intelligence Lab', href: '/lab' },
+      { label: 'Cortex', href: '/lab/cortex' },
       { label: 'Trust Engine', href: '/workspace/trust' },
       { label: 'AI Governance', href: '/workspace/governance' },
       { label: 'Routing', href: '/workspace/providers' },
