@@ -24,9 +24,9 @@ const TRUST = [
 ];
 
 const CONNECTIONS = [
-  { title: 'All apps', copy: 'CRM, ERP, inbox, calendar, wallet, MES, and the tools your teams already open every day.' },
-  { title: 'All solutions', copy: 'Sales, finance, ops, quality, and support share one twin instead of separate copilots.' },
-  { title: 'All interactions', copy: 'Chats, approvals, tickets, and sensor events become memory the agent can reason over.' },
+  { title: '1. Connect apps & APIs', copy: 'One click for SAP, Salesforce, SharePoint — or paste your own API URL.' },
+  { title: '2. Twin builds itself', copy: 'Employees, records, and workflows sync into one digital twin under your rules.' },
+  { title: '3. Use agents', copy: 'Open Playground or a solution. Context is ready — no extra setup.' },
 ];
 
 const BRING_YOUR_OWN = [
@@ -131,6 +131,26 @@ const TWIN_EVERYTHING = [
   { title: 'Money & plans', copy: 'Payments, sales, capacity, and renewals with a confirmation gate.' },
 ];
 
+/** Autopilot twin builder — governed alternative to consumer personal agents */
+const AUTOPILOT = [
+  {
+    title: 'Capture people, not just prompts',
+    copy: 'Consented work signals from employees and individuals — role, skills, inbox patterns, approvals — become twin memory automatically.',
+  },
+  {
+    title: 'Autopilot the twin build',
+    copy: 'Collectors and connectors keep the twin current. No manual wiki. The graph grows as people and apps work.',
+  },
+  {
+    title: 'Solutions over guesswork',
+    copy: 'Agents propose payments, sales, planning, and ops from the twin — with role walls and confirmation gates, not opaque personal-agent authority.',
+  },
+  {
+    title: 'Enterprise-grade by default',
+    copy: 'Audit hops, ontology, and Trust Engine stay on. Built for organizations that need better outcomes than a consumer autopilot chat agent.',
+  },
+];
+
 const PILLARS = [
   {
     title: 'Explainable',
@@ -198,13 +218,13 @@ export default function HomePageContent() {
             <p className={styles.brandMark}>AI-Pass</p>
             <p className={styles.eyebrow}>Digital twins for everything</p>
             <h1 id="hero-heading" className={styles.heroTitle}>
-              Twins for people, apps, and machines.
-              <span className={styles.heroTitleAccent}> Agents that can act.</span>
+              Autopilot twins for employees and individuals.
+              <span className={styles.heroTitleAccent}> Solutions that beat guesswork.</span>
             </h1>
             <p className={styles.heroSub}>
-              AI-Pass builds a digital twin for everything — including every employee — by connecting
-              apps, solutions, and interactions so agents can run payments, sales, planning, and ops
-              under your rules.
+              AI-Pass automatically builds a digital twin for everything — every employee and every
+              individual in scope — from consented apps and interactions, then runs payments, sales,
+              planning, and ops under your rules. Not another chat agent with opaque authority.
             </p>
             <div className={styles.heroCtas}>
               <Link href="/waitlist" className={styles.btnPrimary}>
@@ -237,11 +257,11 @@ export default function HomePageContent() {
 
         <section className={styles.section} aria-labelledby="connect-heading">
           <div className={styles.sectionHead}>
-            <p className={styles.eyebrow}>How agents get smart</p>
-            <h2 id="connect-heading">Connect everything. Build the twin.</h2>
+            <p className={styles.eyebrow}>How to use AI-Pass</p>
+            <h2 id="connect-heading">Connect your APIs. Build the twin. Use agents.</h2>
             <p className={styles.sectionSub}>
-              Intelligence is not another prompt. It is context from the full stack — then a twin
-              that knows what the agent is allowed to do.
+              Three steps. Connect SAP, Salesforce, SharePoint, or paste your own API URL. We sync
+              into the twin. Playground and solutions use that context immediately.
             </p>
           </div>
           <div className={styles.connectGrid}>
@@ -251,6 +271,14 @@ export default function HomePageContent() {
                 <p>{item.copy}</p>
               </article>
             ))}
+          </div>
+          <div className={styles.heroCtas} style={{ justifyContent: 'center', marginTop: '1.5rem' }}>
+            <Link href="/workspace/connect" className={styles.btnPrimary}>
+              Open Connect
+            </Link>
+            <Link href="/connect" className={styles.btnSecondary}>
+              See how it works
+            </Link>
           </div>
           <div className={styles.bandVisual}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -393,6 +421,34 @@ export default function HomePageContent() {
             </Link>
             <Link href="/book-demo" className={styles.btnSecondary}>
               Book a demo
+            </Link>
+          </div>
+        </section>
+
+        <section className={styles.section} id="autopilot" aria-labelledby="autopilot-title">
+          <div className={styles.sectionHead}>
+            <p className={styles.eyebrow}>Autopilot twin builder</p>
+            <h2 id="autopilot-title">From employees and individuals to better solutions</h2>
+            <p className={styles.sectionSub}>
+              Consumer personal agents guess from a chat thread. AI-Pass autopilot builds living
+              twins of your people and work — then solutions act with ontology, policy, and an audit
+              path. Stronger outcomes than opaque Instinct-style authority for enterprise work.
+            </p>
+          </div>
+          <div className={styles.actionGrid}>
+            {AUTOPILOT.map((item) => (
+              <article key={item.title} className={styles.actionCard}>
+                <h3>{item.title}</h3>
+                <p>{item.copy}</p>
+              </article>
+            ))}
+          </div>
+          <div className={styles.heroCtas} style={{ justifyContent: 'center', marginTop: '1.5rem' }}>
+            <Link href="/#twins-heading" className={styles.btnPrimary}>
+              See twin types
+            </Link>
+            <Link href="/waitlist" className={styles.btnSecondary}>
+              Join the waiting list
             </Link>
           </div>
         </section>

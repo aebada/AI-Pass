@@ -1,12 +1,11 @@
-# Hostinger / Apache — Next.js static export routing
+# Hostinger / Apache — Next.js static export (lean + cache-friendly)
 <IfModule mod_rewrite.c>
   RewriteEngine On
-
-# --- Node.js API proxy (Google / NextAuth) ---
-# Merge docs/apache-api-proxy.htaccess into public_html/.htaccess BEFORE the SPA fallback.
-# Requires mod_proxy on Hostinger. See docs/DEPLOY-AUTH.md.
-
   RewriteBase /
+
+  # Block VCS / source trees if ever uploaded into public_html
+  RewriteRule ^(.*?/\.git|/\.git)(/|$) - [F,L]
+  RewriteRule ^(node_modules|packages|apps)(/|$) - [F,L]
 
   # Never serve Next.js RSC flight dumps (*.txt). Keep robots.txt public.
   RewriteRule ^index\.txt$ / [R=301,L]
@@ -18,32 +17,54 @@
   RewriteCond %{REQUEST_FILENAME} -f
   RewriteRule ^ - [L]
 
-  # Directory index: /research -> research/index.html
+  # Directory index: /path -> path/index.html
   RewriteCond %{REQUEST_FILENAME} -d
   RewriteCond %{REQUEST_FILENAME}/index.html -f
   RewriteRule ^(.+?)/?$ $1/index.html [L]
 
-  # platform.html vs platform/ directory — serve the page, not the folder
   RewriteRule ^platform/?$ /platform.html [L]
 
-  # Clean URLs: /studio -> studio.html, /platform/governance -> platform/governance.html
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteCond %{REQUEST_FILENAME}.html -f
   RewriteRule ^(.+?)/?$ $1.html [L]
 
-  # Nested .html when path is a directory (e.g. platform/governance)
   RewriteCond %{REQUEST_FILENAME} -d
   RewriteCond %{REQUEST_FILENAME}.html -f
   RewriteRule ^(.+?)/?$ $1.html [L]
 
-  # Fallback SPA shell
   RewriteRule ^ /index.html [L]
 </IfModule>
 
-# Cache static assets
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css
+  AddOutputFilterByType DEFLATE application/javascript application/json application/xml
+  AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
 <IfModule mod_expires.c>
   ExpiresActive On
+  ExpiresDefault "access plus 1 hour"
+  ExpiresByType text/html "access plus 0 seconds"
   ExpiresByType text/css "access plus 1 year"
   ExpiresByType application/javascript "access plus 1 year"
   ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 30 days"
+  ExpiresByType image/png "access plus 30 days"
+  ExpiresByType image/webp "access plus 30 days"
+  ExpiresByType font/woff2 "access plus 1 year"
 </IfModule>
+
+<IfModule mod_headers.c>
+  <FilesMatch "\.(?:css|js|woff2)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <FilesMatch "\.(?:jpg|jpeg|png|gif|webp|svg|ico)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+  <FilesMatch "\.(?:html)$">
+    Header set Cache-Control "public, max-age=0, must-revalidate"
+  </FilesMatch>
+  FileETag None
+</IfModule>
+
+Options -Indexes

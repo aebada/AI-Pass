@@ -17,19 +17,31 @@ export const GITHUB_URL = 'https://github.com/ai-pass';
 export const DEMO_MAILTO =
   'mailto:hello@ai-pass.com?subject=Enterprise%20AI%20Infrastructure%20Demo';
 
-/** Short public marketing nav — high contrast, no mega-menu overflow */
+/** Short public marketing nav — few top-level items, single-line labels */
 export const LANDING_NAV: SiteNavItem[] = [
-  { type: 'link', label: 'Product', href: '/#how-it-works' },
-  { type: 'link', label: 'Digital twin', href: '/#twins-heading' },
-  { type: 'link', label: 'PLM', href: '/plm' },
-  { type: 'link', label: 'AI analysis', href: '/#ai-analysis' },
-  { type: 'link', label: 'Knowledge graph', href: '/demo' },
-  { type: 'link', label: 'Ontology', href: '/#bring-knowledge' },
-  { type: 'link', label: 'Download', href: '/downloads' },
-  { type: 'link', label: 'Waiting list', href: '/waitlist' },
-  { type: 'link', label: 'Book a demo', href: '/book-demo' },
-  { type: 'link', label: 'Partners', href: '/partners' },
+  { type: 'link', label: 'Connect', href: '/connect' },
+  {
+    type: 'dropdown',
+    label: 'Product',
+    items: [
+      { label: 'How it works', href: '/#how-it-works', description: 'Connect, twin, act with a gate' },
+      { label: 'Autopilot twins', href: '/#autopilot', description: 'Employees and individuals → solutions' },
+      { label: 'Digital twin', href: '/#twins-heading', description: 'Personal, employee, business, robotics' },
+      { label: 'PLM', href: '/plm', description: 'Product lifecycle inside the twin' },
+      { label: 'AI analysis', href: '/#ai-analysis', description: 'Score risk and next actions' },
+    ],
+  },
+  {
+    type: 'dropdown',
+    label: 'Knowledge',
+    items: [
+      { label: 'Knowledge graph', href: '/demo', description: 'Live hop-based reasoning demo' },
+      { label: 'Ontology', href: '/#bring-knowledge', description: 'Bring your domain model' },
+      { label: 'Downloads', href: '/downloads', description: 'IDE, desktop, and collector' },
+    ],
+  },
   { type: 'link', label: 'Pricing', href: '/#pricing' },
+  { type: 'link', label: 'Demo', href: '/book-demo' },
 ];
 
 /** Primary marketing nav — Enterprise AI Infrastructure Platform IA */
@@ -44,6 +56,7 @@ export const SITE_NAV: SiteNavItem[] = [
       { label: 'Workspace', href: '/workspace', description: 'Unified command center for enterprise AI' },
       { label: 'Agent Studio', href: '/workspace/agents', description: 'Build and operate autonomous agents' },
       { label: 'Workflow Engine', href: '/workspace/workflows', description: 'Orchestrate business processes' },
+      { label: 'Connect', href: '/workspace/connect', description: 'APIs, ERP, CRM — three steps into the twin' },
       { label: 'Knowledge Pipeline', href: '/workspace/knowledge', description: 'RAG and enterprise knowledge' },
       { label: 'HOPN Lab', href: '/research', description: 'Research agenda and conceptual diagrams' },
       { label: 'Knowledge graph', href: '/research/ground', description: 'Provenance graph program' },
@@ -177,12 +190,12 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
   {
     title: 'Platform',
     links: [
+      { label: 'Connect', href: '/connect' },
       { label: 'Workspace', href: '/workspace' },
       { label: 'Interactive Demo', href: '/demo' },
       { label: 'Trust Engine', href: '/workspace/trust' },
       { label: 'AI Governance', href: '/workspace/governance' },
       { label: 'Routing', href: '/workspace/providers' },
-      { label: 'Architecture', href: '/architecture' },
     ],
   },
   {
