@@ -276,8 +276,8 @@ export default function HomePageContent() {
             <Link href="/workspace/connect" className={styles.btnPrimary}>
               Open Connect
             </Link>
-            <Link href="/connect" className={styles.btnSecondary}>
-              See how it works
+            <Link href="/workspace/company-harness" className={styles.btnSecondary}>
+              Open Company Harness
             </Link>
           </div>
           <div className={styles.bandVisual}>

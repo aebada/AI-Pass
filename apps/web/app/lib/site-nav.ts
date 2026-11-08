@@ -20,15 +20,17 @@ export const DEMO_MAILTO =
 /** Short public marketing nav — few top-level items, single-line labels */
 export const LANDING_NAV: SiteNavItem[] = [
   { type: 'link', label: 'Connect', href: '/connect' },
+  { type: 'link', label: 'Company OS', href: '/company-os' },
   {
     type: 'dropdown',
     label: 'Product',
     items: [
       { label: 'How it works', href: '/#how-it-works', description: 'Connect, twin, act with a gate' },
+      { label: 'Company Harness', href: '/company-os', description: 'Model harness for company agents' },
+      { label: 'Graph Builder', href: '/graph-builder', description: 'Ontology-first judged knowledge graph' },
       { label: 'Autopilot twins', href: '/#autopilot', description: 'Employees and individuals → solutions' },
       { label: 'Digital twin', href: '/#twins-heading', description: 'Personal, employee, business, robotics' },
       { label: 'PLM', href: '/plm', description: 'Product lifecycle inside the twin' },
-      { label: 'AI analysis', href: '/#ai-analysis', description: 'Score risk and next actions' },
     ],
   },
   {
@@ -57,6 +59,8 @@ export const SITE_NAV: SiteNavItem[] = [
       { label: 'Agent Studio', href: '/workspace/agents', description: 'Build and operate autonomous agents' },
       { label: 'Workflow Engine', href: '/workspace/workflows', description: 'Orchestrate business processes' },
       { label: 'Connect', href: '/workspace/connect', description: 'APIs, ERP, CRM — three steps into the twin' },
+      { label: 'Company Harness', href: '/workspace/company-harness', description: 'Model harness for company agents' },
+      { label: 'Graph Builder', href: '/workspace/graph-builder', description: 'Judged ontology knowledge graphs' },
       { label: 'Knowledge Pipeline', href: '/workspace/knowledge', description: 'RAG and enterprise knowledge' },
       { label: 'HOPN Lab', href: '/research', description: 'Research agenda and conceptual diagrams' },
       { label: 'Knowledge graph', href: '/research/ground', description: 'Provenance graph program' },
@@ -191,6 +195,8 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
     title: 'Platform',
     links: [
       { label: 'Connect', href: '/connect' },
+      { label: 'Company OS', href: '/company-os' },
+      { label: 'Graph Builder', href: '/graph-builder' },
       { label: 'Workspace', href: '/workspace' },
       { label: 'Interactive Demo', href: '/demo' },
       { label: 'Trust Engine', href: '/workspace/trust' },
