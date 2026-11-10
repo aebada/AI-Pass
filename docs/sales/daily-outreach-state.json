@@ -1,0 +1,252 @@
+{
+  "days": {
+    "2026-11-10": 49
+  },
+  "sent": {
+    "1": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "BMW Group",
+      "email": "partner@bmw.com"
+    },
+    "10": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "UnternehmerTUM / Women Startup",
+      "email": "womenstartup@unternehmertum.de"
+    },
+    "11": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "Datev eG",
+      "email": "info@datev.de"
+    },
+    "12": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "Deutsche Telekom",
+      "email": "info@telekom.de"
+    },
+    "13": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "Bosch",
+      "email": "info@bosch.com"
+    },
+    "14": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "BASF",
+      "email": "info@basf.com"
+    },
+    "15": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "Continental AG",
+      "email": "info@conti.de"
+    },
+    "16": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "ZF Friedrichshafen",
+      "email": "info@zf.com"
+    },
+    "17": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "Mercedes-Benz Group",
+      "email": "dialog@mercedes-benz.com"
+    },
+    "18": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "Audi AG",
+      "email": "info@audi.de"
+    },
+    "19": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "Volkswagen AG",
+      "email": "info@volkswagen.de"
+    },
+    "2": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "Siemens AG",
+      "email": "partner@siemens.com"
+    },
+    "20": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "MAN Truck & Bus",
+      "email": "info@man.eu"
+    },
+    "21": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "MTU Aero Engines",
+      "email": "info@mtu.de"
+    },
+    "22": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "Rohde & Schwarz",
+      "email": "info@rohde-schwarz.com"
+    },
+    "23": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "Wacker Chemie",
+      "email": "info@wacker.com"
+    },
+    "24": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "Linde plc (Germany)",
+      "email": "info@linde.com"
+    },
+    "25": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "HypoVereinsbank / UniCredit",
+      "email": "info@hypovereinsbank.de"
+    },
+    "26": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "BayernLB",
+      "email": "info@bayernlb.de"
+    },
+    "27": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "Stadtsparkasse M\u00fcnchen",
+      "email": "info@sskm.de"
+    },
+    "28": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "SWM Stadtwerke M\u00fcnchen",
+      "email": "info@swm.de"
+    },
+    "29": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "Flughafen M\u00fcnchen",
+      "email": "info@munich-airport.de"
+    },
+    "3": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "SAP SE",
+      "email": "partner@sap.com"
+    },
+    "30": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "Messe M\u00fcnchen",
+      "email": "info@messe-muenchen.de"
+    },
+    "31": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "Celonis",
+      "email": "info@celonis.com"
+    },
+    "32": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "Personio",
+      "email": "info@personio.com"
+    },
+    "33": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "Lilium",
+      "email": "info@lilium.com"
+    },
+    "34": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "Isar Aerospace",
+      "email": "info@isaraerospace.com"
+    },
+    "35": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "ProSiebenSat.1",
+      "email": "info@prosiebensat1.com"
+    },
+    "36": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "Burda",
+      "email": "info@burda.com"
+    },
+    "37": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "Knorr-Bremse",
+      "email": "info@knorr-bremse.com"
+    },
+    "38": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "KraussMaffei",
+      "email": "info@kraussmaffei.com"
+    },
+    "39": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "Giesecke+Devrient",
+      "email": "info@gi-de.com"
+    },
+    "4": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "Allianz SE",
+      "email": "info@allianz.com"
+    },
+    "40": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "TUM",
+      "email": "info@tum.de"
+    },
+    "42": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "Fraunhofer AISEC",
+      "email": "info@aisec.fraunhofer.de"
+    },
+    "43": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "Fraunhofer IGCV",
+      "email": "info@igcv.fraunhofer.de"
+    },
+    "44": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "DFKI",
+      "email": "info@dfki.de"
+    },
+    "45": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "Schaeffler",
+      "email": "info@schaeffler.com"
+    },
+    "5": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "Deutsche Bank",
+      "email": "deutsche.bank@db.com"
+    },
+    "6": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "Munich Re",
+      "email": "info@munichre.com"
+    },
+    "7": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "Infineon Technologies",
+      "email": "info@infineon.com"
+    },
+    "71": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "Deutsche Bahn",
+      "email": "info@deutschebahn.com"
+    },
+    "75": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "DHL / Deutsche Post",
+      "email": "info@dhl.com"
+    },
+    "8": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "KUKA AG",
+      "email": "info@kuka.com"
+    },
+    "83": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "Siemens Healthineers",
+      "email": "info@siemens-healthineers.com"
+    },
+    "9": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "T\u00dcV S\u00dcD",
+      "email": "info@tuvsud.com"
+    },
+    "92": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "Capgemini Germany",
+      "email": "info.de@capgemini.com"
+    },
+    "93": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "Accenture Germany",
+      "email": "info.de@accenture.com"
+    }
+  }
+}
