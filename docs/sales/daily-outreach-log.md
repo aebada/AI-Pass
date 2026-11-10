@@ -300,3 +300,18 @@ Sent this run: 5. Failures: 1.
 - Sent Evonik, Fresenius, Carl Zeiss, ams OSRAM, Nemetschek
 - Hostinger rate limit at TeamViewer. Day total ~82. ~16 READY remain.
 
+## 2026-11-10 22:18 UTC — send mode=intro csv=daily-100-prospects.csv
+- SENT 87 TeamViewer <partners@teamviewer.com>
+- SENT 88 Software AG <info@softwareag.com>
+- SENT 89 Bechtle <info@bechtle.com>
+- SENT 90 Cancom <info@cancom.de>
+- RATE_LIMIT stop at 91 Msg systems <info@msg.group>: 4.7.1 Ratelimit "hostinger_out_ratelimit" exceeded for key "RLkioyk9wrxphjtrmz4srp9srw"
+
+Sent this run: 4. Failures: 1.
+
+
+## 2026-11-10 22:18 UTC resume
+
+- Sent TeamViewer, Software AG, Bechtle, Cancom
+- Hostinger rate limit at Msg systems. Day total ~86. ~12 READY remain.
+
