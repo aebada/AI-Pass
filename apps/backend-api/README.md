@@ -66,6 +66,21 @@ Each profile builds the image with its `APP_ENV` and loads the matching
   production.
 - **Debug mode**: `DEBUG=true` only in development.
 
+## Seeding agent templates
+
+Adds the Customer Support Agent, Document Analyst and Enterprise Knowledge Agent
+templates to a workspace as unpublished drafts. Safe to re-run: agents whose slug
+already exists in the workspace are left untouched.
+
+```bash
+alembic upgrade head
+python -m app.seeds.agent_templates \
+  --organization-id <org uuid> --workspace-id <workspace uuid> --created-by <user uuid>
+```
+
+`--created-by` must be a member of the organization. The templates' knowledge-base
+bindings are placeholders (`is_placeholder: true`) to replace before publishing.
+
 ## Tests
 
 ```bash

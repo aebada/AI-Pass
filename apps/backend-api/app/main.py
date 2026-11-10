@@ -1,8 +1,11 @@
 import logging
 
 from fastapi import FastAPI
+from fastapi.exceptions import RequestValidationError
 from fastapi.middleware.cors import CORSMiddleware
 
+from app.api.errors import validation_exception_handler
+from app.api.routes.agents import router as agents_router
 from app.api.routes.health import router as health_router
 from app.api.routes.workspaces import router as workspaces_router
 from app.config import get_settings
@@ -29,5 +32,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+app.add_exception_handler(RequestValidationError, validation_exception_handler)
+
 app.include_router(health_router)
 app.include_router(workspaces_router)
+app.include_router(agents_router)

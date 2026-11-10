@@ -1,8 +1,8 @@
 """Organization RBAC: resolve an ``OrgRole`` to the permissions it grants.
 
 This mirrors the role model in ``packages/platform-core`` — ``owner``/``admin``
-are superusers, other roles carry an explicit permission set. Workspace routes
-check these permission strings; no separate authorization model is introduced.
+are superusers, other roles carry an explicit permission set. Workspace and agent
+routes check these permission strings; no separate authorization model is introduced.
 """
 from __future__ import annotations
 
@@ -11,16 +11,19 @@ from app.models.organization import OrgRole
 # Permission strings share the namespace of platform-core's ModulePermission.
 WORKSPACE_READ = "workspace:read"
 WORKSPACE_WRITE = "workspace:write"
+AGENT_READ = "agent:read"
+AGENT_WRITE = "agent:write"
+AGENT_PUBLISH = "agent:publish"
 
 _ALL = "*"
 
 ROLE_PERMISSIONS: dict[OrgRole, set[str]] = {
     OrgRole.owner: {_ALL},
     OrgRole.admin: {_ALL},
-    OrgRole.manager: {WORKSPACE_READ, WORKSPACE_WRITE},
-    OrgRole.member: {WORKSPACE_READ, WORKSPACE_WRITE},
-    OrgRole.viewer: {WORKSPACE_READ},
-    OrgRole.auditor: {WORKSPACE_READ},
+    OrgRole.manager: {WORKSPACE_READ, WORKSPACE_WRITE, AGENT_READ, AGENT_WRITE, AGENT_PUBLISH},
+    OrgRole.member: {WORKSPACE_READ, WORKSPACE_WRITE, AGENT_READ, AGENT_WRITE},
+    OrgRole.viewer: {WORKSPACE_READ, AGENT_READ},
+    OrgRole.auditor: {WORKSPACE_READ, AGENT_READ},
 }
 
 

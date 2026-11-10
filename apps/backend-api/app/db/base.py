@@ -7,3 +7,4 @@ from app.db.base_class import Base  # noqa: F401
 from app.models.organization import Organization, OrganizationMembership  # noqa: F401
 from app.models.user import User  # noqa: F401
 from app.models.workspace import Workspace  # noqa: F401
+from app.models.agent import Agent, AgentVersion  # noqa: F401

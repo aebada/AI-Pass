@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import uuid
 from collections.abc import Iterator
+from datetime import datetime, timezone
 
 import pytest
 from fastapi.testclient import TestClient
@@ -16,6 +17,7 @@ from app.db.base import Base
 from app.db.session import get_db
 from app.models.organization import Organization, OrganizationMembership, OrgRole
 from app.models.user import User
+from app.models.workspace import Workspace
 
 
 @pytest.fixture()
@@ -145,4 +147,38 @@ def world(org_factory, user_factory, member_factory):
         "viewer_a": viewer_a,
         "member_b": member_b,
         "stranger": stranger,
+    }
+
+
+@pytest.fixture()
+def workspace_factory(db):
+    def _make(org: Organization, slug: str, *, archived: bool = False) -> Workspace:
+        workspace = Workspace(
+            organization_id=org.id,
+            name=slug.title(),
+            slug=slug,
+            is_archived=archived,
+            archived_at=datetime.now(timezone.utc) if archived else None,
+        )
+        db.add(workspace)
+        db.commit()
+        db.refresh(workspace)
+        return workspace
+
+    return _make
+
+
+@pytest.fixture()
+def spaces(world, workspace_factory, user_factory, member_factory):
+    """Workspaces for the agent tests, plus the manager / auditor roles ``world`` lacks."""
+    manager_a = user_factory("manager-a@example.test")
+    auditor_a = user_factory("auditor-a@example.test")
+    member_factory(world["org_a"], manager_a, OrgRole.manager)
+    member_factory(world["org_a"], auditor_a, OrgRole.auditor)
+    world.update(manager_a=manager_a, auditor_a=auditor_a)
+
+    return {
+        "ws_a": workspace_factory(world["org_a"], "support"),
+        "ws_a2": workspace_factory(world["org_a"], "sales"),
+        "ws_b": workspace_factory(world["org_b"], "support"),
     }
