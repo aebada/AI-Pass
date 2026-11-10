@@ -170,3 +170,11 @@ Sent this run: 1. Failures: 1.
 
 - SKIP Lilium <info@lilium.com> — preliminary insolvency; mailbox unmonitored; pointed to lilium@anchor.eu (not a sales follow-up).
 
+
+## 2026-11-10 channel policy
+
+- Forms first; email only if no usable company form.
+- BMW partner@bmw.com bounce → FORM Startup Garage.
+- Infineon info@ bounce → FORM startups cooperate.
+- Telekom → FORM https://www.telekom.de/gk/kontakt
+

@@ -1,0 +1,21 @@
+rank,company,channel,form_url,form_type,preferred,notes,status,last_action
+12,Deutsche Telekom,FORM,https://www.telekom.de/gk/kontakt,business_contact,yes-but-blocked,User-provided GK contact form; WAF-protected,BLOCKED_OR_COMPLEX,WAF blocked — email fallback
+1,BMW Group,FORM,https://www.bmwstartupgarage.com/en/partner-with-us/application-form.html,startup_garage_application,yes,partner@bmw.com DSN 5.1.0 bounce; use Startup Garage form,BLOCKED_OR_COMPLEX,Wizard complex — email fallback bmw.startup.garage@bmw.com
+7,Infineon Technologies,FORM,https://www.infineon.com/partners/startups/cooperate-with-us,startup_cooperate,yes,info@infineon.com rejected by smtp2.infineon.com; use startups form + startups@infineon.com,SUBMITTED,Submitted 2026-11-10 via cooperate-with-us (#formStatus success)
+2,Siemens AG,FORM,https://new.siemens.com/global/en/company/about/contact.html,corporate_contact,yes,Prefer form over partner@ generic,READY,Map fields then submit
+3,SAP SE,FORM,https://www.sap.com/about/company/innovation/partner.html,partner_contact,yes,Partner page / form preferred,READY,Map fields then submit
+4,Allianz SE,FORM,https://www.allianz.com/en/about-us/company/contact.html,corporate_contact,yes,Corporate contact,READY,Map fields then submit
+5,Deutsche Bank,FORM,https://www.db.com/contact,corporate_contact,yes,Corporate contact,READY,Map fields then submit
+6,Munich Re,FORM,https://www.munichre.com/en/contact.html,corporate_contact,yes,Corporate contact,READY,Map fields then submit
+8,KUKA AG,FORM,https://www.kuka.com/en-de/about-kuka/contact,corporate_contact,yes,Corporate contact,READY,Map fields then submit
+9,TÜV SÜD,FORM,https://www.tuvsud.com/en/contact,corporate_contact,yes,Corporate contact,READY,Map fields then submit
+10,UnternehmerTUM / Women Startup,EMAIL,mailto:womenstartup@unternehmertum.de,direct_email,no,Known monitored inbox,SKIP_FORM,Email already used
+13,Bosch,FORM,https://www.bosch.com/contact/,corporate_contact,yes,Corporate contact,READY,Map fields then submit
+14,BASF,FORM,https://www.basf.com/global/en/contact.html,corporate_contact,yes,Corporate contact,READY,Map fields then submit
+17,Mercedes-Benz Group,FORM,https://group.mercedes-benz.com/contact/,corporate_contact,yes,Corporate contact,READY,Map fields then submit
+18,Audi AG,FORM,https://www.audi.com/en/company/contact.html,corporate_contact,yes,Corporate contact,READY,Map fields then submit
+19,Volkswagen AG,FORM,https://www.volkswagen-group.com/en/contact-15736,corporate_contact,yes,Corporate contact,READY,Map fields then submit
+31,Celonis,FORM,https://www.celonis.com/contact/,saas_contact,yes,SaaS contact form,READY,Map fields then submit
+42,Fraunhofer AISEC,FORM,https://www.aisec.fraunhofer.de/en/contact.html,research_contact,yes,Research contact,READY,Map fields then submit
+71,Deutsche Bahn,FORM,https://www.deutschebahn.com/en/contact,corporate_contact,yes,Corporate contact,READY,Map fields then submit
+75,DHL / Deutsche Post,FORM,https://www.dhl.com/global-en/home/get-in-touch.html,corporate_contact,yes,Corporate contact,READY,Map fields then submit

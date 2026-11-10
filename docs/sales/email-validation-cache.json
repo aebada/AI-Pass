@@ -1,0 +1,34 @@
+{
+  "bmw.startup.garage@bmw.com": {
+    "checked_at": "2026-11-10T06:26:19.684536+00:00",
+    "email": "bmw.startup.garage@bmw.com",
+    "mx": "bmw-com.mail.protection.outlook.com",
+    "ok": true,
+    "reason": "smtp probe skipped: TimeoutError",
+    "smtp_code": null
+  },
+  "info@telekom.de": {
+    "checked_at": "2026-11-10T06:28:20.152271+00:00",
+    "email": "info@telekom.de",
+    "mx": "mailin.ng.telekom.net",
+    "ok": true,
+    "reason": "smtp probe skipped: TimeoutError",
+    "smtp_code": null
+  },
+  "startups@infineon.com": {
+    "checked_at": "2026-11-10T06:27:40.027127+00:00",
+    "email": "startups@infineon.com",
+    "mx": "smtp2.infineon.com",
+    "ok": true,
+    "reason": "smtp probe skipped: OSError",
+    "smtp_code": null
+  },
+  "support@infineon.com": {
+    "checked_at": "2026-11-10T06:28:00.086323+00:00",
+    "email": "support@infineon.com",
+    "mx": "smtp2.infineon.com",
+    "ok": true,
+    "reason": "smtp probe skipped: OSError",
+    "smtp_code": null
+  }
+}
