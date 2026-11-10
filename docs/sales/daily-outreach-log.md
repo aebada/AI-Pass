@@ -165,3 +165,8 @@ Hostinger SMTP 451 hostinger_out_ratelimit after first wave. Resume remaining RE
 
 Sent this run: 1. Failures: 1.
 
+
+## 2026-11-10 bounce/auto-reply
+
+- SKIP Lilium <info@lilium.com> — preliminary insolvency; mailbox unmonitored; pointed to lilium@anchor.eu (not a sales follow-up).
+

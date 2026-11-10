@@ -136,7 +136,9 @@
     "33": {
       "at": "2026-11-10T04:57:42.645502+00:00",
       "company": "Lilium",
-      "email": "info@lilium.com"
+      "email": "info@lilium.com",
+      "note": "Auto-reply: preliminary insolvency; mailbox unmonitored; contact lilium@anchor.eu for requests only",
+      "outcome": "SKIP_INSOLVENCY"
     },
     "34": {
       "at": "2026-11-10T04:57:42.645502+00:00",

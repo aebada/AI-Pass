@@ -31,7 +31,7 @@ rank,company,country,city,sector,wedge,email_primary,email_alt,priority,target_r
 30,Messe München,Germany,Munich,Events,Exhibitor twin + agents,info@messe-muenchen.de,,P1,Partnerships,SENT 2026-11-10,Wait 5 business days
 31,Celonis,Germany,Munich,Process mining,Twin + process graph,info@celonis.com,,P0,Alliances,SENT 2026-11-10,Wait 5 business days
 32,Personio,Germany,Munich,HR tech,Employee twin via HRIS,info@personio.com,,P1,Partnerships,SENT 2026-11-10,Wait 5 business days
-33,Lilium,Germany,Munich,Aerospace,Engineering twin + PLM,info@lilium.com,,P1,Digital,SENT 2026-11-10,Wait 5 business days
+33,Lilium,Germany,Munich,Aerospace,Engineering twin + PLM,info@lilium.com,lilium@anchor.eu,P1,Digital,SKIP,Insolvency — mailbox closed; do not follow up (anchor: lilium@anchor.eu)
 34,Isar Aerospace,Germany,Munich,Aerospace,Production twin,info@isaraerospace.com,,P1,Innovation,SENT 2026-11-10,Wait 5 business days
 35,ProSiebenSat.1,Germany,Unterföhring,Media,Content ops harness,info@prosiebensat1.com,,P1,Digital,SENT 2026-11-10,Wait 5 business days
 36,Burda,Germany,Munich,Media,Knowledge graph + agents,info@burda.com,,P1,Innovation,SENT 2026-11-10,Wait 5 business days
