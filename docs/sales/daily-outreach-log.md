@@ -159,3 +159,9 @@ Seeded sent=49.
 
 Hostinger SMTP 451 hostinger_out_ratelimit after first wave. Resume remaining READY later same day or next day.
 
+## 2026-11-10 05:51 UTC — send
+- SENT 46 Thyssenkrupp <info@thyssenkrupp.com>
+- RATE_LIMIT stop at 47 Henkel <info@henkel.com>: 4.7.1 Ratelimit "hostinger_out_ratelimit" exceeded for key "RLkioyk9wrxphjtrmz4srp9srw"
+
+Sent this run: 1. Failures: 1.
+
