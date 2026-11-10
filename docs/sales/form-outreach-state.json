@@ -89,6 +89,10 @@
     }
   },
   "submitted": {
+    "Bosch": {
+      "at": "2026-11-10T06:53:48.117896+00:00",
+      "url": "https://www.bosch.com/contact/"
+    },
     "Infineon Technologies": {
       "at": "2026-11-10T06:30:30.392689+00:00",
       "result": "formStatus success",

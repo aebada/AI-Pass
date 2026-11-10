@@ -1,13 +1,31 @@
 {
-  "days": {
-    "2026-11-10": 50
-  },
-  "sent": {
+  "bounced": {
     "1": {
       "at": "2026-11-10T04:57:42.645502+00:00",
       "company": "BMW Group",
       "email": "partner@bmw.com"
+    }
+  },
+  "days": {
+    "2026-11-10": 52
+  },
+  "priced": {
+    "47": {
+      "at": "2026-11-10T07:09:40.614261+00:00",
+      "company": "Henkel",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@henkel.com",
+      "mode": "intro"
     },
+    "48": {
+      "at": "2026-11-10T07:09:46.273303+00:00",
+      "company": "Bayer AG",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@bayer.com",
+      "mode": "intro"
+    }
+  },
+  "sent": {
     "10": {
       "at": "2026-11-10T04:57:42.645502+00:00",
       "company": "UnternehmerTUM / Women Startup",
@@ -204,6 +222,20 @@
       "at": "2026-11-10T05:51:55.547031+00:00",
       "company": "Thyssenkrupp",
       "email": "info@thyssenkrupp.com"
+    },
+    "47": {
+      "at": "2026-11-10T07:09:40.614261+00:00",
+      "company": "Henkel",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@henkel.com",
+      "mode": "intro"
+    },
+    "48": {
+      "at": "2026-11-10T07:09:46.273303+00:00",
+      "company": "Bayer AG",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@bayer.com",
+      "mode": "intro"
     },
     "5": {
       "at": "2026-11-10T04:57:42.645502+00:00",

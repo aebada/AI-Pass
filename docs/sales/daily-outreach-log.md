@@ -178,3 +178,17 @@ Sent this run: 1. Failures: 1.
 - Infineon info@ bounce → FORM startups cooperate.
 - Telekom → FORM https://www.telekom.de/gk/kontakt
 
+## 2026-11-10 07:09 UTC — send mode=intro csv=daily-100-prospects.csv
+- SENT 47 Henkel <info@henkel.com>
+- SENT 48 Bayer AG <info@bayer.com>
+- RATE_LIMIT stop at 49 Merck KGaA <info@merckgroup.com>: 4.7.1 Ratelimit "hostinger_out_ratelimit" exceeded for key "RLkioyk9wrxphjtrmz4srp9srw"
+
+Sent this run: 2. Failures: 1.
+
+
+## 2026-11-10 resume timer
+
+- Forms: Bosch + Infineon SUBMITTED; many corporate forms WAF/404 → email fallback
+- Email: Henkel + Bayer sent with prices; Hostinger rate limit again (52 today)
+- Validation: MX-only pre-send (SMTP :25 probe optional)
+

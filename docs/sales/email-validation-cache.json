@@ -7,12 +7,388 @@
     "reason": "smtp probe skipped: TimeoutError",
     "smtp_code": null
   },
+  "de_info@pwc.com": {
+    "checked_at": "2026-11-10T07:09:38.006294+00:00",
+    "email": "de_info@pwc.com",
+    "mx": "mx08-00096706.pphosted.com",
+    "ok": true,
+    "reason": "mx_ok",
+    "smtp_code": null
+  },
+  "info@ams-osram.com": {
+    "checked_at": "2026-11-10T07:09:37.152630+00:00",
+    "email": "info@ams-osram.com",
+    "mx": "amsosram-com0i.mail.protection.outlook.com",
+    "ok": true,
+    "reason": "mx_ok",
+    "smtp_code": null
+  },
+  "info@bayer.com": {
+    "checked_at": "2026-11-10T07:09:35.641437+00:00",
+    "email": "info@bayer.com",
+    "mx": "bayer-com.mail.protection.outlook.com",
+    "ok": true,
+    "reason": "mx_ok",
+    "smtp_code": null
+  },
+  "info@bechtle.com": {
+    "checked_at": "2026-11-10T07:09:37.723188+00:00",
+    "email": "info@bechtle.com",
+    "mx": "bg365securemaillb.bechtle.com",
+    "ok": true,
+    "reason": "mx_ok",
+    "smtp_code": null
+  },
+  "info@cancom.de": {
+    "checked_at": "2026-11-10T07:09:37.829553+00:00",
+    "email": "info@cancom.de",
+    "mx": "cancom-de.mail.protection.outlook.com",
+    "ok": true,
+    "reason": "mx_ok",
+    "smtp_code": null
+  },
+  "info@commerzbank.com": {
+    "checked_at": "2026-11-10T07:09:35.876538+00:00",
+    "email": "info@commerzbank.com",
+    "mx": "commerzbank-com.mail.protection.outlook.com",
+    "ok": true,
+    "reason": "mx_ok",
+    "smtp_code": null
+  },
+  "info@covestro.com": {
+    "checked_at": "2026-11-10T07:09:36.886879+00:00",
+    "email": "info@covestro.com",
+    "mx": "covestro-com.mail.protection.outlook.com",
+    "ok": true,
+    "reason": "mx_ok",
+    "smtp_code": null
+  },
+  "info@de.ey.com": {
+    "checked_at": "2026-11-10T07:09:38.021277+00:00",
+    "email": "info@de.ey.com",
+    "mx": "mx1.hc289-33.eu.iphmx.com",
+    "ok": true,
+    "reason": "mx_ok",
+    "smtp_code": null
+  },
+  "info@deloitte.de": {
+    "checked_at": "2026-11-10T07:09:37.979014+00:00",
+    "email": "info@deloitte.de",
+    "mx": "mx2.deloitteema11.eu.iphmx.com",
+    "ok": true,
+    "reason": "mx_ok",
+    "smtp_code": null
+  },
+  "info@deutsche-boerse.com": {
+    "checked_at": "2026-11-10T07:09:36.139992+00:00",
+    "email": "info@deutsche-boerse.com",
+    "mx": "mail17.deutsche-boerse.com",
+    "ok": true,
+    "reason": "mx_ok",
+    "smtp_code": null
+  },
+  "info@dmgmori.com": {
+    "checked_at": "2026-11-10T07:09:36.840002+00:00",
+    "email": "info@dmgmori.com",
+    "mx": "dmgmori-com.mail.protection.outlook.com",
+    "ok": true,
+    "reason": "mx_ok",
+    "smtp_code": null
+  },
+  "info@dzbank.de": {
+    "checked_at": "2026-11-10T07:09:36.044474+00:00",
+    "email": "info@dzbank.de",
+    "mx": "mg1.dzbank.de",
+    "ok": true,
+    "reason": "mx_ok",
+    "smtp_code": null
+  },
+  "info@enbw.com": {
+    "checked_at": "2026-11-10T07:09:36.407705+00:00",
+    "email": "info@enbw.com",
+    "mx": "enbw-com.mail.protection.outlook.com",
+    "ok": true,
+    "reason": "mx_ok",
+    "smtp_code": null
+  },
+  "info@eon.com": {
+    "checked_at": "2026-11-10T07:09:36.266253+00:00",
+    "email": "info@eon.com",
+    "mx": "eon-com.mail.protection.outlook.com",
+    "ok": true,
+    "reason": "mx_ok",
+    "smtp_code": null
+  },
+  "info@evonik.com": {
+    "checked_at": "2026-11-10T07:09:36.904878+00:00",
+    "email": "info@evonik.com",
+    "mx": "mailin-ip5.evonik.com",
+    "ok": true,
+    "reason": "mx_ok",
+    "smtp_code": null
+  },
+  "info@fraport.de": {
+    "checked_at": "2026-11-10T07:09:36.571148+00:00",
+    "email": "info@fraport.de",
+    "mx": "fraport-de.mail.protection.outlook.com",
+    "ok": true,
+    "reason": "mx_ok",
+    "smtp_code": null
+  },
+  "info@fresenius.com": {
+    "checked_at": "2026-11-10T07:09:37.003240+00:00",
+    "email": "info@fresenius.com",
+    "mx": "fresenius-com.mail.protection.outlook.com",
+    "ok": true,
+    "reason": "mx_ok",
+    "smtp_code": null
+  },
+  "info@hapag-lloyd.com": {
+    "checked_at": "2026-11-10T07:09:36.674756+00:00",
+    "email": "info@hapag-lloyd.com",
+    "mx": "hapaglloyd-com01c.mail.protection.outlook.com",
+    "ok": true,
+    "reason": "mx_ok",
+    "smtp_code": null
+  },
+  "info@heidelbergmaterials.com": {
+    "checked_at": "2026-11-10T07:09:36.866208+00:00",
+    "email": "info@heidelbergmaterials.com",
+    "mx": "heidelbergmaterials-com.mail.protection.outlook.com",
+    "ok": true,
+    "reason": "mx_ok",
+    "smtp_code": null
+  },
+  "info@henkel.com": {
+    "checked_at": "2026-11-10T07:09:35.601683+00:00",
+    "email": "info@henkel.com",
+    "mx": "henkel-com.d-v1.mx.microsoft",
+    "ok": true,
+    "reason": "mx_ok",
+    "smtp_code": null
+  },
+  "info@hermesworld.com": {
+    "checked_at": "2026-11-10T07:09:36.683362+00:00",
+    "email": "info@hermesworld.com",
+    "mx": "hermesworld-com.mail.protection.outlook.com",
+    "ok": true,
+    "reason": "mx_ok",
+    "smtp_code": null
+  },
+  "info@hugoboss.com": {
+    "checked_at": "2026-11-10T07:09:38.742102+00:00",
+    "email": "info@hugoboss.com",
+    "mx": "hugoboss-com.mail.protection.outlook.com",
+    "ok": true,
+    "reason": "mx_ok",
+    "smtp_code": null
+  },
+  "info@kpmg.de": {
+    "checked_at": "2026-11-10T07:09:38.505926+00:00",
+    "email": "info@kpmg.de",
+    "mx": "mxa-00120b03.gslb.pphosted.com",
+    "ok": true,
+    "reason": "mx_ok",
+    "smtp_code": null
+  },
+  "info@lmu.de": {
+    "checked_at": "2026-11-10T07:09:38.545154+00:00",
+    "email": "info@lmu.de",
+    "mx": "postrelay1.lrz.de",
+    "ok": true,
+    "reason": "mx_ok",
+    "smtp_code": null
+  },
+  "info@lufthansa.com": {
+    "checked_at": "2026-11-10T07:09:36.561177+00:00",
+    "email": "info@lufthansa.com",
+    "mx": "mxb-005f4701.gslb.pphosted.com",
+    "ok": true,
+    "reason": "mx_ok",
+    "smtp_code": null
+  },
+  "info@merckgroup.com": {
+    "checked_at": "2026-11-10T07:09:35.665487+00:00",
+    "email": "info@merckgroup.com",
+    "mx": "mxa-005f4802.gslb.pphosted.com",
+    "ok": true,
+    "reason": "mx_ok",
+    "smtp_code": null
+  },
+  "info@msg.group": {
+    "checked_at": "2026-11-10T07:09:37.921981+00:00",
+    "email": "info@msg.group",
+    "mx": "msg-group.mail.protection.outlook.com",
+    "ok": true,
+    "reason": "mx_ok",
+    "smtp_code": null
+  },
+  "info@nemetschek.com": {
+    "checked_at": "2026-11-10T07:09:37.189543+00:00",
+    "email": "info@nemetschek.com",
+    "mx": "nemetschek-com.mail.protection.outlook.com",
+    "ok": true,
+    "reason": "mx_ok",
+    "smtp_code": null
+  },
+  "info@ottogroup.com": {
+    "checked_at": "2026-11-10T07:09:35.698572+00:00",
+    "email": "info@ottogroup.com",
+    "mx": "ottogroup-com.mail.protection.outlook.com",
+    "ok": true,
+    "reason": "mx_ok",
+    "smtp_code": null
+  },
+  "info@rwe.com": {
+    "checked_at": "2026-11-10T07:09:36.293166+00:00",
+    "email": "info@rwe.com",
+    "mx": "secmail.rwe.com",
+    "ok": true,
+    "reason": "mx_ok",
+    "smtp_code": null
+  },
+  "info@softwareag.com": {
+    "checked_at": "2026-11-10T07:09:37.225107+00:00",
+    "email": "info@softwareag.com",
+    "mx": "softwareag-com.mail.protection.outlook.com",
+    "ok": true,
+    "reason": "mx_ok",
+    "smtp_code": null
+  },
   "info@telekom.de": {
     "checked_at": "2026-11-10T06:28:20.152271+00:00",
     "email": "info@telekom.de",
     "mx": "mailin.ng.telekom.net",
     "ok": true,
     "reason": "smtp probe skipped: TimeoutError",
+    "smtp_code": null
+  },
+  "info@trumpf.com": {
+    "checked_at": "2026-11-10T07:09:36.730314+00:00",
+    "email": "info@trumpf.com",
+    "mx": "trumpf-com.mail.protection.outlook.com",
+    "ok": true,
+    "reason": "mx_ok",
+    "smtp_code": null
+  },
+  "info@vonovia.de": {
+    "checked_at": "2026-11-10T07:09:36.516285+00:00",
+    "email": "info@vonovia.de",
+    "mx": "mxb-00271f01.gslb.pphosted.com",
+    "ok": true,
+    "reason": "mx_ok",
+    "smtp_code": null
+  },
+  "info@zeiss.com": {
+    "checked_at": "2026-11-10T07:09:37.121521+00:00",
+    "email": "info@zeiss.com",
+    "mx": "mx-in02.eu.retarus.com",
+    "ok": true,
+    "reason": "mx_ok",
+    "smtp_code": null
+  },
+  "partners@adjust.com": {
+    "checked_at": "2026-11-10T07:09:38.769620+00:00",
+    "email": "partners@adjust.com",
+    "mx": "aspmx.l.google.com",
+    "ok": true,
+    "reason": "mx_ok",
+    "smtp_code": null
+  },
+  "partners@contentful.com": {
+    "checked_at": "2026-11-10T07:09:35.768225+00:00",
+    "email": "partners@contentful.com",
+    "mx": "mxa-00740701.gslb.pphosted.com",
+    "ok": true,
+    "reason": "mx_ok",
+    "smtp_code": null
+  },
+  "partners@teamviewer.com": {
+    "checked_at": "2026-11-10T07:09:37.209830+00:00",
+    "email": "partners@teamviewer.com",
+    "mx": "de-smtp-inbound-1.mimecast.com",
+    "ok": true,
+    "reason": "mx_ok",
+    "smtp_code": null
+  },
+  "partnerships@getyourguide.com": {
+    "checked_at": "2026-11-10T07:09:38.761888+00:00",
+    "email": "partnerships@getyourguide.com",
+    "mx": "aspmx.l.google.com",
+    "ok": true,
+    "reason": "mx_ok",
+    "smtp_code": null
+  },
+  "press@aboutyou.com": {
+    "checked_at": "2026-11-10T07:09:38.796367+00:00",
+    "email": "press@aboutyou.com",
+    "mx": "aspmx.l.google.com",
+    "ok": true,
+    "reason": "mx_ok",
+    "smtp_code": null
+  },
+  "press@adidas.com": {
+    "checked_at": "2026-11-10T07:09:35.674561+00:00",
+    "email": "press@adidas.com",
+    "mx": "adidas-com.mail.protection.outlook.com",
+    "ok": true,
+    "reason": "mx_ok",
+    "smtp_code": null
+  },
+  "press@auto1-group.com": {
+    "checked_at": "2026-11-10T07:09:35.795951+00:00",
+    "email": "press@auto1-group.com",
+    "mx": "aspmx.l.google.com",
+    "ok": true,
+    "reason": "mx_ok",
+    "smtp_code": null
+  },
+  "press@deliveryhero.com": {
+    "checked_at": "2026-11-10T07:09:35.739724+00:00",
+    "email": "press@deliveryhero.com",
+    "mx": "aspmx.l.google.com",
+    "ok": true,
+    "reason": "mx_ok",
+    "smtp_code": null
+  },
+  "press@flixbus.com": {
+    "checked_at": "2026-11-10T07:09:35.868297+00:00",
+    "email": "press@flixbus.com",
+    "mx": "flixbus-com.mail.protection.outlook.com",
+    "ok": true,
+    "reason": "mx_ok",
+    "smtp_code": null
+  },
+  "press@hellofresh.com": {
+    "checked_at": "2026-11-10T07:09:35.787496+00:00",
+    "email": "press@hellofresh.com",
+    "mx": "aspmx.l.google.com",
+    "ok": true,
+    "reason": "mx_ok",
+    "smtp_code": null
+  },
+  "press@puma.com": {
+    "checked_at": "2026-11-10T07:09:38.725542+00:00",
+    "email": "press@puma.com",
+    "mx": "puma-com.mail.protection.outlook.com",
+    "ok": true,
+    "reason": "mx_ok",
+    "smtp_code": null
+  },
+  "press@soundcloud.com": {
+    "checked_at": "2026-11-10T07:09:38.788063+00:00",
+    "email": "press@soundcloud.com",
+    "mx": "aspmx.l.google.com",
+    "ok": true,
+    "reason": "mx_ok",
+    "smtp_code": null
+  },
+  "press@zalando.de": {
+    "checked_at": "2026-11-10T07:09:35.721326+00:00",
+    "email": "press@zalando.de",
+    "mx": "smtp.google.com",
+    "ok": true,
+    "reason": "mx_ok",
     "smtp_code": null
   },
   "startups@infineon.com": {

@@ -256,6 +256,11 @@ def main() -> int:
         default=DEFAULT_CSV,
         help="Prospect CSV path",
     )
+    parser.add_argument(
+        "--smtp-probe",
+        action="store_true",
+        help="Also RCPT-probe recipient MX (slow; often blocked on :25)",
+    )
     args = parser.parse_args()
     csv_path = args.csv if args.csv.is_absolute() else ROOT / args.csv
 
@@ -292,7 +297,10 @@ def main() -> int:
     if not batch:
         return 0
 
-    # Mandatory pre-send email validation (syntax + MX + SMTP RCPT probe).
+    # Mandatory pre-send email validation (syntax + MX).
+    # SMTP RCPT probes are optional: many networks block outbound :25 and each
+    # probe can hang ~20s; use --smtp-probe when the environment allows it.
+    parser_smtp_probe = getattr(args, "smtp_probe", False)
     sys.path.insert(0, str(ROOT / "scripts"))
     from validate_prospect_emails import (  # type: ignore
         load_cache,
@@ -304,7 +312,9 @@ def main() -> int:
     validated_batch: list[dict] = []
     for row in batch:
         email = row["email_primary"].strip()
-        result = validate_email(email, smtp_probe=True, cache=vcache)
+        result = validate_email(
+            email, smtp_probe=parser_smtp_probe, cache=vcache
+        )
         if not result.ok:
             print(f"SKIP_INVALID {row['rank']} {row['company']} <{email}> {result.reason}", flush=True)
             row["email_valid"] = "no"
@@ -315,6 +325,7 @@ def main() -> int:
         row["email_valid"] = "yes"
         row["email_check_reason"] = result.reason
         validated_batch.append(row)
+        print(f"VALID {row['rank']} {row['company']} <{email}> {result.reason}", flush=True)
     save_cache(vcache)
     # Persist bounce marks
     all_rows = load_prospects(csv_path)
