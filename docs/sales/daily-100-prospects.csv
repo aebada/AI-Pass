@@ -1,23 +1,23 @@
 rank,company,country,city,sector,wedge,email_primary,email_alt,priority,target_role,status,next_action,preferred_channel,email_fallback,email_valid,email_check_reason,form_status
-1,BMW Group,Germany,Munich,Automotive,Employee + plant twins for production quality,bmw.startup.garage@bmw.com,partner@bmw.com,P0,Partnerships,READY,Validate then send garage inbox (partner@ bounced),EMAIL,yes,,partner@bmw.com DSN 5.1.0; switched primary to garage; use Startup Garage form,BLOCKED_OR_COMPLEX
+1,BMW Group,Germany,Munich,Automotive,Employee + plant twins for production quality,bmw.startup.garage@bmw.com,partner@bmw.com,P0,Partnerships,SENT 2026-11-10,Send pricing follow-up day 5,EMAIL,yes,yes,smtp probe skipped: TimeoutError,BLOCKED_OR_COMPLEX
 2,Siemens AG,Germany,Munich,Industrial,Shop-floor twin + governed agents,partner@siemens.com,info@siemens.com,P0,Alliances,SENT 2026-11-10,Send pricing follow-up day 5,EMAIL,yes,,,BLOCKED_OR_COMPLEX
 3,SAP SE,Germany,Walldorf,Enterprise software,Twin + Connect into SAP landscapes,partner@sap.com,signavio.partners@sap.com,P0,Partners,SENT 2026-11-10,Send pricing follow-up day 5,EMAIL,yes,,,BLOCKED_OR_COMPLEX
 4,Allianz SE,Germany,Munich,Insurance,Claims twin + policy-gated agents,info@allianz.com,,P0,Innovation,SENT 2026-11-10,Send pricing follow-up day 5,EMAIL,yes,,,BLOCKED_OR_COMPLEX
 5,Deutsche Bank,Germany,Frankfurt,Banking,Governed agent harness for ops,deutsche.bank@db.com,,P0,Innovation,SENT 2026-11-10,Send pricing follow-up day 5,EMAIL,yes,,,BLOCKED_OR_COMPLEX
 6,Munich Re,Germany,Munich,Reinsurance,Risk twin + evidence graph,info@munichre.com,,P0,Digital,SENT 2026-11-10,Send pricing follow-up day 5,EMAIL,yes,,,BLOCKED_OR_COMPLEX
-7,Infineon Technologies,Germany,Neubiberg,Semiconductors,Fab twin + quality hops,startups@infineon.com,info@infineon.com,P0,Digital manufacturing,FORM 2026-11-10,Wait for form reply,FORM,no,no,info@infineon.com rejected by smtp2.infineon.com; use startups form,SUBMITTED
-8,KUKA AG,Germany,Augsburg,Robotics,Robotics twin + harness,info@kuka.com,,P0,Innovation,SENT 2026-11-10,Send pricing follow-up day 5,FORM,no,,,READY
+7,Infineon Technologies,Germany,Neubiberg,Semiconductors,Fab twin + quality hops,startups@infineon.com,info@infineon.com,P0,Digital manufacturing,SENT 2026-11-10,Send pricing follow-up day 5,FORM,no,no,info@infineon.com rejected by smtp2.infineon.com; use startups form,SUBMITTED
+8,KUKA AG,Germany,Augsburg,Robotics,Robotics twin + harness,info@kuka.com,,P0,Innovation,SENT 2026-11-10,Send pricing follow-up day 5,EMAIL,yes,,,BLOCKED_OR_COMPLEX
 9,TÜV SÜD,Germany,Munich,Certification,Trust Engine + twin evidence packs,info@tuvsud.com,,P0,Digital services,SENT 2026-11-10,Send pricing follow-up day 5,EMAIL,yes,,,BLOCKED_OR_COMPLEX
 10,UnternehmerTUM / Women Startup,Germany,Garching,Startup ecosystem,Founder twin workshops,womenstartup@unternehmertum.de,,P0,Program,SENT 2026-11-10,Send pricing follow-up day 5,EMAIL,yes,,,
 11,Datev eG,Germany,Nuremberg,Accounting,DATEV connector + finance twin,info@datev.de,,P0,Partnerships,SENT 2026-11-10,Send pricing follow-up day 5,EMAIL,yes,,,
 12,Deutsche Telekom,Germany,Bonn,Telecom,Enterprise AI control plane,info@telekom.de,,P0,Partners,SENT 2026-11-10,Send pricing follow-up day 5,EMAIL,yes,,Prefer GK contact form over info@telekom.de,BLOCKED_OR_COMPLEX
-13,Bosch,Germany,Stuttgart,Industrial,Plant twin + employee twins,info@bosch.com,,P0,Innovation,FORM 2026-11-10,Wait for form reply,FORM,no,,,SUBMITTED
+13,Bosch,Germany,Stuttgart,Industrial,Plant twin + employee twins,info@bosch.com,,P0,Innovation,SENT 2026-11-10,Send pricing follow-up day 5,FORM,no,,,SUBMITTED
 14,BASF,Germany,Ludwigshafen,Chemicals,Process twin + policy agents,info@basf.com,,P0,Digital,SENT 2026-11-10,Send pricing follow-up day 5,EMAIL,yes,,,BLOCKED_OR_COMPLEX
 15,Continental AG,Germany,Hanover,Automotive,Production twin harness,info@conti.de,,P0,Innovation,SENT 2026-11-10,Send pricing follow-up day 5,EMAIL,yes,,,
 16,ZF Friedrichshafen,Germany,Friedrichshafen,Automotive,Supplier twin + quality,info@zf.com,,P0,Digital,SENT 2026-11-10,Send pricing follow-up day 5,EMAIL,yes,,,
 17,Mercedes-Benz Group,Germany,Stuttgart,Automotive,Employee + production twins,dialog@mercedes-benz.com,,P0,Partnerships,SENT 2026-11-10,Send pricing follow-up day 5,EMAIL,yes,,,BLOCKED_OR_COMPLEX
-18,Audi AG,Germany,Ingolstadt,Automotive,Plant twin agents,info@audi.de,,P0,Innovation,SENT 2026-11-10,Send pricing follow-up day 5,FORM,no,,,READY
-19,Volkswagen AG,Germany,Wolfsburg,Automotive,Group twin platform,info@volkswagen.de,,P0,Digital,SENT 2026-11-10,Send pricing follow-up day 5,FORM,no,,,READY
+18,Audi AG,Germany,Ingolstadt,Automotive,Plant twin agents,info@audi.de,,P0,Innovation,SENT 2026-11-10,Send pricing follow-up day 5,EMAIL,yes,,,BLOCKED_OR_COMPLEX
+19,Volkswagen AG,Germany,Wolfsburg,Automotive,Group twin platform,info@volkswagen.de,,P0,Digital,SENT 2026-11-10,Send pricing follow-up day 5,EMAIL,yes,,,BLOCKED_OR_COMPLEX
 20,MAN Truck & Bus,Germany,Munich,Commercial vehicles,Fleet + plant twins,info@man.eu,,P1,Innovation,SENT 2026-11-10,Send pricing follow-up day 5,EMAIL,yes,,,
 21,MTU Aero Engines,Germany,Munich,Aerospace,Quality twin + evidence graph,info@mtu.de,,P1,Digital,SENT 2026-11-10,Send pricing follow-up day 5,EMAIL,yes,,,
 22,Rohde & Schwarz,Germany,Munich,Test & measurement,Lab twin harness,info@rohde-schwarz.com,,P1,Innovation,SENT 2026-11-10,Send pricing follow-up day 5,EMAIL,yes,,,
@@ -29,7 +29,7 @@ rank,company,country,city,sector,wedge,email_primary,email_alt,priority,target_r
 28,SWM Stadtwerke München,Germany,Munich,Energy/utilities,Grid + customer twin,info@swm.de,,P1,Digital,SENT 2026-11-10,Send pricing follow-up day 5,EMAIL,yes,,,
 29,Flughafen München,Germany,Munich,Aviation,Ops twin harness,info@munich-airport.de,,P1,Innovation,SENT 2026-11-10,Send pricing follow-up day 5,EMAIL,yes,,,
 30,Messe München,Germany,Munich,Events,Exhibitor twin + agents,info@messe-muenchen.de,,P1,Partnerships,SENT 2026-11-10,Send pricing follow-up day 5,EMAIL,yes,,,
-31,Celonis,Germany,Munich,Process mining,Twin + process graph,info@celonis.com,,P0,Alliances,SENT 2026-11-10,Send pricing follow-up day 5,FORM,no,,,READY
+31,Celonis,Germany,Munich,Process mining,Twin + process graph,info@celonis.com,,P0,Alliances,SENT 2026-11-10,Send pricing follow-up day 5,EMAIL,yes,,,BLOCKED_OR_COMPLEX
 32,Personio,Germany,Munich,HR tech,Employee twin via HRIS,info@personio.com,,P1,Partnerships,SENT 2026-11-10,Send pricing follow-up day 5,EMAIL,yes,,,
 33,Lilium,Germany,Munich,Aerospace,Engineering twin + PLM,info@lilium.com,lilium@anchor.eu,P1,Digital,SKIP,Insolvency — mailbox closed; do not follow up (anchor: lilium@anchor.eu),EMAIL,yes,,,
 34,Isar Aerospace,Germany,Munich,Aerospace,Production twin,info@isaraerospace.com,,P1,Innovation,SENT 2026-11-10,Send pricing follow-up day 5,EMAIL,yes,,,
@@ -40,14 +40,14 @@ rank,company,country,city,sector,wedge,email_primary,email_alt,priority,target_r
 39,Giesecke+Devrient,Germany,Munich,Security tech,Trust + twin evidence,info@gi-de.com,,P1,Partnerships,SENT 2026-11-10,Send pricing follow-up day 5,EMAIL,yes,,,
 40,TUM,Germany,Munich,University,Research twin lab,info@tum.de,,P1,Partnerships,SENT 2026-11-10,Send pricing follow-up day 5,EMAIL,yes,,,
 41,LMU,Germany,Munich,University,Knowledge graph research,info@lmu.de,,P2,Partnerships,READY,Send research collab,EMAIL,yes,yes,mx_ok,
-42,Fraunhofer AISEC,Germany,Garching,Research,Trust Engine partnership,info@aisec.fraunhofer.de,,P0,Partnerships,SENT 2026-11-10,Send pricing follow-up day 5,FORM,no,,,READY
+42,Fraunhofer AISEC,Germany,Garching,Research,Trust Engine partnership,info@aisec.fraunhofer.de,,P0,Partnerships,SENT 2026-11-10,Send pricing follow-up day 5,EMAIL,yes,,,BLOCKED_OR_COMPLEX
 43,Fraunhofer IGCV,Germany,Augsburg,Manufacturing research,Production twin,info@igcv.fraunhofer.de,,P1,Partnerships,SENT 2026-11-10,Send pricing follow-up day 5,EMAIL,yes,,,
 44,DFKI,Germany,Saarbrücken,AI research,Agent harness collab,info@dfki.de,,P1,Partnerships,SENT 2026-11-10,Send pricing follow-up day 5,EMAIL,yes,,,
 45,Schaeffler,Germany,Herzogenaurach,Automotive supplier,Plant twin,info@schaeffler.com,,P1,Digital,SENT 2026-11-10,Send pricing follow-up day 5,EMAIL,yes,,,
 46,Thyssenkrupp,Germany,Essen,Industrial,Ops twin harness,info@thyssenkrupp.com,,P1,Innovation,SENT 2026-11-10,Send pricing follow-up day 5,EMAIL,yes,,,
 47,Henkel,Germany,Düsseldorf,FMCG/chem,Process twin,info@henkel.com,,P1,Digital,SENT 2026-11-10,Send pricing follow-up day 5,EMAIL,yes,yes,mx_ok,
 48,Bayer AG,Germany,Leverkusen,Life sciences,Evidence graph + twin,info@bayer.com,,P1,Innovation,SENT 2026-11-10,Send pricing follow-up day 5,EMAIL,yes,yes,mx_ok,
-49,Merck KGaA,Germany,Darmstadt,Life sciences,Lab twin,info@merckgroup.com,,P1,Digital,READY,Send pilot intro,EMAIL,yes,yes,mx_ok,
+49,Merck KGaA,Germany,Darmstadt,Life sciences,Lab twin,info@merckgroup.com,,P1,Digital,SENT 2026-11-10,Send pricing follow-up day 5,EMAIL,yes,yes,mx_ok,
 50,Adidas,Germany,Herzogenaurach,Retail/brand,Supply twin harness,press@adidas.com,,P1,Innovation,READY,Send pilot intro,EMAIL,yes,yes,mx_ok,
 51,Puma,Germany,Herzogenaurach,Retail/brand,Ops agents,press@puma.com,,P2,Innovation,READY,Send pilot intro,EMAIL,yes,yes,mx_ok,
 52,Hugo Boss,Germany,Metzingen,Retail,Retail twin,info@hugoboss.com,,P2,Digital,READY,Send pilot intro,EMAIL,yes,yes,mx_ok,
@@ -69,11 +69,11 @@ rank,company,country,city,sector,wedge,email_primary,email_alt,priority,target_r
 68,RWE,Germany,Essen,Energy,Plant twin,info@rwe.com,,P1,Innovation,READY,Send pilot intro,EMAIL,yes,yes,mx_ok,
 69,EnBW,Germany,Karlsruhe,Energy,Ops agents,info@enbw.com,,P1,Digital,READY,Send pilot intro,EMAIL,yes,yes,mx_ok,
 70,Vonovia,Germany,Bochum,Real estate,Property twin,info@vonovia.de,,P1,Innovation,READY,Send pilot intro,EMAIL,yes,yes,mx_ok,
-71,Deutsche Bahn,Germany,Berlin,Rail,Network twin harness,info@deutschebahn.com,,P0,Digital,SENT 2026-11-10,Send pricing follow-up day 5,FORM,no,,,READY
+71,Deutsche Bahn,Germany,Berlin,Rail,Network twin harness,info@deutschebahn.com,,P0,Digital,SENT 2026-11-10,Send pricing follow-up day 5,EMAIL,yes,,,BLOCKED_OR_COMPLEX
 72,Lufthansa Group,Germany,Frankfurt,Aviation,Ops twin,info@lufthansa.com,,P1,Innovation,READY,Send pilot intro,EMAIL,yes,yes,mx_ok,
 73,Fraport,Germany,Frankfurt,Airports,Airport twin,info@fraport.de,,P1,Digital,READY,Send pilot intro,EMAIL,yes,yes,mx_ok,
 74,Hapag-Lloyd,Germany,Hamburg,Shipping,Logistics twin,info@hapag-lloyd.com,,P1,Innovation,READY,Send pilot intro,EMAIL,yes,yes,mx_ok,
-75,DHL / Deutsche Post,Germany,Bonn,Logistics,Network harness,info@dhl.com,,P0,Partnerships,SENT 2026-11-10,Send pricing follow-up day 5,FORM,no,,,READY
+75,DHL / Deutsche Post,Germany,Bonn,Logistics,Network harness,info@dhl.com,,P0,Partnerships,SENT 2026-11-10,Send pricing follow-up day 5,EMAIL,yes,,,BLOCKED_OR_COMPLEX
 76,Hermes Germany,Germany,Hamburg,Logistics,Delivery twin,info@hermesworld.com,,P1,Digital,READY,Send pilot intro,EMAIL,yes,yes,mx_ok,
 77,Trumpf,Germany,Ditzingen,Machinery,Machine twin,info@trumpf.com,,P1,Innovation,READY,Send pilot intro,EMAIL,yes,yes,mx_ok,
 78,DMG Mori,Germany,Bielefeld,Machinery,Production twin,info@dmgmori.com,,P1,Digital,READY,Send pilot intro,EMAIL,yes,yes,mx_ok,

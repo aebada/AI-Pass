@@ -192,3 +192,17 @@ Sent this run: 2. Failures: 1.
 - Email: Henkel + Bayer sent with prices; Hostinger rate limit again (52 today)
 - Validation: MX-only pre-send (SMTP :25 probe optional)
 
+## 2026-11-10 08:11 UTC — send mode=intro csv=daily-100-prospects.csv
+- SENT 1 BMW Group <bmw.startup.garage@bmw.com>
+- SENT 49 Merck KGaA <info@merckgroup.com>
+- RATE_LIMIT stop at 50 Adidas <press@adidas.com>: 4.7.1 Ratelimit "hostinger_out_ratelimit" exceeded for key "RLkioyk9wrxphjtrmz4srp9srw"
+
+Sent this run: 2. Failures: 1.
+
+
+## 2026-11-10 08:10 UTC resume
+
+- Forms remaining: all blocked/404 → email fallback
+- Sent BMW Startup Garage <bmw.startup.garage@bmw.com> + Merck with prices
+- Hostinger rate limit again (54 emailed today). ~44 READY remain.
+

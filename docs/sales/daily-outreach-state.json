@@ -7,9 +7,16 @@
     }
   },
   "days": {
-    "2026-11-10": 52
+    "2026-11-10": 54
   },
   "priced": {
+    "1": {
+      "at": "2026-11-10T08:11:36.269598+00:00",
+      "company": "BMW Group",
+      "csv": "daily-100-prospects.csv",
+      "email": "bmw.startup.garage@bmw.com",
+      "mode": "intro"
+    },
     "47": {
       "at": "2026-11-10T07:09:40.614261+00:00",
       "company": "Henkel",
@@ -23,9 +30,23 @@
       "csv": "daily-100-prospects.csv",
       "email": "info@bayer.com",
       "mode": "intro"
+    },
+    "49": {
+      "at": "2026-11-10T08:11:42.315912+00:00",
+      "company": "Merck KGaA",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@merckgroup.com",
+      "mode": "intro"
     }
   },
   "sent": {
+    "1": {
+      "at": "2026-11-10T08:11:36.269598+00:00",
+      "company": "BMW Group",
+      "csv": "daily-100-prospects.csv",
+      "email": "bmw.startup.garage@bmw.com",
+      "mode": "intro"
+    },
     "10": {
       "at": "2026-11-10T04:57:42.645502+00:00",
       "company": "UnternehmerTUM / Women Startup",
@@ -235,6 +256,13 @@
       "company": "Bayer AG",
       "csv": "daily-100-prospects.csv",
       "email": "info@bayer.com",
+      "mode": "intro"
+    },
+    "49": {
+      "at": "2026-11-10T08:11:42.315912+00:00",
+      "company": "Merck KGaA",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@merckgroup.com",
       "mode": "intro"
     },
     "5": {
