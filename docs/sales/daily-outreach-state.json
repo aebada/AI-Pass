@@ -7,7 +7,7 @@
     }
   },
   "days": {
-    "2026-11-10": 72
+    "2026-11-10": 77
   },
   "priced": {
     "1": {
@@ -162,6 +162,41 @@
       "company": "Hapag-Lloyd",
       "csv": "daily-100-prospects.csv",
       "email": "info@hapag-lloyd.com",
+      "mode": "intro"
+    },
+    "76": {
+      "at": "2026-11-10T18:16:39.644399+00:00",
+      "company": "Hermes Germany",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@hermesworld.com",
+      "mode": "intro"
+    },
+    "77": {
+      "at": "2026-11-10T18:16:45.532548+00:00",
+      "company": "Trumpf",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@trumpf.com",
+      "mode": "intro"
+    },
+    "78": {
+      "at": "2026-11-10T18:16:51.653922+00:00",
+      "company": "DMG Mori",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@dmgmori.com",
+      "mode": "intro"
+    },
+    "79": {
+      "at": "2026-11-10T18:16:57.873386+00:00",
+      "company": "Heidelberg Materials",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@heidelbergmaterials.com",
+      "mode": "intro"
+    },
+    "80": {
+      "at": "2026-11-10T18:17:04.871042+00:00",
+      "company": "Covestro",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@covestro.com",
       "mode": "intro"
     }
   },
@@ -542,10 +577,45 @@
       "company": "DHL / Deutsche Post",
       "email": "info@dhl.com"
     },
+    "76": {
+      "at": "2026-11-10T18:16:39.644399+00:00",
+      "company": "Hermes Germany",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@hermesworld.com",
+      "mode": "intro"
+    },
+    "77": {
+      "at": "2026-11-10T18:16:45.532548+00:00",
+      "company": "Trumpf",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@trumpf.com",
+      "mode": "intro"
+    },
+    "78": {
+      "at": "2026-11-10T18:16:51.653922+00:00",
+      "company": "DMG Mori",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@dmgmori.com",
+      "mode": "intro"
+    },
+    "79": {
+      "at": "2026-11-10T18:16:57.873386+00:00",
+      "company": "Heidelberg Materials",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@heidelbergmaterials.com",
+      "mode": "intro"
+    },
     "8": {
       "at": "2026-11-10T04:57:42.645502+00:00",
       "company": "KUKA AG",
       "email": "info@kuka.com"
+    },
+    "80": {
+      "at": "2026-11-10T18:17:04.871042+00:00",
+      "company": "Covestro",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@covestro.com",
+      "mode": "intro"
     },
     "83": {
       "at": "2026-11-10T04:57:42.645502+00:00",

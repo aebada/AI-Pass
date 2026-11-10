@@ -268,3 +268,19 @@ Sent this run: 6. Failures: 1.
 - Sent RWE, EnBW, Vonovia, Lufthansa, Fraport, Hapag-Lloyd
 - Hostinger rate limit at Hermes. Day total ~72. ~26 READY remain.
 
+## 2026-11-10 18:16 UTC — send mode=intro csv=daily-100-prospects.csv
+- SENT 76 Hermes Germany <info@hermesworld.com>
+- SENT 77 Trumpf <info@trumpf.com>
+- SENT 78 DMG Mori <info@dmgmori.com>
+- SENT 79 Heidelberg Materials <info@heidelbergmaterials.com>
+- SENT 80 Covestro <info@covestro.com>
+- RATE_LIMIT stop at 81 Evonik <info@evonik.com>: 4.7.1 Ratelimit "hostinger_out_ratelimit" exceeded for key "RLkioyk9wrxphjtrmz4srp9srw"
+
+Sent this run: 5. Failures: 1.
+
+
+## 2026-11-10 18:16 UTC resume
+
+- Sent Hermes, Trumpf, DMG Mori, Heidelberg Materials, Covestro
+- Hostinger rate limit at Evonik. Day total ~77. ~21 READY remain.
+
