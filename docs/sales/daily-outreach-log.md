@@ -284,3 +284,19 @@ Sent this run: 5. Failures: 1.
 - Sent Hermes, Trumpf, DMG Mori, Heidelberg Materials, Covestro
 - Hostinger rate limit at Evonik. Day total ~77. ~21 READY remain.
 
+## 2026-11-10 20:17 UTC — send mode=intro csv=daily-100-prospects.csv
+- SENT 81 Evonik <info@evonik.com>
+- SENT 82 Fresenius <info@fresenius.com>
+- SENT 84 Carl Zeiss <info@zeiss.com>
+- SENT 85 Osram / ams OSRAM <info@ams-osram.com>
+- SENT 86 Nemetschek <info@nemetschek.com>
+- RATE_LIMIT stop at 87 TeamViewer <partners@teamviewer.com>: 4.7.1 Ratelimit "hostinger_out_ratelimit" exceeded for key "RLkioyk9wrxphjtrmz4srp9srw"
+
+Sent this run: 5. Failures: 1.
+
+
+## 2026-11-10 20:17 UTC resume
+
+- Sent Evonik, Fresenius, Carl Zeiss, ams OSRAM, Nemetschek
+- Hostinger rate limit at TeamViewer. Day total ~82. ~16 READY remain.
+

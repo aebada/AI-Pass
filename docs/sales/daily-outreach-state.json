@@ -7,7 +7,7 @@
     }
   },
   "days": {
-    "2026-11-10": 77
+    "2026-11-10": 82
   },
   "priced": {
     "1": {
@@ -197,6 +197,41 @@
       "company": "Covestro",
       "csv": "daily-100-prospects.csv",
       "email": "info@covestro.com",
+      "mode": "intro"
+    },
+    "81": {
+      "at": "2026-11-10T20:17:37.655428+00:00",
+      "company": "Evonik",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@evonik.com",
+      "mode": "intro"
+    },
+    "82": {
+      "at": "2026-11-10T20:17:43.559359+00:00",
+      "company": "Fresenius",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@fresenius.com",
+      "mode": "intro"
+    },
+    "84": {
+      "at": "2026-11-10T20:17:49.308020+00:00",
+      "company": "Carl Zeiss",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@zeiss.com",
+      "mode": "intro"
+    },
+    "85": {
+      "at": "2026-11-10T20:17:55.033072+00:00",
+      "company": "Osram / ams OSRAM",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@ams-osram.com",
+      "mode": "intro"
+    },
+    "86": {
+      "at": "2026-11-10T20:18:01.779538+00:00",
+      "company": "Nemetschek",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@nemetschek.com",
       "mode": "intro"
     }
   },
@@ -617,10 +652,45 @@
       "email": "info@covestro.com",
       "mode": "intro"
     },
+    "81": {
+      "at": "2026-11-10T20:17:37.655428+00:00",
+      "company": "Evonik",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@evonik.com",
+      "mode": "intro"
+    },
+    "82": {
+      "at": "2026-11-10T20:17:43.559359+00:00",
+      "company": "Fresenius",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@fresenius.com",
+      "mode": "intro"
+    },
     "83": {
       "at": "2026-11-10T04:57:42.645502+00:00",
       "company": "Siemens Healthineers",
       "email": "info@siemens-healthineers.com"
+    },
+    "84": {
+      "at": "2026-11-10T20:17:49.308020+00:00",
+      "company": "Carl Zeiss",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@zeiss.com",
+      "mode": "intro"
+    },
+    "85": {
+      "at": "2026-11-10T20:17:55.033072+00:00",
+      "company": "Osram / ams OSRAM",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@ams-osram.com",
+      "mode": "intro"
+    },
+    "86": {
+      "at": "2026-11-10T20:18:01.779538+00:00",
+      "company": "Nemetschek",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@nemetschek.com",
+      "mode": "intro"
     },
     "9": {
       "at": "2026-11-10T04:57:42.645502+00:00",
