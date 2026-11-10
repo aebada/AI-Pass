@@ -206,3 +206,18 @@ Sent this run: 2. Failures: 1.
 - Sent BMW Startup Garage <bmw.startup.garage@bmw.com> + Merck with prices
 - Hostinger rate limit again (54 emailed today). ~44 READY remain.
 
+## 2026-11-10 10:12 UTC — send mode=intro csv=daily-100-prospects.csv
+- SENT 50 Adidas <press@adidas.com>
+- SENT 53 Otto Group <info@ottogroup.com>
+- SENT 54 Zalando <press@zalando.de>
+- SENT 55 Delivery Hero <press@deliveryhero.com>
+- RATE_LIMIT stop at 57 Contentful <partners@contentful.com>: 4.7.1 Ratelimit "hostinger_out_ratelimit" exceeded for key "RLkioyk9wrxphjtrmz4srp9srw"
+
+Sent this run: 4. Failures: 1.
+
+
+## 2026-11-10 10:12 UTC resume
+
+- Sent Adidas, Otto Group, Zalando, Delivery Hero (priced intros)
+- Hostinger rate limit at Contentful. Day total ~58 emailed. ~40 READY remain.
+
