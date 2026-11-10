@@ -1,3 +1,5 @@
+import { getAuth, readAuthConfig } from '@ai-pass/auth-core/server';
+import { toNodeHandler } from 'better-auth/node';
 import cors from 'cors';
 import express, { type Express } from 'express';
 import {
@@ -20,14 +22,31 @@ import {
   handleTrustTestSuite,
   PLATFORM_API_ROUTES,
 } from '@ai-pass/platform-api';
-
+import { createIdentityRouter } from './routes/identity.js';
+import { createOrganizationRouter } from './routes/organization.js';
+import { createToolsRouter } from './routes/tools.js';
+import { createAgentToolBindingsRouter } from './routes/agent-tool-bindings.js';
+import { createKnowledgeBasesRouter } from './routes/knowledge-bases.js';
+import { createAgentKnowledgeBindingsRouter } from './routes/agent-knowledge-bindings.js';
 const PORT = Number(process.env.PORT ?? 4000);
 
 export function createApiServer(): Express {
   const app = express();
-  app.use(cors());
+
+  app.use(cors({ origin: readAuthConfig().trustedOrigins, credentials: true }));
+
+  // Better Auth parses the raw request body itself, so it has to be mounted
+  // ahead of express.json().
+  app.all('/api/auth/*', toNodeHandler(getAuth()));
+
   app.use(express.json());
 
+  app.use('/api/v1', createIdentityRouter());
+  app.use('/api/v1', createOrganizationRouter());
+  app.use('/api/v1', createToolsRouter());
+  app.use('/api/v1', createAgentToolBindingsRouter());
+  app.use('/api/v1', createKnowledgeBasesRouter());
+  app.use('/api/v1', createAgentKnowledgeBindingsRouter());
   app.get('/api/v1/health', (_req, res) => res.json(handleHealth()));
   app.get('/api/v1/modules', (_req, res) => res.json(handleModules()));
   app.get('/api/v1/search', (req, res) => res.json(handleSearch(String(req.query.q ?? ''))));

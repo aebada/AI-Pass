@@ -34,8 +34,8 @@ if [[ ! -d "$LARAVEL/vendor" ]]; then
   echo "Installing Laravel dependencies..."
   if command -v composer >/dev/null 2>&1; then
     (cd "$LARAVEL" && composer install --no-dev --optimize-autoloader)
-  elif [[ -f "$ROOT/php-auth/composer.phar" ]]; then
-    (cd "$LARAVEL" && php "$ROOT/php-auth/composer.phar" install --no-dev --optimize-autoloader)
+  elif [[ -f "$ROOT/services/php-auth-legacy/composer.phar" ]]; then
+    (cd "$LARAVEL" && php "$ROOT/services/php-auth-legacy/composer.phar" install --no-dev --optimize-autoloader)
   else
     echo "error: install Composer, then re-run" >&2
     exit 1

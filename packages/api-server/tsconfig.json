@@ -7,8 +7,11 @@
   },
   "include": ["src"],
   "references": [
-    { "path": "../shared" },
-    { "path": "../platform-core" },
-    { "path": "../invoice-ai" }
+    { "path": "../platform/shared" },
+    { "path": "../platform/platform-core" },
+    { "path": "../platform/platform-api" },
+    { "path": "../platform/auth-core" },
+    { "path": "../platform/db" },
+    { "path": "../verticals/invoice-ai" }
   ]
 }

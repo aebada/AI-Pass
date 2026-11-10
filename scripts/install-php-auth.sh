@@ -3,7 +3,7 @@
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-PHP_AUTH="$ROOT/php-auth"
+PHP_AUTH="$ROOT/services/php-auth-legacy"
 
 cd "$PHP_AUTH"
 

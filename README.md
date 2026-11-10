@@ -1,8 +1,16 @@
 # AI Pass
 
-**AI Pass is a business solution platform — not just an AI IDE.**
+[![CI](https://github.com/aebada/AI-Pass/actions/workflows/ci.yml/badge.svg)](https://github.com/aebada/AI-Pass/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
+[![Contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](./CONTRIBUTING.md)
+
+**AI Pass is an open-source business solution platform — not just an AI IDE.**
 
 AI Pass helps **business users** describe requirements in natural language and generate web apps, mobile apps, workflows, and AI agents — with governance, trust, and marketplace distribution built in. Developers get a full AI workspace with Monaco editor, agents, and terminal in the same platform.
+
+**Live site:** [aipass.space](https://aipass.space) · **Contribute:** [CONTRIBUTING.md](./CONTRIBUTING.md) · **Security:** [SECURITY.md](./SECURITY.md)
+
+**Docs:** [Testing & CI](docs/testing.md) · [QA process](docs/qa-process.md) · [Claims source](docs/claims-source.md) · [Open source checklist](docs/OPEN-SOURCE.md) · [On-prem packaging plan](docs/on-prem-packaging-plan.md)
 
 ## Platform capabilities
 
@@ -118,9 +126,22 @@ ai-pass/
 │   └── verticals/                 # Invoice, Support, Supply Chain
 ```
 
+## Documentation
+
+Technical docs live under **[docs/](docs/README.md)** (concepts, architecture, data model, local development, Hostinger deploy, Invoice AI, auth).
+
+| Start here | |
+|------------|---|
+| [docs/CONCEPTS.md](docs/CONCEPTS.md) | Product & tech concepts, glossary |
+| [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) | Monorepo, static web + Laravel auth, tenants |
+| [docs/DATA-MODEL.md](docs/DATA-MODEL.md) | Entities, statuses, localStorage keys |
+| [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md) | Node 22 / pnpm setup and pitfalls |
+| [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) | Production FTP + Laravel auth |
+| [docs/INVOICE-AI.md](docs/INVOICE-AI.md) | Invoice AI subsystem |
+
 ## Prerequisites
 
-- Node.js 20+
+- Node.js 20+ (**22 preferred** for static production builds)
 - pnpm 9+
 
 ## Setup & Build
@@ -136,6 +157,8 @@ pnpm typecheck
 ```bash
 pnpm dev:web
 ```
+
+See [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md) for Laravel auth locally, package tests, and external-volume install tips.
 
 | URL | Purpose |
 |-----|---------|
@@ -187,7 +210,9 @@ pnpm dev:web
 5. **Rules** — Settings → Rules tab, or stored in `localStorage` under `ai-pass-rules`.
 6. **Business features** — Sidebar → Business tab, or title bar links to Studio, Marketplace, Requirements.
 
-Desktop: `pnpm dev:desktop` loads `http://localhost:3000/ide` with Electron IPC for `openFolder`, `readFile`, `writeFile`.
+Desktop (local IPC): `pnpm dev:desktop` loads `http://localhost:3000/ide` with Electron IPC for `openFolder`, `readFile`, `writeFile`.
+
+**AI-Pass IDE** (downloadable shell → live `aipass.space`): `pnpm --filter @ai-pass/ide start` — see [docs/IDE.md](docs/IDE.md) and [/downloads](apps/web/app/downloads/).
 
 ## Business User Journey (5 Steps)
 
@@ -216,6 +241,10 @@ Desktop: `pnpm dev:desktop` loads `http://localhost:3000/ide` with Electron IPC 
 ## Production deploy (aipass.space)
 
 **Live site:** [https://aipass.space](https://aipass.space)
+
+Full guide: **[docs/DEPLOYMENT.md](docs/DEPLOYMENT.md)**.
+
+Google Sign-In on Hostinger shared hosting uses **Laravel sessions** (`services/auth-api`). See **[docs/LARAVEL-AUTH.md](docs/LARAVEL-AUTH.md)**. Legacy PHP auth: [docs/PHP-AUTH.md](docs/PHP-AUTH.md). Node/NextAuth for VPS: [docs/AUTH.md](docs/AUTH.md).
 
 | Route | Page |
 |-------|------|
@@ -256,6 +285,24 @@ Point the apex domain at Hostinger:
 
 Use Hostinger nameservers if the registrar still shows parking NS (`dns-parking.com`). DNS changes can take up to 24–48 hours.
 
+## Contributing
+
+AI Pass is open source and contributions are welcome.
+
+1. Read [CONTRIBUTING.md](./CONTRIBUTING.md)
+2. Follow the [Code of Conduct](./CODE_OF_CONDUCT.md)
+3. Open an issue (bug / feature templates) or a pull request
+4. Report vulnerabilities privately via [SECURITY.md](./SECURITY.md)
+
+```bash
+git clone https://github.com/aebada/AI-Pass.git
+cd AI-Pass
+pnpm install
+pnpm dev:web
+```
+
+Maintainer checklist for running a public repo: [docs/OPEN-SOURCE.md](./docs/OPEN-SOURCE.md).
+
 ## License
 
-Private — AI Pass project.
+Licensed under the [MIT License](./LICENSE).

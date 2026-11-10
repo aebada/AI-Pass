@@ -1,0 +1,295 @@
+// Field names and types follow Better Auth's expected core and organization
+// plugin schema. Regenerate with `npx @better-auth/cli generate` after changing
+// auth plugins.
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id            String   @id
+  name          String
+  email         String   @unique
+  emailVerified Boolean  @default(false)
+  image         String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @default(now()) @updatedAt
+
+  sessions              Session[]
+  accounts              Account[]
+  memberships           Member[]
+  teamMemberships       TeamMember[]
+  sentInvitations       Invitation[]
+  createdKnowledgeBases KnowledgeBase[]
+
+  @@map("user")
+}
+
+model Session {
+  id                   String   @id
+  token                String   @unique
+  expiresAt            DateTime
+  ipAddress            String?
+  userAgent            String?
+  userId               String
+  activeOrganizationId String?
+  activeTeamId         String?
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @default(now()) @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@map("session")
+}
+
+model Account {
+  id                    String    @id
+  issuer                String
+  accountId             String
+  providerId            String
+  userId                String
+  accessToken           String?
+  refreshToken          String?
+  idToken               String?
+  accessTokenExpiresAt  DateTime?
+  refreshTokenExpiresAt DateTime?
+  scope                 String?
+  password              String?
+  createdAt             DateTime  @default(now())
+  updatedAt             DateTime  @default(now()) @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([issuer, accountId])
+  @@index([userId])
+  @@map("account")
+}
+
+model Verification {
+  id         String   @id
+  identifier String
+  value      String
+  expiresAt  DateTime
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @default(now()) @updatedAt
+
+  @@index([identifier])
+  @@map("verification")
+}
+
+model Organization {
+  id        String   @id
+  name      String
+  slug      String   @unique
+  logo      String?
+  metadata  String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now()) @updatedAt
+
+  members     Member[]
+  invitations Invitation[]
+  teams       Team[]
+
+  @@map("organization")
+}
+
+model Member {
+  id             String   @id
+  organizationId String
+  userId         String
+  role           String   @default("member")
+  createdAt      DateTime @default(now())
+
+  organization Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  user         User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([organizationId, userId])
+  @@index([organizationId])
+  @@index([userId])
+  @@map("member")
+}
+
+model Invitation {
+  id             String   @id
+  organizationId String
+  email          String
+  role           String?
+  teamId         String?
+  status         String   @default("pending")
+  expiresAt      DateTime
+  createdAt      DateTime @default(now())
+  inviterId      String
+
+  organization Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  inviter      User         @relation(fields: [inviterId], references: [id], onDelete: Cascade)
+
+  @@index([organizationId])
+  @@index([email])
+  @@map("invitation")
+}
+
+/// A workspace. Named Team because Better Auth's organization plugin owns this table.
+model Team {
+  id             String    @id
+  name           String
+  memberCount    Int       @default(0)
+  organizationId String
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime? @updatedAt
+
+  organization   Organization       @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  members        TeamMember[]
+  settings       WorkspaceSettings?
+  tools          Tool[]
+  knowledgeBases KnowledgeBase[]
+
+  @@index([organizationId])
+  @@map("team")
+}
+
+model TeamMember {
+  id            String   @id
+  teamId        String
+  userId        String
+  membershipKey String?  @unique
+  createdAt     DateTime @default(now())
+
+  team Team @relation(fields: [teamId], references: [id], onDelete: Cascade)
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([teamId, userId])
+  @@index([teamId])
+  @@index([userId])
+  @@map("team_member")
+}
+
+/// Per-workspace model routing. Created ahead of the model gateway so that the
+/// AI team is not blocked on a schema change mid-sprint.
+model WorkspaceSettings {
+  teamId            String   @id
+  defaultProviderId String?
+  defaultModelId    String?
+  allowedProviders  String[]
+  updatedAt         DateTime @default(now()) @updatedAt
+
+  team Team @relation(fields: [teamId], references: [id], onDelete: Cascade)
+
+  @@map("workspace_settings")
+}
+
+/// Deliberately holds no foreign keys. Audit records must outlive the users,
+/// organizations and workspaces they refer to.
+model AuditLog {
+  id             String   @id
+  occurredAt     DateTime @default(now())
+  actorUserId    String?
+  organizationId String?
+  teamId         String?
+  action         String
+  targetType     String?
+  targetId       String?
+  ipAddress      String?
+  userAgent      String?
+  success        Boolean  @default(true)
+  detail         Json?
+
+  @@index([organizationId, occurredAt])
+  @@index([actorUserId, occurredAt])
+  @@index([action, occurredAt])
+  @@map("audit_log")
+}
+
+/// A callable capability an agent can be bound to. Workspace-scoped, not
+/// organization-wide — see docs/specs/2026-09-30-agent-studio-tools-and-knowledge.md
+/// for why.
+model Tool {
+  id          String   @id
+  teamId      String
+  name        String
+  slug        String
+  description String
+  inputSchema Json
+  /// "READ" | "WRITE" — plain String, matching Member.role / Invitation.status
+  /// elsewhere in this schema rather than introducing the first native enum.
+  kind        String
+  enabled     Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @default(now()) @updatedAt
+
+  team     Team               @relation(fields: [teamId], references: [id], onDelete: Cascade)
+  bindings AgentToolBinding[]
+
+  @@unique([teamId, slug])
+  @@index([teamId])
+  @@map("tool")
+}
+
+/// Connects one agent to one tool. No @relation to an agent model yet — the
+/// Agent/AgentVersion schema (a parallel Sprint 2 track) had not landed as of
+/// this migration. agentId is a soft reference: add the real @relation and a
+/// follow-up migration once that model exists.
+model AgentToolBinding {
+  id        String   @id
+  agentId   String
+  toolId    String
+  enabled   Boolean  @default(true)
+  createdAt DateTime @default(now())
+
+  tool Tool @relation(fields: [toolId], references: [id], onDelete: Cascade)
+
+  @@unique([agentId, toolId])
+  @@index([agentId])
+  @@index([toolId])
+  @@map("agent_tool_binding")
+}
+
+/// Metadata and binding only for Sprint 2 — no file upload, parsing,
+/// chunking, embeddings or vector search. Those are Sprint 4. metadata is
+/// free-form, non-secret configuration only; connector credentials are
+/// deliberately not modeled here (see the Sprint 4 deferral note in the
+/// architecture doc).
+model KnowledgeBase {
+  id          String   @id
+  teamId      String
+  name        String
+  description String
+  /// "PENDING" | "ACTIVE" | "ARCHIVED" — plain String, same reasoning as Tool.kind.
+  status      String   @default("PENDING")
+  /// e.g. "placeholder" | "upload" | "url" | "connector" — the real ingestion
+  /// mechanics behind each sourceType are Sprint 4 scope.
+  sourceType  String
+  metadata    Json?
+  createdById String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @default(now()) @updatedAt
+
+  team      Team                    @relation(fields: [teamId], references: [id], onDelete: Cascade)
+  createdBy User                    @relation(fields: [createdById], references: [id])
+  bindings  AgentKnowledgeBinding[]
+
+  @@index([teamId])
+  @@map("knowledge_base")
+}
+
+/// Connects one agent to one knowledge base. Same soft-reference caveat on
+/// agentId as AgentToolBinding.
+model AgentKnowledgeBinding {
+  id              String   @id
+  agentId         String
+  knowledgeBaseId String
+  enabled         Boolean  @default(true)
+  createdAt       DateTime @default(now())
+
+  knowledgeBase KnowledgeBase @relation(fields: [knowledgeBaseId], references: [id], onDelete: Cascade)
+
+  @@unique([agentId, knowledgeBaseId])
+  @@index([agentId])
+  @@index([knowledgeBaseId])
+  @@map("agent_knowledge_binding")
+}

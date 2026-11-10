@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server';
 
 export const runtime = 'nodejs';
 
-export async function GET(request: Request) {
+export async function GET(request: Request): Promise<Response> {
   const tenantId = parseTenantId(request.headers);
   const history = defaultContentAIPlatform.history.list(tenantId);
   return NextResponse.json({ history });
