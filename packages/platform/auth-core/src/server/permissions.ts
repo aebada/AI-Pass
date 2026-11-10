@@ -16,6 +16,8 @@ export const statement = {
   apikey: ['create', 'revoke', 'list'],
   billing: ['view', 'manage'],
   audit: ['view'],
+  tool: ['create', 'update', 'list'],
+  knowledgeBase: ['create', 'update', 'list', 'archive'],
 } as const;
 
 export const ac = createAccessControl(statement);
@@ -27,6 +29,8 @@ export const owner = ac.newRole({
   apikey: ['create', 'revoke', 'list'],
   billing: ['view', 'manage'],
   audit: ['view'],
+  tool: ['create', 'update', 'list'],
+  knowledgeBase: ['create', 'update', 'list', 'archive'],
 });
 
 export const admin = ac.newRole({
@@ -36,12 +40,16 @@ export const admin = ac.newRole({
   apikey: ['create', 'revoke', 'list'],
   billing: ['view'],
   audit: ['view'],
+  tool: ['create', 'update', 'list'],
+  knowledgeBase: ['create', 'update', 'list', 'archive'],
 });
 
 export const member = ac.newRole({
   ...memberAc.statements,
   provider: ['list'],
   model: ['invoke'],
+  tool: ['list'],
+  knowledgeBase: ['list'],
 });
 
 export const roles = { owner, admin, member };

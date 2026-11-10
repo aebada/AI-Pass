@@ -8,6 +8,10 @@ export const PASSWORD = 'correct-horse-battery-staple';
 // added one from being silently left behind between tests.
 const TABLES = [
   'audit_log',
+  'agent_knowledge_binding',
+  'agent_tool_binding',
+  'knowledge_base',
+  'tool',
   'workspace_settings',
   'team_member',
   'team',

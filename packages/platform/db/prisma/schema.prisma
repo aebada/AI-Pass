@@ -20,11 +20,12 @@ model User {
   createdAt     DateTime @default(now())
   updatedAt     DateTime @default(now()) @updatedAt
 
-  sessions        Session[]
-  accounts        Account[]
-  memberships     Member[]
-  teamMemberships TeamMember[]
-  sentInvitations Invitation[]
+  sessions              Session[]
+  accounts              Account[]
+  memberships           Member[]
+  teamMemberships       TeamMember[]
+  sentInvitations       Invitation[]
+  createdKnowledgeBases KnowledgeBase[]
 
   @@map("user")
 }
@@ -142,9 +143,11 @@ model Team {
   createdAt      DateTime  @default(now())
   updatedAt      DateTime? @updatedAt
 
-  organization Organization       @relation(fields: [organizationId], references: [id], onDelete: Cascade)
-  members      TeamMember[]
-  settings     WorkspaceSettings?
+  organization   Organization       @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  members        TeamMember[]
+  settings       WorkspaceSettings?
+  tools          Tool[]
+  knowledgeBases KnowledgeBase[]
 
   @@index([organizationId])
   @@map("team")
@@ -200,4 +203,93 @@ model AuditLog {
   @@index([actorUserId, occurredAt])
   @@index([action, occurredAt])
   @@map("audit_log")
+}
+
+/// A callable capability an agent can be bound to. Workspace-scoped, not
+/// organization-wide — see docs/specs/2026-09-30-agent-studio-tools-and-knowledge.md
+/// for why.
+model Tool {
+  id          String   @id
+  teamId      String
+  name        String
+  slug        String
+  description String
+  inputSchema Json
+  /// "READ" | "WRITE" — plain String, matching Member.role / Invitation.status
+  /// elsewhere in this schema rather than introducing the first native enum.
+  kind        String
+  enabled     Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @default(now()) @updatedAt
+
+  team     Team               @relation(fields: [teamId], references: [id], onDelete: Cascade)
+  bindings AgentToolBinding[]
+
+  @@unique([teamId, slug])
+  @@index([teamId])
+  @@map("tool")
+}
+
+/// Connects one agent to one tool. No @relation to an agent model yet — the
+/// Agent/AgentVersion schema (a parallel Sprint 2 track) had not landed as of
+/// this migration. agentId is a soft reference: add the real @relation and a
+/// follow-up migration once that model exists.
+model AgentToolBinding {
+  id        String   @id
+  agentId   String
+  toolId    String
+  enabled   Boolean  @default(true)
+  createdAt DateTime @default(now())
+
+  tool Tool @relation(fields: [toolId], references: [id], onDelete: Cascade)
+
+  @@unique([agentId, toolId])
+  @@index([agentId])
+  @@index([toolId])
+  @@map("agent_tool_binding")
+}
+
+/// Metadata and binding only for Sprint 2 — no file upload, parsing,
+/// chunking, embeddings or vector search. Those are Sprint 4. metadata is
+/// free-form, non-secret configuration only; connector credentials are
+/// deliberately not modeled here (see the Sprint 4 deferral note in the
+/// architecture doc).
+model KnowledgeBase {
+  id          String   @id
+  teamId      String
+  name        String
+  description String
+  /// "PENDING" | "ACTIVE" | "ARCHIVED" — plain String, same reasoning as Tool.kind.
+  status      String   @default("PENDING")
+  /// e.g. "placeholder" | "upload" | "url" | "connector" — the real ingestion
+  /// mechanics behind each sourceType are Sprint 4 scope.
+  sourceType  String
+  metadata    Json?
+  createdById String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @default(now()) @updatedAt
+
+  team      Team                    @relation(fields: [teamId], references: [id], onDelete: Cascade)
+  createdBy User                    @relation(fields: [createdById], references: [id])
+  bindings  AgentKnowledgeBinding[]
+
+  @@index([teamId])
+  @@map("knowledge_base")
+}
+
+/// Connects one agent to one knowledge base. Same soft-reference caveat on
+/// agentId as AgentToolBinding.
+model AgentKnowledgeBinding {
+  id              String   @id
+  agentId         String
+  knowledgeBaseId String
+  enabled         Boolean  @default(true)
+  createdAt       DateTime @default(now())
+
+  knowledgeBase KnowledgeBase @relation(fields: [knowledgeBaseId], references: [id], onDelete: Cascade)
+
+  @@unique([agentId, knowledgeBaseId])
+  @@index([agentId])
+  @@index([knowledgeBaseId])
+  @@map("agent_knowledge_binding")
 }

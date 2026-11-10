@@ -44,6 +44,15 @@ const MATRIX: MatrixEntry[] = [
   { resource: 'billing', action: 'manage', allowed: ['owner'] },
 
   { resource: 'audit', action: 'view', allowed: ['owner', 'admin'] },
+
+  { resource: 'tool', action: 'create', allowed: ['owner', 'admin'] },
+  { resource: 'tool', action: 'update', allowed: ['owner', 'admin'] },
+  { resource: 'tool', action: 'list', allowed: ['owner', 'admin', 'member'] },
+
+  { resource: 'knowledgeBase', action: 'create', allowed: ['owner', 'admin'] },
+  { resource: 'knowledgeBase', action: 'update', allowed: ['owner', 'admin'] },
+  { resource: 'knowledgeBase', action: 'list', allowed: ['owner', 'admin', 'member'] },
+  { resource: 'knowledgeBase', action: 'archive', allowed: ['owner', 'admin'] },
 ];
 
 function can(role: RoleName, resource: string, action: string): boolean {

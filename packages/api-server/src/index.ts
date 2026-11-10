@@ -24,6 +24,10 @@ import {
 } from '@ai-pass/platform-api';
 import { createIdentityRouter } from './routes/identity.js';
 import { createOrganizationRouter } from './routes/organization.js';
+import { createToolsRouter } from './routes/tools.js';
+import { createAgentToolBindingsRouter } from './routes/agent-tool-bindings.js';
+import { createKnowledgeBasesRouter } from './routes/knowledge-bases.js';
+import { createAgentKnowledgeBindingsRouter } from './routes/agent-knowledge-bindings.js';
 const PORT = Number(process.env.PORT ?? 4000);
 
 export function createApiServer(): Express {
@@ -39,6 +43,10 @@ export function createApiServer(): Express {
 
   app.use('/api/v1', createIdentityRouter());
   app.use('/api/v1', createOrganizationRouter());
+  app.use('/api/v1', createToolsRouter());
+  app.use('/api/v1', createAgentToolBindingsRouter());
+  app.use('/api/v1', createKnowledgeBasesRouter());
+  app.use('/api/v1', createAgentKnowledgeBindingsRouter());
   app.get('/api/v1/health', (_req, res) => res.json(handleHealth()));
   app.get('/api/v1/modules', (_req, res) => res.json(handleModules()));
   app.get('/api/v1/search', (req, res) => res.json(handleSearch(String(req.query.q ?? ''))));
