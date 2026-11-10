@@ -221,3 +221,18 @@ Sent this run: 4. Failures: 1.
 - Sent Adidas, Otto Group, Zalando, Delivery Hero (priced intros)
 - Hostinger rate limit at Contentful. Day total ~58 emailed. ~40 READY remain.
 
+## 2026-11-10 12:13 UTC — send mode=intro csv=daily-100-prospects.csv
+- SENT 57 Contentful <partners@contentful.com>
+- SENT 60 HelloFresh <press@hellofresh.com>
+- SENT 61 Auto1 Group <press@auto1-group.com>
+- SENT 62 FlixBus / Flix <press@flixbus.com>
+- RATE_LIMIT stop at 64 Commerzbank <info@commerzbank.com>: 4.7.1 Ratelimit "hostinger_out_ratelimit" exceeded for key "RLkioyk9wrxphjtrmz4srp9srw"
+
+Sent this run: 4. Failures: 1.
+
+
+## 2026-11-10 12:12 UTC resume
+
+- Sent Contentful, HelloFresh, Auto1, FlixBus
+- Hostinger rate limit at Commerzbank. Day total ~62. ~36 READY remain.
+
