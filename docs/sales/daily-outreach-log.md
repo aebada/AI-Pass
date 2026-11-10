@@ -251,3 +251,20 @@ Sent this run: 4. Failures: 1.
 - Sent Commerzbank, DZ Bank, Deutsche Börse, E.ON
 - Hostinger rate limit at RWE. Day total ~66. ~32 READY remain.
 
+## 2026-11-10 16:15 UTC — send mode=intro csv=daily-100-prospects.csv
+- SENT 68 RWE <info@rwe.com>
+- SENT 69 EnBW <info@enbw.com>
+- SENT 70 Vonovia <info@vonovia.de>
+- SENT 72 Lufthansa Group <info@lufthansa.com>
+- SENT 73 Fraport <info@fraport.de>
+- SENT 74 Hapag-Lloyd <info@hapag-lloyd.com>
+- RATE_LIMIT stop at 76 Hermes Germany <info@hermesworld.com>: 4.7.1 Ratelimit "hostinger_out_ratelimit" exceeded for key "RLkioyk9wrxphjtrmz4srp9srw"
+
+Sent this run: 6. Failures: 1.
+
+
+## 2026-11-10 16:14 UTC resume
+
+- Sent RWE, EnBW, Vonovia, Lufthansa, Fraport, Hapag-Lloyd
+- Hostinger rate limit at Hermes. Day total ~72. ~26 READY remain.
+
