@@ -1,17 +1,17 @@
 rank,company,country,city,sector,wedge,email_primary,email_alt,priority,target_role,status,next_action,preferred_channel,email_fallback,email_valid,email_check_reason,form_status
-1,BMW Group,Germany,Munich,Automotive,Employee + plant twins for production quality,bmw.startup.garage@bmw.com,partner@bmw.com,P0,Partnerships,SENT 2026-11-10,Send pricing follow-up day 5,EMAIL,yes,,partner@bmw.com DSN 5.1.0; switched primary to garage; use Startup Garage form,BLOCKED_OR_COMPLEX
+1,BMW Group,Germany,Munich,Automotive,Employee + plant twins for production quality,bmw.startup.garage@bmw.com,partner@bmw.com,P0,Partnerships,READY,Validate then send garage inbox (partner@ bounced),EMAIL,yes,,partner@bmw.com DSN 5.1.0; switched primary to garage; use Startup Garage form,BLOCKED_OR_COMPLEX
 2,Siemens AG,Germany,Munich,Industrial,Shop-floor twin + governed agents,partner@siemens.com,info@siemens.com,P0,Alliances,SENT 2026-11-10,Send pricing follow-up day 5,EMAIL,yes,,,BLOCKED_OR_COMPLEX
 3,SAP SE,Germany,Walldorf,Enterprise software,Twin + Connect into SAP landscapes,partner@sap.com,signavio.partners@sap.com,P0,Partners,SENT 2026-11-10,Send pricing follow-up day 5,EMAIL,yes,,,BLOCKED_OR_COMPLEX
 4,Allianz SE,Germany,Munich,Insurance,Claims twin + policy-gated agents,info@allianz.com,,P0,Innovation,SENT 2026-11-10,Send pricing follow-up day 5,EMAIL,yes,,,BLOCKED_OR_COMPLEX
 5,Deutsche Bank,Germany,Frankfurt,Banking,Governed agent harness for ops,deutsche.bank@db.com,,P0,Innovation,SENT 2026-11-10,Send pricing follow-up day 5,EMAIL,yes,,,BLOCKED_OR_COMPLEX
 6,Munich Re,Germany,Munich,Reinsurance,Risk twin + evidence graph,info@munichre.com,,P0,Digital,SENT 2026-11-10,Send pricing follow-up day 5,EMAIL,yes,,,BLOCKED_OR_COMPLEX
-7,Infineon Technologies,Germany,Neubiberg,Semiconductors,Fab twin + quality hops,startups@infineon.com,info@infineon.com,P0,Digital manufacturing,SENT 2026-11-10,Send pricing follow-up day 5,FORM,no,no,info@infineon.com rejected by smtp2.infineon.com; use startups form,SUBMITTED
+7,Infineon Technologies,Germany,Neubiberg,Semiconductors,Fab twin + quality hops,startups@infineon.com,info@infineon.com,P0,Digital manufacturing,FORM 2026-11-10,Wait for form reply,FORM,no,no,info@infineon.com rejected by smtp2.infineon.com; use startups form,SUBMITTED
 8,KUKA AG,Germany,Augsburg,Robotics,Robotics twin + harness,info@kuka.com,,P0,Innovation,SENT 2026-11-10,Send pricing follow-up day 5,FORM,no,,,READY
 9,TÜV SÜD,Germany,Munich,Certification,Trust Engine + twin evidence packs,info@tuvsud.com,,P0,Digital services,SENT 2026-11-10,Send pricing follow-up day 5,EMAIL,yes,,,BLOCKED_OR_COMPLEX
 10,UnternehmerTUM / Women Startup,Germany,Garching,Startup ecosystem,Founder twin workshops,womenstartup@unternehmertum.de,,P0,Program,SENT 2026-11-10,Send pricing follow-up day 5,EMAIL,yes,,,
 11,Datev eG,Germany,Nuremberg,Accounting,DATEV connector + finance twin,info@datev.de,,P0,Partnerships,SENT 2026-11-10,Send pricing follow-up day 5,EMAIL,yes,,,
 12,Deutsche Telekom,Germany,Bonn,Telecom,Enterprise AI control plane,info@telekom.de,,P0,Partners,SENT 2026-11-10,Send pricing follow-up day 5,EMAIL,yes,,Prefer GK contact form over info@telekom.de,BLOCKED_OR_COMPLEX
-13,Bosch,Germany,Stuttgart,Industrial,Plant twin + employee twins,info@bosch.com,,P0,Innovation,SENT 2026-11-10,Send pricing follow-up day 5,FORM,no,,,SUBMITTED 2026-11-10
+13,Bosch,Germany,Stuttgart,Industrial,Plant twin + employee twins,info@bosch.com,,P0,Innovation,FORM 2026-11-10,Wait for form reply,FORM,no,,,SUBMITTED
 14,BASF,Germany,Ludwigshafen,Chemicals,Process twin + policy agents,info@basf.com,,P0,Digital,SENT 2026-11-10,Send pricing follow-up day 5,EMAIL,yes,,,BLOCKED_OR_COMPLEX
 15,Continental AG,Germany,Hanover,Automotive,Production twin harness,info@conti.de,,P0,Innovation,SENT 2026-11-10,Send pricing follow-up day 5,EMAIL,yes,,,
 16,ZF Friedrichshafen,Germany,Friedrichshafen,Automotive,Supplier twin + quality,info@zf.com,,P0,Digital,SENT 2026-11-10,Send pricing follow-up day 5,EMAIL,yes,,,
