@@ -236,3 +236,18 @@ Sent this run: 4. Failures: 1.
 - Sent Contentful, HelloFresh, Auto1, FlixBus
 - Hostinger rate limit at Commerzbank. Day total ~62. ~36 READY remain.
 
+## 2026-11-10 14:14 UTC — send mode=intro csv=daily-100-prospects.csv
+- SENT 64 Commerzbank <info@commerzbank.com>
+- SENT 65 DZ Bank <info@dzbank.de>
+- SENT 66 Deutsche Börse <info@deutsche-boerse.com>
+- SENT 67 E.ON <info@eon.com>
+- RATE_LIMIT stop at 68 RWE <info@rwe.com>: 4.7.1 Ratelimit "hostinger_out_ratelimit" exceeded for key "RLkioyk9wrxphjtrmz4srp9srw"
+
+Sent this run: 4. Failures: 1.
+
+
+## 2026-11-10 14:13 UTC resume
+
+- Sent Commerzbank, DZ Bank, Deutsche Börse, E.ON
+- Hostinger rate limit at RWE. Day total ~66. ~32 READY remain.
+

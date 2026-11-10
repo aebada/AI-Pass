@@ -7,7 +7,7 @@
     }
   },
   "days": {
-    "2026-11-10": 62
+    "2026-11-10": 66
   },
   "priced": {
     "1": {
@@ -92,6 +92,34 @@
       "company": "FlixBus / Flix",
       "csv": "daily-100-prospects.csv",
       "email": "press@flixbus.com",
+      "mode": "intro"
+    },
+    "64": {
+      "at": "2026-11-10T14:14:05.904879+00:00",
+      "company": "Commerzbank",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@commerzbank.com",
+      "mode": "intro"
+    },
+    "65": {
+      "at": "2026-11-10T14:14:19.597412+00:00",
+      "company": "DZ Bank",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@dzbank.de",
+      "mode": "intro"
+    },
+    "66": {
+      "at": "2026-11-10T14:14:25.676235+00:00",
+      "company": "Deutsche B\u00f6rse",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@deutsche-boerse.com",
+      "mode": "intro"
+    },
+    "67": {
+      "at": "2026-11-10T14:14:39.297543+00:00",
+      "company": "E.ON",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@eon.com",
       "mode": "intro"
     }
   },
@@ -385,6 +413,34 @@
       "company": "FlixBus / Flix",
       "csv": "daily-100-prospects.csv",
       "email": "press@flixbus.com",
+      "mode": "intro"
+    },
+    "64": {
+      "at": "2026-11-10T14:14:05.904879+00:00",
+      "company": "Commerzbank",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@commerzbank.com",
+      "mode": "intro"
+    },
+    "65": {
+      "at": "2026-11-10T14:14:19.597412+00:00",
+      "company": "DZ Bank",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@dzbank.de",
+      "mode": "intro"
+    },
+    "66": {
+      "at": "2026-11-10T14:14:25.676235+00:00",
+      "company": "Deutsche B\u00f6rse",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@deutsche-boerse.com",
+      "mode": "intro"
+    },
+    "67": {
+      "at": "2026-11-10T14:14:39.297543+00:00",
+      "company": "E.ON",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@eon.com",
       "mode": "intro"
     },
     "7": {
