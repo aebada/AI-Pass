@@ -8,7 +8,7 @@
   },
   "days": {
     "2026-11-10": 86,
-    "2026-11-11": 9
+    "2026-11-11": 12
   },
   "priced": {
     "1": {
@@ -102,6 +102,20 @@
       "email": "partners@contentful.com",
       "mode": "intro"
     },
+    "58": {
+      "at": "2026-11-11T04:20:48.816107+00:00",
+      "company": "Adjust",
+      "csv": "daily-100-prospects.csv",
+      "email": "partners@adjust.com",
+      "mode": "intro"
+    },
+    "59": {
+      "at": "2026-11-11T04:20:54.666461+00:00",
+      "company": "SoundCloud",
+      "csv": "daily-100-prospects.csv",
+      "email": "press@soundcloud.com",
+      "mode": "intro"
+    },
     "60": {
       "at": "2026-11-10T12:13:20.440661+00:00",
       "company": "HelloFresh",
@@ -121,6 +135,13 @@
       "company": "FlixBus / Flix",
       "csv": "daily-100-prospects.csv",
       "email": "press@flixbus.com",
+      "mode": "intro"
+    },
+    "63": {
+      "at": "2026-11-11T04:21:00.631021+00:00",
+      "company": "About You",
+      "csv": "daily-100-prospects.csv",
+      "email": "press@aboutyou.com",
       "mode": "intro"
     },
     "64": {
@@ -621,6 +642,20 @@
       "email": "partners@contentful.com",
       "mode": "intro"
     },
+    "58": {
+      "at": "2026-11-11T04:20:48.816107+00:00",
+      "company": "Adjust",
+      "csv": "daily-100-prospects.csv",
+      "email": "partners@adjust.com",
+      "mode": "intro"
+    },
+    "59": {
+      "at": "2026-11-11T04:20:54.666461+00:00",
+      "company": "SoundCloud",
+      "csv": "daily-100-prospects.csv",
+      "email": "press@soundcloud.com",
+      "mode": "intro"
+    },
     "6": {
       "at": "2026-11-10T04:57:42.645502+00:00",
       "company": "Munich Re",
@@ -645,6 +680,13 @@
       "company": "FlixBus / Flix",
       "csv": "daily-100-prospects.csv",
       "email": "press@flixbus.com",
+      "mode": "intro"
+    },
+    "63": {
+      "at": "2026-11-11T04:21:00.631021+00:00",
+      "company": "About You",
+      "csv": "daily-100-prospects.csv",
+      "email": "press@aboutyou.com",
       "mode": "intro"
     },
     "64": {

@@ -32,3 +32,7 @@ Invalid addresses get `status=BOUNCE` (e.g. `partner@bmw.com`, `info@infineon.co
 - Telekom GK form (`https://www.telekom.de/gk/kontakt`) is preferred but CloudFront WAF blocks this environment → email fallback after validate.
 - BMW Startup Garage form is preferred; wizard is multi-step — if automation fails, email `bmw.startup.garage@bmw.com`.
 - Cap ~50 sends/window (Hostinger rate limit); state file prevents duplicates.
+
+## Batch complete (2026-11-11)
+
+All READY rows in `daily-100-prospects.csv` have been contacted (email and/or form). Next: day-5 pricing follow-ups via `--mode pricing-followup`, LinkedIn for non-openers, Ops Reality list.

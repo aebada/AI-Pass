@@ -346,3 +346,18 @@ Sent this run: 5. Failures: 1.
 - Sent KPMG, LMU, Puma, Hugo Boss, Get Your Guide
 - Hostinger rate limit at Adjust. READY remain: ['Adjust', 'SoundCloud', 'About You']
 
+## 2026-11-11 04:20 UTC — send mode=intro csv=daily-100-prospects.csv
+- SENT 58 Adjust <partners@adjust.com>
+- SENT 59 SoundCloud <press@soundcloud.com>
+- SENT 63 About You <press@aboutyou.com>
+
+Sent this run: 3. Failures: 0.
+
+
+## 2026-11-11 04:20 UTC — batch complete
+
+- Sent Adjust, SoundCloud, About You
+- All READY intros for daily-100-prospects.csv are done.
+- Totals: 2026-11-10 emailed=86, 2026-11-11 emailed=12, state.sent=97
+- Forms submitted earlier: Infineon, Bosch. Lilium SKIP (insolvency).
+
