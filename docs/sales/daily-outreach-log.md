@@ -330,3 +330,19 @@ Sent this run: 4. Failures: 1.
 - Sent Msg systems, Deloitte, PwC, EY
 - Hostinger rate limit at KPMG. ~8 READY remain (KPMG, LMU, Puma, Hugo Boss, GYG, Adjust, SoundCloud, About You).
 
+## 2026-11-11 02:20 UTC — send mode=intro csv=daily-100-prospects.csv
+- SENT 97 KPMG Germany <info@kpmg.de>
+- SENT 41 LMU <info@lmu.de>
+- SENT 51 Puma <press@puma.com>
+- SENT 52 Hugo Boss <info@hugoboss.com>
+- SENT 56 Get Your Guide <partnerships@getyourguide.com>
+- RATE_LIMIT stop at 58 Adjust <partners@adjust.com>: 4.7.1 Ratelimit "hostinger_out_ratelimit" exceeded for key "RLkioyk9wrxphjtrmz4srp9srw"
+
+Sent this run: 5. Failures: 1.
+
+
+## 2026-11-11 02:19 UTC resume
+
+- Sent KPMG, LMU, Puma, Hugo Boss, Get Your Guide
+- Hostinger rate limit at Adjust. READY remain: ['Adjust', 'SoundCloud', 'About You']
+

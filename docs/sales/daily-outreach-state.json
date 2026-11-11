@@ -8,7 +8,7 @@
   },
   "days": {
     "2026-11-10": 86,
-    "2026-11-11": 4
+    "2026-11-11": 9
   },
   "priced": {
     "1": {
@@ -16,6 +16,13 @@
       "company": "BMW Group",
       "csv": "daily-100-prospects.csv",
       "email": "bmw.startup.garage@bmw.com",
+      "mode": "intro"
+    },
+    "41": {
+      "at": "2026-11-11T02:20:10.033468+00:00",
+      "company": "LMU",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@lmu.de",
       "mode": "intro"
     },
     "47": {
@@ -46,6 +53,20 @@
       "email": "press@adidas.com",
       "mode": "intro"
     },
+    "51": {
+      "at": "2026-11-11T02:20:15.876753+00:00",
+      "company": "Puma",
+      "csv": "daily-100-prospects.csv",
+      "email": "press@puma.com",
+      "mode": "intro"
+    },
+    "52": {
+      "at": "2026-11-11T02:20:21.605742+00:00",
+      "company": "Hugo Boss",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@hugoboss.com",
+      "mode": "intro"
+    },
     "53": {
       "at": "2026-11-10T10:12:27.586837+00:00",
       "company": "Otto Group",
@@ -65,6 +86,13 @@
       "company": "Delivery Hero",
       "csv": "daily-100-prospects.csv",
       "email": "press@deliveryhero.com",
+      "mode": "intro"
+    },
+    "56": {
+      "at": "2026-11-11T02:20:27.442715+00:00",
+      "company": "Get Your Guide",
+      "csv": "daily-100-prospects.csv",
+      "email": "partnerships@getyourguide.com",
       "mode": "intro"
     },
     "57": {
@@ -290,6 +318,13 @@
       "csv": "daily-100-prospects.csv",
       "email": "info@de.ey.com",
       "mode": "intro"
+    },
+    "97": {
+      "at": "2026-11-11T02:20:04.090580+00:00",
+      "company": "KPMG Germany",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@kpmg.de",
+      "mode": "intro"
     }
   },
   "sent": {
@@ -472,6 +507,13 @@
       "company": "TUM",
       "email": "info@tum.de"
     },
+    "41": {
+      "at": "2026-11-11T02:20:10.033468+00:00",
+      "company": "LMU",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@lmu.de",
+      "mode": "intro"
+    },
     "42": {
       "at": "2026-11-10T04:57:42.645502+00:00",
       "company": "Fraunhofer AISEC",
@@ -530,6 +572,20 @@
       "email": "press@adidas.com",
       "mode": "intro"
     },
+    "51": {
+      "at": "2026-11-11T02:20:15.876753+00:00",
+      "company": "Puma",
+      "csv": "daily-100-prospects.csv",
+      "email": "press@puma.com",
+      "mode": "intro"
+    },
+    "52": {
+      "at": "2026-11-11T02:20:21.605742+00:00",
+      "company": "Hugo Boss",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@hugoboss.com",
+      "mode": "intro"
+    },
     "53": {
       "at": "2026-11-10T10:12:27.586837+00:00",
       "company": "Otto Group",
@@ -549,6 +605,13 @@
       "company": "Delivery Hero",
       "csv": "daily-100-prospects.csv",
       "email": "press@deliveryhero.com",
+      "mode": "intro"
+    },
+    "56": {
+      "at": "2026-11-11T02:20:27.442715+00:00",
+      "company": "Get Your Guide",
+      "csv": "daily-100-prospects.csv",
+      "email": "partnerships@getyourguide.com",
       "mode": "intro"
     },
     "57": {
@@ -818,6 +881,13 @@
       "company": "EY Germany",
       "csv": "daily-100-prospects.csv",
       "email": "info@de.ey.com",
+      "mode": "intro"
+    },
+    "97": {
+      "at": "2026-11-11T02:20:04.090580+00:00",
+      "company": "KPMG Germany",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@kpmg.de",
       "mode": "intro"
     }
   }
