@@ -315,3 +315,18 @@ Sent this run: 4. Failures: 1.
 - Sent TeamViewer, Software AG, Bechtle, Cancom
 - Hostinger rate limit at Msg systems. Day total ~86. ~12 READY remain.
 
+## 2026-11-11 00:19 UTC — send mode=intro csv=daily-100-prospects.csv
+- SENT 91 Msg systems <info@msg.group>
+- SENT 94 Deloitte Germany <info@deloitte.de>
+- SENT 95 PwC Germany <de_info@pwc.com>
+- SENT 96 EY Germany <info@de.ey.com>
+- RATE_LIMIT stop at 97 KPMG Germany <info@kpmg.de>: 4.7.1 Ratelimit "hostinger_out_ratelimit" exceeded for key "RLkioyk9wrxphjtrmz4srp9srw"
+
+Sent this run: 4. Failures: 1.
+
+
+## 2026-11-11 00:19 UTC resume (new day)
+
+- Sent Msg systems, Deloitte, PwC, EY
+- Hostinger rate limit at KPMG. ~8 READY remain (KPMG, LMU, Puma, Hugo Boss, GYG, Adjust, SoundCloud, About You).
+

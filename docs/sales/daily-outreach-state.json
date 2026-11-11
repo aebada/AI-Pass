@@ -7,7 +7,8 @@
     }
   },
   "days": {
-    "2026-11-10": 86
+    "2026-11-10": 86,
+    "2026-11-11": 4
   },
   "priced": {
     "1": {
@@ -260,6 +261,34 @@
       "company": "Cancom",
       "csv": "daily-100-prospects.csv",
       "email": "info@cancom.de",
+      "mode": "intro"
+    },
+    "91": {
+      "at": "2026-11-11T00:19:13.085718+00:00",
+      "company": "Msg systems",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@msg.group",
+      "mode": "intro"
+    },
+    "94": {
+      "at": "2026-11-11T00:19:18.712512+00:00",
+      "company": "Deloitte Germany",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@deloitte.de",
+      "mode": "intro"
+    },
+    "95": {
+      "at": "2026-11-11T00:19:24.484429+00:00",
+      "company": "PwC Germany",
+      "csv": "daily-100-prospects.csv",
+      "email": "de_info@pwc.com",
+      "mode": "intro"
+    },
+    "96": {
+      "at": "2026-11-11T00:19:30.086307+00:00",
+      "company": "EY Germany",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@de.ey.com",
       "mode": "intro"
     }
   },
@@ -753,6 +782,13 @@
       "email": "info@cancom.de",
       "mode": "intro"
     },
+    "91": {
+      "at": "2026-11-11T00:19:13.085718+00:00",
+      "company": "Msg systems",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@msg.group",
+      "mode": "intro"
+    },
     "92": {
       "at": "2026-11-10T04:57:42.645502+00:00",
       "company": "Capgemini Germany",
@@ -762,6 +798,27 @@
       "at": "2026-11-10T04:57:42.645502+00:00",
       "company": "Accenture Germany",
       "email": "info.de@accenture.com"
+    },
+    "94": {
+      "at": "2026-11-11T00:19:18.712512+00:00",
+      "company": "Deloitte Germany",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@deloitte.de",
+      "mode": "intro"
+    },
+    "95": {
+      "at": "2026-11-11T00:19:24.484429+00:00",
+      "company": "PwC Germany",
+      "csv": "daily-100-prospects.csv",
+      "email": "de_info@pwc.com",
+      "mode": "intro"
+    },
+    "96": {
+      "at": "2026-11-11T00:19:30.086307+00:00",
+      "company": "EY Germany",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@de.ey.com",
+      "mode": "intro"
     }
   }
 }
