@@ -21,3 +21,7 @@ rank,company,channel,form_url,form_type,preferred,notes,status,last_action
 75,DHL / Deutsche Post,FORM,https://www.dhl.com/global-en/home/get-in-touch.html,corporate_contact,yes,Corporate contact,BLOCKED_OR_COMPLEX,"Error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.dhl.com/global-en/home/get-in-touch.html
 Call log:
   - navigating to ""https://www.dhl.com/global-en/home/get-in-touch"
+202,BMW Group FIZ (Research & Innovation Centre),FORM,https://www.bmwstartupgarage.com/en/partner-with-us/application-form.html,startup_garage_application,yes,FIZ Open Innovation via Startup Garage form; also manuel.schneider@bmw.de,READY,Submit FIZ twin pilot
+201,Siemens Technology Center Garching,FORM,https://ecosystem.siemens.com/universityrelations/university-relations,university_relations,yes,Siemens external collaboration; email fallback open.day.garching.t@siemens.com,BLOCKED_OR_COMPLEX,no_fillable_fields title='External collaboration at Siemens | Siemens Innovation Ecosystem' body='Skip to main content\nGo to main navigation\nGo to footer\nDisable Animations\nCha
+215,Infineon Neubiberg Research / Co-Innovation,FORM,https://www.infineon.com/partners/startups/cooperate-with-us,startup_cooperate,yes,Already submitted 2026-11-10,SUBMITTED,Submitted
+204,Bosch Research Renningen,FORM,https://www.bosch.com/contact/,corporate_contact,yes,Prior Bosch form submitted; research@de.bosch.com for research campus,SUBMITTED,Corporate form done; email research@

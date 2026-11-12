@@ -1,16 +1,56 @@
 {
+  "bernhard.wardin@siemens.com": {
+    "checked_at": "2026-11-12T11:40:32.737641+00:00",
+    "email": "bernhard.wardin@siemens.com",
+    "mx": "siemens-com.h-v1.mx.microsoft",
+    "ok": true,
+    "reason": "mx_ok",
+    "smtp_code": null
+  },
   "bmw.startup.garage@bmw.com": {
-    "checked_at": "2026-11-10T06:26:19.684536+00:00",
+    "checked_at": "2026-11-12T11:40:32.866395+00:00",
     "email": "bmw.startup.garage@bmw.com",
     "mx": "bmw-com.mail.protection.outlook.com",
     "ok": true,
-    "reason": "smtp probe skipped: TimeoutError",
+    "reason": "mx_ok",
+    "smtp_code": null
+  },
+  "car.brain.challenge.vwag.r.wob@volkswagen.de": {
+    "checked_at": "2026-11-12T11:41:34.760211+00:00",
+    "email": "car.brain.challenge.vwag.r.wob@volkswagen.de",
+    "mx": "mx10.vwgroup.com",
+    "ok": true,
+    "reason": "mx_ok",
     "smtp_code": null
   },
   "de_info@pwc.com": {
     "checked_at": "2026-11-10T07:09:38.006294+00:00",
     "email": "de_info@pwc.com",
     "mx": "mx08-00096706.pphosted.com",
+    "ok": true,
+    "reason": "mx_ok",
+    "smtp_code": null
+  },
+  "dialog@mercedes-benz.com": {
+    "checked_at": "2026-11-12T11:40:32.987680+00:00",
+    "email": "dialog@mercedes-benz.com",
+    "mx": "two.mail-in.corpinter.net",
+    "ok": true,
+    "reason": "mx_ok",
+    "smtp_code": null
+  },
+  "ferienarbeit.rd@mercedes-benz.com": {
+    "checked_at": "2026-11-12T11:40:32.995413+00:00",
+    "email": "ferienarbeit.rd@mercedes-benz.com",
+    "mx": "one.mail-in.corpinter.net",
+    "ok": true,
+    "reason": "mx_ok",
+    "smtp_code": null
+  },
+  "info@airbus.com": {
+    "checked_at": "2026-11-12T11:41:34.838071+00:00",
+    "email": "info@airbus.com",
+    "mx": "mx1.myeers.net",
     "ok": true,
     "reason": "mx_ok",
     "smtp_code": null
@@ -39,6 +79,14 @@
     "reason": "mx_ok",
     "smtp_code": null
   },
+  "info@bosch.com": {
+    "checked_at": "2026-11-12T11:40:33.038716+00:00",
+    "email": "info@bosch.com",
+    "mx": "bosch-com.mail.protection.outlook.com",
+    "ok": true,
+    "reason": "mx_ok",
+    "smtp_code": null
+  },
   "info@cancom.de": {
     "checked_at": "2026-11-10T07:09:37.829553+00:00",
     "email": "info@cancom.de",
@@ -51,6 +99,14 @@
     "checked_at": "2026-11-10T07:09:35.876538+00:00",
     "email": "info@commerzbank.com",
     "mx": "commerzbank-com.mail.protection.outlook.com",
+    "ok": true,
+    "reason": "mx_ok",
+    "smtp_code": null
+  },
+  "info@conti.de": {
+    "checked_at": "2026-11-12T11:41:34.887996+00:00",
+    "email": "info@conti.de",
+    "mx": "continental-com.mail.protection.outlook.com",
     "ok": true,
     "reason": "mx_ok",
     "smtp_code": null
@@ -191,6 +247,14 @@
     "reason": "mx_ok",
     "smtp_code": null
   },
+  "info@kuka.com": {
+    "checked_at": "2026-11-12T11:41:34.983250+00:00",
+    "email": "info@kuka.com",
+    "mx": "kuka-com.mail.protection.outlook.com",
+    "ok": true,
+    "reason": "mx_ok",
+    "smtp_code": null
+  },
   "info@lmu.de": {
     "checked_at": "2026-11-10T07:09:38.545154+00:00",
     "email": "info@lmu.de",
@@ -223,6 +287,14 @@
     "reason": "mx_ok",
     "smtp_code": null
   },
+  "info@mtu.de": {
+    "checked_at": "2026-11-12T11:41:34.803650+00:00",
+    "email": "info@mtu.de",
+    "mx": "mx1-63.mtu.de",
+    "ok": true,
+    "reason": "mx_ok",
+    "smtp_code": null
+  },
   "info@nemetschek.com": {
     "checked_at": "2026-11-10T07:09:37.189543+00:00",
     "email": "info@nemetschek.com",
@@ -235,6 +307,14 @@
     "checked_at": "2026-11-10T07:09:35.698572+00:00",
     "email": "info@ottogroup.com",
     "mx": "ottogroup-com.mail.protection.outlook.com",
+    "ok": true,
+    "reason": "mx_ok",
+    "smtp_code": null
+  },
+  "info@porsche.de": {
+    "checked_at": "2026-11-12T11:41:34.792279+00:00",
+    "email": "info@porsche.de",
+    "mx": "mail02.fw.porsche.de",
     "ok": true,
     "reason": "mx_ok",
     "smtp_code": null
@@ -283,6 +363,38 @@
     "checked_at": "2026-11-10T07:09:37.121521+00:00",
     "email": "info@zeiss.com",
     "mx": "mx-in02.eu.retarus.com",
+    "ok": true,
+    "reason": "mx_ok",
+    "smtp_code": null
+  },
+  "info@zf.com": {
+    "checked_at": "2026-11-12T11:41:34.880469+00:00",
+    "email": "info@zf.com",
+    "mx": "de-smtp-inbound-2.mimecast.com",
+    "ok": true,
+    "reason": "mx_ok",
+    "smtp_code": null
+  },
+  "manuel.schneider@bmw.de": {
+    "checked_at": "2026-11-12T11:40:32.754761+00:00",
+    "email": "manuel.schneider@bmw.de",
+    "mx": "bmw-de.mail.protection.outlook.com",
+    "ok": true,
+    "reason": "mx_ok",
+    "smtp_code": null
+  },
+  "natascha.eckert@siemens.com": {
+    "checked_at": "2026-11-12T11:40:32.718571+00:00",
+    "email": "natascha.eckert@siemens.com",
+    "mx": "siemens-com.h-v1.mx.microsoft",
+    "ok": true,
+    "reason": "mx_ok",
+    "smtp_code": null
+  },
+  "open.day.garching.t@siemens.com": {
+    "checked_at": "2026-11-12T11:40:32.661750+00:00",
+    "email": "open.day.garching.t@siemens.com",
+    "mx": "siemens-com.h-v1.mx.microsoft",
     "ok": true,
     "reason": "mx_ok",
     "smtp_code": null
@@ -391,12 +503,28 @@
     "reason": "mx_ok",
     "smtp_code": null
   },
+  "research@de.bosch.com": {
+    "checked_at": "2026-11-12T11:40:33.030654+00:00",
+    "email": "research@de.bosch.com",
+    "mx": "de-bosch-com.mail.protection.outlook.com",
+    "ok": true,
+    "reason": "mx_ok",
+    "smtp_code": null
+  },
+  "sapmunich@sap.com": {
+    "checked_at": "2026-11-12T11:41:34.691298+00:00",
+    "email": "sapmunich@sap.com",
+    "mx": "sap-com.mail.protection.outlook.com",
+    "ok": true,
+    "reason": "mx_ok",
+    "smtp_code": null
+  },
   "startups@infineon.com": {
-    "checked_at": "2026-11-10T06:27:40.027127+00:00",
+    "checked_at": "2026-11-12T11:40:33.056457+00:00",
     "email": "startups@infineon.com",
     "mx": "smtp2.infineon.com",
     "ok": true,
-    "reason": "smtp probe skipped: OSError",
+    "reason": "mx_ok",
     "smtp_code": null
   },
   "support@infineon.com": {
@@ -405,6 +533,22 @@
     "mx": "smtp2.infineon.com",
     "ok": true,
     "reason": "smtp probe skipped: OSError",
+    "smtp_code": null
+  },
+  "t-labs.info@telekom.de": {
+    "checked_at": "2026-11-12T11:41:34.564110+00:00",
+    "email": "t-labs.info@telekom.de",
+    "mx": "mailin.ng.telekom.net",
+    "ok": true,
+    "reason": "mx_ok",
+    "smtp_code": null
+  },
+  "tim.miksche@audi.de": {
+    "checked_at": "2026-11-12T11:41:34.767961+00:00",
+    "email": "tim.miksche@audi.de",
+    "mx": "mx10.vwgroup.com",
+    "ok": true,
+    "reason": "mx_ok",
     "smtp_code": null
   }
 }

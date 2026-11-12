@@ -361,3 +361,29 @@ Sent this run: 3. Failures: 0.
 - Totals: 2026-11-10 emailed=86, 2026-11-11 emailed=12, state.sent=97
 - Forms submitted earlier: Infineon, Bosch. Lilium SKIP (insolvency).
 
+## 2026-11-12 11:41 UTC — send mode=intro csv=research-centers-prospects.csv
+- SENT 201 Siemens Technology Center Garching <open.day.garching.t@siemens.com>
+- SENT 202 BMW Group FIZ (Research & Innovation Centre) <manuel.schneider@bmw.de>
+- SENT 203 Mercedes-Benz Group Research & MBC Development Sindelfingen <dialog@mercedes-benz.com>
+- SENT 204 Bosch Research Renningen <research@de.bosch.com>
+- SENT 205 Deutsche Telekom T-Labs <t-labs.info@telekom.de>
+- SENT 206 SAP Labs Munich (Garching) <sapmunich@sap.com>
+- SENT 207 Volkswagen Group Innovation / Car Brain <car.brain.challenge.vwag.r.wob@volkswagen.de>
+- SENT 208 Audi Denkwerkstatt / Innovation <tim.miksche@audi.de>
+- SENT 209 Porsche Entwicklungszentrum Weissach <info@porsche.de>
+- SENT 210 MTU Aero Engines R&D Munich <info@mtu.de>
+- SENT 211 Airbus Defence & Space Ottobrunn / Innovation <info@airbus.com>
+- SENT 212 ZF Friedrichshafen R&D <info@zf.com>
+- SENT 213 Continental AG Research & Development <info@conti.de>
+- SENT 214 KUKA Research / Robotics Augsburg <info@kuka.com>
+
+Sent this run: 14. Failures: 0.
+
+
+## 2026-11-12 research centers wave
+
+- Siemens Technology Center Garching, BMW FIZ (Open Innovation + Garage Cc), Mercedes Research,
+  Bosch Research Renningen, T-Labs, SAP Labs Munich, VW Innovation, Audi Denkwerkstatt,
+  Porsche Weissach, MTU, Airbus, ZF, Continental, KUKA — 14 SENT with prices.
+- Forms: Siemens ecosystem no fields; BMW Garage wizard incomplete → email fallback.
+

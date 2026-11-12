@@ -29,3 +29,6 @@ Call log:
 - 2026-11-10 DHL / Deutsche Post: ok=False filled=0 submitted=False reason=Error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.dhl.com/global-en/home/get-in-touch.html
 Call log:
   - navigating to "https://www.dhl.com/global-en/home/get-in-touch.html", waiting unti
+- 2026-11-12 Siemens Technology Center Garching: ok=False filled=0 submitted=False reason=no_fillable_fields title='External collaboration at Siemens | Siemens Innovation Ecosystem' body='Skip to main content\nGo to main navigation\nGo to footer\nDisable Animations\nChange Text Size or Col
+- 2026-11-12 Siemens STC: ecosystem page no fillable form → email
+- 2026-11-12 BMW FIZ: Garage step1 only → email manuel.schneider@bmw.de + Cc garage

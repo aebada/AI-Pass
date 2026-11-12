@@ -8,7 +8,8 @@
   },
   "days": {
     "2026-11-10": 86,
-    "2026-11-11": 12
+    "2026-11-11": 12,
+    "2026-11-12": 14
   },
   "priced": {
     "1": {
@@ -16,6 +17,104 @@
       "company": "BMW Group",
       "csv": "daily-100-prospects.csv",
       "email": "bmw.startup.garage@bmw.com",
+      "mode": "intro"
+    },
+    "201": {
+      "at": "2026-11-12T11:41:37.191756+00:00",
+      "company": "Siemens Technology Center Garching",
+      "csv": "research-centers-prospects.csv",
+      "email": "open.day.garching.t@siemens.com",
+      "mode": "intro"
+    },
+    "202": {
+      "at": "2026-11-12T11:41:43.120677+00:00",
+      "company": "BMW Group FIZ (Research & Innovation Centre)",
+      "csv": "research-centers-prospects.csv",
+      "email": "manuel.schneider@bmw.de",
+      "mode": "intro"
+    },
+    "203": {
+      "at": "2026-11-12T11:41:49.463958+00:00",
+      "company": "Mercedes-Benz Group Research & MBC Development Sindelfingen",
+      "csv": "research-centers-prospects.csv",
+      "email": "dialog@mercedes-benz.com",
+      "mode": "intro"
+    },
+    "204": {
+      "at": "2026-11-12T11:41:55.750625+00:00",
+      "company": "Bosch Research Renningen",
+      "csv": "research-centers-prospects.csv",
+      "email": "research@de.bosch.com",
+      "mode": "intro"
+    },
+    "205": {
+      "at": "2026-11-12T11:42:01.428592+00:00",
+      "company": "Deutsche Telekom T-Labs",
+      "csv": "research-centers-prospects.csv",
+      "email": "t-labs.info@telekom.de",
+      "mode": "intro"
+    },
+    "206": {
+      "at": "2026-11-12T11:42:08.781244+00:00",
+      "company": "SAP Labs Munich (Garching)",
+      "csv": "research-centers-prospects.csv",
+      "email": "sapmunich@sap.com",
+      "mode": "intro"
+    },
+    "207": {
+      "at": "2026-11-12T11:42:14.778842+00:00",
+      "company": "Volkswagen Group Innovation / Car Brain",
+      "csv": "research-centers-prospects.csv",
+      "email": "car.brain.challenge.vwag.r.wob@volkswagen.de",
+      "mode": "intro"
+    },
+    "208": {
+      "at": "2026-11-12T11:42:20.727245+00:00",
+      "company": "Audi Denkwerkstatt / Innovation",
+      "csv": "research-centers-prospects.csv",
+      "email": "tim.miksche@audi.de",
+      "mode": "intro"
+    },
+    "209": {
+      "at": "2026-11-12T11:42:27.313663+00:00",
+      "company": "Porsche Entwicklungszentrum Weissach",
+      "csv": "research-centers-prospects.csv",
+      "email": "info@porsche.de",
+      "mode": "intro"
+    },
+    "210": {
+      "at": "2026-11-12T11:42:33.275347+00:00",
+      "company": "MTU Aero Engines R&D Munich",
+      "csv": "research-centers-prospects.csv",
+      "email": "info@mtu.de",
+      "mode": "intro"
+    },
+    "211": {
+      "at": "2026-11-12T11:42:39.114708+00:00",
+      "company": "Airbus Defence & Space Ottobrunn / Innovation",
+      "csv": "research-centers-prospects.csv",
+      "email": "info@airbus.com",
+      "mode": "intro"
+    },
+    "212": {
+      "at": "2026-11-12T11:42:45.340910+00:00",
+      "company": "ZF Friedrichshafen R&D",
+      "csv": "research-centers-prospects.csv",
+      "email": "info@zf.com",
+      "mode": "intro"
+    },
+    "213": {
+      "at": "2026-11-12T11:42:51.076955+00:00",
+      "company": "Continental AG Research & Development",
+      "csv": "research-centers-prospects.csv",
+      "email": "info@conti.de",
+      "mode": "intro"
+    },
+    "214": {
+      "at": "2026-11-12T11:42:57.004507+00:00",
+      "company": "KUKA Research / Robotics Augsburg",
+      "csv": "research-centers-prospects.csv",
+      "email": "info@kuka.com",
       "mode": "intro"
     },
     "41": {
@@ -416,10 +515,108 @@
       "company": "MAN Truck & Bus",
       "email": "info@man.eu"
     },
+    "201": {
+      "at": "2026-11-12T11:41:37.191756+00:00",
+      "company": "Siemens Technology Center Garching",
+      "csv": "research-centers-prospects.csv",
+      "email": "open.day.garching.t@siemens.com",
+      "mode": "intro"
+    },
+    "202": {
+      "at": "2026-11-12T11:41:43.120677+00:00",
+      "company": "BMW Group FIZ (Research & Innovation Centre)",
+      "csv": "research-centers-prospects.csv",
+      "email": "manuel.schneider@bmw.de",
+      "mode": "intro"
+    },
+    "203": {
+      "at": "2026-11-12T11:41:49.463958+00:00",
+      "company": "Mercedes-Benz Group Research & MBC Development Sindelfingen",
+      "csv": "research-centers-prospects.csv",
+      "email": "dialog@mercedes-benz.com",
+      "mode": "intro"
+    },
+    "204": {
+      "at": "2026-11-12T11:41:55.750625+00:00",
+      "company": "Bosch Research Renningen",
+      "csv": "research-centers-prospects.csv",
+      "email": "research@de.bosch.com",
+      "mode": "intro"
+    },
+    "205": {
+      "at": "2026-11-12T11:42:01.428592+00:00",
+      "company": "Deutsche Telekom T-Labs",
+      "csv": "research-centers-prospects.csv",
+      "email": "t-labs.info@telekom.de",
+      "mode": "intro"
+    },
+    "206": {
+      "at": "2026-11-12T11:42:08.781244+00:00",
+      "company": "SAP Labs Munich (Garching)",
+      "csv": "research-centers-prospects.csv",
+      "email": "sapmunich@sap.com",
+      "mode": "intro"
+    },
+    "207": {
+      "at": "2026-11-12T11:42:14.778842+00:00",
+      "company": "Volkswagen Group Innovation / Car Brain",
+      "csv": "research-centers-prospects.csv",
+      "email": "car.brain.challenge.vwag.r.wob@volkswagen.de",
+      "mode": "intro"
+    },
+    "208": {
+      "at": "2026-11-12T11:42:20.727245+00:00",
+      "company": "Audi Denkwerkstatt / Innovation",
+      "csv": "research-centers-prospects.csv",
+      "email": "tim.miksche@audi.de",
+      "mode": "intro"
+    },
+    "209": {
+      "at": "2026-11-12T11:42:27.313663+00:00",
+      "company": "Porsche Entwicklungszentrum Weissach",
+      "csv": "research-centers-prospects.csv",
+      "email": "info@porsche.de",
+      "mode": "intro"
+    },
     "21": {
       "at": "2026-11-10T04:57:42.645502+00:00",
       "company": "MTU Aero Engines",
       "email": "info@mtu.de"
+    },
+    "210": {
+      "at": "2026-11-12T11:42:33.275347+00:00",
+      "company": "MTU Aero Engines R&D Munich",
+      "csv": "research-centers-prospects.csv",
+      "email": "info@mtu.de",
+      "mode": "intro"
+    },
+    "211": {
+      "at": "2026-11-12T11:42:39.114708+00:00",
+      "company": "Airbus Defence & Space Ottobrunn / Innovation",
+      "csv": "research-centers-prospects.csv",
+      "email": "info@airbus.com",
+      "mode": "intro"
+    },
+    "212": {
+      "at": "2026-11-12T11:42:45.340910+00:00",
+      "company": "ZF Friedrichshafen R&D",
+      "csv": "research-centers-prospects.csv",
+      "email": "info@zf.com",
+      "mode": "intro"
+    },
+    "213": {
+      "at": "2026-11-12T11:42:51.076955+00:00",
+      "company": "Continental AG Research & Development",
+      "csv": "research-centers-prospects.csv",
+      "email": "info@conti.de",
+      "mode": "intro"
+    },
+    "214": {
+      "at": "2026-11-12T11:42:57.004507+00:00",
+      "company": "KUKA Research / Robotics Augsburg",
+      "csv": "research-centers-prospects.csv",
+      "email": "info@kuka.com",
+      "mode": "intro"
     },
     "22": {
       "at": "2026-11-10T04:57:42.645502+00:00",
