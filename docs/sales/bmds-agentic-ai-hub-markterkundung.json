@@ -1,0 +1,53 @@
+{
+  "submitted_at": "2026-11-14T16:25:17.959587+00:00",
+  "survey_url": "https://surveys.digitalservice.dev/s/cmw93fdme00t301ml0o6j88mo",
+  "contact": "aaihub@digitalservice.bund.de",
+  "deadline": "2026-11-20",
+  "company": "AI-Pass",
+  "contact_person": "Prof. Dr. Ahmed Ebada",
+  "email": "contact@aipass.space",
+  "formbricks": {
+    "environmentId": "cmkwh95ze00j3nt018srbnxwb",
+    "surveyId": "cmw93fdme00t301ml0o6j88mo",
+    "displayId": "cmwgm9w9l01c201mldb25kz9b",
+    "responseId": "cmwgm9wm001c301ml8qw488m4",
+    "result": {
+      "data": {
+        "id": "cmwgm9wm001c301ml8qw488m4",
+        "quotaFull": false
+      }
+    }
+  },
+  "answers": {
+    "almp2y2qay78rgw8ghybb5ap": "AI-Pass (aipass.space)",
+    "vimyyra7mirt0n11biuv3742": "Prof. Dr. Ahmed Ebada",
+    "tr8zudqk5lr0m627b1qt2d5h": "Gründer / Geschäftsführung",
+    "un4ynywwuoha4lq8ztpckas0": "contact@aipass.space",
+    "aktkmkl6n56bx2psw7pjkjrt": "d87iod7rkfdwopko2bl8w1ln",
+    "hs8kuhzokqssixe13v6g2eia": "AI-Pass ist eine agentische KI-Plattform (SaaS) für Organisationen: Digital Twins von Mitarbeitenden/Prozessen, Connect (Systemanbindung), Company Harness (Laufzeit-Sicherheit/Freigaben) und Graph Builder (Wissens-/Prozessgraph).\n\nZuordnung zu Anlage 1:\n• Dialogsysteme: Assistenten/Twins für Mitarbeitende und Bürgerauskunft (Wissensdialog, Handbücher, Dienstanweisungen).\n• Entscheidungsunterstützung: Harness mit Bestätigungen vor irreversiblen Schritten; Flow-QC/Grader und Regelprüfungen als Vorschläge für die Sachbearbeitung (Mensch entscheidet).\n• Dokumenten- und Sprachverarbeitung: Erfassung/Strukturierung von Vorgängen, SOPs, Tickets und Formularinhalten über Connect und Ops-Reality-Pipelines.\n• Daten- und Prozessanalyse: Graph Builder und Merit für Abläufe, Engpässe und Qualitätskennzahlen über viele Vorgänge.\n\nSchwerpunkt: agentische KI mit nachvollziehbaren Freigaben – passend zum Agentic AI Hub.",
+    "potk1iff41grbf3vougyy91o": "fck415vqwnaifqcbn4zlozxr",
+    "vimzxykciy9fr8jjrgsyh5dz": "k3d8ognegnqxla44zkadhom0",
+    "et38hkpbo40q2hck4lo9zz15": "sl8haaxc4lh64lnkwxx7e8mt",
+    "jmix6oa8o8d4n82wrv6wrz0d": "Ergänzend sinnvoll wäre eine Querschnittkategorie oder ein klarer Hinweis, dass plattformartige „Agentic Runtime / Orchestration“-Lösungen (Ziele über mehrere Schritte, Tool-Nutzung, Freigaben, Protokoll) mehreren Zweckkategorien zugeordnet und in jeder beantragt werden können. Optional: eigene Kategorie „Agentische Orchestrierung & Laufzeitsicherheit“, falls Auftraggeber gezielt Steuerung/Harness statt nur Einzelbots beschaffen wollen.",
+    "q0goo3wmi7v1ynv4jjikd48i": "qrifm5ka2t0cb4pgepy8h1qw",
+    "girzzbx2367gyf989jyi2kle": "Hilfreich wären: (1) einseitige Ablaufgrafik Zulassung → Abruf → Mini-Wettbewerb, (2) Checkliste der typischen Eignungsunterlagen je Kategorie, (3) Muster-Zeitplan und Fristen, (4) FAQ zu SaaS-/Cloud- und Datenschutzanforderungen (ohne individuelle Beratung), (5) Hinweis, ob und wie Piloten/Proof-of-Concepts im Abruf abgebildet werden können.",
+    "dl63iszzt94qbi9awfp8usaz": "Als junges Unternehmen können wir u. a. vorlegen: aktuelle BWA/GuV bzw. Jahresabschluss sobald verfügbar, Handelsregisterauszug, Berufshaftpflicht (Cyber/IT) bzw. Nachweis der Beantragung, Bankauskunft oder Steuerberaterbescheinigung, Umsatzübersicht seit Gründung, sowie Transparenz zu Gesellschaftern und Finanzierungsstand.",
+    "vd0jwk311g4bipzpevo5summ": "Falls mehrjährige Abschlüsse noch fehlen: Gründungsdokumente, aktuelle BWA, Steuerberater-/Wirtschaftsprüfer-Bestätigung, Liquiditäts-/Finanzierungsnachweise (z. B. Investorenschreiben), Versicherungsnachweise und eine kurze Selbstdarstellung der wirtschaftlichen Tragfähigkeit mit Planumsätzen.",
+    "fayxphor8ateokozu32selc9": "Vergleichbare Erfahrungen: Aufbau und Piloten der AI-Pass-Plattform (Twins, Connect, Harness, Graph Builder, Intelligence Lab), Outreach und PoCs mit Industrie-/Innovationspartnern, sowie Expertise der Führung in KI/Digitalisierung. Belege: Produktdemos (aipass.space), Architektur-/Sicherheitsbeschreibung, Pilotberichte, Referenzkontakte nach Zustimmung, Lebensläufe/Kurzprofile der Schlüsselpersonen, ggf. Teststellung.",
+    "l4vw8se5e95h1ymx3chxbfrx": "Statt vieler abgeschlossener Vergaben: dokumentierte MVP-/Pilotnachweise, technische Evaluationsberichte (Eval/Rubrics), Open-Documentation zu Sicherheit/Logging/Freigaben, Code-/Architektur-Walkthroughs, und nachweisbare Fachkompetenz der vorgesehenen Personen (Publikationen, frühere Projekte, Zertifikate).",
+    "ctrlo3xwn7xgnkxzx1yy0lw2": "Neben dem Preis: (1) Fachliche Passung zum Verwaltungszweck, (2) Datenschutz/IT-Sicherheit und Protokollierbarkeit, (3) Mensch-in-der-Schleife / Freigaben vor rechtserheblichen Schritten, (4) Integrationsfähigkeit (APIs, On-Prem/EU-Hosting), (5) Bedienbarkeit und Barrierearmut, (6) Time-to-Pilot und Supportmodell, (7) Exit-/Datenportabilität, (8) Evaluierbarkeit (Messgrößen, Testfälle).",
+    "kqbvuelyes5fl5atakqujod5": "Besonders wichtig: Datenschutz/Sicherheit und nachvollziehbare Freigaben (Rechtmäßigkeit, Akzeptanz) sowie fachliche Passung inkl. Integrationsfähigkeit – sonst entstehen Schatten-IT oder nicht nutzbare Piloten. Preis allein würde reife, aber ungeeignete oder unsichere Angebote bevorzugen.",
+    "df4dyx3kism5jnhmpig7gfkh": "Beurteilung über: ausgefüllte Sicherheits-/DS-Fragebögen, Architekturdiagramm, Logging-/Freigabe-Demo, kurze praxisnahe Teststellung an anonymisierten Beispieldaten, Integrations-Smoke-Test (API/Connect), Referenz- oder Pilotbericht, und klarer SLA-/Support- und Exit-Plan.",
+    "rp0wgvr77af00hzn35sl142m": "Schwer sinnvoll pauschal zu bewerten: „Innovationsgrad“ ohne Testfälle und subjektive UX-Schönheit ohne barrierefreie Mindestkriterien. Besser: messbare Pilotergebnisse und Checklisten statt reiner Essay-Bewertung.",
+    "jcj6zzoimfshu3ndqhtanfch": [
+      "e5bayng57gk1f51m6nhbrm6g",
+      "zb085itsju7l90ygj6rtrr56",
+      "mxmme3cskaj27p5sxtry47g3",
+      "iurktt3t9t8nvl7oo9r3cx8r",
+      "qfr6zx92k0lpyaa848ghfpv6"
+    ],
+    "n5cpyltf6uaviegxvftbzxb1": "Zusätzlich möglich: Einrichtungs-/Integrationsaufwand (Connect an Fachverfahren), optionale Schulung, erhöhte Support-Stufen, EU-/Private-Cloud-Hosting, zusätzliche Umgebungen, sowie nutzungsabhängige Modell-/Inference-Kosten bei sehr hohem Volumen – jeweils transparent auszuweisen.",
+    "zo8phphl9frwx8pmxyzjjxj8": "Unbedingt: Eignungskriterien mit Alternativnachweisen für junge Unternehmen (BWA statt 3 Jahresabschlüsse; Piloten/Demos statt langer Referenzlisten), angemessene Umsatzmindestgrenzen oder Verzicht darauf in der Zulassung, klare, kurze Unterlagenlisten, digitale Einreichung, ausreichend Frist, Möglichkeit der Zulassung in mehreren Kategorien, und Abrufe mit Raum für Piloten/gestaffelte Einführung statt nur Großvolumen-Festpreise.",
+    "xlui5a2u498mjfyl2u546gcw": "Wir begrüßen den Agentic AI Hub und bringen gern Plattform-/Harness-Perspektive ein. Bitte um Info, wann die förmliche Zulassung startet und ob es einen Verteiler für Updates gibt (aaihub@digitalservice.bund.de). Kontakt: contact@aipass.space · https://aipass.space"
+  }
+}
