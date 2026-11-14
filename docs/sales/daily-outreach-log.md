@@ -387,3 +387,13 @@ Sent this run: 14. Failures: 0.
   Porsche Weissach, MTU, Airbus, ZF, Continental, KUKA — 14 SENT with prices.
 - Forms: Siemens ecosystem no fields; BMW Garage wizard incomplete → email fallback.
 
+
+## 2026-11-14 — BMDS Agentic AI Hub Markterkundung
+
+- SUBMITTED Formbricks survey (DBS Agentic AI Hub) as AI-Pass.
+- Contact: aaihub@digitalservice.bund.de · deadline 2026-11-20.
+- Response id: cmwgm9wm001c301ml8qw488m4
+- Details: docs/sales/bmds-agentic-ai-hub-markterkundung.md
+
+- Courtesy email SENT to aaihub@digitalservice.bund.de confirming participation.
+
