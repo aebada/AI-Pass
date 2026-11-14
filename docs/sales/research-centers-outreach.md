@@ -24,3 +24,9 @@ Infineon Neubiberg / Fraunhofer AISEC / TUM / UnternehmerTUM marked `SENT_PRIOR`
 ## Offer
 
 Research collaboration wedge: twin + Connect + harness for lab/R&D workflows; Twin Starter from €8k; seats from $49/mo.
+
+## Skips / dead channels
+
+| Center | Reason | Next |
+|---|---|---|
+| Google DeepMind Press | Auto-ACK only; non-press/Alphabet get no further reply | SKIP. Use [AI Futures Fund](https://labs.google/aifuturesfund) or [DeepMind Accelerators](https://deepmind.google/accelerators/) if program fit — never press inbox |
