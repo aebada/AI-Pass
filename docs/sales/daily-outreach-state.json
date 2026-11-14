@@ -4,6 +4,13 @@
       "at": "2026-11-10T04:57:42.645502+00:00",
       "company": "BMW Group",
       "email": "partner@bmw.com"
+    },
+    "deepmind-press": {
+      "at": "2026-11-14T15:57:26.344533+00:00",
+      "company": "Google DeepMind",
+      "email": "press / DeepMind Press team",
+      "note": "Auto-reply: high volume; only press or DeepMind/Alphabet employees should expect a response beyond this ACK. Not a sales channel.",
+      "outcome": "SKIP_PRESS_ONLY"
     }
   },
   "days": {

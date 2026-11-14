@@ -387,3 +387,13 @@ Sent this run: 14. Failures: 0.
   Porsche Weissach, MTU, Airbus, ZF, Continental, KUKA — 14 SENT with prices.
 - Forms: Siemens ecosystem no fields; BMW Garage wizard incomplete → email fallback.
 
+
+## 2026-11-14 bounce/auto-reply — Google DeepMind Press
+
+- SKIP Google DeepMind (Press team) — auto-ACK only; non-press / non-Alphabet should not expect a further reply.
+- Do not follow up on DeepMind press. Press inboxes are not a sales channel.
+- Better paths if we want Google/DeepMind adjacency later:
+  - AI Futures Fund: https://labs.google/aifuturesfund
+  - DeepMind Accelerator programs: https://deepmind.google/accelerators/ (e.g. europe-accelerator@google.com for EU robotics track when open)
+  - Product/Cloud partner routes — not press@
+
