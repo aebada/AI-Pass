@@ -57,7 +57,7 @@ Assist  Assist  Gen     Prep    Builder Service
 | `personalization-engine` | Website, LinkedIn, CRM history, conversations, industry, title, company size |
 | `campaign-builder` | Cold, nurturing, follow-up, upsell, renewals, investor outreach |
 | `analytics-service` | Open rate, reply rate, conversion, meetings, AI effectiveness, ROI |
-| `outreach-service` | Email, LinkedIn, WhatsApp, SMS, Teams, Slack (stubs) |
+| `outreach-service` | Email, LinkedIn, WhatsApp (Cloud API when configured), SMS, Teams, Slack |
 | `workflow-integration` | Lead → research → email → wait → follow-up → CRM → notify |
 
 ## Membership Gates

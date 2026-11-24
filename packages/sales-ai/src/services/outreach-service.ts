@@ -1,4 +1,5 @@
 import { createId } from '@ai-pass/shared';
+import { getWhatsAppCloudClient } from '@ai-pass/messaging-connectors';
 import type { OutreachChannel } from '../types.js';
 
 export interface OutreachMessage {
@@ -9,9 +10,10 @@ export interface OutreachMessage {
   status: 'queued' | 'sent' | 'delivered' | 'failed' | 'stubbed';
   sentAt?: string;
   stubbed: boolean;
+  externalId?: string;
 }
 
-/** Outreach via email, LinkedIn, WhatsApp, SMS, Teams, Slack (stubs) */
+/** Outreach via email, LinkedIn, WhatsApp, SMS, Teams, Slack */
 export class OutreachService {
   private messages: OutreachMessage[] = [];
 
@@ -21,8 +23,27 @@ export class OutreachService {
     content: string;
     subject?: string;
   }): Promise<OutreachMessage> {
-    const stubbed = params.channel !== 'email';
+    if (params.channel === 'whatsapp') {
+      const client = getWhatsAppCloudClient();
+      const result = await client.sendText({
+        to: params.recipient,
+        body: params.content,
+      });
+      const message: OutreachMessage = {
+        id: `out_${createId()}`,
+        channel: 'whatsapp',
+        recipient: params.recipient,
+        content: params.content,
+        status: result.success ? (result.stubbed ? 'stubbed' : 'sent') : 'failed',
+        sentAt: new Date().toISOString(),
+        stubbed: result.stubbed,
+        externalId: result.externalId,
+      };
+      this.messages.push(message);
+      return message;
+    }
 
+    const stubbed = params.channel !== 'email';
     const message: OutreachMessage = {
       id: `out_${createId()}`,
       channel: params.channel,
@@ -42,7 +63,11 @@ export class OutreachService {
   }
 
   getChannelStatus(channel: OutreachChannel): { available: boolean; stubbed: boolean } {
-    const stubbedChannels: OutreachChannel[] = ['whatsapp', 'sms', 'teams', 'slack'];
+    if (channel === 'whatsapp') {
+      const configured = getWhatsAppCloudClient().isConfigured();
+      return { available: true, stubbed: !configured };
+    }
+    const stubbedChannels: OutreachChannel[] = ['sms', 'teams', 'slack'];
     return {
       available: true,
       stubbed: stubbedChannels.includes(channel) || channel === 'linkedin',

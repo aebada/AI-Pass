@@ -15,6 +15,7 @@
     { "path": "../marketplace" },
     { "path": "../marketplace-core" },
     { "path": "../crm-connectors" },
+    { "path": "../messaging-connectors" },
     { "path": "../knowledge-pipeline" },
     { "path": "../provider-hub" }
   ]

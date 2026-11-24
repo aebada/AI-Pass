@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@ai-pass/agent-studio": "workspace:*",
+    "@ai-pass/messaging-connectors": "workspace:*",
     "@ai-pass/crm-connectors": "workspace:*",
     "@ai-pass/knowledge-pipeline": "workspace:*",
     "@ai-pass/livesync": "workspace:*",
