@@ -1,0 +1,1133 @@
+{
+  "bounced": {
+    "1": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "BMW Group",
+      "email": "partner@bmw.com"
+    }
+  },
+  "days": {
+    "2026-11-10": 86,
+    "2026-11-11": 12,
+    "2026-11-12": 14
+  },
+  "priced": {
+    "1": {
+      "at": "2026-11-10T08:11:36.269598+00:00",
+      "company": "BMW Group",
+      "csv": "daily-100-prospects.csv",
+      "email": "bmw.startup.garage@bmw.com",
+      "mode": "intro"
+    },
+    "201": {
+      "at": "2026-11-12T11:41:37.191756+00:00",
+      "company": "Siemens Technology Center Garching",
+      "csv": "research-centers-prospects.csv",
+      "email": "open.day.garching.t@siemens.com",
+      "mode": "intro"
+    },
+    "202": {
+      "at": "2026-11-12T11:41:43.120677+00:00",
+      "company": "BMW Group FIZ (Research & Innovation Centre)",
+      "csv": "research-centers-prospects.csv",
+      "email": "manuel.schneider@bmw.de",
+      "mode": "intro"
+    },
+    "203": {
+      "at": "2026-11-12T11:41:49.463958+00:00",
+      "company": "Mercedes-Benz Group Research & MBC Development Sindelfingen",
+      "csv": "research-centers-prospects.csv",
+      "email": "dialog@mercedes-benz.com",
+      "mode": "intro"
+    },
+    "204": {
+      "at": "2026-11-12T11:41:55.750625+00:00",
+      "company": "Bosch Research Renningen",
+      "csv": "research-centers-prospects.csv",
+      "email": "research@de.bosch.com",
+      "mode": "intro"
+    },
+    "205": {
+      "at": "2026-11-12T11:42:01.428592+00:00",
+      "company": "Deutsche Telekom T-Labs",
+      "csv": "research-centers-prospects.csv",
+      "email": "t-labs.info@telekom.de",
+      "mode": "intro"
+    },
+    "206": {
+      "at": "2026-11-12T11:42:08.781244+00:00",
+      "company": "SAP Labs Munich (Garching)",
+      "csv": "research-centers-prospects.csv",
+      "email": "sapmunich@sap.com",
+      "mode": "intro"
+    },
+    "207": {
+      "at": "2026-11-12T11:42:14.778842+00:00",
+      "company": "Volkswagen Group Innovation / Car Brain",
+      "csv": "research-centers-prospects.csv",
+      "email": "car.brain.challenge.vwag.r.wob@volkswagen.de",
+      "mode": "intro"
+    },
+    "208": {
+      "at": "2026-11-12T11:42:20.727245+00:00",
+      "company": "Audi Denkwerkstatt / Innovation",
+      "csv": "research-centers-prospects.csv",
+      "email": "tim.miksche@audi.de",
+      "mode": "intro"
+    },
+    "209": {
+      "at": "2026-11-12T11:42:27.313663+00:00",
+      "company": "Porsche Entwicklungszentrum Weissach",
+      "csv": "research-centers-prospects.csv",
+      "email": "info@porsche.de",
+      "mode": "intro"
+    },
+    "210": {
+      "at": "2026-11-12T11:42:33.275347+00:00",
+      "company": "MTU Aero Engines R&D Munich",
+      "csv": "research-centers-prospects.csv",
+      "email": "info@mtu.de",
+      "mode": "intro"
+    },
+    "211": {
+      "at": "2026-11-12T11:42:39.114708+00:00",
+      "company": "Airbus Defence & Space Ottobrunn / Innovation",
+      "csv": "research-centers-prospects.csv",
+      "email": "info@airbus.com",
+      "mode": "intro"
+    },
+    "212": {
+      "at": "2026-11-12T11:42:45.340910+00:00",
+      "company": "ZF Friedrichshafen R&D",
+      "csv": "research-centers-prospects.csv",
+      "email": "info@zf.com",
+      "mode": "intro"
+    },
+    "213": {
+      "at": "2026-11-12T11:42:51.076955+00:00",
+      "company": "Continental AG Research & Development",
+      "csv": "research-centers-prospects.csv",
+      "email": "info@conti.de",
+      "mode": "intro"
+    },
+    "214": {
+      "at": "2026-11-12T11:42:57.004507+00:00",
+      "company": "KUKA Research / Robotics Augsburg",
+      "csv": "research-centers-prospects.csv",
+      "email": "info@kuka.com",
+      "mode": "intro"
+    },
+    "41": {
+      "at": "2026-11-11T02:20:10.033468+00:00",
+      "company": "LMU",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@lmu.de",
+      "mode": "intro"
+    },
+    "47": {
+      "at": "2026-11-10T07:09:40.614261+00:00",
+      "company": "Henkel",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@henkel.com",
+      "mode": "intro"
+    },
+    "48": {
+      "at": "2026-11-10T07:09:46.273303+00:00",
+      "company": "Bayer AG",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@bayer.com",
+      "mode": "intro"
+    },
+    "49": {
+      "at": "2026-11-10T08:11:42.315912+00:00",
+      "company": "Merck KGaA",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@merckgroup.com",
+      "mode": "intro"
+    },
+    "50": {
+      "at": "2026-11-10T10:12:21.843766+00:00",
+      "company": "Adidas",
+      "csv": "daily-100-prospects.csv",
+      "email": "press@adidas.com",
+      "mode": "intro"
+    },
+    "51": {
+      "at": "2026-11-11T02:20:15.876753+00:00",
+      "company": "Puma",
+      "csv": "daily-100-prospects.csv",
+      "email": "press@puma.com",
+      "mode": "intro"
+    },
+    "52": {
+      "at": "2026-11-11T02:20:21.605742+00:00",
+      "company": "Hugo Boss",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@hugoboss.com",
+      "mode": "intro"
+    },
+    "53": {
+      "at": "2026-11-10T10:12:27.586837+00:00",
+      "company": "Otto Group",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@ottogroup.com",
+      "mode": "intro"
+    },
+    "54": {
+      "at": "2026-11-10T10:12:33.317350+00:00",
+      "company": "Zalando",
+      "csv": "daily-100-prospects.csv",
+      "email": "press@zalando.de",
+      "mode": "intro"
+    },
+    "55": {
+      "at": "2026-11-10T10:12:39.311884+00:00",
+      "company": "Delivery Hero",
+      "csv": "daily-100-prospects.csv",
+      "email": "press@deliveryhero.com",
+      "mode": "intro"
+    },
+    "56": {
+      "at": "2026-11-11T02:20:27.442715+00:00",
+      "company": "Get Your Guide",
+      "csv": "daily-100-prospects.csv",
+      "email": "partnerships@getyourguide.com",
+      "mode": "intro"
+    },
+    "57": {
+      "at": "2026-11-10T12:13:14.744798+00:00",
+      "company": "Contentful",
+      "csv": "daily-100-prospects.csv",
+      "email": "partners@contentful.com",
+      "mode": "intro"
+    },
+    "58": {
+      "at": "2026-11-11T04:20:48.816107+00:00",
+      "company": "Adjust",
+      "csv": "daily-100-prospects.csv",
+      "email": "partners@adjust.com",
+      "mode": "intro"
+    },
+    "59": {
+      "at": "2026-11-11T04:20:54.666461+00:00",
+      "company": "SoundCloud",
+      "csv": "daily-100-prospects.csv",
+      "email": "press@soundcloud.com",
+      "mode": "intro"
+    },
+    "60": {
+      "at": "2026-11-10T12:13:20.440661+00:00",
+      "company": "HelloFresh",
+      "csv": "daily-100-prospects.csv",
+      "email": "press@hellofresh.com",
+      "mode": "intro"
+    },
+    "61": {
+      "at": "2026-11-10T12:13:26.308768+00:00",
+      "company": "Auto1 Group",
+      "csv": "daily-100-prospects.csv",
+      "email": "press@auto1-group.com",
+      "mode": "intro"
+    },
+    "62": {
+      "at": "2026-11-10T12:13:32.044343+00:00",
+      "company": "FlixBus / Flix",
+      "csv": "daily-100-prospects.csv",
+      "email": "press@flixbus.com",
+      "mode": "intro"
+    },
+    "63": {
+      "at": "2026-11-11T04:21:00.631021+00:00",
+      "company": "About You",
+      "csv": "daily-100-prospects.csv",
+      "email": "press@aboutyou.com",
+      "mode": "intro"
+    },
+    "64": {
+      "at": "2026-11-10T14:14:05.904879+00:00",
+      "company": "Commerzbank",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@commerzbank.com",
+      "mode": "intro"
+    },
+    "65": {
+      "at": "2026-11-10T14:14:19.597412+00:00",
+      "company": "DZ Bank",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@dzbank.de",
+      "mode": "intro"
+    },
+    "66": {
+      "at": "2026-11-10T14:14:25.676235+00:00",
+      "company": "Deutsche B\u00f6rse",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@deutsche-boerse.com",
+      "mode": "intro"
+    },
+    "67": {
+      "at": "2026-11-10T14:14:39.297543+00:00",
+      "company": "E.ON",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@eon.com",
+      "mode": "intro"
+    },
+    "68": {
+      "at": "2026-11-10T16:15:10.735614+00:00",
+      "company": "RWE",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@rwe.com",
+      "mode": "intro"
+    },
+    "69": {
+      "at": "2026-11-10T16:15:24.235235+00:00",
+      "company": "EnBW",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@enbw.com",
+      "mode": "intro"
+    },
+    "70": {
+      "at": "2026-11-10T16:15:37.482642+00:00",
+      "company": "Vonovia",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@vonovia.de",
+      "mode": "intro"
+    },
+    "72": {
+      "at": "2026-11-10T16:15:43.284882+00:00",
+      "company": "Lufthansa Group",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@lufthansa.com",
+      "mode": "intro"
+    },
+    "73": {
+      "at": "2026-11-10T16:15:57.183684+00:00",
+      "company": "Fraport",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@fraport.de",
+      "mode": "intro"
+    },
+    "74": {
+      "at": "2026-11-10T16:16:03.036213+00:00",
+      "company": "Hapag-Lloyd",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@hapag-lloyd.com",
+      "mode": "intro"
+    },
+    "76": {
+      "at": "2026-11-10T18:16:39.644399+00:00",
+      "company": "Hermes Germany",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@hermesworld.com",
+      "mode": "intro"
+    },
+    "77": {
+      "at": "2026-11-10T18:16:45.532548+00:00",
+      "company": "Trumpf",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@trumpf.com",
+      "mode": "intro"
+    },
+    "78": {
+      "at": "2026-11-10T18:16:51.653922+00:00",
+      "company": "DMG Mori",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@dmgmori.com",
+      "mode": "intro"
+    },
+    "79": {
+      "at": "2026-11-10T18:16:57.873386+00:00",
+      "company": "Heidelberg Materials",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@heidelbergmaterials.com",
+      "mode": "intro"
+    },
+    "80": {
+      "at": "2026-11-10T18:17:04.871042+00:00",
+      "company": "Covestro",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@covestro.com",
+      "mode": "intro"
+    },
+    "81": {
+      "at": "2026-11-10T20:17:37.655428+00:00",
+      "company": "Evonik",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@evonik.com",
+      "mode": "intro"
+    },
+    "82": {
+      "at": "2026-11-10T20:17:43.559359+00:00",
+      "company": "Fresenius",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@fresenius.com",
+      "mode": "intro"
+    },
+    "84": {
+      "at": "2026-11-10T20:17:49.308020+00:00",
+      "company": "Carl Zeiss",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@zeiss.com",
+      "mode": "intro"
+    },
+    "85": {
+      "at": "2026-11-10T20:17:55.033072+00:00",
+      "company": "Osram / ams OSRAM",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@ams-osram.com",
+      "mode": "intro"
+    },
+    "86": {
+      "at": "2026-11-10T20:18:01.779538+00:00",
+      "company": "Nemetschek",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@nemetschek.com",
+      "mode": "intro"
+    },
+    "87": {
+      "at": "2026-11-10T22:18:33.034551+00:00",
+      "company": "TeamViewer",
+      "csv": "daily-100-prospects.csv",
+      "email": "partners@teamviewer.com",
+      "mode": "intro"
+    },
+    "88": {
+      "at": "2026-11-10T22:18:38.856791+00:00",
+      "company": "Software AG",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@softwareag.com",
+      "mode": "intro"
+    },
+    "89": {
+      "at": "2026-11-10T22:18:44.659760+00:00",
+      "company": "Bechtle",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@bechtle.com",
+      "mode": "intro"
+    },
+    "90": {
+      "at": "2026-11-10T22:18:50.399569+00:00",
+      "company": "Cancom",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@cancom.de",
+      "mode": "intro"
+    },
+    "91": {
+      "at": "2026-11-11T00:19:13.085718+00:00",
+      "company": "Msg systems",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@msg.group",
+      "mode": "intro"
+    },
+    "94": {
+      "at": "2026-11-11T00:19:18.712512+00:00",
+      "company": "Deloitte Germany",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@deloitte.de",
+      "mode": "intro"
+    },
+    "95": {
+      "at": "2026-11-11T00:19:24.484429+00:00",
+      "company": "PwC Germany",
+      "csv": "daily-100-prospects.csv",
+      "email": "de_info@pwc.com",
+      "mode": "intro"
+    },
+    "96": {
+      "at": "2026-11-11T00:19:30.086307+00:00",
+      "company": "EY Germany",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@de.ey.com",
+      "mode": "intro"
+    },
+    "97": {
+      "at": "2026-11-11T02:20:04.090580+00:00",
+      "company": "KPMG Germany",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@kpmg.de",
+      "mode": "intro"
+    }
+  },
+  "sent": {
+    "1": {
+      "at": "2026-11-10T08:11:36.269598+00:00",
+      "company": "BMW Group",
+      "csv": "daily-100-prospects.csv",
+      "email": "bmw.startup.garage@bmw.com",
+      "mode": "intro"
+    },
+    "10": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "UnternehmerTUM / Women Startup",
+      "email": "womenstartup@unternehmertum.de"
+    },
+    "11": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "Datev eG",
+      "email": "info@datev.de"
+    },
+    "12": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "Deutsche Telekom",
+      "email": "info@telekom.de"
+    },
+    "13": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "Bosch",
+      "email": "info@bosch.com"
+    },
+    "14": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "BASF",
+      "email": "info@basf.com"
+    },
+    "15": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "Continental AG",
+      "email": "info@conti.de"
+    },
+    "16": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "ZF Friedrichshafen",
+      "email": "info@zf.com"
+    },
+    "17": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "Mercedes-Benz Group",
+      "email": "dialog@mercedes-benz.com"
+    },
+    "18": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "Audi AG",
+      "email": "info@audi.de"
+    },
+    "19": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "Volkswagen AG",
+      "email": "info@volkswagen.de"
+    },
+    "2": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "Siemens AG",
+      "email": "partner@siemens.com"
+    },
+    "20": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "MAN Truck & Bus",
+      "email": "info@man.eu"
+    },
+    "201": {
+      "at": "2026-11-12T11:41:37.191756+00:00",
+      "company": "Siemens Technology Center Garching",
+      "csv": "research-centers-prospects.csv",
+      "email": "open.day.garching.t@siemens.com",
+      "mode": "intro"
+    },
+    "202": {
+      "at": "2026-11-12T11:41:43.120677+00:00",
+      "company": "BMW Group FIZ (Research & Innovation Centre)",
+      "csv": "research-centers-prospects.csv",
+      "email": "manuel.schneider@bmw.de",
+      "mode": "intro"
+    },
+    "203": {
+      "at": "2026-11-12T11:41:49.463958+00:00",
+      "company": "Mercedes-Benz Group Research & MBC Development Sindelfingen",
+      "csv": "research-centers-prospects.csv",
+      "email": "dialog@mercedes-benz.com",
+      "mode": "intro"
+    },
+    "204": {
+      "at": "2026-11-12T11:41:55.750625+00:00",
+      "company": "Bosch Research Renningen",
+      "csv": "research-centers-prospects.csv",
+      "email": "research@de.bosch.com",
+      "mode": "intro"
+    },
+    "205": {
+      "at": "2026-11-12T11:42:01.428592+00:00",
+      "company": "Deutsche Telekom T-Labs",
+      "csv": "research-centers-prospects.csv",
+      "email": "t-labs.info@telekom.de",
+      "mode": "intro"
+    },
+    "206": {
+      "at": "2026-11-12T11:42:08.781244+00:00",
+      "company": "SAP Labs Munich (Garching)",
+      "csv": "research-centers-prospects.csv",
+      "email": "sapmunich@sap.com",
+      "mode": "intro"
+    },
+    "207": {
+      "at": "2026-11-12T11:42:14.778842+00:00",
+      "company": "Volkswagen Group Innovation / Car Brain",
+      "csv": "research-centers-prospects.csv",
+      "email": "car.brain.challenge.vwag.r.wob@volkswagen.de",
+      "mode": "intro"
+    },
+    "208": {
+      "at": "2026-11-12T11:42:20.727245+00:00",
+      "company": "Audi Denkwerkstatt / Innovation",
+      "csv": "research-centers-prospects.csv",
+      "email": "tim.miksche@audi.de",
+      "mode": "intro"
+    },
+    "209": {
+      "at": "2026-11-12T11:42:27.313663+00:00",
+      "company": "Porsche Entwicklungszentrum Weissach",
+      "csv": "research-centers-prospects.csv",
+      "email": "info@porsche.de",
+      "mode": "intro"
+    },
+    "21": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "MTU Aero Engines",
+      "email": "info@mtu.de"
+    },
+    "210": {
+      "at": "2026-11-12T11:42:33.275347+00:00",
+      "company": "MTU Aero Engines R&D Munich",
+      "csv": "research-centers-prospects.csv",
+      "email": "info@mtu.de",
+      "mode": "intro"
+    },
+    "211": {
+      "at": "2026-11-12T11:42:39.114708+00:00",
+      "company": "Airbus Defence & Space Ottobrunn / Innovation",
+      "csv": "research-centers-prospects.csv",
+      "email": "info@airbus.com",
+      "mode": "intro"
+    },
+    "212": {
+      "at": "2026-11-12T11:42:45.340910+00:00",
+      "company": "ZF Friedrichshafen R&D",
+      "csv": "research-centers-prospects.csv",
+      "email": "info@zf.com",
+      "mode": "intro"
+    },
+    "213": {
+      "at": "2026-11-12T11:42:51.076955+00:00",
+      "company": "Continental AG Research & Development",
+      "csv": "research-centers-prospects.csv",
+      "email": "info@conti.de",
+      "mode": "intro"
+    },
+    "214": {
+      "at": "2026-11-12T11:42:57.004507+00:00",
+      "company": "KUKA Research / Robotics Augsburg",
+      "csv": "research-centers-prospects.csv",
+      "email": "info@kuka.com",
+      "mode": "intro"
+    },
+    "22": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "Rohde & Schwarz",
+      "email": "info@rohde-schwarz.com"
+    },
+    "23": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "Wacker Chemie",
+      "email": "info@wacker.com"
+    },
+    "24": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "Linde plc (Germany)",
+      "email": "info@linde.com"
+    },
+    "25": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "HypoVereinsbank / UniCredit",
+      "email": "info@hypovereinsbank.de"
+    },
+    "26": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "BayernLB",
+      "email": "info@bayernlb.de"
+    },
+    "27": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "Stadtsparkasse M\u00fcnchen",
+      "email": "info@sskm.de"
+    },
+    "28": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "SWM Stadtwerke M\u00fcnchen",
+      "email": "info@swm.de"
+    },
+    "29": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "Flughafen M\u00fcnchen",
+      "email": "info@munich-airport.de"
+    },
+    "3": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "SAP SE",
+      "email": "partner@sap.com"
+    },
+    "30": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "Messe M\u00fcnchen",
+      "email": "info@messe-muenchen.de"
+    },
+    "31": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "Celonis",
+      "email": "info@celonis.com"
+    },
+    "32": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "Personio",
+      "email": "info@personio.com"
+    },
+    "33": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "Lilium",
+      "email": "info@lilium.com",
+      "note": "Auto-reply: preliminary insolvency; mailbox unmonitored; contact lilium@anchor.eu for requests only",
+      "outcome": "SKIP_INSOLVENCY"
+    },
+    "34": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "Isar Aerospace",
+      "email": "info@isaraerospace.com"
+    },
+    "35": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "ProSiebenSat.1",
+      "email": "info@prosiebensat1.com"
+    },
+    "36": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "Burda",
+      "email": "info@burda.com"
+    },
+    "37": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "Knorr-Bremse",
+      "email": "info@knorr-bremse.com"
+    },
+    "38": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "KraussMaffei",
+      "email": "info@kraussmaffei.com"
+    },
+    "39": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "Giesecke+Devrient",
+      "email": "info@gi-de.com"
+    },
+    "4": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "Allianz SE",
+      "email": "info@allianz.com"
+    },
+    "40": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "TUM",
+      "email": "info@tum.de"
+    },
+    "41": {
+      "at": "2026-11-11T02:20:10.033468+00:00",
+      "company": "LMU",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@lmu.de",
+      "mode": "intro"
+    },
+    "42": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "Fraunhofer AISEC",
+      "email": "info@aisec.fraunhofer.de"
+    },
+    "43": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "Fraunhofer IGCV",
+      "email": "info@igcv.fraunhofer.de"
+    },
+    "44": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "DFKI",
+      "email": "info@dfki.de"
+    },
+    "45": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "Schaeffler",
+      "email": "info@schaeffler.com"
+    },
+    "46": {
+      "at": "2026-11-10T05:51:55.547031+00:00",
+      "company": "Thyssenkrupp",
+      "email": "info@thyssenkrupp.com"
+    },
+    "47": {
+      "at": "2026-11-10T07:09:40.614261+00:00",
+      "company": "Henkel",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@henkel.com",
+      "mode": "intro"
+    },
+    "48": {
+      "at": "2026-11-10T07:09:46.273303+00:00",
+      "company": "Bayer AG",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@bayer.com",
+      "mode": "intro"
+    },
+    "49": {
+      "at": "2026-11-10T08:11:42.315912+00:00",
+      "company": "Merck KGaA",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@merckgroup.com",
+      "mode": "intro"
+    },
+    "5": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "Deutsche Bank",
+      "email": "deutsche.bank@db.com"
+    },
+    "50": {
+      "at": "2026-11-10T10:12:21.843766+00:00",
+      "company": "Adidas",
+      "csv": "daily-100-prospects.csv",
+      "email": "press@adidas.com",
+      "mode": "intro"
+    },
+    "51": {
+      "at": "2026-11-11T02:20:15.876753+00:00",
+      "company": "Puma",
+      "csv": "daily-100-prospects.csv",
+      "email": "press@puma.com",
+      "mode": "intro"
+    },
+    "52": {
+      "at": "2026-11-11T02:20:21.605742+00:00",
+      "company": "Hugo Boss",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@hugoboss.com",
+      "mode": "intro"
+    },
+    "53": {
+      "at": "2026-11-10T10:12:27.586837+00:00",
+      "company": "Otto Group",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@ottogroup.com",
+      "mode": "intro"
+    },
+    "54": {
+      "at": "2026-11-10T10:12:33.317350+00:00",
+      "company": "Zalando",
+      "csv": "daily-100-prospects.csv",
+      "email": "press@zalando.de",
+      "mode": "intro"
+    },
+    "55": {
+      "at": "2026-11-10T10:12:39.311884+00:00",
+      "company": "Delivery Hero",
+      "csv": "daily-100-prospects.csv",
+      "email": "press@deliveryhero.com",
+      "mode": "intro"
+    },
+    "56": {
+      "at": "2026-11-11T02:20:27.442715+00:00",
+      "company": "Get Your Guide",
+      "csv": "daily-100-prospects.csv",
+      "email": "partnerships@getyourguide.com",
+      "mode": "intro"
+    },
+    "57": {
+      "at": "2026-11-10T12:13:14.744798+00:00",
+      "company": "Contentful",
+      "csv": "daily-100-prospects.csv",
+      "email": "partners@contentful.com",
+      "mode": "intro"
+    },
+    "58": {
+      "at": "2026-11-11T04:20:48.816107+00:00",
+      "company": "Adjust",
+      "csv": "daily-100-prospects.csv",
+      "email": "partners@adjust.com",
+      "mode": "intro"
+    },
+    "59": {
+      "at": "2026-11-11T04:20:54.666461+00:00",
+      "company": "SoundCloud",
+      "csv": "daily-100-prospects.csv",
+      "email": "press@soundcloud.com",
+      "mode": "intro"
+    },
+    "6": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "Munich Re",
+      "email": "info@munichre.com"
+    },
+    "60": {
+      "at": "2026-11-10T12:13:20.440661+00:00",
+      "company": "HelloFresh",
+      "csv": "daily-100-prospects.csv",
+      "email": "press@hellofresh.com",
+      "mode": "intro"
+    },
+    "61": {
+      "at": "2026-11-10T12:13:26.308768+00:00",
+      "company": "Auto1 Group",
+      "csv": "daily-100-prospects.csv",
+      "email": "press@auto1-group.com",
+      "mode": "intro"
+    },
+    "62": {
+      "at": "2026-11-10T12:13:32.044343+00:00",
+      "company": "FlixBus / Flix",
+      "csv": "daily-100-prospects.csv",
+      "email": "press@flixbus.com",
+      "mode": "intro"
+    },
+    "63": {
+      "at": "2026-11-11T04:21:00.631021+00:00",
+      "company": "About You",
+      "csv": "daily-100-prospects.csv",
+      "email": "press@aboutyou.com",
+      "mode": "intro"
+    },
+    "64": {
+      "at": "2026-11-10T14:14:05.904879+00:00",
+      "company": "Commerzbank",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@commerzbank.com",
+      "mode": "intro"
+    },
+    "65": {
+      "at": "2026-11-10T14:14:19.597412+00:00",
+      "company": "DZ Bank",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@dzbank.de",
+      "mode": "intro"
+    },
+    "66": {
+      "at": "2026-11-10T14:14:25.676235+00:00",
+      "company": "Deutsche B\u00f6rse",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@deutsche-boerse.com",
+      "mode": "intro"
+    },
+    "67": {
+      "at": "2026-11-10T14:14:39.297543+00:00",
+      "company": "E.ON",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@eon.com",
+      "mode": "intro"
+    },
+    "68": {
+      "at": "2026-11-10T16:15:10.735614+00:00",
+      "company": "RWE",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@rwe.com",
+      "mode": "intro"
+    },
+    "69": {
+      "at": "2026-11-10T16:15:24.235235+00:00",
+      "company": "EnBW",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@enbw.com",
+      "mode": "intro"
+    },
+    "7": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "Infineon Technologies",
+      "email": "info@infineon.com"
+    },
+    "70": {
+      "at": "2026-11-10T16:15:37.482642+00:00",
+      "company": "Vonovia",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@vonovia.de",
+      "mode": "intro"
+    },
+    "71": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "Deutsche Bahn",
+      "email": "info@deutschebahn.com"
+    },
+    "72": {
+      "at": "2026-11-10T16:15:43.284882+00:00",
+      "company": "Lufthansa Group",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@lufthansa.com",
+      "mode": "intro"
+    },
+    "73": {
+      "at": "2026-11-10T16:15:57.183684+00:00",
+      "company": "Fraport",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@fraport.de",
+      "mode": "intro"
+    },
+    "74": {
+      "at": "2026-11-10T16:16:03.036213+00:00",
+      "company": "Hapag-Lloyd",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@hapag-lloyd.com",
+      "mode": "intro"
+    },
+    "75": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "DHL / Deutsche Post",
+      "email": "info@dhl.com"
+    },
+    "76": {
+      "at": "2026-11-10T18:16:39.644399+00:00",
+      "company": "Hermes Germany",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@hermesworld.com",
+      "mode": "intro"
+    },
+    "77": {
+      "at": "2026-11-10T18:16:45.532548+00:00",
+      "company": "Trumpf",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@trumpf.com",
+      "mode": "intro"
+    },
+    "78": {
+      "at": "2026-11-10T18:16:51.653922+00:00",
+      "company": "DMG Mori",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@dmgmori.com",
+      "mode": "intro"
+    },
+    "79": {
+      "at": "2026-11-10T18:16:57.873386+00:00",
+      "company": "Heidelberg Materials",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@heidelbergmaterials.com",
+      "mode": "intro"
+    },
+    "8": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "KUKA AG",
+      "email": "info@kuka.com"
+    },
+    "80": {
+      "at": "2026-11-10T18:17:04.871042+00:00",
+      "company": "Covestro",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@covestro.com",
+      "mode": "intro"
+    },
+    "81": {
+      "at": "2026-11-10T20:17:37.655428+00:00",
+      "company": "Evonik",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@evonik.com",
+      "mode": "intro"
+    },
+    "82": {
+      "at": "2026-11-10T20:17:43.559359+00:00",
+      "company": "Fresenius",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@fresenius.com",
+      "mode": "intro"
+    },
+    "83": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "Siemens Healthineers",
+      "email": "info@siemens-healthineers.com"
+    },
+    "84": {
+      "at": "2026-11-10T20:17:49.308020+00:00",
+      "company": "Carl Zeiss",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@zeiss.com",
+      "mode": "intro"
+    },
+    "85": {
+      "at": "2026-11-10T20:17:55.033072+00:00",
+      "company": "Osram / ams OSRAM",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@ams-osram.com",
+      "mode": "intro"
+    },
+    "86": {
+      "at": "2026-11-10T20:18:01.779538+00:00",
+      "company": "Nemetschek",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@nemetschek.com",
+      "mode": "intro"
+    },
+    "87": {
+      "at": "2026-11-10T22:18:33.034551+00:00",
+      "company": "TeamViewer",
+      "csv": "daily-100-prospects.csv",
+      "email": "partners@teamviewer.com",
+      "mode": "intro"
+    },
+    "88": {
+      "at": "2026-11-10T22:18:38.856791+00:00",
+      "company": "Software AG",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@softwareag.com",
+      "mode": "intro"
+    },
+    "89": {
+      "at": "2026-11-10T22:18:44.659760+00:00",
+      "company": "Bechtle",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@bechtle.com",
+      "mode": "intro"
+    },
+    "9": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "T\u00dcV S\u00dcD",
+      "email": "info@tuvsud.com"
+    },
+    "90": {
+      "at": "2026-11-10T22:18:50.399569+00:00",
+      "company": "Cancom",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@cancom.de",
+      "mode": "intro"
+    },
+    "91": {
+      "at": "2026-11-11T00:19:13.085718+00:00",
+      "company": "Msg systems",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@msg.group",
+      "mode": "intro"
+    },
+    "92": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "Capgemini Germany",
+      "email": "info.de@capgemini.com"
+    },
+    "93": {
+      "at": "2026-11-10T04:57:42.645502+00:00",
+      "company": "Accenture Germany",
+      "email": "info.de@accenture.com"
+    },
+    "94": {
+      "at": "2026-11-11T00:19:18.712512+00:00",
+      "company": "Deloitte Germany",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@deloitte.de",
+      "mode": "intro"
+    },
+    "95": {
+      "at": "2026-11-11T00:19:24.484429+00:00",
+      "company": "PwC Germany",
+      "csv": "daily-100-prospects.csv",
+      "email": "de_info@pwc.com",
+      "mode": "intro"
+    },
+    "96": {
+      "at": "2026-11-11T00:19:30.086307+00:00",
+      "company": "EY Germany",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@de.ey.com",
+      "mode": "intro"
+    },
+    "97": {
+      "at": "2026-11-11T02:20:04.090580+00:00",
+      "company": "KPMG Germany",
+      "csv": "daily-100-prospects.csv",
+      "email": "info@kpmg.de",
+      "mode": "intro"
+    }
+  }
+}

@@ -233,6 +233,9 @@ importers:
       '@ai-pass/trust-engine':
         specifier: workspace:*
         version: link:../../packages/trust-engine
+      '@ai-pass/twin-autopilot':
+        specifier: workspace:*
+        version: link:../../packages/twin-autopilot
       '@ai-pass/ui':
         specifier: workspace:*
         version: link:../../packages/ui
@@ -1129,6 +1132,19 @@ importers:
       '@ai-pass/wallet':
         specifier: workspace:*
         version: link:../wallet
+    devDependencies:
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/twin-autopilot:
+    dependencies:
+      '@ai-pass/messaging-connectors':
+        specifier: workspace:*
+        version: link:../messaging-connectors
+      '@ai-pass/shared':
+        specifier: workspace:*
+        version: link:../shared
     devDependencies:
       typescript:
         specifier: ^5.8.3

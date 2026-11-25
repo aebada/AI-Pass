@@ -1,0 +1,21 @@
+rank,company,country,city,sector,wedge,email_primary,email_alt,priority,target_role,status,next_action,preferred_channel,email_fallback,site,email_valid,email_check_reason
+301,OpenAI,USA,San Francisco,AI provider,Digital twin collab — route GPT via AI-Pass twins + Connect/Harness,support@openai.com,press@openai.com,P0,Partnerships / Platform,READY,Form first then email,FORM,yes,https://openai.com/contact-sales/,yes,pending_validate
+302,Anthropic,USA,San Francisco,AI provider,Claude in employee/personal twins with approval gates,press@anthropic.com,support@anthropic.com,P0,Partnerships,READY,Form/sales contact,FORM,yes,https://www.anthropic.com/contact-sales,yes,pending_validate
+303,Google DeepMind / Google AI,UK/USA,London,AI provider,Gemini in twin runtime — not press inbox,SKIP_PRESS,,P1,AI Futures / Cloud partners,SKIP_PRESS_ONLY,Use AI Futures Fund or Cloud partner path,SKIP,no,https://labs.google/aifuturesfund,no,press_dead
+304,Google Cloud AI,USA,Mountain View,AI cloud,Vertex + twin Connect for enterprise pilots,cloud-outreach@google.com,,P0,Partner / Startup,READY,Cloud partner form,FORM,yes,https://cloud.google.com/contact,yes,pending_validate
+305,Microsoft Azure OpenAI,USA,Redmond,AI cloud,Azure models into AI-Pass twin + M365 Connect,msftaicontact@microsoft.com,,P0,Partnerships,READY,Partner form,FORM,yes,https://azure.microsoft.com/en-us/products/ai-services/openai-service,yes,pending_validate
+306,Meta AI / Llama,USA,Menlo Park,AI provider,Llama open weights in private twin / air-gap,press@meta.com,,P1,Developer relations,READY,Avoid press-only; use developer contact,EMAIL,yes,https://ai.meta.com/,yes,pending_validate
+307,Mistral AI,France,Paris,AI provider,EU-hosted twin routing with Mistral models,contact@mistral.ai,,P0,Partnerships,READY,Email with prices,EMAIL,yes,https://mistral.ai/,yes,pending_validate
+308,Cohere,Canada,Toronto,AI provider,Enterprise LLM + twin RAG/Connect,info@cohere.com,,P1,Partnerships,READY,Email,EMAIL,yes,https://cohere.com/,yes,pending_validate
+309,Amazon Bedrock / AWS,USA,Seattle,AI cloud,Bedrock models behind twin autopilot,aws-marketplace@amazon.com,,P0,Partners,READY,AWS partner form,FORM,yes,https://aws.amazon.com/contact-us/sales-support/,yes,pending_validate
+310,IBM watsonx,USA,Armonk,AI enterprise,watsonx + governed twin for regulated buyers,askibm@ca.ibm.com,,P1,Watsonx / Partners,READY,Email,EMAIL,yes,https://www.ibm.com/watsonx,yes,pending_validate
+311,NVIDIA,USA,Santa Clara,AI infra,NIM / inference for twin cloud computer,info@nvidia.com,,P1,Developer / Partners,READY,Form,FORM,yes,https://www.nvidia.com/en-us/contact/,yes,pending_validate
+312,Hugging Face,USA/France,New York,AI platform,HF inference + twin Labs evals,api-enterprise@huggingface.co,,P1,Enterprise,READY,Email,EMAIL,yes,https://huggingface.co/support,yes,pending_validate
+313,Together AI,USA,San Francisco,AI infra,Fast open-model routing into twins,sales@together.ai,,P1,Sales,READY,Email,EMAIL,yes,https://www.together.ai/,yes,pending_validate
+314,Fireworks AI,USA,Redwood City,AI infra,Low-latency inference for twin chat channels,info@fireworks.ai,,P2,Sales,READY,Email,EMAIL,yes,https://fireworks.ai/,yes,pending_validate
+315,Groq,USA,Mountain View,AI infra,Speed tier for WhatsApp twin replies,sales@groq.com,,P1,Sales,READY,Email,EMAIL,yes,https://groq.com/,yes,pending_validate
+316,Perplexity,USA,San Francisco,AI search,Research tool inside twin cloud computer,partnerships@perplexity.ai,,P2,Partnerships,READY,Email,EMAIL,yes,https://www.perplexity.ai/,yes,pending_validate
+317,xAI,USA,San Francisco,AI provider,Grok routing option in Provider Hub twin stack,support@x.ai,,P2,Partnerships,READY,Email,EMAIL,yes,https://x.ai/,yes,pending_validate
+318,Aleph Alpha,Germany,Heidelberg,AI provider,EU sovereign models for twin / GovTech DBS,info@aleph-alpha.com,,P0,Partnerships,READY,Email with BMDS angle,EMAIL,yes,https://aleph-alpha.com/,yes,pending_validate
+319,Black Forest Labs,Germany,Freiburg,AI generative,Media gen inside twin concierge workflows,hello@blackforestlabs.ai,,P2,Partnerships,READY,Email,EMAIL,yes,https://blackforestlabs.ai/,yes,pending_validate
+320,Scaleway / EU cloud AI,France,Paris,AI cloud,EU hosting for twin + WhatsApp webhooks,contact@scaleway.com,,P1,Cloud partners,READY,Form/email,EMAIL,yes,https://www.scaleway.com/,yes,pending_validate

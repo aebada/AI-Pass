@@ -1,0 +1,41 @@
+rank,company,country,city,sector,wedge,email_primary,email_alt,priority,target_role,status,next_action
+1,MaibornWolff,Germany,Munich,IT consulting,Ops Reality twin for delivery teams,info@maibornwolff.de,,P0,Managing Partner,READY,Send priced intro
+2,Codecentric,Germany,Münster,IT consulting,Delivery twin + harness,info@codecentric.de,,P0,Founder,READY,Send priced intro
+3,inovex,Germany,Karlsruhe,IT consulting,Project twin + Connect,info@inovex.de,,P0,Partners,READY,Send priced intro
+4,TNG Technology Consulting,Germany,Munich,IT consulting,Engineering twin realms,info@tngtech.com,,P0,Partners,READY,Send priced intro
+5,Seppmed / SEPP.med,Germany,Nuremberg,IT consulting,Medtech delivery twin,info@seppmed.de,,P1,Managing Director,READY,Send priced intro
+6,DoubleSlash,Germany,Friedrichshafen,IT consulting,Automotive delivery twin,info@doubleslash.de,,P1,Partners,READY,Send priced intro
+7,Object Computing / OCI Europe,Germany,Munich,Software,Ops Reality co-build,info@objectcomputing.com,,P1,Sales,READY,Send priced intro
+8,Netlight,Germany,Munich,Consulting,Consultant twin + harness,munich@netlight.com,,P0,Partner,READY,Send priced intro
+9,Thoughtworks Germany,Germany,Munich,Consulting,Delivery twin + Graph,info.de@thoughtworks.com,,P0,Partners,READY,Send priced intro
+10,Valtech Germany,Germany,Munich,Digital agency,Client ops twin,info@valtech.de,,P1,Partners,READY,Send priced intro
+11,Aqute / Aquila Consult,Germany,Munich,IT services,MSP twin harness,info@aquila-consult.de,,P2,CEO,READY,Send priced intro
+12,ConSol Software,Germany,Munich,IT services,Support twin + Connect,info@consol.de,,P1,Sales,READY,Send priced intro
+13,QAware,Germany,Munich,Software,Platform twin eval,info@qaware.de,,P0,Partners,READY,Send priced intro
+14,Parkside,Germany,Munich,Product studio,Product ops twin,hello@parkside-interactive.com,,P1,Founder,READY,Send priced intro
+15,Miragon,Germany,Munich,Process automation,Process twin + harness,info@miragon.io,,P1,Founder,READY,Send priced intro
+16,Hyand,Germany,Hamburg,IT consulting,Enterprise twin pilots,info@hyand.com,,P1,Partners,READY,Send priced intro
+17,Adesso SE,Germany,Dortmund,IT consulting,Industry twin + Connect,info@adesso.de,,P0,Alliances,READY,Send priced intro
+18,All for One Group,Germany,Filderstadt,SAP services,SAP Connect + twin,info@all-for-one.com,,P0,Partners,READY,Send priced intro
+19,Nagarro Germany,Germany,Munich,IT services,Delivery twin realms,info@nagarro.com,,P1,Partners,READY,Send priced intro
+20,Luxoft Germany,Germany,Munich,IT services,Automotive twin co-build,info@luxoft.com,,P1,Partners,READY,Send priced intro
+21,Reply Germany,Germany,Munich,Consulting,Ops Reality white-label,info@reply.com,,P0,Partners,READY,Send priced intro
+22,MHP Management,Germany,Ludwigsburg,Consulting,Automotive ops twin,info@mhp.com,,P0,Partners,READY,Send priced intro
+23,Horváth,Germany,Stuttgart,Consulting,Management twin harness,info@horvath-partners.com,,P1,Partners,READY,Send priced intro
+24,Campana & Schott,Germany,Frankfurt,Consulting,PMO twin + Connect,info@campana-schott.com,,P1,Partners,READY,Send priced intro
+25,Msg David,Germany,Ismaning,IT consulting,Industry twin,info@msg.group,,P1,Partners,READY,Send priced intro
+26,Senacor,Germany,Nuremberg,IT consulting,Banking delivery twin,info@senacor.com,,P1,Partners,READY,Send priced intro
+27,OmniQuest / Ommax,Germany,Munich,Digital consulting,Growth ops twin,info@ommax.com,,P1,Partners,READY,Send priced intro
+28,Elca Deutschland,Germany,Munich,IT services,Enterprise twin,info@elca.de,,P2,Sales,READY,Send priced intro
+29,P3 group,Germany,Stuttgart,Engineering consulting,Engineering twin,info@p3-group.com,,P1,Partners,READY,Send priced intro
+30,Accenture Song Munich,Germany,Munich,Digital,Experience ops twin,info.de@accenture.com,,P2,Partners,READY,Send priced intro
+31,Capgemini Invent DE,Germany,Berlin,Consulting,Ops Reality co-build,info.de@capgemini.com,,P2,Partners,READY,Send priced intro
+32,Plan.Net / Serviceplan,Germany,Munich,Agency,Campaign ops twin,info@serviceplan.com,,P1,Partners,READY,Send priced intro
+33,Virtual Identity,Germany,Munich,Digital agency,Delivery twin,info@virtual-identity.com,,P1,CEO,READY,Send priced intro
+34,Eviden Germany,Germany,Munich,IT services,Harness + twin,info@eviden.com,,P1,Partners,READY,Send priced intro
+35,Atos Germany,Germany,Munich,IT services,Enterprise Connect twin,info.de@atos.net,,P1,Partners,READY,Send priced intro
+36,CGI Germany,Germany,Düsseldorf,IT services,Ops twin pilots,info.de@cgi.com,,P1,Partners,READY,Send priced intro
+37,Sopra Steria DE,Germany,Hamburg,IT consulting,Public/private twin,info.de@soprasteria.com,,P1,Partners,READY,Send priced intro
+38,Wipro Germany,Germany,Frankfurt,IT services,Delivery twin,info@wipro.com,,P2,Partners,READY,Send priced intro
+39,Infosys Germany,Germany,Frankfurt,IT services,Connect + twin,info@infosys.com,,P2,Partners,READY,Send priced intro
+40,T-Systems MMS,Germany,Dresden,Digital,Customer twin harness,info@t-systems-mms.com,,P0,Partners,READY,Send priced intro
