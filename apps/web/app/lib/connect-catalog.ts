@@ -3,6 +3,7 @@
 export type ConnectorCategory =
   | 'erp'
   | 'crm'
+  | 'plm'
   | 'productivity'
   | 'messaging'
   | 'data'
@@ -26,6 +27,7 @@ export const CONNECTOR_CATEGORIES: { id: ConnectorCategory | 'all'; label: strin
   { id: 'all', label: 'All' },
   { id: 'erp', label: 'ERP & finance' },
   { id: 'crm', label: 'CRM & support' },
+  { id: 'plm', label: 'PLM & engineering' },
   { id: 'productivity', label: 'Productivity' },
   { id: 'messaging', label: 'Messaging' },
   { id: 'data', label: 'Data & files' },
@@ -52,6 +54,52 @@ export const CONNECT_CATALOG: CatalogConnector[] = [
   { id: 'freshdesk', name: 'Freshdesk', category: 'crm', auth: ['api_key'], summary: 'Helpdesk conversations into employee and customer twins.', twinFeed: 'Support', status: 'available' },
   { id: 'zoho', name: 'Zoho CRM', category: 'crm', auth: ['oauth2'], summary: 'Zoho modules mapped into the knowledge graph.', twinFeed: 'CRM', status: 'available' },
   { id: 'monday', name: 'Monday.com', category: 'crm', auth: ['api_key'], summary: 'Boards and items as workflow memory for the twin.', twinFeed: 'Work OS', status: 'beta' },
+  // PLM / engineering (Spread-class lifecycle sources — map in place, no migration)
+  {
+    id: 'teamcenter',
+    name: 'Siemens Teamcenter',
+    category: 'plm',
+    auth: ['oauth2', 'basic'],
+    summary: 'BOM, revisions, and product structure into the lifecycle knowledge graph.',
+    twinFeed: 'PLM · BOM · revisions',
+    status: 'available',
+  },
+  {
+    id: 'windchill',
+    name: 'PTC Windchill',
+    category: 'plm',
+    auth: ['oauth2', 'basic'],
+    summary: 'Parts, CAD metadata, and change objects with provenance.',
+    twinFeed: 'PLM · change · CAD meta',
+    status: 'available',
+  },
+  {
+    id: '3dexperience',
+    name: 'Dassault 3DEXPERIENCE',
+    category: 'plm',
+    auth: ['oauth2'],
+    summary: '3DEXPERIENCE product data mapped into the product ontology.',
+    twinFeed: 'PLM · variants',
+    status: 'available',
+  },
+  {
+    id: 'doors-requirements',
+    name: 'Requirements / DOORS-class',
+    category: 'plm',
+    auth: ['api_key', 'basic'],
+    summary: 'Requirements and trace links for Requirements Manager.',
+    twinFeed: 'Requirements · coverage',
+    status: 'beta',
+  },
+  {
+    id: 'test-management',
+    name: 'Test management',
+    category: 'plm',
+    auth: ['api_key', 'oauth2'],
+    summary: 'Test cases and results linked to requirements and parts.',
+    twinFeed: 'Verification · quality',
+    status: 'beta',
+  },
   // Productivity
   { id: 'sharepoint', name: 'SharePoint / OneDrive', category: 'productivity', auth: ['oauth2'], summary: 'Documents and libraries into knowledge and ontology.', twinFeed: 'Files · SOPs', status: 'available' },
   { id: 'google-workspace', name: 'Google Workspace', category: 'productivity', auth: ['oauth2'], summary: 'Drive, Gmail, and Calendar signals for personal and employee twins.', twinFeed: 'Mail · calendar · drive', status: 'beta' },
@@ -94,7 +142,11 @@ export const CONNECT_CATALOG: CatalogConnector[] = [
 export const CONNECT_CAPABILITIES = [
   {
     title: 'Catalog connectors',
-    copy: 'ERP, CRM, productivity, messaging, data, and identity adapters ready to attach to the twin.',
+    copy: 'ERP, CRM, PLM, productivity, messaging, data, and identity adapters ready to attach to the twin.',
+  },
+  {
+    title: 'Lifecycle / PLM graph',
+    copy: 'Teamcenter, Windchill, 3DEXPERIENCE and test sources map into the product ontology and knowledge graph.',
   },
   {
     title: 'WhatsApp twin channel',
