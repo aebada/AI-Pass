@@ -458,6 +458,9 @@ importers:
       '@ai-pass/trust':
         specifier: workspace:*
         version: link:../trust
+      '@ai-pass/trust-engine':
+        specifier: workspace:*
+        version: link:../trust-engine
       '@ai-pass/wallet':
         specifier: workspace:*
         version: link:../wallet
