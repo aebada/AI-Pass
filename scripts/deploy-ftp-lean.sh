@@ -26,21 +26,8 @@ fi
 # Drop RSC flight dumps — they waste disk and get hit by crawlers
 find "$OUT_DIR" -type f -name '*.txt' ! -name 'robots.txt' -delete
 
-# Prefer DirectoryIndex folders; drop sibling *.html when */index.html exists (halves HTML weight)
-OUT_DIR="$OUT_DIR" python3 - <<'PY'
-from pathlib import Path
-import os
-out = Path(os.environ["OUT_DIR"])
-removed = 0
-for index in out.rglob("index.html"):
-    if index.parent == out:
-        continue
-    candidate = out / f"{index.parent.relative_to(out)}.html"
-    if candidate.is_file():
-        candidate.unlink()
-        removed += 1
-print(f"Removed {removed} duplicate *.html shells")
-PY
+# Keep sibling *.html shells: Hostinger .htaccess still rewrites some paths to path.html.
+# DirectoryIndex folders (*/index.html) remain the primary clean-URL target.
 
 if ! command -v lftp >/dev/null 2>&1; then
   echo "error: lftp required" >&2
