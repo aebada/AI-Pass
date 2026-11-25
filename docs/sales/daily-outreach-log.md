@@ -395,3 +395,11 @@ Sent this run: 14. Failures: 0.
 - Daily-100 + provider sends BLOCKED: SMTP_* secrets not in environment (requested via setup actions).
 - WhatsApp go-live optional tokens also requested.
 
+
+## 2026-11-25 08:00 UTC — daily-100 timer
+
+- BLOCKED: SMTP secrets still missing (`/tmp/smtp-deploy.env` absent; no SMTP_* env).
+- No emails sent (wave2 READY=100, AI providers READY prepared).
+- Re-requested SMTP_HOST / SMTP_USER / SMTP_PASS via environment setup actions.
+- Next timer will retry; will not fake sends.
+
