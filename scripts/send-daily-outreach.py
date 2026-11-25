@@ -47,21 +47,20 @@ Full sheet on request — reply “pricing” or book a 15-min walkthrough."""
 
 BODY_INTRO = """Hello {company} team,
 
-I am reaching out from AI-Pass (https://aipass.space) the Micro1-style way: clear offer, clear prices, short pilot.
+I am reaching out from AI-Pass (https://aipass.space) to build a digital twin with you.
 
-AI-Pass is enterprise AI infrastructure for digital twins (employees, apps, machines), Connect for your APIs/ERP/CRM, Company Harness for always-on agents with confirmation gates, and Graph Builder that only accepts facts with evidence.
+We connect your systems (ERP/CRM/APIs), stand up a twin for employees / apps / processes, and run agents under a Company Harness so irreversible actions stay human-approved. Twin Autopilot also reaches people on WhatsApp-style channels when you want chat as the interface.
 
-Suggested pilot for you ({wedge}):
-• Connect 1–2 systems into a twin
-• Route work through My AI-Pass harness
-• Keep humans on irreversible actions
+Suggested build for {company} ({wedge}):
+• Connect 1–2 systems into your twin
+• One twin slice live in ~2 weeks (Twin Starter)
+• Harness confirmations on spend, send, and external actions
 
 {prices}
 
 Live demo: https://aipass.space/demo
+Twin Autopilot: https://aipass.space/twin-autopilot
 Connect: https://aipass.space/connect
-Company Harness: https://aipass.space/company-os
-Pricing on site: https://aipass.space/#pricing
 Book 15 min: https://aipass.space/book-demo
 
 If this is the wrong inbox, please forward to partnerships / digital innovation — or reply “stop” and we will not write again.

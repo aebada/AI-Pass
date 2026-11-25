@@ -93,10 +93,26 @@
       "at": "2026-11-10T06:53:48.117896+00:00",
       "url": "https://www.bosch.com/contact/"
     },
+    "Bundesdruckerei": {
+      "at": "2026-11-25T09:33:12.520081+00:00",
+      "url": "https://www.bundesdruckerei.de/de/kontakt"
+    },
     "Infineon Technologies": {
       "at": "2026-11-10T06:30:30.392689+00:00",
       "result": "formStatus success",
       "url": "https://www.infineon.com/partners/startups/cooperate-with-us"
+    },
+    "Merantix": {
+      "at": "2026-11-25T09:35:16.677891+00:00",
+      "url": "https://www.merantix.com/contact"
+    },
+    "UiPath Germany": {
+      "at": "2026-11-25T09:33:52.574013+00:00",
+      "url": "https://www.uipath.com/company/contact-us"
+    },
+    "appliedAI Initiative": {
+      "at": "2026-11-25T09:32:06.775871+00:00",
+      "url": "https://www.appliedai.de/en/contact"
     }
   }
 }

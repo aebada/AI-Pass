@@ -403,3 +403,12 @@ Sent this run: 14. Failures: 0.
 - Re-requested SMTP_HOST / SMTP_USER / SMTP_PASS via environment setup actions.
 - Next timer will retry; will not fake sends.
 
+
+## 2026-11-25 — contact companies to build digital twin
+
+- Pitch updated: “build a digital twin with you” (email + form templates).
+- Wave2 MX validation: **100/100 ok**.
+- Forms submitted (twin-build message): **appliedAI Initiative**, **Bundesdruckerei**, **UiPath Germany**, **Merantix**.
+- Many corporate forms WAF/404 → need email.
+- **Email wave BLOCKED**: SMTP_* still missing. Secrets re-requested. Will send wave2 (100 READY) as soon as SMTP is available.
+

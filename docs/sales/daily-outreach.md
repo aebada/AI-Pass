@@ -1,6 +1,7 @@
 # Daily customer outreach (form-first)
 
 **From:** `contact@aipass.space`  
+**Offer:** Build a digital twin for the company (Connect + Twin Starter + Harness).  
 **Rule:** Use the company **contact form** when one exists. Use **email only** if there is no usable form (missing, WAF-blocked, or too complex to automate).
 
 ## Run

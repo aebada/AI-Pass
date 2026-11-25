@@ -42,12 +42,13 @@ SENDER = {
 
 MESSAGE_TEMPLATE = """Hello {company} team,
 
-AI-Pass (https://aipass.space) — enterprise twin + Connect + Company Harness.
+AI-Pass (https://aipass.space) — we build digital twins for companies.
 
-Pilot wedge: {wedge}
-• Connect 1–2 systems into a twin
-• Route work through harness with human confirmation on irreversible actions
-• Graph Builder only accepts facts with evidence
+Offer for {company}: {wedge}
+• Connect 1–2 systems into your twin
+• Twin Starter in ~2 weeks (employees / apps / processes)
+• Company Harness: human confirmation on irreversible actions
+• Optional WhatsApp twin channel (Twin Autopilot)
 
 Transparent prices (list):
 • Platform: Free $0 · Professional $49/user/mo · Enterprise custom
@@ -57,6 +58,7 @@ Transparent prices (list):
 • Lab Eval Sprint: from €15,000
 
 Demo: https://aipass.space/demo
+Twin Autopilot: https://aipass.space/twin-autopilot
 Book 15 min: https://aipass.space/book-demo
 
 Contact: contact@aipass.space

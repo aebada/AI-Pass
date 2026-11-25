@@ -1,101 +1,101 @@
-rank,company,country,city,sector,wedge,email_primary,email_alt,priority,target_role,status,next_action,preferred_channel,email_fallback,site,email_valid,email_check_reason
-401,Siemens Energy,Germany,Munich,Energy,Plant twin + Connect,info@siemens-energy.com,,P0,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-408,Fresenius Medical Care,Germany,Bad Homburg,Healthcare,Clinic ops twin,info@freseniusmedicalcare.com,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-412,Lanxess,Germany,Cologne,Chemicals,Plant twin,info@lanxess.com,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-413,Symrise,Germany,Holzminden,Chemicals,Quality twin,info@symrise.com,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-414,Beiersdorf,Germany,Hamburg,Consumer,Supply twin,info@beiersdorf.com,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-415,Dräger,Germany,Lübeck,Medtech,Device twin,info@draeger.com,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-419,Festo,Germany,Esslingen,Automation,Automation twin,info@festo.com,,P0,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-420,Sick AG,Germany,Waldkirch,Sensors,Sensor data twin,info@sick.de,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-421,Beckhoff,Germany,Verl,Automation,Control twin,info@beckhoff.com,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-422,Wago,Germany,Minden,Automation,IIoT twin,info@wago.com,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-423,Phoenix Contact,Germany,Blomberg,Automation,Industrial twin,info@phoenixcontact.com,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-424,Endress+Hauser,Switzerland,Reinach,Process,Process twin,info@endress.com,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-425,ABB Germany,Germany,Mannheim,Electrification,Plant twin,contact.center@de.abb.com,,P0,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-426,Schneider Electric DE,Germany,Ratingen,Energy mgmt,Building twin,de-info@se.com,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-427,Bosch Rexroth,Germany,Lohr,Motion,Factory twin,info@boschrexroth.de,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-429,Mahle,Germany,Stuttgart,Automotive,Component twin,info@mahle.com,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-430,Eberspächer,Germany,Esslingen,Automotive,Production twin,info@eberspaecher.com,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-431,Webasto,Germany,Stockdorf,Automotive,Ops twin,info@webasto.com,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-432,Brose,Germany,Coburg,Automotive,Plant twin,info@brose.com,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-433,Hella / Forvia,Germany,Lippstadt,Automotive,Electronics twin,info@hella.com,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-434,Vitesco,Germany,Regensburg,Automotive,Powertrain twin,info@vitesco.com,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-436,Siemens Mobility,Germany,Munich,Rail,Fleet twin,contact@siemens.com,,P0,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-437,Alstom Germany,Germany,Berlin,Rail,Fleet twin,info.de@alstomgroup.com,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-439,Lufthansa Technik,Germany,Hamburg,Aviation,MRO twin,info@lht.dlh.de,,P0,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-441,OHB SE,Germany,Bremen,Space,Programme twin,info@ohb.de,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-442,Rocket Factory Augsburg,Germany,Augsburg,Space,Ops twin,info@rfa.space,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-444,The Exploration Company,Germany,Munich,Space,Mission twin,hello@exploration.space,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-446,UiPath Germany,Germany,Munich,Automation,Agent+twin,info.de@uipath.com,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-447,ServiceNow Germany,Germany,Munich,ITSM,IT twin,info@servicenow.com,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-448,Salesforce Germany,Germany,Munich,CRM,CRM twin,contact@salesforce.com,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-449,SAP Signavio,Germany,Walldorf,Process,Process twin,info@sap.com,,P0,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-453,Graphisoft / Archicad,Germany,Munich,AEC,Design twin,info@graphisoft.com,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-454,RIB Software,Germany,Stuttgart,Construction,Project twin,info@rib-software.com,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-455,Autodesk Germany,Germany,Munich,Design,Design twin,info.germany@autodesk.com,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-456,Dassault Systèmes DE,Germany,Stuttgart,PLM,Product twin,info@3ds.com,,P0,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-457,PTC Germany,Germany,Munich,PLM,Product twin,info@ptc.com,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-458,Siemens Digital Industries Software,Germany,Cologne,PLM,Product twin,info.plm@siemens.com,,P0,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-459,Hexagon MI,Germany,Wetzlar,Metrology,Quality twin,info.de@hexagon.com,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-461,TÜV Rheinland,Germany,Cologne,Certification,Compliance twin,info@tuv.com,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-462,TÜV Nord,Germany,Hannover,Certification,Audit twin,info@tuev-nord.de,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-463,Dekra,Germany,Stuttgart,Certification,Safety twin,info@dekra.com,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-464,DNV Germany,Germany,Hamburg,Assurance,Risk twin,info@dnv.com,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-466,Hannover Re,Germany,Hannover,Insurance,Underwriting twin,info@hannover-re.com,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-468,Check24,Germany,Munich,Marketplace,Ops twin,info@check24.de,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-476,Kenjo,Germany,Berlin,HR tech,HR twin,hello@kenjo.io,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-483,Solaris,Germany,Berlin,Banking,Banking twin,hello@solarisgroup.com,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-484,SumUp,Germany,Berlin,Fintech,Merchant twin,support@sumup.com,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-485,Klarna Germany,Germany,Berlin,Fintech,Payments twin,merchant@klarna.de,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-486,Stripe Germany,Germany,Berlin,Payments,Payment gates twin,support@stripe.com,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-487,Adyen Germany,Germany,Berlin,Payments,Payment twin,sales.de@adyen.com,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-489,Lexware,Germany,Freiburg,Accounting,SMB twin,info@lexware.de,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-490,Haufe Group,Germany,Freiburg,Publishing,Knowledge twin,info@haufe.de,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-491,Springer Nature,Germany,Berlin,Publishing,Research twin,info@springernature.com,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-492,Wiley VCH,Germany,Weinheim,Publishing,Content twin,info@wiley.com,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-495,RTL Deutschland,Germany,Cologne,Media,Content twin,info@rtl.de,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-497,T-Systems,Germany,Frankfurt,IT services,Enterprise twin,info@t-systems.com,,P0,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-504,McKinsey Digital DE,Germany,Munich,Consulting,Twin strategy,germany_info@mckinsey.com,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-505,BCG X Germany,Germany,Munich,Consulting,Build twin,info@bcg.com,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-502,Elmos,Germany,Dortmund,Semiconductors,Chip twin,info@elmos.com,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-503,Siltronic,Germany,Munich,Semiconductors,Wafer twin,info@siltronic.com,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-505,SGL Carbon,Germany,Wiesbaden,Materials,Material twin,info@sglcarbon.com,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-506,Nordex,Germany,Hamburg,Wind,Fleet twin,info@nordex-online.com,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-507,Encavis,Germany,Hamburg,Renewables,Asset twin,info@encavis.com,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-508,1&1,Germany,Montabaur,Telecom,Network twin,info@1und1.de,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-509,Freenet,Germany,Büdelsdorf,Telecom,Ops twin,info@freenet.ag,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-600,Voith,Germany,Heidenheim,Industrial,Hydro twin,info@voith.com,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-601,Andritz,Austria,Graz,Industrial,Plant twin,welcome@andritz.com,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-602,GEA Group,Germany,Düsseldorf,Process,Process twin,info@gea.com,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-603,Krones,Germany,Neutraubling,Packaging,Line twin,info@krones.com,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-604,KHS,Germany,Dortmund,Packaging,Line twin,info@khs.com,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-605,Multivac,Germany,Wolfertschwenden,Packaging,Machine twin,info@multivac.com,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-606,Homag,Germany,Schopfloch,Woodworking,Factory twin,info@homag.com,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-607,Dürkopp Adler,Germany,Bielefeld,Machinery,Ops twin,info@duerkopp-adler.com,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-608,Grob-Werke,Germany,Mindelheim,Machine tools,Machining twin,info@grob.de,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-609,Chiron Group,Germany,Tuttlingen,Machine tools,Machine twin,info@chiron.de,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-610,Index-Werke,Germany,Esslingen,Machine tools,Turning twin,info@index-werke.de,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-611,Emag,Germany,Salach,Machine tools,Machine twin,info@emag.com,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-612,Liebherr Aerospace,Germany,Lindenberg,Aerospace,System twin,info.lwe@liebherr.com,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-613,Diehl Aviation,Germany,Nuremberg,Aerospace,Cabin twin,info@diehl.com,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-614,Premium AEROTEC,Germany,Augsburg,Aerospace,Aerostructure twin,info@premium-aerotec.com,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-615,Airbus Helicopters DE,Germany,Donauwörth,Aerospace,Fleet twin,contact@airbus.com,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-616,RENK Group,Germany,Augsburg,Defence,Drivetrain twin,info@renk.com,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-617,Hensoldt,Germany,Taufkirchen,Defence,Sensor twin,info@hensoldt.net,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-618,Rohde & Schwarz Cyber,Germany,Munich,Cyber,Secure twin,cybersecurity@rohde-schwarz.com,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-619,Secunet,Germany,Essen,Cyber,Secure twin,info@secunet.com,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-620,Genua,Germany,Munich,Cyber,Network twin,info@genua.eu,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-621,Veridos,Germany,Munich,Identity,ID twin,info@veridos.com,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-622,Bundesdruckerei,Germany,Berlin,GovTech,Gov twin,info@bdr.de,,P0,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-623,govdigital,Germany,Berlin,GovTech,Municipal twin,info@govdigital.de,,P0,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-624,Dataport,Germany,Altenholz,Gov IT,Public twin,info@dataport.de,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-625,ITEBO,Germany,Osnabrück,Gov IT,Municipal twin,info@itebo.de,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-626,Kommunix,Germany,Münster,Gov software,Municipal twin,info@kommunix.de,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-627,AKDB,Germany,Munich,Gov software,Municipal twin,info@akdb.de,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-628,CGM Clinical,Germany,Koblenz,Health IT,Care twin,info@cgm.com,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-629,Nexus AG,Germany,Donaueschingen,Health IT,Hospital twin,info@nexus-ag.de,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-630,Medatixx,Germany,Mannheim,Health IT,Practice twin,info@medatixx.de,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-631,Doctolib Germany,Germany,Berlin,Health tech,Scheduling twin,presse@doctolib.de,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-632,Ada Health,Germany,Berlin,Health tech,Care twin,hello@ada.com,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-633,Ada Health Partnerships,Germany,Berlin,Health tech,Twin collab,partnerships@ada.com,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
-634,Clue,Germany,Berlin,Health tech,Personal twin,hello@helloclue.com,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,,
+rank,company,country,city,sector,wedge,email_primary,email_alt,priority,target_role,status,next_action,preferred_channel,email_fallback,site,email_valid,email_check_reason,email_checked_at
+401,Siemens Energy,Germany,Munich,Energy,Plant twin + Connect,info@siemens-energy.com,,P0,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:13
+408,Fresenius Medical Care,Germany,Bad Homburg,Healthcare,Clinic ops twin,info@freseniusmedicalcare.com,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:13
+412,Lanxess,Germany,Cologne,Chemicals,Plant twin,info@lanxess.com,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:13
+413,Symrise,Germany,Holzminden,Chemicals,Quality twin,info@symrise.com,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:13
+414,Beiersdorf,Germany,Hamburg,Consumer,Supply twin,info@beiersdorf.com,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:13
+415,Dräger,Germany,Lübeck,Medtech,Device twin,info@draeger.com,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:13
+419,Festo,Germany,Esslingen,Automation,Automation twin,info@festo.com,,P0,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:13
+420,Sick AG,Germany,Waldkirch,Sensors,Sensor data twin,info@sick.de,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:13
+421,Beckhoff,Germany,Verl,Automation,Control twin,info@beckhoff.com,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:13
+422,Wago,Germany,Minden,Automation,IIoT twin,info@wago.com,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:13
+423,Phoenix Contact,Germany,Blomberg,Automation,Industrial twin,info@phoenixcontact.com,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:13
+424,Endress+Hauser,Switzerland,Reinach,Process,Process twin,info@endress.com,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:13
+425,ABB Germany,Germany,Mannheim,Electrification,Plant twin,contact.center@de.abb.com,,P0,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:13
+426,Schneider Electric DE,Germany,Ratingen,Energy mgmt,Building twin,de-info@se.com,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:13
+427,Bosch Rexroth,Germany,Lohr,Motion,Factory twin,info@boschrexroth.de,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:13
+429,Mahle,Germany,Stuttgart,Automotive,Component twin,info@mahle.com,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:14
+430,Eberspächer,Germany,Esslingen,Automotive,Production twin,info@eberspaecher.com,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:14
+431,Webasto,Germany,Stockdorf,Automotive,Ops twin,info@webasto.com,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:14
+432,Brose,Germany,Coburg,Automotive,Plant twin,info@brose.com,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:14
+433,Hella / Forvia,Germany,Lippstadt,Automotive,Electronics twin,info@hella.com,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:14
+434,Vitesco,Germany,Regensburg,Automotive,Powertrain twin,info@vitesco.com,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:14
+436,Siemens Mobility,Germany,Munich,Rail,Fleet twin,contact@siemens.com,,P0,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:14
+437,Alstom Germany,Germany,Berlin,Rail,Fleet twin,info.de@alstomgroup.com,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:14
+439,Lufthansa Technik,Germany,Hamburg,Aviation,MRO twin,info@lht.dlh.de,,P0,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:14
+441,OHB SE,Germany,Bremen,Space,Programme twin,info@ohb.de,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:14
+442,Rocket Factory Augsburg,Germany,Augsburg,Space,Ops twin,info@rfa.space,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:14
+444,The Exploration Company,Germany,Munich,Space,Mission twin,hello@exploration.space,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:14
+446,UiPath Germany,Germany,Munich,Automation,Agent+twin,info.de@uipath.com,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:14
+447,ServiceNow Germany,Germany,Munich,ITSM,IT twin,info@servicenow.com,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:14
+448,Salesforce Germany,Germany,Munich,CRM,CRM twin,contact@salesforce.com,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:14
+449,SAP Signavio,Germany,Walldorf,Process,Process twin,info@sap.com,,P0,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:14
+453,Graphisoft / Archicad,Germany,Munich,AEC,Design twin,info@graphisoft.com,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:15
+454,RIB Software,Germany,Stuttgart,Construction,Project twin,info@rib-software.com,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:15
+455,Autodesk Germany,Germany,Munich,Design,Design twin,info.germany@autodesk.com,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:15
+456,Dassault Systèmes DE,Germany,Stuttgart,PLM,Product twin,info@3ds.com,,P0,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:15
+457,PTC Germany,Germany,Munich,PLM,Product twin,info@ptc.com,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:15
+458,Siemens Digital Industries Software,Germany,Cologne,PLM,Product twin,info.plm@siemens.com,,P0,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:15
+459,Hexagon MI,Germany,Wetzlar,Metrology,Quality twin,info.de@hexagon.com,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:15
+461,TÜV Rheinland,Germany,Cologne,Certification,Compliance twin,info@tuv.com,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:15
+462,TÜV Nord,Germany,Hannover,Certification,Audit twin,info@tuev-nord.de,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:15
+463,Dekra,Germany,Stuttgart,Certification,Safety twin,info@dekra.com,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:15
+464,DNV Germany,Germany,Hamburg,Assurance,Risk twin,info@dnv.com,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:15
+466,Hannover Re,Germany,Hannover,Insurance,Underwriting twin,info@hannover-re.com,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:15
+468,Check24,Germany,Munich,Marketplace,Ops twin,info@check24.de,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:15
+476,Kenjo,Germany,Berlin,HR tech,HR twin,hello@kenjo.io,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:15
+483,Solaris,Germany,Berlin,Banking,Banking twin,hello@solarisgroup.com,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:15
+484,SumUp,Germany,Berlin,Fintech,Merchant twin,support@sumup.com,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:15
+485,Klarna Germany,Germany,Berlin,Fintech,Payments twin,merchant@klarna.de,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:15
+486,Stripe Germany,Germany,Berlin,Payments,Payment gates twin,support@stripe.com,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:15
+487,Adyen Germany,Germany,Berlin,Payments,Payment twin,sales.de@adyen.com,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:15
+489,Lexware,Germany,Freiburg,Accounting,SMB twin,info@lexware.de,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:15
+490,Haufe Group,Germany,Freiburg,Publishing,Knowledge twin,info@haufe.de,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:15
+491,Springer Nature,Germany,Berlin,Publishing,Research twin,info@springernature.com,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:16
+492,Wiley VCH,Germany,Weinheim,Publishing,Content twin,info@wiley.com,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:16
+495,RTL Deutschland,Germany,Cologne,Media,Content twin,info@rtl.de,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:16
+497,T-Systems,Germany,Frankfurt,IT services,Enterprise twin,info@t-systems.com,,P0,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:16
+504,McKinsey Digital DE,Germany,Munich,Consulting,Twin strategy,germany_info@mckinsey.com,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:16
+505,BCG X Germany,Germany,Munich,Consulting,Build twin,info@bcg.com,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:16
+502,Elmos,Germany,Dortmund,Semiconductors,Chip twin,info@elmos.com,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:16
+503,Siltronic,Germany,Munich,Semiconductors,Wafer twin,info@siltronic.com,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:16
+505,SGL Carbon,Germany,Wiesbaden,Materials,Material twin,info@sglcarbon.com,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:16
+506,Nordex,Germany,Hamburg,Wind,Fleet twin,info@nordex-online.com,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:16
+507,Encavis,Germany,Hamburg,Renewables,Asset twin,info@encavis.com,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:16
+508,1&1,Germany,Montabaur,Telecom,Network twin,info@1und1.de,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:16
+509,Freenet,Germany,Büdelsdorf,Telecom,Ops twin,info@freenet.ag,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:16
+600,Voith,Germany,Heidenheim,Industrial,Hydro twin,info@voith.com,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:16
+601,Andritz,Austria,Graz,Industrial,Plant twin,welcome@andritz.com,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:16
+602,GEA Group,Germany,Düsseldorf,Process,Process twin,info@gea.com,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:16
+603,Krones,Germany,Neutraubling,Packaging,Line twin,info@krones.com,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:16
+604,KHS,Germany,Dortmund,Packaging,Line twin,info@khs.com,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:17
+605,Multivac,Germany,Wolfertschwenden,Packaging,Machine twin,info@multivac.com,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:17
+606,Homag,Germany,Schopfloch,Woodworking,Factory twin,info@homag.com,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:17
+607,Dürkopp Adler,Germany,Bielefeld,Machinery,Ops twin,info@duerkopp-adler.com,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:17
+608,Grob-Werke,Germany,Mindelheim,Machine tools,Machining twin,info@grob.de,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:17
+609,Chiron Group,Germany,Tuttlingen,Machine tools,Machine twin,info@chiron.de,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:17
+610,Index-Werke,Germany,Esslingen,Machine tools,Turning twin,info@index-werke.de,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:17
+611,Emag,Germany,Salach,Machine tools,Machine twin,info@emag.com,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:18
+612,Liebherr Aerospace,Germany,Lindenberg,Aerospace,System twin,info.lwe@liebherr.com,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:18
+613,Diehl Aviation,Germany,Nuremberg,Aerospace,Cabin twin,info@diehl.com,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:18
+614,Premium AEROTEC,Germany,Augsburg,Aerospace,Aerostructure twin,info@premium-aerotec.com,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:18
+615,Airbus Helicopters DE,Germany,Donauwörth,Aerospace,Fleet twin,contact@airbus.com,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:18
+616,RENK Group,Germany,Augsburg,Defence,Drivetrain twin,info@renk.com,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:18
+617,Hensoldt,Germany,Taufkirchen,Defence,Sensor twin,info@hensoldt.net,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:18
+618,Rohde & Schwarz Cyber,Germany,Munich,Cyber,Secure twin,cybersecurity@rohde-schwarz.com,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:18
+619,Secunet,Germany,Essen,Cyber,Secure twin,info@secunet.com,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:18
+620,Genua,Germany,Munich,Cyber,Network twin,info@genua.eu,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:18
+621,Veridos,Germany,Munich,Identity,ID twin,info@veridos.com,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:19
+622,Bundesdruckerei,Germany,Berlin,GovTech,Gov twin,info@bdr.de,,P0,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:19
+623,govdigital,Germany,Berlin,GovTech,Municipal twin,info@govdigital.de,,P0,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:19
+624,Dataport,Germany,Altenholz,Gov IT,Public twin,info@dataport.de,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:19
+625,ITEBO,Germany,Osnabrück,Gov IT,Municipal twin,info@itebo.de,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:19
+626,Kommunix,Germany,Münster,Gov software,Municipal twin,info@kommunix.de,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:20
+627,AKDB,Germany,Munich,Gov software,Municipal twin,info@akdb.de,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:20
+628,CGM Clinical,Germany,Koblenz,Health IT,Care twin,info@cgm.com,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:20
+629,Nexus AG,Germany,Donaueschingen,Health IT,Hospital twin,info@nexus-ag.de,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:20
+630,Medatixx,Germany,Mannheim,Health IT,Practice twin,info@medatixx.de,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:20
+631,Doctolib Germany,Germany,Berlin,Health tech,Scheduling twin,presse@doctolib.de,,P1,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:20
+632,Ada Health,Germany,Berlin,Health tech,Care twin,hello@ada.com,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:20
+633,Ada Health Partnerships,Germany,Berlin,Health tech,Twin collab,partnerships@ada.com,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:20
+634,Clue,Germany,Berlin,Health tech,Personal twin,hello@helloclue.com,,P2,Innovation / Partnerships,READY,Send twin + Twin Autopilot intro with prices,EMAIL,yes,,yes,mx_ok,2026-11-25T09:29:20
