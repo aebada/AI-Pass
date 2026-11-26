@@ -412,3 +412,11 @@ Sent this run: 14. Failures: 0.
 - Many corporate forms WAF/404 → need email.
 - **Email wave BLOCKED**: SMTP_* still missing. Secrets re-requested. Will send wave2 (100 READY) as soon as SMTP is available.
 
+
+
+## 2026-11-26 09:03 Europe/Berlin — daily-100 timer
+
+- **Email wave BLOCKED**: SMTP_* still missing (`/tmp/smtp-deploy.env` absent; no SMTP_* env). Secrets re-requested (SMTP_HOST / SMTP_USER / SMTP_PASS).
+- No emails sent. Caps respected. Will not fake sends.
+- Queue when SMTP available: wave2 READY=100 (`daily-100-wave2-prospects.csv`, limit 50); AI providers READY=19 (`ai-providers-twin-collab.csv`, skip SKIP_PRESS_ONLY / DeepMind press, limit 20).
+- **Forms first** (catalog READY/RETRY): N26 **SUBMITTED**; BMW FIZ + govdigital RETRY (no submit button); Dassault DE, SAP Signavio, Commerzbank → BLOCKED_OR_COMPLEX (moved/404/no fields) → email fallback when SMTP lands.

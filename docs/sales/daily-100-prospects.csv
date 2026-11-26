@@ -62,7 +62,7 @@ rank,company,country,city,sector,wedge,email_primary,email_alt,priority,target_r
 61,Auto1 Group,Germany,Berlin,Auto retail,Inventory twin,press@auto1-group.com,,P1,Digital,SENT 2026-11-10,Send pricing follow-up day 5,EMAIL,yes,yes,mx_ok,
 62,FlixBus / Flix,Germany,Munich,Mobility,Network twin,press@flixbus.com,,P1,Innovation,SENT 2026-11-10,Send pricing follow-up day 5,EMAIL,yes,yes,mx_ok,
 63,About You,Germany,Hamburg,Ecommerce,Retail twin,press@aboutyou.com,,P2,Partnerships,SENT 2026-11-11,Send pricing follow-up day 5,EMAIL,yes,yes,mx_ok,
-64,Commerzbank,Germany,Frankfurt,Banking,Ops harness,info@commerzbank.com,,P1,Innovation,SENT 2026-11-10,Send pricing follow-up day 5,EMAIL,yes,yes,mx_ok,
+64,Commerzbank,Germany,Frankfurt,Banking,Ops harness,info@commerzbank.com,,P1,Innovation,SENT 2026-11-10,Form blocked/WAF — validate email then send,EMAIL,yes,yes,mx_ok,BLOCKED 2026-11-26
 65,DZ Bank,Germany,Frankfurt,Banking,Policy agents,info@dzbank.de,,P1,Digital,SENT 2026-11-10,Send pricing follow-up day 5,EMAIL,yes,yes,mx_ok,
 66,Deutsche Börse,Germany,Frankfurt,Markets,Audit twin,info@deutsche-boerse.com,,P1,Innovation,SENT 2026-11-10,Send pricing follow-up day 5,EMAIL,yes,yes,mx_ok,
 67,E.ON,Germany,Essen,Energy,Grid twin harness,info@eon.com,,P1,Digital,SENT 2026-11-10,Send pricing follow-up day 5,EMAIL,yes,yes,mx_ok,
@@ -96,7 +96,7 @@ rank,company,country,city,sector,wedge,email_primary,email_alt,priority,target_r
 95,PwC Germany,Germany,Frankfurt,Consulting,Governed AI pilots,de_info@pwc.com,,P1,Alliances,SENT 2026-11-11,Send pricing follow-up day 5,EMAIL,yes,yes,mx_ok,
 96,EY Germany,Germany,Stuttgart,Consulting,Audit twin evidence,info@de.ey.com,,P1,Alliances,SENT 2026-11-11,Send pricing follow-up day 5,EMAIL,yes,yes,mx_ok,
 97,KPMG Germany,Germany,Berlin,Consulting,Compliance twin,info@kpmg.de,,P1,Alliances,SENT 2026-11-11,Send pricing follow-up day 5,EMAIL,yes,yes,mx_ok,
-98,N26,Germany,Berlin,Fintech,Governed agents,support@n26.com,,P2,Partnerships,CAREFUL,Prefer partnerships channel,EMAIL,yes,,,
+98,N26,Germany,Berlin,Fintech,Governed agents,support@n26.com,,P2,Partnerships,FORM 2026-11-26,Wait for form reply,FORM,support@n26.com,,,SUBMITTED 2026-11-26
 99,Trade Republic,Germany,Berlin,Fintech,Policy-gated harness,support@traderepublic.com,,P2,Partnerships,CAREFUL,Prefer partnerships channel,EMAIL,yes,,,
 100,HUMAIN,Saudi Arabia,Riyadh,Sovereign AI,Already contacted Oct 2026,pr@humain.com,connect@humain.ai,P0,Partnerships,SENT_PRIOR,Do not resend yet,EMAIL,yes,,,
 101,SDAIA,Saudi Arabia,Riyadh,Gov AI,Already contacted,info@sdaia.gov.sa,,P0,Partnerships,SENT_PRIOR,Do not resend yet,EMAIL,yes,,,
