@@ -57,12 +57,13 @@ export default function HospitalTwinMarketingPage() {
             provenance on every number. Built for demos, discovery, and pilot boards.
           </p>
           <div className={styles.ctas}>
-            <Link href="/workspace/hospital-twin" className={styles.primary}>
+            {/* Plain anchors: hard navigation works on static Hostinger even if Next client router stalls */}
+            <a href="/workspace/hospital-twin/" className={styles.primary}>
               Open Command Center
-            </Link>
-            <Link href="/workspace/data-products" className={styles.secondary}>
+            </a>
+            <a href="/workspace/data-products/" className={styles.secondary}>
               Browse Data Products
-            </Link>
+            </a>
           </div>
           <div className={styles.banner}>Synthetic data. Not a real hospital. Not clinical decision support.</div>
           <div className={styles.metrics}>
@@ -115,9 +116,9 @@ export default function HospitalTwinMarketingPage() {
             ))}
           </div>
           <div className={styles.ctas}>
-            <Link href="/workspace/hospital-twin" className={styles.primary}>
+            <a href="/workspace/hospital-twin/" className={styles.primary}>
               Launch demo twin
-            </Link>
+            </a>
           </div>
           <p className={styles.footerNote}>
             Pseudonymous patients only. Draft purchase requests never auto-execute.

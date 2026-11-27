@@ -1,6 +1,7 @@
 'use client';
 
-import Link from 'next/link';
+import { useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import { Card, Badge } from '@ai-pass/ui';
 import { workspaceTokens } from '@ai-pass/ui';
 import { WorkspaceLayoutClient } from './WorkspaceLayoutClient';
@@ -14,6 +15,15 @@ export interface ModulePageClientProps {
   icon?: string;
 }
 
+/** Modules with a real dedicated workspace page — never soft-link to self. */
+const DEDICATED_WORKSPACE_MODULES = new Set([
+  'hospital-twin',
+  'lifecycle',
+  'twin-autopilot',
+  'data-products',
+  'connect',
+]);
+
 export function ModulePageClient({
   title,
   description,
@@ -22,12 +32,34 @@ export function ModulePageClient({
   legacyRoute,
   icon,
 }: ModulePageClientProps) {
-  // Prefer the workspace module route; legacy marketing routes are secondary.
-  const openHref = `/workspace/${moduleId}`;
-  const secondaryHref =
-    legacyRoute && legacyRoute !== openHref && !legacyRoute.startsWith('/workspace/')
-      ? legacyRoute
-      : null;
+  const pathname = usePathname();
+  const dedicated = DEDICATED_WORKSPACE_MODULES.has(moduleId);
+  const openHref = `/workspace/${moduleId}/`;
+  const overviewHref =
+    legacyRoute && legacyRoute !== openHref.replace(/\/$/, '') && !legacyRoute.startsWith('/workspace/')
+      ? legacyRoute.endsWith('/')
+        ? legacyRoute
+        : `${legacyRoute}/`
+      : moduleId === 'hospital-twin'
+        ? '/hospital-twin/'
+        : null;
+
+  // If a dedicated page exists but the stub shell was served (stale CDN / overwrite),
+  // hard-reload once with a cache buster so Hostinger picks up DirectoryIndex content.
+  useEffect(() => {
+    if (!dedicated) return;
+    if (typeof window === 'undefined') return;
+    const key = `ai-pass:reload:${moduleId}`;
+    if (sessionStorage.getItem(key) === '1') return;
+    sessionStorage.setItem(key, '1');
+    window.location.replace(`${openHref}?v=${Date.now()}`);
+  }, [dedicated, moduleId, openHref]);
+
+  const hardGo = (href: string) => {
+    if (typeof window !== 'undefined') {
+      window.location.assign(href);
+    }
+  };
 
   return (
     <WorkspaceLayoutClient title={title} subtitle={description}>
@@ -52,9 +84,19 @@ export function ModulePageClient({
             {description}
           </p>
 
+          {dedicated && (
+            <p style={{ fontSize: 13, color: workspaceTokens.colors.textMuted, marginBottom: 16 }}>
+              Opening the full {title} experience…
+            </p>
+          )}
+
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
-            <Link
+            <a
               href={openHref}
+              onClick={(e) => {
+                e.preventDefault();
+                hardGo(`${openHref}?v=${Date.now()}`);
+              }}
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
@@ -66,13 +108,18 @@ export function ModulePageClient({
                 fontSize: 14,
                 fontWeight: 500,
                 textDecoration: 'none',
+                cursor: 'pointer',
               }}
             >
-              Open module →
-            </Link>
-            {secondaryHref && (
-              <Link
-                href={secondaryHref}
+              Open Command Center →
+            </a>
+            {overviewHref && (
+              <a
+                href={overviewHref}
+                onClick={(e) => {
+                  e.preventDefault();
+                  hardGo(overviewHref);
+                }}
                 style={{
                   display: 'inline-flex',
                   alignItems: 'center',
@@ -84,10 +131,11 @@ export function ModulePageClient({
                   fontSize: 14,
                   fontWeight: 500,
                   textDecoration: 'none',
+                  cursor: 'pointer',
                 }}
               >
                 Product overview
-              </Link>
+              </a>
             )}
           </div>
 
@@ -96,6 +144,9 @@ export function ModulePageClient({
               This module is in beta — full workspace integration coming soon.
             </p>
           )}
+
+          {/* Avoid unused pathname lint in some builds */}
+          <span style={{ display: 'none' }}>{pathname}</span>
         </Card>
       </div>
     </WorkspaceLayoutClient>

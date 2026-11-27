@@ -1,7 +1,6 @@
 'use client';
 
 import { useMemo, useState } from 'react';
-import Link from 'next/link';
 import {
   GOLDEN_QUESTIONS,
   createHospitalTwinService,
@@ -56,24 +55,19 @@ export default function HospitalTwinCommandCenterPage() {
     [snap, boardId],
   );
 
-  if (!boot.ok) {
+  if (!boot.ok || !svc || !snap) {
     return (
       <WorkspaceLayoutClient title="Hospital Twin" subtitle="Command Center failed to load">
         <div className={styles.wrap}>
-          <div className={styles.banner}>Could not start the twin: {boot.error}</div>
-          <button type="button" className={styles.btnPrimary} onClick={() => window.location.reload()}>
+          <div className={styles.banner}>
+            Could not start the twin: {boot.ok ? 'unknown error' : boot.error}
+          </div>
+          <a className={styles.btnPrimary} href="/workspace/hospital-twin/">
             Retry
-          </button>
-        </div>
-      </WorkspaceLayoutClient>
-    );
-  }
-
-  if (!svc || !snap) {
-    return (
-      <WorkspaceLayoutClient title="Hospital Twin" subtitle="Loading Command Center…">
-        <div className={styles.wrap}>
-          <div className={styles.banner}>Synthetic data. Not a real hospital. Booting demo twin…</div>
+          </a>
+          <a className={styles.btnGhost} href="/hospital-twin/">
+            Product overview
+          </a>
         </div>
       </WorkspaceLayoutClient>
     );
@@ -139,9 +133,9 @@ export default function HospitalTwinCommandCenterPage() {
             <button type="button" className={styles.btnDanger} onClick={reset}>
               Reset baseline
             </button>
-            <Link href="/hospital-twin" className={styles.btnGhost}>
+            <a href="/hospital-twin/" className={styles.btnGhost}>
               Product overview
-            </Link>
+            </a>
           </div>
           {msg && <p className={styles.answer}>{msg}</p>}
         </section>
