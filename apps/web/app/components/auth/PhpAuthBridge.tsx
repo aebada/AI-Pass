@@ -47,14 +47,22 @@ export function PhpAuthBridge() {
 
     fetch(PHP_AUTH_ME, { credentials: 'include', cache: 'no-store' })
       .then(async (res) => {
-        if (!res.ok) {
+        if (res.status === 401) {
           if (user) signOut();
           return null;
         }
-        return res.json() as Promise<{ authenticated: boolean; user?: { id: string; email: string; name?: string; avatarUrl?: string } }>;
+        if (!res.ok) return null;
+        return res.json() as Promise<{
+          authenticated: boolean;
+          user?: { id: string; email: string; name?: string; avatarUrl?: string };
+        }>;
       })
       .then((data) => {
-        if (cancelled || !data?.authenticated || !data.user) return;
+        if (cancelled || !data) return;
+        if (!data.authenticated || !data.user) {
+          if (user) signOut();
+          return;
+        }
         const next = profileFromPhpUser(data.user);
         if (
           !user ||
@@ -67,7 +75,7 @@ export function PhpAuthBridge() {
         }
       })
       .catch(() => {
-        if (user) signOut();
+        // Network blip: keep persisted profile.
       });
 
     return () => {

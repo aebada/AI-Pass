@@ -4,6 +4,7 @@ import { createContext, useCallback, useContext, useEffect, useMemo, useState, t
 import { SessionProvider } from 'next-auth/react';
 import type { PlanTier } from '@ai-pass/ui';
 import { isLegacyDemoProfile } from '@/lib/session-user';
+import { AuthRedirect } from '../auth/AuthRedirect';
 import { AuthSessionBridge } from '../auth/AuthSessionBridge';
 import { LaravelAuthBridge } from '../auth/LaravelAuthBridge';
 import { PhpAuthBridge } from '../auth/PhpAuthBridge';
@@ -219,6 +220,7 @@ export function AppProviders({ children }: { children: ReactNode }) {
         ) : (
           <AuthSessionBridge />
         )}
+        <AuthRedirect />
         {children}
       </AppContext.Provider>
     </SessionProvider>

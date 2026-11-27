@@ -63,6 +63,8 @@ For production, set `NEXTAUTH_URL=https://aipass.space` in your deployment secre
 
 Production OAuth client lives in Google Cloud project **aipass-501004**.
 
+**Separate from Aktovio:** do **not** reuse Aktovio’s Google OAuth client ID on aipass.space. Create a dedicated AI-Pass OAuth client (or dedicated client inside `aipass-501004`) whose authorized origins/redirects are only `aipass.space` / localhost. Sharing one client with Aktovio brands the consent screen incorrectly and confuses post-login destinations.
+
 ### 1. Enable APIs
 
 In [Google Cloud Console](https://console.cloud.google.com/):

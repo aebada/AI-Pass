@@ -32,7 +32,8 @@ return [
     |
     */
 
-    'lifetime' => (int) env('SESSION_LIFETIME', 120),
+    // Default 30 days so Google / email sign-in stays signed in across browser restarts.
+    'lifetime' => (int) env('SESSION_LIFETIME', 60 * 24 * 30),
 
     'expire_on_close' => env('SESSION_EXPIRE_ON_CLOSE', false),
 

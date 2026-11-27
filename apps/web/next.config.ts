@@ -37,11 +37,16 @@ const nextConfig: NextConfig = {
     '@ai-pass/sales-ai',
     '@ai-pass/content-ai',
     '@ai-pass/crm-connectors',
+    '@ai-pass/twin-autopilot',
+    '@ai-pass/lifecycle-intelligence',
+    '@ai-pass/hospital-twin',
+    '@ai-pass/messaging-connectors',
   ],
   reactStrictMode: true,
   ...(isStaticExport
     ? {
         output: 'export' as const,
+        images: { unoptimized: true },
         typescript: { ignoreBuildErrors: true },
       }
     : {}),

@@ -65,7 +65,8 @@ fi
 
 cd "$WEB"
 # Hostinger shared hosting: use PHP session auth (not Laravel/Node).
-NEXT_PUBLIC_STATIC_EXPORT=1 NEXT_PUBLIC_USE_PHP_AUTH=1 STATIC_EXPORT=1 pnpm build
+# PHP + Laravel bridges both hydrate /auth/me so sessions survive across landing ↔ workspace.
+NEXT_PUBLIC_STATIC_EXPORT=1 NEXT_PUBLIC_USE_PHP_AUTH=1 NEXT_PUBLIC_USE_LARAVEL_AUTH=1 STATIC_EXPORT=1 pnpm build
 
 if [[ ! -f "$WEB/out/index.html" ]]; then
   echo "error: $WEB/out/index.html not found after build" >&2
@@ -78,10 +79,13 @@ if [[ -f "$WEB/public/.htaccess" ]]; then
 fi
 
 # Hostinger DirectoryIndex often prefers path/index.html over path.html.
+# Never overwrite an existing index.html — dedicated routes (e.g. workspace/hospital-twin)
+# must win over dynamic [module] shells with the same path.
 python3 - <<PY
 from pathlib import Path
 out = Path("$WEB/out")
 count = 0
+skipped = 0
 for html in out.rglob("*.html"):
     rel = html.relative_to(out)
     if rel.name == "index.html":
@@ -89,9 +93,12 @@ for html in out.rglob("*.html"):
     target_dir = out / rel.with_suffix("")
     target_dir.mkdir(parents=True, exist_ok=True)
     target = target_dir / "index.html"
+    if target.exists():
+        skipped += 1
+        continue
     target.write_bytes(html.read_bytes())
     count += 1
-print(f"Mirrored {count} html shells to */index.html for DirectoryIndex")
+print(f"Mirrored {count} html shells to */index.html for DirectoryIndex (skipped {skipped} existing)")
 PY
 
 PHP_AUTH="$ROOT/php-auth"

@@ -21,6 +21,8 @@
     "@ai-pass/governance": "workspace:*",
     "@ai-pass/indexer": "workspace:*",
     "@ai-pass/knowledge-pipeline": "workspace:*",
+    "@ai-pass/lifecycle-intelligence": "workspace:*",
+    "@ai-pass/hospital-twin": "workspace:*",
     "@ai-pass/livesync": "workspace:*",
     "@ai-pass/marketplace-core": "workspace:*",
     "@ai-pass/marketplace-runtime": "workspace:*",
