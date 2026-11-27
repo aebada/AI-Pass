@@ -420,3 +420,11 @@ Sent this run: 14. Failures: 0.
 - No emails sent. Caps respected. Will not fake sends.
 - Queue when SMTP available: wave2 READY=100 (`daily-100-wave2-prospects.csv`, limit 50); AI providers READY=19 (`ai-providers-twin-collab.csv`, skip SKIP_PRESS_ONLY / DeepMind press, limit 20).
 - **Forms first** (catalog READY/RETRY): N26 **SUBMITTED**; BMW FIZ + govdigital RETRY (no submit button); Dassault DE, SAP Signavio, Commerzbank → BLOCKED_OR_COMPLEX (moved/404/no fields) → email fallback when SMTP lands.
+
+
+## 2026-11-27 09:03 Europe/Berlin — daily-100 timer
+
+- **Email wave BLOCKED**: SMTP_* still missing (`/tmp/smtp-deploy.env` absent; no SMTP_* env). Secrets re-requested (SMTP_HOST / SMTP_USER / SMTP_PASS).
+- No emails sent. Will not fake sends. Hostinger rate limits N/A.
+- Queue when SMTP available: wave2 READY=100 (limit 50); AI providers READY=19 (skip SKIP_PRESS_ONLY / DeepMind press, limit 20).
+- **Forms first** (re-run): N26 submitted again on this branch state; BMW FIZ + govdigital RETRY; Dassault DE / SAP Signavio / Commerzbank blocked → email fallback when SMTP lands.
