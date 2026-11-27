@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { PremiumNav } from './components/premium/PremiumNav';
 import { BrandLogoLink } from './components/BrandLogoLink';
@@ -22,16 +23,16 @@ const TRUST = [
 
 const PILLARS = [
   {
+    title: 'One product truth',
+    copy: 'Connect PLM, ERP, test, and field systems without migration — ontology and graph keep teams aligned.',
+  },
+  {
     title: 'Route every model',
     copy: 'One control plane for GPT, Claude, Gemini, and private endpoints — with spend and policy attached.',
   },
   {
     title: 'Govern by default',
     copy: 'Approvals, inventory, and audit trails live in the infrastructure layer, not as an afterthought.',
-  },
-  {
-    title: 'Deploy anywhere',
-    copy: 'Cloud, private cloud, hybrid, or air-gapped patterns for regulated operators.',
   },
   {
     title: 'Certify trust',
@@ -41,12 +42,34 @@ const PILLARS = [
 
 const FEATURES = [
   {
+    eyebrow: 'Product lifecycle',
+    title: 'Concept to aftermarket on one twin',
+    copy: 'Requirements Manager, Product Explorer, Error Inspector, Ticket Analyzer, and Studio — full lifecycle intelligence.',
+    points: ['8 lifecycle stages', 'Agentic mapping + provenance', 'PLM Connect ready'],
+    href: '/lifecycle',
+    cta: 'Explore Lifecycle Intelligence',
+    image: '/images/landing/hero-ops.jpg',
+    imageAlt: 'Operations center with product data displays',
+  },
+  {
+    eyebrow: 'Data Products',
+    title: 'Install ready twin and sector packs',
+    copy: 'Lifecycle twins, hospital packs, Ops Reality datasets, and evidence graphs — curated for agents and boards.',
+    points: ['Sector packs', 'Evidence graphs', 'Workspace install'],
+    href: '/workspace/data-products',
+    cta: 'Browse Data Products',
+    image: '/images/landing/sectors.jpg',
+    imageAlt: 'Enterprise environments for sector data products',
+  },
+  {
     eyebrow: 'Workspace',
     title: 'One place to run enterprise AI',
     copy: 'Agents, workflows, knowledge, and apps share the same identity, wallet, and governance rules.',
     points: ['Unified command center', 'Shared AI wallet', 'Role-aware access'],
     href: '/workspace',
     cta: 'Open workspace',
+    image: '/images/landing/workspace.jpg',
+    imageAlt: 'AI-Pass workspace on a laptop in an office',
   },
   {
     eyebrow: 'Trust Engine',
@@ -55,14 +78,6 @@ const FEATURES = [
     points: ['Certification flows', 'Live monitoring', 'Public verification'],
     href: '/workspace/trust',
     cta: 'Explore Trust Engine',
-  },
-  {
-    eyebrow: 'App Store',
-    title: 'Install certified business AI',
-    copy: 'Invoice, HR, supply chain, compliance, and more — scored apps ready for enterprise rollout.',
-    points: ['Scored catalog', 'Install into workspace', 'Enterprise admin controls'],
-    href: '/workspace/store',
-    cta: 'Browse App Store',
   },
 ];
 
@@ -108,8 +123,20 @@ export default function HomePageContent() {
 
       <main>
         <section className={`${styles.hero} hero-presence`} aria-labelledby="hero-heading">
+          <div className={styles.heroPhoto} aria-hidden>
+            <Image
+              src="/images/landing/hero-ops.jpg"
+              alt=""
+              fill
+              priority
+              sizes="100vw"
+              className={styles.heroPhotoImg}
+            />
+            <div className={styles.heroPhotoScrim} />
+          </div>
           <div className={styles.heroGlow} aria-hidden />
           <div className={styles.heroInner}>
+            <p className={styles.announce}>New · Full product lifecycle + Data Products</p>
             <p className={styles.brandMark}>AI-Pass</p>
             <h1 id="hero-heading" className={styles.heroTitle}>
               Enterprise AI infrastructure.
@@ -117,28 +144,38 @@ export default function HomePageContent() {
             </h1>
             <p className={styles.heroSub}>
               Build, orchestrate, govern, and deploy secure AI across cloud and on-premises — one
-              platform for regulated business operations.
+              platform for regulated business operations and the full product lifecycle.
             </p>
             <div className={styles.heroCtas}>
               <a href={DEMO_MAILTO} className={styles.btnPrimary}>
                 Book enterprise demo
               </a>
-              <Link href="/demo" className={styles.btnSecondary}>
-                Try interactive demo
+              <Link href="/lifecycle" className={styles.btnSecondary}>
+                See lifecycle intelligence
               </Link>
             </div>
             <p className={styles.heroNote}>No credit card · Enterprise-ready · On-prem options</p>
           </div>
 
-          <div className={styles.heroVisual} aria-hidden>
+          <div className={styles.heroVisual}>
             <div className={styles.productStage}>
               <div className={styles.productChrome}>
                 <span>AI-Pass Workspace</span>
                 <span className={styles.productMeta}>Governed · Routed · Certified</span>
               </div>
+              <div className={styles.productShot}>
+                <Image
+                  src="/images/landing/workspace.jpg"
+                  alt="AI-Pass workspace preview"
+                  width={1200}
+                  height={675}
+                  sizes="(max-width: 980px) 100vw, 980px"
+                  className={styles.productShotImg}
+                />
+              </div>
               <div className={styles.productBody}>
                 <div className={styles.productRail}>
-                  {['Route', 'Govern', 'Trust', 'Store'].map((item) => (
+                  {['Lifecycle', 'Data', 'Trust', 'Store'].map((item) => (
                     <span key={item} className={styles.productPill}>
                       {item}
                     </span>
@@ -146,12 +183,12 @@ export default function HomePageContent() {
                 </div>
                 <div className={styles.productPanels}>
                   <div>
-                    <strong>Model router</strong>
-                    <p>Policy-aware routing across public and private models.</p>
+                    <strong>Lifecycle twin</strong>
+                    <p>Concept to aftermarket on one ontology and knowledge graph.</p>
                   </div>
                   <div>
-                    <strong>Trust score</strong>
-                    <p>Live certification status for production systems.</p>
+                    <strong>Data products</strong>
+                    <p>Sector packs and evidence datasets ready to install.</p>
                   </div>
                 </div>
               </div>
@@ -205,16 +242,29 @@ export default function HomePageContent() {
                 {feature.cta} →
               </Link>
             </div>
-            <div className={styles.featureVisual} aria-hidden>
-              <div className={styles.featurePanel}>
-                <span className={styles.featureBadge}>{feature.eyebrow}</span>
-                <p className={styles.featurePanelTitle}>{feature.title}</p>
-                <div className={styles.featureBars}>
-                  <span />
-                  <span />
-                  <span />
+            <div className={styles.featureVisual}>
+              {'image' in feature && feature.image ? (
+                <div className={styles.featurePhoto}>
+                  <Image
+                    src={feature.image}
+                    alt={feature.imageAlt || feature.title}
+                    width={960}
+                    height={540}
+                    sizes="(max-width: 900px) 100vw, 48vw"
+                    className={styles.featurePhotoImg}
+                  />
                 </div>
-              </div>
+              ) : (
+                <div className={styles.featurePanel} aria-hidden>
+                  <span className={styles.featureBadge}>{feature.eyebrow}</span>
+                  <p className={styles.featurePanelTitle}>{feature.title}</p>
+                  <div className={styles.featureBars}>
+                    <span />
+                    <span />
+                    <span />
+                  </div>
+                </div>
+              )}
             </div>
           </section>
         ))}

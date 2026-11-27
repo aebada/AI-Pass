@@ -40,14 +40,20 @@ export function LaravelAuthBridge() {
   const { user, signIn, signOut } = useApp();
 
   useEffect(() => {
-    if (process.env.NEXT_PUBLIC_USE_LARAVEL_AUTH !== '1') return;
+    // Static Hostinger builds set PHP auth; Laravel /auth/me still works when present.
+    const enabled =
+      process.env.NEXT_PUBLIC_USE_LARAVEL_AUTH === '1' ||
+      process.env.NEXT_PUBLIC_USE_PHP_AUTH === '1' ||
+      process.env.NEXT_PUBLIC_STATIC_EXPORT === '1';
+    if (!enabled) return;
 
     let cancelled = false;
 
     fetch(authApiUrl('/auth/me'), { credentials: 'include', cache: 'no-store' })
       .then(async (res) => {
         if (!res.ok) {
-          if (user) signOut();
+          // Keep local profile on transient auth outages; only clear on explicit 401 with body.
+          if (res.status === 401 && user) signOut();
           return null;
         }
         return res.json() as Promise<{
@@ -56,7 +62,11 @@ export function LaravelAuthBridge() {
         }>;
       })
       .then((data) => {
-        if (cancelled || !data?.authenticated || !data.user) return;
+        if (cancelled || !data) return;
+        if (!data.authenticated || !data.user) {
+          if (user) signOut();
+          return;
+        }
         const next = profileFromApiUser(data.user);
         if (
           !user ||
@@ -69,7 +79,7 @@ export function LaravelAuthBridge() {
         }
       })
       .catch(() => {
-        if (user) signOut();
+        // Network blip: do not drop a persisted signed-in profile.
       });
 
     return () => {

@@ -42,6 +42,7 @@ const nextConfig: NextConfig = {
   ...(isStaticExport
     ? {
         output: 'export' as const,
+        images: { unoptimized: true },
         typescript: { ignoreBuildErrors: true },
       }
     : {}),

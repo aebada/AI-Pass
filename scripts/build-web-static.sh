@@ -65,7 +65,8 @@ fi
 
 cd "$WEB"
 # Hostinger shared hosting: use PHP session auth (not Laravel/Node).
-NEXT_PUBLIC_STATIC_EXPORT=1 NEXT_PUBLIC_USE_PHP_AUTH=1 STATIC_EXPORT=1 pnpm build
+# PHP + Laravel bridges both hydrate /auth/me so sessions survive across landing ↔ workspace.
+NEXT_PUBLIC_STATIC_EXPORT=1 NEXT_PUBLIC_USE_PHP_AUTH=1 NEXT_PUBLIC_USE_LARAVEL_AUTH=1 STATIC_EXPORT=1 pnpm build
 
 if [[ ! -f "$WEB/out/index.html" ]]; then
   echo "error: $WEB/out/index.html not found after build" >&2
