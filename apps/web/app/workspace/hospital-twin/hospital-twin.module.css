@@ -1,0 +1,266 @@
+.wrap {
+  display: grid;
+  gap: 1.25rem;
+  max-width: 1200px;
+}
+
+.banner {
+  padding: 0.65rem 0.9rem;
+  border-radius: 10px;
+  background: #fff7e8;
+  border: 1px solid #f0d9a8;
+  color: #7a5a12;
+  font-size: 0.86rem;
+  font-weight: 600;
+}
+
+.hero {
+  padding: 1.2rem 1.3rem;
+  border-radius: 16px;
+  border: 1px solid #dce8f2;
+  background: linear-gradient(160deg, #eef6fb 0%, #fff 55%);
+}
+
+.hero h2 {
+  margin: 0 0 0.35rem;
+  font-size: 1.35rem;
+  letter-spacing: -0.02em;
+}
+
+.hero p {
+  margin: 0;
+  color: #5a6570;
+  line-height: 1.5;
+  max-width: 48rem;
+}
+
+.metaRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 0.85rem;
+}
+
+.chip {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.55rem;
+  border-radius: 999px;
+  background: #f2f6fa;
+  color: #44505c;
+  border: 1px solid #e1e8ef;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.9rem;
+}
+
+.btnPrimary,
+.btnGhost,
+.btnDanger {
+  border-radius: 10px;
+  padding: 0.45rem 0.85rem;
+  font-size: 0.86rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid transparent;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+
+.btnPrimary {
+  background: #0f6e8c;
+  color: #fff;
+}
+
+.btnGhost {
+  background: #fff;
+  border-color: #d5dee6;
+  color: #24313c;
+}
+
+.btnDanger {
+  background: #fff;
+  border-color: #f0b4b4;
+  color: #9b2c2c;
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.tab,
+.tabActive {
+  border: 1px solid #d8e0e8;
+  background: #fff;
+  border-radius: 999px;
+  padding: 0.35rem 0.8rem;
+  font-size: 0.82rem;
+  cursor: pointer;
+  color: #3d4a56;
+}
+
+.tabActive {
+  background: #0f6e8c;
+  border-color: #0f6e8c;
+  color: #fff;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 0.65rem;
+}
+
+.tile {
+  padding: 0.85rem;
+  border-radius: 14px;
+  border: 1px solid #e4ebf1;
+  background: #fff;
+  display: grid;
+  gap: 0.2rem;
+}
+
+.tileLabel {
+  font-size: 0.72rem;
+  color: #6a7682;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.tileValue {
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: #15202b;
+}
+
+.tileStatusOk { border-left: 3px solid #2f9e6f; }
+.tileStatusWarn { border-left: 3px solid #d39b1f; }
+.tileStatusCritical { border-left: 3px solid #c23b3b; }
+
+.panel {
+  padding: 1rem 1.1rem;
+  border-radius: 16px;
+  border: 1px solid #e4ebf1;
+  background: #fff;
+}
+
+.panel h3 {
+  margin: 0 0 0.75rem;
+  font-size: 1.02rem;
+}
+
+.list {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.alert {
+  padding: 0.7rem 0.8rem;
+  border-radius: 12px;
+  border: 1px solid #eceff3;
+  background: #fbfcfd;
+}
+
+.alertCritical { border-color: #f0c4c4; background: #fff6f6; }
+.alertWarn { border-color: #f0e0b0; background: #fffbf0; }
+
+.alertTitle {
+  font-weight: 650;
+  font-size: 0.9rem;
+}
+
+.alertBody {
+  margin: 0.25rem 0 0;
+  font-size: 0.82rem;
+  color: #5a6570;
+  line-height: 1.4;
+}
+
+.twoCol {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 1rem;
+}
+
+@media (max-width: 900px) {
+  .twoCol { grid-template-columns: 1fr; }
+}
+
+.askRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.input,
+.select {
+  border: 1px solid #d5dee6;
+  border-radius: 10px;
+  padding: 0.5rem 0.7rem;
+  font-size: 0.9rem;
+  min-width: 220px;
+  flex: 1;
+  background: #fff;
+}
+
+.answer {
+  margin-top: 0.75rem;
+  padding: 0.85rem;
+  border-radius: 12px;
+  background: #f4f8fb;
+  border: 1px solid #dce8f2;
+  line-height: 1.45;
+  color: #24313c;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.84rem;
+}
+
+.table th,
+.table td {
+  text-align: left;
+  padding: 0.45rem 0.35rem;
+  border-bottom: 1px solid #edf1f5;
+}
+
+.table th {
+  color: #6a7682;
+  font-weight: 600;
+}
+
+.scenarioGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.65rem;
+}
+
+.scenarioCard {
+  padding: 0.85rem;
+  border-radius: 14px;
+  border: 1px solid #e4ebf1;
+  background: #fafcfd;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.scenarioCard h4 {
+  margin: 0;
+  font-size: 0.92rem;
+}
+
+.scenarioCard p {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #5a6570;
+  line-height: 1.4;
+}

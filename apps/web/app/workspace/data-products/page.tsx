@@ -16,9 +16,9 @@ const PRODUCTS = [
   {
     id: 'hospital-pack',
     name: 'Hospital Sector Pack',
-    status: 'Beta',
+    status: 'Live',
     copy: 'Capacity, ED, supply, equipment, and staffing KPIs with synthetic demo hospital.',
-    href: '/workspace/lifecycle',
+    href: '/workspace/hospital-twin',
   },
   {
     id: 'ops-reality',
