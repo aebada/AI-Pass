@@ -73,17 +73,37 @@
   position: relative;
   padding: clamp(48px, 8vw, 96px) clamp(20px, 4vw, 48px) clamp(40px, 6vw, 72px);
   background:
-    radial-gradient(ellipse 70% 55% at 50% -10%, rgba(103, 61, 230, 0.18), transparent 60%),
-    linear-gradient(180deg, #f7f5ff 0%, #ffffff 62%);
+    radial-gradient(ellipse 70% 55% at 50% -10%, rgba(31, 79, 214, 0.14), transparent 60%),
+    linear-gradient(180deg, #f4f7fb 0%, #ffffff 62%);
   overflow: hidden;
+}
+
+.heroPhoto {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.heroPhotoImg {
+  object-fit: cover;
+  object-position: center 35%;
+  opacity: 0.28;
+}
+
+.heroPhotoScrim {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(244, 247, 251, 0.72) 0%, rgba(255, 255, 255, 0.92) 58%, #fff 100%);
 }
 
 .heroGlow {
   position: absolute;
   inset: auto -10% -20% -10%;
   height: 55%;
-  background: radial-gradient(ellipse at center, rgba(103, 61, 230, 0.12), transparent 70%);
+  background: radial-gradient(ellipse at center, rgba(31, 79, 214, 0.1), transparent 70%);
   pointer-events: none;
+  z-index: 0;
 }
 
 .heroInner {
@@ -92,6 +112,19 @@
   margin: 0 auto;
   text-align: center;
   z-index: 1;
+}
+
+.announce {
+  display: inline-block;
+  margin: 0 auto 0.85rem;
+  padding: 0.35rem 0.75rem;
+  border: 1px solid rgba(31, 79, 214, 0.22);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.85);
+  color: #1f4fd6;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
 }
 
 .brandMark {
@@ -167,12 +200,29 @@
   font-weight: 500;
 }
 
+.productShot {
+  position: relative;
+  border-bottom: 1px solid var(--border);
+  background: #0b1220;
+  max-height: 320px;
+  overflow: hidden;
+}
+
+.productShotImg {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center top;
+  opacity: 0.95;
+}
+
 .productBody {
   display: grid;
   gap: 1.25rem;
   padding: 1.5rem;
   background:
-    linear-gradient(135deg, rgba(103, 61, 230, 0.06), transparent 45%),
+    linear-gradient(135deg, rgba(31, 79, 214, 0.06), transparent 45%),
     #fff;
 }
 
@@ -362,6 +412,24 @@
 
 .featureVisual {
   min-height: 280px;
+}
+
+.featurePhoto {
+  height: 100%;
+  min-height: 280px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  background: #0b1220;
+  box-shadow: var(--shadow-md);
+}
+
+.featurePhotoImg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 280px;
+  object-fit: cover;
 }
 
 .featurePanel {

@@ -24,6 +24,8 @@ export const PLATFORM_NAV_SECTIONS: PlatformNavSection[] = [
       { id: 'agents', label: 'Agents', route: '/workspace/agents', icon: '🤖' },
       { id: 'workflows', label: 'Workflows', route: '/workspace/workflows', icon: '⟳' },
       { id: 'knowledge', label: 'Knowledge', route: '/workspace/knowledge', icon: '📚' },
+      { id: 'lifecycle', label: 'Lifecycle', route: '/workspace/lifecycle', icon: '♾' },
+      { id: 'data-products', label: 'Data Products', route: '/workspace/data-products', icon: '▦' },
       { id: 'analysis', label: 'Analysis', route: '/workspace/analysis', icon: '📊' },
     ],
   },

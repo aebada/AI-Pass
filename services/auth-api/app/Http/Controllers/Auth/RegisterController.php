@@ -44,7 +44,7 @@ class RegisterController extends Controller
 
         event(new Registered($user));
 
-        Auth::login($user);
+        Auth::login($user, true);
         $request->session()->regenerate();
 
         return redirect()->route('verification.notice')->with('callback', $callback);

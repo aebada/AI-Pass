@@ -28,6 +28,8 @@ export const SITE_NAV: SiteNavItem[] = [
       { label: 'Agent Studio', href: '/workspace/agents', description: 'Build and operate autonomous agents' },
       { label: 'Workflow Engine', href: '/workspace/workflows', description: 'Orchestrate business processes' },
       { label: 'Knowledge Pipeline', href: '/workspace/knowledge', description: 'RAG and enterprise knowledge' },
+      { label: 'Lifecycle Intelligence', href: '/lifecycle', description: 'Full product lifecycle twin — R&D to aftermarket' },
+      { label: 'Data Products', href: '/workspace/data-products', description: 'Sector packs, twins, and evidence datasets' },
       { label: 'LiveSync', href: '/workspace/workflows/livesync', description: 'Real-time event orchestration' },
       { label: 'Analysis Studio', href: '/workspace/analysis', description: 'Analytics and decision support' },
       { label: 'Trust Engine', href: '/workspace/trust', description: 'Certify and monitor AI systems' },
@@ -159,6 +161,8 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
     links: [
       { label: 'Workspace', href: '/workspace' },
       { label: 'Interactive Demo', href: '/demo' },
+      { label: 'Lifecycle Intelligence', href: '/lifecycle' },
+      { label: 'Data Products', href: '/workspace/data-products' },
       { label: 'Intelligence Lab', href: '/lab' },
       { label: 'Connect', href: '/connect' },
       { label: 'Twin Autopilot', href: '/twin-autopilot' },
