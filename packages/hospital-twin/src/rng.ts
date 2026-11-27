@@ -23,4 +23,15 @@ export class SeededRng {
   chance(p: number): boolean {
     return this.next() < p;
   }
+
+  /** Deterministic hex id fragment (SSR/client-safe; no Date/Math.random). */
+  hex(length = 8): string {
+    let out = '';
+    while (out.length < length) {
+      out += Math.floor(this.next() * 0x100000000)
+        .toString(16)
+        .padStart(8, '0');
+    }
+    return out.slice(0, length);
+  }
 }

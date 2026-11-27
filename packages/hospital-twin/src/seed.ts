@@ -1,4 +1,3 @@
-import { createId } from '@ai-pass/shared';
 import { PILOT_MODULES } from './ontology.js';
 import { SeededRng } from './rng.js';
 import type {
@@ -128,7 +127,7 @@ export function createBaselineHospital(seed = 42): HospitalState {
       sexCode: rng.pick(['F', 'M', 'X']),
     });
     const isEd = bed.bedType === 'ED';
-    const encId = `enc_${createId().slice(0, 8)}`;
+    const encId = `enc_${rng.hex(8)}`;
     const triage = rng.pick([1, 2, 3, 4, 5] as const);
     const enc: Encounter = {
       id: encId,
