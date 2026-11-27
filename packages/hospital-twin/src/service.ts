@@ -16,7 +16,15 @@ import type {
 } from './types.js';
 
 function cloneState(state: HospitalState): HospitalState {
-  return structuredClone(state);
+  // Prefer structuredClone; JSON fallback keeps scenario inject working on older static hosts.
+  if (typeof structuredClone === 'function') {
+    try {
+      return structuredClone(state);
+    } catch {
+      /* fall through */
+    }
+  }
+  return JSON.parse(JSON.stringify(state)) as HospitalState;
 }
 
 function buildForecasts(state: HospitalState, occupancy: number): ForecastSeries[] {

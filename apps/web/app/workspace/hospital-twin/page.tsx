@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import Link from 'next/link';
 import {
   GOLDEN_QUESTIONS,
@@ -25,25 +25,30 @@ const TAB_BOARD: Record<Exclude<Tab, 'scenarios' | 'ask' | 'ontology'>, string> 
   staffing: 'staffing',
 };
 
+type BootState =
+  | { ok: true; svc: HospitalTwinService; snap: CommandCenterSnapshot }
+  | { ok: false; error: string };
+
+/** Sync boot so static Hostinger HTML already contains Ask overview / tiles (no useEffect hydrate gate). */
+function bootTwin(seed = 42): BootState {
+  try {
+    const svc = createHospitalTwinService(seed);
+    return { ok: true, svc, snap: svc.snapshot() };
+  } catch (err) {
+    return { ok: false, error: err instanceof Error ? err.message : 'Failed to boot hospital twin' };
+  }
+}
+
 export default function HospitalTwinCommandCenterPage() {
-  const [svc, setSvc] = useState<HospitalTwinService | null>(null);
-  const [snap, setSnap] = useState<CommandCenterSnapshot | null>(null);
-  const [bootError, setBootError] = useState<string | null>(null);
+  // Lazy useState runs on SSR + first client render with the same deterministic seed.
+  const [boot] = useState(() => bootTwin(42));
+  const svc = boot.ok ? boot.svc : null;
+  const [snap, setSnap] = useState<CommandCenterSnapshot | null>(() => (boot.ok ? boot.snap : null));
   const [tab, setTab] = useState<Tab>('executive');
   const [role, setRole] = useState<RoleId>('coo');
   const [question, setQuestion] = useState('Give me the hospital status right now.');
   const [answer, setAnswer] = useState<IntentAnswer | null>(null);
   const [msg, setMsg] = useState('');
-
-  useEffect(() => {
-    try {
-      const service = createHospitalTwinService(42);
-      setSvc(service);
-      setSnap(service.snapshot());
-    } catch (err) {
-      setBootError(err instanceof Error ? err.message : 'Failed to boot hospital twin');
-    }
-  }, []);
 
   const boardId = tab in TAB_BOARD ? TAB_BOARD[tab as keyof typeof TAB_BOARD] : 'executive';
   const board = useMemo(
@@ -51,11 +56,11 @@ export default function HospitalTwinCommandCenterPage() {
     [snap, boardId],
   );
 
-  if (bootError) {
+  if (!boot.ok) {
     return (
       <WorkspaceLayoutClient title="Hospital Twin" subtitle="Command Center failed to load">
         <div className={styles.wrap}>
-          <div className={styles.banner}>Could not start the twin: {bootError}</div>
+          <div className={styles.banner}>Could not start the twin: {boot.error}</div>
           <button type="button" className={styles.btnPrimary} onClick={() => window.location.reload()}>
             Retry
           </button>
