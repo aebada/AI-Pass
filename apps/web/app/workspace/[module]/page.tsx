@@ -1,8 +1,19 @@
 import { defaultModuleRegistry } from '@ai-pass/platform-core';
 import { ModulePageClient } from '../../components/workspace/ModulePageClient';
+import { existsSync } from 'node:fs';
+import path from 'node:path';
+
+/** Modules with a dedicated `workspace/<id>/page.tsx` must not also emit [module] shells. */
+function hasDedicatedPage(moduleId: string): boolean {
+  const base = path.join(process.cwd(), 'app', 'workspace', moduleId, 'page.tsx');
+  return existsSync(base);
+}
 
 export function generateStaticParams() {
-  return defaultModuleRegistry.list().map((mod) => ({ module: mod.id }));
+  return defaultModuleRegistry
+    .list()
+    .filter((mod) => !hasDedicatedPage(mod.id))
+    .map((mod) => ({ module: mod.id }));
 }
 
 export default async function WorkspaceModulePage({

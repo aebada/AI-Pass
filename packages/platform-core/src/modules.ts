@@ -166,7 +166,7 @@ export const PLATFORM_MODULE_DEFS: PlatformModuleDef[] = [
     name: 'Hospital Twin',
     description: 'Hospital System Twin Command Center — capacity, ED, supply, equipment, staffing',
     route: '/workspace/hospital-twin',
-    legacyRoute: '/hospital-twin',
+    legacyRoute: '/workspace/hospital-twin',
     icon: '🏥',
     category: 'platform',
     tier: 'professional',

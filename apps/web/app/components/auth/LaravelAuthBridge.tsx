@@ -31,16 +31,44 @@ function profileFromApiUser(data: {
     avatarUrl: data.avatarUrl ?? undefined,
     plan: 'free',
     workspace: 'default',
-    onboarded: false,
+    onboarded: true,
   };
 }
 
-/** Syncs Laravel session (/auth/me) into AppProviders on static Hostinger deploy. */
+async function fetchMe(): Promise<{
+  authenticated: boolean;
+  user?: { id: string; email: string; name?: string; avatarUrl?: string };
+} | null> {
+  const endpoints = [authApiUrl('/auth/me'), '/auth/me.php', '/auth/me'];
+  let sawUnauthorized = false;
+
+  for (const url of [...new Set(endpoints)]) {
+    try {
+      const res = await fetch(url, { credentials: 'include', cache: 'no-store' });
+      if (res.status === 401) {
+        sawUnauthorized = true;
+        continue;
+      }
+      if (!res.ok) continue;
+      const data = (await res.json()) as {
+        authenticated?: boolean;
+        user?: { id: string; email: string; name?: string; avatarUrl?: string };
+      };
+      if (data?.authenticated && data.user) return { authenticated: true, user: data.user };
+      if (data && data.authenticated === false) sawUnauthorized = true;
+    } catch {
+      // try next endpoint
+    }
+  }
+
+  return sawUnauthorized ? { authenticated: false } : null;
+}
+
+/** Syncs Laravel/PHP session into AppProviders on static Hostinger deploy. */
 export function LaravelAuthBridge() {
   const { user, signIn, signOut } = useApp();
 
   useEffect(() => {
-    // Static Hostinger builds set PHP auth; Laravel /auth/me still works when present.
     const enabled =
       process.env.NEXT_PUBLIC_USE_LARAVEL_AUTH === '1' ||
       process.env.NEXT_PUBLIC_USE_PHP_AUTH === '1' ||
@@ -49,43 +77,30 @@ export function LaravelAuthBridge() {
 
     let cancelled = false;
 
-    fetch(authApiUrl('/auth/me'), { credentials: 'include', cache: 'no-store' })
-      .then(async (res) => {
-        if (!res.ok) {
-          // Keep local profile on transient auth outages; only clear on explicit 401 with body.
-          if (res.status === 401 && user) signOut();
-          return null;
-        }
-        return res.json() as Promise<{
-          authenticated: boolean;
-          user?: { id: string; email: string; name?: string; avatarUrl?: string };
-        }>;
-      })
-      .then((data) => {
-        if (cancelled || !data) return;
-        if (!data.authenticated || !data.user) {
-          if (user) signOut();
-          return;
-        }
-        const next = profileFromApiUser(data.user);
-        if (
-          !user ||
-          user.id !== next.id ||
-          user.email !== next.email ||
-          user.name !== next.name ||
-          user.avatarUrl !== next.avatarUrl
-        ) {
-          signIn(next);
-        }
-      })
-      .catch(() => {
-        // Network blip: do not drop a persisted signed-in profile.
-      });
+    fetchMe().then((data) => {
+      if (cancelled || data === null) return;
+      if (!data.authenticated || !data.user) {
+        if (user) signOut();
+        return;
+      }
+      const next = profileFromApiUser(data.user);
+      if (
+        !user ||
+        user.id !== next.id ||
+        user.email !== next.email ||
+        user.name !== next.name ||
+        user.avatarUrl !== next.avatarUrl
+      ) {
+        signIn(next);
+      }
+    });
 
     return () => {
       cancelled = true;
     };
-  }, [user, signIn, signOut]);
+    // Intentionally sync once on mount + when user identity changes from elsewhere.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return null;
 }

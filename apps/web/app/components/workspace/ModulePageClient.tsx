@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { Card, Badge } from '@ai-pass/ui';
 import { workspaceTokens } from '@ai-pass/ui';
-import { WorkspacePageHeader } from './WorkspacePageHeader';
+import { WorkspaceLayoutClient } from './WorkspaceLayoutClient';
 
 export interface ModulePageClientProps {
   title: string;
@@ -22,22 +22,29 @@ export function ModulePageClient({
   legacyRoute,
   icon,
 }: ModulePageClientProps) {
+  // Prefer the workspace module route; legacy marketing routes are secondary.
+  const openHref = `/workspace/${moduleId}`;
+  const secondaryHref =
+    legacyRoute && legacyRoute !== openHref && !legacyRoute.startsWith('/workspace/')
+      ? legacyRoute
+      : null;
+
   return (
-    <div style={{ padding: 24, maxWidth: 800, margin: '0 auto' }}>
-      <WorkspacePageHeader title={title} subtitle={description} />
-      <Card padding="lg">
+    <WorkspaceLayoutClient title={title} subtitle={description}>
+      <div style={{ padding: '8px 4px 24px', maxWidth: 880 }}>
+        <Card padding="lg">
           <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 16 }}>
             {icon && <span style={{ fontSize: 32 }}>{icon}</span>}
-            <div>
-              <h2 style={{ fontSize: 20, fontWeight: 600, margin: 0 }}>{title}</h2>
+            <div style={{ flex: 1 }}>
+              <h2 style={{ fontSize: 20, fontWeight: 600, margin: 0, color: workspaceTokens.colors.text }}>
+                {title}
+              </h2>
               <p style={{ fontSize: 14, color: workspaceTokens.colors.textMuted, margin: '4px 0 0' }}>
                 Module ID: {moduleId}
               </p>
             </div>
             {status && (
-              <Badge variant={status === 'done' ? 'success' : 'default'} style={{ marginLeft: 'auto' }}>
-                {status}
-              </Badge>
+              <Badge variant={status === 'done' ? 'success' : 'default'}>{status}</Badge>
             )}
           </div>
 
@@ -45,9 +52,9 @@ export function ModulePageClient({
             {description}
           </p>
 
-          {legacyRoute && (
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
             <Link
-              href={legacyRoute}
+              href={openHref}
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
@@ -61,9 +68,28 @@ export function ModulePageClient({
                 textDecoration: 'none',
               }}
             >
-              Open full module →
+              Open module →
             </Link>
-          )}
+            {secondaryHref && (
+              <Link
+                href={secondaryHref}
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: 8,
+                  padding: '10px 20px',
+                  borderRadius: 8,
+                  border: `1px solid ${workspaceTokens.colors.border}`,
+                  color: workspaceTokens.colors.text,
+                  fontSize: 14,
+                  fontWeight: 500,
+                  textDecoration: 'none',
+                }}
+              >
+                Product overview
+              </Link>
+            )}
+          </div>
 
           {status === 'stub' && (
             <p style={{ fontSize: 13, color: workspaceTokens.colors.warning, marginTop: 16 }}>
@@ -71,6 +97,7 @@ export function ModulePageClient({
             </p>
           )}
         </Card>
-    </div>
+      </div>
+    </WorkspaceLayoutClient>
   );
 }

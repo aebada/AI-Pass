@@ -1,11 +1,12 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import {
   GOLDEN_QUESTIONS,
   createHospitalTwinService,
   type CommandCenterSnapshot,
+  type HospitalTwinService,
   type IntentAnswer,
   type RoleId,
   type ScenarioId,
@@ -25,16 +26,53 @@ const TAB_BOARD: Record<Exclude<Tab, 'scenarios' | 'ask' | 'ontology'>, string> 
 };
 
 export default function HospitalTwinCommandCenterPage() {
-  // Client-side singleton so static Hostinger export works without API routes
-  const svc = useMemo(() => createHospitalTwinService(42), []);
-  const [snap, setSnap] = useState<CommandCenterSnapshot>(() => svc.snapshot());
+  const [svc, setSvc] = useState<HospitalTwinService | null>(null);
+  const [snap, setSnap] = useState<CommandCenterSnapshot | null>(null);
+  const [bootError, setBootError] = useState<string | null>(null);
   const [tab, setTab] = useState<Tab>('executive');
   const [role, setRole] = useState<RoleId>('coo');
   const [question, setQuestion] = useState('Give me the hospital status right now.');
   const [answer, setAnswer] = useState<IntentAnswer | null>(null);
   const [msg, setMsg] = useState('');
 
-  const refresh = () => setSnap(svc.snapshot());
+  useEffect(() => {
+    try {
+      const service = createHospitalTwinService(42);
+      setSvc(service);
+      setSnap(service.snapshot());
+    } catch (err) {
+      setBootError(err instanceof Error ? err.message : 'Failed to boot hospital twin');
+    }
+  }, []);
+
+  const boardId = tab in TAB_BOARD ? TAB_BOARD[tab as keyof typeof TAB_BOARD] : 'executive';
+  const board = useMemo(
+    () => snap?.boards.find((b) => b.id === boardId) ?? snap?.boards[0],
+    [snap, boardId],
+  );
+
+  if (bootError) {
+    return (
+      <WorkspaceLayoutClient title="Hospital Twin" subtitle="Command Center failed to load">
+        <div className={styles.wrap}>
+          <div className={styles.banner}>Could not start the twin: {bootError}</div>
+          <button type="button" className={styles.btnPrimary} onClick={() => window.location.reload()}>
+            Retry
+          </button>
+        </div>
+      </WorkspaceLayoutClient>
+    );
+  }
+
+  if (!svc || !snap) {
+    return (
+      <WorkspaceLayoutClient title="Hospital Twin" subtitle="Loading Command Center…">
+        <div className={styles.wrap}>
+          <div className={styles.banner}>Synthetic data. Not a real hospital. Booting demo twin…</div>
+        </div>
+      </WorkspaceLayoutClient>
+    );
+  }
 
   const runScenario = (id: ScenarioId) => {
     setSnap(svc.injectScenario(id));
@@ -54,9 +92,6 @@ export default function HospitalTwinCommandCenterPage() {
     setQuestion(q);
     setTab('ask');
   };
-
-  const boardId = tab in TAB_BOARD ? TAB_BOARD[tab as keyof typeof TAB_BOARD] : 'executive';
-  const board = snap.boards.find((b) => b.id === boardId) ?? snap.boards[0];
 
   const tileClass = (status: string) =>
     status === 'critical'
@@ -80,7 +115,10 @@ export default function HospitalTwinCommandCenterPage() {
             leadership. Pseudonymous patients only. Not clinical decision support.
           </p>
           <div className={styles.metaRow}>
-            <span className={styles.chip}>Sim clock {new Date(snap.simClock).toLocaleString('en-GB', { timeZone: 'Europe/Berlin' })} Europe/Berlin</span>
+            <span className={styles.chip}>
+              Sim clock{' '}
+              {new Date(snap.simClock).toLocaleString('en-GB', { timeZone: 'Europe/Berlin' })} Europe/Berlin
+            </span>
             <span className={styles.chip}>Seed {snap.seed}</span>
             <span className={styles.chip}>{snap.stats.beds} beds</span>
             <span className={styles.chip}>{snap.stats.openAlerts} open alerts</span>
@@ -97,7 +135,7 @@ export default function HospitalTwinCommandCenterPage() {
               Reset baseline
             </button>
             <Link href="/hospital-twin" className={styles.btnGhost}>
-              Marketing page
+              Product overview
             </Link>
           </div>
           {msg && <p className={styles.answer}>{msg}</p>}
@@ -191,7 +229,10 @@ export default function HospitalTwinCommandCenterPage() {
                   </table>
                 ) : tab === 'ed' ? (
                   <div className={styles.list}>
-                    <p className={styles.alertBody}>Census {snap.edCensus.total} · Waiting {snap.edCensus.waiting} · Boarding {snap.edCensus.boarding}</p>
+                    <p className={styles.alertBody}>
+                      Census {snap.edCensus.total} · Waiting {snap.edCensus.waiting} · Boarding{' '}
+                      {snap.edCensus.boarding}
+                    </p>
                     <p className={styles.alertBody}>
                       Triage:{' '}
                       {Object.entries(snap.edCensus.byTriage)
@@ -223,7 +264,8 @@ export default function HospitalTwinCommandCenterPage() {
           <section className={styles.panel}>
             <h3>Scenario injector</h3>
             <p className={styles.alertBody} style={{ marginBottom: 12 }}>
-              Deterministic seeds. Each scenario updates the twin through the same KPI/alert path as live connectors.
+              Deterministic seeds. Each scenario updates the twin through the same KPI/alert path as live
+              connectors.
             </p>
             <div className={styles.scenarioGrid}>
               {snap.scenarios.map((s) => (
@@ -252,7 +294,12 @@ export default function HospitalTwinCommandCenterPage() {
           <section className={styles.panel}>
             <h3>Ask the twin (EN / AR / DE intents)</h3>
             <div className={styles.askRow}>
-              <select className={styles.select} value={role} onChange={(e) => setRole(e.target.value as RoleId)} style={{ flex: '0 0 200px' }}>
+              <select
+                className={styles.select}
+                value={role}
+                onChange={(e) => setRole(e.target.value as RoleId)}
+                style={{ flex: '0 0 200px' }}
+              >
                 {snap.roles.map((r) => (
                   <option key={r} value={r}>
                     {r}
@@ -291,15 +338,15 @@ export default function HospitalTwinCommandCenterPage() {
           <section className={styles.panel}>
             <h3>Pack ontology & modules</h3>
             <p className={styles.alertBody}>
-              {snap.ontologySummary.classes} classes · {snap.ontologySummary.relations} relations · Pilot modules:{' '}
-              {snap.modulesEnabled.join(', ')}
+              {snap.ontologySummary.classes} classes · {snap.ontologySummary.relations} relations · Pilot
+              modules: {snap.modulesEnabled.join(', ')}
             </p>
             <p className={styles.alertBody}>All modules: {snap.ontologySummary.modules.join(', ')}</p>
             <p className={styles.alertBody}>
-              Stats: {snap.stats.encounters} encounters · {snap.stats.edVisits} ED visits · {snap.stats.equipment}{' '}
-              equipment · {snap.stats.stockItems} stock items
+              Stats: {snap.stats.encounters} encounters · {snap.stats.edVisits} ED visits ·{' '}
+              {snap.stats.equipment} equipment · {snap.stats.stockItems} stock items
             </p>
-            <button type="button" className={styles.btnGhost} onClick={refresh}>
+            <button type="button" className={styles.btnGhost} onClick={() => setSnap(svc.snapshot())}>
               Refresh KPIs
             </button>
           </section>

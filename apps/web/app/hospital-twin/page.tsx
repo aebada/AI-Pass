@@ -5,7 +5,7 @@ import { MarketingThemeLock } from '../components/MarketingThemeLock';
 import { BrandLogoLink } from '../components/BrandLogoLink';
 import { FOOTER_COLUMNS } from '../lib/site-nav';
 import homeStyles from '../page.module.css';
-import styles from '../connect/page.module.css';
+import styles from './page.module.css';
 
 export const metadata: Metadata = {
   title: 'Hospital System Twin | AI-Pass',
@@ -14,22 +14,34 @@ export const metadata: Metadata = {
 };
 
 const BOARDS = [
-  { title: 'Executive overview', copy: 'Occupancy, free beds, ED waiting, alerts, critical equipment, stock risk.' },
-  { title: 'Capacity and flow', copy: 'Bed grid by unit, pending discharges, turnaround, admissions vs discharges.' },
-  { title: 'Emergency department', copy: 'Live census, triage waits, door-to-provider, boarding, LWBS.' },
-  { title: 'Supply & equipment', copy: 'Days of stock, late POs, oxygen reserve, critical devices, MTTR.' },
+  {
+    title: 'Executive overview',
+    copy: 'Occupancy, free beds, ED waiting, alerts, critical equipment, and stock risk on one board.',
+  },
+  {
+    title: 'Capacity and flow',
+    copy: 'Unit bed grid, pending discharges, turnaround time, and admissions versus discharges.',
+  },
+  {
+    title: 'Emergency department',
+    copy: 'Live census, triage waits, door-to-provider, boarding, and left-without-being-seen.',
+  },
+  {
+    title: 'Supply and equipment',
+    copy: 'Days of stock, late purchase orders, oxygen reserve, critical devices, and MTTR.',
+  },
 ];
 
 const SCENARIOS = [
-  { title: 'ED surge', copy: 'Arrivals ×3 — waiting, boarding, ICU pressure.' },
-  { title: 'CT failure', copy: 'Critical equipment alert and imaging backlog.' },
-  { title: 'Supply shortage', copy: 'Stock-out date and late purchase order.' },
-  { title: 'Staffing gap', copy: 'ICU night shift short — coverage alert.' },
+  { title: 'ED surge', copy: 'Arrivals ×3 — waiting, boarding, and ICU pressure rise together.' },
+  { title: 'CT failure', copy: 'Critical equipment alert with imaging backlog and longer ED stays.' },
+  { title: 'Supply shortage', copy: 'Stock-out date surfaces with a late purchase order trail.' },
+  { title: 'Staffing gap', copy: 'ICU night shift shortfall triggers coverage alerts.' },
 ];
 
 export default function HospitalTwinMarketingPage() {
   return (
-    <div className={homeStyles.page}>
+    <div className={styles.page}>
       <MarketingThemeLock />
       <PremiumNav variant="landing" />
 
@@ -42,20 +54,43 @@ export default function HospitalTwinMarketingPage() {
           </h1>
           <p className={styles.sub}>
             Operational twin for hospital leadership — beds, ED, supply, equipment, and staffing with
-            provenance. Synthetic demo kit included. Not clinical decision support.
+            provenance on every number. Built for demos, discovery, and pilot boards.
           </p>
           <div className={styles.ctas}>
-            <Link href="/workspace/hospital-twin" className={homeStyles.btnPrimary}>
+            <Link href="/workspace/hospital-twin" className={styles.primary}>
               Open Command Center
             </Link>
-            <Link href="/workspace/data-products" className={homeStyles.btnSecondary}>
+            <Link href="/workspace/data-products" className={styles.secondary}>
               Browse Data Products
             </Link>
+          </div>
+          <div className={styles.banner}>Synthetic data. Not a real hospital. Not clinical decision support.</div>
+          <div className={styles.metrics}>
+            <div className={styles.metric}>
+              <strong>~300</strong>
+              <span>Demo beds</span>
+            </div>
+            <div className={styles.metric}>
+              <strong>9</strong>
+              <span>Live scenarios</span>
+            </div>
+            <div className={styles.metric}>
+              <strong>30</strong>
+              <span>Golden questions</span>
+            </div>
+            <div className={styles.metric}>
+              <strong>8</strong>
+              <span>Command boards</span>
+            </div>
           </div>
         </section>
 
         <section className={styles.section}>
           <h2>Command Center boards</h2>
+          <p className={styles.sectionLead}>
+            Pilot views from the hospital sector pack — executive, capacity, ED, supply, equipment, staffing,
+            digest, and handover.
+          </p>
           <div className={styles.grid}>
             {BOARDS.map((b) => (
               <article key={b.title} className={styles.card}>
@@ -68,6 +103,9 @@ export default function HospitalTwinMarketingPage() {
 
         <section className={styles.section}>
           <h2>Simulator scenarios</h2>
+          <p className={styles.sectionLead}>
+            Deterministic seeds, expected alerts, and reset under 10 seconds for the chairman demo script.
+          </p>
           <div className={styles.grid}>
             {SCENARIOS.map((s) => (
               <article key={s.title} className={styles.card}>
@@ -76,11 +114,14 @@ export default function HospitalTwinMarketingPage() {
               </article>
             ))}
           </div>
-          <div className={styles.ctas} style={{ marginTop: 24 }}>
-            <Link href="/workspace/hospital-twin" className={homeStyles.btnPrimary}>
+          <div className={styles.ctas}>
+            <Link href="/workspace/hospital-twin" className={styles.primary}>
               Launch demo twin
             </Link>
           </div>
+          <p className={styles.footerNote}>
+            Pseudonymous patients only. Draft purchase requests never auto-execute.
+          </p>
         </section>
       </main>
 
