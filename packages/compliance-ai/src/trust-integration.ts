@@ -1,4 +1,4 @@
-import { CertificationService, ScoringEngine } from '@ai-pass/trust';
+import { CertificationService, ScoringEngine } from '@ai-pass/trust-engine';
 import type { Framework, Risk } from './types.js';
 
 export class TrustIntegration {

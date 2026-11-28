@@ -62,6 +62,7 @@
     "@ai-pass/crm-connectors": "workspace:*",
     "@ai-pass/messaging-connectors": "workspace:*",
     "@ai-pass/twin-autopilot": "workspace:*",
+    "@ai-pass/lifecycle-intelligence": "workspace:*",
     "@ai-pass/view": "workspace:*",
     "@ai-pass/wallet": "workspace:*",
     "@monaco-editor/react": "^4.7.0",

@@ -1,0 +1,195 @@
+.wrap {
+  display: grid;
+  gap: 1.5rem;
+  max-width: 1100px;
+}
+
+.hero {
+  padding: 1.25rem 1.35rem;
+  border-radius: 16px;
+  border: 1px solid #e4e0f2;
+  background: linear-gradient(180deg, #f4f7ff 0%, #fff 100%);
+}
+
+.hero h2 {
+  margin: 0 0 0.4rem;
+  font-size: 1.35rem;
+  letter-spacing: -0.02em;
+}
+
+.hero p {
+  margin: 0;
+  color: #5c5f6b;
+  line-height: 1.55;
+  max-width: 46rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.9rem;
+}
+
+.panel {
+  padding: 1.15rem 1.25rem;
+  border-radius: 16px;
+  border: 1px solid #e8e8f0;
+  background: #fff;
+}
+
+.panel h3 {
+  margin: 0 0 0.75rem;
+  font-size: 1.05rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.75rem;
+}
+
+.card {
+  padding: 0.95rem;
+  border-radius: 14px;
+  border: 1px solid #ebe7f5;
+  background: #faf9ff;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.card h4 {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.card p {
+  margin: 0;
+  font-size: 0.84rem;
+  color: #5c5f6b;
+  line-height: 1.4;
+}
+
+.meta {
+  font-size: 0.75rem;
+  color: #7a7d89;
+}
+
+.badge {
+  display: inline-block;
+  width: fit-content;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #1f4fd6;
+  background: #e8efff;
+  border-radius: 999px;
+  padding: 0.15rem 0.5rem;
+}
+
+.btn,
+.btnGhost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.86rem;
+  font-weight: 700;
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn {
+  background: #1f4fd6;
+  color: #fff;
+}
+
+.btnGhost {
+  background: #fff;
+  color: #1f4fd6;
+  border-color: #c9d6ff;
+}
+
+.form {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.form label {
+  display: grid;
+  gap: 0.3rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.form input,
+.form textarea,
+.form select {
+  min-height: 40px;
+  padding: 0.5rem 0.7rem;
+  border-radius: 10px;
+  border: 1px solid #cfd0db;
+  font: inherit;
+}
+
+.form textarea {
+  min-height: 72px;
+}
+
+.success {
+  padding: 0.75rem 0.9rem;
+  border-radius: 12px;
+  background: #eefbf3;
+  border: 1px solid #b7e4c7;
+  color: #1b5e35;
+  font-size: 0.9rem;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.86rem;
+}
+
+.table th,
+.table td {
+  text-align: left;
+  padding: 0.45rem 0.35rem;
+  border-bottom: 1px solid #eee;
+  vertical-align: top;
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.tab,
+.tabActive {
+  border: 1px solid #d9d4e8;
+  background: #fff;
+  color: #3f424c;
+  border-radius: 999px;
+  padding: 0.4rem 0.85rem;
+  font-size: 0.84rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.tabActive {
+  background: #1f4fd6;
+  border-color: #1f4fd6;
+  color: #fff;
+}
+
+@media (max-width: 800px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -19,6 +19,8 @@ const nextConfig: NextConfig = {
     '@ai-pass/wallet',
     '@ai-pass/livesync',
     '@ai-pass/trust',
+    '@ai-pass/trust-engine',
+    '@ai-pass/compliance-ai',
     '@ai-pass/store',
     '@ai-pass/store-api',
     '@ai-pass/marketplace-core',

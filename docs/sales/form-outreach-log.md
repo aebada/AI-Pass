@@ -72,3 +72,9 @@ Call log:
 - 2026-11-25 Fraunhofer IAIS: ok=False filled=0 submitted=False reason=no_fillable_fields title='Error 404 - Fraunhofer IAIS' body='This page was translated using AI and may contain inaccuracies. Please refer to the German version for the reviewed and authoritative conte
 - 2026-11-25 Merantix: ok=True filled=1 submitted=True reason=submitted
 - 2026-11-25 Doctolib Germany: ok=False filled=0 submitted=False reason=no_fillable_fields title='' body='This XML file does not appear to have any style information associated with it. The document tree is shown below.\n\n<Error>\n<Code>AccessDenied</Code>\n<Message>Ac'
+- 2026-11-26 BMW Group FIZ (Research & Innovation Centre): ok=False filled=6 submitted=False reason=submit_button_not_found
+- 2026-11-26 Dassault Systèmes DE: ok=False filled=0 submitted=False reason=no_fillable_fields title='contact-us - www.3ds.com' body='The page you are looking for has been moved.\n\nWe apologize for this issue. Meanwhile, you may find some interesting links below.\n\n \n[All]
+- 2026-11-26 SAP Signavio: ok=False filled=0 submitted=False reason=no_fillable_fields title='Page Not Found | SAP' body='Diese Website verwendet Cookies und verwandte Technologien entsprechend der Beschreibung in unserer\xa0Cookie-Erklärung, u. A. zum fehlerfreien Be
+- 2026-11-26 govdigital: ok=False filled=8 submitted=False reason=submit_button_not_found
+- 2026-11-26 N26: ok=True filled=4 submitted=True reason=submitted
+- 2026-11-26 Commerzbank: ok=False filled=0 submitted=False reason=no_fillable_fields title='Dokument existiert nicht - Konzern-Webseite' body='Privatkunden\nUnternehmerkunden\nWealth Management\nFirmenkunden\nKonzern\nSuche\nDE\nWer wir sind\nWas uns bewegt\nNewsroo

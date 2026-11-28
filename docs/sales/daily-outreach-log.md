@@ -412,3 +412,35 @@ Sent this run: 14. Failures: 0.
 - Many corporate forms WAF/404 → need email.
 - **Email wave BLOCKED**: SMTP_* still missing. Secrets re-requested. Will send wave2 (100 READY) as soon as SMTP is available.
 
+
+
+## 2026-11-26 09:03 Europe/Berlin — daily-100 timer
+
+- **Email wave BLOCKED**: SMTP_* still missing (`/tmp/smtp-deploy.env` absent; no SMTP_* env). Secrets re-requested (SMTP_HOST / SMTP_USER / SMTP_PASS).
+- No emails sent. Caps respected. Will not fake sends.
+- Queue when SMTP available: wave2 READY=100 (`daily-100-wave2-prospects.csv`, limit 50); AI providers READY=19 (`ai-providers-twin-collab.csv`, skip SKIP_PRESS_ONLY / DeepMind press, limit 20).
+- **Forms first** (catalog READY/RETRY): N26 **SUBMITTED**; BMW FIZ + govdigital RETRY (no submit button); Dassault DE, SAP Signavio, Commerzbank → BLOCKED_OR_COMPLEX (moved/404/no fields) → email fallback when SMTP lands.
+
+
+## 2026-11-27 09:03 Europe/Berlin — daily-100 timer
+
+- **Email wave BLOCKED**: SMTP_* still missing (`/tmp/smtp-deploy.env` absent; no SMTP_* env). Secrets re-requested (SMTP_HOST / SMTP_USER / SMTP_PASS).
+- No emails sent. Will not fake sends. Hostinger rate limits N/A.
+- Queue when SMTP available: wave2 READY=100 (limit 50); AI providers READY=19 (skip SKIP_PRESS_ONLY / DeepMind press, limit 20).
+- **Forms first** (re-run): N26 submitted again on this branch state; BMW FIZ + govdigital RETRY; Dassault DE / SAP Signavio / Commerzbank blocked → email fallback when SMTP lands.
+
+
+## 2026-11-28 03:29 Europe/Berlin — Anthropic partnerships auto-reply
+
+- Received unmonitored Partnerships inbox ACK (route menu only).
+- **Do not** keep emailing press@ / partnerships auto-inbox.
+- Next Anthropic path: Partner Network + Sales / Strategic BD forms (Claude in twins + Twin Autopilot / Harness gates).
+- CSV status → `ROUTE_SALES` for Anthropic.
+
+
+## 2026-11-28 09:00 Europe/Berlin — daily-100 timer
+
+- **Email wave BLOCKED**: SMTP_* still missing (`/tmp/smtp-deploy.env` absent; no SMTP_HOST/SMTP_USER/SMTP_PASS env). Secrets re-requested. Will not fake sends.
+- Queue when SMTP available: wave2 READY=100 (`daily-100-wave2-prospects.csv`, limit 50); AI providers READY=18 (`ai-providers-twin-collab.csv`, skip SKIP_PRESS / DeepMind press / Anthropic ROUTE_SALES, limit 20).
+- **Forms first**: company-contact-forms has 0 READY (9 SUBMITTED, 47 BLOCKED_OR_COMPLEX, 2 RETRY). AI-provider FORM channels (OpenAI, Google Cloud, Azure, AWS, NVIDIA) remain manual portal/form — no automated submit this run.
+- Anthropic remains `ROUTE_SALES` (Partner Network / contact-sales / BD) — do not email unmonitored partnerships inbox.

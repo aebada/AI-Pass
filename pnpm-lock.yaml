@@ -158,6 +158,9 @@ importers:
       '@ai-pass/knowledge-pipeline':
         specifier: workspace:*
         version: link:../../packages/knowledge-pipeline
+      '@ai-pass/lifecycle-intelligence':
+        specifier: workspace:*
+        version: link:../../packages/lifecycle-intelligence
       '@ai-pass/livesync':
         specifier: workspace:*
         version: link:../../packages/livesync
@@ -455,6 +458,9 @@ importers:
       '@ai-pass/trust':
         specifier: workspace:*
         version: link:../trust
+      '@ai-pass/trust-engine':
+        specifier: workspace:*
+        version: link:../trust-engine
       '@ai-pass/wallet':
         specifier: workspace:*
         version: link:../wallet
@@ -704,6 +710,16 @@ importers:
       '@ai-pass/wallet':
         specifier: workspace:*
         version: link:../wallet
+    devDependencies:
+      typescript:
+        specifier: ^5.8.3
+        version: 5.9.3
+
+  packages/lifecycle-intelligence:
+    dependencies:
+      '@ai-pass/shared':
+        specifier: workspace:*
+        version: link:../shared
     devDependencies:
       typescript:
         specifier: ^5.8.3

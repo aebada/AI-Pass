@@ -25,6 +25,7 @@
     "@ai-pass/provider-hub": "workspace:*",
     "@ai-pass/shared": "workspace:*",
     "@ai-pass/trust": "workspace:*",
+    "@ai-pass/trust-engine": "workspace:*",
     "@ai-pass/wallet": "workspace:*"
   },
   "devDependencies": {

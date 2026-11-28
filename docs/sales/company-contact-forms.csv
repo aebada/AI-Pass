@@ -39,8 +39,8 @@ Call log:
 911,Siemens Energy,FORM,https://www.siemens-energy.com/global/en/home/company/contact.html,corporate_contact,yes,Wave2 twin-build outreach,BLOCKED_OR_COMPLEX,no_fillable_fields title='404' body='Siemens Energy and Siemens Gamesa are becoming Omterra.What changes for you\n\nEnergy transition\nProducts and Services\nCompany\nCareers\nPres
 912,Siemens Healthineers,FORM,https://www.siemens-healthineers.com/en-us/about/contact,corporate_contact,yes,Wave2 twin-build outreach,BLOCKED_OR_COMPLEX,no_fillable_fields title='Siemens Healthineers' body='Careers\nInvestor Relations\nPress Room\nContact\nLogin / Register\nProducts & Services\nOutpatient Care\nSupport & Documentat
 913,Lufthansa Technik,FORM,https://www.lufthansa-technik.com/contact,corporate_contact,yes,Wave2 twin-build outreach,BLOCKED_OR_COMPLEX,no_fillable_fields title='Your Scrivito powered site is loading ...' body='SEARCH!\nAOG\nMaintain\nOptimize\nSpecialize\nCompany\nCareer\nMedia\nDE\nEN\n\n\n\n\n\n\nWE ARE SORRY!\x
-914,Dassault Systèmes DE,FORM,https://www.3ds.com/contact-us,corporate_contact,yes,Wave2 twin-build outreach,READY,Seeded for digital twin pilot outreach
-915,SAP Signavio,FORM,https://www.sap.com/products/signavio/contact.html,saas_contact,yes,Wave2 twin-build outreach,READY,Seeded for digital twin pilot outreach
+914,Dassault Systèmes DE,FORM,https://www.3ds.com/contact-us,corporate_contact,yes,Wave2 twin-build outreach,BLOCKED_OR_COMPLEX,"no_fillable_fields title='contact-us - www.3ds.com' body='The page you are looking for has been moved.\n\nWe apologize for this issue. Meanwhile, you may find some interesting link"
+915,SAP Signavio,FORM,https://www.sap.com/products/signavio/contact.html,saas_contact,yes,Wave2 twin-build outreach,BLOCKED_OR_COMPLEX,"no_fillable_fields title='Page Not Found | SAP' body='Diese Website verwendet Cookies und verwandte Technologien entsprechend der Beschreibung in unserer\xa0Cookie-Erklärung, u. A."
 916,appliedAI Initiative,FORM,https://www.appliedai.de/en/contact,research_contact,yes,Wave2 twin-build outreach,SUBMITTED,Submitted 2026-11-25
 917,DFKI,FORM,https://www.dfki.de/en/web/about/contact,research_contact,yes,Wave2 twin-build outreach,BLOCKED_OR_COMPLEX,"no_fillable_fields title='Nur einen Moment…' body='www.dfki.de\nSicherheitsüberprüfung wird durchgeführt\n\nDiese Website nutzt einen Sicherheitsservice, um sich vor böswilligen Bo"
 918,govdigital,FORM,https://www.govdigital.de/kontakt/,gov_contact,yes,Wave2 twin-build outreach,RETRY,submit_button_not_found
@@ -49,8 +49,8 @@ Call log:
 921,GetYourGuide,FORM,https://business.getyourguide.com/contact/,saas_contact,yes,Wave2 twin-build outreach,BLOCKED_OR_COMPLEX,"Error: Page.goto: net::ERR_NAME_NOT_RESOLVED at https://business.getyourguide.com/contact/
 Call log:
   - navigating to ""https://business.getyourguide.com/contact/"", waiting until """
-922,N26,FORM,https://n26.com/en-eu/contact,fintech_contact,yes,Wave2 twin-build outreach,READY,Seeded for digital twin pilot outreach
-923,Commerzbank,FORM,https://www.commerzbank.de/konzern/kontakt/,corporate_contact,yes,Wave2 twin-build outreach,READY,Seeded for digital twin pilot outreach
+922,N26,FORM,https://n26.com/en-eu/contact,fintech_contact,yes,Wave2 twin-build outreach,SUBMITTED,Submitted 2026-11-26
+923,Commerzbank,FORM,https://www.commerzbank.de/konzern/kontakt/,corporate_contact,yes,Wave2 twin-build outreach,BLOCKED_OR_COMPLEX,no_fillable_fields title='Dokument existiert nicht - Konzern-Webseite' body='Privatkunden\nUnternehmerkunden\nWealth Management\nFirmenkunden\nKonzern\nSuche\nDE\nWer wir sind\nWas
 950,Contentful,FORM,https://www.contentful.com/contact/,saas_contact,yes,Wave2 twin,BLOCKED_OR_COMPLEX,no_fillable_fields title='Contact us | Contentful' body='Contentful\nProducts\nSolutions\nResources\nDevelopers\nPartners\nPricing\nLog in\nContact sales\nContact us\n\nGet in touc
 951,TeamViewer,FORM,https://www.teamviewer.com/en/contact/,saas_contact,yes,Wave2 twin,BLOCKED_OR_COMPLEX,no_fillable_fields title='404 page not found | TeamViewer' body='Skip to main content\nCompany\nContact Sales\n+1 239 999 4122\nSign In\nProducts\nONE Platform\nSolutions\nEnterpri
 952,UiPath Germany,FORM,https://www.uipath.com/company/contact-us,saas_contact,yes,Wave2 twin,SUBMITTED,Submitted 2026-11-25
