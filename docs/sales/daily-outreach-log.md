@@ -436,3 +436,11 @@ Sent this run: 14. Failures: 0.
 - **Do not** keep emailing press@ / partnerships auto-inbox.
 - Next Anthropic path: Partner Network + Sales / Strategic BD forms (Claude in twins + Twin Autopilot / Harness gates).
 - CSV status → `ROUTE_SALES` for Anthropic.
+
+
+## 2026-11-28 09:00 Europe/Berlin — daily-100 timer
+
+- **Email wave BLOCKED**: SMTP_* still missing (`/tmp/smtp-deploy.env` absent; no SMTP_HOST/SMTP_USER/SMTP_PASS env). Secrets re-requested. Will not fake sends.
+- Queue when SMTP available: wave2 READY=100 (`daily-100-wave2-prospects.csv`, limit 50); AI providers READY=18 (`ai-providers-twin-collab.csv`, skip SKIP_PRESS / DeepMind press / Anthropic ROUTE_SALES, limit 20).
+- **Forms first**: company-contact-forms has 0 READY (9 SUBMITTED, 47 BLOCKED_OR_COMPLEX, 2 RETRY). AI-provider FORM channels (OpenAI, Google Cloud, Azure, AWS, NVIDIA) remain manual portal/form — no automated submit this run.
+- Anthropic remains `ROUTE_SALES` (Partner Network / contact-sales / BD) — do not email unmonitored partnerships inbox.
