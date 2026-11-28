@@ -14,6 +14,7 @@
     "typecheck": "tsc --noEmit",
     "test": "tsx --test src/**/*.test.ts",
     "check:requirements": "tsx src/requirements-agents.ts",
+    "check:stories": "tsx src/story-acceptance.ts",
     "clean": "rm -rf dist"
   },
   "dependencies": {

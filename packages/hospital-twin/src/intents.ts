@@ -51,16 +51,50 @@ export function resolveIntent(
   const q = question.toLowerCase();
   let intentId = 'overview';
 
+  // Clinical / out-of-scope refusals (VC-07, AU-22) — never invent answers
+  if (
+    /prescri|diagnos|antibiot|treat(ment| this patient)|clinical advice|dosage|medication for/i.test(
+      question,
+    )
+  ) {
+    return {
+      intentId: 'clinical_refuse',
+      question,
+      spokenSummary:
+        'I cannot provide clinical advice or patient treatment decisions. Ask about capacity, ED flow, supply, equipment, or staffing counts instead.',
+      kpis: [],
+      refused: true,
+      refusalReason: 'clinical_out_of_scope',
+      provenance: [],
+    };
+  }
+  if (/cafeteria|menu|parking fee|weather|stock price/i.test(question)) {
+    return {
+      intentId: 'unknown_refuse',
+      question,
+      spokenSummary:
+        'I do not have that in the hospital twin. Try occupancy, ED waiting, free ICU beds, stock risk, or critical equipment.',
+      kpis: [],
+      refused: true,
+      refusalReason: 'outside_data',
+      provenance: [],
+    };
+  }
+
   const matchers: Array<[string, RegExp]> = [
+    ['focus', /focus on |scoped to /i],
+    ['nav_back', /^(back|go back)$/i],
+    ['nav_reset', /start over|clear focus|reset conversation/i],
+    ['clarify', /surgical ward/i],
+    ['bed_availability', /and in icu|beds? (free|available).*icu|icu.*beds?|كام سرير|العناية/i],
     ['overview', /hospital status|overview|وضع المستشفى/i],
-    ['bed_availability', /beds? (free|available).*icu|icu.*beds?|كام سرير/i],
-    ['occupancy', /overall bed occupancy|occupancy\?/i],
+    ['occupancy', /overall bed occupancy|what is the (overall )?bed occupancy|belegung|auslastung/i],
     ['occupancy_trend', /occupancy for the last|last 7 days|إشغال/i],
-    ['crowded_ward', /highest occupancy|most crowded|ward/i],
+    ['crowded_ward', /highest occupancy|most crowded|which ward/i],
     ['blocked_beds', /blocked|out of service/i],
     ['pending_discharges', /pending discharge/i],
     ['turnaround', /turn over a bed|turnaround/i],
-    ['ed_status', /patients are in the er|emergency room|ed census|الطوارئ/i],
+    ['ed_status', /patients are in the er|emergency room|ed census|الطوارئ|\ber\b.*census|er status/i],
     ['ed_waiting', /how many are waiting|waiting and for how long/i],
     ['wait_time', /door[- ]to[- ](doctor|provider)|door to doctor/i],
     ['boarding', /boarding/i],
@@ -271,6 +305,30 @@ export function resolveIntent(
         .slice(0, 5)
         .map((g) => `${g.unitCode} ${Math.round((g.occupied / Math.max(1, g.staffed)) * 100)}%`)
         .join(', ');
+      break;
+    case 'clarify': {
+      const surg = snap.bedGrid.filter((g) => /SURG/i.test(g.unitCode));
+      spoken =
+        surg.length > 1
+          ? `Which surgical ward? Options: ${surg.map((g) => g.unitCode).join(', ')}.`
+          : `Surgical occupancy: ${surg.map((g) => `${g.unitCode} ${g.occupied}/${g.staffed}`).join(', ') || 'none'}.`;
+      boardId = 'capacity';
+      break;
+    }
+    case 'focus': {
+      const m = question.match(/focus on\s+([a-z0-9 \-]+)/i);
+      const scope = (m?.[1] ?? 'selected unit').trim();
+      spoken = `Focus set to ${scope}. Later answers stay scoped until you say start over.`;
+      boardId = 'capacity';
+      break;
+    }
+    case 'nav_back':
+      spoken = 'Returning to the previous board view.';
+      boardId = 'executive';
+      break;
+    case 'nav_reset':
+      spoken = 'Conversation reset. Focus cleared — ask any hospital operations question.';
+      boardId = 'executive';
       break;
     default:
       spoken = board('executive')?.notes[0] ?? 'Opening executive overview.';

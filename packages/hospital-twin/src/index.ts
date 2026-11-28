@@ -30,8 +30,10 @@ export { ROLE_POLICIES, canAccessScope, refuseIfNeeded } from './roles.js';
 export { SCENARIOS, applyScenario } from './scenarios.js';
 export { createBaselineHospital } from './seed.js';
 export { computeKpis, evaluateAlerts } from './metrics.js';
+export { AuditLog } from './audit.js';
 export {
   HospitalTwinService,
   createHospitalTwinService,
   getHospitalTwinService,
 } from './service.js';
+export { runStoryAcceptance } from './story-acceptance.js';

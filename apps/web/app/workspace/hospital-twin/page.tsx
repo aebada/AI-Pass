@@ -86,6 +86,8 @@ export default function HospitalTwinCommandCenterPage() {
   const [floorFilter, setFloorFilter] = useState<number | 'all'>('all');
   const [selectedUnit, setSelectedUnit] = useState<string | null>(null);
   const [screenOnly, setScreenOnly] = useState(false);
+  const [rtl, setRtl] = useState(false);
+  const [wallMode, setWallMode] = useState(false);
   const [listening, setListening] = useState(false);
   const [speechSupported, setSpeechSupported] = useState(false);
   const [ttsSupported, setTtsSupported] = useState(false);
@@ -276,7 +278,7 @@ export default function HospitalTwinCommandCenterPage() {
       title="Hospital System Twin"
       subtitle="Command Center — digital twin visuals, voice chatbot, capacity, ED, supply (synthetic demo)"
     >
-      <div className={styles.wrap}>
+      <div className={styles.wrap} dir={rtl ? 'rtl' : 'ltr'}>
         <div className={styles.banner}>{snap.banner}</div>
 
         <section className={styles.hero}>
@@ -316,6 +318,30 @@ export default function HospitalTwinCommandCenterPage() {
             </button>
             <button type="button" className={styles.btnGhost} onClick={() => setTab('twin')}>
               Twin map
+            </button>
+            <button type="button" className={styles.btnGhost} onClick={() => setRtl((v) => !v)} aria-pressed={rtl}>
+              {rtl ? 'LTR' : 'RTL'} Arabic
+            </button>
+            <button
+              type="button"
+              className={styles.btnGhost}
+              onClick={() => {
+                setWallMode((v) => !v);
+                setTab('executive');
+              }}
+              aria-pressed={wallMode}
+            >
+              {wallMode ? 'Exit wall' : 'Wall display'}
+            </button>
+            <button
+              type="button"
+              className={styles.btnGhost}
+              onClick={() => {
+                const ticket = svc.reportWrongNumber(question || answer?.spokenSummary || 'unspecified', role);
+                setMsg(`Report wrong number filed as ${ticket.ticketId} (audit trail).`);
+              }}
+            >
+              Report wrong number
             </button>
             <button type="button" className={styles.btnGhost} onClick={() => runScenario('surge')}>
               Inject surge

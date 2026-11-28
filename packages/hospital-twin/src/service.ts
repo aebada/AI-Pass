@@ -1,3 +1,4 @@
+import { AuditLog } from './audit.js';
 import { ALL_MODULES, ONTOLOGY_CLASSES, ONTOLOGY_RELATIONS, PACK_ID, PACK_VERSION, SYNTHETIC_BANNER } from './ontology.js';
 import { GOLDEN_QUESTIONS, resolveIntent } from './intents.js';
 import { computeKpis, evaluateAlerts } from './metrics.js';
@@ -162,16 +163,20 @@ function buildBoards(snapBase: {
 export class HospitalTwinService {
   private state: HospitalState;
   private baselineSeed: number;
+  private ackedAlertKeys = new Set<string>();
+  readonly audit = new AuditLog();
 
   constructor(seed = 42) {
     this.baselineSeed = seed;
     this.state = createBaselineHospital(seed);
     this.refreshAlerts();
+    this.audit.append('system', 'boot', `seed=${seed}`);
   }
 
   reset(seed = this.baselineSeed): CommandCenterSnapshot {
     this.baselineSeed = seed;
     this.state = createBaselineHospital(seed);
+    this.ackedAlertKeys.clear();
     this.refreshAlerts();
     return this.snapshot();
   }
@@ -200,7 +205,24 @@ export class HospitalTwinService {
   }
 
   ask(question: string, role: RoleId = 'coo'): IntentAnswer {
-    return resolveIntent(question, this.snapshot(), role);
+    const answer = resolveIntent(question, this.snapshot(), role);
+    this.audit.append(role, answer.refused ? 'ask_refused' : 'ask', `${answer.intentId}: ${question.slice(0, 120)}`);
+    return answer;
+  }
+
+  acknowledgeAlert(alertId: string, role: RoleId = 'coo'): CommandCenterSnapshot {
+    const alert = this.state.alerts.find((a) => a.id === alertId);
+    if (alert) {
+      this.ackedAlertKeys.add(`${alert.ruleId}:${alert.scope}`);
+      alert.ackTs = this.state.simClock;
+      this.audit.append(role, 'alert_ack', alertId);
+    }
+    return this.snapshot();
+  }
+
+  reportWrongNumber(question: string, role: RoleId = 'coo'): { ticketId: string } {
+    const entry = this.audit.append(role, 'report_wrong_number', question.slice(0, 200));
+    return { ticketId: entry.id };
   }
 
   runGoldenSuite(role: RoleId = 'coo'): { total: number; passed: number; results: IntentAnswer[] } {
@@ -211,8 +233,12 @@ export class HospitalTwinService {
 
   snapshot(): CommandCenterSnapshot {
     const kpis = computeKpis(this.state);
-    // Keep alerts aligned
-    const alerts = evaluateAlerts(this.state, kpis);
+    // Keep alerts aligned; re-apply acknowledgements after recompute
+    const alerts = evaluateAlerts(this.state, kpis).map((a) => {
+      const key = `${a.ruleId}:${a.scope}`;
+      if (this.ackedAlertKeys.has(key)) return { ...a, ackTs: a.ackTs ?? this.state.simClock };
+      return a;
+    });
     this.state.alerts = alerts;
 
     const bedGrid = this.state.units.map((unit) => {
