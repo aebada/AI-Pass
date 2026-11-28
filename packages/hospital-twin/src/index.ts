@@ -10,6 +10,9 @@ export type {
   RoleId,
   ScenarioDef,
   ScenarioId,
+  TwinEquipmentVisual,
+  TwinUnitVisual,
+  TwinVisuals,
 } from './types.js';
 
 export {

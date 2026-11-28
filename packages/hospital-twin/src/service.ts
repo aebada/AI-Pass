@@ -245,6 +245,62 @@ export class HospitalTwinService {
     const boards = buildBoards({ kpis, alerts, bedGrid, edCensus });
     const forecasts = buildForecasts(this.state, occ);
 
+    const twinUnits = this.state.units.map((unit) => {
+      const unitBeds = this.state.beds.filter((b) => b.unitId === unit.id);
+      const occupied = unitBeds.filter((b) => b.status === 'occupied').length;
+      const alertCount = alerts.filter(
+        (a) =>
+          !a.closedTs &&
+          (a.scope.toLowerCase().includes(unit.code.toLowerCase()) ||
+            a.scope.toLowerCase().includes(unit.specialty) ||
+            (unit.specialty.includes('icu') && a.scope === 'ICU') ||
+            (unit.specialty === 'emergency' && a.scope === 'ED')),
+      ).length;
+      return {
+        unitId: unit.id,
+        unitCode: unit.code,
+        unitName: unit.name,
+        floor: unit.floor,
+        specialty: unit.specialty,
+        staffedBeds: unit.staffedBeds,
+        occupancyPct: unit.staffedBeds ? Math.round((occupied / unit.staffedBeds) * 1000) / 10 : 0,
+        alertCount,
+        beds: unitBeds.map((b) => ({ id: b.id, code: b.code, status: b.status })),
+      };
+    });
+    const floors = [...new Set(twinUnits.map((u) => u.floor))].sort((a, b) => a - b);
+    const twinEquipment = this.state.equipment.map((eq) => {
+      const depUnits = this.state.units.filter((u) => u.departmentId === eq.locationId);
+      const resolved = depUnits[0];
+      const dep = this.state.departments.find((d) => d.id === eq.locationId);
+      return {
+        id: eq.id,
+        code: eq.code,
+        equipmentType: eq.equipmentType,
+        status: eq.status,
+        critical: eq.critical,
+        unitCode: resolved?.code ?? dep?.code ?? eq.locationId,
+        floor: resolved?.floor ?? 0,
+      };
+    });
+    const occSeries = forecasts.find((f) => f.id === 'occupancy');
+    const arrSeries = forecasts.find((f) => f.id === 'ed_arrivals');
+    const twinVisuals = {
+      floors,
+      units: twinUnits,
+      equipment: twinEquipment,
+      occupancyTrend: (occSeries?.points ?? []).map((p, i) => ({
+        label: `H+${i}`,
+        value: p.value,
+        low: p.low,
+        high: p.high,
+      })),
+      edArrivalTrend: (arrSeries?.points ?? []).map((p, i) => ({
+        label: `H+${i}`,
+        value: p.value,
+      })),
+    };
+
     return {
       banner: SYNTHETIC_BANNER,
       site: this.state.site,
@@ -257,6 +313,7 @@ export class HospitalTwinService {
       alerts,
       boards,
       forecasts,
+      twinVisuals,
       bedGrid,
       edCensus,
       roles: ROLE_POLICIES.map((r) => r.id),

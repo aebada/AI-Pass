@@ -88,4 +88,13 @@ describe('Hospital System Twin', () => {
     const forecasts = createHospitalTwinService(42).snapshot().forecasts;
     assert.ok(forecasts.every((f) => f.beatsSeasonalNaive));
   });
+
+  it('exposes digital twin visualizations for floors and beds', () => {
+    const snap = createHospitalTwinService(42).snapshot();
+    assert.ok(snap.twinVisuals.units.length >= 10);
+    assert.ok(snap.twinVisuals.floors.length >= 3);
+    assert.ok(snap.twinVisuals.units.every((u) => u.beds.length > 0));
+    assert.ok(snap.twinVisuals.occupancyTrend.length === 24);
+    assert.ok(snap.twinVisuals.equipment.length > 0);
+  });
 });

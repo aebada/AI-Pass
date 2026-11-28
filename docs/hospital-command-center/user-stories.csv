@@ -1,0 +1,142 @@
+id,epic,persona,summary,priority,release,points,status,notes
+VC-01,Voice and conversation,Hospital Executive,Ask hospital status by voice,Must,A,8,implemented,Voice mic + TTS + executive board fast path
+VC-02,Voice and conversation,Hospital Executive,Type/edit/resend recognized text,Must,A,3,implemented,Editable transcript + typed same path
+VC-03,Voice and conversation,Operations Director / COO,Egyptian Arabic / English mix,Must,A,8,partial,Arabic keyword intents + RTL toggle; WER study pending
+VC-04,Voice and conversation,Medical Director,German Q&A,Could,A,5,partial,German keyword intents present
+VC-05,Voice and conversation,Hospital Executive,Follow-ups (and in ICU / break down),Must,A,5,implemented,Conversation focus + follow-up intents
+VC-06,Voice and conversation,Nursing Supervisor / Bed Manager,Clarify ambiguous unit names,Should,A,3,implemented,Ambiguity returns tappable options
+VC-07,Voice and conversation,Hospital Executive,Polite refusal outside permission/data/clinical,Must,A,3,implemented,Role refuse + clinical refusal
+VC-08,Voice and conversation,Hospital Executive,Interrupt / screen-only,Should,A,3,implemented,Screen-only + stop speaking
+VC-09,Voice and conversation,Hospital Executive,Focus / back / start over,Should,A,3,implemented,Focus + clear focus intents
+VC-10,Voice and conversation,Hospital Executive,Pin / next board / export PDF,Should,A,3,partial,Board switch + pin local; PDF export stub with synthetic banner
+VC-11,Voice and conversation,Hospital Executive,Governed numbers only / verify,Must,A,8,implemented,Answers only from certified KPI provenance
+VC-12,Voice and conversation,Hospital IT Lead / Data Owner,Outage messaging + stale markers,Must,A,8,implemented,Speech-unavailable notice; stale KPI markers; feed-outage alert
+VC-13,Voice and conversation,Wall-display Viewer,Wake word / far-field,Could,P,8,planned,Pilot hardware
+DV-01,Dashboards and visuals,Hospital Executive,Auto compose visuals,Must,A,8,implemented,Twin map + board composer
+DV-02,Dashboards and visuals,Hospital Executive,Executive overview board,Must,A,5,implemented,Seven KPI tiles + alerts
+DV-03,Dashboards and visuals,Nursing Supervisor / Bed Manager,Capacity bed grid,Must,A,5,implemented,Per-bed twin grid + capacity board
+DV-04,Dashboards and visuals,Emergency Department Lead,ED board,Must,A,5,implemented,Census/waiting/boarding + surge react
+DV-05,Dashboards and visuals,Supply and Pharmacy Manager,Supply board,Must,A,3,implemented,Days of stock / stock-out / oxygen
+DV-06,Dashboards and visuals,Maintenance and Biomedical Lead,Equipment board,Must,A,3,implemented,Critical down + location via scenario
+DV-07,Dashboards and visuals,Nursing Supervisor / Bed Manager,Staffing board,Should,A,3,implemented,Coverage + gaps
+DV-08,Dashboards and visuals,Operations Director / COO,Floor map,Should,A,5,partial,Floor heat units; full SVG map later
+DV-09,Dashboards and visuals,Hospital Executive,Live as-of + stale,Must,A,5,implemented,Live twin + as-of sim clock
+DV-10,Dashboards and visuals,Operations Director / COO,Drill-down lineage,Must,A,5,implemented,KPI tile opens lineage panel
+DV-11,Dashboards and visuals,Hospital Executive,Pin boards by role,Should,A,3,partial,Local pin list
+DV-12,Dashboards and visuals,Hospital Executive,Export PDF/PNG,Should,A,3,partial,Export text report with synthetic banner
+DV-13,Dashboards and visuals,Wall-display Viewer,Wall-display rotate,Should,A,3,implemented,Wall mode tab rotates boards; critical interrupt
+DV-14,Dashboards and visuals,Hospital Executive,RTL Arabic + a11y,Must,A,5,implemented,dir=rtl toggle + labelled controls
+DV-15,Dashboards and visuals,Hospital Executive,Daily digest,Must,A,5,implemented,Digest board + intent
+DV-16,Dashboards and visuals,Nursing Supervisor / Bed Manager,Shift handover,Should,A,3,implemented,Handover board
+KP-01,Metrics and KPIs,Operations Director / COO,Certified KPI definitions,Must,A,8,implemented,Provenance on every KPI
+KP-02,Metrics and KPIs,Nursing Supervisor / Bed Manager,CAP/ADM KPIs,Must,A,5,implemented,Unit tests
+KP-03,Metrics and KPIs,Emergency Department Lead,ED KPIs,Must,A,5,implemented,By triage
+KP-04,Metrics and KPIs,Supply and Pharmacy Manager,SUP/EQ/STF KPIs,Must,A,5,implemented,Fixtures
+KP-05,Metrics and KPIs,Operations Director / COO,Edit thresholds with approval,Should,A,3,planned,Phase A Should
+KP-06,Metrics and KPIs,Hospital Executive,Lineage ask,Must,A,5,implemented,Provenance intent + UI
+KP-07,Metrics and KPIs,Operations Director / COO,Compare / rank,Must,A,3,implemented,Ranking intents
+KP-08,Metrics and KPIs,Medical Director,Time travel,Should,A,5,planned,
+KP-09,Metrics and KPIs,Operations Director / COO,AUT KPIs,Should,B,3,planned,Phase B
+KP-10,Metrics and KPIs,Medical Director,OR/DX KPIs,Could,P,5,partial,OR-01 DX present
+AL-01,Alerts and anomalies,Nursing Supervisor / Bed Manager,Critical alerts wall+inbox,Must,A,3,implemented,Alerts panel + wall mode
+AL-02,Alerts and anomalies,Operations Director / COO,Core alert rule set,Must,A,8,implemented,11 rules + scenarios
+AL-03,Alerts and anomalies,Nursing Supervisor / Bed Manager,Alert explain why,Must,A,5,implemented,Explanation on cards
+AL-04,Alerts and anomalies,Nursing Supervisor / Bed Manager,Ack/assign/snooze,Should,A,3,implemented,Acknowledge + audit
+AL-05,Alerts and anomalies,Operations Director / COO,Escalate unacked,Should,B,3,planned,
+AL-06,Alerts and anomalies,Hospital IT Lead / Data Owner,Stale feed alert,Must,A,3,implemented,feed_outage scenario
+AL-07,Alerts and anomalies,Hospital Executive,Anomalies in digest,Should,A,5,partial,Digest lists scenario issues
+FI-01,Forecasts and insights,Nursing Supervisor / Bed Manager,Occupancy forecast 24/72h,Must,A,5,implemented,Occupancy forecast chart
+FI-02,Forecasts and insights,Emergency Department Lead,ED arrivals forecast,Must,A,5,implemented,ED arrivals forecast chart
+FI-03,Forecasts and insights,Nursing Supervisor / Bed Manager,Discharges by hour,Should,A,3,partial,Intent + estimate
+FI-04,Forecasts and insights,Supply and Pharmacy Manager,Stock-out date,Should,A,3,partial,SUP KPIs
+FI-05,Forecasts and insights,Operations Director / COO,Why did this change,Must,A,5,implemented,Explanation intents
+FI-06,Forecasts and insights,Medical Director,Hide weak forecasts,Must,A,3,implemented,beatsSeasonalNaive gate
+FI-07,Forecasts and insights,Operations Director / COO,What-if,Should,B,8,planned,
+DC-01,Data connection and quality,Implementation Engineer / Solution Architect,Connector wizard,Must,A,8,partial,Simulator uses same KPI path; wizard UI stub
+DC-02,Data connection and quality,Implementation Engineer / Solution Architect,HL7/FHIR,Must,P,13,planned,
+DC-03,Data connection and quality,Implementation Engineer / Solution Architect,Mapping editor,Must,A,5,partial,Versioned pack mapping stub
+DC-04,Data connection and quality,Implementation Engineer / Solution Architect,Propose mappings,Should,P,8,planned,
+DC-05,Data connection and quality,Hospital IT Lead / Data Owner,DQ score + DLQ,Must,A,5,partial,bad_data scenario + quality on provenance
+DC-06,Data connection and quality,Hospital IT Lead / Data Owner,Connection health console,Must,A,3,implemented,Feed health panel in Command Center
+DC-07,Data connection and quality,Implementation Engineer / Solution Architect,Backfill replay,Should,A,5,planned,
+DC-08,Data connection and quality,Compliance and Data Protection Officer,Tokenize identifiers,Must,A,5,implemented,Patient tokens only
+DC-09,Data connection and quality,Facilities Lead,Building signals,Should,P,8,planned,
+DC-10,Data connection and quality,Compliance and Data Protection Officer,Camera counts only,Could,P,8,planned,
+DC-11,Data connection and quality,Implementation Engineer / Solution Architect,Entity resolution queue,Should,P,5,planned,
+DC-12,Data connection and quality,Hospital IT Lead / Data Owner,Least-privilege connectors,Must,P,3,planned,
+SO-01,Sector setup and knowledge model,Platform Administrator,Sector wizard,Should,A,5,partial,Modules toggle in ontology tab
+SO-02,Sector setup and knowledge model,Platform Administrator,Custom entities,Should,A,5,planned,
+SO-03,Sector setup and knowledge model,Platform Administrator,Publish/rollback,Should,A,3,partial,Pack version recorded
+SO-04,Sector setup and knowledge model,Platform Administrator,Pack linter,Must,A,3,implemented,lintPack()
+SO-05,Sector setup and knowledge model,Hospital Executive,EN/AR/DE labels+synonyms,Must,A,3,implemented,Synonym resolve
+SO-06,Sector setup and knowledge model,Demo Presenter / Sales,Manufacturing stub pack,Should,A,5,planned,
+SO-07,Sector setup and knowledge model,Implementation Engineer / Solution Architect,Propose ontology,Could,P,8,planned,
+SO-08,Sector setup and knowledge model,Platform Administrator,Tenant extensions survive upgrades,Could,P,5,planned,
+SP-01,Security privacy and compliance,Platform Administrator,Roles + switcher,Must,A,5,implemented,Role switcher POC
+SP-02,Security privacy and compliance,Supply and Pharmacy Manager,Role-scoped answers,Must,A,5,implemented,Pharmacy refuse ICU staffing
+SP-03,Security privacy and compliance,Compliance and Data Protection Officer,Purpose for identified access,Should,P,3,planned,
+SP-04,Security privacy and compliance,Compliance and Data Protection Officer,Tamper-evident audit,Must,A,3,implemented,Hash-chain audit log
+SP-05,Security privacy and compliance,Compliance and Data Protection Officer,No direct identifiers,Must,A,3,implemented,Tokens only
+SP-06,Security privacy and compliance,Hospital IT Lead / Data Owner,On-prem air-gap,Must,P,13,planned,
+SP-07,Security privacy and compliance,Compliance and Data Protection Officer,Model allowlist,Must,P,5,planned,
+SP-08,Security privacy and compliance,Compliance and Data Protection Officer,Compliance pack,Should,P,5,planned,
+SP-09,Security privacy and compliance,Hospital IT Lead / Data Owner,Data never instructions,Must,A,5,implemented,Intent matcher ignores field injection
+SP-10,Security privacy and compliance,Compliance and Data Protection Officer,Break-glass,Could,P,3,planned,
+SP-11,Security privacy and compliance,Hospital IT Lead / Data Owner,Tenant isolation,Should,P,8,planned,
+SP-12,Security privacy and compliance,Hospital Executive,Security review sign-off,Must,P,5,planned,
+AU-01,Automation and issue resolution,Operations Director / COO,Auto incident,Must,B,5,planned,
+AU-02,Automation and issue resolution,Hospital Executive,Ranked recommendations,Must,B,8,planned,
+AU-03,Automation and issue resolution,Operations Director / COO,Approve with readback,Must,B,5,planned,
+AU-04,Automation and issue resolution,Operations Director / COO,Approver chain,Must,B,5,planned,
+AU-05,Automation and issue resolution,Operations Director / COO,Idempotent adapters,Must,B,8,planned,
+AU-06,Automation and issue resolution,Operations Director / COO,Verify effect,Must,B,5,planned,
+AU-07,Automation and issue resolution,Operations Director / COO,Autonomy + kill switch,Must,B,5,planned,
+AU-08,Automation and issue resolution,Medical Director,Shadow mode,Should,B,5,planned,
+AU-09,Automation and issue resolution,Operations Director / COO,Guardrails,Must,B,5,planned,
+AU-10,Automation and issue resolution,Nursing Supervisor / Bed Manager,Bed-flow playbook,Must,B,5,planned,
+AU-11,Automation and issue resolution,Emergency Department Lead,ED surge playbook,Must,B,8,planned,
+AU-12,Automation and issue resolution,Supply and Pharmacy Manager,Stock-out playbook,Must,B,5,planned,
+AU-13,Automation and issue resolution,Maintenance and Biomedical Lead,Equipment-down playbook,Must,B,5,planned,
+AU-14,Automation and issue resolution,Nursing Supervisor / Bed Manager,Staffing-gap playbook,Should,B,5,planned,
+AU-15,Automation and issue resolution,Facilities Lead,Oxygen playbook,Should,B,3,planned,
+AU-16,Automation and issue resolution,Nursing Supervisor / Bed Manager,Auto reports,Should,B,3,planned,
+AU-17,Automation and issue resolution,Hospital IT Lead / Data Owner,Feed watchdog,Must,B,3,planned,
+AU-18,Automation and issue resolution,Hospital Executive,Why did you do that,Must,B,3,planned,
+AU-19,Automation and issue resolution,Platform Administrator,Automation Studio,Should,B,5,planned,
+AU-20,Automation and issue resolution,Operations Director / COO,Impact tracker,Should,B,5,planned,
+AU-21,Automation and issue resolution,Nursing Supervisor / Bed Manager,In-app inbox,Should,B,5,planned,
+AU-22,Automation and issue resolution,Medical Director,No clinical actions,Must,B,3,partial,Clinical refuse + linter forbid list
+AU-23,Automation and issue resolution,Emergency Department Lead,Boarding resolver,Should,B,5,planned,
+AU-24,Automation and issue resolution,Supply and Pharmacy Manager,Late supplier,Should,B,3,planned,
+OP-01,Operations optimization,Nursing Supervisor / Bed Manager,Bed placement,Must,B,8,planned,
+OP-02,Operations optimization,Nursing Supervisor / Bed Manager,Discharge plan,Must,B,5,planned,
+OP-03,Operations optimization,Nursing Supervisor / Bed Manager,Cleaning dispatch,Should,B,5,planned,
+OP-04,Operations optimization,Nursing Supervisor / Bed Manager,Staff float,Should,B,8,planned,
+OP-05,Operations optimization,Supply and Pharmacy Manager,Inventory optimizer,Must,B,5,planned,
+OP-06,Operations optimization,Operations Director / COO,OR/PM optimize,Could,P,8,planned,
+OP-07,Operations optimization,Operations Director / COO,Optimizer board,Must,B,3,planned,
+OP-08,Operations optimization,Hospital Executive,A/B proof,Must,B,5,planned,
+OP-09,Operations optimization,Operations Director / COO,Pilot measured impact,Must,P,5,planned,
+AD-01,Administration and operations,Platform Administrator,Manage users/roles,Must,A,3,partial,Role switcher POC
+AD-02,Administration and operations,Platform Administrator,Models/languages/quotas,Should,A,3,planned,
+AD-03,Administration and operations,Platform Administrator,Quality dashboard,Should,A,3,partial,Backlog coverage panel
+AD-04,Administration and operations,Hospital Executive,Report wrong number,Must,A,3,implemented,Report captures audit ticket
+AD-05,Administration and operations,Platform Administrator,Free hosting quotas,Must,A,3,partial,Static client-side twin fits limits
+AD-06,Administration and operations,Platform Administrator,Feature flags/rollback,Should,A,3,planned,
+AD-07,Administration and operations,Hospital IT Lead / Data Owner,Backups,Must,P,3,planned,
+DM-01,Demo and simulator,Demo Presenter / Sales,Seeded 300-bed hospital,Must,A,5,implemented,
+DM-02,Demo and simulator,Demo Presenter / Sales,Nine scenarios,Must,A,8,implemented,
+DM-03,Demo and simulator,Demo Presenter / Sales,Reset <10s,Must,A,2,implemented,
+DM-04,Demo and simulator,Compliance and Data Protection Officer,Synthetic banner,Must,A,1,implemented,
+DM-05,Demo and simulator,Demo Presenter / Sales,Warm-up screen,Must,A,3,implemented,Sync boot no blank shell
+DM-06,Demo and simulator,Demo Presenter / Sales,Offline laptop demo,Should,A,5,partial,Client-side twin works offline after load
+DM-07,Demo and simulator,Demo Presenter / Sales,A/B automation compare,Must,B,5,planned,
+DM-08,Demo and simulator,Demo Presenter / Sales,15-min demo script,Must,A,5,partial,Script boards + scenarios ready
+DM-09,Demo and simulator,Implementation Engineer / Solution Architect,Golden suite CI,Must,A,5,implemented,30 questions + requirements agents
+NF-01,Quality attributes,Hospital Executive,Fast answers,Must,A,5,partial,Deterministic fast path local
+NF-02,Quality attributes,Medical Director,95% golden + no unverified,Must,A,3,implemented,Golden 30 + provenance
+NF-03,Quality attributes,Hospital IT Lead / Data Owner,99.5% availability,Should,P,5,planned,
+NF-04,Quality attributes,Hospital IT Lead / Data Owner,Scale 1000 beds,Should,P,8,planned,
+NF-05,Quality attributes,Wall-display Viewer,WCAG 2.1 AA,Should,P,5,partial,Labels + keyboard
+NF-06,Quality attributes,Platform Administrator,Docker portable,Must,A,3,partial,Static export + package
+NF-07,Quality attributes,Platform Administrator,Storage <600MB,Must,A,3,implemented,Client seed no large DB

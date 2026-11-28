@@ -370,6 +370,36 @@ export interface HospitalState {
   oxygenHoursRemaining: number;
 }
 
+export interface TwinUnitVisual {
+  unitId: string;
+  unitCode: string;
+  unitName: string;
+  floor: number;
+  specialty: string;
+  staffedBeds: number;
+  occupancyPct: number;
+  alertCount: number;
+  beds: { id: string; code: string; status: BedStatus }[];
+}
+
+export interface TwinEquipmentVisual {
+  id: string;
+  code: string;
+  equipmentType: string;
+  status: 'working' | 'down' | 'maintenance';
+  critical: boolean;
+  unitCode: string;
+  floor: number;
+}
+
+export interface TwinVisuals {
+  floors: number[];
+  units: TwinUnitVisual[];
+  equipment: TwinEquipmentVisual[];
+  occupancyTrend: { label: string; value: number; low: number; high: number }[];
+  edArrivalTrend: { label: string; value: number }[];
+}
+
 export interface CommandCenterSnapshot {
   banner: string;
   site: HospitalSite;
@@ -382,6 +412,7 @@ export interface CommandCenterSnapshot {
   alerts: Alert[];
   boards: BoardSpec[];
   forecasts: ForecastSeries[];
+  twinVisuals: TwinVisuals;
   bedGrid: { unitCode: string; available: number; occupied: number; cleaning: number; blocked: number; staffed: number }[];
   edCensus: {
     total: number;

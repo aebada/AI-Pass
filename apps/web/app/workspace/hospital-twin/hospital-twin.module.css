@@ -264,3 +264,269 @@
   color: #5a6570;
   line-height: 1.4;
 }
+
+.twinHeader {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.twinHeader h3 {
+  margin: 0;
+}
+
+.floorRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 0.85rem;
+  font-size: 0.75rem;
+  color: #5a6570;
+}
+
+.legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.legendSwatch {
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 3px;
+  display: inline-block;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.floorMap {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 0.7rem;
+}
+
+.unitCard {
+  text-align: left;
+  border-radius: 14px;
+  border: 1px solid #e4ebf1;
+  background: #fff;
+  padding: 0.75rem;
+  cursor: pointer;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.unitSelected {
+  outline: 2px solid #0f6e8c;
+  outline-offset: 1px;
+}
+
+.heatOk { background: linear-gradient(180deg, #f4fbf7 0%, #fff 70%); }
+.heatBusy { background: linear-gradient(180deg, #f3f8fc 0%, #fff 70%); }
+.heatWarn { background: linear-gradient(180deg, #fff8e8 0%, #fff 70%); border-color: #efd59a; }
+.heatCritical { background: linear-gradient(180deg, #fff1f1 0%, #fff 70%); border-color: #efb4b4; }
+
+.unitTop {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  color: #44505c;
+}
+
+.unitName {
+  font-size: 0.78rem;
+  color: #6a7682;
+}
+
+.bedGridViz {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 3px;
+}
+
+.bedCell {
+  aspect-ratio: 1;
+  border-radius: 2px;
+  min-height: 8px;
+}
+
+.bedAvailable { background: #2f9e6f; }
+.bedOccupied { background: #0f6e8c; }
+.bedCleaning { background: #d39b1f; }
+.bedReserved { background: #6b7fd7; }
+.bedBlocked { background: #9aa3ad; }
+
+.unitAlert {
+  font-size: 0.72rem;
+  font-weight: 650;
+  color: #9b2c2c;
+}
+
+.bedGridLarge {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(72px, 1fr));
+  gap: 0.4rem;
+}
+
+.bedChip {
+  border-radius: 10px;
+  padding: 0.45rem 0.4rem;
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 650;
+  display: grid;
+  gap: 0.1rem;
+  text-align: center;
+}
+
+.bedChip small {
+  font-weight: 500;
+  font-size: 0.65rem;
+  opacity: 0.9;
+  text-transform: capitalize;
+}
+
+.chartLabel {
+  margin: 0 0 0.35rem;
+  font-size: 0.78rem;
+  color: #6a7682;
+}
+
+.chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 88px;
+  padding: 0.35rem 0 0.55rem;
+  margin-bottom: 0.75rem;
+  border-bottom: 1px solid #edf1f5;
+}
+
+.barWrap {
+  flex: 1;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+}
+
+.barBand {
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  bottom: 0;
+  background: rgba(15, 110, 140, 0.12);
+  border-radius: 3px 3px 0 0;
+}
+
+.bar,
+.barEd {
+  position: relative;
+  width: 70%;
+  margin: 0 auto;
+  background: #0f6e8c;
+  border-radius: 3px 3px 0 0;
+  min-height: 2px;
+}
+
+.barEd {
+  background: #2f9e6f;
+}
+
+.chatHeader {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.chatHeader h3 {
+  margin: 0;
+}
+
+.chatControls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  color: #44505c;
+}
+
+.chatWindow {
+  display: grid;
+  gap: 0.55rem;
+  max-height: 340px;
+  overflow: auto;
+  padding: 0.75rem;
+  border-radius: 14px;
+  border: 1px solid #e4ebf1;
+  background: linear-gradient(180deg, #f7fafc 0%, #fff 40%);
+  margin-bottom: 0.75rem;
+}
+
+.chatUser,
+.chatBot {
+  max-width: 88%;
+  padding: 0.65rem 0.8rem;
+  border-radius: 14px;
+  line-height: 1.45;
+}
+
+.chatUser {
+  justify-self: end;
+  background: #0f6e8c;
+  color: #fff;
+}
+
+.chatBot {
+  justify-self: start;
+  background: #fff;
+  border: 1px solid #e4ebf1;
+  color: #24313c;
+}
+
+.chatBot[data-refused='1'] {
+  border-color: #f0c4c4;
+  background: #fff6f6;
+}
+
+.chatRole {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  opacity: 0.75;
+  margin-bottom: 0.2rem;
+}
+
+.chatUser p,
+.chatBot p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.voiceNote {
+  margin: 0.65rem 0 0;
+  font-size: 0.82rem;
+  color: #0f6e8c;
+  font-weight: 600;
+}

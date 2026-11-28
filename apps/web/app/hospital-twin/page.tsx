@@ -53,16 +53,17 @@ export default function HospitalTwinMarketingPage() {
             <span> Every department.</span>
           </h1>
           <p className={styles.sub}>
-            Operational twin for hospital leadership — beds, ED, supply, equipment, and staffing with
-            provenance on every number. Built for demos, discovery, and pilot boards.
+            Operational twin for hospital leadership — digital twin floor maps, live bed states, forecast
+            bands, and a voice chatbot with sound. Provenance on every number. Built for demos, discovery,
+            and pilot boards.
           </p>
           <div className={styles.ctas}>
             {/* Plain anchors: hard navigation works on static Hostinger even if Next client router stalls */}
             <a href="/workspace/hospital-twin/" className={styles.primary}>
               Open Command Center
             </a>
-            <a href="/workspace/data-products/" className={styles.secondary}>
-              Browse Data Products
+            <a href="/workspace/hospital-twin/?tab=ask" className={styles.secondary}>
+              Talk to the twin
             </a>
           </div>
           <div className={styles.banner}>Synthetic data. Not a real hospital. Not clinical decision support.</div>
@@ -80,9 +81,42 @@ export default function HospitalTwinMarketingPage() {
               <span>Golden questions</span>
             </div>
             <div className={styles.metric}>
-              <strong>8</strong>
-              <span>Command boards</span>
+              <strong>Voice</strong>
+              <span>Chat + sound</span>
             </div>
+          </div>
+        </section>
+
+        <section className={styles.section}>
+          <h2>Digital twin visualizations</h2>
+          <p className={styles.sectionLead}>
+            Floor heatmaps, per-bed state grids, occupancy and ED arrival forecast bands, and critical
+            equipment pins — then ask by voice or text and hear a short verified answer.
+          </p>
+          <div className={styles.grid}>
+            {[
+              {
+                title: 'Floor & bed twin',
+                copy: 'Every unit coloured by occupancy with bed cells for available, occupied, cleaning, reserved, and blocked.',
+              },
+              {
+                title: 'Forecast bands',
+                copy: '24h occupancy interval and ED arrivals pattern update with the same seed as the simulator.',
+              },
+              {
+                title: 'Voice chatbot',
+                copy: 'Hold the mic, ask in natural language, hear the answer spoken, and edit the transcript anytime.',
+              },
+              {
+                title: 'Command boards',
+                copy: 'Executive, capacity, ED, supply, equipment, staffing, digest, and handover with provenance.',
+              },
+            ].map((b) => (
+              <article key={b.title} className={styles.card}>
+                <h3>{b.title}</h3>
+                <p>{b.copy}</p>
+              </article>
+            ))}
           </div>
         </section>
 

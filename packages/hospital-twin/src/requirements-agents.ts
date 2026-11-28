@@ -190,6 +190,22 @@ export function runSurfaceAgent(): AgentReport {
       fileContains('scripts/build-web-static.sh', 'skipped'),
       'build-web-static.sh',
     ),
+    check(
+      'surface',
+      'UI-twin-map',
+      'Command Center has digital twin visualizations',
+      fileContains('apps/web/app/workspace/hospital-twin/page.tsx', 'Digital twin') &&
+        fileContains('apps/web/app/workspace/hospital-twin/page.tsx', 'twinVisuals'),
+      'Twin map tab',
+    ),
+    check(
+      'surface',
+      'UI-voice-chat',
+      'Command Center has voice chatbot with speech',
+      fileContains('apps/web/app/workspace/hospital-twin/page.tsx', 'Voice chatbot') &&
+        fileContains('apps/web/app/workspace/hospital-twin/page.tsx', 'speechSynthesis'),
+      'Ask / Voice',
+    ),
   ];
   return { agent: 'surface', checks };
 }
