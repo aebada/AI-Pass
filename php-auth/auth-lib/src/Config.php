@@ -36,7 +36,7 @@ final class Config
             googleClientSecret: self::env('GOOGLE_CLIENT_SECRET', ''),
             googleRedirectUri: self::env('GOOGLE_REDIRECT_URI', ''),
             sessionSecret: self::env('SESSION_SECRET', ''),
-            loginSuccessUrl: self::env('LOGIN_SUCCESS_URL', '/workspace'),
+            loginSuccessUrl: self::env('LOGIN_SUCCESS_URL', '/workspace/'),
         );
     }
 

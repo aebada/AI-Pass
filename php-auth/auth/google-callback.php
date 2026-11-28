@@ -27,8 +27,11 @@ if (!is_string($code) || $code === '') {
     SessionAuth::redirect('/auth/login.php?error=' . rawurlencode('Missing authorization code from Google.'));
 }
 
-$callback = isset($_SESSION['oauth_callback']) ? (string) $_SESSION['oauth_callback'] : '/workspace';
+$callback = isset($_SESSION['oauth_callback']) ? (string) $_SESSION['oauth_callback'] : '/workspace/';
 unset($_SESSION['oauth_callback']);
+if ($callback === '/workspace' || $callback === '') {
+    $callback = '/workspace/';
+}
 
 try {
     $google = new GoogleOAuth($config);
@@ -36,7 +39,11 @@ try {
     $auth = AuthService::make($config);
     $user = $auth->loginWithGoogleProfile($profile);
     SessionAuth::login($user);
-    SessionAuth::redirect($auth->successRedirect($callback));
+    $dest = $auth->successRedirect($callback);
+    if ($dest === '/workspace') {
+        $dest = '/workspace/';
+    }
+    SessionAuth::redirect($dest);
 } catch (Throwable $e) {
-    SessionAuth::redirect('/auth/login.php?error=' . rawurlencode($e->getMessage()));
+    SessionAuth::redirect('/login/?error=' . rawurlencode($e->getMessage()));
 }

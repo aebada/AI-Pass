@@ -10,7 +10,10 @@ use AiPass\Auth\GoogleOAuth;
 use AiPass\Auth\SessionAuth;
 
 $config = Config::fromEnvironment();
-$callback = isset($_GET['callback']) ? (string) $_GET['callback'] : '/workspace';
+$callback = isset($_GET['callback']) ? (string) $_GET['callback'] : '/workspace/';
+if ($callback === '/workspace' || $callback === '') {
+    $callback = '/workspace/';
+}
 
 if ($callback !== '') {
     $_SESSION['oauth_callback'] = $callback;

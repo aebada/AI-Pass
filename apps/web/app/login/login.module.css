@@ -75,6 +75,8 @@
   font-size: 0.9375rem;
   font-weight: 600;
   cursor: pointer;
+  text-decoration: none;
+  box-sizing: border-box;
   transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
 }
 
