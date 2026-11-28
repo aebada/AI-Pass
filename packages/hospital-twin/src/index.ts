@@ -42,4 +42,4 @@ export {
   createHospitalTwinService,
   getHospitalTwinService,
 } from './service.js';
-export { runStoryAcceptance } from './story-acceptance.js';
+// story-acceptance is Node/CLI-only (fs) — import via tsx check:stories, not the browser bundle.
