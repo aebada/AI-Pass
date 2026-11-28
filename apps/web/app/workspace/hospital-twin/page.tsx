@@ -21,6 +21,7 @@ type Tab =
   | 'equipment'
   | 'staffing'
   | 'twin'
+  | 'extend'
   | 'scenarios'
   | 'ask'
   | 'ontology';
@@ -88,6 +89,14 @@ export default function HospitalTwinCommandCenterPage() {
   const [screenOnly, setScreenOnly] = useState(false);
   const [rtl, setRtl] = useState(false);
   const [wallMode, setWallMode] = useState(false);
+  const [unitForm, setUnitForm] = useState({ floor: '6', code: 'MED-6A', name: 'Medical 6A', beds: '12' });
+  const [supplyForm, setSupplyForm] = useState({
+    sku: 'PPE-GWN',
+    name: 'Isolation gowns',
+    category: 'consumable',
+    quantity: '200',
+    supplierName: 'HospitalCare Supplies',
+  });
   const [listening, setListening] = useState(false);
   const [speechSupported, setSpeechSupported] = useState(false);
   const [ttsSupported, setTtsSupported] = useState(false);
@@ -361,6 +370,7 @@ export default function HospitalTwinCommandCenterPage() {
           {(
             [
               ['twin', 'Twin map'],
+              ['extend', 'Extend data'],
               ['executive', 'Executive'],
               ['capacity', 'Capacity'],
               ['ed', 'ED'],
@@ -520,7 +530,7 @@ export default function HospitalTwinCommandCenterPage() {
           </>
         )}
 
-        {tab !== 'scenarios' && tab !== 'ask' && tab !== 'ontology' && tab !== 'twin' && board && (
+        {tab !== 'scenarios' && tab !== 'ask' && tab !== 'ontology' && tab !== 'twin' && tab !== 'extend' && board && (
           <>
             <section className={styles.panel}>
               <h3>{board.name}</h3>
@@ -611,6 +621,203 @@ export default function HospitalTwinCommandCenterPage() {
                 )}
               </section>
             </div>
+          </>
+        )}
+
+        {tab === 'extend' && (
+          <>
+            <section className={styles.panel}>
+              <h3>Extend the hospital twin</h3>
+              <p className={styles.alertBody} style={{ marginBottom: 12 }}>
+                Add floors/units with beds and supply-chain items. Changes update the live twin map, KPIs and
+                boards immediately (synthetic demo — reset restores the baseline).
+              </p>
+              <div className={styles.twoCol}>
+                <div>
+                  <h4 className={styles.formHeading}>Add floor / unit</h4>
+                  <div className={styles.formGrid}>
+                    <label>
+                      Floor
+                      <input
+                        className={styles.input}
+                        value={unitForm.floor}
+                        onChange={(e) => setUnitForm((f) => ({ ...f, floor: e.target.value }))}
+                      />
+                    </label>
+                    <label>
+                      Unit code
+                      <input
+                        className={styles.input}
+                        value={unitForm.code}
+                        onChange={(e) => setUnitForm((f) => ({ ...f, code: e.target.value }))}
+                      />
+                    </label>
+                    <label>
+                      Name
+                      <input
+                        className={styles.input}
+                        value={unitForm.name}
+                        onChange={(e) => setUnitForm((f) => ({ ...f, name: e.target.value }))}
+                      />
+                    </label>
+                    <label>
+                      Beds
+                      <input
+                        className={styles.input}
+                        value={unitForm.beds}
+                        onChange={(e) => setUnitForm((f) => ({ ...f, beds: e.target.value }))}
+                      />
+                    </label>
+                  </div>
+                  <button
+                    type="button"
+                    className={styles.btnPrimary}
+                    style={{ marginTop: 10 }}
+                    onClick={() => {
+                      try {
+                        setSnap(
+                          svc.extendFloorUnit({
+                            floor: Number(unitForm.floor) || 0,
+                            code: unitForm.code,
+                            name: unitForm.name,
+                            beds: Number(unitForm.beds) || 10,
+                            specialty: 'medicine',
+                          }),
+                        );
+                        setMsg(`Added unit ${unitForm.code} on floor ${unitForm.floor}.`);
+                        setTab('twin');
+                      } catch (err) {
+                        setMsg(err instanceof Error ? err.message : 'Could not add unit');
+                      }
+                    }}
+                  >
+                    Add unit to twin
+                  </button>
+                </div>
+                <div>
+                  <h4 className={styles.formHeading}>Add supply-chain item</h4>
+                  <div className={styles.formGrid}>
+                    <label>
+                      SKU
+                      <input
+                        className={styles.input}
+                        value={supplyForm.sku}
+                        onChange={(e) => setSupplyForm((f) => ({ ...f, sku: e.target.value }))}
+                      />
+                    </label>
+                    <label>
+                      Name
+                      <input
+                        className={styles.input}
+                        value={supplyForm.name}
+                        onChange={(e) => setSupplyForm((f) => ({ ...f, name: e.target.value }))}
+                      />
+                    </label>
+                    <label>
+                      Category
+                      <select
+                        className={styles.select}
+                        value={supplyForm.category}
+                        onChange={(e) => setSupplyForm((f) => ({ ...f, category: e.target.value }))}
+                      >
+                        <option value="consumable">consumable</option>
+                        <option value="drug">drug</option>
+                        <option value="blood_product">blood_product</option>
+                        <option value="oxygen">oxygen</option>
+                      </select>
+                    </label>
+                    <label>
+                      Quantity
+                      <input
+                        className={styles.input}
+                        value={supplyForm.quantity}
+                        onChange={(e) => setSupplyForm((f) => ({ ...f, quantity: e.target.value }))}
+                      />
+                    </label>
+                    <label>
+                      Supplier
+                      <input
+                        className={styles.input}
+                        value={supplyForm.supplierName}
+                        onChange={(e) => setSupplyForm((f) => ({ ...f, supplierName: e.target.value }))}
+                      />
+                    </label>
+                  </div>
+                  <button
+                    type="button"
+                    className={styles.btnPrimary}
+                    style={{ marginTop: 10 }}
+                    onClick={() => {
+                      try {
+                        setSnap(
+                          svc.extendSupplyItem({
+                            sku: supplyForm.sku,
+                            name: supplyForm.name,
+                            category: supplyForm.category as 'consumable' | 'drug' | 'blood_product' | 'oxygen',
+                            quantity: Number(supplyForm.quantity) || 0,
+                            supplierName: supplyForm.supplierName,
+                          }),
+                        );
+                        setMsg(`Added supply item ${supplyForm.sku}.`);
+                        setTab('supply');
+                      } catch (err) {
+                        setMsg(err instanceof Error ? err.message : 'Could not add supply item');
+                      }
+                    }}
+                  >
+                    Add supply item
+                  </button>
+                </div>
+              </div>
+            </section>
+            <section className={styles.panel}>
+              <h3>Current floors & supply</h3>
+              <p className={styles.alertBody}>
+                Floors: {svc.listExtensions().floors.join(', ')} · Units: {svc.listExtensions().units.length} ·
+                SKUs: {svc.listExtensions().supply.length} · Suppliers:{' '}
+                {svc.listExtensions().suppliers.map((s) => s.name).join(', ')}
+              </p>
+              <table className={styles.table}>
+                <thead>
+                  <tr>
+                    <th>Unit</th>
+                    <th>Floor</th>
+                    <th>Beds</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {svc.listExtensions().units.map((u) => (
+                    <tr key={u.code}>
+                      <td>
+                        {u.code} — {u.name}
+                      </td>
+                      <td>{u.floor}</td>
+                      <td>{u.beds}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+              <table className={styles.table} style={{ marginTop: 12 }}>
+                <thead>
+                  <tr>
+                    <th>SKU</th>
+                    <th>Name</th>
+                    <th>Qty</th>
+                    <th>Category</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {svc.listExtensions().supply.map((s) => (
+                    <tr key={s.sku}>
+                      <td>{s.sku}</td>
+                      <td>{s.name}</td>
+                      <td>{s.quantity}</td>
+                      <td>{s.category}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </section>
           </>
         )}
 

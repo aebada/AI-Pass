@@ -1,4 +1,11 @@
 import { AuditLog } from './audit.js';
+import {
+  addFloorUnit,
+  addSupplyItem,
+  listExtensions,
+  type AddFloorUnitInput,
+  type AddSupplyItemInput,
+} from './extensions.js';
 import { ALL_MODULES, ONTOLOGY_CLASSES, ONTOLOGY_RELATIONS, PACK_ID, PACK_VERSION, SYNTHETIC_BANNER } from './ontology.js';
 import { GOLDEN_QUESTIONS, resolveIntent } from './intents.js';
 import { computeKpis, evaluateAlerts } from './metrics.js';
@@ -223,6 +230,24 @@ export class HospitalTwinService {
   reportWrongNumber(question: string, role: RoleId = 'coo'): { ticketId: string } {
     const entry = this.audit.append(role, 'report_wrong_number', question.slice(0, 200));
     return { ticketId: entry.id };
+  }
+
+  extendFloorUnit(input: AddFloorUnitInput, role: RoleId = 'admin'): CommandCenterSnapshot {
+    addFloorUnit(this.state, input);
+    this.refreshAlerts();
+    this.audit.append(role, 'extend_floor_unit', `${input.code} floor=${input.floor} beds=${input.beds}`);
+    return this.snapshot();
+  }
+
+  extendSupplyItem(input: AddSupplyItemInput, role: RoleId = 'admin'): CommandCenterSnapshot {
+    addSupplyItem(this.state, input);
+    this.refreshAlerts();
+    this.audit.append(role, 'extend_supply', `${input.sku} qty=${input.quantity}`);
+    return this.snapshot();
+  }
+
+  listExtensions() {
+    return listExtensions(this.state);
   }
 
   runGoldenSuite(role: RoleId = 'coo'): { total: number; passed: number; results: IntentAnswer[] } {

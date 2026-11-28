@@ -278,12 +278,13 @@ export function PremiumNav({ variant = 'business' }: { variant?: 'landing' | 'bu
             </>
           ) : (
             <>
-              <Link href="/login" className={`${styles.btnGhost} ${styles.desktopOnly}`}>
+              {/* Hard anchors: static Hostinger export can stall Next <Link> soft nav */}
+              <a href="/login/" className={`${styles.btnGhost} ${styles.desktopOnly}`}>
                 Sign In
-              </Link>
-              <Link href="/login" className={`${styles.btnPrimary} ${styles.desktopOnly}`}>
+              </a>
+              <a href="/login/" className={`${styles.btnPrimary} ${styles.desktopOnly}`}>
                 Start Free
-              </Link>
+              </a>
             </>
           )
         ) : user ? (
@@ -331,9 +332,9 @@ export function PremiumNav({ variant = 'business' }: { variant?: 'landing' | 'bu
             </div>
           </>
         ) : (
-          <Link href="/login" className={`${styles.btnPrimary} ${styles.desktopOnly}`}>
+          <a href="/login/" className={`${styles.btnPrimary} ${styles.desktopOnly}`}>
             Sign In
-          </Link>
+          </a>
         )}
 
         <button
@@ -412,13 +413,17 @@ export function PremiumNav({ variant = 'business' }: { variant?: 'landing' | 'bu
             >
               {resolvedTheme === 'dark' ? '☀️ Light mode' : '🌙 Dark mode'}
             </button>
-            <Link href={user ? '/workspace' : '/login'} className={styles.btnPrimary} onClick={closeMobile}>
+            <a
+              href={user ? '/workspace/' : '/login/'}
+              className={styles.btnPrimary}
+              onClick={closeMobile}
+            >
               {user ? 'Go to Workspace' : 'Start Free'}
-            </Link>
+            </a>
             {!user && (
-              <Link href="/login" className={styles.btnGhost} onClick={closeMobile}>
+              <a href="/login/" className={styles.btnGhost} onClick={closeMobile}>
                 Sign In
-              </Link>
+              </a>
             )}
           </div>
         </div>

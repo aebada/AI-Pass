@@ -32,6 +32,12 @@ export { createBaselineHospital } from './seed.js';
 export { computeKpis, evaluateAlerts } from './metrics.js';
 export { AuditLog } from './audit.js';
 export {
+  addFloorUnit,
+  addSupplyItem,
+  listExtensions,
+} from './extensions.js';
+export type { AddFloorUnitInput, AddSupplyItemInput } from './extensions.js';
+export {
   HospitalTwinService,
   createHospitalTwinService,
   getHospitalTwinService,

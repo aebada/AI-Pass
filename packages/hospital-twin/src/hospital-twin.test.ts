@@ -97,4 +97,25 @@ describe('Hospital System Twin', () => {
     assert.ok(snap.twinVisuals.occupancyTrend.length === 24);
     assert.ok(snap.twinVisuals.equipment.length > 0);
   });
+
+  it('extends floors and supply chain data', () => {
+    const svc = createHospitalTwinService(42);
+    const beforeBeds = svc.snapshot().stats.beds;
+    svc.extendFloorUnit({ floor: 6, code: 'MED-6A', name: 'Medical 6A', beds: 12, specialty: 'medicine' });
+    const afterUnit = svc.snapshot();
+    assert.equal(afterUnit.stats.beds, beforeBeds + 12);
+    assert.ok(afterUnit.twinVisuals.floors.includes(6));
+    assert.ok(afterUnit.twinVisuals.units.some((u) => u.unitCode === 'MED-6A'));
+
+    svc.extendSupplyItem({
+      sku: 'PPE-GWN',
+      name: 'Isolation gowns',
+      category: 'consumable',
+      quantity: 120,
+      supplierName: 'HospitalCare Supplies',
+    });
+    const ext = svc.listExtensions();
+    assert.ok(ext.supply.some((s) => s.sku === 'PPE-GWN'));
+    assert.ok(ext.suppliers.some((s) => s.name === 'HospitalCare Supplies'));
+  });
 });
