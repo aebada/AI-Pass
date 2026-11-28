@@ -14,7 +14,10 @@ final class SessionAuth
             return;
         }
 
-        $secure = $config->isProduction() || (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off');
+        $secure = $config->isProduction()
+            || (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
+            || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https')
+            || (isset($_SERVER['SERVER_PORT']) && (string) $_SERVER['SERVER_PORT'] === '443');
 
         session_name('AIPASS_SESSION');
         session_set_cookie_params([
@@ -26,9 +29,12 @@ final class SessionAuth
             'samesite' => 'Lax',
         ]);
 
+        // sid_bits_per_character=6 can emit commas in session IDs; some browsers
+        // drop or mishandle those cookies and OAuth state validation then fails.
+        // Use hex-only IDs (4 bits/char) so Set-Cookie values stay cookie-safe.
         if ($config->sessionSecret !== '') {
             ini_set('session.sid_length', '48');
-            ini_set('session.sid_bits_per_character', '6');
+            ini_set('session.sid_bits_per_character', '4');
         }
 
         session_start();
@@ -63,13 +69,24 @@ final class SessionAuth
         $_SESSION = [];
         if (ini_get('session.use_cookies')) {
             $params = session_get_cookie_params();
-            setcookie(session_name(), '', time() - 42000, $params['path'], $params['domain'], $params['secure'], $params['httponly']);
+            setcookie(session_name(), '', [
+                'expires' => time() - 42000,
+                'path' => $params['path'],
+                'domain' => $params['domain'],
+                'secure' => (bool) $params['secure'],
+                'httponly' => (bool) $params['httponly'],
+                'samesite' => $params['samesite'] ?? 'Lax',
+            ]);
         }
         session_destroy();
     }
 
     public static function redirect(string $url): never
     {
+        // Flush session before leaving so oauth_state is on disk before Google returns.
+        if (session_status() === PHP_SESSION_ACTIVE) {
+            session_write_close();
+        }
         header('Location: ' . $url, true, 302);
         exit;
     }

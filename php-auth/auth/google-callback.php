@@ -15,19 +15,23 @@ $state = $_GET['state'] ?? null;
 $code = $_GET['code'] ?? null;
 $error = $_GET['error'] ?? null;
 
+$loginError = static function (string $message): never {
+    SessionAuth::redirect('/login/?error=' . rawurlencode($message));
+};
+
 if ($error !== null) {
-    SessionAuth::redirect('/auth/login.php?error=' . rawurlencode((string) $error));
+    $loginError((string) $error);
 }
 
 if (!Csrf::validateOAuthState(is_string($state) ? $state : null)) {
-    SessionAuth::redirect('/auth/login.php?error=' . rawurlencode('Invalid OAuth state. Please try again.'));
+    $loginError('Invalid OAuth state. Please try again.');
 }
 
 if (!is_string($code) || $code === '') {
-    SessionAuth::redirect('/auth/login.php?error=' . rawurlencode('Missing authorization code from Google.'));
+    $loginError('Missing authorization code from Google.');
 }
 
-$callback = isset($_SESSION['oauth_callback']) ? (string) $_SESSION['oauth_callback'] : '/workspace';
+$callback = isset($_SESSION['oauth_callback']) ? (string) $_SESSION['oauth_callback'] : '/workspace/';
 unset($_SESSION['oauth_callback']);
 
 try {
@@ -38,5 +42,5 @@ try {
     SessionAuth::login($user);
     SessionAuth::redirect($auth->successRedirect($callback));
 } catch (Throwable $e) {
-    SessionAuth::redirect('/auth/login.php?error=' . rawurlencode($e->getMessage()));
+    $loginError($e->getMessage());
 }

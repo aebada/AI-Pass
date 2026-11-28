@@ -1,135 +1,87 @@
 'use client';
 
-import { signIn } from 'next-auth/react';
-import { useSearchParams } from 'next/navigation';
-import { Suspense, useState } from 'react';
-import { authApiUrl, authCallbackQuery, useLaravelAuth } from '@/lib/auth-api';
+import { useEffect, useState } from 'react';
 import { PremiumNav } from '../components/premium/PremiumNav';
 import styles from './login.module.css';
 
-const usePhpAuth =
-  process.env.NEXT_PUBLIC_USE_PHP_AUTH === '1' ||
-  process.env.NEXT_PUBLIC_STATIC_EXPORT === '1';
-const useLaravelAuth =
-  process.env.NEXT_PUBLIC_USE_LARAVEL_AUTH === '1' && !usePhpAuth;
-const useServerAuth = usePhpAuth || useLaravelAuth;
-
-function LoginContent() {
-  const searchParams = useSearchParams();
-  const callbackUrl = searchParams.get('callbackUrl') ?? '/workspace';
-  const error = searchParams.get('error');
-  const [loading, setLoading] = useState(false);
-
-  async function handleGoogleSignIn() {
-    if (useLaravelAuth) {
-      window.location.href = authApiUrl(`/auth/google${authCallbackQuery(callbackUrl)}`);
-      return;
-    }
-    if (usePhpAuth) {
-      const params = callbackUrl !== '/workspace' ? `?callback=${encodeURIComponent(callbackUrl)}` : '';
-      window.location.href = `/auth/google.php${params}`;
-      return;
-    }
-    setLoading(true);
-    await signIn('google', { callbackUrl });
+function readQuery(): { callbackUrl: string; error: string | null } {
+  if (typeof window === 'undefined') return { callbackUrl: '/workspace/', error: null };
+  try {
+    const params = new URLSearchParams(window.location.search);
+    const cb = params.get('callbackUrl') ?? params.get('callback') ?? '/workspace/';
+    return {
+      callbackUrl: cb.startsWith('/') ? cb : '/workspace/',
+      error: params.get('error'),
+    };
+  } catch {
+    return { callbackUrl: '/workspace/', error: null };
   }
+}
 
-  const emailLoginHref = useLaravelAuth
-    ? authApiUrl(`/auth/login${authCallbackQuery(callbackUrl)}`)
-    : `/auth/login.php${
-        callbackUrl !== '/workspace' ? `?callback=${encodeURIComponent(callbackUrl)}` : ''
-      }`;
+function googleHref(callbackUrl: string): string {
+  const cb =
+    callbackUrl && callbackUrl !== '/workspace' && callbackUrl !== '/workspace/'
+      ? `?callback=${encodeURIComponent(callbackUrl)}`
+      : '';
+  return `/auth/google.php${cb}`;
+}
 
-  const registerHref = useLaravelAuth
-    ? authApiUrl(`/auth/register${authCallbackQuery(callbackUrl)}`)
-    : '/auth/register.php';
+function emailHref(callbackUrl: string): string {
+  const cb =
+    callbackUrl && callbackUrl !== '/workspace' && callbackUrl !== '/workspace/'
+      ? `?callback=${encodeURIComponent(callbackUrl)}`
+      : '';
+  return `/auth/login.php${cb}`;
+}
 
-  if (useLaravelAuth || usePhpAuth) {
-    return (
-      <div className={styles.page}>
-        <PremiumNav variant="landing" />
-        <main className={styles.main}>
-          <div className={styles.card}>
-            <div className={styles.badge}>Secure sign-in</div>
-            <h1 className={styles.title}>Welcome to AI-Pass</h1>
-            <p className={styles.subtitle}>
-              Sign in with Google or email to get 500 free credits and access the AI Playground.
-            </p>
-            {error && (
-              <div className={styles.error} role="alert">
-                Sign-in failed. Please try again.
-              </div>
-            )}
-            <button
-              type="button"
-              className={styles.googleBtn}
-              onClick={handleGoogleSignIn}
-              disabled={loading}
-            >
-              <GoogleIcon />
-              {loading ? 'Redirecting…' : 'Continue with Google'}
-            </button>
-            <p className={styles.hint}>
-              <a href={emailLoginHref}>Email sign-in</a>
-              {' · '}
-              <a href={registerHref}>Create account</a>
-            </p>
-            <p className={styles.legal}>
-              By continuing, you agree to AI-Pass terms and privacy policy.
-            </p>
-          </div>
-        </main>
-      </div>
+export default function LoginPage() {
+  const [callbackUrl, setCallbackUrl] = useState('/workspace/');
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const q = readQuery();
+    setCallbackUrl(
+      q.callbackUrl.endsWith('/') || q.callbackUrl.includes('?')
+        ? q.callbackUrl
+        : `${q.callbackUrl}/`,
     );
-  }
+    setError(q.error);
+  }, []);
 
   return (
     <div className={styles.page}>
       <PremiumNav variant="landing" />
-
       <main className={styles.main}>
         <div className={styles.card}>
           <div className={styles.badge}>Secure sign-in</div>
           <h1 className={styles.title}>Welcome to AI-Pass</h1>
           <p className={styles.subtitle}>
-            Sign in with Google to get 500 free credits and access the AI Playground.
+            Sign in with Google or email. After login you go straight to your workspace.
           </p>
-
           {error && (
             <div className={styles.error} role="alert">
-              Sign-in failed. Check your OAuth credentials and try again.
+              Sign-in failed
+              {error && error !== '1' ? `: ${decodeURIComponent(error)}` : ''}. Please try again.
             </div>
           )}
-
-          <button
-            type="button"
-            className={styles.googleBtn}
-            onClick={handleGoogleSignIn}
-            disabled={loading}
-          >
+          {/* Hard navigation — works even if JS chunks fail on static Hostinger */}
+          <a className={styles.googleBtn} href={googleHref(callbackUrl)}>
             <GoogleIcon />
-            {loading ? 'Redirecting…' : 'Continue with Google'}
-          </button>
-
+            Continue with Google
+          </a>
           <p className={styles.hint}>
-            Configure Google OAuth in your Cloud Console (e.g. Sportify project). See repository{' '}
-            <code>docs/AUTH.md</code> for setup steps.
+            <a href={emailHref(callbackUrl)}>Email sign-in</a>
+            {' · '}
+            <a href="/auth/register.php">Create account</a>
+            {' · '}
+            <a href="/workspace/">Go to workspace</a>
           </p>
-
           <p className={styles.legal}>
             By continuing, you agree to AI-Pass terms and privacy policy.
           </p>
         </div>
       </main>
     </div>
-  );
-}
-
-export default function LoginPage() {
-  return (
-    <Suspense fallback={<div className={styles.page} style={{ minHeight: '100vh' }} />}>
-      <LoginContent />
-    </Suspense>
   );
 }
 
