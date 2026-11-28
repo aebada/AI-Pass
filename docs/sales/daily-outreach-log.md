@@ -428,3 +428,11 @@ Sent this run: 14. Failures: 0.
 - No emails sent. Will not fake sends. Hostinger rate limits N/A.
 - Queue when SMTP available: wave2 READY=100 (limit 50); AI providers READY=19 (skip SKIP_PRESS_ONLY / DeepMind press, limit 20).
 - **Forms first** (re-run): N26 submitted again on this branch state; BMW FIZ + govdigital RETRY; Dassault DE / SAP Signavio / Commerzbank blocked → email fallback when SMTP lands.
+
+
+## 2026-11-28 03:29 Europe/Berlin — Anthropic partnerships auto-reply
+
+- Received unmonitored Partnerships inbox ACK (route menu only).
+- **Do not** keep emailing press@ / partnerships auto-inbox.
+- Next Anthropic path: Partner Network + Sales / Strategic BD forms (Claude in twins + Twin Autopilot / Harness gates).
+- CSV status → `ROUTE_SALES` for Anthropic.

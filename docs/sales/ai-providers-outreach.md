@@ -14,6 +14,7 @@ Transparent pricing: seats from $49/user/mo · Twin Starter from €8k · https:
 
 - Forms first when usable.
 - Never DeepMind/Meta **press** as the primary sales channel (press = auto-ACK only).
+- Anthropic `press@` / Partnerships auto-inbox is **not monitored** — use Partner Network (https://claude.com/partners), Sales (https://claude.com/contact-sales), or Business Development (https://claude.com/contact-sales/business-development).
 - Validate MX before SMTP.
 - Cap ~50 sends/window (Hostinger).
 
